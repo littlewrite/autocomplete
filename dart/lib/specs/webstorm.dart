@@ -1,12 +1,5 @@
-// Auto-generated from webstorm.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: webstorm.ts
 import 'package:autocomplete/src/spec.dart';
+import 'idea.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// import { generateInteliJCompletionSpec } from "./idea";
-// 
-// const completionSpec = generateInteliJCompletionSpec("webstorm", "WebStorm");
-// export default completionSpec;
-// 
+final FigSpec webstormSpec = generateInteliJCompletionSpec('webstorm', 'WebStorm');

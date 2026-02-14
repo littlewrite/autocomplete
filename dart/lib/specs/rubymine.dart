@@ -1,12 +1,6 @@
-// Auto-generated from rubymine.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: rubymine.ts
 import 'package:autocomplete/src/spec.dart';
+import 'idea.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// import { generateInteliJCompletionSpec } from "./idea";
-// 
-// const completionSpec = generateInteliJCompletionSpec("rubymine", "RubyMine");
-// export default completionSpec;
-// 
+final FigSpec rubymineSpec =
+    generateInteliJCompletionSpec('rubymine', 'RubyMine');

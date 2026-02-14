@@ -84,6 +84,7 @@ class FigSuggestion {
     this.isDangerous = false,
     this.deprecated,
     this.previewComponent,
+    this.loadSpec,
   });
 
   /// Name(s) - string or list of aliases (filtering match).
@@ -109,6 +110,9 @@ class FigSuggestion {
 
   /// Path to preview component (e.g. 'ls/filepathPreview').
   final String? previewComponent;
+
+  /// Load spec: string, Subcommand, or function (dynamic for TS compat).
+  final dynamic loadSpec;
 
   List<String> get nameList {
     if (name == null) return [];
@@ -136,6 +140,7 @@ class FigSuggestion {
         if (isDangerous) 'isDangerous': isDangerous,
         if (deprecated != null) 'deprecated': deprecated,
         if (previewComponent != null) 'previewComponent': previewComponent,
+        if (loadSpec != null) 'loadSpec': loadSpec,
       };
 }
 
@@ -225,6 +230,7 @@ class FigArg {
     this.debounce,
     this.loadSpec,
     this.parserDirectives,
+    this.getQueryTerm,
   }) : generators = _normalizeGeneratorsNullable(generators);
 
   final String? name;
@@ -243,6 +249,9 @@ class FigArg {
   /// Enum or string ('fuzzy'|'prefix'|'default') for converter compatibility.
   final dynamic filterStrategy;
   final String? defaultValue;
+
+  /// String or function in TS; use string for JSON specs.
+  final dynamic getQueryTerm;
 
   /// Show current token as suggestion at top.
   final bool? suggestCurrentToken;
@@ -295,6 +304,8 @@ class FigArg {
           'suggestions': suggestions!
               .map((e) => e is FigSuggestion ? e.toJson() : e)
               .toList(),
+        if (getQueryTerm != null && getQueryTerm is String)
+          'getQueryTerm': getQueryTerm,
         if (isOptional) 'isOptional': isOptional,
         if (isVariadic) 'isVariadic': isVariadic,
         if (isDangerous) 'isDangerous': isDangerous,

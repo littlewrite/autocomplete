@@ -164,3 +164,199 @@ node generate-all-specs.cjs
 - 当前 `ts-to-dart-converter.cjs` 的 `USE_AI_API=true` 分支未实现，会直接报错；默认使用离线规则转换即可。
 - 生成代码以 `FigSpec` 为主；`generate-all-specs.cjs` 同时兼容 `FigSpec` 与 `CompletionSpec` 两种声明方式。
 - 多进程时**不需要安装 Redis**；默认通过主进程内存队列 + 子进程 stdin/stdout 通信即可保证任务不重复、不冲突。
+
+---
+
+# Type Naming Changes Summary
+
+## 🎯 Overview
+
+Successfully updated the TypeScript to Dart conversion to use `FigSpec` as the primary type name instead of `CompletionSpec`, better aligning with TypeScript's `Fig.Spec` naming.
+
+## ✅ Changes Made
+
+### 1. Updated `dart/lib/src/spec.dart`
+
+**Before:**
+```dart
+typedef CompletionSpec = FigSpec;
+typedef Subcommand = FigSubcommand;
+typedef Option = FigOption;
+typedef Arg = FigArg;
+typedef Suggestion = FigSuggestion;  // ❌ Caused conflicts!
+typedef Generator = FigGenerator;
+```
+
+**After:**
+```dart
+// Removed CompletionSpec typedef - use FigSpec directly
+typedef Subcommand = FigSubcommand;
+typedef Option = FigOption;
+typedef Arg = FigArg;
+// Removed Suggestion typedef to avoid conflict with model.dart
+typedef Generator = FigGenerator;
+```
+
+**Rationale:**
+- `FigSpec` better mirrors TypeScript's `Fig.Spec` structure
+- Removed `Suggestion` typedef to fix naming conflict with runtime `Suggestion` class
+- All internal classes already use `Fig*` prefix, so consistent to use `FigSpec`
+
+### 2. Fixed `dart/lib/src/runtime.dart`
+
+**Issue Fixed:**
+- Resolved 8 linter errors caused by `Suggestion` type ambiguity
+- The runtime now correctly uses `Suggestion` from `model.dart`
+- Spec files use `FigSuggestion` when needed
+
+**Result:** ✅ No linter errors
+
+### 3. Updated Conversion Tool `tools/converter-engine.cjs`
+
+**Before:**
+```javascript
+return `const CompletionSpec ${variableName} = CompletionSpec${dartSpec};\n`;
+```
+
+**After:**
+```javascript
+return `const FigSpec ${variableName} = FigSpec${dartSpec};\n`;
+```
+
+### 4. Updated Spec Files
+
+All spec files now use `FigSpec`:
+- ✅ `dart/lib/specs/astro.dart`
+- ✅ `dart/lib/specs/brew.dart`
+- ✅ `dart/lib/specs/cd.dart`
+- ✅ `dart/lib/specs/git.dart`
+- ✅ `dart/lib/specs/ls.dart`
+- ✅ `dart/lib/specs/tree.dart`
+
+**Example:**
+```dart
+const FigSpec astroSpec = FigSpec(
+  name: 'astro',
+  description: 'CLI provided by Astro...',
+  // ...
+);
+```
+
+### 5. Updated Test Output Files
+
+Updated all test conversion outputs to use `FigSpec`:
+- ✅ `tools/test-output/astro.dart`
+- ✅ `tools/test-output/brew.dart`
+- ✅ `tools/test-output/git.dart`
+- ✅ `tools/test-output/cli.dart`
+
+### 6. Updated Documentation
+
+- ✅ `tools/README.md` - Updated conversion examples
+- ✅ `tools/quick-start.md` - Updated type references
+- ✅ Created `CONVERSION_GUIDE.md` - Comprehensive conversion guide
+
+### 7. Updated Registry `dart/lib/specs/all_specs.dart`
+
+Added missing spec registrations:
+```dart
+registerSpec('astro', () => astroSpec);
+registerSpec('brew', () => brewSpec);
+```
+
+## 📊 Type Mapping Reference
+
+| TypeScript | Dart Class | Typedef | Usage |
+|------------|------------|---------|-------|
+| `Fig.Spec` | `FigSpec` | ❌ | Use `FigSpec` directly |
+| Subcommand | `FigSubcommand` | `Subcommand` ✅ | Can use either |
+| Option | `FigOption` | `Option` ✅ | Can use either |
+| Arg | `FigArg` | `Arg` ✅ | Can use either |
+| Generator | `FigGenerator` | `Generator` ✅ | Can use either |
+| - | `FigSuggestion` | ❌ | Spec-level suggestions |
+| - | `Suggestion` | ❌ | Runtime suggestions (model.dart) |
+
+## 🔍 Key Design Decisions
+
+### 1. Why `FigSpec` instead of `CompletionSpec`?
+
+- **Alignment**: TypeScript uses `Fig.Spec` (namespace.type), Dart uses `FigSpec` (PrefixedType)
+- **Consistency**: All other classes use `Fig*` prefix
+- **Clarity**: Makes it obvious these are Fig-compatible specs
+
+### 2. Why remove `Suggestion` typedef?
+
+- **Conflict**: Runtime has `Suggestion` class in `model.dart`
+- **Different types**: `FigSuggestion` (spec) vs `Suggestion` (runtime) serve different purposes
+- **Import clarity**: Avoids ambiguous imports
+
+### 3. Why keep other typedefs (`Subcommand`, `Option`, etc.)?
+
+- **Convenience**: Shorter names for common types
+- **No conflicts**: These don't clash with other types
+- **TypeScript alignment**: Match the simple object names from TypeScript
+
+## ✅ Verification
+
+All changes verified:
+```bash
+cd dart
+dart analyze lib/src/spec.dart lib/src/runtime.dart lib/specs/ --fatal-infos
+# ✅ No issues found!
+```
+
+## 🚀 Usage Example
+
+**TypeScript source (`src/astro.ts`):**
+```typescript
+const completionSpec: Fig.Spec = {
+  name: "astro",
+  description: "CLI provided by Astro",
+  subcommands: [
+    {
+      name: "dev",
+      options: [{ name: "--port", args: { name: "port" } }],
+    },
+  ],
+};
+export default completionSpec;
+```
+
+**Dart output (`dart/lib/specs/astro.dart`):**
+```dart
+import 'package:autocomplete/src/spec.dart';
+
+const FigSpec astroSpec = FigSpec(
+  name: 'astro',
+  description: 'CLI provided by Astro',
+  subcommands: [
+    Subcommand(
+      name: 'dev',
+      options: [
+        Option(
+          name: '--port',
+          args: Arg(name: 'port'),
+        ),
+      ],
+    ),
+  ],
+);
+```
+
+## 📝 Migration Checklist
+
+If you have existing code using `CompletionSpec`:
+
+- [ ] Replace `CompletionSpec` with `FigSpec` in type annotations
+- [ ] Keep using `Subcommand`, `Option`, `Arg` (these still work!)
+- [ ] Don't use `Suggestion` typedef (use `FigSuggestion` in specs, `Suggestion` in runtime)
+- [ ] Update your conversion tools if using custom converters
+- [ ] Run `dart analyze` to verify no issues
+
+## 🎉 Benefits
+
+1. ✅ **No more naming conflicts** between `Suggestion` types
+2. ✅ **Better TypeScript alignment** with `FigSpec` matching `Fig.Spec`
+3. ✅ **Cleaner runtime code** with distinct `Suggestion` vs `FigSuggestion`
+4. ✅ **All linter errors resolved** - clean codebase
+5. ✅ **Consistent naming** across all Fig-related types

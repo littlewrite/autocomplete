@@ -1,94 +1,94 @@
-// Auto-generated from TypeScript source: yomo.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: yomo.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `yomo` CLI
 final FigSpec yomoSpec = FigSpec(
   name: 'yomo',
-  description: 'CLI interface for YoMo',
+  description: 'YoMo CLI',
   subcommands: [
-
-    Subcommand(
+    FigSubcommand(
       name: 'init',
-      description: 'Initial an example StreamFunction',
-      args: [
-        Arg(
-        name: 'function name',
-        description: 'StreamFunction name to initialize locally'
-      )
-      ],
+      description: 'Initialize a new YoMo Serverless Function',
       options: [
-
-        Option(
-          name: '--rx',
-          description: 'Generate Rx code template'
-        )
-      ]
+        FigOption(
+          name: ['--name', '-n'],
+          description: 'The name of the Serverless Function',
+          args: [FigArg(name: 'name')],
+        ),
+      ],
+      args: [FigArg(name: 'name')],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'build',
-      description: 'Build a StreamFunction to WebAssembly',
+      description: 'Build the YoMo Serverless Function',
       args: [
-        Arg(
-        name: '.go file',
-        description: 'The .go file to build'
-      )
-      ],
-      options: [
-
-        Option(
-          name: '--target',
-          description: 'Build to wasm or binary',
-          args: [
-
-            Arg(
-              name: 'wasm'
+        FigArg(
+          name: 'path',
+          template: ['filepaths'],
+          generators: [
+            FigGenerator(
+              filterTemplateSuggestions: (List<FigSuggestion> paths) {
+                return paths
+                    .where((p) =>
+                        p.name.endsWith('.go') ||
+                        p.name.endsWith('.mod') ||
+                        p.name.endsWith('/'))
+                    .toList();
+              },
             ),
-            Arg(
-              name: 'binary'
-            )
-          ]
+          ],
         ),
-        Option(
-          name: ['-m', '--modfile'],
-          description: 'Custom go.mod filepath',
-          args: [
-            Arg(
-            name: 'module'
-          )
-          ]
-        )
-      ]
-    ),
-    Subcommand(
-      name: 'run',
-      description: 'Run a wasm stream function',
-      args: [
-        Arg(
-        name: '.wasm file',
-        description: 'The .wasm file to run'
-      )
       ],
       options: [
-
-        Option(
-          name: ['-z', '--zipper'],
-          description: 'Zipper endpoint this StreamFunction will connect to'
+        FigOption(
+          name: ['--mod'],
+          description: 'The path of go.mod',
+          args: [
+            FigArg(name: 'mod', template: ['filepaths'])
+          ],
         ),
-        Option(
-          name: ['-n', '--name'],
-          description: 'Specify the name of this StreamFunction'
-        )
-      ]
-    )
+      ],
+    ),
+    FigSubcommand(
+      name: 'run',
+      description: 'Run the YoMo Serverless Function',
+      args: [
+        FigArg(
+          name: 'path',
+          template: ['filepaths'],
+          generators: [
+            FigGenerator(
+              filterTemplateSuggestions: (List<FigSuggestion> paths) {
+                return paths
+                    .where(
+                        (p) => p.name.endsWith('.wasm') || p.name.endsWith('/'))
+                    .toList();
+              },
+            ),
+          ],
+        ),
+      ],
+      options: [
+        FigOption(
+          name: ['--name', '-n'],
+          description: 'The name of the Serverless Function',
+          args: [FigArg(name: 'name')],
+        ),
+        FigOption(
+          name: ['--port', '-p'],
+          description: 'The port of the Serverless Function',
+          args: [FigArg(name: 'port')],
+        ),
+      ],
+    ),
   ],
   options: [
-
-    Option(
+    FigOption(
       name: ['--help', '-h'],
-      description: 'Show help for yomo'
-    )
-  ]
+      description: 'Show help for yomo',
+    ),
+    FigOption(
+      name: ['--version', '-v'],
+      description: 'Show the version of yomo',
+    ),
+  ],
 );

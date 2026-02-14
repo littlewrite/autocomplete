@@ -6,11 +6,11 @@ import 'package:autocomplete/src/spec.dart';
 
 /// Completion spec for `noglob` CLI
 final FigSpec noglobSpec = FigSpec(
-  name: 'noglob',
-  description: 'ZSH pre-command modifier that disables glob expansion',
-  hidden: true,
-  args: [
-    Arg(
-  )
-  ]
-);
+    name: 'noglob',
+    description: 'ZSH pre-command modifier that disables glob expansion',
+    hidden: true,
+    args: [
+      Arg(
+        isCommand: true,
+      )
+    ]);

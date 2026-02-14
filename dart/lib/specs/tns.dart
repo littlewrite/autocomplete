@@ -1,9 +1,12 @@
-// Auto-generated from tns.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: tns.ts
 import 'package:autocomplete/src/spec.dart';
+import 'ns.dart' as ns;
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// export { default } from "./ns";
-// 
+final FigSpec tnsSpec = FigSpec(
+  name: 'tns',
+  description: ns.nsSpec.description,
+  subcommands: ns.nsSpec.subcommands,
+  options: ns.nsSpec.options,
+  args: ns.nsSpec.args,
+  icon: ns.nsSpec.icon,
+);

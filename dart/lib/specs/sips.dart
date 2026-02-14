@@ -1,298 +1,318 @@
-// Auto-generated from TypeScript source: sips.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: sips.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `sips` CLI
+const List<String> propertySuggestions = [
+  'all',
+  'allxml',
+  'dpiHeight',
+  'dpiWidth',
+  'pixelHeight',
+  'pixelWidth',
+  'typeIdentifier',
+  'format',
+  'formatOptions',
+  'space',
+  'samplesPerPixel',
+  'bitsPerSample',
+  'creation',
+  'make',
+  'model',
+  'software',
+  'description',
+  'copyright',
+  'artist',
+  'profile',
+  'hasAlpha',
+  'size',
+  'cmm',
+  'version',
+  'class',
+  'pcs',
+  'platform',
+  'quality',
+  'deviceManufacturer',
+  'deviceModel',
+  'deviceAttributes0',
+  'deviceAttributes1',
+  'renderingIntent',
+  'creator',
+  'md5',
+];
+
 final FigSpec sipsSpec = FigSpec(
   name: 'sips',
   description: 'Scriptable image processing system',
   args: [
-    Arg(
-    name: 'file',
-    template: 'filepaths'
-  )
+    FigArg(
+      name: 'file',
+      template: 'filepaths',
+    ),
   ],
   options: [
-
-    Option(
+    FigOption(
       name: ['-g', '--getProperty'],
       description: 'Output the property value for key to stdout',
       args: [
-        Arg(
-        name: 'key'
-      )
-      ]
+        FigArg(
+          name: 'key',
+          suggestions: propertySuggestions.map((e) => FigSuggestion(name: e)).toList(),
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-s', '--setProperty'],
       description: 'Set a property value for key to value',
       args: [
-
-        Arg(
-          name: 'key'
+        FigArg(
+          name: 'key',
+          suggestions: propertySuggestions.map((e) => FigSuggestion(name: e)).toList(),
         ),
-        Arg(
-          name: 'value'
-        )
-      ]
+        FigArg(
+          name: 'value',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-d', '--deleteProperty'],
       description: 'Remove a property value for key',
       args: [
-        Arg(
-        name: 'key'
-      )
-      ]
+        FigArg(
+          name: 'key',
+          suggestions: propertySuggestions.map((e) => FigSuggestion(name: e)).toList(),
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-X', '--extractTag'],
       description: 'Extract a profile tag element to tagFile',
       args: [
-
-        Arg(
-          name: 'tag'
+        FigArg(
+          name: 'tag',
         ),
-        Arg(
-          name: 'tagFile'
-        )
-      ]
+        FigArg(
+          name: 'tagFile',
+        ),
+      ],
     ),
-    Option(
-      name: '--verify',
-      description: 'Verify any profile problems and log output to stdout'
+    FigOption(
+      name: ['--verify'],
+      description: 'Verify any profile problems and log output to stdout',
     ),
-    Option(
+    FigOption(
       name: ['-x', '--extractProfile'],
       description: 'Get the embedded profile from image and write it to profile',
       args: [
-        Arg(
-        name: 'profile'
-      )
-      ]
-    ),
-    Option(
-      name: '--deleteTag',
-      args: [
-        Arg(
-        name: 'ta'
-      )
+        FigArg(
+          name: 'profile',
+        ),
       ],
-      description: 'Remove the tag element from a profile'
     ),
-    Option(
-      name: '--copyTag',
+    FigOption(
+      name: ['--deleteTag'],
+      description: 'Remove the tag element from a profile',
+      args: [
+        FigArg(
+          name: 'tag',
+        ),
+      ],
+    ),
+    FigOption(
+      name: ['--copyTag'],
       description: 'Copy the srcTag element of a profile to dstTag',
       args: [
-
-        Arg(
-          name: 'srcTag'
+        FigArg(
+          name: 'srcTag',
         ),
-        Arg(
-          name: 'dstTag'
-        )
-      ]
+        FigArg(
+          name: 'dstTag',
+        ),
+      ],
     ),
-    Option(
-      name: '--loadTag',
+    FigOption(
+      name: ['--loadTag'],
       description: 'Set the tag element of a profile to the contents of tagFile',
       args: [
-
-        Arg(
-          name: 'tag'
+        FigArg(
+          name: 'tag',
         ),
-        Arg(
+        FigArg(
           name: 'tagFile',
-          template: 'filepaths'
-        )
-      ]
+          template: 'filepaths',
+        ),
+      ],
     ),
-    Option(
-      name: '--repair',
-      description: 'Repair any profile problems and log output to stdout'
+    FigOption(
+      name: ['--repair'],
+      description: 'Repair any profile problems and log output to stdout',
     ),
-    Option(
+    FigOption(
       name: ['-e', '--embedProfile'],
       description: 'Embed profile in image',
       args: [
-        Arg(
-        name: 'profile'
-      )
-      ]
+        FigArg(
+          name: 'profile',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-E', '--embedProfileIfNone'],
       description: 'Embed profile in image only if image doesn\'t have a profile',
       args: [
-        Arg(
-        name: 'profile'
-      )
-      ]
+        FigArg(
+          name: 'profile',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-m', '--matchTo'],
       description: 'Color match image to profile',
       args: [
-        Arg(
-        name: 'profile'
-      )
-      ]
+        FigArg(
+          name: 'profile',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-M', '--matchToWithIntent'],
       description: 'Color match image to profile with rendering intent perceptual | relative | saturation | absolute',
       args: [
-
-        Arg(
-          name: 'profile'
+        FigArg(
+          name: 'profile',
         ),
-        Arg(
+        FigArg(
           name: 'intent',
-          suggestions: [
-
-            FigSuggestion(name: 'perceptual'),
-            FigSuggestion(name: 'relative'),
-            FigSuggestion(name: 'saturation'),
-            FigSuggestion(name: 'absolute')
-          ]
-        )
-      ]
+          suggestions: ['perceptual', 'relative', 'saturation', 'absolute']
+              .map((e) => FigSuggestion(name: e))
+              .toList(),
+        ),
+      ],
     ),
-    Option(
-      name: '--deleteColorManagementProperties',
-      description: 'Delete color management properties in TIFF, PNG, and EXIF dictionaries'
+    FigOption(
+      name: ['--deleteColorManagementProperties'],
+      description: 'Delete color management properties in TIFF, PNG, and EXIF dictionaries',
     ),
-    Option(
+    FigOption(
       name: ['-r', '--rotate'],
       args: [
-        Arg(
-        name: 'degreesCW'
-      )
-      ]
+        FigArg(
+          name: 'degreesCW',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-f', '--flip'],
       args: [
-        Arg(
-        name: 'axis',
-        suggestions: [
-
-          FigSuggestion(name: 'horizontal'),
-          FigSuggestion(name: 'vertical')
-        ]
-      )
-      ]
+        FigArg(
+          name: 'axis',
+          suggestions: ['horizontal', 'vertical'].map((e) => FigSuggestion(name: e)).toList(),
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-c', '--cropToHeightWidth'],
       description: 'Crop image to fit specified size',
       args: [
-
-        Arg(
-          name: 'pixelsH'
+        FigArg(
+          name: 'pixelsH',
         ),
-        Arg(
-          name: 'pixelsW'
-        )
-      ]
+        FigArg(
+          name: 'pixelsW',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-p', '--padToHeightWidth'],
       description: 'Pad image with pixels to fit specified size',
       args: [
-
-        Arg(
-          name: 'pixelsH'
+        FigArg(
+          name: 'pixelsH',
         ),
-        Arg(
-          name: 'pixelsW'
-        )
-      ]
+        FigArg(
+          name: 'pixelsW',
+        ),
+      ],
     ),
-    Option(
-      name: '-padColor',
+    FigOption(
+      name: ['-padColor'],
       description: 'Use this color when padding.  White=FFFFFF, Red=FF0000, Default=Black=000000',
       args: [
-        Arg(
-        name: 'hexcolor'
-      )
-      ]
+        FigArg(
+          name: 'hexcolor',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-z', '--resampleHeightWidth'],
       description: 'Resample image at specified size. Image apsect ratio may be altered',
       args: [
-
-        Arg(
-          name: 'pixelsH'
+        FigArg(
+          name: 'pixelsH',
         ),
-        Arg(
-          name: 'pixelsW'
-        )
-      ]
+        FigArg(
+          name: 'pixelsW',
+        ),
+      ],
     ),
-    Option(
-      name: '--resampleWidth',
+    FigOption(
+      name: ['--resampleWidth'],
       description: 'Resample image to specified width',
       args: [
-        Arg(
-        name: 'pixelsW'
-      )
-      ]
+        FigArg(
+          name: 'pixelsW',
+        ),
+      ],
     ),
-    Option(
-      name: '--resampleHeight',
+    FigOption(
+      name: ['--resampleHeight'],
       description: 'Resample image to specified height',
       args: [
-        Arg(
-        name: 'pixelsH'
-      )
-      ]
+        FigArg(
+          name: 'pixelsH',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-Z', '--resampleHeightWidthMax'],
       description: 'Resample image so height and width aren\'t greater than specified size',
       args: [
-        Arg(
-        name: 'pixelsWH'
-      )
-      ]
+        FigArg(
+          name: 'pixelsWH',
+        ),
+      ],
     ),
-    Option(
+    FigOption(
       name: ['-i', '--addIcon'],
       description: 'Add a Finder icon to image file',
       args: [
-        Arg(
-        name: 'icon',
-        template: 'filepaths'
-      )
-      ]
+        FigArg(
+          name: 'icon',
+          template: 'filepaths',
+        ),
+      ],
     ),
-    Option(
-      name: '--debug',
-      description: 'Enable debugging output'
+    FigOption(
+      name: ['--debug'],
+      description: 'Enable debugging output',
     ),
-    Option(
+    FigOption(
       name: ['-h', '--help'],
-      description: 'Show help'
+      description: 'Show help',
     ),
-    Option(
+    FigOption(
       name: ['-H', '--helpProperties'],
-      description: 'Show help for properties'
+      description: 'Show help for properties',
     ),
-    Option(
-      name: '--man',
-      description: 'Generate man pages'
+    FigOption(
+      name: ['--man'],
+      description: 'Generate man pages',
     ),
-    Option(
+    FigOption(
       name: ['-v', '--version'],
-      description: 'Show the version'
+      description: 'Show the version',
     ),
-    Option(
-      name: '--formats',
-      description: 'Show the read/write formats'
-    )
-  ]
+    FigOption(
+      name: ['--formats'],
+      description: 'Show the read/write formats',
+    ),
+  ],
 );

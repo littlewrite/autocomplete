@@ -1,10 +1,13 @@
-// Auto-generated from TypeScript source: sls.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: sls.ts
 import 'package:autocomplete/src/spec.dart';
+import 'serverless.dart';
 
-/// Completion spec for `sls` CLI
 final FigSpec slsSpec = FigSpec(
-  name: 'sls'
+  name: 'sls',
+  description: serverlessSpec.description,
+  subcommands: serverlessSpec.subcommands,
+  options: serverlessSpec.options,
+  args: serverlessSpec.args,
+  icon: serverlessSpec.icon,
+  // Copy other properties if needed
 );

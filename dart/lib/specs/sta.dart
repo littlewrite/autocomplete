@@ -1,9 +1,23 @@
-// Auto-generated from sta.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: sta.ts
 import 'package:autocomplete/src/spec.dart';
+import 'swagger_typescript_api.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// export { default } from "./swagger-typescript-api";
-// 
+final FigSpec staSpec = FigSpec(
+  name: 'sta',
+  description: swaggerTypescriptApiSpec.description,
+  icon: swaggerTypescriptApiSpec.icon,
+  subcommands: swaggerTypescriptApiSpec.subcommands,
+  options: swaggerTypescriptApiSpec.options,
+  args: swaggerTypescriptApiSpec.args,
+  filterStrategy: swaggerTypescriptApiSpec.filterStrategy,
+  hidden: swaggerTypescriptApiSpec.hidden,
+  insertValue: swaggerTypescriptApiSpec.insertValue,
+  replaceValue: swaggerTypescriptApiSpec.replaceValue,
+  priority: swaggerTypescriptApiSpec.priority,
+  deprecated: swaggerTypescriptApiSpec.deprecated,
+  parserDirectives: swaggerTypescriptApiSpec.parserDirectives,
+  requiresSubcommand: swaggerTypescriptApiSpec.requiresSubcommand,
+  additionalSuggestions: swaggerTypescriptApiSpec.additionalSuggestions,
+  generateSpec: swaggerTypescriptApiSpec.generateSpec,
+  loadSpec: swaggerTypescriptApiSpec.loadSpec,
+);

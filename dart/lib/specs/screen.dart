@@ -1,250 +1,220 @@
-// Auto-generated from TypeScript source: screen.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: screen.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `screen` CLI
+final FigArg identifierArg = FigArg(
+  name: 'identifier',
+  suggestions: [
+    FigSuggestion(name: 'pid'),
+    FigSuggestion(name: 'pid.tty'),
+    FigSuggestion(name: 'pid.tty.host'),
+    FigSuggestion(name: 'sessionowner/pid'),
+    FigSuggestion(name: 'sessionowner/pid.tty'),
+    FigSuggestion(name: 'sessionowner/pid.tty.host'),
+  ],
+);
+
 final FigSpec screenSpec = FigSpec(
   name: 'screen',
   description: 'Screen manager with VT100/ANSI terminal emulation',
   parserDirectives: ParserDirectives(
     optionsMustPrecedeArguments: true,
-    flagsArePosixNoncompliant: true
+    flagsArePosixNoncompliant: true,
   ),
   subcommands: [
-
-    Subcommand(
+    FigSubcommand(
       name: '-d',
-      description: 'Does not start screen, but detaches the elsewhere running screen session',
+      description:
+          'Does not start screen, but detaches the elsewhere running screen session',
       icon: 'fig://icon?type=option',
       subcommands: [
-
-        Subcommand(
+        FigSubcommand(
           name: '-r',
           description: 'Reattach a session and if necessary detach it first',
-          icon: 'fig://icon?type=option'
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
         ),
-        Subcommand(
+        FigSubcommand(
           name: '-R',
-          description: 'Reattach a session and if necessary detach or even create it first',
-          icon: 'fig://icon?type=option'
+          description:
+              'Reattach a session and if necessary detach or even create it first',
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
         ),
-        Subcommand(
+        FigSubcommand(
           name: '-RR',
-          description: 'Reattach a session and if necessary detach or create it. Use the first session if more than one session is available',
-          icon: 'fig://icon?type=option'
-        )
-      ]
+          description:
+              'Reattach a session and if necessary detach or create it. Use the first session if more than one session is available',
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
+        ),
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: '-D',
-      description: 'Does not start screen, but detaches the elsewhere running screen session',
+      description:
+          'Does not start screen, but detaches the elsewhere running screen session',
       icon: 'fig://icon?type=option',
       subcommands: [
-
-        Subcommand(
+        FigSubcommand(
           name: '-r',
-          description: 'Reattach a session. If necessary detach and logout remotely first',
-          icon: 'fig://icon?type=option'
+          description:
+              'Reattach a session. If necessary detach and logout remotely first',
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
         ),
-        Subcommand(
+        FigSubcommand(
           name: '-R',
-          description: 'Attach here and now. In detail this means: If a session is running, then reattach. If necessary detach and logout remotely first',
-          icon: 'fig://icon?type=option'
+          description:
+              'Attach here and now. In detail this means: If a session is running, then reattach. If necessary detach and logout remotely first',
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
         ),
-        Subcommand(
+        FigSubcommand(
           name: '-RR',
           description: 'Attach here and now. Whatever that means, just do it',
-          icon: 'fig://icon?type=option'
-        )
-      ]
+          icon: 'fig://icon?type=option',
+          args: [identifierArg],
+        ),
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: '-r',
       description: 'Resumes a detached screen session',
-      icon: 'fig://icon?type=option'
+      icon: 'fig://icon?type=option',
+      args: [identifierArg],
     ),
-    Subcommand(
+    FigSubcommand(
       name: '-R',
-      description: 'Attempts to resume the first detached screen session it finds',
-      icon: 'fig://icon?type=option'
+      description:
+          'Attempts to resume the first detached screen session it finds',
+      icon: 'fig://icon?type=option',
+      args: [identifierArg],
     ),
-    Subcommand(
+    FigSubcommand(
       name: '-dmS',
       description: 'Start as daemon: Screen session in detached mode',
       icon: 'fig://icon?type=option',
       args: [
-        Arg(
-        name: 'name',
-        description: 'Name of the screen session'
-      )
-      ]
-    )
+        FigArg(
+          name: 'name',
+          description: 'Name of the screen session',
+        ),
+      ],
+    ),
   ],
   options: [
-
-    Option(
-      name: '-a',
-      description: 'Force all capabilities into each window\'s termcap'
+    FigOption(
+      name: ['-a'],
+      description: "Force all capabilities into each window's termcap",
     ),
-    Option(
-      name: '-A',
-      description: 'Adapt all windows to the new display width & height'
+    FigOption(
+      name: ['-A'],
+      description: 'Adapt all windows to the new display width & height',
     ),
-    Option(
-      name: '-c',
-      description: 'Read configuration file instead of \'.screenrc\'',
+    FigOption(
+      name: ['-c'],
+      description: "Read configuration file instead of '.screenrc'",
       args: [
-        Arg(
-        name: 'file',
-        template: 'filepaths'
-      )
-      ]
+        FigArg(
+          name: 'file',
+          template: 'filepaths',
+        ),
+      ],
     ),
-    Option(
-      name: '-e',
+    FigOption(
+      name: ['-e'],
       description: 'Change command characters',
       args: [
-        Arg(
-        name: 'xy',
-        description: 'Specifies the command character to be x and the character generating a literal command character to y'
-      )
-      ]
+        FigArg(
+          name: 'xy',
+          description:
+              'Specifies the command character to be x and the character generating a literal command character to y',
+        ),
+      ],
     ),
-    Option(
-      name: '-f',
-      description: 'Flow control on'
+    FigOption(
+      name: ['-f'],
+      description: 'Flow control on',
     ),
-    Option(
-      name: '-fn',
-      description: 'Flow control off'
+    FigOption(
+      name: ['-fn'],
+      description: 'Flow control off',
     ),
-    Option(
-      name: '-fa',
-      description: 'Flow control automatic'
+    FigOption(
+      name: ['-fa'],
+      description: 'Flow control automatic',
     ),
-    Option(
-      name: '-h',
+    FigOption(
+      name: ['-h'],
       description: 'Set the size of the scrollback history buffer',
       args: [
-        Arg(
-        name: 'h',
-        description: 'Lines'
-      )
-      ]
+        FigArg(
+          name: 'h',
+          description: 'Lines',
+        ),
+      ],
     ),
-    Option(
-      name: '-i',
-      description: 'Interrupt output sooner when flow control is on'
+    FigOption(
+      name: ['-i'],
+      description: 'Interrupt output sooner when flow control is on',
     ),
-    Option(
+    FigOption(
       name: ['-list', '-ls'],
-      description: 'Do nothing, just list our SockDir'
+      description: 'Do nothing, just list our SockDir',
     ),
-    Option(
-      name: '-L',
-      description: 'Turn on output logging'
+    FigOption(
+      name: ['-L'],
+      description: 'Turn on output logging',
     ),
-    Option(
-      name: '-m',
-      description: 'Ignore \$STY variable, do create a new screen session'
+    FigOption(
+      name: ['-m'],
+      description: 'Ignore \$STY variable, do create a new screen session',
     ),
-    Option(
-      name: '-O',
-      description: 'Choose optimal output rather than exact vt100 emulation'
+    FigOption(
+      name: ['-O'],
+      description: 'Choose optimal output rather than exact vt100 emulation',
     ),
-    Option(
-      name: '-p',
+    FigOption(
+      name: ['-p'],
       description: 'Preselect the named window if it exists',
       args: [
-        Arg(
-        name: 'window'
-      )
-      ]
+        FigArg(
+          name: 'window',
+        ),
+      ],
     ),
-    Option(
-      name: '-q',
-      description: 'Quiet startup. Exits with non-zero return code if unsuccessful'
+    FigOption(
+      name: ['-q'],
+      description:
+          'Quiet startup. Exits with non-zero return code if unsuccessful',
     ),
-    Option(
-      name: '-s',
+    FigOption(
+      name: ['-s'],
       description: 'Shell to execute rather than \$SHELL',
       args: [
-        Arg(
-        name: 'shell'
-      )
-      ]
+        FigArg(
+          name: 'shell',
+        ),
+      ],
     ),
-    Option(
-      name: '-S',
-      description: 'Name this session <pid>.sockname instead of <pid>.<tty>.<host>',
+    FigOption(
+      name: ['-S'],
+      description:
+          'Name this session <pid>.sockname instead of <pid>.<tty>.<host>',
       args: [
-        Arg(
-        name: 'sockname'
-      )
-      ]
+        FigArg(
+          name: 'sockname',
+        ),
+      ],
     ),
-    Option(
-      name: '-t',
-      description: 'Set title. (window\'s name)',
+    FigOption(
+      name: ['-t'],
+      description: "Set title. (window's name)",
       args: [
-        Arg(
-        name: 'title'
-      )
-      ]
+        FigArg(
+          name: 'title',
+        ),
+      ],
     ),
-    Option(
-      name: '-T',
-      description: 'Use term as \$TERM for windows, rather than \'screen\'',
-      args: [
-        Arg(
-        name: 'term'
-      )
-      ]
-    ),
-    Option(
-      name: '-U',
-      description: 'Tell screen to use UTF-8 encoding'
-    ),
-    Option(
-      name: '-v',
-      description: 'Print \'Screen version 4.00.03 (FAU) 23-Oct-06\''
-    ),
-    Option(
-      name: '-wipe',
-      description: 'Do nothing, just clean up SockDir',
-      args: [
-        Arg(
-        name: 'match',
-        description: 'Screen session to match',
-        isOptional: true,
-        suggestions: [
-
-          FigSuggestion(name: 'sessionowner/[pid.tty.host]')
-        ]
-      )
-      ]
-    ),
-    Option(
-      name: '-x',
-      description: 'Attach to a not detached screen. (Multi display mode)'
-    ),
-    Option(
-      name: '-X',
-      description: 'Execute <cmd> as a screen command in the specified session'
-    )
   ],
-  args: [
-
-    Arg(
-      name: 'cmd',
-      description: 'Command to invoke'
-    ),
-    Arg(
-      name: 'args',
-      description: 'Arguments to pass',
-      isVariadic: true
-    )
-  ]
 );
