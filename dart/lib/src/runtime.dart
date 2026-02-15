@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'adapter.dart';
 import 'model.dart';
 import 'parser.dart';
 import 'registry.dart';
@@ -11,7 +12,10 @@ import 'suggestion.dart';
 import 'template.dart';
 
 /// Resolve cwd for path completion (e.g. expand ~).
-Future<String> resolveCwd(String cwd, Shell shell) async {
+/// When [adapter] is non-null, uses [adapter.resolveCwd]; otherwise uses local Platform.environment.
+Future<String> resolveCwd(String cwd, Shell shell,
+    [CompleteAdapter? adapter]) async {
+  if (adapter != null) return adapter.resolveCwd(cwd, shell);
   if (cwd.startsWith('~')) {
     final home = Platform.environment['HOME'] ?? '';
     if (cwd == '~' || cwd == '~/') return home;
@@ -47,11 +51,12 @@ List<FigArg> getArgs(List<FigArg>? args) {
 }
 
 /// Run templates for an arg and return suggestions.
-Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd) async {
+Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd,
+    [CompleteAdapter? adapter]) async {
   if (arg == null) return [];
   final template = arg.template;
   if (template == null) return [];
-  final raw = await runTemplates(template, cwd);
+  final raw = await runTemplates(template, cwd, adapter);
   return raw
       .map((t) => Suggestion(
           name: t.name,
@@ -63,8 +68,10 @@ Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd) async {
 }
 
 /// Run generator (script + postProcess, or custom). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], or returns [gen.customSuggestions].
+/// When [adapter] is non-null, uses [adapter.runProcess]; otherwise uses Process.run.
 Future<List<Suggestion>> runGeneratorSuggestions(
-    FigGenerator? gen, List<CommandToken> allTokens, String cwd) async {
+    FigGenerator? gen, List<CommandToken> allTokens, String cwd,
+    [CompleteAdapter? adapter]) async {
   if (gen == null) return [];
   if (gen.custom != null && gen.custom!.isNotEmpty) {
     return gen.custom!
@@ -75,13 +82,23 @@ Future<List<Suggestion>> runGeneratorSuggestions(
   if (gen.script == null || gen.script!.isEmpty || gen.postProcess == null)
     return [];
   try {
-    final result = await Process.run(
-      gen.script!.first,
-      gen.script!.length > 1 ? gen.script!.sublist(1) : [],
-      workingDirectory: cwd,
-      runInShell: false,
-    );
-    final stdout = (result.stdout as String?) ?? '';
+    String stdout;
+    if (adapter != null) {
+      final result = await adapter.runProcess(
+        gen.script!.first,
+        gen.script!.length > 1 ? gen.script!.sublist(1) : [],
+        workingDirectory: cwd,
+      );
+      stdout = result.stdout;
+    } else {
+      final result = await Process.run(
+        gen.script!.first,
+        gen.script!.length > 1 ? gen.script!.sublist(1) : [],
+        workingDirectory: cwd,
+        runInShell: false,
+      );
+      stdout = (result.stdout as String?) ?? '';
+    }
     final tokens = allTokens.map((t) => t.token).toList();
     final figSuggestions = gen.postProcess!(stdout, tokens);
     return figSuggestions
@@ -103,8 +120,9 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   List<CommandToken> acceptedTokens,
   List<CommandToken> allTokens,
   String cwd,
-  Shell shell,
-) async {
+  Shell shell, [
+  CompleteAdapter? adapter,
+]) async {
   if (argsDepleted && argsFromSubcommand) return null;
   final partial = partialToken?.token ?? '';
   final allOptions = <FigOption>[
@@ -124,9 +142,10 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
-    suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
+    suggestions.addAll(await runTemplateSuggestions(activeArg, cwd, adapter));
     for (final gen in activeArg.generatorsList) {
-      suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
+      suggestions.addAll(
+          await runGeneratorSuggestions(gen, allTokens, cwd, adapter));
     }
     suggestions.addAll(filterSuggestions(
         activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
@@ -146,8 +165,9 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   List<CommandToken> allTokens,
   bool variadicArgBound,
   String cwd,
-  Shell shell,
-) async {
+  Shell shell, [
+  CompleteAdapter? adapter,
+]) async {
   if (args.isEmpty) return null;
   final activeArg = args.first;
   final partial = partialToken?.token ?? '';
@@ -156,9 +176,10 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
     ...(subcommand.options ?? [])
   ];
   var suggestions = <Suggestion>[];
-  suggestions.addAll(await runTemplateSuggestions(activeArg, cwd));
+  suggestions.addAll(await runTemplateSuggestions(activeArg, cwd, adapter));
   for (final gen in activeArg.generatorsList) {
-    suggestions.addAll(await runGeneratorSuggestions(gen, allTokens, cwd));
+    suggestions.addAll(
+        await runGeneratorSuggestions(gen, allTokens, cwd, adapter));
   }
   suggestions.addAll(filterSuggestions(
       activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
@@ -187,8 +208,9 @@ Future<SuggestionBlob?> runOption(
   String cwd,
   Shell shell,
   List<FigOption> persistentOptions,
-  List<CommandToken> acceptedTokens,
-) async {
+  List<CommandToken> acceptedTokens, [
+  CompleteAdapter? adapter,
+]) async {
   if (tokens.isEmpty) return null;
   final activeToken = tokens.first;
   if (option.args != null) {
@@ -203,10 +225,12 @@ Future<SuggestionBlob?> runOption(
         persistentOptions,
         [...acceptedTokens, activeToken],
         true,
-        false);
+        false,
+        adapter);
   }
   return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd,
-      shell, persistentOptions, [...acceptedTokens, activeToken]);
+      shell, persistentOptions, [...acceptedTokens, activeToken], false, false,
+      adapter);
 }
 
 FigOption? getOption(CommandToken token, List<FigOption> options) {
@@ -227,10 +251,12 @@ Future<SuggestionBlob?> runSubcommand(
   List<CommandToken> acceptedTokens = const [],
   bool argsDepleted = false,
   bool argsUsed = false,
+  CompleteAdapter? adapter,
 ]) async {
   if (tokens.isEmpty) {
     return getSubcommandDrivenRecommendation(subcommand, persistentOptions,
-        null, argsDepleted, argsUsed, acceptedTokens, allTokens, cwd, shell);
+        null, argsDepleted, argsUsed, acceptedTokens, allTokens, cwd, shell,
+        adapter);
   }
   final partialToken = tokens.first;
   if (!partialToken.complete) {
@@ -243,7 +269,8 @@ Future<SuggestionBlob?> runSubcommand(
         acceptedTokens,
         allTokens,
         cwd,
-        shell);
+        shell,
+        adapter);
   }
   final activeToken = tokens.first;
   final allOptions = <FigOption>[
@@ -253,7 +280,7 @@ Future<SuggestionBlob?> runSubcommand(
   final option = getOption(activeToken, allOptions);
   if (option != null) {
     return runOption(tokens, allTokens, option, subcommand, cwd, shell,
-        persistentOptions, acceptedTokens);
+        persistentOptions, acceptedTokens, adapter);
   }
   final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
         (s) => s!.nameList.contains(activeToken.token),
@@ -261,15 +288,17 @@ Future<SuggestionBlob?> runSubcommand(
       );
   if (nextSub != null) {
     return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd,
-        shell, persistentOptions, [...acceptedTokens, activeToken]);
+        shell, persistentOptions, [...acceptedTokens, activeToken], false,
+        false, adapter);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
     return runArg(tokens, allTokens, args, subcommand, cwd, shell, allOptions,
-        acceptedTokens, false, false);
+        acceptedTokens, false, false, adapter);
   }
   return runSubcommand(tokens.skip(1).toList(), allTokens, subcommand, cwd,
-      shell, persistentOptions, [...acceptedTokens, activeToken]);
+      shell, persistentOptions, [...acceptedTokens, activeToken], false, false,
+      adapter);
 }
 
 Future<SuggestionBlob?> runArg(
@@ -282,19 +311,21 @@ Future<SuggestionBlob?> runArg(
   List<FigOption> persistentOptions,
   List<CommandToken> acceptedTokens,
   bool fromOption,
-  bool fromVariadic,
-) async {
+  bool fromVariadic, [
+  CompleteAdapter? adapter,
+]) async {
   if (args.isEmpty) {
     return runSubcommand(tokens, allTokens, subcommand, cwd, shell,
-        persistentOptions, acceptedTokens, true, !fromOption);
+        persistentOptions, acceptedTokens, true, !fromOption, adapter);
   }
   if (tokens.isEmpty) {
     return getArgDrivenRecommendation(args, subcommand, persistentOptions, null,
-        acceptedTokens, allTokens, fromVariadic, cwd, shell);
+        acceptedTokens, allTokens, fromVariadic, cwd, shell, adapter);
   }
   if (!tokens.first.complete) {
     return getArgDrivenRecommendation(args, subcommand, persistentOptions,
-        tokens.first, acceptedTokens, allTokens, fromVariadic, cwd, shell);
+        tokens.first, acceptedTokens, allTokens, fromVariadic, cwd, shell,
+        adapter);
   }
   final activeToken = tokens.first;
   final activeArg = args.first;
@@ -306,7 +337,7 @@ Future<SuggestionBlob?> runArg(
     final option = getOption(activeToken, allOpts);
     if (option != null)
       return runOption(tokens, allTokens, option, subcommand, cwd, shell,
-          persistentOptions, acceptedTokens);
+          persistentOptions, acceptedTokens, adapter);
   }
   if (activeArg.isVariadic) {
     return runArg(
@@ -319,7 +350,8 @@ Future<SuggestionBlob?> runArg(
         persistentOptions,
         [...acceptedTokens, activeToken],
         fromOption,
-        true);
+        true,
+        adapter);
   }
   if (activeArg.isOptional) {
     final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
@@ -328,7 +360,8 @@ Future<SuggestionBlob?> runArg(
         );
     if (nextSub != null)
       return runSubcommand(tokens.skip(1).toList(), allTokens, nextSub, cwd,
-          shell, persistentOptions, [...acceptedTokens, activeToken]);
+          shell, persistentOptions, [...acceptedTokens, activeToken], false,
+          false, adapter);
   }
   return runArg(
       tokens.skip(1).toList(),
@@ -340,7 +373,8 @@ Future<SuggestionBlob?> runArg(
       persistentOptions,
       [...acceptedTokens, activeToken],
       fromOption,
-      false);
+      false,
+      adapter);
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
@@ -359,8 +393,13 @@ SuggestionBlob runCommand(CommandToken token) {
 }
 
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
+/// When [adapter] is non-null, uses it for path resolution, directory listing, and process execution (e.g. for remote/SSH). Otherwise uses default local dart:io and Process.run.
 Future<SuggestionBlob?> getSuggestions(
-    String cmd, String cwd, Shell shell) async {
+  String cmd,
+  String cwd,
+  Shell shell, {
+  CompleteAdapter? adapter,
+}) async {
   final activeCmd = parseCommand(cmd, shell);
   if (activeCmd.isEmpty) return null;
   final rootToken = activeCmd.first;
@@ -371,9 +410,10 @@ Future<SuggestionBlob?> getSuggestions(
   final subcommand = getSubcommand(spec);
   if (subcommand == null) return null;
 
-  final resolvedCwd = await resolveCwd(cwd, shell);
+  final resolvedCwd = await resolveCwd(cwd, shell, adapter);
   final result = await runSubcommand(
-      activeCmd.skip(1).toList(), activeCmd, subcommand, resolvedCwd, shell);
+      activeCmd.skip(1).toList(), activeCmd, subcommand, resolvedCwd, shell,
+      const [], const [], false, false, adapter);
   if (result == null) return null;
   if (result.suggestions.isEmpty && result.argumentDescription == null)
     return null;

@@ -1,8 +1,10 @@
 // Fig-style autocomplete: specs + runtime (parse command, get suggestions).
 // Use getSuggestions(cmd, cwd, shell) for completion. Call registerBuiltinSpecs() first.
+// Optional [CompleteAdapter] for remote/SSH: getSuggestions(cmd, cwd, shell, adapter: myAdapter).
 
 import 'specs/all_specs.dart';
 
+export 'src/adapter.dart';
 export 'src/generators.dart';
 export 'src/model.dart';
 export 'src/parser.dart';
