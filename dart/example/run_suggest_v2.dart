@@ -1,16 +1,13 @@
-// Example: get suggestions using specs v2 (deferred load — only cd, git, ls, tree).
+// Example: get suggestions (uses specs v2 by default — deferred load).
 // Only the spec for the typed command is loaded. Run from dart/:
 //
 //   dart run example/run_suggest_v2.dart ls
 //   dart run example/run_suggest_v2.dart "git sta"
 //   dart run example/run_suggest_v2.dart "cd "
-//
-// Compare with run_suggest.dart which loads all specs up front (all_specs.dart).
 
 import 'dart:io';
 
 import 'package:autocomplete/autocomplete.dart';
-import 'package:autocomplete/specs/all_specs_v2.dart';
 
 Shell _parseShell(String name) {
   switch (name.toLowerCase()) {
@@ -54,15 +51,13 @@ void main(List<String> args) async {
     print(
         'Usage: dart run example/run_suggest_v2.dart <command_line> [--shell bash]');
     print('Example: dart run example/run_suggest_v2.dart ls');
-    print('Specs v2: only cd, git, ls, tree (loaded on demand).');
     exit(1);
   }
 
-  registerBuiltinSpecsV2();
+  registerBuiltinSpecs();
   final cwd = Directory.current.path;
 
-  final blob = await getSuggestions(cmd, cwd, shell,
-      ensureSpecLoaded: ensureSpecLoadedV2);
+  final blob = await getSuggestions(cmd, cwd, shell);
   if (blob == null) {
     print('(no spec or no suggestions)');
     exit(0);

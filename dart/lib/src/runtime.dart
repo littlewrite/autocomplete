@@ -395,9 +395,16 @@ SuggestionBlob runCommand(CommandToken token) {
 /// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].
 typedef EnsureSpecLoaded = Future<void> Function(String command);
 
+EnsureSpecLoaded? _defaultEnsureSpecLoaded;
+
+/// Set the default [EnsureSpecLoaded] used by [getSuggestions] when [ensureSpecLoaded] is not passed. Used when [registerBuiltinSpecs] (v2) is called.
+void setDefaultEnsureSpecLoaded(EnsureSpecLoaded? f) {
+  _defaultEnsureSpecLoaded = f;
+}
+
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// When [adapter] is non-null, uses it for path resolution, directory listing, and process execution (e.g. for remote/SSH). Otherwise uses default local dart:io and Process.run.
-/// When [ensureSpecLoaded] is non-null (e.g. with specs v2), it is awaited with the command name before loading the spec so only that spec is loaded.
+/// When [ensureSpecLoaded] (or the default set by [setDefaultEnsureSpecLoaded]) is non-null, it is awaited with the command name before loading the spec (v2 deferred load).
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
@@ -410,8 +417,9 @@ Future<SuggestionBlob?> getSuggestions(
   final rootToken = activeCmd.first;
   if (!rootToken.complete) return runCommand(rootToken);
 
-  if (ensureSpecLoaded != null) {
-    await ensureSpecLoaded(rootToken.token);
+  final ensure = ensureSpecLoaded ?? _defaultEnsureSpecLoaded;
+  if (ensure != null) {
+    await ensure(rootToken.token);
   }
   final spec = loadSpec(activeCmd);
   if (spec == null) return null;
