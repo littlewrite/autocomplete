@@ -392,19 +392,27 @@ SuggestionBlob runCommand(CommandToken token) {
       suggestions: suggestions, charactersToDrop: token.tokenLength);
 }
 
+/// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].
+typedef EnsureSpecLoaded = Future<void> Function(String command);
+
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// When [adapter] is non-null, uses it for path resolution, directory listing, and process execution (e.g. for remote/SSH). Otherwise uses default local dart:io and Process.run.
+/// When [ensureSpecLoaded] is non-null (e.g. with specs v2), it is awaited with the command name before loading the spec so only that spec is loaded.
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
   Shell shell, {
   CompleteAdapter? adapter,
+  EnsureSpecLoaded? ensureSpecLoaded,
 }) async {
   final activeCmd = parseCommand(cmd, shell);
   if (activeCmd.isEmpty) return null;
   final rootToken = activeCmd.first;
   if (!rootToken.complete) return runCommand(rootToken);
 
+  if (ensureSpecLoaded != null) {
+    await ensureSpecLoaded(rootToken.token);
+  }
   final spec = loadSpec(activeCmd);
   if (spec == null) return null;
   final subcommand = getSubcommand(spec);
