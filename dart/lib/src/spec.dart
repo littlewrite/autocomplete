@@ -626,14 +626,20 @@ typedef Cache = FigCache;
 class ParserDirectives {
   bool? flagsArePosixNoncompliant;
   bool? optionsMustPrecedeArguments;
-  ParserDirectives(
-      {this.flagsArePosixNoncompliant, this.optionsMustPrecedeArguments});
-  // optionArgSeparators?: SingleOrArray<string>;
+  List<String>? optionArgSeparators;
+
+  ParserDirectives({
+    this.flagsArePosixNoncompliant,
+    this.optionsMustPrecedeArguments,
+    this.optionArgSeparators,
+  });
 
   Map<String, dynamic> toJson() => {
         if (flagsArePosixNoncompliant != null)
           'flagsArePosixNoncompliant': flagsArePosixNoncompliant,
         if (optionsMustPrecedeArguments != null)
           'optionsMustPrecedeArguments': optionsMustPrecedeArguments,
+        if (optionArgSeparators != null)
+          'optionArgSeparators': optionArgSeparators,
       };
 }

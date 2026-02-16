@@ -1,10 +1,11 @@
-// Auto-generated from TypeScript source: cap.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: cap.ts
 import 'package:autocomplete/src/spec.dart';
+import 'capacitor.dart';
 
-/// Completion spec for `cap` CLI
 final FigSpec capSpec = FigSpec(
-  name: 'cap'
+  name: 'cap',
+  description: capacitorSpec.description,
+  icon: capacitorSpec.icon,
+  subcommands: capacitorSubcommands,
+  options: capacitorOptions,
 );

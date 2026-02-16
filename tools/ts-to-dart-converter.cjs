@@ -9,7 +9,7 @@
  * - 支持断点续传
  * - 记录进度和错误日志
  * - 多进程加速：-j N 或 --jobs N（例如 -j4 使用 4 个子进程，真正并行、大文件不卡住）
- * - 可选 Redis：--redis 使用 Redis 队列交换任务与结果（需安装 redis 包并启动 Redis）
+ * - 强制转换：--force 对复杂文件也转换，能转多少算多少，不能转的用 // TS_UNCONVERTED_* 注释保留
  */
 
 const fs = require("fs");
@@ -32,8 +32,16 @@ function parseJobsArg() {
   return 1;
 }
 
-function parseRedisArg() {
-  return process.argv.includes("--redis");
+// 解析 --force：强行转换复杂文件，能转多少算多少，不能转的用注释保留
+function parseForceArg() {
+  const argv = process.argv.slice(2);
+  return argv.includes("--force");
+}
+
+// 解析 --emit-unconverted：将无法转换的 TS 尽量写成 Dart 代码（如 true、表达式）而非注释+null，需配合 --force
+function parseEmitUnconvertedArg() {
+  const argv = process.argv.slice(2);
+  return argv.includes("--emit-unconverted");
 }
 
 // ============ 配置区 ============
@@ -48,8 +56,10 @@ const CONFIG = {
   batchSize: 10,
   // 并行进程数（由 -j/--jobs 控制，多进程时每个进程独立 CPU，大文件不卡住）
   jobs: parseJobsArg(),
-  // 是否使用 Redis 队列（--redis）
-  useRedis: parseRedisArg(),
+  // 是否强制转换：复杂文件也转换，能转多少算多少，不能转的用 // TS_UNCONVERTED_* 注释保留
+  commentFallback: parseForceArg(),
+  // 是否将无法转换处尽量写成 Dart 代码（true、表达式等）而非注释+null，需配合 commentFallback，非默认
+  emitUnconverted: parseEmitUnconvertedArg(),
   workerScript: path.join(__dirname, "converter-worker.cjs"),
 };
 
@@ -180,7 +190,10 @@ function convertTsToDartTemplate(tsCode, tsFilePath) {
    * 使用智能转换引擎
    */
   try {
-    return convertTsToDart(tsFilePath, tsCode);
+    return convertTsToDart(tsFilePath, tsCode, {
+      commentFallback: CONFIG.commentFallback,
+      emitUnconverted: CONFIG.emitUnconverted,
+    });
   } catch (error) {
     // 如果是复杂文件，重新抛出错误让上层处理
     if (error.isComplexFile) {
@@ -241,11 +254,14 @@ async function convertTsToDartAI(tsCode, tsFilePath) {
 
 /**
  * 单文件转换（不写进度），供并行时使用。返回结果对象，由调用方统一写进度，避免并发写冲突。
+ * @param {string} tsFilePath - 要转换的 TS 文件绝对路径
+ * @param {{ dartPath?: string, relativePath?: string }} [options] - 可选：指定输出路径与进度用相对路径（单文件模式且文件不在 srcDir 下时使用）
  * @returns {{ relativePath: string, success: boolean, isManual?: boolean, error?: string, warnings?: string[] }}
  */
-async function doConvertOne(tsFilePath) {
-  const relativePath = path.relative(CONFIG.srcDir, tsFilePath);
-  const dartPath = getTsDartPathMapping(tsFilePath);
+async function doConvertOne(tsFilePath, options = {}) {
+  const relativePath =
+    options.relativePath ?? path.relative(CONFIG.srcDir, tsFilePath);
+  const dartPath = options.dartPath ?? getTsDartPathMapping(tsFilePath);
   if (shouldSkipOverwrite(dartPath)) {
     return { relativePath, success: true, skipped: true };
   }
@@ -350,9 +366,6 @@ async function batchConvert(files, progress) {
   }
 
   // 多进程并行：每个 worker 为独立进程，大文件转换不会卡住主进程或其他 worker
-  if (CONFIG.useRedis) {
-    return await batchConvertWithRedis(files, progress);
-  }
   return await batchConvertWithProcesses(files, progress, jobs);
 }
 
@@ -383,6 +396,8 @@ async function batchConvertWithProcesses(files, progress, jobs) {
     TS2DART_SRC_DIR: CONFIG.srcDir,
     TS2DART_OUTPUT_DIR: CONFIG.outputDir,
     USE_AI_API: CONFIG.useAI ? "true" : "",
+    TS2DART_COMMENT_FALLBACK: CONFIG.commentFallback ? "true" : "",
+    TS2DART_EMIT_UNCONVERTED: CONFIG.emitUnconverted ? "true" : "",
   };
 
   // 每个 worker 当前正在处理的文件（用于异常退出时 re-queue 和超时 kill）
@@ -530,92 +545,29 @@ async function batchConvertWithProcesses(files, progress, jobs) {
 }
 
 /**
- * Redis 模式：主进程将任务 LPUSH 到队列，worker 子进程 BRPOP 后转换并 LPUSH 结果
+ * 解析单文件模式：若传入了一个 .ts 路径，返回其绝对路径及对应的 dart 输出路径与 relativePath；否则返回 null。
  */
-async function batchConvertWithRedis(files, progress) {
-  let createClient;
-  try {
-    const redis = require("redis");
-    createClient = redis.createClient;
-  } catch (_) {
-    console.error("❌ --redis 需要安装 redis 包: pnpm add redis");
-    process.exit(1);
-  }
-  const client = createClient({
-    url: process.env.REDIS_URL || "redis://127.0.0.1:6379",
-  });
-  client.on("error", (err) => console.error("Redis error:", err.message));
-  await client.connect();
-
-  const QUEUE_KEY = "ts2dart:queue";
-  const RESULT_KEY = "ts2dart:results";
-  const CONFIG_KEY = "ts2dart:config";
-
-  await client.hSet(CONFIG_KEY, {
-    srcDir: CONFIG.srcDir,
-    outputDir: CONFIG.outputDir,
-    progressFile: CONFIG.progressFile,
-  });
-
-  for (const tsFilePath of files) {
-    await client.lPush(QUEUE_KEY, tsFilePath);
-  }
-
-  const workerCount = Math.min(CONFIG.jobs, files.length);
-  const workers = [];
-  for (let i = 0; i < workerCount; i++) {
-    const child = spawn(
-      process.execPath,
-      [path.join(__dirname, "converter-worker-redis.cjs")],
-      {
-        env: {
-          ...process.env,
-          REDIS_URL: process.env.REDIS_URL || "redis://127.0.0.1:6379",
-        },
-        stdio: ["ignore", "inherit", "inherit"],
-      }
-    );
-    workers.push(child);
-  }
-
-  const results = [];
-  while (results.length < files.length) {
-    const raw = await client.brPop(RESULT_KEY, 30);
-    if (!raw || raw.element == null) continue;
-    let result;
-    try {
-      result = JSON.parse(raw.element);
-    } catch (_) {
-      continue;
-    }
-    results.push(result);
-    applyProgress(progress, result);
-    const completed = results.length;
-    if (result.skipped) {
-      console.log(`⏭️  Skipped (AI-generated): ${result.relativePath}`);
-    } else if (result.success) {
-      console.log(`✅ Success: ${result.relativePath}`);
-    } else if (result.isManual) {
-      console.log(`🔧 Needs manual: ${result.relativePath}`);
-    } else {
-      console.log(`❌ Failed: ${result.relativePath} - ${result.error || ""}`);
-    }
-    if (completed % 10 === 0) {
-      console.log(`📊 Progress: ${completed}/${files.length}`);
-    }
-  }
-
-  for (const w of workers) {
-    w.kill("SIGTERM");
-  }
-  progress.save();
-  await client.del(QUEUE_KEY);
-  await client.del(CONFIG_KEY);
-  await client.quit();
-
-  const successCount = results.filter((r) => r.success).length;
-  const failCount = results.length - successCount;
-  return { successCount, failCount };
+function getSingleFileMode() {
+  const argv = process.argv
+    .slice(2)
+    .filter((a) => !a.startsWith("-") && a !== "--jobs" && a !== "--force");
+  const tsArg = argv.find((a) => a.endsWith(".ts"));
+  if (!tsArg) return null;
+  const projectRoot = path.resolve(__dirname, "..");
+  const tsFilePath = path.isAbsolute(tsArg)
+    ? tsArg
+    : path.resolve(process.cwd(), tsArg);
+  if (!fs.existsSync(tsFilePath)) return null;
+  const underSrc =
+    tsFilePath.startsWith(CONFIG.srcDir + path.sep) ||
+    tsFilePath === CONFIG.srcDir;
+  const dartPath = underSrc
+    ? getTsDartPathMapping(tsFilePath)
+    : path.join(CONFIG.outputDir, path.basename(tsFilePath, ".ts") + ".dart");
+  const relativePath = underSrc
+    ? path.relative(CONFIG.srcDir, tsFilePath)
+    : path.basename(tsFilePath);
+  return { tsFilePath, dartPath, relativePath };
 }
 
 // ============ 主程序 ============
@@ -624,13 +576,44 @@ async function main() {
   console.log(`Source: ${CONFIG.srcDir}`);
   console.log(`Output: ${CONFIG.outputDir}`);
   console.log(`Mode: ${CONFIG.useAI ? "AI API" : "Template"}`);
-  console.log(`Jobs: ${CONFIG.jobs} (use -j N or --jobs N to change)`);
-  if (CONFIG.jobs > 1) {
+  if (CONFIG.commentFallback) {
     console.log(
-      `Mode: ${CONFIG.useRedis ? "Redis queue" : "Multi-process"} (big files like az/2.53.0/network.ts no longer block others)\n`
+      "Force: on (convert as much as possible, leave comments for rest)"
     );
-  } else {
-    console.log("");
+  }
+  console.log(`Jobs: ${CONFIG.jobs} (use -j N or --jobs N to change)\n`);
+
+  // 单文件模式：第一个位置参数为 .ts 文件时，只转换该文件
+  const single = getSingleFileMode();
+  if (single) {
+    const { tsFilePath, dartPath, relativePath } = single;
+    console.log(`📄 Single-file mode: ${relativePath}\n`);
+    const progress = new ProgressTracker(CONFIG.progressFile);
+    const result = await doConvertOne(tsFilePath, { dartPath, relativePath });
+    if (result.skipped) {
+      console.log(`⏭️  Skipped (AI-generated or manual): ${relativePath}`);
+    } else if (result.success) {
+      console.log(
+        `✅ Success: ${relativePath} → ${path.relative(process.cwd(), dartPath)}`
+      );
+    } else if (result.isManual) {
+      console.log(`🔧 Needs manual conversion: ${relativePath}`);
+      if (result.warnings?.length)
+        result.warnings.forEach((w) => console.log(`     - ${w}`));
+    } else {
+      console.error(`❌ Failed: ${relativePath}`);
+      console.error(`   Error: ${result.error}`);
+    }
+    const dartDir = path.dirname(dartPath);
+    if (result.success && !result.skipped && fs.existsSync(dartPath)) {
+      try {
+        execSync(`dart format "${dartPath}"`, {
+          cwd: path.resolve(__dirname, ".."),
+          stdio: "inherit",
+        });
+      } catch (_) {}
+    }
+    return;
   }
 
   // 扫描所有 TypeScript 文件
@@ -658,8 +641,8 @@ async function main() {
 
   // 过滤出未完成的文件（已完成的不再转换）
   const pendingFiles = allTsFiles.filter((file) => {
-    const relativePath = path.relative(CONFIG.srcDir, file);
-    return !progress.isCompleted(relativePath);
+    const rel = path.relative(CONFIG.srcDir, file);
+    return !progress.isCompleted(rel);
   });
 
   // 注意：已存在且首行为 // AI-generated 的 .dart 会在 doConvertOne 中被跳过且不覆盖

@@ -7,10 +7,14 @@ import 'package:autocomplete/src/registry.dart';
 // Deferred imports: must be at top level; path is compile-time constant.
 import 'package:autocomplete/specs/-.dart' deferred as spec_p_;
 import 'package:autocomplete/specs/@capgo/cli.dart' deferred as spec_capgo_cli;
-import 'package:autocomplete/specs/@fig/publish-spec.dart' deferred as spec_fig_publish_spec;
-import 'package:autocomplete/specs/@preset/cli.dart' deferred as spec_preset_cli;
-import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart' deferred as spec_withfig_autocomplete_tools;
-import 'package:autocomplete/specs/@wordpress/create-block.dart' deferred as spec_wordpress_create_block;
+import 'package:autocomplete/specs/@fig/publish-spec.dart'
+    deferred as spec_fig_publish_spec;
+import 'package:autocomplete/specs/@preset/cli.dart'
+    deferred as spec_preset_cli;
+import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart'
+    deferred as spec_withfig_autocomplete_tools;
+import 'package:autocomplete/specs/@wordpress/create-block.dart'
+    deferred as spec_wordpress_create_block;
 import 'package:autocomplete/specs/act.dart' deferred as spec_act;
 import 'package:autocomplete/specs/adb.dart' deferred as spec_adb;
 import 'package:autocomplete/specs/adr.dart' deferred as spec_adr;
@@ -21,12 +25,17 @@ import 'package:autocomplete/specs/agrippa.dart' deferred as spec_agrippa;
 import 'package:autocomplete/specs/airflow.dart' deferred as spec_airflow;
 import 'package:autocomplete/specs/aliases.dart' deferred as spec_aliases;
 import 'package:autocomplete/specs/ampx.dart' deferred as spec_ampx;
-import 'package:autocomplete/specs/ansible-config.dart' deferred as spec_ansible_config;
-import 'package:autocomplete/specs/ansible-galaxy.dart' deferred as spec_ansible_galaxy;
-import 'package:autocomplete/specs/ansible-lint.dart' deferred as spec_ansible_lint;
-import 'package:autocomplete/specs/ansible-playbook.dart' deferred as spec_ansible_playbook;
+import 'package:autocomplete/specs/ansible-config.dart'
+    deferred as spec_ansible_config;
+import 'package:autocomplete/specs/ansible-galaxy.dart'
+    deferred as spec_ansible_galaxy;
+import 'package:autocomplete/specs/ansible-lint.dart'
+    deferred as spec_ansible_lint;
+import 'package:autocomplete/specs/ansible-playbook.dart'
+    deferred as spec_ansible_playbook;
 import 'package:autocomplete/specs/ansible.dart' deferred as spec_ansible;
 import 'package:autocomplete/specs/appwrite.dart' deferred as spec_appwrite;
+import 'package:autocomplete/specs/apt.dart' deferred as spec_apt;
 import 'package:autocomplete/specs/arch.dart' deferred as spec_arch;
 import 'package:autocomplete/specs/argo.dart' deferred as spec_argo;
 import 'package:autocomplete/specs/asar.dart' deferred as spec_asar;
@@ -34,643 +43,1200 @@ import 'package:autocomplete/specs/asciinema.dart' deferred as spec_asciinema;
 import 'package:autocomplete/specs/asr.dart' deferred as spec_asr;
 import 'package:autocomplete/specs/astro.dart' deferred as spec_astro;
 import 'package:autocomplete/specs/atlas.dart' deferred as spec_atlas;
-import 'package:autocomplete/specs/authchanger.dart' deferred as spec_authchanger;
+import 'package:autocomplete/specs/authchanger.dart'
+    deferred as spec_authchanger;
 import 'package:autocomplete/specs/autocannon.dart' deferred as spec_autocannon;
 import 'package:autocomplete/specs/autojump.dart' deferred as spec_autojump;
-import 'package:autocomplete/specs/aws/accessanalyzer.dart' deferred as spec_aws_accessanalyzer;
-import 'package:autocomplete/specs/aws/account.dart' deferred as spec_aws_account;
-import 'package:autocomplete/specs/aws/acm-pca.dart' deferred as spec_aws_acm_pca;
-import 'package:autocomplete/specs/aws/alexaforbusiness.dart' deferred as spec_aws_alexaforbusiness;
+import 'package:autocomplete/specs/aws-vault.dart' deferred as spec_aws_vault;
+import 'package:autocomplete/specs/aws.dart' deferred as spec_aws;
+import 'package:autocomplete/specs/aws/accessanalyzer.dart'
+    deferred as spec_aws_accessanalyzer;
+import 'package:autocomplete/specs/aws/account.dart'
+    deferred as spec_aws_account;
+import 'package:autocomplete/specs/aws/acm-pca.dart'
+    deferred as spec_aws_acm_pca;
+import 'package:autocomplete/specs/aws/alexaforbusiness.dart'
+    deferred as spec_aws_alexaforbusiness;
 import 'package:autocomplete/specs/aws/amp.dart' deferred as spec_aws_amp;
-import 'package:autocomplete/specs/aws/amplifybackend.dart' deferred as spec_aws_amplifybackend;
-import 'package:autocomplete/specs/aws/amplifyuibuilder.dart' deferred as spec_aws_amplifyuibuilder;
-import 'package:autocomplete/specs/aws/apigateway.dart' deferred as spec_aws_apigateway;
-import 'package:autocomplete/specs/aws/apigatewaymanagementapi.dart' deferred as spec_aws_apigatewaymanagementapi;
-import 'package:autocomplete/specs/aws/apigatewayv2.dart' deferred as spec_aws_apigatewayv2;
-import 'package:autocomplete/specs/aws/appconfig.dart' deferred as spec_aws_appconfig;
-import 'package:autocomplete/specs/aws/appconfigdata.dart' deferred as spec_aws_appconfigdata;
-import 'package:autocomplete/specs/aws/appfabric.dart' deferred as spec_aws_appfabric;
-import 'package:autocomplete/specs/aws/appflow.dart' deferred as spec_aws_appflow;
-import 'package:autocomplete/specs/aws/appintegrations.dart' deferred as spec_aws_appintegrations;
-import 'package:autocomplete/specs/aws/application-autoscaling.dart' deferred as spec_aws_application_autoscaling;
-import 'package:autocomplete/specs/aws/application-insights.dart' deferred as spec_aws_application_insights;
-import 'package:autocomplete/specs/aws/application-signals.dart' deferred as spec_aws_application_signals;
-import 'package:autocomplete/specs/aws/applicationcostprofiler.dart' deferred as spec_aws_applicationcostprofiler;
-import 'package:autocomplete/specs/aws/appmesh.dart' deferred as spec_aws_appmesh;
-import 'package:autocomplete/specs/aws/apprunner.dart' deferred as spec_aws_apprunner;
-import 'package:autocomplete/specs/aws/appstream.dart' deferred as spec_aws_appstream;
-import 'package:autocomplete/specs/aws/appsync.dart' deferred as spec_aws_appsync;
-import 'package:autocomplete/specs/aws/apptest.dart' deferred as spec_aws_apptest;
-import 'package:autocomplete/specs/aws/arc-zonal-shift.dart' deferred as spec_aws_arc_zonal_shift;
-import 'package:autocomplete/specs/aws/artifact.dart' deferred as spec_aws_artifact;
+import 'package:autocomplete/specs/aws/amplifybackend.dart'
+    deferred as spec_aws_amplifybackend;
+import 'package:autocomplete/specs/aws/amplifyuibuilder.dart'
+    deferred as spec_aws_amplifyuibuilder;
+import 'package:autocomplete/specs/aws/apigateway.dart'
+    deferred as spec_aws_apigateway;
+import 'package:autocomplete/specs/aws/apigatewaymanagementapi.dart'
+    deferred as spec_aws_apigatewaymanagementapi;
+import 'package:autocomplete/specs/aws/apigatewayv2.dart'
+    deferred as spec_aws_apigatewayv2;
+import 'package:autocomplete/specs/aws/appconfig.dart'
+    deferred as spec_aws_appconfig;
+import 'package:autocomplete/specs/aws/appconfigdata.dart'
+    deferred as spec_aws_appconfigdata;
+import 'package:autocomplete/specs/aws/appfabric.dart'
+    deferred as spec_aws_appfabric;
+import 'package:autocomplete/specs/aws/appflow.dart'
+    deferred as spec_aws_appflow;
+import 'package:autocomplete/specs/aws/appintegrations.dart'
+    deferred as spec_aws_appintegrations;
+import 'package:autocomplete/specs/aws/application-autoscaling.dart'
+    deferred as spec_aws_application_autoscaling;
+import 'package:autocomplete/specs/aws/application-insights.dart'
+    deferred as spec_aws_application_insights;
+import 'package:autocomplete/specs/aws/application-signals.dart'
+    deferred as spec_aws_application_signals;
+import 'package:autocomplete/specs/aws/applicationcostprofiler.dart'
+    deferred as spec_aws_applicationcostprofiler;
+import 'package:autocomplete/specs/aws/appmesh.dart'
+    deferred as spec_aws_appmesh;
+import 'package:autocomplete/specs/aws/apprunner.dart'
+    deferred as spec_aws_apprunner;
+import 'package:autocomplete/specs/aws/appstream.dart'
+    deferred as spec_aws_appstream;
+import 'package:autocomplete/specs/aws/appsync.dart'
+    deferred as spec_aws_appsync;
+import 'package:autocomplete/specs/aws/apptest.dart'
+    deferred as spec_aws_apptest;
+import 'package:autocomplete/specs/aws/arc-zonal-shift.dart'
+    deferred as spec_aws_arc_zonal_shift;
+import 'package:autocomplete/specs/aws/artifact.dart'
+    deferred as spec_aws_artifact;
 import 'package:autocomplete/specs/aws/athena.dart' deferred as spec_aws_athena;
-import 'package:autocomplete/specs/aws/auditmanager.dart' deferred as spec_aws_auditmanager;
-import 'package:autocomplete/specs/aws/autoscaling-plans.dart' deferred as spec_aws_autoscaling_plans;
-import 'package:autocomplete/specs/aws/autoscaling.dart' deferred as spec_aws_autoscaling;
+import 'package:autocomplete/specs/aws/auditmanager.dart'
+    deferred as spec_aws_auditmanager;
+import 'package:autocomplete/specs/aws/autoscaling-plans.dart'
+    deferred as spec_aws_autoscaling_plans;
+import 'package:autocomplete/specs/aws/autoscaling.dart'
+    deferred as spec_aws_autoscaling;
 import 'package:autocomplete/specs/aws/b2bi.dart' deferred as spec_aws_b2bi;
-import 'package:autocomplete/specs/aws/backup-gateway.dart' deferred as spec_aws_backup_gateway;
+import 'package:autocomplete/specs/aws/backup-gateway.dart'
+    deferred as spec_aws_backup_gateway;
 import 'package:autocomplete/specs/aws/backup.dart' deferred as spec_aws_backup;
-import 'package:autocomplete/specs/aws/backupstorage.dart' deferred as spec_aws_backupstorage;
+import 'package:autocomplete/specs/aws/backupstorage.dart'
+    deferred as spec_aws_backupstorage;
 import 'package:autocomplete/specs/aws/batch.dart' deferred as spec_aws_batch;
-import 'package:autocomplete/specs/aws/bcm-data-exports.dart' deferred as spec_aws_bcm_data_exports;
-import 'package:autocomplete/specs/aws/bcm-pricing-calculator.dart' deferred as spec_aws_bcm_pricing_calculator;
-import 'package:autocomplete/specs/aws/bedrock-agent-runtime.dart' deferred as spec_aws_bedrock_agent_runtime;
-import 'package:autocomplete/specs/aws/bedrock-agent.dart' deferred as spec_aws_bedrock_agent;
-import 'package:autocomplete/specs/aws/bedrock-data-automation-runtime.dart' deferred as spec_aws_bedrock_data_automation_runtime;
-import 'package:autocomplete/specs/aws/bedrock-data-automation.dart' deferred as spec_aws_bedrock_data_automation;
-import 'package:autocomplete/specs/aws/bedrock-runtime.dart' deferred as spec_aws_bedrock_runtime;
-import 'package:autocomplete/specs/aws/bedrock.dart' deferred as spec_aws_bedrock;
-import 'package:autocomplete/specs/aws/billing.dart' deferred as spec_aws_billing;
-import 'package:autocomplete/specs/aws/billingconductor.dart' deferred as spec_aws_billingconductor;
+import 'package:autocomplete/specs/aws/bcm-data-exports.dart'
+    deferred as spec_aws_bcm_data_exports;
+import 'package:autocomplete/specs/aws/bcm-pricing-calculator.dart'
+    deferred as spec_aws_bcm_pricing_calculator;
+import 'package:autocomplete/specs/aws/bedrock-agent-runtime.dart'
+    deferred as spec_aws_bedrock_agent_runtime;
+import 'package:autocomplete/specs/aws/bedrock-agent.dart'
+    deferred as spec_aws_bedrock_agent;
+import 'package:autocomplete/specs/aws/bedrock-data-automation-runtime.dart'
+    deferred as spec_aws_bedrock_data_automation_runtime;
+import 'package:autocomplete/specs/aws/bedrock-data-automation.dart'
+    deferred as spec_aws_bedrock_data_automation;
+import 'package:autocomplete/specs/aws/bedrock-runtime.dart'
+    deferred as spec_aws_bedrock_runtime;
+import 'package:autocomplete/specs/aws/bedrock.dart'
+    deferred as spec_aws_bedrock;
+import 'package:autocomplete/specs/aws/billing.dart'
+    deferred as spec_aws_billing;
+import 'package:autocomplete/specs/aws/billingconductor.dart'
+    deferred as spec_aws_billingconductor;
 import 'package:autocomplete/specs/aws/braket.dart' deferred as spec_aws_braket;
-import 'package:autocomplete/specs/aws/budgets.dart' deferred as spec_aws_budgets;
+import 'package:autocomplete/specs/aws/budgets.dart'
+    deferred as spec_aws_budgets;
 import 'package:autocomplete/specs/aws/ce.dart' deferred as spec_aws_ce;
-import 'package:autocomplete/specs/aws/chatbot.dart' deferred as spec_aws_chatbot;
-import 'package:autocomplete/specs/aws/chime-sdk-identity.dart' deferred as spec_aws_chime_sdk_identity;
-import 'package:autocomplete/specs/aws/chime-sdk-media-pipelines.dart' deferred as spec_aws_chime_sdk_media_pipelines;
-import 'package:autocomplete/specs/aws/chime-sdk-meetings.dart' deferred as spec_aws_chime_sdk_meetings;
-import 'package:autocomplete/specs/aws/chime-sdk-messaging.dart' deferred as spec_aws_chime_sdk_messaging;
-import 'package:autocomplete/specs/aws/chime-sdk-voice.dart' deferred as spec_aws_chime_sdk_voice;
+import 'package:autocomplete/specs/aws/chatbot.dart'
+    deferred as spec_aws_chatbot;
+import 'package:autocomplete/specs/aws/chime-sdk-identity.dart'
+    deferred as spec_aws_chime_sdk_identity;
+import 'package:autocomplete/specs/aws/chime-sdk-media-pipelines.dart'
+    deferred as spec_aws_chime_sdk_media_pipelines;
+import 'package:autocomplete/specs/aws/chime-sdk-meetings.dart'
+    deferred as spec_aws_chime_sdk_meetings;
+import 'package:autocomplete/specs/aws/chime-sdk-messaging.dart'
+    deferred as spec_aws_chime_sdk_messaging;
+import 'package:autocomplete/specs/aws/chime-sdk-voice.dart'
+    deferred as spec_aws_chime_sdk_voice;
 import 'package:autocomplete/specs/aws/chime.dart' deferred as spec_aws_chime;
-import 'package:autocomplete/specs/aws/cleanrooms.dart' deferred as spec_aws_cleanrooms;
-import 'package:autocomplete/specs/aws/cleanroomsml.dart' deferred as spec_aws_cleanroomsml;
+import 'package:autocomplete/specs/aws/cleanrooms.dart'
+    deferred as spec_aws_cleanrooms;
+import 'package:autocomplete/specs/aws/cleanroomsml.dart'
+    deferred as spec_aws_cleanroomsml;
 import 'package:autocomplete/specs/aws/cloud9.dart' deferred as spec_aws_cloud9;
-import 'package:autocomplete/specs/aws/cloudcontrol.dart' deferred as spec_aws_cloudcontrol;
-import 'package:autocomplete/specs/aws/clouddirectory.dart' deferred as spec_aws_clouddirectory;
-import 'package:autocomplete/specs/aws/cloudfront-keyvaluestore.dart' deferred as spec_aws_cloudfront_keyvaluestore;
-import 'package:autocomplete/specs/aws/cloudfront.dart' deferred as spec_aws_cloudfront;
-import 'package:autocomplete/specs/aws/cloudhsm.dart' deferred as spec_aws_cloudhsm;
-import 'package:autocomplete/specs/aws/cloudhsmv2.dart' deferred as spec_aws_cloudhsmv2;
-import 'package:autocomplete/specs/aws/cloudsearch.dart' deferred as spec_aws_cloudsearch;
-import 'package:autocomplete/specs/aws/cloudsearchdomain.dart' deferred as spec_aws_cloudsearchdomain;
-import 'package:autocomplete/specs/aws/cloudtrail-data.dart' deferred as spec_aws_cloudtrail_data;
-import 'package:autocomplete/specs/aws/cloudtrail.dart' deferred as spec_aws_cloudtrail;
-import 'package:autocomplete/specs/aws/codeartifact.dart' deferred as spec_aws_codeartifact;
-import 'package:autocomplete/specs/aws/codebuild.dart' deferred as spec_aws_codebuild;
-import 'package:autocomplete/specs/aws/codecatalyst.dart' deferred as spec_aws_codecatalyst;
-import 'package:autocomplete/specs/aws/codecommit.dart' deferred as spec_aws_codecommit;
-import 'package:autocomplete/specs/aws/codeconnections.dart' deferred as spec_aws_codeconnections;
-import 'package:autocomplete/specs/aws/codeguru-reviewer.dart' deferred as spec_aws_codeguru_reviewer;
-import 'package:autocomplete/specs/aws/codeguru-security.dart' deferred as spec_aws_codeguru_security;
-import 'package:autocomplete/specs/aws/codeguruprofiler.dart' deferred as spec_aws_codeguruprofiler;
-import 'package:autocomplete/specs/aws/codepipeline.dart' deferred as spec_aws_codepipeline;
-import 'package:autocomplete/specs/aws/codestar-connections.dart' deferred as spec_aws_codestar_connections;
-import 'package:autocomplete/specs/aws/codestar-notifications.dart' deferred as spec_aws_codestar_notifications;
-import 'package:autocomplete/specs/aws/codestar.dart' deferred as spec_aws_codestar;
-import 'package:autocomplete/specs/aws/cognito-identity.dart' deferred as spec_aws_cognito_identity;
-import 'package:autocomplete/specs/aws/cognito-idp.dart' deferred as spec_aws_cognito_idp;
-import 'package:autocomplete/specs/aws/cognito-sync.dart' deferred as spec_aws_cognito_sync;
-import 'package:autocomplete/specs/aws/comprehend.dart' deferred as spec_aws_comprehend;
-import 'package:autocomplete/specs/aws/comprehendmedical.dart' deferred as spec_aws_comprehendmedical;
-import 'package:autocomplete/specs/aws/compute-optimizer.dart' deferred as spec_aws_compute_optimizer;
-import 'package:autocomplete/specs/aws/configservice.dart' deferred as spec_aws_configservice;
-import 'package:autocomplete/specs/aws/configure.dart' deferred as spec_aws_configure;
-import 'package:autocomplete/specs/aws/connect-contact-lens.dart' deferred as spec_aws_connect_contact_lens;
-import 'package:autocomplete/specs/aws/connect.dart' deferred as spec_aws_connect;
-import 'package:autocomplete/specs/aws/connectcampaigns.dart' deferred as spec_aws_connectcampaigns;
-import 'package:autocomplete/specs/aws/connectcampaignsv2.dart' deferred as spec_aws_connectcampaignsv2;
-import 'package:autocomplete/specs/aws/connectcases.dart' deferred as spec_aws_connectcases;
-import 'package:autocomplete/specs/aws/connectparticipant.dart' deferred as spec_aws_connectparticipant;
-import 'package:autocomplete/specs/aws/controlcatalog.dart' deferred as spec_aws_controlcatalog;
-import 'package:autocomplete/specs/aws/controltower.dart' deferred as spec_aws_controltower;
-import 'package:autocomplete/specs/aws/cost-optimization-hub.dart' deferred as spec_aws_cost_optimization_hub;
+import 'package:autocomplete/specs/aws/cloudcontrol.dart'
+    deferred as spec_aws_cloudcontrol;
+import 'package:autocomplete/specs/aws/clouddirectory.dart'
+    deferred as spec_aws_clouddirectory;
+import 'package:autocomplete/specs/aws/cloudfront-keyvaluestore.dart'
+    deferred as spec_aws_cloudfront_keyvaluestore;
+import 'package:autocomplete/specs/aws/cloudfront.dart'
+    deferred as spec_aws_cloudfront;
+import 'package:autocomplete/specs/aws/cloudhsm.dart'
+    deferred as spec_aws_cloudhsm;
+import 'package:autocomplete/specs/aws/cloudhsmv2.dart'
+    deferred as spec_aws_cloudhsmv2;
+import 'package:autocomplete/specs/aws/cloudsearch.dart'
+    deferred as spec_aws_cloudsearch;
+import 'package:autocomplete/specs/aws/cloudsearchdomain.dart'
+    deferred as spec_aws_cloudsearchdomain;
+import 'package:autocomplete/specs/aws/cloudtrail-data.dart'
+    deferred as spec_aws_cloudtrail_data;
+import 'package:autocomplete/specs/aws/cloudtrail.dart'
+    deferred as spec_aws_cloudtrail;
+import 'package:autocomplete/specs/aws/codeartifact.dart'
+    deferred as spec_aws_codeartifact;
+import 'package:autocomplete/specs/aws/codebuild.dart'
+    deferred as spec_aws_codebuild;
+import 'package:autocomplete/specs/aws/codecatalyst.dart'
+    deferred as spec_aws_codecatalyst;
+import 'package:autocomplete/specs/aws/codecommit.dart'
+    deferred as spec_aws_codecommit;
+import 'package:autocomplete/specs/aws/codeconnections.dart'
+    deferred as spec_aws_codeconnections;
+import 'package:autocomplete/specs/aws/codeguru-reviewer.dart'
+    deferred as spec_aws_codeguru_reviewer;
+import 'package:autocomplete/specs/aws/codeguru-security.dart'
+    deferred as spec_aws_codeguru_security;
+import 'package:autocomplete/specs/aws/codeguruprofiler.dart'
+    deferred as spec_aws_codeguruprofiler;
+import 'package:autocomplete/specs/aws/codepipeline.dart'
+    deferred as spec_aws_codepipeline;
+import 'package:autocomplete/specs/aws/codestar-connections.dart'
+    deferred as spec_aws_codestar_connections;
+import 'package:autocomplete/specs/aws/codestar-notifications.dart'
+    deferred as spec_aws_codestar_notifications;
+import 'package:autocomplete/specs/aws/codestar.dart'
+    deferred as spec_aws_codestar;
+import 'package:autocomplete/specs/aws/cognito-identity.dart'
+    deferred as spec_aws_cognito_identity;
+import 'package:autocomplete/specs/aws/cognito-idp.dart'
+    deferred as spec_aws_cognito_idp;
+import 'package:autocomplete/specs/aws/cognito-sync.dart'
+    deferred as spec_aws_cognito_sync;
+import 'package:autocomplete/specs/aws/comprehend.dart'
+    deferred as spec_aws_comprehend;
+import 'package:autocomplete/specs/aws/comprehendmedical.dart'
+    deferred as spec_aws_comprehendmedical;
+import 'package:autocomplete/specs/aws/compute-optimizer.dart'
+    deferred as spec_aws_compute_optimizer;
+import 'package:autocomplete/specs/aws/configservice.dart'
+    deferred as spec_aws_configservice;
+import 'package:autocomplete/specs/aws/configure.dart'
+    deferred as spec_aws_configure;
+import 'package:autocomplete/specs/aws/connect-contact-lens.dart'
+    deferred as spec_aws_connect_contact_lens;
+import 'package:autocomplete/specs/aws/connect.dart'
+    deferred as spec_aws_connect;
+import 'package:autocomplete/specs/aws/connectcampaigns.dart'
+    deferred as spec_aws_connectcampaigns;
+import 'package:autocomplete/specs/aws/connectcampaignsv2.dart'
+    deferred as spec_aws_connectcampaignsv2;
+import 'package:autocomplete/specs/aws/connectcases.dart'
+    deferred as spec_aws_connectcases;
+import 'package:autocomplete/specs/aws/connectparticipant.dart'
+    deferred as spec_aws_connectparticipant;
+import 'package:autocomplete/specs/aws/controlcatalog.dart'
+    deferred as spec_aws_controlcatalog;
+import 'package:autocomplete/specs/aws/controltower.dart'
+    deferred as spec_aws_controltower;
+import 'package:autocomplete/specs/aws/cost-optimization-hub.dart'
+    deferred as spec_aws_cost_optimization_hub;
 import 'package:autocomplete/specs/aws/cur.dart' deferred as spec_aws_cur;
-import 'package:autocomplete/specs/aws/customer-profiles.dart' deferred as spec_aws_customer_profiles;
-import 'package:autocomplete/specs/aws/databrew.dart' deferred as spec_aws_databrew;
-import 'package:autocomplete/specs/aws/dataexchange.dart' deferred as spec_aws_dataexchange;
-import 'package:autocomplete/specs/aws/datapipeline.dart' deferred as spec_aws_datapipeline;
-import 'package:autocomplete/specs/aws/datasync.dart' deferred as spec_aws_datasync;
-import 'package:autocomplete/specs/aws/datazone.dart' deferred as spec_aws_datazone;
+import 'package:autocomplete/specs/aws/customer-profiles.dart'
+    deferred as spec_aws_customer_profiles;
+import 'package:autocomplete/specs/aws/databrew.dart'
+    deferred as spec_aws_databrew;
+import 'package:autocomplete/specs/aws/dataexchange.dart'
+    deferred as spec_aws_dataexchange;
+import 'package:autocomplete/specs/aws/datapipeline.dart'
+    deferred as spec_aws_datapipeline;
+import 'package:autocomplete/specs/aws/datasync.dart'
+    deferred as spec_aws_datasync;
+import 'package:autocomplete/specs/aws/datazone.dart'
+    deferred as spec_aws_datazone;
 import 'package:autocomplete/specs/aws/dax.dart' deferred as spec_aws_dax;
-import 'package:autocomplete/specs/aws/deadline.dart' deferred as spec_aws_deadline;
+import 'package:autocomplete/specs/aws/deadline.dart'
+    deferred as spec_aws_deadline;
 import 'package:autocomplete/specs/aws/deploy.dart' deferred as spec_aws_deploy;
-import 'package:autocomplete/specs/aws/detective.dart' deferred as spec_aws_detective;
-import 'package:autocomplete/specs/aws/devicefarm.dart' deferred as spec_aws_devicefarm;
-import 'package:autocomplete/specs/aws/devops-guru.dart' deferred as spec_aws_devops_guru;
-import 'package:autocomplete/specs/aws/directconnect.dart' deferred as spec_aws_directconnect;
-import 'package:autocomplete/specs/aws/discovery.dart' deferred as spec_aws_discovery;
+import 'package:autocomplete/specs/aws/detective.dart'
+    deferred as spec_aws_detective;
+import 'package:autocomplete/specs/aws/devicefarm.dart'
+    deferred as spec_aws_devicefarm;
+import 'package:autocomplete/specs/aws/devops-guru.dart'
+    deferred as spec_aws_devops_guru;
+import 'package:autocomplete/specs/aws/directconnect.dart'
+    deferred as spec_aws_directconnect;
+import 'package:autocomplete/specs/aws/discovery.dart'
+    deferred as spec_aws_discovery;
 import 'package:autocomplete/specs/aws/dlm.dart' deferred as spec_aws_dlm;
 import 'package:autocomplete/specs/aws/dms.dart' deferred as spec_aws_dms;
-import 'package:autocomplete/specs/aws/docdb-elastic.dart' deferred as spec_aws_docdb_elastic;
+import 'package:autocomplete/specs/aws/docdb-elastic.dart'
+    deferred as spec_aws_docdb_elastic;
 import 'package:autocomplete/specs/aws/docdb.dart' deferred as spec_aws_docdb;
 import 'package:autocomplete/specs/aws/drs.dart' deferred as spec_aws_drs;
-import 'package:autocomplete/specs/aws/ds-data.dart' deferred as spec_aws_ds_data;
+import 'package:autocomplete/specs/aws/ds-data.dart'
+    deferred as spec_aws_ds_data;
 import 'package:autocomplete/specs/aws/ds.dart' deferred as spec_aws_ds;
 import 'package:autocomplete/specs/aws/dsql.dart' deferred as spec_aws_dsql;
-import 'package:autocomplete/specs/aws/dynamodb.dart' deferred as spec_aws_dynamodb;
-import 'package:autocomplete/specs/aws/dynamodbstreams.dart' deferred as spec_aws_dynamodbstreams;
+import 'package:autocomplete/specs/aws/dynamodb.dart'
+    deferred as spec_aws_dynamodb;
+import 'package:autocomplete/specs/aws/dynamodbstreams.dart'
+    deferred as spec_aws_dynamodbstreams;
 import 'package:autocomplete/specs/aws/ebs.dart' deferred as spec_aws_ebs;
-import 'package:autocomplete/specs/aws/ec2-instance-connect.dart' deferred as spec_aws_ec2_instance_connect;
-import 'package:autocomplete/specs/aws/ecr-public.dart' deferred as spec_aws_ecr_public;
+import 'package:autocomplete/specs/aws/ec2-instance-connect.dart'
+    deferred as spec_aws_ec2_instance_connect;
+import 'package:autocomplete/specs/aws/ecr-public.dart'
+    deferred as spec_aws_ecr_public;
 import 'package:autocomplete/specs/aws/ecr.dart' deferred as spec_aws_ecr;
 import 'package:autocomplete/specs/aws/efs.dart' deferred as spec_aws_efs;
-import 'package:autocomplete/specs/aws/eks-auth.dart' deferred as spec_aws_eks_auth;
-import 'package:autocomplete/specs/aws/elastic-inference.dart' deferred as spec_aws_elastic_inference;
-import 'package:autocomplete/specs/aws/elasticache.dart' deferred as spec_aws_elasticache;
-import 'package:autocomplete/specs/aws/elastictranscoder.dart' deferred as spec_aws_elastictranscoder;
+import 'package:autocomplete/specs/aws/eks-auth.dart'
+    deferred as spec_aws_eks_auth;
+import 'package:autocomplete/specs/aws/elastic-inference.dart'
+    deferred as spec_aws_elastic_inference;
+import 'package:autocomplete/specs/aws/elasticache.dart'
+    deferred as spec_aws_elasticache;
+import 'package:autocomplete/specs/aws/elastictranscoder.dart'
+    deferred as spec_aws_elastictranscoder;
 import 'package:autocomplete/specs/aws/elb.dart' deferred as spec_aws_elb;
 import 'package:autocomplete/specs/aws/elbv2.dart' deferred as spec_aws_elbv2;
-import 'package:autocomplete/specs/aws/emr-containers.dart' deferred as spec_aws_emr_containers;
-import 'package:autocomplete/specs/aws/emr-serverless.dart' deferred as spec_aws_emr_serverless;
+import 'package:autocomplete/specs/aws/emr-containers.dart'
+    deferred as spec_aws_emr_containers;
+import 'package:autocomplete/specs/aws/emr-serverless.dart'
+    deferred as spec_aws_emr_serverless;
 import 'package:autocomplete/specs/aws/emr.dart' deferred as spec_aws_emr;
-import 'package:autocomplete/specs/aws/entityresolution.dart' deferred as spec_aws_entityresolution;
+import 'package:autocomplete/specs/aws/entityresolution.dart'
+    deferred as spec_aws_entityresolution;
 import 'package:autocomplete/specs/aws/es.dart' deferred as spec_aws_es;
 import 'package:autocomplete/specs/aws/events.dart' deferred as spec_aws_events;
-import 'package:autocomplete/specs/aws/evidently.dart' deferred as spec_aws_evidently;
-import 'package:autocomplete/specs/aws/finspace-data.dart' deferred as spec_aws_finspace_data;
-import 'package:autocomplete/specs/aws/finspace.dart' deferred as spec_aws_finspace;
-import 'package:autocomplete/specs/aws/firehose.dart' deferred as spec_aws_firehose;
+import 'package:autocomplete/specs/aws/evidently.dart'
+    deferred as spec_aws_evidently;
+import 'package:autocomplete/specs/aws/finspace-data.dart'
+    deferred as spec_aws_finspace_data;
+import 'package:autocomplete/specs/aws/finspace.dart'
+    deferred as spec_aws_finspace;
+import 'package:autocomplete/specs/aws/firehose.dart'
+    deferred as spec_aws_firehose;
 import 'package:autocomplete/specs/aws/fis.dart' deferred as spec_aws_fis;
 import 'package:autocomplete/specs/aws/fms.dart' deferred as spec_aws_fms;
-import 'package:autocomplete/specs/aws/forecast.dart' deferred as spec_aws_forecast;
-import 'package:autocomplete/specs/aws/forecastquery.dart' deferred as spec_aws_forecastquery;
-import 'package:autocomplete/specs/aws/frauddetector.dart' deferred as spec_aws_frauddetector;
-import 'package:autocomplete/specs/aws/freetier.dart' deferred as spec_aws_freetier;
+import 'package:autocomplete/specs/aws/forecast.dart'
+    deferred as spec_aws_forecast;
+import 'package:autocomplete/specs/aws/forecastquery.dart'
+    deferred as spec_aws_forecastquery;
+import 'package:autocomplete/specs/aws/frauddetector.dart'
+    deferred as spec_aws_frauddetector;
+import 'package:autocomplete/specs/aws/freetier.dart'
+    deferred as spec_aws_freetier;
 import 'package:autocomplete/specs/aws/fsx.dart' deferred as spec_aws_fsx;
-import 'package:autocomplete/specs/aws/gamelift.dart' deferred as spec_aws_gamelift;
-import 'package:autocomplete/specs/aws/geo-maps.dart' deferred as spec_aws_geo_maps;
-import 'package:autocomplete/specs/aws/geo-places.dart' deferred as spec_aws_geo_places;
-import 'package:autocomplete/specs/aws/geo-routes.dart' deferred as spec_aws_geo_routes;
-import 'package:autocomplete/specs/aws/glacier.dart' deferred as spec_aws_glacier;
-import 'package:autocomplete/specs/aws/globalaccelerator.dart' deferred as spec_aws_globalaccelerator;
+import 'package:autocomplete/specs/aws/gamelift.dart'
+    deferred as spec_aws_gamelift;
+import 'package:autocomplete/specs/aws/geo-maps.dart'
+    deferred as spec_aws_geo_maps;
+import 'package:autocomplete/specs/aws/geo-places.dart'
+    deferred as spec_aws_geo_places;
+import 'package:autocomplete/specs/aws/geo-routes.dart'
+    deferred as spec_aws_geo_routes;
+import 'package:autocomplete/specs/aws/glacier.dart'
+    deferred as spec_aws_glacier;
+import 'package:autocomplete/specs/aws/globalaccelerator.dart'
+    deferred as spec_aws_globalaccelerator;
 import 'package:autocomplete/specs/aws/glue.dart' deferred as spec_aws_glue;
-import 'package:autocomplete/specs/aws/grafana.dart' deferred as spec_aws_grafana;
-import 'package:autocomplete/specs/aws/greengrass.dart' deferred as spec_aws_greengrass;
-import 'package:autocomplete/specs/aws/greengrassv2.dart' deferred as spec_aws_greengrassv2;
-import 'package:autocomplete/specs/aws/groundstation.dart' deferred as spec_aws_groundstation;
-import 'package:autocomplete/specs/aws/guardduty.dart' deferred as spec_aws_guardduty;
+import 'package:autocomplete/specs/aws/grafana.dart'
+    deferred as spec_aws_grafana;
+import 'package:autocomplete/specs/aws/greengrass.dart'
+    deferred as spec_aws_greengrass;
+import 'package:autocomplete/specs/aws/greengrassv2.dart'
+    deferred as spec_aws_greengrassv2;
+import 'package:autocomplete/specs/aws/groundstation.dart'
+    deferred as spec_aws_groundstation;
+import 'package:autocomplete/specs/aws/guardduty.dart'
+    deferred as spec_aws_guardduty;
 import 'package:autocomplete/specs/aws/health.dart' deferred as spec_aws_health;
-import 'package:autocomplete/specs/aws/healthlake.dart' deferred as spec_aws_healthlake;
-import 'package:autocomplete/specs/aws/history.dart' deferred as spec_aws_history;
-import 'package:autocomplete/specs/aws/honeycode.dart' deferred as spec_aws_honeycode;
-import 'package:autocomplete/specs/aws/identitystore.dart' deferred as spec_aws_identitystore;
-import 'package:autocomplete/specs/aws/imagebuilder.dart' deferred as spec_aws_imagebuilder;
-import 'package:autocomplete/specs/aws/importexport.dart' deferred as spec_aws_importexport;
-import 'package:autocomplete/specs/aws/inspector-scan.dart' deferred as spec_aws_inspector_scan;
-import 'package:autocomplete/specs/aws/inspector.dart' deferred as spec_aws_inspector;
-import 'package:autocomplete/specs/aws/inspector2.dart' deferred as spec_aws_inspector2;
-import 'package:autocomplete/specs/aws/internetmonitor.dart' deferred as spec_aws_internetmonitor;
-import 'package:autocomplete/specs/aws/invoicing.dart' deferred as spec_aws_invoicing;
-import 'package:autocomplete/specs/aws/iot-data.dart' deferred as spec_aws_iot_data;
-import 'package:autocomplete/specs/aws/iot-jobs-data.dart' deferred as spec_aws_iot_jobs_data;
+import 'package:autocomplete/specs/aws/healthlake.dart'
+    deferred as spec_aws_healthlake;
+import 'package:autocomplete/specs/aws/history.dart'
+    deferred as spec_aws_history;
+import 'package:autocomplete/specs/aws/honeycode.dart'
+    deferred as spec_aws_honeycode;
+import 'package:autocomplete/specs/aws/identitystore.dart'
+    deferred as spec_aws_identitystore;
+import 'package:autocomplete/specs/aws/imagebuilder.dart'
+    deferred as spec_aws_imagebuilder;
+import 'package:autocomplete/specs/aws/importexport.dart'
+    deferred as spec_aws_importexport;
+import 'package:autocomplete/specs/aws/inspector-scan.dart'
+    deferred as spec_aws_inspector_scan;
+import 'package:autocomplete/specs/aws/inspector.dart'
+    deferred as spec_aws_inspector;
+import 'package:autocomplete/specs/aws/inspector2.dart'
+    deferred as spec_aws_inspector2;
+import 'package:autocomplete/specs/aws/internetmonitor.dart'
+    deferred as spec_aws_internetmonitor;
+import 'package:autocomplete/specs/aws/invoicing.dart'
+    deferred as spec_aws_invoicing;
+import 'package:autocomplete/specs/aws/iot-data.dart'
+    deferred as spec_aws_iot_data;
+import 'package:autocomplete/specs/aws/iot-jobs-data.dart'
+    deferred as spec_aws_iot_jobs_data;
 import 'package:autocomplete/specs/aws/iot.dart' deferred as spec_aws_iot;
-import 'package:autocomplete/specs/aws/iot1click-devices.dart' deferred as spec_aws_iot1click_devices;
-import 'package:autocomplete/specs/aws/iot1click-projects.dart' deferred as spec_aws_iot1click_projects;
-import 'package:autocomplete/specs/aws/iotanalytics.dart' deferred as spec_aws_iotanalytics;
-import 'package:autocomplete/specs/aws/iotdeviceadvisor.dart' deferred as spec_aws_iotdeviceadvisor;
-import 'package:autocomplete/specs/aws/iotevents-data.dart' deferred as spec_aws_iotevents_data;
-import 'package:autocomplete/specs/aws/iotevents.dart' deferred as spec_aws_iotevents;
-import 'package:autocomplete/specs/aws/iotfleethub.dart' deferred as spec_aws_iotfleethub;
-import 'package:autocomplete/specs/aws/iotfleetwise.dart' deferred as spec_aws_iotfleetwise;
-import 'package:autocomplete/specs/aws/iotsecuretunneling.dart' deferred as spec_aws_iotsecuretunneling;
-import 'package:autocomplete/specs/aws/iotsitewise.dart' deferred as spec_aws_iotsitewise;
-import 'package:autocomplete/specs/aws/iotthingsgraph.dart' deferred as spec_aws_iotthingsgraph;
-import 'package:autocomplete/specs/aws/iottwinmaker.dart' deferred as spec_aws_iottwinmaker;
-import 'package:autocomplete/specs/aws/iotwireless.dart' deferred as spec_aws_iotwireless;
-import 'package:autocomplete/specs/aws/ivs-realtime.dart' deferred as spec_aws_ivs_realtime;
+import 'package:autocomplete/specs/aws/iot1click-devices.dart'
+    deferred as spec_aws_iot1click_devices;
+import 'package:autocomplete/specs/aws/iot1click-projects.dart'
+    deferred as spec_aws_iot1click_projects;
+import 'package:autocomplete/specs/aws/iotanalytics.dart'
+    deferred as spec_aws_iotanalytics;
+import 'package:autocomplete/specs/aws/iotdeviceadvisor.dart'
+    deferred as spec_aws_iotdeviceadvisor;
+import 'package:autocomplete/specs/aws/iotevents-data.dart'
+    deferred as spec_aws_iotevents_data;
+import 'package:autocomplete/specs/aws/iotevents.dart'
+    deferred as spec_aws_iotevents;
+import 'package:autocomplete/specs/aws/iotfleethub.dart'
+    deferred as spec_aws_iotfleethub;
+import 'package:autocomplete/specs/aws/iotfleetwise.dart'
+    deferred as spec_aws_iotfleetwise;
+import 'package:autocomplete/specs/aws/iotsecuretunneling.dart'
+    deferred as spec_aws_iotsecuretunneling;
+import 'package:autocomplete/specs/aws/iotsitewise.dart'
+    deferred as spec_aws_iotsitewise;
+import 'package:autocomplete/specs/aws/iotthingsgraph.dart'
+    deferred as spec_aws_iotthingsgraph;
+import 'package:autocomplete/specs/aws/iottwinmaker.dart'
+    deferred as spec_aws_iottwinmaker;
+import 'package:autocomplete/specs/aws/iotwireless.dart'
+    deferred as spec_aws_iotwireless;
+import 'package:autocomplete/specs/aws/ivs-realtime.dart'
+    deferred as spec_aws_ivs_realtime;
 import 'package:autocomplete/specs/aws/ivs.dart' deferred as spec_aws_ivs;
-import 'package:autocomplete/specs/aws/ivschat.dart' deferred as spec_aws_ivschat;
+import 'package:autocomplete/specs/aws/ivschat.dart'
+    deferred as spec_aws_ivschat;
 import 'package:autocomplete/specs/aws/kafka.dart' deferred as spec_aws_kafka;
-import 'package:autocomplete/specs/aws/kafkaconnect.dart' deferred as spec_aws_kafkaconnect;
-import 'package:autocomplete/specs/aws/kendra-ranking.dart' deferred as spec_aws_kendra_ranking;
+import 'package:autocomplete/specs/aws/kafkaconnect.dart'
+    deferred as spec_aws_kafkaconnect;
+import 'package:autocomplete/specs/aws/kendra-ranking.dart'
+    deferred as spec_aws_kendra_ranking;
 import 'package:autocomplete/specs/aws/kendra.dart' deferred as spec_aws_kendra;
-import 'package:autocomplete/specs/aws/keyspaces.dart' deferred as spec_aws_keyspaces;
-import 'package:autocomplete/specs/aws/kinesis-video-archived-media.dart' deferred as spec_aws_kinesis_video_archived_media;
-import 'package:autocomplete/specs/aws/kinesis-video-media.dart' deferred as spec_aws_kinesis_video_media;
-import 'package:autocomplete/specs/aws/kinesis-video-signaling.dart' deferred as spec_aws_kinesis_video_signaling;
-import 'package:autocomplete/specs/aws/kinesis-video-webrtc-storage.dart' deferred as spec_aws_kinesis_video_webrtc_storage;
-import 'package:autocomplete/specs/aws/kinesis.dart' deferred as spec_aws_kinesis;
-import 'package:autocomplete/specs/aws/kinesisanalytics.dart' deferred as spec_aws_kinesisanalytics;
-import 'package:autocomplete/specs/aws/kinesisanalyticsv2.dart' deferred as spec_aws_kinesisanalyticsv2;
-import 'package:autocomplete/specs/aws/kinesisvideo.dart' deferred as spec_aws_kinesisvideo;
+import 'package:autocomplete/specs/aws/keyspaces.dart'
+    deferred as spec_aws_keyspaces;
+import 'package:autocomplete/specs/aws/kinesis-video-archived-media.dart'
+    deferred as spec_aws_kinesis_video_archived_media;
+import 'package:autocomplete/specs/aws/kinesis-video-media.dart'
+    deferred as spec_aws_kinesis_video_media;
+import 'package:autocomplete/specs/aws/kinesis-video-signaling.dart'
+    deferred as spec_aws_kinesis_video_signaling;
+import 'package:autocomplete/specs/aws/kinesis-video-webrtc-storage.dart'
+    deferred as spec_aws_kinesis_video_webrtc_storage;
+import 'package:autocomplete/specs/aws/kinesis.dart'
+    deferred as spec_aws_kinesis;
+import 'package:autocomplete/specs/aws/kinesisanalytics.dart'
+    deferred as spec_aws_kinesisanalytics;
+import 'package:autocomplete/specs/aws/kinesisanalyticsv2.dart'
+    deferred as spec_aws_kinesisanalyticsv2;
+import 'package:autocomplete/specs/aws/kinesisvideo.dart'
+    deferred as spec_aws_kinesisvideo;
 import 'package:autocomplete/specs/aws/kms.dart' deferred as spec_aws_kms;
-import 'package:autocomplete/specs/aws/lakeformation.dart' deferred as spec_aws_lakeformation;
-import 'package:autocomplete/specs/aws/launch-wizard.dart' deferred as spec_aws_launch_wizard;
-import 'package:autocomplete/specs/aws/lex-models.dart' deferred as spec_aws_lex_models;
-import 'package:autocomplete/specs/aws/lex-runtime.dart' deferred as spec_aws_lex_runtime;
-import 'package:autocomplete/specs/aws/lexv2-models.dart' deferred as spec_aws_lexv2_models;
-import 'package:autocomplete/specs/aws/lexv2-runtime.dart' deferred as spec_aws_lexv2_runtime;
-import 'package:autocomplete/specs/aws/license-manager-linux-subscriptions.dart' deferred as spec_aws_license_manager_linux_subscriptions;
-import 'package:autocomplete/specs/aws/license-manager-user-subscriptions.dart' deferred as spec_aws_license_manager_user_subscriptions;
-import 'package:autocomplete/specs/aws/license-manager.dart' deferred as spec_aws_license_manager;
-import 'package:autocomplete/specs/aws/lightsail.dart' deferred as spec_aws_lightsail;
-import 'package:autocomplete/specs/aws/location.dart' deferred as spec_aws_location;
+import 'package:autocomplete/specs/aws/lakeformation.dart'
+    deferred as spec_aws_lakeformation;
+import 'package:autocomplete/specs/aws/launch-wizard.dart'
+    deferred as spec_aws_launch_wizard;
+import 'package:autocomplete/specs/aws/lex-models.dart'
+    deferred as spec_aws_lex_models;
+import 'package:autocomplete/specs/aws/lex-runtime.dart'
+    deferred as spec_aws_lex_runtime;
+import 'package:autocomplete/specs/aws/lexv2-models.dart'
+    deferred as spec_aws_lexv2_models;
+import 'package:autocomplete/specs/aws/lexv2-runtime.dart'
+    deferred as spec_aws_lexv2_runtime;
+import 'package:autocomplete/specs/aws/license-manager-linux-subscriptions.dart'
+    deferred as spec_aws_license_manager_linux_subscriptions;
+import 'package:autocomplete/specs/aws/license-manager-user-subscriptions.dart'
+    deferred as spec_aws_license_manager_user_subscriptions;
+import 'package:autocomplete/specs/aws/license-manager.dart'
+    deferred as spec_aws_license_manager;
+import 'package:autocomplete/specs/aws/lightsail.dart'
+    deferred as spec_aws_lightsail;
+import 'package:autocomplete/specs/aws/location.dart'
+    deferred as spec_aws_location;
 import 'package:autocomplete/specs/aws/logs.dart' deferred as spec_aws_logs;
-import 'package:autocomplete/specs/aws/lookoutequipment.dart' deferred as spec_aws_lookoutequipment;
-import 'package:autocomplete/specs/aws/lookoutmetrics.dart' deferred as spec_aws_lookoutmetrics;
-import 'package:autocomplete/specs/aws/lookoutvision.dart' deferred as spec_aws_lookoutvision;
+import 'package:autocomplete/specs/aws/lookoutequipment.dart'
+    deferred as spec_aws_lookoutequipment;
+import 'package:autocomplete/specs/aws/lookoutmetrics.dart'
+    deferred as spec_aws_lookoutmetrics;
+import 'package:autocomplete/specs/aws/lookoutvision.dart'
+    deferred as spec_aws_lookoutvision;
 import 'package:autocomplete/specs/aws/m2.dart' deferred as spec_aws_m2;
-import 'package:autocomplete/specs/aws/machinelearning.dart' deferred as spec_aws_machinelearning;
+import 'package:autocomplete/specs/aws/machinelearning.dart'
+    deferred as spec_aws_machinelearning;
 import 'package:autocomplete/specs/aws/macie.dart' deferred as spec_aws_macie;
 import 'package:autocomplete/specs/aws/macie2.dart' deferred as spec_aws_macie2;
-import 'package:autocomplete/specs/aws/mailmanager.dart' deferred as spec_aws_mailmanager;
-import 'package:autocomplete/specs/aws/managedblockchain-query.dart' deferred as spec_aws_managedblockchain_query;
-import 'package:autocomplete/specs/aws/managedblockchain.dart' deferred as spec_aws_managedblockchain;
-import 'package:autocomplete/specs/aws/marketplace-agreement.dart' deferred as spec_aws_marketplace_agreement;
-import 'package:autocomplete/specs/aws/marketplace-catalog.dart' deferred as spec_aws_marketplace_catalog;
-import 'package:autocomplete/specs/aws/marketplace-deployment.dart' deferred as spec_aws_marketplace_deployment;
-import 'package:autocomplete/specs/aws/marketplace-entitlement.dart' deferred as spec_aws_marketplace_entitlement;
-import 'package:autocomplete/specs/aws/marketplace-reporting.dart' deferred as spec_aws_marketplace_reporting;
-import 'package:autocomplete/specs/aws/marketplacecommerceanalytics.dart' deferred as spec_aws_marketplacecommerceanalytics;
-import 'package:autocomplete/specs/aws/mediaconnect.dart' deferred as spec_aws_mediaconnect;
-import 'package:autocomplete/specs/aws/mediaconvert.dart' deferred as spec_aws_mediaconvert;
-import 'package:autocomplete/specs/aws/medialive.dart' deferred as spec_aws_medialive;
-import 'package:autocomplete/specs/aws/mediapackage-vod.dart' deferred as spec_aws_mediapackage_vod;
-import 'package:autocomplete/specs/aws/mediapackage.dart' deferred as spec_aws_mediapackage;
-import 'package:autocomplete/specs/aws/mediapackagev2.dart' deferred as spec_aws_mediapackagev2;
-import 'package:autocomplete/specs/aws/mediastore-data.dart' deferred as spec_aws_mediastore_data;
-import 'package:autocomplete/specs/aws/mediastore.dart' deferred as spec_aws_mediastore;
-import 'package:autocomplete/specs/aws/mediatailor.dart' deferred as spec_aws_mediatailor;
-import 'package:autocomplete/specs/aws/medical-imaging.dart' deferred as spec_aws_medical_imaging;
-import 'package:autocomplete/specs/aws/memorydb.dart' deferred as spec_aws_memorydb;
-import 'package:autocomplete/specs/aws/meteringmarketplace.dart' deferred as spec_aws_meteringmarketplace;
+import 'package:autocomplete/specs/aws/mailmanager.dart'
+    deferred as spec_aws_mailmanager;
+import 'package:autocomplete/specs/aws/managedblockchain-query.dart'
+    deferred as spec_aws_managedblockchain_query;
+import 'package:autocomplete/specs/aws/managedblockchain.dart'
+    deferred as spec_aws_managedblockchain;
+import 'package:autocomplete/specs/aws/marketplace-agreement.dart'
+    deferred as spec_aws_marketplace_agreement;
+import 'package:autocomplete/specs/aws/marketplace-catalog.dart'
+    deferred as spec_aws_marketplace_catalog;
+import 'package:autocomplete/specs/aws/marketplace-deployment.dart'
+    deferred as spec_aws_marketplace_deployment;
+import 'package:autocomplete/specs/aws/marketplace-entitlement.dart'
+    deferred as spec_aws_marketplace_entitlement;
+import 'package:autocomplete/specs/aws/marketplace-reporting.dart'
+    deferred as spec_aws_marketplace_reporting;
+import 'package:autocomplete/specs/aws/marketplacecommerceanalytics.dart'
+    deferred as spec_aws_marketplacecommerceanalytics;
+import 'package:autocomplete/specs/aws/mediaconnect.dart'
+    deferred as spec_aws_mediaconnect;
+import 'package:autocomplete/specs/aws/mediaconvert.dart'
+    deferred as spec_aws_mediaconvert;
+import 'package:autocomplete/specs/aws/medialive.dart'
+    deferred as spec_aws_medialive;
+import 'package:autocomplete/specs/aws/mediapackage-vod.dart'
+    deferred as spec_aws_mediapackage_vod;
+import 'package:autocomplete/specs/aws/mediapackage.dart'
+    deferred as spec_aws_mediapackage;
+import 'package:autocomplete/specs/aws/mediapackagev2.dart'
+    deferred as spec_aws_mediapackagev2;
+import 'package:autocomplete/specs/aws/mediastore-data.dart'
+    deferred as spec_aws_mediastore_data;
+import 'package:autocomplete/specs/aws/mediastore.dart'
+    deferred as spec_aws_mediastore;
+import 'package:autocomplete/specs/aws/mediatailor.dart'
+    deferred as spec_aws_mediatailor;
+import 'package:autocomplete/specs/aws/medical-imaging.dart'
+    deferred as spec_aws_medical_imaging;
+import 'package:autocomplete/specs/aws/memorydb.dart'
+    deferred as spec_aws_memorydb;
+import 'package:autocomplete/specs/aws/meteringmarketplace.dart'
+    deferred as spec_aws_meteringmarketplace;
 import 'package:autocomplete/specs/aws/mgh.dart' deferred as spec_aws_mgh;
 import 'package:autocomplete/specs/aws/mgn.dart' deferred as spec_aws_mgn;
-import 'package:autocomplete/specs/aws/migration-hub-refactor-spaces.dart' deferred as spec_aws_migration_hub_refactor_spaces;
-import 'package:autocomplete/specs/aws/migrationhub-config.dart' deferred as spec_aws_migrationhub_config;
-import 'package:autocomplete/specs/aws/migrationhuborchestrator.dart' deferred as spec_aws_migrationhuborchestrator;
-import 'package:autocomplete/specs/aws/migrationhubstrategy.dart' deferred as spec_aws_migrationhubstrategy;
+import 'package:autocomplete/specs/aws/migration-hub-refactor-spaces.dart'
+    deferred as spec_aws_migration_hub_refactor_spaces;
+import 'package:autocomplete/specs/aws/migrationhub-config.dart'
+    deferred as spec_aws_migrationhub_config;
+import 'package:autocomplete/specs/aws/migrationhuborchestrator.dart'
+    deferred as spec_aws_migrationhuborchestrator;
+import 'package:autocomplete/specs/aws/migrationhubstrategy.dart'
+    deferred as spec_aws_migrationhubstrategy;
 import 'package:autocomplete/specs/aws/mobile.dart' deferred as spec_aws_mobile;
 import 'package:autocomplete/specs/aws/mq.dart' deferred as spec_aws_mq;
 import 'package:autocomplete/specs/aws/mturk.dart' deferred as spec_aws_mturk;
 import 'package:autocomplete/specs/aws/mwaa.dart' deferred as spec_aws_mwaa;
-import 'package:autocomplete/specs/aws/neptune-graph.dart' deferred as spec_aws_neptune_graph;
-import 'package:autocomplete/specs/aws/neptune.dart' deferred as spec_aws_neptune;
-import 'package:autocomplete/specs/aws/neptunedata.dart' deferred as spec_aws_neptunedata;
-import 'package:autocomplete/specs/aws/network-firewall.dart' deferred as spec_aws_network_firewall;
-import 'package:autocomplete/specs/aws/networkflowmonitor.dart' deferred as spec_aws_networkflowmonitor;
-import 'package:autocomplete/specs/aws/networkmanager.dart' deferred as spec_aws_networkmanager;
-import 'package:autocomplete/specs/aws/networkmonitor.dart' deferred as spec_aws_networkmonitor;
+import 'package:autocomplete/specs/aws/neptune-graph.dart'
+    deferred as spec_aws_neptune_graph;
+import 'package:autocomplete/specs/aws/neptune.dart'
+    deferred as spec_aws_neptune;
+import 'package:autocomplete/specs/aws/neptunedata.dart'
+    deferred as spec_aws_neptunedata;
+import 'package:autocomplete/specs/aws/network-firewall.dart'
+    deferred as spec_aws_network_firewall;
+import 'package:autocomplete/specs/aws/networkflowmonitor.dart'
+    deferred as spec_aws_networkflowmonitor;
+import 'package:autocomplete/specs/aws/networkmanager.dart'
+    deferred as spec_aws_networkmanager;
+import 'package:autocomplete/specs/aws/networkmonitor.dart'
+    deferred as spec_aws_networkmonitor;
 import 'package:autocomplete/specs/aws/nimble.dart' deferred as spec_aws_nimble;
-import 'package:autocomplete/specs/aws/notifications.dart' deferred as spec_aws_notifications;
-import 'package:autocomplete/specs/aws/notificationscontacts.dart' deferred as spec_aws_notificationscontacts;
+import 'package:autocomplete/specs/aws/notifications.dart'
+    deferred as spec_aws_notifications;
+import 'package:autocomplete/specs/aws/notificationscontacts.dart'
+    deferred as spec_aws_notificationscontacts;
 import 'package:autocomplete/specs/aws/oam.dart' deferred as spec_aws_oam;
-import 'package:autocomplete/specs/aws/observabilityadmin.dart' deferred as spec_aws_observabilityadmin;
+import 'package:autocomplete/specs/aws/observabilityadmin.dart'
+    deferred as spec_aws_observabilityadmin;
 import 'package:autocomplete/specs/aws/omics.dart' deferred as spec_aws_omics;
-import 'package:autocomplete/specs/aws/opensearch.dart' deferred as spec_aws_opensearch;
-import 'package:autocomplete/specs/aws/opensearchserverless.dart' deferred as spec_aws_opensearchserverless;
-import 'package:autocomplete/specs/aws/opsworks-cm.dart' deferred as spec_aws_opsworks_cm;
-import 'package:autocomplete/specs/aws/opsworks.dart' deferred as spec_aws_opsworks;
-import 'package:autocomplete/specs/aws/opsworkscm.dart' deferred as spec_aws_opsworkscm;
-import 'package:autocomplete/specs/aws/organizations.dart' deferred as spec_aws_organizations;
+import 'package:autocomplete/specs/aws/opensearch.dart'
+    deferred as spec_aws_opensearch;
+import 'package:autocomplete/specs/aws/opensearchserverless.dart'
+    deferred as spec_aws_opensearchserverless;
+import 'package:autocomplete/specs/aws/opsworks-cm.dart'
+    deferred as spec_aws_opsworks_cm;
+import 'package:autocomplete/specs/aws/opsworks.dart'
+    deferred as spec_aws_opsworks;
+import 'package:autocomplete/specs/aws/opsworkscm.dart'
+    deferred as spec_aws_opsworkscm;
+import 'package:autocomplete/specs/aws/organizations.dart'
+    deferred as spec_aws_organizations;
 import 'package:autocomplete/specs/aws/osis.dart' deferred as spec_aws_osis;
-import 'package:autocomplete/specs/aws/outposts.dart' deferred as spec_aws_outposts;
-import 'package:autocomplete/specs/aws/panorama.dart' deferred as spec_aws_panorama;
-import 'package:autocomplete/specs/aws/partnercentral-selling.dart' deferred as spec_aws_partnercentral_selling;
-import 'package:autocomplete/specs/aws/payment-cryptography-data.dart' deferred as spec_aws_payment_cryptography_data;
-import 'package:autocomplete/specs/aws/payment-cryptography.dart' deferred as spec_aws_payment_cryptography;
-import 'package:autocomplete/specs/aws/pca-connector-ad.dart' deferred as spec_aws_pca_connector_ad;
-import 'package:autocomplete/specs/aws/pca-connector-scep.dart' deferred as spec_aws_pca_connector_scep;
+import 'package:autocomplete/specs/aws/outposts.dart'
+    deferred as spec_aws_outposts;
+import 'package:autocomplete/specs/aws/panorama.dart'
+    deferred as spec_aws_panorama;
+import 'package:autocomplete/specs/aws/partnercentral-selling.dart'
+    deferred as spec_aws_partnercentral_selling;
+import 'package:autocomplete/specs/aws/payment-cryptography-data.dart'
+    deferred as spec_aws_payment_cryptography_data;
+import 'package:autocomplete/specs/aws/payment-cryptography.dart'
+    deferred as spec_aws_payment_cryptography;
+import 'package:autocomplete/specs/aws/pca-connector-ad.dart'
+    deferred as spec_aws_pca_connector_ad;
+import 'package:autocomplete/specs/aws/pca-connector-scep.dart'
+    deferred as spec_aws_pca_connector_scep;
 import 'package:autocomplete/specs/aws/pcs.dart' deferred as spec_aws_pcs;
-import 'package:autocomplete/specs/aws/personalize-events.dart' deferred as spec_aws_personalize_events;
-import 'package:autocomplete/specs/aws/personalize-runtime.dart' deferred as spec_aws_personalize_runtime;
-import 'package:autocomplete/specs/aws/personalize.dart' deferred as spec_aws_personalize;
+import 'package:autocomplete/specs/aws/personalize-events.dart'
+    deferred as spec_aws_personalize_events;
+import 'package:autocomplete/specs/aws/personalize-runtime.dart'
+    deferred as spec_aws_personalize_runtime;
+import 'package:autocomplete/specs/aws/personalize.dart'
+    deferred as spec_aws_personalize;
 import 'package:autocomplete/specs/aws/pi.dart' deferred as spec_aws_pi;
-import 'package:autocomplete/specs/aws/pinpoint-email.dart' deferred as spec_aws_pinpoint_email;
-import 'package:autocomplete/specs/aws/pinpoint-sms-voice-v2.dart' deferred as spec_aws_pinpoint_sms_voice_v2;
-import 'package:autocomplete/specs/aws/pinpoint-sms-voice.dart' deferred as spec_aws_pinpoint_sms_voice;
-import 'package:autocomplete/specs/aws/pinpoint.dart' deferred as spec_aws_pinpoint;
+import 'package:autocomplete/specs/aws/pinpoint-email.dart'
+    deferred as spec_aws_pinpoint_email;
+import 'package:autocomplete/specs/aws/pinpoint-sms-voice-v2.dart'
+    deferred as spec_aws_pinpoint_sms_voice_v2;
+import 'package:autocomplete/specs/aws/pinpoint-sms-voice.dart'
+    deferred as spec_aws_pinpoint_sms_voice;
+import 'package:autocomplete/specs/aws/pinpoint.dart'
+    deferred as spec_aws_pinpoint;
 import 'package:autocomplete/specs/aws/pipes.dart' deferred as spec_aws_pipes;
 import 'package:autocomplete/specs/aws/polly.dart' deferred as spec_aws_polly;
-import 'package:autocomplete/specs/aws/pricing.dart' deferred as spec_aws_pricing;
-import 'package:autocomplete/specs/aws/privatenetworks.dart' deferred as spec_aws_privatenetworks;
+import 'package:autocomplete/specs/aws/pricing.dart'
+    deferred as spec_aws_pricing;
+import 'package:autocomplete/specs/aws/privatenetworks.dart'
+    deferred as spec_aws_privatenetworks;
 import 'package:autocomplete/specs/aws/proton.dart' deferred as spec_aws_proton;
 import 'package:autocomplete/specs/aws/qapps.dart' deferred as spec_aws_qapps;
-import 'package:autocomplete/specs/aws/qbusiness.dart' deferred as spec_aws_qbusiness;
-import 'package:autocomplete/specs/aws/qconnect.dart' deferred as spec_aws_qconnect;
-import 'package:autocomplete/specs/aws/qldb-session.dart' deferred as spec_aws_qldb_session;
+import 'package:autocomplete/specs/aws/qbusiness.dart'
+    deferred as spec_aws_qbusiness;
+import 'package:autocomplete/specs/aws/qconnect.dart'
+    deferred as spec_aws_qconnect;
+import 'package:autocomplete/specs/aws/qldb-session.dart'
+    deferred as spec_aws_qldb_session;
 import 'package:autocomplete/specs/aws/qldb.dart' deferred as spec_aws_qldb;
-import 'package:autocomplete/specs/aws/quicksight.dart' deferred as spec_aws_quicksight;
+import 'package:autocomplete/specs/aws/quicksight.dart'
+    deferred as spec_aws_quicksight;
 import 'package:autocomplete/specs/aws/ram.dart' deferred as spec_aws_ram;
 import 'package:autocomplete/specs/aws/rbin.dart' deferred as spec_aws_rbin;
-import 'package:autocomplete/specs/aws/rds-data.dart' deferred as spec_aws_rds_data;
+import 'package:autocomplete/specs/aws/rds-data.dart'
+    deferred as spec_aws_rds_data;
 import 'package:autocomplete/specs/aws/rds.dart' deferred as spec_aws_rds;
-import 'package:autocomplete/specs/aws/redshift-data.dart' deferred as spec_aws_redshift_data;
-import 'package:autocomplete/specs/aws/redshift-serverless.dart' deferred as spec_aws_redshift_serverless;
-import 'package:autocomplete/specs/aws/redshift.dart' deferred as spec_aws_redshift;
-import 'package:autocomplete/specs/aws/rekognition.dart' deferred as spec_aws_rekognition;
-import 'package:autocomplete/specs/aws/repostspace.dart' deferred as spec_aws_repostspace;
-import 'package:autocomplete/specs/aws/resiliencehub.dart' deferred as spec_aws_resiliencehub;
-import 'package:autocomplete/specs/aws/resource-explorer-2.dart' deferred as spec_aws_resource_explorer_2;
-import 'package:autocomplete/specs/aws/resource-groups.dart' deferred as spec_aws_resource_groups;
-import 'package:autocomplete/specs/aws/resourcegroupstaggingapi.dart' deferred as spec_aws_resourcegroupstaggingapi;
-import 'package:autocomplete/specs/aws/robomaker.dart' deferred as spec_aws_robomaker;
-import 'package:autocomplete/specs/aws/rolesanywhere.dart' deferred as spec_aws_rolesanywhere;
-import 'package:autocomplete/specs/aws/route53-recovery-cluster.dart' deferred as spec_aws_route53_recovery_cluster;
-import 'package:autocomplete/specs/aws/route53-recovery-control-config.dart' deferred as spec_aws_route53_recovery_control_config;
-import 'package:autocomplete/specs/aws/route53-recovery-readiness.dart' deferred as spec_aws_route53_recovery_readiness;
-import 'package:autocomplete/specs/aws/route53.dart' deferred as spec_aws_route53;
-import 'package:autocomplete/specs/aws/route53domains.dart' deferred as spec_aws_route53domains;
-import 'package:autocomplete/specs/aws/route53profiles.dart' deferred as spec_aws_route53profiles;
-import 'package:autocomplete/specs/aws/route53resolver.dart' deferred as spec_aws_route53resolver;
+import 'package:autocomplete/specs/aws/redshift-data.dart'
+    deferred as spec_aws_redshift_data;
+import 'package:autocomplete/specs/aws/redshift-serverless.dart'
+    deferred as spec_aws_redshift_serverless;
+import 'package:autocomplete/specs/aws/redshift.dart'
+    deferred as spec_aws_redshift;
+import 'package:autocomplete/specs/aws/rekognition.dart'
+    deferred as spec_aws_rekognition;
+import 'package:autocomplete/specs/aws/repostspace.dart'
+    deferred as spec_aws_repostspace;
+import 'package:autocomplete/specs/aws/resiliencehub.dart'
+    deferred as spec_aws_resiliencehub;
+import 'package:autocomplete/specs/aws/resource-explorer-2.dart'
+    deferred as spec_aws_resource_explorer_2;
+import 'package:autocomplete/specs/aws/resource-groups.dart'
+    deferred as spec_aws_resource_groups;
+import 'package:autocomplete/specs/aws/resourcegroupstaggingapi.dart'
+    deferred as spec_aws_resourcegroupstaggingapi;
+import 'package:autocomplete/specs/aws/robomaker.dart'
+    deferred as spec_aws_robomaker;
+import 'package:autocomplete/specs/aws/rolesanywhere.dart'
+    deferred as spec_aws_rolesanywhere;
+import 'package:autocomplete/specs/aws/route53-recovery-cluster.dart'
+    deferred as spec_aws_route53_recovery_cluster;
+import 'package:autocomplete/specs/aws/route53-recovery-control-config.dart'
+    deferred as spec_aws_route53_recovery_control_config;
+import 'package:autocomplete/specs/aws/route53-recovery-readiness.dart'
+    deferred as spec_aws_route53_recovery_readiness;
+import 'package:autocomplete/specs/aws/route53.dart'
+    deferred as spec_aws_route53;
+import 'package:autocomplete/specs/aws/route53domains.dart'
+    deferred as spec_aws_route53domains;
+import 'package:autocomplete/specs/aws/route53profiles.dart'
+    deferred as spec_aws_route53profiles;
+import 'package:autocomplete/specs/aws/route53resolver.dart'
+    deferred as spec_aws_route53resolver;
 import 'package:autocomplete/specs/aws/rum.dart' deferred as spec_aws_rum;
-import 'package:autocomplete/specs/aws/runtime.sagemaker.dart' deferred as spec_aws_runtime_sagemaker;
-import 'package:autocomplete/specs/aws/s3control.dart' deferred as spec_aws_s3control;
-import 'package:autocomplete/specs/aws/s3outposts.dart' deferred as spec_aws_s3outposts;
-import 'package:autocomplete/specs/aws/s3tables.dart' deferred as spec_aws_s3tables;
-import 'package:autocomplete/specs/aws/sagemaker-a2i-runtime.dart' deferred as spec_aws_sagemaker_a2i_runtime;
-import 'package:autocomplete/specs/aws/sagemaker-edge.dart' deferred as spec_aws_sagemaker_edge;
-import 'package:autocomplete/specs/aws/sagemaker-featurestore-runtime.dart' deferred as spec_aws_sagemaker_featurestore_runtime;
-import 'package:autocomplete/specs/aws/sagemaker-geospatial.dart' deferred as spec_aws_sagemaker_geospatial;
-import 'package:autocomplete/specs/aws/sagemaker-metrics.dart' deferred as spec_aws_sagemaker_metrics;
-import 'package:autocomplete/specs/aws/sagemaker-runtime.dart' deferred as spec_aws_sagemaker_runtime;
-import 'package:autocomplete/specs/aws/sagemaker.dart' deferred as spec_aws_sagemaker;
-import 'package:autocomplete/specs/aws/savingsplans.dart' deferred as spec_aws_savingsplans;
-import 'package:autocomplete/specs/aws/scheduler.dart' deferred as spec_aws_scheduler;
-import 'package:autocomplete/specs/aws/schemas.dart' deferred as spec_aws_schemas;
+import 'package:autocomplete/specs/aws/runtime.sagemaker.dart'
+    deferred as spec_aws_runtime_sagemaker;
+import 'package:autocomplete/specs/aws/s3control.dart'
+    deferred as spec_aws_s3control;
+import 'package:autocomplete/specs/aws/s3outposts.dart'
+    deferred as spec_aws_s3outposts;
+import 'package:autocomplete/specs/aws/s3tables.dart'
+    deferred as spec_aws_s3tables;
+import 'package:autocomplete/specs/aws/sagemaker-a2i-runtime.dart'
+    deferred as spec_aws_sagemaker_a2i_runtime;
+import 'package:autocomplete/specs/aws/sagemaker-edge.dart'
+    deferred as spec_aws_sagemaker_edge;
+import 'package:autocomplete/specs/aws/sagemaker-featurestore-runtime.dart'
+    deferred as spec_aws_sagemaker_featurestore_runtime;
+import 'package:autocomplete/specs/aws/sagemaker-geospatial.dart'
+    deferred as spec_aws_sagemaker_geospatial;
+import 'package:autocomplete/specs/aws/sagemaker-metrics.dart'
+    deferred as spec_aws_sagemaker_metrics;
+import 'package:autocomplete/specs/aws/sagemaker-runtime.dart'
+    deferred as spec_aws_sagemaker_runtime;
+import 'package:autocomplete/specs/aws/sagemaker.dart'
+    deferred as spec_aws_sagemaker;
+import 'package:autocomplete/specs/aws/savingsplans.dart'
+    deferred as spec_aws_savingsplans;
+import 'package:autocomplete/specs/aws/scheduler.dart'
+    deferred as spec_aws_scheduler;
+import 'package:autocomplete/specs/aws/schemas.dart'
+    deferred as spec_aws_schemas;
 import 'package:autocomplete/specs/aws/sdb.dart' deferred as spec_aws_sdb;
-import 'package:autocomplete/specs/aws/security-ir.dart' deferred as spec_aws_security_ir;
-import 'package:autocomplete/specs/aws/securityhub.dart' deferred as spec_aws_securityhub;
-import 'package:autocomplete/specs/aws/securitylake.dart' deferred as spec_aws_securitylake;
-import 'package:autocomplete/specs/aws/serverlessrepo.dart' deferred as spec_aws_serverlessrepo;
-import 'package:autocomplete/specs/aws/service-quotas.dart' deferred as spec_aws_service_quotas;
-import 'package:autocomplete/specs/aws/servicecatalog-appregistry.dart' deferred as spec_aws_servicecatalog_appregistry;
-import 'package:autocomplete/specs/aws/servicecatalog.dart' deferred as spec_aws_servicecatalog;
-import 'package:autocomplete/specs/aws/servicediscovery.dart' deferred as spec_aws_servicediscovery;
+import 'package:autocomplete/specs/aws/security-ir.dart'
+    deferred as spec_aws_security_ir;
+import 'package:autocomplete/specs/aws/securityhub.dart'
+    deferred as spec_aws_securityhub;
+import 'package:autocomplete/specs/aws/securitylake.dart'
+    deferred as spec_aws_securitylake;
+import 'package:autocomplete/specs/aws/serverlessrepo.dart'
+    deferred as spec_aws_serverlessrepo;
+import 'package:autocomplete/specs/aws/service-quotas.dart'
+    deferred as spec_aws_service_quotas;
+import 'package:autocomplete/specs/aws/servicecatalog-appregistry.dart'
+    deferred as spec_aws_servicecatalog_appregistry;
+import 'package:autocomplete/specs/aws/servicecatalog.dart'
+    deferred as spec_aws_servicecatalog;
+import 'package:autocomplete/specs/aws/servicediscovery.dart'
+    deferred as spec_aws_servicediscovery;
 import 'package:autocomplete/specs/aws/ses.dart' deferred as spec_aws_ses;
 import 'package:autocomplete/specs/aws/sesv2.dart' deferred as spec_aws_sesv2;
 import 'package:autocomplete/specs/aws/shield.dart' deferred as spec_aws_shield;
 import 'package:autocomplete/specs/aws/signer.dart' deferred as spec_aws_signer;
-import 'package:autocomplete/specs/aws/simspaceweaver.dart' deferred as spec_aws_simspaceweaver;
-import 'package:autocomplete/specs/aws/sms-voice.dart' deferred as spec_aws_sms_voice;
+import 'package:autocomplete/specs/aws/simspaceweaver.dart'
+    deferred as spec_aws_simspaceweaver;
+import 'package:autocomplete/specs/aws/sms-voice.dart'
+    deferred as spec_aws_sms_voice;
 import 'package:autocomplete/specs/aws/sms.dart' deferred as spec_aws_sms;
-import 'package:autocomplete/specs/aws/snow-device-management.dart' deferred as spec_aws_snow_device_management;
-import 'package:autocomplete/specs/aws/snowball.dart' deferred as spec_aws_snowball;
+import 'package:autocomplete/specs/aws/snow-device-management.dart'
+    deferred as spec_aws_snow_device_management;
+import 'package:autocomplete/specs/aws/snowball.dart'
+    deferred as spec_aws_snowball;
 import 'package:autocomplete/specs/aws/sns.dart' deferred as spec_aws_sns;
-import 'package:autocomplete/specs/aws/socialmessaging.dart' deferred as spec_aws_socialmessaging;
+import 'package:autocomplete/specs/aws/socialmessaging.dart'
+    deferred as spec_aws_socialmessaging;
 import 'package:autocomplete/specs/aws/sqs.dart' deferred as spec_aws_sqs;
-import 'package:autocomplete/specs/aws/ssm-contacts.dart' deferred as spec_aws_ssm_contacts;
-import 'package:autocomplete/specs/aws/ssm-incidents.dart' deferred as spec_aws_ssm_incidents;
-import 'package:autocomplete/specs/aws/ssm-quicksetup.dart' deferred as spec_aws_ssm_quicksetup;
-import 'package:autocomplete/specs/aws/ssm-sap.dart' deferred as spec_aws_ssm_sap;
+import 'package:autocomplete/specs/aws/ssm-contacts.dart'
+    deferred as spec_aws_ssm_contacts;
+import 'package:autocomplete/specs/aws/ssm-incidents.dart'
+    deferred as spec_aws_ssm_incidents;
+import 'package:autocomplete/specs/aws/ssm-quicksetup.dart'
+    deferred as spec_aws_ssm_quicksetup;
+import 'package:autocomplete/specs/aws/ssm-sap.dart'
+    deferred as spec_aws_ssm_sap;
 import 'package:autocomplete/specs/aws/ssm.dart' deferred as spec_aws_ssm;
-import 'package:autocomplete/specs/aws/sso-admin.dart' deferred as spec_aws_sso_admin;
-import 'package:autocomplete/specs/aws/sso-oidc.dart' deferred as spec_aws_sso_oidc;
+import 'package:autocomplete/specs/aws/sso-admin.dart'
+    deferred as spec_aws_sso_admin;
+import 'package:autocomplete/specs/aws/sso-oidc.dart'
+    deferred as spec_aws_sso_oidc;
 import 'package:autocomplete/specs/aws/sso.dart' deferred as spec_aws_sso;
-import 'package:autocomplete/specs/aws/stepfunctions.dart' deferred as spec_aws_stepfunctions;
-import 'package:autocomplete/specs/aws/storagegateway.dart' deferred as spec_aws_storagegateway;
+import 'package:autocomplete/specs/aws/stepfunctions.dart'
+    deferred as spec_aws_stepfunctions;
+import 'package:autocomplete/specs/aws/storagegateway.dart'
+    deferred as spec_aws_storagegateway;
 import 'package:autocomplete/specs/aws/sts.dart' deferred as spec_aws_sts;
-import 'package:autocomplete/specs/aws/supplychain.dart' deferred as spec_aws_supplychain;
-import 'package:autocomplete/specs/aws/support-app.dart' deferred as spec_aws_support_app;
-import 'package:autocomplete/specs/aws/support.dart' deferred as spec_aws_support;
+import 'package:autocomplete/specs/aws/supplychain.dart'
+    deferred as spec_aws_supplychain;
+import 'package:autocomplete/specs/aws/support-app.dart'
+    deferred as spec_aws_support_app;
+import 'package:autocomplete/specs/aws/support.dart'
+    deferred as spec_aws_support;
 import 'package:autocomplete/specs/aws/swf.dart' deferred as spec_aws_swf;
-import 'package:autocomplete/specs/aws/synthetics.dart' deferred as spec_aws_synthetics;
-import 'package:autocomplete/specs/aws/taxsettings.dart' deferred as spec_aws_taxsettings;
-import 'package:autocomplete/specs/aws/textract.dart' deferred as spec_aws_textract;
-import 'package:autocomplete/specs/aws/timestream-influxdb.dart' deferred as spec_aws_timestream_influxdb;
-import 'package:autocomplete/specs/aws/timestream-query.dart' deferred as spec_aws_timestream_query;
-import 'package:autocomplete/specs/aws/timestream-write.dart' deferred as spec_aws_timestream_write;
-import 'package:autocomplete/specs/aws/transcribe.dart' deferred as spec_aws_transcribe;
-import 'package:autocomplete/specs/aws/transfer.dart' deferred as spec_aws_transfer;
-import 'package:autocomplete/specs/aws/translate.dart' deferred as spec_aws_translate;
-import 'package:autocomplete/specs/aws/trustedadvisor.dart' deferred as spec_aws_trustedadvisor;
-import 'package:autocomplete/specs/aws/verifiedpermissions.dart' deferred as spec_aws_verifiedpermissions;
-import 'package:autocomplete/specs/aws/voice-id.dart' deferred as spec_aws_voice_id;
-import 'package:autocomplete/specs/aws/vpc-lattice.dart' deferred as spec_aws_vpc_lattice;
-import 'package:autocomplete/specs/aws/waf-regional.dart' deferred as spec_aws_waf_regional;
+import 'package:autocomplete/specs/aws/synthetics.dart'
+    deferred as spec_aws_synthetics;
+import 'package:autocomplete/specs/aws/taxsettings.dart'
+    deferred as spec_aws_taxsettings;
+import 'package:autocomplete/specs/aws/textract.dart'
+    deferred as spec_aws_textract;
+import 'package:autocomplete/specs/aws/timestream-influxdb.dart'
+    deferred as spec_aws_timestream_influxdb;
+import 'package:autocomplete/specs/aws/timestream-query.dart'
+    deferred as spec_aws_timestream_query;
+import 'package:autocomplete/specs/aws/timestream-write.dart'
+    deferred as spec_aws_timestream_write;
+import 'package:autocomplete/specs/aws/transcribe.dart'
+    deferred as spec_aws_transcribe;
+import 'package:autocomplete/specs/aws/transfer.dart'
+    deferred as spec_aws_transfer;
+import 'package:autocomplete/specs/aws/translate.dart'
+    deferred as spec_aws_translate;
+import 'package:autocomplete/specs/aws/trustedadvisor.dart'
+    deferred as spec_aws_trustedadvisor;
+import 'package:autocomplete/specs/aws/verifiedpermissions.dart'
+    deferred as spec_aws_verifiedpermissions;
+import 'package:autocomplete/specs/aws/voice-id.dart'
+    deferred as spec_aws_voice_id;
+import 'package:autocomplete/specs/aws/vpc-lattice.dart'
+    deferred as spec_aws_vpc_lattice;
+import 'package:autocomplete/specs/aws/waf-regional.dart'
+    deferred as spec_aws_waf_regional;
 import 'package:autocomplete/specs/aws/waf.dart' deferred as spec_aws_waf;
 import 'package:autocomplete/specs/aws/wafv2.dart' deferred as spec_aws_wafv2;
-import 'package:autocomplete/specs/aws/wellarchitected.dart' deferred as spec_aws_wellarchitected;
+import 'package:autocomplete/specs/aws/wellarchitected.dart'
+    deferred as spec_aws_wellarchitected;
 import 'package:autocomplete/specs/aws/wisdom.dart' deferred as spec_aws_wisdom;
-import 'package:autocomplete/specs/aws/workdocs.dart' deferred as spec_aws_workdocs;
-import 'package:autocomplete/specs/aws/worklink.dart' deferred as spec_aws_worklink;
-import 'package:autocomplete/specs/aws/workmail.dart' deferred as spec_aws_workmail;
-import 'package:autocomplete/specs/aws/workmailmessageflow.dart' deferred as spec_aws_workmailmessageflow;
-import 'package:autocomplete/specs/aws/workspaces-thin-client.dart' deferred as spec_aws_workspaces_thin_client;
-import 'package:autocomplete/specs/aws/workspaces-web.dart' deferred as spec_aws_workspaces_web;
-import 'package:autocomplete/specs/aws/workspaces.dart' deferred as spec_aws_workspaces;
+import 'package:autocomplete/specs/aws/workdocs.dart'
+    deferred as spec_aws_workdocs;
+import 'package:autocomplete/specs/aws/worklink.dart'
+    deferred as spec_aws_worklink;
+import 'package:autocomplete/specs/aws/workmail.dart'
+    deferred as spec_aws_workmail;
+import 'package:autocomplete/specs/aws/workmailmessageflow.dart'
+    deferred as spec_aws_workmailmessageflow;
+import 'package:autocomplete/specs/aws/workspaces-thin-client.dart'
+    deferred as spec_aws_workspaces_thin_client;
+import 'package:autocomplete/specs/aws/workspaces-web.dart'
+    deferred as spec_aws_workspaces_web;
+import 'package:autocomplete/specs/aws/workspaces.dart'
+    deferred as spec_aws_workspaces;
 import 'package:autocomplete/specs/aws/xray.dart' deferred as spec_aws_xray;
 import 'package:autocomplete/specs/awsume.dart' deferred as spec_awsume;
 import 'package:autocomplete/specs/az.dart' deferred as spec_az;
 import 'package:autocomplete/specs/az/2.53.0.dart' deferred as spec_az_2_53_0;
-import 'package:autocomplete/specs/az/2.53.0/account.dart' deferred as spec_az_2_53_0_account;
-import 'package:autocomplete/specs/az/2.53.0/acr.dart' deferred as spec_az_2_53_0_acr;
-import 'package:autocomplete/specs/az/2.53.0/ad.dart' deferred as spec_az_2_53_0_ad;
-import 'package:autocomplete/specs/az/2.53.0/adp.dart' deferred as spec_az_2_53_0_adp;
-import 'package:autocomplete/specs/az/2.53.0/advisor.dart' deferred as spec_az_2_53_0_advisor;
-import 'package:autocomplete/specs/az/2.53.0/afd.dart' deferred as spec_az_2_53_0_afd;
-import 'package:autocomplete/specs/az/2.53.0/ai-examples.dart' deferred as spec_az_2_53_0_ai_examples;
-import 'package:autocomplete/specs/az/2.53.0/aks.dart' deferred as spec_az_2_53_0_aks;
-import 'package:autocomplete/specs/az/2.53.0/alerts-management.dart' deferred as spec_az_2_53_0_alerts_management;
-import 'package:autocomplete/specs/az/2.53.0/alias.dart' deferred as spec_az_2_53_0_alias;
-import 'package:autocomplete/specs/az/2.53.0/amlfs.dart' deferred as spec_az_2_53_0_amlfs;
-import 'package:autocomplete/specs/az/2.53.0/ams.dart' deferred as spec_az_2_53_0_ams;
-import 'package:autocomplete/specs/az/2.53.0/apim.dart' deferred as spec_az_2_53_0_apim;
-import 'package:autocomplete/specs/az/2.53.0/appconfig.dart' deferred as spec_az_2_53_0_appconfig;
-import 'package:autocomplete/specs/az/2.53.0/appservice.dart' deferred as spec_az_2_53_0_appservice;
-import 'package:autocomplete/specs/az/2.53.0/arcappliance.dart' deferred as spec_az_2_53_0_arcappliance;
-import 'package:autocomplete/specs/az/2.53.0/arcdata.dart' deferred as spec_az_2_53_0_arcdata;
-import 'package:autocomplete/specs/az/2.53.0/aro.dart' deferred as spec_az_2_53_0_aro;
-import 'package:autocomplete/specs/az/2.53.0/artifacts.dart' deferred as spec_az_2_53_0_artifacts;
-import 'package:autocomplete/specs/az/2.53.0/attestation.dart' deferred as spec_az_2_53_0_attestation;
-import 'package:autocomplete/specs/az/2.53.0/automanage.dart' deferred as spec_az_2_53_0_automanage;
-import 'package:autocomplete/specs/az/2.53.0/automation.dart' deferred as spec_az_2_53_0_automation;
-import 'package:autocomplete/specs/az/2.53.0/azurestackhci.dart' deferred as spec_az_2_53_0_azurestackhci;
-import 'package:autocomplete/specs/az/2.53.0/backup.dart' deferred as spec_az_2_53_0_backup;
-import 'package:autocomplete/specs/az/2.53.0/baremetalinstance.dart' deferred as spec_az_2_53_0_baremetalinstance;
-import 'package:autocomplete/specs/az/2.53.0/batch.dart' deferred as spec_az_2_53_0_batch;
-import 'package:autocomplete/specs/az/2.53.0/batchai.dart' deferred as spec_az_2_53_0_batchai;
-import 'package:autocomplete/specs/az/2.53.0/bicep.dart' deferred as spec_az_2_53_0_bicep;
-import 'package:autocomplete/specs/az/2.53.0/billing-benefits.dart' deferred as spec_az_2_53_0_billing_benefits;
-import 'package:autocomplete/specs/az/2.53.0/billing.dart' deferred as spec_az_2_53_0_billing;
-import 'package:autocomplete/specs/az/2.53.0/blockchain.dart' deferred as spec_az_2_53_0_blockchain;
-import 'package:autocomplete/specs/az/2.53.0/blueprint.dart' deferred as spec_az_2_53_0_blueprint;
-import 'package:autocomplete/specs/az/2.53.0/boards.dart' deferred as spec_az_2_53_0_boards;
-import 'package:autocomplete/specs/az/2.53.0/bot.dart' deferred as spec_az_2_53_0_bot;
-import 'package:autocomplete/specs/az/2.53.0/cache.dart' deferred as spec_az_2_53_0_cache;
-import 'package:autocomplete/specs/az/2.53.0/capacity.dart' deferred as spec_az_2_53_0_capacity;
-import 'package:autocomplete/specs/az/2.53.0/cdn.dart' deferred as spec_az_2_53_0_cdn;
-import 'package:autocomplete/specs/az/2.53.0/change-analysis.dart' deferred as spec_az_2_53_0_change_analysis;
-import 'package:autocomplete/specs/az/2.53.0/cli-translator.dart' deferred as spec_az_2_53_0_cli_translator;
-import 'package:autocomplete/specs/az/2.53.0/cloud-service.dart' deferred as spec_az_2_53_0_cloud_service;
-import 'package:autocomplete/specs/az/2.53.0/cloud.dart' deferred as spec_az_2_53_0_cloud;
-import 'package:autocomplete/specs/az/2.53.0/cognitiveservices.dart' deferred as spec_az_2_53_0_cognitiveservices;
-import 'package:autocomplete/specs/az/2.53.0/command-change.dart' deferred as spec_az_2_53_0_command_change;
-import 'package:autocomplete/specs/az/2.53.0/communication.dart' deferred as spec_az_2_53_0_communication;
-import 'package:autocomplete/specs/az/2.53.0/confcom.dart' deferred as spec_az_2_53_0_confcom;
-import 'package:autocomplete/specs/az/2.53.0/confidentialledger.dart' deferred as spec_az_2_53_0_confidentialledger;
-import 'package:autocomplete/specs/az/2.53.0/config.dart' deferred as spec_az_2_53_0_config;
-import 'package:autocomplete/specs/az/2.53.0/configure.dart' deferred as spec_az_2_53_0_configure;
-import 'package:autocomplete/specs/az/2.53.0/confluent.dart' deferred as spec_az_2_53_0_confluent;
-import 'package:autocomplete/specs/az/2.53.0/connectedk8s.dart' deferred as spec_az_2_53_0_connectedk8s;
-import 'package:autocomplete/specs/az/2.53.0/connectedmachine.dart' deferred as spec_az_2_53_0_connectedmachine;
-import 'package:autocomplete/specs/az/2.53.0/connectedvmware.dart' deferred as spec_az_2_53_0_connectedvmware;
-import 'package:autocomplete/specs/az/2.53.0/connection.dart' deferred as spec_az_2_53_0_connection;
-import 'package:autocomplete/specs/az/2.53.0/consumption.dart' deferred as spec_az_2_53_0_consumption;
-import 'package:autocomplete/specs/az/2.53.0/container.dart' deferred as spec_az_2_53_0_container;
-import 'package:autocomplete/specs/az/2.53.0/containerapp.dart' deferred as spec_az_2_53_0_containerapp;
-import 'package:autocomplete/specs/az/2.53.0/cosmosdb.dart' deferred as spec_az_2_53_0_cosmosdb;
-import 'package:autocomplete/specs/az/2.53.0/costmanagement.dart' deferred as spec_az_2_53_0_costmanagement;
-import 'package:autocomplete/specs/az/2.53.0/csvmware.dart' deferred as spec_az_2_53_0_csvmware;
-import 'package:autocomplete/specs/az/2.53.0/custom-providers.dart' deferred as spec_az_2_53_0_custom_providers;
-import 'package:autocomplete/specs/az/2.53.0/customlocation.dart' deferred as spec_az_2_53_0_customlocation;
-import 'package:autocomplete/specs/az/2.53.0/databox.dart' deferred as spec_az_2_53_0_databox;
-import 'package:autocomplete/specs/az/2.53.0/databoxedge.dart' deferred as spec_az_2_53_0_databoxedge;
-import 'package:autocomplete/specs/az/2.53.0/databricks.dart' deferred as spec_az_2_53_0_databricks;
-import 'package:autocomplete/specs/az/2.53.0/datadog.dart' deferred as spec_az_2_53_0_datadog;
-import 'package:autocomplete/specs/az/2.53.0/datafactory.dart' deferred as spec_az_2_53_0_datafactory;
-import 'package:autocomplete/specs/az/2.53.0/datamigration.dart' deferred as spec_az_2_53_0_datamigration;
-import 'package:autocomplete/specs/az/2.53.0/dataprotection.dart' deferred as spec_az_2_53_0_dataprotection;
-import 'package:autocomplete/specs/az/2.53.0/datashare.dart' deferred as spec_az_2_53_0_datashare;
-import 'package:autocomplete/specs/az/2.53.0/dedicated-hsm.dart' deferred as spec_az_2_53_0_dedicated_hsm;
-import 'package:autocomplete/specs/az/2.53.0/demo.dart' deferred as spec_az_2_53_0_demo;
-import 'package:autocomplete/specs/az/2.53.0/deployment-scripts.dart' deferred as spec_az_2_53_0_deployment_scripts;
-import 'package:autocomplete/specs/az/2.53.0/deployment.dart' deferred as spec_az_2_53_0_deployment;
-import 'package:autocomplete/specs/az/2.53.0/desktopvirtualization.dart' deferred as spec_az_2_53_0_desktopvirtualization;
-import 'package:autocomplete/specs/az/2.53.0/devcenter.dart' deferred as spec_az_2_53_0_devcenter;
-import 'package:autocomplete/specs/az/2.53.0/devops.dart' deferred as spec_az_2_53_0_devops;
-import 'package:autocomplete/specs/az/2.53.0/disk-access.dart' deferred as spec_az_2_53_0_disk_access;
-import 'package:autocomplete/specs/az/2.53.0/disk-encryption-set.dart' deferred as spec_az_2_53_0_disk_encryption_set;
-import 'package:autocomplete/specs/az/2.53.0/disk-pool.dart' deferred as spec_az_2_53_0_disk_pool;
-import 'package:autocomplete/specs/az/2.53.0/disk.dart' deferred as spec_az_2_53_0_disk;
-import 'package:autocomplete/specs/az/2.53.0/dla.dart' deferred as spec_az_2_53_0_dla;
-import 'package:autocomplete/specs/az/2.53.0/dls.dart' deferred as spec_az_2_53_0_dls;
-import 'package:autocomplete/specs/az/2.53.0/dms.dart' deferred as spec_az_2_53_0_dms;
-import 'package:autocomplete/specs/az/2.53.0/dnc.dart' deferred as spec_az_2_53_0_dnc;
-import 'package:autocomplete/specs/az/2.53.0/dns-resolver.dart' deferred as spec_az_2_53_0_dns_resolver;
-import 'package:autocomplete/specs/az/2.53.0/dt.dart' deferred as spec_az_2_53_0_dt;
-import 'package:autocomplete/specs/az/2.53.0/dynatrace.dart' deferred as spec_az_2_53_0_dynatrace;
-import 'package:autocomplete/specs/az/2.53.0/edgeorder.dart' deferred as spec_az_2_53_0_edgeorder;
-import 'package:autocomplete/specs/az/2.53.0/elastic-san.dart' deferred as spec_az_2_53_0_elastic_san;
-import 'package:autocomplete/specs/az/2.53.0/elastic.dart' deferred as spec_az_2_53_0_elastic;
-import 'package:autocomplete/specs/az/2.53.0/eventgrid.dart' deferred as spec_az_2_53_0_eventgrid;
-import 'package:autocomplete/specs/az/2.53.0/eventhubs.dart' deferred as spec_az_2_53_0_eventhubs;
-import 'package:autocomplete/specs/az/2.53.0/extension.dart' deferred as spec_az_2_53_0_extension;
-import 'package:autocomplete/specs/az/2.53.0/feature.dart' deferred as spec_az_2_53_0_feature;
-import 'package:autocomplete/specs/az/2.53.0/feedback.dart' deferred as spec_az_2_53_0_feedback;
-import 'package:autocomplete/specs/az/2.53.0/find.dart' deferred as spec_az_2_53_0_find;
-import 'package:autocomplete/specs/az/2.53.0/fleet.dart' deferred as spec_az_2_53_0_fleet;
-import 'package:autocomplete/specs/az/2.53.0/fluid-relay.dart' deferred as spec_az_2_53_0_fluid_relay;
-import 'package:autocomplete/specs/az/2.53.0/footprint.dart' deferred as spec_az_2_53_0_footprint;
-import 'package:autocomplete/specs/az/2.53.0/functionapp.dart' deferred as spec_az_2_53_0_functionapp;
-import 'package:autocomplete/specs/az/2.53.0/fzf.dart' deferred as spec_az_2_53_0_fzf;
-import 'package:autocomplete/specs/az/2.53.0/grafana.dart' deferred as spec_az_2_53_0_grafana;
-import 'package:autocomplete/specs/az/2.53.0/graph-services.dart' deferred as spec_az_2_53_0_graph_services;
-import 'package:autocomplete/specs/az/2.53.0/graph.dart' deferred as spec_az_2_53_0_graph;
-import 'package:autocomplete/specs/az/2.53.0/group.dart' deferred as spec_az_2_53_0_group;
-import 'package:autocomplete/specs/az/2.53.0/guestconfig.dart' deferred as spec_az_2_53_0_guestconfig;
-import 'package:autocomplete/specs/az/2.53.0/hack.dart' deferred as spec_az_2_53_0_hack;
-import 'package:autocomplete/specs/az/2.53.0/hanainstance.dart' deferred as spec_az_2_53_0_hanainstance;
-import 'package:autocomplete/specs/az/2.53.0/hdinsight.dart' deferred as spec_az_2_53_0_hdinsight;
-import 'package:autocomplete/specs/az/2.53.0/healthbot.dart' deferred as spec_az_2_53_0_healthbot;
-import 'package:autocomplete/specs/az/2.53.0/healthcareapis.dart' deferred as spec_az_2_53_0_healthcareapis;
-import 'package:autocomplete/specs/az/2.53.0/hpc-cache.dart' deferred as spec_az_2_53_0_hpc_cache;
-import 'package:autocomplete/specs/az/2.53.0/hybridaks.dart' deferred as spec_az_2_53_0_hybridaks;
-import 'package:autocomplete/specs/az/2.53.0/identity.dart' deferred as spec_az_2_53_0_identity;
-import 'package:autocomplete/specs/az/2.53.0/image.dart' deferred as spec_az_2_53_0_image;
-import 'package:autocomplete/specs/az/2.53.0/import-export.dart' deferred as spec_az_2_53_0_import_export;
-import 'package:autocomplete/specs/az/2.53.0/init.dart' deferred as spec_az_2_53_0_init;
-import 'package:autocomplete/specs/az/2.53.0/interactive.dart' deferred as spec_az_2_53_0_interactive;
-import 'package:autocomplete/specs/az/2.53.0/internet-analyzer.dart' deferred as spec_az_2_53_0_internet_analyzer;
-import 'package:autocomplete/specs/az/2.53.0/iot.dart' deferred as spec_az_2_53_0_iot;
-import 'package:autocomplete/specs/az/2.53.0/k8s-configuration.dart' deferred as spec_az_2_53_0_k8s_configuration;
-import 'package:autocomplete/specs/az/2.53.0/k8s-extension.dart' deferred as spec_az_2_53_0_k8s_extension;
-import 'package:autocomplete/specs/az/2.53.0/k8sconfiguration.dart' deferred as spec_az_2_53_0_k8sconfiguration;
-import 'package:autocomplete/specs/az/2.53.0/keyvault.dart' deferred as spec_az_2_53_0_keyvault;
-import 'package:autocomplete/specs/az/2.53.0/kusto.dart' deferred as spec_az_2_53_0_kusto;
-import 'package:autocomplete/specs/az/2.53.0/lab.dart' deferred as spec_az_2_53_0_lab;
-import 'package:autocomplete/specs/az/2.53.0/load.dart' deferred as spec_az_2_53_0_load;
-import 'package:autocomplete/specs/az/2.53.0/lock.dart' deferred as spec_az_2_53_0_lock;
-import 'package:autocomplete/specs/az/2.53.0/logic.dart' deferred as spec_az_2_53_0_logic;
-import 'package:autocomplete/specs/az/2.53.0/logicapp.dart' deferred as spec_az_2_53_0_logicapp;
-import 'package:autocomplete/specs/az/2.53.0/login.dart' deferred as spec_az_2_53_0_login;
-import 'package:autocomplete/specs/az/2.53.0/logout.dart' deferred as spec_az_2_53_0_logout;
-import 'package:autocomplete/specs/az/2.53.0/logz.dart' deferred as spec_az_2_53_0_logz;
-import 'package:autocomplete/specs/az/2.53.0/maintenance.dart' deferred as spec_az_2_53_0_maintenance;
-import 'package:autocomplete/specs/az/2.53.0/managed-cassandra.dart' deferred as spec_az_2_53_0_managed_cassandra;
-import 'package:autocomplete/specs/az/2.53.0/managedapp.dart' deferred as spec_az_2_53_0_managedapp;
-import 'package:autocomplete/specs/az/2.53.0/managedservices.dart' deferred as spec_az_2_53_0_managedservices;
-import 'package:autocomplete/specs/az/2.53.0/managementpartner.dart' deferred as spec_az_2_53_0_managementpartner;
-import 'package:autocomplete/specs/az/2.53.0/maps.dart' deferred as spec_az_2_53_0_maps;
-import 'package:autocomplete/specs/az/2.53.0/mariadb.dart' deferred as spec_az_2_53_0_mariadb;
-import 'package:autocomplete/specs/az/2.53.0/mesh.dart' deferred as spec_az_2_53_0_mesh;
-import 'package:autocomplete/specs/az/2.53.0/ml.dart' deferred as spec_az_2_53_0_ml;
-import 'package:autocomplete/specs/az/2.53.0/mobile-network.dart' deferred as spec_az_2_53_0_mobile_network;
-import 'package:autocomplete/specs/az/2.53.0/monitor.dart' deferred as spec_az_2_53_0_monitor;
-import 'package:autocomplete/specs/az/2.53.0/mysql.dart' deferred as spec_az_2_53_0_mysql;
-import 'package:autocomplete/specs/az/2.53.0/netappfiles.dart' deferred as spec_az_2_53_0_netappfiles;
-import 'package:autocomplete/specs/az/2.53.0/network-function.dart' deferred as spec_az_2_53_0_network_function;
-import 'package:autocomplete/specs/az/2.53.0/network.dart' deferred as spec_az_2_53_0_network;
-import 'package:autocomplete/specs/az/2.53.0/networkcloud.dart' deferred as spec_az_2_53_0_networkcloud;
-import 'package:autocomplete/specs/az/2.53.0/networkfabric.dart' deferred as spec_az_2_53_0_networkfabric;
-import 'package:autocomplete/specs/az/2.53.0/new-relic.dart' deferred as spec_az_2_53_0_new_relic;
-import 'package:autocomplete/specs/az/2.53.0/next.dart' deferred as spec_az_2_53_0_next;
-import 'package:autocomplete/specs/az/2.53.0/nginx.dart' deferred as spec_az_2_53_0_nginx;
-import 'package:autocomplete/specs/az/2.53.0/notification-hub.dart' deferred as spec_az_2_53_0_notification_hub;
-import 'package:autocomplete/specs/az/2.53.0/offazure.dart' deferred as spec_az_2_53_0_offazure;
-import 'package:autocomplete/specs/az/2.53.0/orbital.dart' deferred as spec_az_2_53_0_orbital;
-import 'package:autocomplete/specs/az/2.53.0/palo-alto.dart' deferred as spec_az_2_53_0_palo_alto;
-import 'package:autocomplete/specs/az/2.53.0/partnercenter.dart' deferred as spec_az_2_53_0_partnercenter;
-import 'package:autocomplete/specs/az/2.53.0/peering.dart' deferred as spec_az_2_53_0_peering;
-import 'package:autocomplete/specs/az/2.53.0/pipelines.dart' deferred as spec_az_2_53_0_pipelines;
-import 'package:autocomplete/specs/az/2.53.0/policy.dart' deferred as spec_az_2_53_0_policy;
-import 'package:autocomplete/specs/az/2.53.0/portal.dart' deferred as spec_az_2_53_0_portal;
-import 'package:autocomplete/specs/az/2.53.0/postgres.dart' deferred as spec_az_2_53_0_postgres;
-import 'package:autocomplete/specs/az/2.53.0/powerbi.dart' deferred as spec_az_2_53_0_powerbi;
-import 'package:autocomplete/specs/az/2.53.0/ppg.dart' deferred as spec_az_2_53_0_ppg;
-import 'package:autocomplete/specs/az/2.53.0/private-link.dart' deferred as spec_az_2_53_0_private_link;
-import 'package:autocomplete/specs/az/2.53.0/provider.dart' deferred as spec_az_2_53_0_provider;
-import 'package:autocomplete/specs/az/2.53.0/providerhub.dart' deferred as spec_az_2_53_0_providerhub;
-import 'package:autocomplete/specs/az/2.53.0/purview.dart' deferred as spec_az_2_53_0_purview;
-import 'package:autocomplete/specs/az/2.53.0/quantum.dart' deferred as spec_az_2_53_0_quantum;
-import 'package:autocomplete/specs/az/2.53.0/qumulo.dart' deferred as spec_az_2_53_0_qumulo;
-import 'package:autocomplete/specs/az/2.53.0/quota.dart' deferred as spec_az_2_53_0_quota;
-import 'package:autocomplete/specs/az/2.53.0/redis.dart' deferred as spec_az_2_53_0_redis;
-import 'package:autocomplete/specs/az/2.53.0/redisenterprise.dart' deferred as spec_az_2_53_0_redisenterprise;
-import 'package:autocomplete/specs/az/2.53.0/relay.dart' deferred as spec_az_2_53_0_relay;
-import 'package:autocomplete/specs/az/2.53.0/remote-rendering-account.dart' deferred as spec_az_2_53_0_remote_rendering_account;
-import 'package:autocomplete/specs/az/2.53.0/repos.dart' deferred as spec_az_2_53_0_repos;
-import 'package:autocomplete/specs/az/2.53.0/reservations.dart' deferred as spec_az_2_53_0_reservations;
-import 'package:autocomplete/specs/az/2.53.0/resource-mover.dart' deferred as spec_az_2_53_0_resource_mover;
-import 'package:autocomplete/specs/az/2.53.0/resource.dart' deferred as spec_az_2_53_0_resource;
-import 'package:autocomplete/specs/az/2.53.0/resourcemanagement.dart' deferred as spec_az_2_53_0_resourcemanagement;
-import 'package:autocomplete/specs/az/2.53.0/rest.dart' deferred as spec_az_2_53_0_rest;
-import 'package:autocomplete/specs/az/2.53.0/restore-point.dart' deferred as spec_az_2_53_0_restore_point;
-import 'package:autocomplete/specs/az/2.53.0/role.dart' deferred as spec_az_2_53_0_role;
-import 'package:autocomplete/specs/az/2.53.0/sapmonitor.dart' deferred as spec_az_2_53_0_sapmonitor;
-import 'package:autocomplete/specs/az/2.53.0/scenario.dart' deferred as spec_az_2_53_0_scenario;
-import 'package:autocomplete/specs/az/2.53.0/scvmm.dart' deferred as spec_az_2_53_0_scvmm;
-import 'package:autocomplete/specs/az/2.53.0/search.dart' deferred as spec_az_2_53_0_search;
-import 'package:autocomplete/specs/az/2.53.0/security.dart' deferred as spec_az_2_53_0_security;
-import 'package:autocomplete/specs/az/2.53.0/self-help.dart' deferred as spec_az_2_53_0_self_help;
-import 'package:autocomplete/specs/az/2.53.0/self-test.dart' deferred as spec_az_2_53_0_self_test;
-import 'package:autocomplete/specs/az/2.53.0/sentinel.dart' deferred as spec_az_2_53_0_sentinel;
-import 'package:autocomplete/specs/az/2.53.0/serial-console.dart' deferred as spec_az_2_53_0_serial_console;
-import 'package:autocomplete/specs/az/2.53.0/servicebus.dart' deferred as spec_az_2_53_0_servicebus;
-import 'package:autocomplete/specs/az/2.53.0/sf.dart' deferred as spec_az_2_53_0_sf;
-import 'package:autocomplete/specs/az/2.53.0/sig.dart' deferred as spec_az_2_53_0_sig;
-import 'package:autocomplete/specs/az/2.53.0/signalr.dart' deferred as spec_az_2_53_0_signalr;
-import 'package:autocomplete/specs/az/2.53.0/site-recovery.dart' deferred as spec_az_2_53_0_site_recovery;
-import 'package:autocomplete/specs/az/2.53.0/snapshot.dart' deferred as spec_az_2_53_0_snapshot;
-import 'package:autocomplete/specs/az/2.53.0/spatial-anchors-account.dart' deferred as spec_az_2_53_0_spatial_anchors_account;
-import 'package:autocomplete/specs/az/2.53.0/sphere.dart' deferred as spec_az_2_53_0_sphere;
-import 'package:autocomplete/specs/az/2.53.0/spring-cloud.dart' deferred as spec_az_2_53_0_spring_cloud;
-import 'package:autocomplete/specs/az/2.53.0/spring.dart' deferred as spec_az_2_53_0_spring;
-import 'package:autocomplete/specs/az/2.53.0/sql.dart' deferred as spec_az_2_53_0_sql;
-import 'package:autocomplete/specs/az/2.53.0/ssh.dart' deferred as spec_az_2_53_0_ssh;
-import 'package:autocomplete/specs/az/2.53.0/sshkey.dart' deferred as spec_az_2_53_0_sshkey;
-import 'package:autocomplete/specs/az/2.53.0/stack-hci.dart' deferred as spec_az_2_53_0_stack_hci;
-import 'package:autocomplete/specs/az/2.53.0/stack.dart' deferred as spec_az_2_53_0_stack;
-import 'package:autocomplete/specs/az/2.53.0/staticwebapp.dart' deferred as spec_az_2_53_0_staticwebapp;
-import 'package:autocomplete/specs/az/2.53.0/storage-mover.dart' deferred as spec_az_2_53_0_storage_mover;
-import 'package:autocomplete/specs/az/2.53.0/storage.dart' deferred as spec_az_2_53_0_storage;
-import 'package:autocomplete/specs/az/2.53.0/storagesync.dart' deferred as spec_az_2_53_0_storagesync;
-import 'package:autocomplete/specs/az/2.53.0/stream-analytics.dart' deferred as spec_az_2_53_0_stream_analytics;
-import 'package:autocomplete/specs/az/2.53.0/support.dart' deferred as spec_az_2_53_0_support;
-import 'package:autocomplete/specs/az/2.53.0/survey.dart' deferred as spec_az_2_53_0_survey;
-import 'package:autocomplete/specs/az/2.53.0/synapse.dart' deferred as spec_az_2_53_0_synapse;
-import 'package:autocomplete/specs/az/2.53.0/tag.dart' deferred as spec_az_2_53_0_tag;
-import 'package:autocomplete/specs/az/2.53.0/term.dart' deferred as spec_az_2_53_0_term;
-import 'package:autocomplete/specs/az/2.53.0/ts.dart' deferred as spec_az_2_53_0_ts;
-import 'package:autocomplete/specs/az/2.53.0/tsi.dart' deferred as spec_az_2_53_0_tsi;
-import 'package:autocomplete/specs/az/2.53.0/upgrade.dart' deferred as spec_az_2_53_0_upgrade;
-import 'package:autocomplete/specs/az/2.53.0/version.dart' deferred as spec_az_2_53_0_version;
-import 'package:autocomplete/specs/az/2.53.0/vm.dart' deferred as spec_az_2_53_0_vm;
-import 'package:autocomplete/specs/az/2.53.0/vmss.dart' deferred as spec_az_2_53_0_vmss;
-import 'package:autocomplete/specs/az/2.53.0/vmware.dart' deferred as spec_az_2_53_0_vmware;
-import 'package:autocomplete/specs/az/2.53.0/webapp.dart' deferred as spec_az_2_53_0_webapp;
-import 'package:autocomplete/specs/az/2.53.0/webpubsub.dart' deferred as spec_az_2_53_0_webpubsub;
-import 'package:autocomplete/specs/az/2.53.0/workloads.dart' deferred as spec_az_2_53_0_workloads;
+import 'package:autocomplete/specs/az/2.53.0/account.dart'
+    deferred as spec_az_2_53_0_account;
+import 'package:autocomplete/specs/az/2.53.0/acr.dart'
+    deferred as spec_az_2_53_0_acr;
+import 'package:autocomplete/specs/az/2.53.0/ad.dart'
+    deferred as spec_az_2_53_0_ad;
+import 'package:autocomplete/specs/az/2.53.0/adp.dart'
+    deferred as spec_az_2_53_0_adp;
+import 'package:autocomplete/specs/az/2.53.0/advisor.dart'
+    deferred as spec_az_2_53_0_advisor;
+import 'package:autocomplete/specs/az/2.53.0/afd.dart'
+    deferred as spec_az_2_53_0_afd;
+import 'package:autocomplete/specs/az/2.53.0/ai-examples.dart'
+    deferred as spec_az_2_53_0_ai_examples;
+import 'package:autocomplete/specs/az/2.53.0/aks.dart'
+    deferred as spec_az_2_53_0_aks;
+import 'package:autocomplete/specs/az/2.53.0/alerts-management.dart'
+    deferred as spec_az_2_53_0_alerts_management;
+import 'package:autocomplete/specs/az/2.53.0/alias.dart'
+    deferred as spec_az_2_53_0_alias;
+import 'package:autocomplete/specs/az/2.53.0/amlfs.dart'
+    deferred as spec_az_2_53_0_amlfs;
+import 'package:autocomplete/specs/az/2.53.0/ams.dart'
+    deferred as spec_az_2_53_0_ams;
+import 'package:autocomplete/specs/az/2.53.0/apim.dart'
+    deferred as spec_az_2_53_0_apim;
+import 'package:autocomplete/specs/az/2.53.0/appconfig.dart'
+    deferred as spec_az_2_53_0_appconfig;
+import 'package:autocomplete/specs/az/2.53.0/appservice.dart'
+    deferred as spec_az_2_53_0_appservice;
+import 'package:autocomplete/specs/az/2.53.0/arcappliance.dart'
+    deferred as spec_az_2_53_0_arcappliance;
+import 'package:autocomplete/specs/az/2.53.0/arcdata.dart'
+    deferred as spec_az_2_53_0_arcdata;
+import 'package:autocomplete/specs/az/2.53.0/aro.dart'
+    deferred as spec_az_2_53_0_aro;
+import 'package:autocomplete/specs/az/2.53.0/artifacts.dart'
+    deferred as spec_az_2_53_0_artifacts;
+import 'package:autocomplete/specs/az/2.53.0/attestation.dart'
+    deferred as spec_az_2_53_0_attestation;
+import 'package:autocomplete/specs/az/2.53.0/automanage.dart'
+    deferred as spec_az_2_53_0_automanage;
+import 'package:autocomplete/specs/az/2.53.0/automation.dart'
+    deferred as spec_az_2_53_0_automation;
+import 'package:autocomplete/specs/az/2.53.0/azurestackhci.dart'
+    deferred as spec_az_2_53_0_azurestackhci;
+import 'package:autocomplete/specs/az/2.53.0/backup.dart'
+    deferred as spec_az_2_53_0_backup;
+import 'package:autocomplete/specs/az/2.53.0/baremetalinstance.dart'
+    deferred as spec_az_2_53_0_baremetalinstance;
+import 'package:autocomplete/specs/az/2.53.0/batch.dart'
+    deferred as spec_az_2_53_0_batch;
+import 'package:autocomplete/specs/az/2.53.0/batchai.dart'
+    deferred as spec_az_2_53_0_batchai;
+import 'package:autocomplete/specs/az/2.53.0/bicep.dart'
+    deferred as spec_az_2_53_0_bicep;
+import 'package:autocomplete/specs/az/2.53.0/billing-benefits.dart'
+    deferred as spec_az_2_53_0_billing_benefits;
+import 'package:autocomplete/specs/az/2.53.0/billing.dart'
+    deferred as spec_az_2_53_0_billing;
+import 'package:autocomplete/specs/az/2.53.0/blockchain.dart'
+    deferred as spec_az_2_53_0_blockchain;
+import 'package:autocomplete/specs/az/2.53.0/blueprint.dart'
+    deferred as spec_az_2_53_0_blueprint;
+import 'package:autocomplete/specs/az/2.53.0/boards.dart'
+    deferred as spec_az_2_53_0_boards;
+import 'package:autocomplete/specs/az/2.53.0/bot.dart'
+    deferred as spec_az_2_53_0_bot;
+import 'package:autocomplete/specs/az/2.53.0/cache.dart'
+    deferred as spec_az_2_53_0_cache;
+import 'package:autocomplete/specs/az/2.53.0/capacity.dart'
+    deferred as spec_az_2_53_0_capacity;
+import 'package:autocomplete/specs/az/2.53.0/cdn.dart'
+    deferred as spec_az_2_53_0_cdn;
+import 'package:autocomplete/specs/az/2.53.0/change-analysis.dart'
+    deferred as spec_az_2_53_0_change_analysis;
+import 'package:autocomplete/specs/az/2.53.0/cli-translator.dart'
+    deferred as spec_az_2_53_0_cli_translator;
+import 'package:autocomplete/specs/az/2.53.0/cloud-service.dart'
+    deferred as spec_az_2_53_0_cloud_service;
+import 'package:autocomplete/specs/az/2.53.0/cloud.dart'
+    deferred as spec_az_2_53_0_cloud;
+import 'package:autocomplete/specs/az/2.53.0/cognitiveservices.dart'
+    deferred as spec_az_2_53_0_cognitiveservices;
+import 'package:autocomplete/specs/az/2.53.0/command-change.dart'
+    deferred as spec_az_2_53_0_command_change;
+import 'package:autocomplete/specs/az/2.53.0/communication.dart'
+    deferred as spec_az_2_53_0_communication;
+import 'package:autocomplete/specs/az/2.53.0/confcom.dart'
+    deferred as spec_az_2_53_0_confcom;
+import 'package:autocomplete/specs/az/2.53.0/confidentialledger.dart'
+    deferred as spec_az_2_53_0_confidentialledger;
+import 'package:autocomplete/specs/az/2.53.0/config.dart'
+    deferred as spec_az_2_53_0_config;
+import 'package:autocomplete/specs/az/2.53.0/configure.dart'
+    deferred as spec_az_2_53_0_configure;
+import 'package:autocomplete/specs/az/2.53.0/confluent.dart'
+    deferred as spec_az_2_53_0_confluent;
+import 'package:autocomplete/specs/az/2.53.0/connectedk8s.dart'
+    deferred as spec_az_2_53_0_connectedk8s;
+import 'package:autocomplete/specs/az/2.53.0/connectedmachine.dart'
+    deferred as spec_az_2_53_0_connectedmachine;
+import 'package:autocomplete/specs/az/2.53.0/connectedvmware.dart'
+    deferred as spec_az_2_53_0_connectedvmware;
+import 'package:autocomplete/specs/az/2.53.0/connection.dart'
+    deferred as spec_az_2_53_0_connection;
+import 'package:autocomplete/specs/az/2.53.0/consumption.dart'
+    deferred as spec_az_2_53_0_consumption;
+import 'package:autocomplete/specs/az/2.53.0/container.dart'
+    deferred as spec_az_2_53_0_container;
+import 'package:autocomplete/specs/az/2.53.0/containerapp.dart'
+    deferred as spec_az_2_53_0_containerapp;
+import 'package:autocomplete/specs/az/2.53.0/cosmosdb.dart'
+    deferred as spec_az_2_53_0_cosmosdb;
+import 'package:autocomplete/specs/az/2.53.0/costmanagement.dart'
+    deferred as spec_az_2_53_0_costmanagement;
+import 'package:autocomplete/specs/az/2.53.0/csvmware.dart'
+    deferred as spec_az_2_53_0_csvmware;
+import 'package:autocomplete/specs/az/2.53.0/custom-providers.dart'
+    deferred as spec_az_2_53_0_custom_providers;
+import 'package:autocomplete/specs/az/2.53.0/customlocation.dart'
+    deferred as spec_az_2_53_0_customlocation;
+import 'package:autocomplete/specs/az/2.53.0/databox.dart'
+    deferred as spec_az_2_53_0_databox;
+import 'package:autocomplete/specs/az/2.53.0/databoxedge.dart'
+    deferred as spec_az_2_53_0_databoxedge;
+import 'package:autocomplete/specs/az/2.53.0/databricks.dart'
+    deferred as spec_az_2_53_0_databricks;
+import 'package:autocomplete/specs/az/2.53.0/datadog.dart'
+    deferred as spec_az_2_53_0_datadog;
+import 'package:autocomplete/specs/az/2.53.0/datafactory.dart'
+    deferred as spec_az_2_53_0_datafactory;
+import 'package:autocomplete/specs/az/2.53.0/datamigration.dart'
+    deferred as spec_az_2_53_0_datamigration;
+import 'package:autocomplete/specs/az/2.53.0/dataprotection.dart'
+    deferred as spec_az_2_53_0_dataprotection;
+import 'package:autocomplete/specs/az/2.53.0/datashare.dart'
+    deferred as spec_az_2_53_0_datashare;
+import 'package:autocomplete/specs/az/2.53.0/dedicated-hsm.dart'
+    deferred as spec_az_2_53_0_dedicated_hsm;
+import 'package:autocomplete/specs/az/2.53.0/demo.dart'
+    deferred as spec_az_2_53_0_demo;
+import 'package:autocomplete/specs/az/2.53.0/deployment-scripts.dart'
+    deferred as spec_az_2_53_0_deployment_scripts;
+import 'package:autocomplete/specs/az/2.53.0/deployment.dart'
+    deferred as spec_az_2_53_0_deployment;
+import 'package:autocomplete/specs/az/2.53.0/desktopvirtualization.dart'
+    deferred as spec_az_2_53_0_desktopvirtualization;
+import 'package:autocomplete/specs/az/2.53.0/devcenter.dart'
+    deferred as spec_az_2_53_0_devcenter;
+import 'package:autocomplete/specs/az/2.53.0/devops.dart'
+    deferred as spec_az_2_53_0_devops;
+import 'package:autocomplete/specs/az/2.53.0/disk-access.dart'
+    deferred as spec_az_2_53_0_disk_access;
+import 'package:autocomplete/specs/az/2.53.0/disk-encryption-set.dart'
+    deferred as spec_az_2_53_0_disk_encryption_set;
+import 'package:autocomplete/specs/az/2.53.0/disk-pool.dart'
+    deferred as spec_az_2_53_0_disk_pool;
+import 'package:autocomplete/specs/az/2.53.0/disk.dart'
+    deferred as spec_az_2_53_0_disk;
+import 'package:autocomplete/specs/az/2.53.0/dla.dart'
+    deferred as spec_az_2_53_0_dla;
+import 'package:autocomplete/specs/az/2.53.0/dls.dart'
+    deferred as spec_az_2_53_0_dls;
+import 'package:autocomplete/specs/az/2.53.0/dms.dart'
+    deferred as spec_az_2_53_0_dms;
+import 'package:autocomplete/specs/az/2.53.0/dnc.dart'
+    deferred as spec_az_2_53_0_dnc;
+import 'package:autocomplete/specs/az/2.53.0/dns-resolver.dart'
+    deferred as spec_az_2_53_0_dns_resolver;
+import 'package:autocomplete/specs/az/2.53.0/dt.dart'
+    deferred as spec_az_2_53_0_dt;
+import 'package:autocomplete/specs/az/2.53.0/dynatrace.dart'
+    deferred as spec_az_2_53_0_dynatrace;
+import 'package:autocomplete/specs/az/2.53.0/edgeorder.dart'
+    deferred as spec_az_2_53_0_edgeorder;
+import 'package:autocomplete/specs/az/2.53.0/elastic-san.dart'
+    deferred as spec_az_2_53_0_elastic_san;
+import 'package:autocomplete/specs/az/2.53.0/elastic.dart'
+    deferred as spec_az_2_53_0_elastic;
+import 'package:autocomplete/specs/az/2.53.0/eventgrid.dart'
+    deferred as spec_az_2_53_0_eventgrid;
+import 'package:autocomplete/specs/az/2.53.0/eventhubs.dart'
+    deferred as spec_az_2_53_0_eventhubs;
+import 'package:autocomplete/specs/az/2.53.0/extension.dart'
+    deferred as spec_az_2_53_0_extension;
+import 'package:autocomplete/specs/az/2.53.0/feature.dart'
+    deferred as spec_az_2_53_0_feature;
+import 'package:autocomplete/specs/az/2.53.0/feedback.dart'
+    deferred as spec_az_2_53_0_feedback;
+import 'package:autocomplete/specs/az/2.53.0/find.dart'
+    deferred as spec_az_2_53_0_find;
+import 'package:autocomplete/specs/az/2.53.0/fleet.dart'
+    deferred as spec_az_2_53_0_fleet;
+import 'package:autocomplete/specs/az/2.53.0/fluid-relay.dart'
+    deferred as spec_az_2_53_0_fluid_relay;
+import 'package:autocomplete/specs/az/2.53.0/footprint.dart'
+    deferred as spec_az_2_53_0_footprint;
+import 'package:autocomplete/specs/az/2.53.0/functionapp.dart'
+    deferred as spec_az_2_53_0_functionapp;
+import 'package:autocomplete/specs/az/2.53.0/fzf.dart'
+    deferred as spec_az_2_53_0_fzf;
+import 'package:autocomplete/specs/az/2.53.0/grafana.dart'
+    deferred as spec_az_2_53_0_grafana;
+import 'package:autocomplete/specs/az/2.53.0/graph-services.dart'
+    deferred as spec_az_2_53_0_graph_services;
+import 'package:autocomplete/specs/az/2.53.0/graph.dart'
+    deferred as spec_az_2_53_0_graph;
+import 'package:autocomplete/specs/az/2.53.0/group.dart'
+    deferred as spec_az_2_53_0_group;
+import 'package:autocomplete/specs/az/2.53.0/guestconfig.dart'
+    deferred as spec_az_2_53_0_guestconfig;
+import 'package:autocomplete/specs/az/2.53.0/hack.dart'
+    deferred as spec_az_2_53_0_hack;
+import 'package:autocomplete/specs/az/2.53.0/hanainstance.dart'
+    deferred as spec_az_2_53_0_hanainstance;
+import 'package:autocomplete/specs/az/2.53.0/hdinsight.dart'
+    deferred as spec_az_2_53_0_hdinsight;
+import 'package:autocomplete/specs/az/2.53.0/healthbot.dart'
+    deferred as spec_az_2_53_0_healthbot;
+import 'package:autocomplete/specs/az/2.53.0/healthcareapis.dart'
+    deferred as spec_az_2_53_0_healthcareapis;
+import 'package:autocomplete/specs/az/2.53.0/hpc-cache.dart'
+    deferred as spec_az_2_53_0_hpc_cache;
+import 'package:autocomplete/specs/az/2.53.0/hybridaks.dart'
+    deferred as spec_az_2_53_0_hybridaks;
+import 'package:autocomplete/specs/az/2.53.0/identity.dart'
+    deferred as spec_az_2_53_0_identity;
+import 'package:autocomplete/specs/az/2.53.0/image.dart'
+    deferred as spec_az_2_53_0_image;
+import 'package:autocomplete/specs/az/2.53.0/import-export.dart'
+    deferred as spec_az_2_53_0_import_export;
+import 'package:autocomplete/specs/az/2.53.0/init.dart'
+    deferred as spec_az_2_53_0_init;
+import 'package:autocomplete/specs/az/2.53.0/interactive.dart'
+    deferred as spec_az_2_53_0_interactive;
+import 'package:autocomplete/specs/az/2.53.0/internet-analyzer.dart'
+    deferred as spec_az_2_53_0_internet_analyzer;
+import 'package:autocomplete/specs/az/2.53.0/iot.dart'
+    deferred as spec_az_2_53_0_iot;
+import 'package:autocomplete/specs/az/2.53.0/k8s-configuration.dart'
+    deferred as spec_az_2_53_0_k8s_configuration;
+import 'package:autocomplete/specs/az/2.53.0/k8s-extension.dart'
+    deferred as spec_az_2_53_0_k8s_extension;
+import 'package:autocomplete/specs/az/2.53.0/k8sconfiguration.dart'
+    deferred as spec_az_2_53_0_k8sconfiguration;
+import 'package:autocomplete/specs/az/2.53.0/keyvault.dart'
+    deferred as spec_az_2_53_0_keyvault;
+import 'package:autocomplete/specs/az/2.53.0/kusto.dart'
+    deferred as spec_az_2_53_0_kusto;
+import 'package:autocomplete/specs/az/2.53.0/lab.dart'
+    deferred as spec_az_2_53_0_lab;
+import 'package:autocomplete/specs/az/2.53.0/load.dart'
+    deferred as spec_az_2_53_0_load;
+import 'package:autocomplete/specs/az/2.53.0/lock.dart'
+    deferred as spec_az_2_53_0_lock;
+import 'package:autocomplete/specs/az/2.53.0/logic.dart'
+    deferred as spec_az_2_53_0_logic;
+import 'package:autocomplete/specs/az/2.53.0/logicapp.dart'
+    deferred as spec_az_2_53_0_logicapp;
+import 'package:autocomplete/specs/az/2.53.0/login.dart'
+    deferred as spec_az_2_53_0_login;
+import 'package:autocomplete/specs/az/2.53.0/logout.dart'
+    deferred as spec_az_2_53_0_logout;
+import 'package:autocomplete/specs/az/2.53.0/logz.dart'
+    deferred as spec_az_2_53_0_logz;
+import 'package:autocomplete/specs/az/2.53.0/maintenance.dart'
+    deferred as spec_az_2_53_0_maintenance;
+import 'package:autocomplete/specs/az/2.53.0/managed-cassandra.dart'
+    deferred as spec_az_2_53_0_managed_cassandra;
+import 'package:autocomplete/specs/az/2.53.0/managedapp.dart'
+    deferred as spec_az_2_53_0_managedapp;
+import 'package:autocomplete/specs/az/2.53.0/managedservices.dart'
+    deferred as spec_az_2_53_0_managedservices;
+import 'package:autocomplete/specs/az/2.53.0/managementpartner.dart'
+    deferred as spec_az_2_53_0_managementpartner;
+import 'package:autocomplete/specs/az/2.53.0/maps.dart'
+    deferred as spec_az_2_53_0_maps;
+import 'package:autocomplete/specs/az/2.53.0/mariadb.dart'
+    deferred as spec_az_2_53_0_mariadb;
+import 'package:autocomplete/specs/az/2.53.0/mesh.dart'
+    deferred as spec_az_2_53_0_mesh;
+import 'package:autocomplete/specs/az/2.53.0/ml.dart'
+    deferred as spec_az_2_53_0_ml;
+import 'package:autocomplete/specs/az/2.53.0/mobile-network.dart'
+    deferred as spec_az_2_53_0_mobile_network;
+import 'package:autocomplete/specs/az/2.53.0/monitor.dart'
+    deferred as spec_az_2_53_0_monitor;
+import 'package:autocomplete/specs/az/2.53.0/mysql.dart'
+    deferred as spec_az_2_53_0_mysql;
+import 'package:autocomplete/specs/az/2.53.0/netappfiles.dart'
+    deferred as spec_az_2_53_0_netappfiles;
+import 'package:autocomplete/specs/az/2.53.0/network-function.dart'
+    deferred as spec_az_2_53_0_network_function;
+import 'package:autocomplete/specs/az/2.53.0/network.dart'
+    deferred as spec_az_2_53_0_network;
+import 'package:autocomplete/specs/az/2.53.0/networkcloud.dart'
+    deferred as spec_az_2_53_0_networkcloud;
+import 'package:autocomplete/specs/az/2.53.0/networkfabric.dart'
+    deferred as spec_az_2_53_0_networkfabric;
+import 'package:autocomplete/specs/az/2.53.0/new-relic.dart'
+    deferred as spec_az_2_53_0_new_relic;
+import 'package:autocomplete/specs/az/2.53.0/next.dart'
+    deferred as spec_az_2_53_0_next;
+import 'package:autocomplete/specs/az/2.53.0/nginx.dart'
+    deferred as spec_az_2_53_0_nginx;
+import 'package:autocomplete/specs/az/2.53.0/notification-hub.dart'
+    deferred as spec_az_2_53_0_notification_hub;
+import 'package:autocomplete/specs/az/2.53.0/offazure.dart'
+    deferred as spec_az_2_53_0_offazure;
+import 'package:autocomplete/specs/az/2.53.0/orbital.dart'
+    deferred as spec_az_2_53_0_orbital;
+import 'package:autocomplete/specs/az/2.53.0/palo-alto.dart'
+    deferred as spec_az_2_53_0_palo_alto;
+import 'package:autocomplete/specs/az/2.53.0/partnercenter.dart'
+    deferred as spec_az_2_53_0_partnercenter;
+import 'package:autocomplete/specs/az/2.53.0/peering.dart'
+    deferred as spec_az_2_53_0_peering;
+import 'package:autocomplete/specs/az/2.53.0/pipelines.dart'
+    deferred as spec_az_2_53_0_pipelines;
+import 'package:autocomplete/specs/az/2.53.0/policy.dart'
+    deferred as spec_az_2_53_0_policy;
+import 'package:autocomplete/specs/az/2.53.0/portal.dart'
+    deferred as spec_az_2_53_0_portal;
+import 'package:autocomplete/specs/az/2.53.0/postgres.dart'
+    deferred as spec_az_2_53_0_postgres;
+import 'package:autocomplete/specs/az/2.53.0/powerbi.dart'
+    deferred as spec_az_2_53_0_powerbi;
+import 'package:autocomplete/specs/az/2.53.0/ppg.dart'
+    deferred as spec_az_2_53_0_ppg;
+import 'package:autocomplete/specs/az/2.53.0/private-link.dart'
+    deferred as spec_az_2_53_0_private_link;
+import 'package:autocomplete/specs/az/2.53.0/provider.dart'
+    deferred as spec_az_2_53_0_provider;
+import 'package:autocomplete/specs/az/2.53.0/providerhub.dart'
+    deferred as spec_az_2_53_0_providerhub;
+import 'package:autocomplete/specs/az/2.53.0/purview.dart'
+    deferred as spec_az_2_53_0_purview;
+import 'package:autocomplete/specs/az/2.53.0/quantum.dart'
+    deferred as spec_az_2_53_0_quantum;
+import 'package:autocomplete/specs/az/2.53.0/qumulo.dart'
+    deferred as spec_az_2_53_0_qumulo;
+import 'package:autocomplete/specs/az/2.53.0/quota.dart'
+    deferred as spec_az_2_53_0_quota;
+import 'package:autocomplete/specs/az/2.53.0/redis.dart'
+    deferred as spec_az_2_53_0_redis;
+import 'package:autocomplete/specs/az/2.53.0/redisenterprise.dart'
+    deferred as spec_az_2_53_0_redisenterprise;
+import 'package:autocomplete/specs/az/2.53.0/relay.dart'
+    deferred as spec_az_2_53_0_relay;
+import 'package:autocomplete/specs/az/2.53.0/remote-rendering-account.dart'
+    deferred as spec_az_2_53_0_remote_rendering_account;
+import 'package:autocomplete/specs/az/2.53.0/repos.dart'
+    deferred as spec_az_2_53_0_repos;
+import 'package:autocomplete/specs/az/2.53.0/reservations.dart'
+    deferred as spec_az_2_53_0_reservations;
+import 'package:autocomplete/specs/az/2.53.0/resource-mover.dart'
+    deferred as spec_az_2_53_0_resource_mover;
+import 'package:autocomplete/specs/az/2.53.0/resource.dart'
+    deferred as spec_az_2_53_0_resource;
+import 'package:autocomplete/specs/az/2.53.0/resourcemanagement.dart'
+    deferred as spec_az_2_53_0_resourcemanagement;
+import 'package:autocomplete/specs/az/2.53.0/rest.dart'
+    deferred as spec_az_2_53_0_rest;
+import 'package:autocomplete/specs/az/2.53.0/restore-point.dart'
+    deferred as spec_az_2_53_0_restore_point;
+import 'package:autocomplete/specs/az/2.53.0/role.dart'
+    deferred as spec_az_2_53_0_role;
+import 'package:autocomplete/specs/az/2.53.0/sapmonitor.dart'
+    deferred as spec_az_2_53_0_sapmonitor;
+import 'package:autocomplete/specs/az/2.53.0/scenario.dart'
+    deferred as spec_az_2_53_0_scenario;
+import 'package:autocomplete/specs/az/2.53.0/scvmm.dart'
+    deferred as spec_az_2_53_0_scvmm;
+import 'package:autocomplete/specs/az/2.53.0/search.dart'
+    deferred as spec_az_2_53_0_search;
+import 'package:autocomplete/specs/az/2.53.0/security.dart'
+    deferred as spec_az_2_53_0_security;
+import 'package:autocomplete/specs/az/2.53.0/self-help.dart'
+    deferred as spec_az_2_53_0_self_help;
+import 'package:autocomplete/specs/az/2.53.0/self-test.dart'
+    deferred as spec_az_2_53_0_self_test;
+import 'package:autocomplete/specs/az/2.53.0/sentinel.dart'
+    deferred as spec_az_2_53_0_sentinel;
+import 'package:autocomplete/specs/az/2.53.0/serial-console.dart'
+    deferred as spec_az_2_53_0_serial_console;
+import 'package:autocomplete/specs/az/2.53.0/servicebus.dart'
+    deferred as spec_az_2_53_0_servicebus;
+import 'package:autocomplete/specs/az/2.53.0/sf.dart'
+    deferred as spec_az_2_53_0_sf;
+import 'package:autocomplete/specs/az/2.53.0/sig.dart'
+    deferred as spec_az_2_53_0_sig;
+import 'package:autocomplete/specs/az/2.53.0/signalr.dart'
+    deferred as spec_az_2_53_0_signalr;
+import 'package:autocomplete/specs/az/2.53.0/site-recovery.dart'
+    deferred as spec_az_2_53_0_site_recovery;
+import 'package:autocomplete/specs/az/2.53.0/snapshot.dart'
+    deferred as spec_az_2_53_0_snapshot;
+import 'package:autocomplete/specs/az/2.53.0/spatial-anchors-account.dart'
+    deferred as spec_az_2_53_0_spatial_anchors_account;
+import 'package:autocomplete/specs/az/2.53.0/sphere.dart'
+    deferred as spec_az_2_53_0_sphere;
+import 'package:autocomplete/specs/az/2.53.0/spring-cloud.dart'
+    deferred as spec_az_2_53_0_spring_cloud;
+import 'package:autocomplete/specs/az/2.53.0/spring.dart'
+    deferred as spec_az_2_53_0_spring;
+import 'package:autocomplete/specs/az/2.53.0/sql.dart'
+    deferred as spec_az_2_53_0_sql;
+import 'package:autocomplete/specs/az/2.53.0/ssh.dart'
+    deferred as spec_az_2_53_0_ssh;
+import 'package:autocomplete/specs/az/2.53.0/sshkey.dart'
+    deferred as spec_az_2_53_0_sshkey;
+import 'package:autocomplete/specs/az/2.53.0/stack-hci.dart'
+    deferred as spec_az_2_53_0_stack_hci;
+import 'package:autocomplete/specs/az/2.53.0/stack.dart'
+    deferred as spec_az_2_53_0_stack;
+import 'package:autocomplete/specs/az/2.53.0/staticwebapp.dart'
+    deferred as spec_az_2_53_0_staticwebapp;
+import 'package:autocomplete/specs/az/2.53.0/storage-mover.dart'
+    deferred as spec_az_2_53_0_storage_mover;
+import 'package:autocomplete/specs/az/2.53.0/storage.dart'
+    deferred as spec_az_2_53_0_storage;
+import 'package:autocomplete/specs/az/2.53.0/storagesync.dart'
+    deferred as spec_az_2_53_0_storagesync;
+import 'package:autocomplete/specs/az/2.53.0/stream-analytics.dart'
+    deferred as spec_az_2_53_0_stream_analytics;
+import 'package:autocomplete/specs/az/2.53.0/support.dart'
+    deferred as spec_az_2_53_0_support;
+import 'package:autocomplete/specs/az/2.53.0/survey.dart'
+    deferred as spec_az_2_53_0_survey;
+import 'package:autocomplete/specs/az/2.53.0/synapse.dart'
+    deferred as spec_az_2_53_0_synapse;
+import 'package:autocomplete/specs/az/2.53.0/tag.dart'
+    deferred as spec_az_2_53_0_tag;
+import 'package:autocomplete/specs/az/2.53.0/term.dart'
+    deferred as spec_az_2_53_0_term;
+import 'package:autocomplete/specs/az/2.53.0/ts.dart'
+    deferred as spec_az_2_53_0_ts;
+import 'package:autocomplete/specs/az/2.53.0/tsi.dart'
+    deferred as spec_az_2_53_0_tsi;
+import 'package:autocomplete/specs/az/2.53.0/upgrade.dart'
+    deferred as spec_az_2_53_0_upgrade;
+import 'package:autocomplete/specs/az/2.53.0/version.dart'
+    deferred as spec_az_2_53_0_version;
+import 'package:autocomplete/specs/az/2.53.0/vm.dart'
+    deferred as spec_az_2_53_0_vm;
+import 'package:autocomplete/specs/az/2.53.0/vmss.dart'
+    deferred as spec_az_2_53_0_vmss;
+import 'package:autocomplete/specs/az/2.53.0/vmware.dart'
+    deferred as spec_az_2_53_0_vmware;
+import 'package:autocomplete/specs/az/2.53.0/webapp.dart'
+    deferred as spec_az_2_53_0_webapp;
+import 'package:autocomplete/specs/az/2.53.0/webpubsub.dart'
+    deferred as spec_az_2_53_0_webpubsub;
+import 'package:autocomplete/specs/az/2.53.0/workloads.dart'
+    deferred as spec_az_2_53_0_workloads;
 import 'package:autocomplete/specs/babel.dart' deferred as spec_babel;
 import 'package:autocomplete/specs/banner.dart' deferred as spec_banner;
 import 'package:autocomplete/specs/barnard59.dart' deferred as spec_barnard59;
@@ -678,6 +1244,8 @@ import 'package:autocomplete/specs/base32.dart' deferred as spec_base32;
 import 'package:autocomplete/specs/base64.dart' deferred as spec_base64;
 import 'package:autocomplete/specs/basename.dart' deferred as spec_basename;
 import 'package:autocomplete/specs/basenc.dart' deferred as spec_basenc;
+import 'package:autocomplete/specs/bat.dart' deferred as spec_bat;
+import 'package:autocomplete/specs/bazel.dart' deferred as spec_bazel;
 import 'package:autocomplete/specs/bc.dart' deferred as spec_bc;
 import 'package:autocomplete/specs/bcd.dart' deferred as spec_bcd;
 import 'package:autocomplete/specs/bit.dart' deferred as spec_bit;
@@ -685,10 +1253,14 @@ import 'package:autocomplete/specs/blitz.dart' deferred as spec_blitz;
 import 'package:autocomplete/specs/br.dart' deferred as spec_br;
 import 'package:autocomplete/specs/brew.dart' deferred as spec_brew;
 import 'package:autocomplete/specs/broot.dart' deferred as spec_broot;
+import 'package:autocomplete/specs/browser-sync.dart'
+    deferred as spec_browser_sync;
 import 'package:autocomplete/specs/btop.dart' deferred as spec_btop;
-import 'package:autocomplete/specs/build-storybook.dart' deferred as spec_build_storybook;
+import 'package:autocomplete/specs/build-storybook.dart'
+    deferred as spec_build_storybook;
 import 'package:autocomplete/specs/bun.dart' deferred as spec_bun;
 import 'package:autocomplete/specs/bundle.dart' deferred as spec_bundle;
+import 'package:autocomplete/specs/bunx.dart' deferred as spec_bunx;
 import 'package:autocomplete/specs/bw.dart' deferred as spec_bw;
 import 'package:autocomplete/specs/bwdc.dart' deferred as spec_bwdc;
 import 'package:autocomplete/specs/bws.dart' deferred as spec_bws;
@@ -696,11 +1268,13 @@ import 'package:autocomplete/specs/c++.dart' deferred as spec_c__;
 import 'package:autocomplete/specs/caffeinate.dart' deferred as spec_caffeinate;
 import 'package:autocomplete/specs/cal.dart' deferred as spec_cal;
 import 'package:autocomplete/specs/cap.dart' deferred as spec_cap;
+import 'package:autocomplete/specs/capacitor.dart' deferred as spec_capacitor;
 import 'package:autocomplete/specs/cat.dart' deferred as spec_cat;
 import 'package:autocomplete/specs/cci.dart' deferred as spec_cci;
 import 'package:autocomplete/specs/cd.dart' deferred as spec_cd;
 import 'package:autocomplete/specs/cdk.dart' deferred as spec_cdk;
 import 'package:autocomplete/specs/cdk8s.dart' deferred as spec_cdk8s;
+import 'package:autocomplete/specs/cf.dart' deferred as spec_cf;
 import 'package:autocomplete/specs/charm.dart' deferred as spec_charm;
 import 'package:autocomplete/specs/chmod.dart' deferred as spec_chmod;
 import 'package:autocomplete/specs/chown.dart' deferred as spec_chown;
@@ -710,38 +1284,56 @@ import 'package:autocomplete/specs/cl.dart' deferred as spec_cl;
 import 'package:autocomplete/specs/clang++.dart' deferred as spec_clang__;
 import 'package:autocomplete/specs/clang.dart' deferred as spec_clang;
 import 'package:autocomplete/specs/clear.dart' deferred as spec_clear;
-import 'package:autocomplete/specs/cliff-jumper.dart' deferred as spec_cliff_jumper;
+import 'package:autocomplete/specs/cliff-jumper.dart'
+    deferred as spec_cliff_jumper;
 import 'package:autocomplete/specs/clilol.dart' deferred as spec_clilol;
 import 'package:autocomplete/specs/clojure.dart' deferred as spec_clojure;
-import 'package:autocomplete/specs/cloudflared.dart' deferred as spec_cloudflared;
+import 'package:autocomplete/specs/cloudflared.dart'
+    deferred as spec_cloudflared;
 import 'package:autocomplete/specs/cmake.dart' deferred as spec_cmake;
 import 'package:autocomplete/specs/coda.dart' deferred as spec_coda;
-import 'package:autocomplete/specs/code-insiders.dart' deferred as spec_code_insiders;
+import 'package:autocomplete/specs/code-insiders.dart'
+    deferred as spec_code_insiders;
 import 'package:autocomplete/specs/code.dart' deferred as spec_code;
 import 'package:autocomplete/specs/codesign.dart' deferred as spec_codesign;
 import 'package:autocomplete/specs/command.dart' deferred as spec_command;
-import 'package:autocomplete/specs/commercelayer.dart' deferred as spec_commercelayer;
+import 'package:autocomplete/specs/commercelayer.dart'
+    deferred as spec_commercelayer;
+import 'package:autocomplete/specs/composer.dart' deferred as spec_composer;
+import 'package:autocomplete/specs/conda.dart' deferred as spec_conda;
+import 'package:autocomplete/specs/copilot.dart' deferred as spec_copilot;
 import 'package:autocomplete/specs/copyfile.dart' deferred as spec_copyfile;
 import 'package:autocomplete/specs/copypath.dart' deferred as spec_copypath;
 import 'package:autocomplete/specs/cosign.dart' deferred as spec_cosign;
 import 'package:autocomplete/specs/cot.dart' deferred as spec_cot;
 import 'package:autocomplete/specs/cp.dart' deferred as spec_cp;
-import 'package:autocomplete/specs/create-completion-spec.dart' deferred as spec_create_completion_spec;
-import 'package:autocomplete/specs/create-next-app.dart' deferred as spec_create_next_app;
-import 'package:autocomplete/specs/create-nx-workspace.dart' deferred as spec_create_nx_workspace;
-import 'package:autocomplete/specs/create-react-app.dart' deferred as spec_create_react_app;
-import 'package:autocomplete/specs/create-react-native-app.dart' deferred as spec_create_react_native_app;
-import 'package:autocomplete/specs/create-redwood-app.dart' deferred as spec_create_redwood_app;
-import 'package:autocomplete/specs/create-remix.dart' deferred as spec_create_remix;
-import 'package:autocomplete/specs/create-t3-app.dart' deferred as spec_create_t3_app;
-import 'package:autocomplete/specs/create-video.dart' deferred as spec_create_video;
-import 'package:autocomplete/specs/create-web3-frontend.dart' deferred as spec_create_web3_frontend;
+import 'package:autocomplete/specs/create-completion-spec.dart'
+    deferred as spec_create_completion_spec;
+import 'package:autocomplete/specs/create-next-app.dart'
+    deferred as spec_create_next_app;
+import 'package:autocomplete/specs/create-nx-workspace.dart'
+    deferred as spec_create_nx_workspace;
+import 'package:autocomplete/specs/create-react-app.dart'
+    deferred as spec_create_react_app;
+import 'package:autocomplete/specs/create-react-native-app.dart'
+    deferred as spec_create_react_native_app;
+import 'package:autocomplete/specs/create-redwood-app.dart'
+    deferred as spec_create_redwood_app;
+import 'package:autocomplete/specs/create-remix.dart'
+    deferred as spec_create_remix;
+import 'package:autocomplete/specs/create-t3-app.dart'
+    deferred as spec_create_t3_app;
+import 'package:autocomplete/specs/create-video.dart'
+    deferred as spec_create_video;
+import 'package:autocomplete/specs/create-web3-frontend.dart'
+    deferred as spec_create_web3_frontend;
 import 'package:autocomplete/specs/croc.dart' deferred as spec_croc;
 import 'package:autocomplete/specs/crontab.dart' deferred as spec_crontab;
 import 'package:autocomplete/specs/csdx.dart' deferred as spec_csdx;
 import 'package:autocomplete/specs/curl.dart' deferred as spec_curl;
 import 'package:autocomplete/specs/cut.dart' deferred as spec_cut;
-import 'package:autocomplete/specs/dart.dart' deferred as spec_dart;
+import 'package:autocomplete/specs/cw.dart' deferred as spec_cw;
+// import 'package:autocomplete/specs/dart.dart' deferred as spec_dart;
 import 'package:autocomplete/specs/date.dart' deferred as spec_date;
 import 'package:autocomplete/specs/dateseq.dart' deferred as spec_dateseq;
 import 'package:autocomplete/specs/datree.dart' deferred as spec_datree;
@@ -750,51 +1342,76 @@ import 'package:autocomplete/specs/dd.dart' deferred as spec_dd;
 import 'package:autocomplete/specs/ddev.dart' deferred as spec_ddev;
 import 'package:autocomplete/specs/ddosify.dart' deferred as spec_ddosify;
 import 'package:autocomplete/specs/deno.dart' deferred as spec_deno;
+import 'package:autocomplete/specs/deployctl.dart' deferred as spec_deployctl;
 import 'package:autocomplete/specs/deta.dart' deferred as spec_deta;
 import 'package:autocomplete/specs/df.dart' deferred as spec_df;
 import 'package:autocomplete/specs/diff.dart' deferred as spec_diff;
 import 'package:autocomplete/specs/dig.dart' deferred as spec_dig;
+import 'package:autocomplete/specs/direnv.dart' deferred as spec_direnv;
 import 'package:autocomplete/specs/dirname.dart' deferred as spec_dirname;
 import 'package:autocomplete/specs/ditto.dart' deferred as spec_ditto;
-import 'package:autocomplete/specs/do-release-upgrade.dart' deferred as spec_do_release_upgrade;
+import 'package:autocomplete/specs/do-release-upgrade.dart'
+    deferred as spec_do_release_upgrade;
 import 'package:autocomplete/specs/do.dart' deferred as spec_do;
+import 'package:autocomplete/specs/docker-compose.dart'
+    deferred as spec_docker_compose;
+import 'package:autocomplete/specs/docker.dart' deferred as spec_docker;
 import 'package:autocomplete/specs/doctl.dart' deferred as spec_doctl;
 import 'package:autocomplete/specs/dog.dart' deferred as spec_dog;
 import 'package:autocomplete/specs/doggo.dart' deferred as spec_doggo;
 import 'package:autocomplete/specs/dos2unix.dart' deferred as spec_dos2unix;
-import 'package:autocomplete/specs/dotenv-vault.dart' deferred as spec_dotenv_vault;
+import 'package:autocomplete/specs/dotenv-vault.dart'
+    deferred as spec_dotenv_vault;
 import 'package:autocomplete/specs/dotenv.dart' deferred as spec_dotenv;
-import 'package:autocomplete/specs/dotnet/dotnet-build-server.dart' deferred as spec_dotnet_dotnet_build_server;
-import 'package:autocomplete/specs/dotnet/dotnet-build.dart' deferred as spec_dotnet_dotnet_build;
-import 'package:autocomplete/specs/dotnet/dotnet-clean.dart' deferred as spec_dotnet_dotnet_clean;
-import 'package:autocomplete/specs/dotnet/dotnet-format.dart' deferred as spec_dotnet_dotnet_format;
-import 'package:autocomplete/specs/dotnet/dotnet-help.dart' deferred as spec_dotnet_dotnet_help;
-import 'package:autocomplete/specs/dotnet/dotnet-list.dart' deferred as spec_dotnet_dotnet_list;
-import 'package:autocomplete/specs/dotnet/dotnet-migrate.dart' deferred as spec_dotnet_dotnet_migrate;
-import 'package:autocomplete/specs/dotnet/dotnet-msbuild.dart' deferred as spec_dotnet_dotnet_msbuild;
-import 'package:autocomplete/specs/dotnet/dotnet-pack.dart' deferred as spec_dotnet_dotnet_pack;
-import 'package:autocomplete/specs/dotnet/dotnet-publish.dart' deferred as spec_dotnet_dotnet_publish;
-import 'package:autocomplete/specs/dotnet/dotnet-restore.dart' deferred as spec_dotnet_dotnet_restore;
-import 'package:autocomplete/specs/dotnet/dotnet-store.dart' deferred as spec_dotnet_dotnet_store;
+import 'package:autocomplete/specs/dotnet/dotnet-build-server.dart'
+    deferred as spec_dotnet_dotnet_build_server;
+import 'package:autocomplete/specs/dotnet/dotnet-build.dart'
+    deferred as spec_dotnet_dotnet_build;
+import 'package:autocomplete/specs/dotnet/dotnet-clean.dart'
+    deferred as spec_dotnet_dotnet_clean;
+import 'package:autocomplete/specs/dotnet/dotnet-format.dart'
+    deferred as spec_dotnet_dotnet_format;
+import 'package:autocomplete/specs/dotnet/dotnet-help.dart'
+    deferred as spec_dotnet_dotnet_help;
+import 'package:autocomplete/specs/dotnet/dotnet-list.dart'
+    deferred as spec_dotnet_dotnet_list;
+import 'package:autocomplete/specs/dotnet/dotnet-migrate.dart'
+    deferred as spec_dotnet_dotnet_migrate;
+import 'package:autocomplete/specs/dotnet/dotnet-msbuild.dart'
+    deferred as spec_dotnet_dotnet_msbuild;
+import 'package:autocomplete/specs/dotnet/dotnet-pack.dart'
+    deferred as spec_dotnet_dotnet_pack;
+import 'package:autocomplete/specs/dotnet/dotnet-publish.dart'
+    deferred as spec_dotnet_dotnet_publish;
+import 'package:autocomplete/specs/dotnet/dotnet-restore.dart'
+    deferred as spec_dotnet_dotnet_restore;
+import 'package:autocomplete/specs/dotnet/dotnet-store.dart'
+    deferred as spec_dotnet_dotnet_store;
 import 'package:autocomplete/specs/dotslash.dart' deferred as spec_dotslash;
 import 'package:autocomplete/specs/dpkg.dart' deferred as spec_dpkg;
 import 'package:autocomplete/specs/dprint.dart' deferred as spec_dprint;
+import 'package:autocomplete/specs/dtm.dart' deferred as spec_dtm;
 import 'package:autocomplete/specs/du.dart' deferred as spec_du;
 import 'package:autocomplete/specs/dust.dart' deferred as spec_dust;
+// import 'package:autocomplete/specs/eas.dart' deferred as spec_eas;
 import 'package:autocomplete/specs/echo.dart' deferred as spec_echo;
 import 'package:autocomplete/specs/electron.dart' deferred as spec_electron;
 import 'package:autocomplete/specs/eleventy.dart' deferred as spec_eleventy;
 import 'package:autocomplete/specs/elif.dart' deferred as spec_elif;
 import 'package:autocomplete/specs/elm-format.dart' deferred as spec_elm_format;
 import 'package:autocomplete/specs/elm-review.dart' deferred as spec_elm_review;
+import 'package:autocomplete/specs/elm.dart' deferred as spec_elm;
 import 'package:autocomplete/specs/else.dart' deferred as spec_else;
 import 'package:autocomplete/specs/emacs.dart' deferred as spec_emacs;
 import 'package:autocomplete/specs/enapter.dart' deferred as spec_enapter;
 import 'package:autocomplete/specs/encore.dart' deferred as spec_encore;
 import 'package:autocomplete/specs/env.dart' deferred as spec_env;
+import 'package:autocomplete/specs/envchain.dart' deferred as spec_envchain;
+import 'package:autocomplete/specs/esbuild.dart' deferred as spec_esbuild;
 import 'package:autocomplete/specs/eslint.dart' deferred as spec_eslint;
 import 'package:autocomplete/specs/exa.dart' deferred as spec_exa;
-import 'package:autocomplete/specs/example/git_push.dart' deferred as spec_example_git_push;
+import 'package:autocomplete/specs/example/git_push.dart'
+    deferred as spec_example_git_push;
 import 'package:autocomplete/specs/exec.dart' deferred as spec_exec;
 import 'package:autocomplete/specs/exercism.dart' deferred as spec_exercism;
 import 'package:autocomplete/specs/export.dart' deferred as spec_export;
@@ -803,9 +1420,12 @@ import 'package:autocomplete/specs/fastlane.dart' deferred as spec_fastlane;
 import 'package:autocomplete/specs/fastly.dart' deferred as spec_fastly;
 import 'package:autocomplete/specs/fd.dart' deferred as spec_fd;
 import 'package:autocomplete/specs/fdisk.dart' deferred as spec_fdisk;
+import 'package:autocomplete/specs/ffmpeg.dart' deferred as spec_ffmpeg;
 import 'package:autocomplete/specs/figterm.dart' deferred as spec_figterm;
 import 'package:autocomplete/specs/file.dart' deferred as spec_file;
+import 'package:autocomplete/specs/fin.dart' deferred as spec_fin;
 import 'package:autocomplete/specs/find.dart' deferred as spec_find;
+import 'package:autocomplete/specs/firebase.dart' deferred as spec_firebase;
 import 'package:autocomplete/specs/firefox.dart' deferred as spec_firefox;
 import 'package:autocomplete/specs/fmt.dart' deferred as spec_fmt;
 import 'package:autocomplete/specs/fold.dart' deferred as spec_fold;
@@ -815,80 +1435,140 @@ import 'package:autocomplete/specs/forge.dart' deferred as spec_forge;
 import 'package:autocomplete/specs/fzf-tmux.dart' deferred as spec_fzf_tmux;
 import 'package:autocomplete/specs/fzf.dart' deferred as spec_fzf;
 import 'package:autocomplete/specs/g++.dart' deferred as spec_g__;
-import 'package:autocomplete/specs/ganache-cli.dart' deferred as spec_ganache_cli;
+import 'package:autocomplete/specs/ganache-cli.dart'
+    deferred as spec_ganache_cli;
 import 'package:autocomplete/specs/gatsby.dart' deferred as spec_gatsby;
 import 'package:autocomplete/specs/gcc.dart' deferred as spec_gcc;
 import 'package:autocomplete/specs/gcloud.dart' deferred as spec_gcloud;
-import 'package:autocomplete/specs/gcloud/access-context-manager.dart' deferred as spec_gcloud_access_context_manager;
-import 'package:autocomplete/specs/gcloud/active-directory.dart' deferred as spec_gcloud_active_directory;
-import 'package:autocomplete/specs/gcloud/ai-platform.dart' deferred as spec_gcloud_ai_platform;
-import 'package:autocomplete/specs/gcloud/anthos.dart' deferred as spec_gcloud_anthos;
-import 'package:autocomplete/specs/gcloud/apigee.dart' deferred as spec_gcloud_apigee;
+import 'package:autocomplete/specs/gcloud/access-context-manager.dart'
+    deferred as spec_gcloud_access_context_manager;
+import 'package:autocomplete/specs/gcloud/active-directory.dart'
+    deferred as spec_gcloud_active_directory;
+import 'package:autocomplete/specs/gcloud/ai-platform.dart'
+    deferred as spec_gcloud_ai_platform;
+import 'package:autocomplete/specs/gcloud/anthos.dart'
+    deferred as spec_gcloud_anthos;
+import 'package:autocomplete/specs/gcloud/apigee.dart'
+    deferred as spec_gcloud_apigee;
 import 'package:autocomplete/specs/gcloud/app.dart' deferred as spec_gcloud_app;
-import 'package:autocomplete/specs/gcloud/artifacts.dart' deferred as spec_gcloud_artifacts;
-import 'package:autocomplete/specs/gcloud/asset.dart' deferred as spec_gcloud_asset;
-import 'package:autocomplete/specs/gcloud/auth.dart' deferred as spec_gcloud_auth;
-import 'package:autocomplete/specs/gcloud/bigtable.dart' deferred as spec_gcloud_bigtable;
-import 'package:autocomplete/specs/gcloud/builds.dart' deferred as spec_gcloud_builds;
-import 'package:autocomplete/specs/gcloud/cheat-sheet.dart' deferred as spec_gcloud_cheat_sheet;
-import 'package:autocomplete/specs/gcloud/cloud-shell.dart' deferred as spec_gcloud_cloud_shell;
-import 'package:autocomplete/specs/gcloud/components.dart' deferred as spec_gcloud_components;
-import 'package:autocomplete/specs/gcloud/composer.dart' deferred as spec_gcloud_composer;
-import 'package:autocomplete/specs/gcloud/compute.dart' deferred as spec_gcloud_compute;
-import 'package:autocomplete/specs/gcloud/config.dart' deferred as spec_gcloud_config;
-import 'package:autocomplete/specs/gcloud/container.dart' deferred as spec_gcloud_container;
-import 'package:autocomplete/specs/gcloud/data-catalog.dart' deferred as spec_gcloud_data_catalog;
-import 'package:autocomplete/specs/gcloud/dataflow.dart' deferred as spec_gcloud_dataflow;
-import 'package:autocomplete/specs/gcloud/dataproc.dart' deferred as spec_gcloud_dataproc;
-import 'package:autocomplete/specs/gcloud/datastore.dart' deferred as spec_gcloud_datastore;
-import 'package:autocomplete/specs/gcloud/debug.dart' deferred as spec_gcloud_debug;
-import 'package:autocomplete/specs/gcloud/deployment-manager.dart' deferred as spec_gcloud_deployment_manager;
+import 'package:autocomplete/specs/gcloud/artifacts.dart'
+    deferred as spec_gcloud_artifacts;
+import 'package:autocomplete/specs/gcloud/asset.dart'
+    deferred as spec_gcloud_asset;
+import 'package:autocomplete/specs/gcloud/auth.dart'
+    deferred as spec_gcloud_auth;
+import 'package:autocomplete/specs/gcloud/bigtable.dart'
+    deferred as spec_gcloud_bigtable;
+import 'package:autocomplete/specs/gcloud/builds.dart'
+    deferred as spec_gcloud_builds;
+import 'package:autocomplete/specs/gcloud/cheat-sheet.dart'
+    deferred as spec_gcloud_cheat_sheet;
+import 'package:autocomplete/specs/gcloud/cloud-shell.dart'
+    deferred as spec_gcloud_cloud_shell;
+import 'package:autocomplete/specs/gcloud/components.dart'
+    deferred as spec_gcloud_components;
+import 'package:autocomplete/specs/gcloud/composer.dart'
+    deferred as spec_gcloud_composer;
+import 'package:autocomplete/specs/gcloud/compute.dart'
+    deferred as spec_gcloud_compute;
+import 'package:autocomplete/specs/gcloud/config.dart'
+    deferred as spec_gcloud_config;
+import 'package:autocomplete/specs/gcloud/container.dart'
+    deferred as spec_gcloud_container;
+import 'package:autocomplete/specs/gcloud/data-catalog.dart'
+    deferred as spec_gcloud_data_catalog;
+import 'package:autocomplete/specs/gcloud/dataflow.dart'
+    deferred as spec_gcloud_dataflow;
+import 'package:autocomplete/specs/gcloud/dataproc.dart'
+    deferred as spec_gcloud_dataproc;
+import 'package:autocomplete/specs/gcloud/datastore.dart'
+    deferred as spec_gcloud_datastore;
+import 'package:autocomplete/specs/gcloud/debug.dart'
+    deferred as spec_gcloud_debug;
+import 'package:autocomplete/specs/gcloud/deployment-manager.dart'
+    deferred as spec_gcloud_deployment_manager;
 import 'package:autocomplete/specs/gcloud/dns.dart' deferred as spec_gcloud_dns;
-import 'package:autocomplete/specs/gcloud/docker.dart' deferred as spec_gcloud_docker;
-import 'package:autocomplete/specs/gcloud/domains.dart' deferred as spec_gcloud_domains;
-import 'package:autocomplete/specs/gcloud/endpoints.dart' deferred as spec_gcloud_endpoints;
-import 'package:autocomplete/specs/gcloud/feedback.dart' deferred as spec_gcloud_feedback;
-import 'package:autocomplete/specs/gcloud/filestore.dart' deferred as spec_gcloud_filestore;
-import 'package:autocomplete/specs/gcloud/firebase.dart' deferred as spec_gcloud_firebase;
-import 'package:autocomplete/specs/gcloud/firestore.dart' deferred as spec_gcloud_firestore;
-import 'package:autocomplete/specs/gcloud/functions.dart' deferred as spec_gcloud_functions;
-import 'package:autocomplete/specs/gcloud/game.dart' deferred as spec_gcloud_game;
-import 'package:autocomplete/specs/gcloud/healthcare.dart' deferred as spec_gcloud_healthcare;
-import 'package:autocomplete/specs/gcloud/help.dart' deferred as spec_gcloud_help;
+import 'package:autocomplete/specs/gcloud/docker.dart'
+    deferred as spec_gcloud_docker;
+import 'package:autocomplete/specs/gcloud/domains.dart'
+    deferred as spec_gcloud_domains;
+import 'package:autocomplete/specs/gcloud/endpoints.dart'
+    deferred as spec_gcloud_endpoints;
+import 'package:autocomplete/specs/gcloud/feedback.dart'
+    deferred as spec_gcloud_feedback;
+import 'package:autocomplete/specs/gcloud/filestore.dart'
+    deferred as spec_gcloud_filestore;
+import 'package:autocomplete/specs/gcloud/firebase.dart'
+    deferred as spec_gcloud_firebase;
+import 'package:autocomplete/specs/gcloud/firestore.dart'
+    deferred as spec_gcloud_firestore;
+import 'package:autocomplete/specs/gcloud/functions.dart'
+    deferred as spec_gcloud_functions;
+import 'package:autocomplete/specs/gcloud/game.dart'
+    deferred as spec_gcloud_game;
+import 'package:autocomplete/specs/gcloud/healthcare.dart'
+    deferred as spec_gcloud_healthcare;
+import 'package:autocomplete/specs/gcloud/help.dart'
+    deferred as spec_gcloud_help;
 import 'package:autocomplete/specs/gcloud/iam.dart' deferred as spec_gcloud_iam;
 import 'package:autocomplete/specs/gcloud/iap.dart' deferred as spec_gcloud_iap;
-import 'package:autocomplete/specs/gcloud/identity.dart' deferred as spec_gcloud_identity;
-import 'package:autocomplete/specs/gcloud/info.dart' deferred as spec_gcloud_info;
-import 'package:autocomplete/specs/gcloud/init.dart' deferred as spec_gcloud_init;
+import 'package:autocomplete/specs/gcloud/identity.dart'
+    deferred as spec_gcloud_identity;
+import 'package:autocomplete/specs/gcloud/info.dart'
+    deferred as spec_gcloud_info;
+import 'package:autocomplete/specs/gcloud/init.dart'
+    deferred as spec_gcloud_init;
 import 'package:autocomplete/specs/gcloud/iot.dart' deferred as spec_gcloud_iot;
 import 'package:autocomplete/specs/gcloud/kms.dart' deferred as spec_gcloud_kms;
-import 'package:autocomplete/specs/gcloud/logging.dart' deferred as spec_gcloud_logging;
-import 'package:autocomplete/specs/gcloud/meta.dart' deferred as spec_gcloud_meta;
-import 'package:autocomplete/specs/gcloud/ml-engine.dart' deferred as spec_gcloud_ml_engine;
+import 'package:autocomplete/specs/gcloud/logging.dart'
+    deferred as spec_gcloud_logging;
+import 'package:autocomplete/specs/gcloud/meta.dart'
+    deferred as spec_gcloud_meta;
+import 'package:autocomplete/specs/gcloud/ml-engine.dart'
+    deferred as spec_gcloud_ml_engine;
 import 'package:autocomplete/specs/gcloud/ml.dart' deferred as spec_gcloud_ml;
-import 'package:autocomplete/specs/gcloud/monitoring.dart' deferred as spec_gcloud_monitoring;
-import 'package:autocomplete/specs/gcloud/network-management.dart' deferred as spec_gcloud_network_management;
-import 'package:autocomplete/specs/gcloud/organizations.dart' deferred as spec_gcloud_organizations;
-import 'package:autocomplete/specs/gcloud/policy-troubleshoot.dart' deferred as spec_gcloud_policy_troubleshoot;
-import 'package:autocomplete/specs/gcloud/projects.dart' deferred as spec_gcloud_projects;
-import 'package:autocomplete/specs/gcloud/pubsub.dart' deferred as spec_gcloud_pubsub;
-import 'package:autocomplete/specs/gcloud/recommender.dart' deferred as spec_gcloud_recommender;
-import 'package:autocomplete/specs/gcloud/redis.dart' deferred as spec_gcloud_redis;
-import 'package:autocomplete/specs/gcloud/resource-manager.dart' deferred as spec_gcloud_resource_manager;
+import 'package:autocomplete/specs/gcloud/monitoring.dart'
+    deferred as spec_gcloud_monitoring;
+import 'package:autocomplete/specs/gcloud/network-management.dart'
+    deferred as spec_gcloud_network_management;
+import 'package:autocomplete/specs/gcloud/organizations.dart'
+    deferred as spec_gcloud_organizations;
+import 'package:autocomplete/specs/gcloud/policy-troubleshoot.dart'
+    deferred as spec_gcloud_policy_troubleshoot;
+import 'package:autocomplete/specs/gcloud/projects.dart'
+    deferred as spec_gcloud_projects;
+import 'package:autocomplete/specs/gcloud/pubsub.dart'
+    deferred as spec_gcloud_pubsub;
+import 'package:autocomplete/specs/gcloud/recommender.dart'
+    deferred as spec_gcloud_recommender;
+import 'package:autocomplete/specs/gcloud/redis.dart'
+    deferred as spec_gcloud_redis;
+import 'package:autocomplete/specs/gcloud/resource-manager.dart'
+    deferred as spec_gcloud_resource_manager;
 import 'package:autocomplete/specs/gcloud/run.dart' deferred as spec_gcloud_run;
 import 'package:autocomplete/specs/gcloud/scc.dart' deferred as spec_gcloud_scc;
-import 'package:autocomplete/specs/gcloud/scheduler.dart' deferred as spec_gcloud_scheduler;
-import 'package:autocomplete/specs/gcloud/secrets.dart' deferred as spec_gcloud_secrets;
-import 'package:autocomplete/specs/gcloud/services.dart' deferred as spec_gcloud_services;
-import 'package:autocomplete/specs/gcloud/source.dart' deferred as spec_gcloud_source;
-import 'package:autocomplete/specs/gcloud/spanner.dart' deferred as spec_gcloud_spanner;
+import 'package:autocomplete/specs/gcloud/scheduler.dart'
+    deferred as spec_gcloud_scheduler;
+import 'package:autocomplete/specs/gcloud/secrets.dart'
+    deferred as spec_gcloud_secrets;
+import 'package:autocomplete/specs/gcloud/services.dart'
+    deferred as spec_gcloud_services;
+import 'package:autocomplete/specs/gcloud/source.dart'
+    deferred as spec_gcloud_source;
+import 'package:autocomplete/specs/gcloud/spanner.dart'
+    deferred as spec_gcloud_spanner;
 import 'package:autocomplete/specs/gcloud/sql.dart' deferred as spec_gcloud_sql;
-import 'package:autocomplete/specs/gcloud/survey.dart' deferred as spec_gcloud_survey;
-import 'package:autocomplete/specs/gcloud/tasks.dart' deferred as spec_gcloud_tasks;
-import 'package:autocomplete/specs/gcloud/topic.dart' deferred as spec_gcloud_topic;
-import 'package:autocomplete/specs/gcloud/version.dart' deferred as spec_gcloud_version;
+import 'package:autocomplete/specs/gcloud/survey.dart'
+    deferred as spec_gcloud_survey;
+import 'package:autocomplete/specs/gcloud/tasks.dart'
+    deferred as spec_gcloud_tasks;
+import 'package:autocomplete/specs/gcloud/topic.dart'
+    deferred as spec_gcloud_topic;
+import 'package:autocomplete/specs/gcloud/version.dart'
+    deferred as spec_gcloud_version;
 import 'package:autocomplete/specs/ghq.dart' deferred as spec_ghq;
-import 'package:autocomplete/specs/git-quick-stats.dart' deferred as spec_git_quick_stats;
+import 'package:autocomplete/specs/git-quick-stats.dart'
+    deferred as spec_git_quick_stats;
 import 'package:autocomplete/specs/git.dart' deferred as spec_git;
 import 'package:autocomplete/specs/github.dart' deferred as spec_github;
 import 'package:autocomplete/specs/glow.dart' deferred as spec_glow;
@@ -910,8 +1590,10 @@ import 'package:autocomplete/specs/hb-service.dart' deferred as spec_hb_service;
 import 'package:autocomplete/specs/head.dart' deferred as spec_head;
 import 'package:autocomplete/specs/helm.dart' deferred as spec_helm;
 import 'package:autocomplete/specs/helmfile.dart' deferred as spec_helmfile;
-import 'package:autocomplete/specs/heroku/8.0.0.dart' deferred as spec_heroku_8_0_0;
-import 'package:autocomplete/specs/heroku/8.6.0.dart' deferred as spec_heroku_8_6_0;
+import 'package:autocomplete/specs/heroku/8.0.0.dart'
+    deferred as spec_heroku_8_0_0;
+import 'package:autocomplete/specs/heroku/8.6.0.dart'
+    deferred as spec_heroku_8_6_0;
 import 'package:autocomplete/specs/hexo.dart' deferred as spec_hexo;
 import 'package:autocomplete/specs/homey.dart' deferred as spec_homey;
 import 'package:autocomplete/specs/hop.dart' deferred as spec_hop;
@@ -950,6 +1632,8 @@ import 'package:autocomplete/specs/kitty.dart' deferred as spec_kitty;
 import 'package:autocomplete/specs/klist.dart' deferred as spec_klist;
 import 'package:autocomplete/specs/knex.dart' deferred as spec_knex;
 import 'package:autocomplete/specs/kotlinc.dart' deferred as spec_kotlinc;
+import 'package:autocomplete/specs/kubecolor.dart' deferred as spec_kubecolor;
+import 'package:autocomplete/specs/kubectl.dart' deferred as spec_kubectl;
 import 'package:autocomplete/specs/laravel.dart' deferred as spec_laravel;
 import 'package:autocomplete/specs/launchctl.dart' deferred as spec_launchctl;
 import 'package:autocomplete/specs/ldd.dart' deferred as spec_ldd;
@@ -988,7 +1672,8 @@ import 'package:autocomplete/specs/mknod.dart' deferred as spec_mknod;
 import 'package:autocomplete/specs/mob.dart' deferred as spec_mob;
 import 'package:autocomplete/specs/molecule.dart' deferred as spec_molecule;
 import 'package:autocomplete/specs/mongocli.dart' deferred as spec_mongocli;
-import 'package:autocomplete/specs/mongoimport.dart' deferred as spec_mongoimport;
+import 'package:autocomplete/specs/mongoimport.dart'
+    deferred as spec_mongoimport;
 import 'package:autocomplete/specs/mongosh.dart' deferred as spec_mongosh;
 import 'package:autocomplete/specs/more.dart' deferred as spec_more;
 import 'package:autocomplete/specs/mosh.dart' deferred as spec_mosh;
@@ -1000,7 +1685,8 @@ import 'package:autocomplete/specs/mypy.dart' deferred as spec_mypy;
 import 'package:autocomplete/specs/mysql.dart' deferred as spec_mysql;
 import 'package:autocomplete/specs/n.dart' deferred as spec_n;
 import 'package:autocomplete/specs/nano.dart' deferred as spec_nano;
-import 'package:autocomplete/specs/nativescript.dart' deferred as spec_nativescript;
+import 'package:autocomplete/specs/nativescript.dart'
+    deferred as spec_nativescript;
 import 'package:autocomplete/specs/nc.dart' deferred as spec_nc;
 import 'package:autocomplete/specs/ncal.dart' deferred as spec_ncal;
 import 'package:autocomplete/specs/ncu.dart' deferred as spec_ncu;
@@ -1037,7 +1723,8 @@ import 'package:autocomplete/specs/oh-my-posh.dart' deferred as spec_oh_my_posh;
 import 'package:autocomplete/specs/okta.dart' deferred as spec_okta;
 import 'package:autocomplete/specs/ollama.dart' deferred as spec_ollama;
 import 'package:autocomplete/specs/omz.dart' deferred as spec_omz;
-import 'package:autocomplete/specs/onboardbase.dart' deferred as spec_onboardbase;
+import 'package:autocomplete/specs/onboardbase.dart'
+    deferred as spec_onboardbase;
 import 'package:autocomplete/specs/opa.dart' deferred as spec_opa;
 import 'package:autocomplete/specs/open.dart' deferred as spec_open;
 import 'package:autocomplete/specs/osascript.dart' deferred as spec_osascript;
@@ -1054,7 +1741,8 @@ import 'package:autocomplete/specs/pg_dump.dart' deferred as spec_pg_dump;
 import 'package:autocomplete/specs/pgcli.dart' deferred as spec_pgcli;
 import 'package:autocomplete/specs/php.dart' deferred as spec_php;
 import 'package:autocomplete/specs/phpunit.dart' deferred as spec_phpunit;
-import 'package:autocomplete/specs/phpunit_watcher.dart' deferred as spec_phpunit_watcher;
+import 'package:autocomplete/specs/phpunit_watcher.dart'
+    deferred as spec_phpunit_watcher;
 import 'package:autocomplete/specs/pijul.dart' deferred as spec_pijul;
 import 'package:autocomplete/specs/ping.dart' deferred as spec_ping;
 import 'package:autocomplete/specs/pip3.dart' deferred as spec_pip3;
@@ -1074,7 +1762,8 @@ import 'package:autocomplete/specs/premake.dart' deferred as spec_premake;
 import 'package:autocomplete/specs/prettier.dart' deferred as spec_prettier;
 import 'package:autocomplete/specs/prisma.dart' deferred as spec_prisma;
 import 'package:autocomplete/specs/pro.dart' deferred as spec_pro;
-import 'package:autocomplete/specs/progressline.dart' deferred as spec_progressline;
+import 'package:autocomplete/specs/progressline.dart'
+    deferred as spec_progressline;
 import 'package:autocomplete/specs/pry.dart' deferred as spec_pry;
 import 'package:autocomplete/specs/ps.dart' deferred as spec_ps;
 import 'package:autocomplete/specs/psql.dart' deferred as spec_psql;
@@ -1083,7 +1772,8 @@ import 'package:autocomplete/specs/pushd.dart' deferred as spec_pushd;
 import 'package:autocomplete/specs/pwd.dart' deferred as spec_pwd;
 import 'package:autocomplete/specs/pyenv.dart' deferred as spec_pyenv;
 import 'package:autocomplete/specs/pytest.dart' deferred as spec_pytest;
-import 'package:autocomplete/specs/python/http.server.dart' deferred as spec_python_http_server;
+import 'package:autocomplete/specs/python/http.server.dart'
+    deferred as spec_python_http_server;
 import 'package:autocomplete/specs/qodana.dart' deferred as spec_qodana;
 import 'package:autocomplete/specs/quasar.dart' deferred as spec_quasar;
 import 'package:autocomplete/specs/quickmail.dart' deferred as spec_quickmail;
@@ -1123,7 +1813,8 @@ import 'package:autocomplete/specs/sfdx.dart' deferred as spec_sfdx;
 import 'package:autocomplete/specs/sftp.dart' deferred as spec_sftp;
 import 'package:autocomplete/specs/sha1sum.dart' deferred as spec_sha1sum;
 import 'package:autocomplete/specs/shasum.dart' deferred as spec_shasum;
-import 'package:autocomplete/specs/shell-config.dart' deferred as spec_shell_config;
+import 'package:autocomplete/specs/shell-config.dart'
+    deferred as spec_shell_config;
 import 'package:autocomplete/specs/shelve.dart' deferred as spec_shelve;
 import 'package:autocomplete/specs/shortcuts.dart' deferred as spec_shortcuts;
 import 'package:autocomplete/specs/shred.dart' deferred as spec_shred;
@@ -1132,11 +1823,13 @@ import 'package:autocomplete/specs/simctl.dart' deferred as spec_simctl;
 import 'package:autocomplete/specs/sips.dart' deferred as spec_sips;
 import 'package:autocomplete/specs/sl.dart' deferred as spec_sl;
 import 'package:autocomplete/specs/sls.dart' deferred as spec_sls;
-import 'package:autocomplete/specs/softwareupdate.dart' deferred as spec_softwareupdate;
+import 'package:autocomplete/specs/softwareupdate.dart'
+    deferred as spec_softwareupdate;
 import 'package:autocomplete/specs/sort.dart' deferred as spec_sort;
 import 'package:autocomplete/specs/source.dart' deferred as spec_source;
 import 'package:autocomplete/specs/space.dart' deferred as spec_space;
-import 'package:autocomplete/specs/speedtest-cli.dart' deferred as spec_speedtest_cli;
+import 'package:autocomplete/specs/speedtest-cli.dart'
+    deferred as spec_speedtest_cli;
 import 'package:autocomplete/specs/speedtest.dart' deferred as spec_speedtest;
 import 'package:autocomplete/specs/splash.dart' deferred as spec_splash;
 import 'package:autocomplete/specs/split.dart' deferred as spec_split;
@@ -1151,7 +1844,8 @@ import 'package:autocomplete/specs/st2.dart' deferred as spec_st2;
 import 'package:autocomplete/specs/sta.dart' deferred as spec_sta;
 import 'package:autocomplete/specs/stack.dart' deferred as spec_stack;
 import 'package:autocomplete/specs/starkli.dart' deferred as spec_starkli;
-import 'package:autocomplete/specs/start-storybook.dart' deferred as spec_start_storybook;
+import 'package:autocomplete/specs/start-storybook.dart'
+    deferred as spec_start_storybook;
 import 'package:autocomplete/specs/stat.dart' deferred as spec_stat;
 import 'package:autocomplete/specs/steadybit.dart' deferred as spec_steadybit;
 import 'package:autocomplete/specs/stencil.dart' deferred as spec_stencil;
@@ -1167,8 +1861,10 @@ import 'package:autocomplete/specs/surreal.dart' deferred as spec_surreal;
 import 'package:autocomplete/specs/svn.dart' deferred as spec_svn;
 import 'package:autocomplete/specs/svokit.dart' deferred as spec_svokit;
 import 'package:autocomplete/specs/sw_vers.dart' deferred as spec_sw_vers;
-import 'package:autocomplete/specs/swagger-typescript-api.dart' deferred as spec_swagger_typescript_api;
-import 'package:autocomplete/specs/swagger_typescript_api.dart' deferred as spec_swagger_typescript_api_1;
+import 'package:autocomplete/specs/swagger-typescript-api.dart'
+    deferred as spec_swagger_typescript_api;
+import 'package:autocomplete/specs/swagger_typescript_api.dart'
+    deferred as spec_swagger_typescript_api_1;
 import 'package:autocomplete/specs/swc.dart' deferred as spec_swc;
 import 'package:autocomplete/specs/swift.dart' deferred as spec_swift;
 import 'package:autocomplete/specs/symfony.dart' deferred as spec_symfony;
@@ -1176,13 +1872,16 @@ import 'package:autocomplete/specs/sysctl.dart' deferred as spec_sysctl;
 import 'package:autocomplete/specs/tac.dart' deferred as spec_tac;
 import 'package:autocomplete/specs/tail.dart' deferred as spec_tail;
 import 'package:autocomplete/specs/tailcall.dart' deferred as spec_tailcall;
-import 'package:autocomplete/specs/tailwindcss.dart' deferred as spec_tailwindcss;
+import 'package:autocomplete/specs/tailwindcss.dart'
+    deferred as spec_tailwindcss;
 import 'package:autocomplete/specs/tangram.dart' deferred as spec_tangram;
 import 'package:autocomplete/specs/taplo.dart' deferred as spec_taplo;
 import 'package:autocomplete/specs/tar.dart' deferred as spec_tar;
 import 'package:autocomplete/specs/task.dart' deferred as spec_task;
-import 'package:autocomplete/specs/task_go_task.dart' deferred as spec_task_go_task;
-import 'package:autocomplete/specs/task_taskwarrior.dart' deferred as spec_task_taskwarrior;
+import 'package:autocomplete/specs/task_go_task.dart'
+    deferred as spec_task_go_task;
+import 'package:autocomplete/specs/task_taskwarrior.dart'
+    deferred as spec_task_taskwarrior;
 import 'package:autocomplete/specs/tb.dart' deferred as spec_tb;
 import 'package:autocomplete/specs/tccutil.dart' deferred as spec_tccutil;
 import 'package:autocomplete/specs/tee.dart' deferred as spec_tee;
@@ -1215,7 +1914,8 @@ import 'package:autocomplete/specs/typeorm.dart' deferred as spec_typeorm;
 import 'package:autocomplete/specs/typos.dart' deferred as spec_typos;
 import 'package:autocomplete/specs/typst.dart' deferred as spec_typst;
 import 'package:autocomplete/specs/ua.dart' deferred as spec_ua;
-import 'package:autocomplete/specs/ubuntu-advantage.dart' deferred as spec_ubuntu_advantage;
+import 'package:autocomplete/specs/ubuntu-advantage.dart'
+    deferred as spec_ubuntu_advantage;
 import 'package:autocomplete/specs/uname.dart' deferred as spec_uname;
 import 'package:autocomplete/specs/uniq.dart' deferred as spec_uniq;
 import 'package:autocomplete/specs/unix2dos.dart' deferred as spec_unix2dos;
@@ -1237,7 +1937,8 @@ import 'package:autocomplete/specs/vr.dart' deferred as spec_vr;
 import 'package:autocomplete/specs/vtex.dart' deferred as spec_vtex;
 import 'package:autocomplete/specs/vue.dart' deferred as spec_vue;
 import 'package:autocomplete/specs/w.dart' deferred as spec_w;
-import 'package:autocomplete/specs/wasm-bindgen.dart' deferred as spec_wasm_bindgen;
+import 'package:autocomplete/specs/wasm-bindgen.dart'
+    deferred as spec_wasm_bindgen;
 import 'package:autocomplete/specs/wasm-pack.dart' deferred as spec_wasm_pack;
 import 'package:autocomplete/specs/watchman.dart' deferred as spec_watchman;
 import 'package:autocomplete/specs/wc.dart' deferred as spec_wc;
@@ -1251,7 +1952,8 @@ import 'package:autocomplete/specs/which.dart' deferred as spec_which;
 import 'package:autocomplete/specs/while.dart' deferred as spec_while;
 import 'package:autocomplete/specs/who.dart' deferred as spec_who;
 import 'package:autocomplete/specs/whois.dart' deferred as spec_whois;
-import 'package:autocomplete/specs/wifi_password.dart' deferred as spec_wifi_password;
+import 'package:autocomplete/specs/wifi_password.dart'
+    deferred as spec_wifi_password;
 import 'package:autocomplete/specs/wing.dart' deferred as spec_wing;
 import 'package:autocomplete/specs/wp.dart' deferred as spec_wp;
 import 'package:autocomplete/specs/wrangler.dart' deferred as spec_wrangler;
@@ -1259,7 +1961,8 @@ import 'package:autocomplete/specs/wrk.dart' deferred as spec_wrk;
 import 'package:autocomplete/specs/wscat.dart' deferred as spec_wscat;
 import 'package:autocomplete/specs/xargs.dart' deferred as spec_xargs;
 import 'package:autocomplete/specs/xc.dart' deferred as spec_xc;
-import 'package:autocomplete/specs/xcode-select.dart' deferred as spec_xcode_select;
+import 'package:autocomplete/specs/xcode-select.dart'
+    deferred as spec_xcode_select;
 import 'package:autocomplete/specs/xcodebuild.dart' deferred as spec_xcodebuild;
 import 'package:autocomplete/specs/xcodeproj.dart' deferred as spec_xcodeproj;
 import 'package:autocomplete/specs/xcodes.dart' deferred as spec_xcodes;
@@ -1281,7 +1984,1267 @@ import 'package:autocomplete/specs/zipcloak.dart' deferred as spec_zipcloak;
 import 'package:autocomplete/specs/zoxide.dart' deferred as spec_zoxide;
 
 /// Command names available in this v2 bundle (for command-name completion without loading).
-const List<String> v2SpecNames = ['-', '@commercelayer/cli', '@fig/publish-spec', '@forge/cli', '@withfig/autocomplete-tools', '@wordpress/create-block', 'Rscript', 'access-context-manager', 'accessanalyzer', 'account', 'acm-pca', 'acr', 'act', 'active-directory', 'ad', 'adb', 'adp', 'adr', 'advisor', 'afd', 'afplay', 'aftman', 'ag', 'agrippa', 'ai-examples', 'ai-platform', 'airflow', 'aks', 'alerts-management', 'alexaforbusiness', 'alias', 'aliases', 'amlfs', 'amp', 'amplifybackend', 'amplifyuibuilder', 'ampx', 'ams', 'ansible', 'ansible-config', 'ansible-galaxy', 'ansible-lint', 'ansible-playbook', 'anthos', 'apigateway', 'apigatewaymanagementapi', 'apigatewayv2', 'apigee', 'apim', 'app', 'appconfig', 'appconfigdata', 'appfabric', 'appflow', 'appintegrations', 'application-autoscaling', 'application-insights', 'application-signals', 'applicationcostprofiler', 'appmesh', 'apprunner', 'appservice', 'appstream', 'appsync', 'apptest', 'arc-zonal-shift', 'arcappliance', 'arcdata', 'arch', 'argo', 'aro', 'artifact', 'artifacts', 'asar', 'asciinema', 'asr', 'asset', 'astro', 'athena', 'atlas', 'attestation', 'auditmanager', 'auth', 'authchanger', 'autocannon', 'autojump', 'automanage', 'automation', 'autoscaling', 'autoscaling-plans', 'awsume', 'az', 'azurestackhci', 'b2bi', 'babel', 'backup', 'backup-gateway', 'backupstorage', 'banner', 'baremetalinstance', 'barnard59', 'base32', 'base64', 'basename', 'basenc', 'batch', 'batchai', 'bc', 'bcd', 'bcm-data-exports', 'bcm-pricing-calculator', 'bedrock', 'bedrock-agent', 'bedrock-agent-runtime', 'bedrock-data-automation', 'bedrock-data-automation-runtime', 'bedrock-runtime', 'bicep', 'bigtable', 'billing', 'billing-benefits', 'billingconductor', 'bit', 'blitz', 'blockchain', 'blueprint', 'boards', 'bot', 'br', 'braket', 'brew', 'broot', 'btop', 'budgets', 'build', 'build-server', 'build-storybook', 'builds', 'bun', 'bundle', 'bw', 'bwdc', 'bws', 'c++', 'cache', 'caffeinate', 'cal', 'cap', 'capacity', 'cat', 'cci', 'cd', 'cdk', 'cdk8s', 'cdn', 'ce', 'change-analysis', 'charm', 'chatbot', 'cheat-sheet', 'chime', 'chime-sdk-identity', 'chime-sdk-media-pipelines', 'chime-sdk-meetings', 'chime-sdk-messaging', 'chime-sdk-voice', 'chmod', 'chown', 'cicada', 'circleci', 'cl', 'clang', 'clang++', 'clean', 'cleanrooms', 'cleanroomsml', 'clear', 'cli', 'cli-translator', 'cliff-jumper', 'clilol', 'clojure', 'cloud', 'cloud-service', 'cloud-shell', 'cloud9', 'cloudcontrol', 'clouddirectory', 'cloudflared', 'cloudfront', 'cloudfront-keyvaluestore', 'cloudhsm', 'cloudhsmv2', 'cloudsearch', 'cloudsearchdomain', 'cloudtrail', 'cloudtrail-data', 'cmake', 'coda', 'code', 'code-insiders', 'codeartifact', 'codebuild', 'codecatalyst', 'codecommit', 'codeconnections', 'codeguru-reviewer', 'codeguru-security', 'codeguruprofiler', 'codepipeline', 'codesign', 'codestar', 'codestar-connections', 'codestar-notifications', 'cognitiveservices', 'cognito-identity', 'cognito-idp', 'cognito-sync', 'command', 'command-change', 'communication', 'components', 'composer', 'comprehend', 'comprehendmedical', 'compute', 'compute-optimizer', 'confcom', 'confidentialledger', 'config', 'configservice', 'configure', 'confluent', 'connect', 'connect-contact-lens', 'connectcampaigns', 'connectcampaignsv2', 'connectcases', 'connectedk8s', 'connectedmachine', 'connectedvmware', 'connection', 'connectparticipant', 'consumption', 'container', 'containerapp', 'controlcatalog', 'controltower', 'copyfile', 'copypath', 'cosign', 'cosmosdb', 'cost-optimization-hub', 'costmanagement', 'cot', 'cp', 'create-completion-spec', 'create-next-app', 'create-nx-workspace', 'create-react-app', 'create-react-native-app', 'create-redwood-app', 'create-remix', 'create-t3-app', 'create-video', 'create-web3-frontend', 'croc', 'crontab', 'csdx', 'csvmware', 'cur', 'curl', 'custom-providers', 'customer-profiles', 'customlocation', 'cut', 'dart', 'data-catalog', 'databox', 'databoxedge', 'databrew', 'databricks', 'datadog', 'dataexchange', 'datafactory', 'dataflow', 'datamigration', 'datapipeline', 'dataproc', 'dataprotection', 'datashare', 'datastore', 'datasync', 'datazone', 'date', 'dateseq', 'datree', 'dax', 'dbt', 'dd', 'ddev', 'ddosify', 'deadline', 'debug', 'dedicated-hsm', 'demo', 'deno', 'deploy', 'deployment', 'deployment-manager', 'deployment-scripts', 'desktopvirtualization', 'deta', 'detective', 'devcenter', 'devicefarm', 'devops', 'devops-guru', 'df', 'diff', 'dig', 'directconnect', 'dirname', 'discovery', 'disk', 'disk-access', 'disk-encryption-set', 'disk-pool', 'ditto', 'dla', 'dlm', 'dls', 'dms', 'dnc', 'dns', 'dns-resolver', 'do', 'do-release-upgrade', 'docdb', 'docdb-elastic', 'docker', 'doctl', 'dog', 'doggo', 'domains', 'dos2unix', 'dotenv', 'dotenv-vault', 'dotslash', 'dpkg', 'dprint', 'drs', 'ds', 'ds-data', 'dsql', 'dt', 'du', 'dust', 'dynamodb', 'dynamodbstreams', 'dynatrace', 'ebs', 'ec2-instance-connect', 'echo', 'ecr', 'ecr-public', 'edgeorder', 'efs', 'eks-auth', 'elastic', 'elastic-inference', 'elastic-san', 'elasticache', 'elastictranscoder', 'elb', 'elbv2', 'electron', 'eleventy', 'elif', 'elm-format', 'elm-review', 'else', 'emacs', 'emr', 'emr-containers', 'emr-serverless', 'enapter', 'encore', 'endpoints', 'entityresolution', 'env', 'es', 'eslint', 'eventgrid', 'eventhubs', 'events', 'evidently', 'exa', 'exec', 'exercism', 'export', 'extension', 'eza', 'fastlane', 'fastly', 'fd', 'fdisk', 'feature', 'feedback', 'figterm', 'file', 'filestore', 'find', 'finspace', 'finspace-data', 'firebase', 'firefox', 'firehose', 'firestore', 'fis', 'fleet', 'fluid-relay', 'fms', 'fmt', 'fold', 'footprint', 'for', 'forc', 'forecast', 'forecastquery', 'format', 'frauddetector', 'freetier', 'fsx', 'functionapp', 'functions', 'fzf', 'fzf-tmux', 'g++', 'game', 'gamelift', 'ganache-cli', 'gatsby', 'gcc', 'gcloud', 'geo-maps', 'geo-places', 'geo-routes', 'ghq', 'git', 'git-quick-stats', 'git_push_example', 'github', 'glacier', 'globalaccelerator', 'glow', 'gltfjsx', 'glue', 'go', 'go-task', 'goctl', 'googler', 'goreleaser', 'goto', 'gradle', 'grafana', 'graph', 'graph-services', 'graphcdn', 'greengrass', 'greengrassv2', 'grep', 'grex', 'gron', 'groundstation', 'group', 'gt', 'guardduty', 'guestconfig', 'hack', 'hanainstance', 'hardhat', 'hasura', 'hb-service', 'hdinsight', 'head', 'health', 'healthbot', 'healthcare', 'healthcareapis', 'healthlake', 'helm', 'helmfile', 'help', 'heroku', 'hexo', 'history', 'homey', 'honeycode', 'hop', 'hostname', 'hpc-cache', 'htop', 'http', 'http.server', 'httpy', 'hub', 'hx', 'hybridaks', 'hyper', 'hyperfine', 'iam', 'iap', 'iconv', 'id', 'identity', 'identitystore', 'iex', 'if', 'image', 'imagebuilder', 'import-export', 'importexport', 'index', 'info', 'init', 'inspector', 'inspector-scan', 'inspector2', 'install', 'interactive', 'internet-analyzer', 'internetmonitor', 'invoicing', 'iot', 'iot-data', 'iot-jobs-data', 'iot1click-devices', 'iot1click-projects', 'iotanalytics', 'iotdeviceadvisor', 'iotevents', 'iotevents-data', 'iotfleethub', 'iotfleetwise', 'iotsecuretunneling', 'iotsitewise', 'iotthingsgraph', 'iottwinmaker', 'iotwireless', 'ivs', 'ivs-realtime', 'ivschat', 'j', 'java', 'jenv', 'jest', 'jmeter', 'join', 'jq', 'julia', 'jupyter', 'k6', 'k8s-configuration', 'k8s-extension', 'k8sconfiguration', 'k9s', 'kafka', 'kafkaconnect', 'kafkactl', 'kdoctor', 'kendra', 'kendra-ranking', 'keyspaces', 'keytool', 'keyvault', 'kill', 'killall', 'kind', 'kinesis', 'kinesis-video-archived-media', 'kinesis-video-media', 'kinesis-video-signaling', 'kinesis-video-webrtc-storage', 'kinesisanalytics', 'kinesisanalyticsv2', 'kinesisvideo', 'kitty', 'klist', 'kms', 'knex', 'kotlinc', 'kusto', 'lab', 'lakeformation', 'laravel', 'launch-wizard', 'launchctl', 'ldd', 'leaf', 'less', 'lex-models', 'lex-runtime', 'lexv2-models', 'lexv2-runtime', 'license-manager', 'license-manager-linux-subscriptions', 'license-manager-user-subscriptions', 'lightsail', 'lima', 'list', 'ln', 'load', 'location', 'lock', 'locust', 'logging', 'logic', 'logicapp', 'login', 'logout', 'logs', 'logz', 'lookoutequipment', 'lookoutmetrics', 'lookoutvision', 'lp', 'lpass', 'ls', 'lsblk', 'lsd', 'lsof', 'luz', 'lvim', 'm2', 'machinelearning', 'macie', 'macie2', 'mackup', 'magento', 'maigret', 'mailmanager', 'mailsy', 'main', 'maintenance', 'make', 'managed-cassandra', 'managedapp', 'managedblockchain', 'managedblockchain-query', 'managedservices', 'managementpartner', 'maps', 'mariadb', 'marketplace-agreement', 'marketplace-catalog', 'marketplace-deployment', 'marketplace-entitlement', 'marketplace-reporting', 'marketplacecommerceanalytics', 'mas', 'mask', 'mdfind', 'mdls', 'mediaconnect', 'mediaconvert', 'medialive', 'mediapackage', 'mediapackage-vod', 'mediapackagev2', 'mediastore', 'mediastore-data', 'mediatailor', 'medical-imaging', 'memorydb', 'meroxa', 'mesh', 'meta', 'meteringmarketplace', 'mgh', 'mgn', 'micro', 'migrate', 'migration-hub-refactor-spaces', 'migrationhub-config', 'migrationhuborchestrator', 'migrationhubstrategy', 'mikro-orm', 'minectl', 'minikube', 'mix', 'mkdir', 'mkdocs', 'mkfifo', 'mknod', 'ml', 'ml-engine', 'mob', 'mobile', 'mobile-network', 'molecule', 'mongocli', 'mongoimport', 'mongosh', 'monitor', 'monitoring', 'more', 'mosh', 'mount', 'mq', 'msbuild', 'mturk', 'multipass', 'mv', 'mvn', 'mwaa', 'mypy', 'mysql', 'n', 'nano', 'nativescript', 'nc', 'ncal', 'ncu', 'neofetch', 'neptune', 'neptune-graph', 'neptunedata', 'nest', 'netappfiles', 'netlify', 'network', 'network-firewall', 'network-function', 'network-management', 'networkcloud', 'networkfabric', 'networkflowmonitor', 'networkmanager', 'networkmonitor', 'new-relic', 'newman', 'next', 'ng', 'nginx', 'ngrok', 'nhost', 'ni', 'nimble', 'nl', 'nmap', 'nocorrect', 'node', 'noglob', 'northflank', 'notification-hub', 'notifications', 'notificationscontacts', 'np', 'npx', 'nr', 'nrm', 'ns', 'nu', 'nuxi', 'nuxt', 'nvim', 'nvm', 'nylas', 'oam', 'observabilityadmin', 'oci', 'od', 'offazure', 'oh-my-posh', 'okta', 'ollama', 'omics', 'omz', 'onboardbase', 'opa', 'open', 'opensearch', 'opensearchserverless', 'opsworks', 'opsworks-cm', 'opsworkscm', 'orbital', 'organizations', 'osascript', 'osis', 'outposts', 'pac', 'pack', 'pageres', 'palera1n', 'palo-alto', 'panorama', 'paper', 'partnercenter', 'partnercentral-selling', 'pass', 'passwd', 'paste', 'path', 'pathchk', 'payment-cryptography', 'payment-cryptography-data', 'pca-connector-ad', 'pca-connector-scep', 'pcs', 'pdfunite', 'peering', 'personalize', 'personalize-events', 'personalize-runtime', 'pg_dump', 'pgcli', 'php', 'phpunit', 'phpunit-watcher', 'pi', 'pijul', 'ping', 'pinpoint', 'pinpoint-email', 'pinpoint-sms-voice', 'pinpoint-sms-voice-v2', 'pip3', 'pipelines', 'pipenv', 'pipes', 'pkg-config', 'pkgutil', 'pkill', 'planter', 'playwright', 'plutil', 'pm2', 'pmset', 'pnpx', 'pocketbase', 'poetry', 'policy', 'policy-troubleshoot', 'polly', 'portal', 'postgres', 'powerbi', 'ppg', 'premake', 'preset', 'prettier', 'pricing', 'prisma', 'private-link', 'privatenetworks', 'pro', 'progressline', 'projects', 'proton', 'provider', 'providerhub', 'pry', 'ps', 'psql', 'publish', 'pubsub', 'purview', 'pushd', 'pwd', 'pyenv', 'pytest', 'qapps', 'qbusiness', 'qconnect', 'qldb', 'qldb-session', 'qodana', 'quantum', 'quasar', 'quickmail', 'quicksight', 'qumulo', 'quota', 'railway', 'rake', 'ram', 'rbenv', 'rbin', 'rds', 'rds-data', 'readlink', 'recommender', 'redis', 'redisenterprise', 'redshift', 'redshift-data', 'redshift-serverless', 'rekognition', 'relay', 'remix', 'remote-rendering-account', 'remotion', 'repeat', 'repos', 'repostspace', 'reservations', 'resiliencehub', 'resource', 'resource-explorer-2', 'resource-groups', 'resource-manager', 'resource-mover', 'resourcegroupstaggingapi', 'resourcemanagement', 'rest', 'restore', 'restore-point', 'rg', 'rm', 'rmdir', 'robomaker', 'rojo', 'role', 'rolesanywhere', 'rollup', 'rome', 'route53', 'route53-recovery-cluster', 'route53-recovery-control-config', 'route53-recovery-readiness', 'route53domains', 'route53profiles', 'route53resolver', 'rsync', 'ruby', 'ruff', 'rum', 'run', 'runtime.sagemaker', 'rushx', 'rustc', 'rvm', 's3control', 's3outposts', 's3tables', 'sagemaker', 'sagemaker-a2i-runtime', 'sagemaker-edge', 'sagemaker-featurestore-runtime', 'sagemaker-geospatial', 'sagemaker-metrics', 'sagemaker-runtime', 'sake', 'sam', 'sanity', 'sapmonitor', 'sapphire', 'savingsplans', 'scc', 'scenario', 'scheduler', 'schemas', 'scp', 'screen', 'scvmm', 'sdb', 'search', 'secrets', 'security', 'security-ir', 'securityhub', 'securitylake', 'sed', 'self-help', 'self-test', 'sentinel', 'seq', 'sequelize', 'serial-console', 'serve', 'serverless', 'serverlessrepo', 'service-quotas', 'servicebus', 'servicecatalog', 'servicecatalog-appregistry', 'servicediscovery', 'services', 'ses', 'sesv2', 'sf', 'sfdx', 'sftp', 'sha1sum', 'shasum', 'shelve', 'shield', 'shortcuts', 'shred', 'sidekiq', 'sig', 'signalr', 'signer', 'simctl', 'simspaceweaver', 'sips', 'site-recovery', 'sl', 'sls', 'sms', 'sms-voice', 'snapshot', 'snow-device-management', 'snowball', 'sns', 'socialmessaging', 'softwareupdate', 'sort', 'source', 'space', 'spanner', 'spatial-anchors-account', 'speedtest', 'speedtest-cli', 'sphere', 'splash-cli', 'split', 'spotify', 'spring', 'spring-cloud', 'sql', 'sqlfluff', 'sqlite3', 'sqlmesh', 'sqs', 'src', 'ssh', 'ssh-keygen', 'sshkey', 'ssm', 'ssm-contacts', 'ssm-incidents', 'ssm-quicksetup', 'ssm-sap', 'sso', 'sso-admin', 'sso-oidc', 'st2', 'sta', 'stack', 'stack-hci', 'starkli', 'start-storybook', 'stat', 'staticwebapp', 'steadybit', 'stencil', 'stepfunctions', 'storage', 'storage-mover', 'storagegateway', 'storagesync', 'store', 'stow', 'stream-analytics', 'streamlit', 'stripe', 'sts', 'su', 'subl', 'sudo', 'suitecloud', 'supabase', 'supplychain', 'support', 'support-app', 'surreal', 'survey', 'svn', 'svokit', 'sw_vers', 'swagger-typescript-api', 'swc', 'swf', 'swift', 'symfony', 'synapse', 'synthetics', 'sysctl', 'tac', 'tag', 'tail', 'tailcall', 'tailwindcss', 'tangram', 'taplo', 'tar', 'task', 'tasks', 'taskwarrior', 'taxsettings', 'tb', 'tccutil', 'tee', 'term', 'textract', 'tfenv', 'then', 'time', 'timestream-influxdb', 'timestream-query', 'timestream-write', 'tkn', 'tldr', 'tmutil', 'tns', 'tokei', 'top', 'topic', 'touch', 'tr', 'traceroute', 'transcribe', 'transfer', 'translate', 'trap', 'trash', 'tree', 'trex', 'truffle', 'truncate', 'trunk', 'trustedadvisor', 'ts', 'ts-node', 'tsc', 'tsi', 'tsx', 'tuist', 'turbo', 'twiggy', 'typeorm', 'typos', 'typst', 'ua', 'ubuntu-advantage', 'uname', 'uniq', 'unix2dos', 'unset', 'until', 'unzip', 'upgrade', 'v', 'vale', 'vapor', 'vault', 'vela', 'verifiedpermissions', 'version', 'vi', 'vim', 'vimr', 'visudo', 'vite', 'vm', 'vmss', 'vmware', 'voice-id', 'volta', 'vpc-lattice', 'vr', 'vtex', 'vue', 'w', 'waf', 'waf-regional', 'wafv2', 'wasm-bindgen', 'wasm-pack', 'watchman', 'wc', 'wd', 'webapp', 'webpubsub', 'wellarchitected', 'wezterm', 'wget', 'whence', 'where', 'whereis', 'which', 'while', 'who', 'whois', 'wifi-password', 'wing', 'wisdom', 'workdocs', 'worklink', 'workloads', 'workmail', 'workmailmessageflow', 'workspaces', 'workspaces-thin-client', 'workspaces-web', 'wp', 'wrangler', 'wrk', 'wscat', 'xargs', 'xc', 'xcode-select', 'xcodebuild', 'xcodeproj', 'xcodes', 'xcrun', 'xdg-mime', 'xdg-open', 'xed', 'xray', 'xxd', 'yalc', 'yank', 'yo', 'yomo', 'z', 'zapier-platform-cli', 'zed', 'zig', 'zip', 'zipcloak', 'zoxide'];
+const List<String> v2SpecNames = [
+  '-',
+  '@commercelayer/cli',
+  '@fig/publish-spec',
+  '@forge/cli',
+  '@withfig/autocomplete-tools',
+  '@wordpress/create-block',
+  'Rscript',
+  'access-context-manager',
+  'accessanalyzer',
+  'account',
+  'acm-pca',
+  'acr',
+  'act',
+  'active-directory',
+  'ad',
+  'adb',
+  'adp',
+  'adr',
+  'advisor',
+  'afd',
+  'afplay',
+  'aftman',
+  'ag',
+  'agrippa',
+  'ai-examples',
+  'ai-platform',
+  'airflow',
+  'aks',
+  'alerts-management',
+  'alexaforbusiness',
+  'alias',
+  'aliases',
+  'amlfs',
+  'amp',
+  'amplifybackend',
+  'amplifyuibuilder',
+  'ampx',
+  'ams',
+  'ansible',
+  'ansible-config',
+  'ansible-galaxy',
+  'ansible-lint',
+  'ansible-playbook',
+  'anthos',
+  'apigateway',
+  'apigatewaymanagementapi',
+  'apigatewayv2',
+  'apigee',
+  'apim',
+  'app',
+  'appconfig',
+  'appconfigdata',
+  'appfabric',
+  'appflow',
+  'appintegrations',
+  'application-autoscaling',
+  'application-insights',
+  'application-signals',
+  'applicationcostprofiler',
+  'appmesh',
+  'apprunner',
+  'appservice',
+  'appstream',
+  'appsync',
+  'apptest',
+  'apt',
+  'arc-zonal-shift',
+  'arcappliance',
+  'arcdata',
+  'arch',
+  'argo',
+  'aro',
+  'artifact',
+  'artifacts',
+  'asar',
+  'asciinema',
+  'asr',
+  'asset',
+  'astro',
+  'athena',
+  'atlas',
+  'attestation',
+  'auditmanager',
+  'auth',
+  'authchanger',
+  'autocannon',
+  'autojump',
+  'automanage',
+  'automation',
+  'autoscaling',
+  'autoscaling-plans',
+  'aws',
+  'aws-vault',
+  'awsume',
+  'az',
+  'azurestackhci',
+  'b2bi',
+  'babel',
+  'backup',
+  'backup-gateway',
+  'backupstorage',
+  'banner',
+  'baremetalinstance',
+  'barnard59',
+  'base32',
+  'base64',
+  'basename',
+  'basenc',
+  'bat',
+  'batch',
+  'batchai',
+  'bazel',
+  'bc',
+  'bcd',
+  'bcm-data-exports',
+  'bcm-pricing-calculator',
+  'bedrock',
+  'bedrock-agent',
+  'bedrock-agent-runtime',
+  'bedrock-data-automation',
+  'bedrock-data-automation-runtime',
+  'bedrock-runtime',
+  'bicep',
+  'bigtable',
+  'billing',
+  'billing-benefits',
+  'billingconductor',
+  'bit',
+  'blitz',
+  'blockchain',
+  'blueprint',
+  'boards',
+  'bot',
+  'br',
+  'braket',
+  'brew',
+  'broot',
+  'browser-sync',
+  'btop',
+  'budgets',
+  'build',
+  'build-server',
+  'build-storybook',
+  'builds',
+  'bun',
+  'bundle',
+  'bunx',
+  'bw',
+  'bwdc',
+  'bws',
+  'c++',
+  'cache',
+  'caffeinate',
+  'cal',
+  'cap',
+  'capacitor',
+  'capacity',
+  'cat',
+  'cci',
+  'cd',
+  'cdk',
+  'cdk8s',
+  'cdn',
+  'ce',
+  'cf',
+  'change-analysis',
+  'charm',
+  'chatbot',
+  'cheat-sheet',
+  'chime',
+  'chime-sdk-identity',
+  'chime-sdk-media-pipelines',
+  'chime-sdk-meetings',
+  'chime-sdk-messaging',
+  'chime-sdk-voice',
+  'chmod',
+  'chown',
+  'cicada',
+  'circleci',
+  'cl',
+  'clang',
+  'clang++',
+  'clean',
+  'cleanrooms',
+  'cleanroomsml',
+  'clear',
+  'cli',
+  'cli-translator',
+  'cliff-jumper',
+  'clilol',
+  'clojure',
+  'cloud',
+  'cloud-service',
+  'cloud-shell',
+  'cloud9',
+  'cloudcontrol',
+  'clouddirectory',
+  'cloudflared',
+  'cloudfront',
+  'cloudfront-keyvaluestore',
+  'cloudhsm',
+  'cloudhsmv2',
+  'cloudsearch',
+  'cloudsearchdomain',
+  'cloudtrail',
+  'cloudtrail-data',
+  'cmake',
+  'coda',
+  'code',
+  'code-insiders',
+  'codeartifact',
+  'codebuild',
+  'codecatalyst',
+  'codecommit',
+  'codeconnections',
+  'codeguru-reviewer',
+  'codeguru-security',
+  'codeguruprofiler',
+  'codepipeline',
+  'codesign',
+  'codestar',
+  'codestar-connections',
+  'codestar-notifications',
+  'cognitiveservices',
+  'cognito-identity',
+  'cognito-idp',
+  'cognito-sync',
+  'command',
+  'command-change',
+  'communication',
+  'components',
+  'composer',
+  'comprehend',
+  'comprehendmedical',
+  'compute',
+  'compute-optimizer',
+  'conda',
+  'confcom',
+  'confidentialledger',
+  'config',
+  'configservice',
+  'configure',
+  'confluent',
+  'connect',
+  'connect-contact-lens',
+  'connectcampaigns',
+  'connectcampaignsv2',
+  'connectcases',
+  'connectedk8s',
+  'connectedmachine',
+  'connectedvmware',
+  'connection',
+  'connectparticipant',
+  'consumption',
+  'container',
+  'containerapp',
+  'controlcatalog',
+  'controltower',
+  'copilot',
+  'copyfile',
+  'copypath',
+  'cosign',
+  'cosmosdb',
+  'cost-optimization-hub',
+  'costmanagement',
+  'cot',
+  'cp',
+  'create-completion-spec',
+  'create-next-app',
+  'create-nx-workspace',
+  'create-react-app',
+  'create-react-native-app',
+  'create-redwood-app',
+  'create-remix',
+  'create-t3-app',
+  'create-video',
+  'create-web3-frontend',
+  'croc',
+  'crontab',
+  'csdx',
+  'csvmware',
+  'cur',
+  'curl',
+  'custom-providers',
+  'customer-profiles',
+  'customlocation',
+  'cut',
+  'cw',
+  'dart',
+  'data-catalog',
+  'databox',
+  'databoxedge',
+  'databrew',
+  'databricks',
+  'datadog',
+  'dataexchange',
+  'datafactory',
+  'dataflow',
+  'datamigration',
+  'datapipeline',
+  'dataproc',
+  'dataprotection',
+  'datashare',
+  'datastore',
+  'datasync',
+  'datazone',
+  'date',
+  'dateseq',
+  'datree',
+  'dax',
+  'dbt',
+  'dd',
+  'ddev',
+  'ddosify',
+  'deadline',
+  'debug',
+  'dedicated-hsm',
+  'demo',
+  'deno',
+  'deploy',
+  'deployctl',
+  'deployment',
+  'deployment-manager',
+  'deployment-scripts',
+  'desktopvirtualization',
+  'deta',
+  'detective',
+  'devcenter',
+  'devicefarm',
+  'devops',
+  'devops-guru',
+  'df',
+  'diff',
+  'dig',
+  'directconnect',
+  'direnv',
+  'dirname',
+  'discovery',
+  'disk',
+  'disk-access',
+  'disk-encryption-set',
+  'disk-pool',
+  'ditto',
+  'dla',
+  'dlm',
+  'dls',
+  'dms',
+  'dnc',
+  'dns',
+  'dns-resolver',
+  'do',
+  'do-release-upgrade',
+  'docdb',
+  'docdb-elastic',
+  'docker',
+  'docker-compose',
+  'doctl',
+  'dog',
+  'doggo',
+  'domains',
+  'dos2unix',
+  'dotenv',
+  'dotenv-vault',
+  'dotslash',
+  'dpkg',
+  'dprint',
+  'drs',
+  'ds',
+  'ds-data',
+  'dsql',
+  'dt',
+  'dtm',
+  'du',
+  'dust',
+  'dynamodb',
+  'dynamodbstreams',
+  'dynatrace',
+  'eas',
+  'ebs',
+  'ec2-instance-connect',
+  'echo',
+  'ecr',
+  'ecr-public',
+  'edgeorder',
+  'efs',
+  'eks-auth',
+  'elastic',
+  'elastic-inference',
+  'elastic-san',
+  'elasticache',
+  'elastictranscoder',
+  'elb',
+  'elbv2',
+  'electron',
+  'eleventy',
+  'elif',
+  'elm',
+  'elm-format',
+  'elm-review',
+  'else',
+  'emacs',
+  'emr',
+  'emr-containers',
+  'emr-serverless',
+  'enapter',
+  'encore',
+  'endpoints',
+  'entityresolution',
+  'env',
+  'envchain',
+  'es',
+  'esbuild',
+  'eslint',
+  'eventgrid',
+  'eventhubs',
+  'events',
+  'evidently',
+  'exa',
+  'exec',
+  'exercism',
+  'export',
+  'extension',
+  'eza',
+  'fastlane',
+  'fastly',
+  'fd',
+  'fdisk',
+  'feature',
+  'feedback',
+  'ffmpeg',
+  'figterm',
+  'file',
+  'filestore',
+  'fin',
+  'find',
+  'finspace',
+  'finspace-data',
+  'firebase',
+  'firefox',
+  'firehose',
+  'firestore',
+  'fis',
+  'fleet',
+  'fluid-relay',
+  'fms',
+  'fmt',
+  'fold',
+  'footprint',
+  'for',
+  'forc',
+  'forecast',
+  'forecastquery',
+  'format',
+  'frauddetector',
+  'freetier',
+  'fsx',
+  'functionapp',
+  'functions',
+  'fzf',
+  'fzf-tmux',
+  'g++',
+  'game',
+  'gamelift',
+  'ganache-cli',
+  'gatsby',
+  'gcc',
+  'gcloud',
+  'geo-maps',
+  'geo-places',
+  'geo-routes',
+  'ghq',
+  'git',
+  'git-quick-stats',
+  'git_push_example',
+  'github',
+  'glacier',
+  'globalaccelerator',
+  'glow',
+  'gltfjsx',
+  'glue',
+  'go',
+  'go-task',
+  'goctl',
+  'googler',
+  'goreleaser',
+  'goto',
+  'gradle',
+  'grafana',
+  'graph',
+  'graph-services',
+  'graphcdn',
+  'greengrass',
+  'greengrassv2',
+  'grep',
+  'grex',
+  'gron',
+  'groundstation',
+  'group',
+  'gt',
+  'guardduty',
+  'guestconfig',
+  'hack',
+  'hanainstance',
+  'hardhat',
+  'hasura',
+  'hb-service',
+  'hdinsight',
+  'head',
+  'health',
+  'healthbot',
+  'healthcare',
+  'healthcareapis',
+  'healthlake',
+  'helm',
+  'helmfile',
+  'help',
+  'heroku',
+  'hexo',
+  'history',
+  'homey',
+  'honeycode',
+  'hop',
+  'hostname',
+  'hpc-cache',
+  'htop',
+  'http',
+  'http.server',
+  'httpy',
+  'hub',
+  'hx',
+  'hybridaks',
+  'hyper',
+  'hyperfine',
+  'iam',
+  'iap',
+  'iconv',
+  'id',
+  'identity',
+  'identitystore',
+  'iex',
+  'if',
+  'image',
+  'imagebuilder',
+  'import-export',
+  'importexport',
+  'index',
+  'info',
+  'init',
+  'inspector',
+  'inspector-scan',
+  'inspector2',
+  'install',
+  'interactive',
+  'internet-analyzer',
+  'internetmonitor',
+  'invoicing',
+  'iot',
+  'iot-data',
+  'iot-jobs-data',
+  'iot1click-devices',
+  'iot1click-projects',
+  'iotanalytics',
+  'iotdeviceadvisor',
+  'iotevents',
+  'iotevents-data',
+  'iotfleethub',
+  'iotfleetwise',
+  'iotsecuretunneling',
+  'iotsitewise',
+  'iotthingsgraph',
+  'iottwinmaker',
+  'iotwireless',
+  'ivs',
+  'ivs-realtime',
+  'ivschat',
+  'j',
+  'java',
+  'jenv',
+  'jest',
+  'jmeter',
+  'join',
+  'jq',
+  'julia',
+  'jupyter',
+  'k6',
+  'k8s-configuration',
+  'k8s-extension',
+  'k8sconfiguration',
+  'k9s',
+  'kafka',
+  'kafkaconnect',
+  'kafkactl',
+  'kdoctor',
+  'kendra',
+  'kendra-ranking',
+  'keyspaces',
+  'keytool',
+  'keyvault',
+  'kill',
+  'killall',
+  'kind',
+  'kinesis',
+  'kinesis-video-archived-media',
+  'kinesis-video-media',
+  'kinesis-video-signaling',
+  'kinesis-video-webrtc-storage',
+  'kinesisanalytics',
+  'kinesisanalyticsv2',
+  'kinesisvideo',
+  'kitty',
+  'klist',
+  'kms',
+  'knex',
+  'kotlinc',
+  'kubecolor',
+  'kubectl',
+  'kusto',
+  'lab',
+  'lakeformation',
+  'laravel',
+  'launch-wizard',
+  'launchctl',
+  'ldd',
+  'leaf',
+  'less',
+  'lex-models',
+  'lex-runtime',
+  'lexv2-models',
+  'lexv2-runtime',
+  'license-manager',
+  'license-manager-linux-subscriptions',
+  'license-manager-user-subscriptions',
+  'lightsail',
+  'lima',
+  'list',
+  'ln',
+  'load',
+  'location',
+  'lock',
+  'locust',
+  'logging',
+  'logic',
+  'logicapp',
+  'login',
+  'logout',
+  'logs',
+  'logz',
+  'lookoutequipment',
+  'lookoutmetrics',
+  'lookoutvision',
+  'lp',
+  'lpass',
+  'ls',
+  'lsblk',
+  'lsd',
+  'lsof',
+  'luz',
+  'lvim',
+  'm2',
+  'machinelearning',
+  'macie',
+  'macie2',
+  'mackup',
+  'magento',
+  'maigret',
+  'mailmanager',
+  'mailsy',
+  'main',
+  'maintenance',
+  'make',
+  'managed-cassandra',
+  'managedapp',
+  'managedblockchain',
+  'managedblockchain-query',
+  'managedservices',
+  'managementpartner',
+  'maps',
+  'mariadb',
+  'marketplace-agreement',
+  'marketplace-catalog',
+  'marketplace-deployment',
+  'marketplace-entitlement',
+  'marketplace-reporting',
+  'marketplacecommerceanalytics',
+  'mas',
+  'mask',
+  'mdfind',
+  'mdls',
+  'mediaconnect',
+  'mediaconvert',
+  'medialive',
+  'mediapackage',
+  'mediapackage-vod',
+  'mediapackagev2',
+  'mediastore',
+  'mediastore-data',
+  'mediatailor',
+  'medical-imaging',
+  'memorydb',
+  'meroxa',
+  'mesh',
+  'meta',
+  'meteringmarketplace',
+  'mgh',
+  'mgn',
+  'micro',
+  'migrate',
+  'migration-hub-refactor-spaces',
+  'migrationhub-config',
+  'migrationhuborchestrator',
+  'migrationhubstrategy',
+  'mikro-orm',
+  'minectl',
+  'minikube',
+  'mix',
+  'mkdir',
+  'mkdocs',
+  'mkfifo',
+  'mknod',
+  'ml',
+  'ml-engine',
+  'mob',
+  'mobile',
+  'mobile-network',
+  'molecule',
+  'mongocli',
+  'mongoimport',
+  'mongosh',
+  'monitor',
+  'monitoring',
+  'more',
+  'mosh',
+  'mount',
+  'mq',
+  'msbuild',
+  'mturk',
+  'multipass',
+  'mv',
+  'mvn',
+  'mwaa',
+  'mypy',
+  'mysql',
+  'n',
+  'nano',
+  'nativescript',
+  'nc',
+  'ncal',
+  'ncu',
+  'neofetch',
+  'neptune',
+  'neptune-graph',
+  'neptunedata',
+  'nest',
+  'netappfiles',
+  'netlify',
+  'network',
+  'network-firewall',
+  'network-function',
+  'network-management',
+  'networkcloud',
+  'networkfabric',
+  'networkflowmonitor',
+  'networkmanager',
+  'networkmonitor',
+  'new-relic',
+  'newman',
+  'next',
+  'ng',
+  'nginx',
+  'ngrok',
+  'nhost',
+  'ni',
+  'nimble',
+  'nl',
+  'nmap',
+  'nocorrect',
+  'node',
+  'noglob',
+  'northflank',
+  'notification-hub',
+  'notifications',
+  'notificationscontacts',
+  'np',
+  'npx',
+  'nr',
+  'nrm',
+  'ns',
+  'nu',
+  'nuxi',
+  'nuxt',
+  'nvim',
+  'nvm',
+  'nylas',
+  'oam',
+  'observabilityadmin',
+  'oci',
+  'od',
+  'offazure',
+  'oh-my-posh',
+  'okta',
+  'ollama',
+  'omics',
+  'omz',
+  'onboardbase',
+  'opa',
+  'open',
+  'opensearch',
+  'opensearchserverless',
+  'opsworks',
+  'opsworks-cm',
+  'opsworkscm',
+  'orbital',
+  'organizations',
+  'osascript',
+  'osis',
+  'outposts',
+  'pac',
+  'pack',
+  'pageres',
+  'palera1n',
+  'palo-alto',
+  'panorama',
+  'paper',
+  'partnercenter',
+  'partnercentral-selling',
+  'pass',
+  'passwd',
+  'paste',
+  'path',
+  'pathchk',
+  'payment-cryptography',
+  'payment-cryptography-data',
+  'pca-connector-ad',
+  'pca-connector-scep',
+  'pcs',
+  'pdfunite',
+  'peering',
+  'personalize',
+  'personalize-events',
+  'personalize-runtime',
+  'pg_dump',
+  'pgcli',
+  'php',
+  'phpunit',
+  'phpunit-watcher',
+  'pi',
+  'pijul',
+  'ping',
+  'pinpoint',
+  'pinpoint-email',
+  'pinpoint-sms-voice',
+  'pinpoint-sms-voice-v2',
+  'pip3',
+  'pipelines',
+  'pipenv',
+  'pipes',
+  'pkg-config',
+  'pkgutil',
+  'pkill',
+  'planter',
+  'playwright',
+  'plutil',
+  'pm2',
+  'pmset',
+  'pnpx',
+  'pocketbase',
+  'poetry',
+  'policy',
+  'policy-troubleshoot',
+  'polly',
+  'portal',
+  'postgres',
+  'powerbi',
+  'ppg',
+  'premake',
+  'preset',
+  'prettier',
+  'pricing',
+  'prisma',
+  'private-link',
+  'privatenetworks',
+  'pro',
+  'progressline',
+  'projects',
+  'proton',
+  'provider',
+  'providerhub',
+  'pry',
+  'ps',
+  'psql',
+  'publish',
+  'pubsub',
+  'purview',
+  'pushd',
+  'pwd',
+  'pyenv',
+  'pytest',
+  'qapps',
+  'qbusiness',
+  'qconnect',
+  'qldb',
+  'qldb-session',
+  'qodana',
+  'quantum',
+  'quasar',
+  'quickmail',
+  'quicksight',
+  'qumulo',
+  'quota',
+  'railway',
+  'rake',
+  'ram',
+  'rbenv',
+  'rbin',
+  'rds',
+  'rds-data',
+  'readlink',
+  'recommender',
+  'redis',
+  'redisenterprise',
+  'redshift',
+  'redshift-data',
+  'redshift-serverless',
+  'rekognition',
+  'relay',
+  'remix',
+  'remote-rendering-account',
+  'remotion',
+  'repeat',
+  'repos',
+  'repostspace',
+  'reservations',
+  'resiliencehub',
+  'resource',
+  'resource-explorer-2',
+  'resource-groups',
+  'resource-manager',
+  'resource-mover',
+  'resourcegroupstaggingapi',
+  'resourcemanagement',
+  'rest',
+  'restore',
+  'restore-point',
+  'rg',
+  'rm',
+  'rmdir',
+  'robomaker',
+  'rojo',
+  'role',
+  'rolesanywhere',
+  'rollup',
+  'rome',
+  'route53',
+  'route53-recovery-cluster',
+  'route53-recovery-control-config',
+  'route53-recovery-readiness',
+  'route53domains',
+  'route53profiles',
+  'route53resolver',
+  'rsync',
+  'ruby',
+  'ruff',
+  'rum',
+  'run',
+  'runtime.sagemaker',
+  'rushx',
+  'rustc',
+  'rvm',
+  's3control',
+  's3outposts',
+  's3tables',
+  'sagemaker',
+  'sagemaker-a2i-runtime',
+  'sagemaker-edge',
+  'sagemaker-featurestore-runtime',
+  'sagemaker-geospatial',
+  'sagemaker-metrics',
+  'sagemaker-runtime',
+  'sake',
+  'sam',
+  'sanity',
+  'sapmonitor',
+  'sapphire',
+  'savingsplans',
+  'scc',
+  'scenario',
+  'scheduler',
+  'schemas',
+  'scp',
+  'screen',
+  'scvmm',
+  'sdb',
+  'search',
+  'secrets',
+  'security',
+  'security-ir',
+  'securityhub',
+  'securitylake',
+  'sed',
+  'self-help',
+  'self-test',
+  'sentinel',
+  'seq',
+  'sequelize',
+  'serial-console',
+  'serve',
+  'serverless',
+  'serverlessrepo',
+  'service-quotas',
+  'servicebus',
+  'servicecatalog',
+  'servicecatalog-appregistry',
+  'servicediscovery',
+  'services',
+  'ses',
+  'sesv2',
+  'sf',
+  'sfdx',
+  'sftp',
+  'sha1sum',
+  'shasum',
+  'shelve',
+  'shield',
+  'shortcuts',
+  'shred',
+  'sidekiq',
+  'sig',
+  'signalr',
+  'signer',
+  'simctl',
+  'simspaceweaver',
+  'sips',
+  'site-recovery',
+  'sl',
+  'sls',
+  'sms',
+  'sms-voice',
+  'snapshot',
+  'snow-device-management',
+  'snowball',
+  'sns',
+  'socialmessaging',
+  'softwareupdate',
+  'sort',
+  'source',
+  'space',
+  'spanner',
+  'spatial-anchors-account',
+  'speedtest',
+  'speedtest-cli',
+  'sphere',
+  'splash-cli',
+  'split',
+  'spotify',
+  'spring',
+  'spring-cloud',
+  'sql',
+  'sqlfluff',
+  'sqlite3',
+  'sqlmesh',
+  'sqs',
+  'src',
+  'ssh',
+  'ssh-keygen',
+  'sshkey',
+  'ssm',
+  'ssm-contacts',
+  'ssm-incidents',
+  'ssm-quicksetup',
+  'ssm-sap',
+  'sso',
+  'sso-admin',
+  'sso-oidc',
+  'st2',
+  'sta',
+  'stack',
+  'stack-hci',
+  'starkli',
+  'start-storybook',
+  'stat',
+  'staticwebapp',
+  'steadybit',
+  'stencil',
+  'stepfunctions',
+  'storage',
+  'storage-mover',
+  'storagegateway',
+  'storagesync',
+  'store',
+  'stow',
+  'stream-analytics',
+  'streamlit',
+  'stripe',
+  'sts',
+  'su',
+  'subl',
+  'sudo',
+  'suitecloud',
+  'supabase',
+  'supplychain',
+  'support',
+  'support-app',
+  'surreal',
+  'survey',
+  'svn',
+  'svokit',
+  'sw_vers',
+  'swagger-typescript-api',
+  'swc',
+  'swf',
+  'swift',
+  'symfony',
+  'synapse',
+  'synthetics',
+  'sysctl',
+  'tac',
+  'tag',
+  'tail',
+  'tailcall',
+  'tailwindcss',
+  'tangram',
+  'taplo',
+  'tar',
+  'task',
+  'tasks',
+  'taskwarrior',
+  'taxsettings',
+  'tb',
+  'tccutil',
+  'tee',
+  'term',
+  'textract',
+  'tfenv',
+  'then',
+  'time',
+  'timestream-influxdb',
+  'timestream-query',
+  'timestream-write',
+  'tkn',
+  'tldr',
+  'tmutil',
+  'tns',
+  'tokei',
+  'top',
+  'topic',
+  'touch',
+  'tr',
+  'traceroute',
+  'transcribe',
+  'transfer',
+  'translate',
+  'trap',
+  'trash',
+  'tree',
+  'trex',
+  'truffle',
+  'truncate',
+  'trunk',
+  'trustedadvisor',
+  'ts',
+  'ts-node',
+  'tsc',
+  'tsi',
+  'tsx',
+  'tuist',
+  'turbo',
+  'twiggy',
+  'typeorm',
+  'typos',
+  'typst',
+  'ua',
+  'ubuntu-advantage',
+  'uname',
+  'uniq',
+  'unix2dos',
+  'unset',
+  'until',
+  'unzip',
+  'upgrade',
+  'v',
+  'vale',
+  'vapor',
+  'vault',
+  'vela',
+  'verifiedpermissions',
+  'version',
+  'vi',
+  'vim',
+  'vimr',
+  'visudo',
+  'vite',
+  'vm',
+  'vmss',
+  'vmware',
+  'voice-id',
+  'volta',
+  'vpc-lattice',
+  'vr',
+  'vtex',
+  'vue',
+  'w',
+  'waf',
+  'waf-regional',
+  'wafv2',
+  'wasm-bindgen',
+  'wasm-pack',
+  'watchman',
+  'wc',
+  'wd',
+  'webapp',
+  'webpubsub',
+  'wellarchitected',
+  'wezterm',
+  'wget',
+  'whence',
+  'where',
+  'whereis',
+  'which',
+  'while',
+  'who',
+  'whois',
+  'wifi-password',
+  'wing',
+  'wisdom',
+  'workdocs',
+  'worklink',
+  'workloads',
+  'workmail',
+  'workmailmessageflow',
+  'workspaces',
+  'workspaces-thin-client',
+  'workspaces-web',
+  'wp',
+  'wrangler',
+  'wrk',
+  'wscat',
+  'xargs',
+  'xc',
+  'xcode-select',
+  'xcodebuild',
+  'xcodeproj',
+  'xcodes',
+  'xcrun',
+  'xdg-mime',
+  'xdg-open',
+  'xed',
+  'xray',
+  'xxd',
+  'yalc',
+  'yank',
+  'yo',
+  'yomo',
+  'z',
+  'zapier-platform-cli',
+  'zed',
+  'zig',
+  'zip',
+  'zipcloak',
+  'zoxide'
+];
 
 /// One-time setup: register v2 command names so getSpecNames() includes them; no specs loaded yet.
 void registerBuiltinSpecsV2() {
@@ -1298,11 +3261,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case '@commercelayer/cli':
       await spec_commercelayer.loadLibrary();
-      registerSpec(spec_commercelayer.commercelayerCliSpec.name, () => spec_commercelayer.commercelayerCliSpec);
+      registerSpec(spec_commercelayer.commercelayerCliSpec.name,
+          () => spec_commercelayer.commercelayerCliSpec);
       break;
     case '@fig/publish-spec':
       await spec_fig_publish_spec.loadLibrary();
-      registerSpec(spec_fig_publish_spec.figPublishSpecSpec.name, () => spec_fig_publish_spec.figPublishSpecSpec);
+      registerSpec(spec_fig_publish_spec.figPublishSpecSpec.name,
+          () => spec_fig_publish_spec.figPublishSpecSpec);
       break;
     case '@forge/cli':
       await spec_forge.loadLibrary();
@@ -1310,37 +3275,48 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case '@withfig/autocomplete-tools':
       await spec_withfig_autocomplete_tools.loadLibrary();
-      registerSpec(spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec.name, () => spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec);
+      registerSpec(
+          spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec.name,
+          () => spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec);
       break;
     case '@wordpress/create-block':
       await spec_wordpress_create_block.loadLibrary();
-      registerSpec(spec_wordpress_create_block.wordpressCreateBlockSpec.name, () => spec_wordpress_create_block.wordpressCreateBlockSpec);
+      registerSpec(spec_wordpress_create_block.wordpressCreateBlockSpec.name,
+          () => spec_wordpress_create_block.wordpressCreateBlockSpec);
       break;
     case 'Rscript':
       await spec_rscript.loadLibrary();
-      registerSpec(spec_rscript.RscriptSpec.name, () => spec_rscript.RscriptSpec);
+      registerSpec(
+          spec_rscript.RscriptSpec.name, () => spec_rscript.RscriptSpec);
       break;
     case 'access-context-manager':
       await spec_gcloud_access_context_manager.loadLibrary();
-      registerSpec(spec_gcloud_access_context_manager.accessContextManagerSpec.name, () => spec_gcloud_access_context_manager.accessContextManagerSpec);
+      registerSpec(
+          spec_gcloud_access_context_manager.accessContextManagerSpec.name,
+          () => spec_gcloud_access_context_manager.accessContextManagerSpec);
       break;
     case 'accessanalyzer':
       await spec_aws_accessanalyzer.loadLibrary();
-      registerSpec(spec_aws_accessanalyzer.accessanalyzerSpec.name, () => spec_aws_accessanalyzer.accessanalyzerSpec);
+      registerSpec(spec_aws_accessanalyzer.accessanalyzerSpec.name,
+          () => spec_aws_accessanalyzer.accessanalyzerSpec);
       break;
     case 'account':
       await spec_aws_account.loadLibrary();
-      registerSpec(spec_aws_account.accountSpec.name, () => spec_aws_account.accountSpec);
+      registerSpec(spec_aws_account.accountSpec.name,
+          () => spec_aws_account.accountSpec);
       await spec_az_2_53_0_account.loadLibrary();
-      registerSpec(spec_az_2_53_0_account.accountSpec.name, () => spec_az_2_53_0_account.accountSpec);
+      registerSpec(spec_az_2_53_0_account.accountSpec.name,
+          () => spec_az_2_53_0_account.accountSpec);
       break;
     case 'acm-pca':
       await spec_aws_acm_pca.loadLibrary();
-      registerSpec(spec_aws_acm_pca.acmPcaSpec.name, () => spec_aws_acm_pca.acmPcaSpec);
+      registerSpec(
+          spec_aws_acm_pca.acmPcaSpec.name, () => spec_aws_acm_pca.acmPcaSpec);
       break;
     case 'acr':
       await spec_az_2_53_0_acr.loadLibrary();
-      registerSpec(spec_az_2_53_0_acr.acrSpec.name, () => spec_az_2_53_0_acr.acrSpec);
+      registerSpec(
+          spec_az_2_53_0_acr.acrSpec.name, () => spec_az_2_53_0_acr.acrSpec);
       break;
     case 'act':
       await spec_act.loadLibrary();
@@ -1348,11 +3324,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'active-directory':
       await spec_gcloud_active_directory.loadLibrary();
-      registerSpec(spec_gcloud_active_directory.activeDirectorySpec.name, () => spec_gcloud_active_directory.activeDirectorySpec);
+      registerSpec(spec_gcloud_active_directory.activeDirectorySpec.name,
+          () => spec_gcloud_active_directory.activeDirectorySpec);
       break;
     case 'ad':
       await spec_az_2_53_0_ad.loadLibrary();
-      registerSpec(spec_az_2_53_0_ad.adSpec.name, () => spec_az_2_53_0_ad.adSpec);
+      registerSpec(
+          spec_az_2_53_0_ad.adSpec.name, () => spec_az_2_53_0_ad.adSpec);
       break;
     case 'adb':
       await spec_adb.loadLibrary();
@@ -1360,7 +3338,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'adp':
       await spec_az_2_53_0_adp.loadLibrary();
-      registerSpec(spec_az_2_53_0_adp.adpSpec.name, () => spec_az_2_53_0_adp.adpSpec);
+      registerSpec(
+          spec_az_2_53_0_adp.adpSpec.name, () => spec_az_2_53_0_adp.adpSpec);
       break;
     case 'adr':
       await spec_adr.loadLibrary();
@@ -1368,11 +3347,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'advisor':
       await spec_az_2_53_0_advisor.loadLibrary();
-      registerSpec(spec_az_2_53_0_advisor.advisorSpec.name, () => spec_az_2_53_0_advisor.advisorSpec);
+      registerSpec(spec_az_2_53_0_advisor.advisorSpec.name,
+          () => spec_az_2_53_0_advisor.advisorSpec);
       break;
     case 'afd':
       await spec_az_2_53_0_afd.loadLibrary();
-      registerSpec(spec_az_2_53_0_afd.afdSpec.name, () => spec_az_2_53_0_afd.afdSpec);
+      registerSpec(
+          spec_az_2_53_0_afd.afdSpec.name, () => spec_az_2_53_0_afd.afdSpec);
       break;
     case 'afplay':
       await spec_afplay.loadLibrary();
@@ -1388,43 +3369,53 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'agrippa':
       await spec_agrippa.loadLibrary();
-      registerSpec(spec_agrippa.agrippaSpec.name, () => spec_agrippa.agrippaSpec);
+      registerSpec(
+          spec_agrippa.agrippaSpec.name, () => spec_agrippa.agrippaSpec);
       break;
     case 'ai-examples':
       await spec_az_2_53_0_ai_examples.loadLibrary();
-      registerSpec(spec_az_2_53_0_ai_examples.aiExamplesSpec.name, () => spec_az_2_53_0_ai_examples.aiExamplesSpec);
+      registerSpec(spec_az_2_53_0_ai_examples.aiExamplesSpec.name,
+          () => spec_az_2_53_0_ai_examples.aiExamplesSpec);
       break;
     case 'ai-platform':
       await spec_gcloud_ai_platform.loadLibrary();
-      registerSpec(spec_gcloud_ai_platform.aiPlatformSpec.name, () => spec_gcloud_ai_platform.aiPlatformSpec);
+      registerSpec(spec_gcloud_ai_platform.aiPlatformSpec.name,
+          () => spec_gcloud_ai_platform.aiPlatformSpec);
       break;
     case 'airflow':
       await spec_airflow.loadLibrary();
-      registerSpec(spec_airflow.airflowSpec.name, () => spec_airflow.airflowSpec);
+      registerSpec(
+          spec_airflow.airflowSpec.name, () => spec_airflow.airflowSpec);
       break;
     case 'aks':
       await spec_az_2_53_0_aks.loadLibrary();
-      registerSpec(spec_az_2_53_0_aks.aksSpec.name, () => spec_az_2_53_0_aks.aksSpec);
+      registerSpec(
+          spec_az_2_53_0_aks.aksSpec.name, () => spec_az_2_53_0_aks.aksSpec);
       break;
     case 'alerts-management':
       await spec_az_2_53_0_alerts_management.loadLibrary();
-      registerSpec(spec_az_2_53_0_alerts_management.alertsManagementSpec.name, () => spec_az_2_53_0_alerts_management.alertsManagementSpec);
+      registerSpec(spec_az_2_53_0_alerts_management.alertsManagementSpec.name,
+          () => spec_az_2_53_0_alerts_management.alertsManagementSpec);
       break;
     case 'alexaforbusiness':
       await spec_aws_alexaforbusiness.loadLibrary();
-      registerSpec(spec_aws_alexaforbusiness.alexaforbusinessSpec.name, () => spec_aws_alexaforbusiness.alexaforbusinessSpec);
+      registerSpec(spec_aws_alexaforbusiness.alexaforbusinessSpec.name,
+          () => spec_aws_alexaforbusiness.alexaforbusinessSpec);
       break;
     case 'alias':
       await spec_az_2_53_0_alias.loadLibrary();
-      registerSpec(spec_az_2_53_0_alias.aliasSpec.name, () => spec_az_2_53_0_alias.aliasSpec);
+      registerSpec(spec_az_2_53_0_alias.aliasSpec.name,
+          () => spec_az_2_53_0_alias.aliasSpec);
       break;
     case 'aliases':
       await spec_aliases.loadLibrary();
-      registerSpec(spec_aliases.aliasesSpec.name, () => spec_aliases.aliasesSpec);
+      registerSpec(
+          spec_aliases.aliasesSpec.name, () => spec_aliases.aliasesSpec);
       break;
     case 'amlfs':
       await spec_az_2_53_0_amlfs.loadLibrary();
-      registerSpec(spec_az_2_53_0_amlfs.amlfsSpec.name, () => spec_az_2_53_0_amlfs.amlfsSpec);
+      registerSpec(spec_az_2_53_0_amlfs.amlfsSpec.name,
+          () => spec_az_2_53_0_amlfs.amlfsSpec);
       break;
     case 'amp':
       await spec_aws_amp.loadLibrary();
@@ -1432,11 +3423,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'amplifybackend':
       await spec_aws_amplifybackend.loadLibrary();
-      registerSpec(spec_aws_amplifybackend.amplifybackendSpec.name, () => spec_aws_amplifybackend.amplifybackendSpec);
+      registerSpec(spec_aws_amplifybackend.amplifybackendSpec.name,
+          () => spec_aws_amplifybackend.amplifybackendSpec);
       break;
     case 'amplifyuibuilder':
       await spec_aws_amplifyuibuilder.loadLibrary();
-      registerSpec(spec_aws_amplifyuibuilder.amplifyuibuilderSpec.name, () => spec_aws_amplifyuibuilder.amplifyuibuilderSpec);
+      registerSpec(spec_aws_amplifyuibuilder.amplifyuibuilderSpec.name,
+          () => spec_aws_amplifyuibuilder.amplifyuibuilderSpec);
       break;
     case 'ampx':
       await spec_ampx.loadLibrary();
@@ -1444,51 +3437,64 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ams':
       await spec_az_2_53_0_ams.loadLibrary();
-      registerSpec(spec_az_2_53_0_ams.amsSpec.name, () => spec_az_2_53_0_ams.amsSpec);
+      registerSpec(
+          spec_az_2_53_0_ams.amsSpec.name, () => spec_az_2_53_0_ams.amsSpec);
       break;
     case 'ansible':
       await spec_ansible.loadLibrary();
-      registerSpec(spec_ansible.ansibleSpec.name, () => spec_ansible.ansibleSpec);
+      registerSpec(
+          spec_ansible.ansibleSpec.name, () => spec_ansible.ansibleSpec);
       break;
     case 'ansible-config':
       await spec_ansible_config.loadLibrary();
-      registerSpec(spec_ansible_config.ansibleConfigSpec.name, () => spec_ansible_config.ansibleConfigSpec);
+      registerSpec(spec_ansible_config.ansibleConfigSpec.name,
+          () => spec_ansible_config.ansibleConfigSpec);
       break;
     case 'ansible-galaxy':
       await spec_ansible_galaxy.loadLibrary();
-      registerSpec(spec_ansible_galaxy.ansibleGalaxySpec.name, () => spec_ansible_galaxy.ansibleGalaxySpec);
+      registerSpec(spec_ansible_galaxy.ansibleGalaxySpec.name,
+          () => spec_ansible_galaxy.ansibleGalaxySpec);
       break;
     case 'ansible-lint':
       await spec_ansible_lint.loadLibrary();
-      registerSpec(spec_ansible_lint.ansibleLintSpec.name, () => spec_ansible_lint.ansibleLintSpec);
+      registerSpec(spec_ansible_lint.ansibleLintSpec.name,
+          () => spec_ansible_lint.ansibleLintSpec);
       break;
     case 'ansible-playbook':
       await spec_ansible_playbook.loadLibrary();
-      registerSpec(spec_ansible_playbook.ansiblePlaybookSpec.name, () => spec_ansible_playbook.ansiblePlaybookSpec);
+      registerSpec(spec_ansible_playbook.ansiblePlaybookSpec.name,
+          () => spec_ansible_playbook.ansiblePlaybookSpec);
       break;
     case 'anthos':
       await spec_gcloud_anthos.loadLibrary();
-      registerSpec(spec_gcloud_anthos.anthosSpec.name, () => spec_gcloud_anthos.anthosSpec);
+      registerSpec(spec_gcloud_anthos.anthosSpec.name,
+          () => spec_gcloud_anthos.anthosSpec);
       break;
     case 'apigateway':
       await spec_aws_apigateway.loadLibrary();
-      registerSpec(spec_aws_apigateway.apigatewaySpec.name, () => spec_aws_apigateway.apigatewaySpec);
+      registerSpec(spec_aws_apigateway.apigatewaySpec.name,
+          () => spec_aws_apigateway.apigatewaySpec);
       break;
     case 'apigatewaymanagementapi':
       await spec_aws_apigatewaymanagementapi.loadLibrary();
-      registerSpec(spec_aws_apigatewaymanagementapi.apigatewaymanagementapiSpec.name, () => spec_aws_apigatewaymanagementapi.apigatewaymanagementapiSpec);
+      registerSpec(
+          spec_aws_apigatewaymanagementapi.apigatewaymanagementapiSpec.name,
+          () => spec_aws_apigatewaymanagementapi.apigatewaymanagementapiSpec);
       break;
     case 'apigatewayv2':
       await spec_aws_apigatewayv2.loadLibrary();
-      registerSpec(spec_aws_apigatewayv2.apigatewayv2Spec.name, () => spec_aws_apigatewayv2.apigatewayv2Spec);
+      registerSpec(spec_aws_apigatewayv2.apigatewayv2Spec.name,
+          () => spec_aws_apigatewayv2.apigatewayv2Spec);
       break;
     case 'apigee':
       await spec_gcloud_apigee.loadLibrary();
-      registerSpec(spec_gcloud_apigee.apigeeSpec.name, () => spec_gcloud_apigee.apigeeSpec);
+      registerSpec(spec_gcloud_apigee.apigeeSpec.name,
+          () => spec_gcloud_apigee.apigeeSpec);
       break;
     case 'apim':
       await spec_az_2_53_0_apim.loadLibrary();
-      registerSpec(spec_az_2_53_0_apim.apimSpec.name, () => spec_az_2_53_0_apim.apimSpec);
+      registerSpec(spec_az_2_53_0_apim.apimSpec.name,
+          () => spec_az_2_53_0_apim.apimSpec);
       break;
     case 'app':
       await spec_gcloud_app.loadLibrary();
@@ -1496,77 +3502,102 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'appconfig':
       await spec_aws_appconfig.loadLibrary();
-      registerSpec(spec_aws_appconfig.appconfigSpec.name, () => spec_aws_appconfig.appconfigSpec);
+      registerSpec(spec_aws_appconfig.appconfigSpec.name,
+          () => spec_aws_appconfig.appconfigSpec);
       await spec_az_2_53_0_appconfig.loadLibrary();
-      registerSpec(spec_az_2_53_0_appconfig.appconfigSpec.name, () => spec_az_2_53_0_appconfig.appconfigSpec);
+      registerSpec(spec_az_2_53_0_appconfig.appconfigSpec.name,
+          () => spec_az_2_53_0_appconfig.appconfigSpec);
       break;
     case 'appconfigdata':
       await spec_aws_appconfigdata.loadLibrary();
-      registerSpec(spec_aws_appconfigdata.appconfigdataSpec.name, () => spec_aws_appconfigdata.appconfigdataSpec);
+      registerSpec(spec_aws_appconfigdata.appconfigdataSpec.name,
+          () => spec_aws_appconfigdata.appconfigdataSpec);
       break;
     case 'appfabric':
       await spec_aws_appfabric.loadLibrary();
-      registerSpec(spec_aws_appfabric.appfabricSpec.name, () => spec_aws_appfabric.appfabricSpec);
+      registerSpec(spec_aws_appfabric.appfabricSpec.name,
+          () => spec_aws_appfabric.appfabricSpec);
       break;
     case 'appflow':
       await spec_aws_appflow.loadLibrary();
-      registerSpec(spec_aws_appflow.appflowSpec.name, () => spec_aws_appflow.appflowSpec);
+      registerSpec(spec_aws_appflow.appflowSpec.name,
+          () => spec_aws_appflow.appflowSpec);
       break;
     case 'appintegrations':
       await spec_aws_appintegrations.loadLibrary();
-      registerSpec(spec_aws_appintegrations.appintegrationsSpec.name, () => spec_aws_appintegrations.appintegrationsSpec);
+      registerSpec(spec_aws_appintegrations.appintegrationsSpec.name,
+          () => spec_aws_appintegrations.appintegrationsSpec);
       break;
     case 'application-autoscaling':
       await spec_aws_application_autoscaling.loadLibrary();
-      registerSpec(spec_aws_application_autoscaling.applicationAutoscalingSpec.name, () => spec_aws_application_autoscaling.applicationAutoscalingSpec);
+      registerSpec(
+          spec_aws_application_autoscaling.applicationAutoscalingSpec.name,
+          () => spec_aws_application_autoscaling.applicationAutoscalingSpec);
       break;
     case 'application-insights':
       await spec_aws_application_insights.loadLibrary();
-      registerSpec(spec_aws_application_insights.applicationInsightsSpec.name, () => spec_aws_application_insights.applicationInsightsSpec);
+      registerSpec(spec_aws_application_insights.applicationInsightsSpec.name,
+          () => spec_aws_application_insights.applicationInsightsSpec);
       break;
     case 'application-signals':
       await spec_aws_application_signals.loadLibrary();
-      registerSpec(spec_aws_application_signals.applicationSignalsSpec.name, () => spec_aws_application_signals.applicationSignalsSpec);
+      registerSpec(spec_aws_application_signals.applicationSignalsSpec.name,
+          () => spec_aws_application_signals.applicationSignalsSpec);
       break;
     case 'applicationcostprofiler':
       await spec_aws_applicationcostprofiler.loadLibrary();
-      registerSpec(spec_aws_applicationcostprofiler.applicationcostprofilerSpec.name, () => spec_aws_applicationcostprofiler.applicationcostprofilerSpec);
+      registerSpec(
+          spec_aws_applicationcostprofiler.applicationcostprofilerSpec.name,
+          () => spec_aws_applicationcostprofiler.applicationcostprofilerSpec);
       break;
     case 'appmesh':
       await spec_aws_appmesh.loadLibrary();
-      registerSpec(spec_aws_appmesh.appmeshSpec.name, () => spec_aws_appmesh.appmeshSpec);
+      registerSpec(spec_aws_appmesh.appmeshSpec.name,
+          () => spec_aws_appmesh.appmeshSpec);
       break;
     case 'apprunner':
       await spec_aws_apprunner.loadLibrary();
-      registerSpec(spec_aws_apprunner.apprunnerSpec.name, () => spec_aws_apprunner.apprunnerSpec);
+      registerSpec(spec_aws_apprunner.apprunnerSpec.name,
+          () => spec_aws_apprunner.apprunnerSpec);
       break;
     case 'appservice':
       await spec_az_2_53_0_appservice.loadLibrary();
-      registerSpec(spec_az_2_53_0_appservice.appserviceSpec.name, () => spec_az_2_53_0_appservice.appserviceSpec);
+      registerSpec(spec_az_2_53_0_appservice.appserviceSpec.name,
+          () => spec_az_2_53_0_appservice.appserviceSpec);
       break;
     case 'appstream':
       await spec_aws_appstream.loadLibrary();
-      registerSpec(spec_aws_appstream.appstreamSpec.name, () => spec_aws_appstream.appstreamSpec);
+      registerSpec(spec_aws_appstream.appstreamSpec.name,
+          () => spec_aws_appstream.appstreamSpec);
       break;
     case 'appsync':
       await spec_aws_appsync.loadLibrary();
-      registerSpec(spec_aws_appsync.appsyncSpec.name, () => spec_aws_appsync.appsyncSpec);
+      registerSpec(spec_aws_appsync.appsyncSpec.name,
+          () => spec_aws_appsync.appsyncSpec);
       break;
     case 'apptest':
       await spec_aws_apptest.loadLibrary();
-      registerSpec(spec_aws_apptest.apptestSpec.name, () => spec_aws_apptest.apptestSpec);
+      registerSpec(spec_aws_apptest.apptestSpec.name,
+          () => spec_aws_apptest.apptestSpec);
+      break;
+    case 'apt':
+      await spec_apt.loadLibrary();
+      registerSpec(spec_apt.aptSpec.name, () => spec_apt.aptSpec);
       break;
     case 'arc-zonal-shift':
       await spec_aws_arc_zonal_shift.loadLibrary();
-      registerSpec(spec_aws_arc_zonal_shift.arcZonalShiftSpec.name, () => spec_aws_arc_zonal_shift.arcZonalShiftSpec);
+      registerSpec(spec_aws_arc_zonal_shift.arcZonalShiftSpec.name,
+          () => spec_aws_arc_zonal_shift.arcZonalShiftSpec);
       break;
     case 'arcappliance':
       await spec_az_2_53_0_arcappliance.loadLibrary();
-      registerSpec(spec_az_2_53_0_arcappliance.arcapplianceSpec.name, () => spec_az_2_53_0_arcappliance.arcapplianceSpec);
+      registerSpec(spec_az_2_53_0_arcappliance.arcapplianceSpec.name,
+          () => spec_az_2_53_0_arcappliance.arcapplianceSpec);
       break;
     case 'arcdata':
       await spec_az_2_53_0_arcdata.loadLibrary();
-      registerSpec(spec_az_2_53_0_arcdata.arcdataSpec.name, () => spec_az_2_53_0_arcdata.arcdataSpec);
+      registerSpec(spec_az_2_53_0_arcdata.arcdataSpec.name,
+          () => spec_az_2_53_0_arcdata.arcdataSpec);
       break;
     case 'arch':
       await spec_arch.loadLibrary();
@@ -1578,17 +3609,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'aro':
       await spec_az_2_53_0_aro.loadLibrary();
-      registerSpec(spec_az_2_53_0_aro.aroSpec.name, () => spec_az_2_53_0_aro.aroSpec);
+      registerSpec(
+          spec_az_2_53_0_aro.aroSpec.name, () => spec_az_2_53_0_aro.aroSpec);
       break;
     case 'artifact':
       await spec_aws_artifact.loadLibrary();
-      registerSpec(spec_aws_artifact.artifactSpec.name, () => spec_aws_artifact.artifactSpec);
+      registerSpec(spec_aws_artifact.artifactSpec.name,
+          () => spec_aws_artifact.artifactSpec);
       break;
     case 'artifacts':
       await spec_az_2_53_0_artifacts.loadLibrary();
-      registerSpec(spec_az_2_53_0_artifacts.artifactsSpec.name, () => spec_az_2_53_0_artifacts.artifactsSpec);
+      registerSpec(spec_az_2_53_0_artifacts.artifactsSpec.name,
+          () => spec_az_2_53_0_artifacts.artifactsSpec);
       await spec_gcloud_artifacts.loadLibrary();
-      registerSpec(spec_gcloud_artifacts.artifactsSpec.name, () => spec_gcloud_artifacts.artifactsSpec);
+      registerSpec(spec_gcloud_artifacts.artifactsSpec.name,
+          () => spec_gcloud_artifacts.artifactsSpec);
       break;
     case 'asar':
       await spec_asar.loadLibrary();
@@ -1596,7 +3631,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'asciinema':
       await spec_asciinema.loadLibrary();
-      registerSpec(spec_asciinema.asciinemaSpec.name, () => spec_asciinema.asciinemaSpec);
+      registerSpec(spec_asciinema.asciinemaSpec.name,
+          () => spec_asciinema.asciinemaSpec);
       break;
     case 'asr':
       await spec_asr.loadLibrary();
@@ -1604,7 +3640,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'asset':
       await spec_gcloud_asset.loadLibrary();
-      registerSpec(spec_gcloud_asset.assetSpec.name, () => spec_gcloud_asset.assetSpec);
+      registerSpec(
+          spec_gcloud_asset.assetSpec.name, () => spec_gcloud_asset.assetSpec);
       break;
     case 'astro':
       await spec_astro.loadLibrary();
@@ -1612,7 +3649,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'athena':
       await spec_aws_athena.loadLibrary();
-      registerSpec(spec_aws_athena.athenaSpec.name, () => spec_aws_athena.athenaSpec);
+      registerSpec(
+          spec_aws_athena.athenaSpec.name, () => spec_aws_athena.athenaSpec);
       break;
     case 'atlas':
       await spec_atlas.loadLibrary();
@@ -1620,43 +3658,62 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'attestation':
       await spec_az_2_53_0_attestation.loadLibrary();
-      registerSpec(spec_az_2_53_0_attestation.attestationSpec.name, () => spec_az_2_53_0_attestation.attestationSpec);
+      registerSpec(spec_az_2_53_0_attestation.attestationSpec.name,
+          () => spec_az_2_53_0_attestation.attestationSpec);
       break;
     case 'auditmanager':
       await spec_aws_auditmanager.loadLibrary();
-      registerSpec(spec_aws_auditmanager.auditmanagerSpec.name, () => spec_aws_auditmanager.auditmanagerSpec);
+      registerSpec(spec_aws_auditmanager.auditmanagerSpec.name,
+          () => spec_aws_auditmanager.auditmanagerSpec);
       break;
     case 'auth':
       await spec_gcloud_auth.loadLibrary();
-      registerSpec(spec_gcloud_auth.authSpec.name, () => spec_gcloud_auth.authSpec);
+      registerSpec(
+          spec_gcloud_auth.authSpec.name, () => spec_gcloud_auth.authSpec);
       break;
     case 'authchanger':
       await spec_authchanger.loadLibrary();
-      registerSpec(spec_authchanger.authchangerSpec.name, () => spec_authchanger.authchangerSpec);
+      registerSpec(spec_authchanger.authchangerSpec.name,
+          () => spec_authchanger.authchangerSpec);
       break;
     case 'autocannon':
       await spec_autocannon.loadLibrary();
-      registerSpec(spec_autocannon.autocannonSpec.name, () => spec_autocannon.autocannonSpec);
+      registerSpec(spec_autocannon.autocannonSpec.name,
+          () => spec_autocannon.autocannonSpec);
       break;
     case 'autojump':
       await spec_autojump.loadLibrary();
-      registerSpec(spec_autojump.autojumpSpec.name, () => spec_autojump.autojumpSpec);
+      registerSpec(
+          spec_autojump.autojumpSpec.name, () => spec_autojump.autojumpSpec);
       break;
     case 'automanage':
       await spec_az_2_53_0_automanage.loadLibrary();
-      registerSpec(spec_az_2_53_0_automanage.automanageSpec.name, () => spec_az_2_53_0_automanage.automanageSpec);
+      registerSpec(spec_az_2_53_0_automanage.automanageSpec.name,
+          () => spec_az_2_53_0_automanage.automanageSpec);
       break;
     case 'automation':
       await spec_az_2_53_0_automation.loadLibrary();
-      registerSpec(spec_az_2_53_0_automation.automationSpec.name, () => spec_az_2_53_0_automation.automationSpec);
+      registerSpec(spec_az_2_53_0_automation.automationSpec.name,
+          () => spec_az_2_53_0_automation.automationSpec);
       break;
     case 'autoscaling':
       await spec_aws_autoscaling.loadLibrary();
-      registerSpec(spec_aws_autoscaling.autoscalingSpec.name, () => spec_aws_autoscaling.autoscalingSpec);
+      registerSpec(spec_aws_autoscaling.autoscalingSpec.name,
+          () => spec_aws_autoscaling.autoscalingSpec);
       break;
     case 'autoscaling-plans':
       await spec_aws_autoscaling_plans.loadLibrary();
-      registerSpec(spec_aws_autoscaling_plans.autoscalingPlansSpec.name, () => spec_aws_autoscaling_plans.autoscalingPlansSpec);
+      registerSpec(spec_aws_autoscaling_plans.autoscalingPlansSpec.name,
+          () => spec_aws_autoscaling_plans.autoscalingPlansSpec);
+      break;
+    case 'aws':
+      await spec_aws.loadLibrary();
+      registerSpec(spec_aws.awsSpec.name, () => spec_aws.awsSpec);
+      break;
+    case 'aws-vault':
+      await spec_aws_vault.loadLibrary();
+      registerSpec(
+          spec_aws_vault.awsVaultSpec.name, () => spec_aws_vault.awsVaultSpec);
       break;
     case 'awsume':
       await spec_awsume.loadLibrary();
@@ -1670,7 +3727,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'azurestackhci':
       await spec_az_2_53_0_azurestackhci.loadLibrary();
-      registerSpec(spec_az_2_53_0_azurestackhci.azurestackhciSpec.name, () => spec_az_2_53_0_azurestackhci.azurestackhciSpec);
+      registerSpec(spec_az_2_53_0_azurestackhci.azurestackhciSpec.name,
+          () => spec_az_2_53_0_azurestackhci.azurestackhciSpec);
       break;
     case 'b2bi':
       await spec_aws_b2bi.loadLibrary();
@@ -1682,17 +3740,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'backup':
       await spec_aws_backup.loadLibrary();
-      registerSpec(spec_aws_backup.backupSpec.name, () => spec_aws_backup.backupSpec);
+      registerSpec(
+          spec_aws_backup.backupSpec.name, () => spec_aws_backup.backupSpec);
       await spec_az_2_53_0_backup.loadLibrary();
-      registerSpec(spec_az_2_53_0_backup.backupSpec.name, () => spec_az_2_53_0_backup.backupSpec);
+      registerSpec(spec_az_2_53_0_backup.backupSpec.name,
+          () => spec_az_2_53_0_backup.backupSpec);
       break;
     case 'backup-gateway':
       await spec_aws_backup_gateway.loadLibrary();
-      registerSpec(spec_aws_backup_gateway.backupGatewaySpec.name, () => spec_aws_backup_gateway.backupGatewaySpec);
+      registerSpec(spec_aws_backup_gateway.backupGatewaySpec.name,
+          () => spec_aws_backup_gateway.backupGatewaySpec);
       break;
     case 'backupstorage':
       await spec_aws_backupstorage.loadLibrary();
-      registerSpec(spec_aws_backupstorage.backupstorageSpec.name, () => spec_aws_backupstorage.backupstorageSpec);
+      registerSpec(spec_aws_backupstorage.backupstorageSpec.name,
+          () => spec_aws_backupstorage.backupstorageSpec);
       break;
     case 'banner':
       await spec_banner.loadLibrary();
@@ -1700,11 +3762,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'baremetalinstance':
       await spec_az_2_53_0_baremetalinstance.loadLibrary();
-      registerSpec(spec_az_2_53_0_baremetalinstance.baremetalinstanceSpec.name, () => spec_az_2_53_0_baremetalinstance.baremetalinstanceSpec);
+      registerSpec(spec_az_2_53_0_baremetalinstance.baremetalinstanceSpec.name,
+          () => spec_az_2_53_0_baremetalinstance.baremetalinstanceSpec);
       break;
     case 'barnard59':
       await spec_barnard59.loadLibrary();
-      registerSpec(spec_barnard59.barnard59Spec.name, () => spec_barnard59.barnard59Spec);
+      registerSpec(spec_barnard59.barnard59Spec.name,
+          () => spec_barnard59.barnard59Spec);
       break;
     case 'base32':
       await spec_base32.loadLibrary();
@@ -1716,21 +3780,33 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'basename':
       await spec_basename.loadLibrary();
-      registerSpec(spec_basename.basenameSpec.name, () => spec_basename.basenameSpec);
+      registerSpec(
+          spec_basename.basenameSpec.name, () => spec_basename.basenameSpec);
       break;
     case 'basenc':
       await spec_basenc.loadLibrary();
       registerSpec(spec_basenc.basencSpec.name, () => spec_basenc.basencSpec);
       break;
+    case 'bat':
+      await spec_bat.loadLibrary();
+      registerSpec(spec_bat.batSpec.name, () => spec_bat.batSpec);
+      break;
     case 'batch':
       await spec_aws_batch.loadLibrary();
-      registerSpec(spec_aws_batch.batchSpec.name, () => spec_aws_batch.batchSpec);
+      registerSpec(
+          spec_aws_batch.batchSpec.name, () => spec_aws_batch.batchSpec);
       await spec_az_2_53_0_batch.loadLibrary();
-      registerSpec(spec_az_2_53_0_batch.batchSpec.name, () => spec_az_2_53_0_batch.batchSpec);
+      registerSpec(spec_az_2_53_0_batch.batchSpec.name,
+          () => spec_az_2_53_0_batch.batchSpec);
       break;
     case 'batchai':
       await spec_az_2_53_0_batchai.loadLibrary();
-      registerSpec(spec_az_2_53_0_batchai.batchaiSpec.name, () => spec_az_2_53_0_batchai.batchaiSpec);
+      registerSpec(spec_az_2_53_0_batchai.batchaiSpec.name,
+          () => spec_az_2_53_0_batchai.batchaiSpec);
+      break;
+    case 'bazel':
+      await spec_bazel.loadLibrary();
+      registerSpec(spec_bazel.bazelSpec.name, () => spec_bazel.bazelSpec);
       break;
     case 'bc':
       await spec_bc.loadLibrary();
@@ -1742,57 +3818,76 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'bcm-data-exports':
       await spec_aws_bcm_data_exports.loadLibrary();
-      registerSpec(spec_aws_bcm_data_exports.bcmDataExportsSpec.name, () => spec_aws_bcm_data_exports.bcmDataExportsSpec);
+      registerSpec(spec_aws_bcm_data_exports.bcmDataExportsSpec.name,
+          () => spec_aws_bcm_data_exports.bcmDataExportsSpec);
       break;
     case 'bcm-pricing-calculator':
       await spec_aws_bcm_pricing_calculator.loadLibrary();
-      registerSpec(spec_aws_bcm_pricing_calculator.bcmPricingCalculatorSpec.name, () => spec_aws_bcm_pricing_calculator.bcmPricingCalculatorSpec);
+      registerSpec(
+          spec_aws_bcm_pricing_calculator.bcmPricingCalculatorSpec.name,
+          () => spec_aws_bcm_pricing_calculator.bcmPricingCalculatorSpec);
       break;
     case 'bedrock':
       await spec_aws_bedrock.loadLibrary();
-      registerSpec(spec_aws_bedrock.bedrockSpec.name, () => spec_aws_bedrock.bedrockSpec);
+      registerSpec(spec_aws_bedrock.bedrockSpec.name,
+          () => spec_aws_bedrock.bedrockSpec);
       break;
     case 'bedrock-agent':
       await spec_aws_bedrock_agent.loadLibrary();
-      registerSpec(spec_aws_bedrock_agent.bedrockAgentSpec.name, () => spec_aws_bedrock_agent.bedrockAgentSpec);
+      registerSpec(spec_aws_bedrock_agent.bedrockAgentSpec.name,
+          () => spec_aws_bedrock_agent.bedrockAgentSpec);
       break;
     case 'bedrock-agent-runtime':
       await spec_aws_bedrock_agent_runtime.loadLibrary();
-      registerSpec(spec_aws_bedrock_agent_runtime.bedrockAgentRuntimeSpec.name, () => spec_aws_bedrock_agent_runtime.bedrockAgentRuntimeSpec);
+      registerSpec(spec_aws_bedrock_agent_runtime.bedrockAgentRuntimeSpec.name,
+          () => spec_aws_bedrock_agent_runtime.bedrockAgentRuntimeSpec);
       break;
     case 'bedrock-data-automation':
       await spec_aws_bedrock_data_automation.loadLibrary();
-      registerSpec(spec_aws_bedrock_data_automation.bedrockDataAutomationSpec.name, () => spec_aws_bedrock_data_automation.bedrockDataAutomationSpec);
+      registerSpec(
+          spec_aws_bedrock_data_automation.bedrockDataAutomationSpec.name,
+          () => spec_aws_bedrock_data_automation.bedrockDataAutomationSpec);
       break;
     case 'bedrock-data-automation-runtime':
       await spec_aws_bedrock_data_automation_runtime.loadLibrary();
-      registerSpec(spec_aws_bedrock_data_automation_runtime.bedrockDataAutomationRuntimeSpec.name, () => spec_aws_bedrock_data_automation_runtime.bedrockDataAutomationRuntimeSpec);
+      registerSpec(
+          spec_aws_bedrock_data_automation_runtime
+              .bedrockDataAutomationRuntimeSpec.name,
+          () => spec_aws_bedrock_data_automation_runtime
+              .bedrockDataAutomationRuntimeSpec);
       break;
     case 'bedrock-runtime':
       await spec_aws_bedrock_runtime.loadLibrary();
-      registerSpec(spec_aws_bedrock_runtime.bedrockRuntimeSpec.name, () => spec_aws_bedrock_runtime.bedrockRuntimeSpec);
+      registerSpec(spec_aws_bedrock_runtime.bedrockRuntimeSpec.name,
+          () => spec_aws_bedrock_runtime.bedrockRuntimeSpec);
       break;
     case 'bicep':
       await spec_az_2_53_0_bicep.loadLibrary();
-      registerSpec(spec_az_2_53_0_bicep.bicepSpec.name, () => spec_az_2_53_0_bicep.bicepSpec);
+      registerSpec(spec_az_2_53_0_bicep.bicepSpec.name,
+          () => spec_az_2_53_0_bicep.bicepSpec);
       break;
     case 'bigtable':
       await spec_gcloud_bigtable.loadLibrary();
-      registerSpec(spec_gcloud_bigtable.bigtableSpec.name, () => spec_gcloud_bigtable.bigtableSpec);
+      registerSpec(spec_gcloud_bigtable.bigtableSpec.name,
+          () => spec_gcloud_bigtable.bigtableSpec);
       break;
     case 'billing':
       await spec_aws_billing.loadLibrary();
-      registerSpec(spec_aws_billing.billingSpec.name, () => spec_aws_billing.billingSpec);
+      registerSpec(spec_aws_billing.billingSpec.name,
+          () => spec_aws_billing.billingSpec);
       await spec_az_2_53_0_billing.loadLibrary();
-      registerSpec(spec_az_2_53_0_billing.billingSpec.name, () => spec_az_2_53_0_billing.billingSpec);
+      registerSpec(spec_az_2_53_0_billing.billingSpec.name,
+          () => spec_az_2_53_0_billing.billingSpec);
       break;
     case 'billing-benefits':
       await spec_az_2_53_0_billing_benefits.loadLibrary();
-      registerSpec(spec_az_2_53_0_billing_benefits.billingBenefitsSpec.name, () => spec_az_2_53_0_billing_benefits.billingBenefitsSpec);
+      registerSpec(spec_az_2_53_0_billing_benefits.billingBenefitsSpec.name,
+          () => spec_az_2_53_0_billing_benefits.billingBenefitsSpec);
       break;
     case 'billingconductor':
       await spec_aws_billingconductor.loadLibrary();
-      registerSpec(spec_aws_billingconductor.billingconductorSpec.name, () => spec_aws_billingconductor.billingconductorSpec);
+      registerSpec(spec_aws_billingconductor.billingconductorSpec.name,
+          () => spec_aws_billingconductor.billingconductorSpec);
       break;
     case 'bit':
       await spec_bit.loadLibrary();
@@ -1804,19 +3899,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'blockchain':
       await spec_az_2_53_0_blockchain.loadLibrary();
-      registerSpec(spec_az_2_53_0_blockchain.blockchainSpec.name, () => spec_az_2_53_0_blockchain.blockchainSpec);
+      registerSpec(spec_az_2_53_0_blockchain.blockchainSpec.name,
+          () => spec_az_2_53_0_blockchain.blockchainSpec);
       break;
     case 'blueprint':
       await spec_az_2_53_0_blueprint.loadLibrary();
-      registerSpec(spec_az_2_53_0_blueprint.blueprintSpec.name, () => spec_az_2_53_0_blueprint.blueprintSpec);
+      registerSpec(spec_az_2_53_0_blueprint.blueprintSpec.name,
+          () => spec_az_2_53_0_blueprint.blueprintSpec);
       break;
     case 'boards':
       await spec_az_2_53_0_boards.loadLibrary();
-      registerSpec(spec_az_2_53_0_boards.boardsSpec.name, () => spec_az_2_53_0_boards.boardsSpec);
+      registerSpec(spec_az_2_53_0_boards.boardsSpec.name,
+          () => spec_az_2_53_0_boards.boardsSpec);
       break;
     case 'bot':
       await spec_az_2_53_0_bot.loadLibrary();
-      registerSpec(spec_az_2_53_0_bot.botSpec.name, () => spec_az_2_53_0_bot.botSpec);
+      registerSpec(
+          spec_az_2_53_0_bot.botSpec.name, () => spec_az_2_53_0_bot.botSpec);
       break;
     case 'br':
       await spec_br.loadLibrary();
@@ -1824,7 +3923,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'braket':
       await spec_aws_braket.loadLibrary();
-      registerSpec(spec_aws_braket.braketSpec.name, () => spec_aws_braket.braketSpec);
+      registerSpec(
+          spec_aws_braket.braketSpec.name, () => spec_aws_braket.braketSpec);
       break;
     case 'brew':
       await spec_brew.loadLibrary();
@@ -1834,29 +3934,39 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_broot.loadLibrary();
       registerSpec(spec_broot.brootSpec.name, () => spec_broot.brootSpec);
       break;
+    case 'browser-sync':
+      await spec_browser_sync.loadLibrary();
+      registerSpec(spec_browser_sync.browserSyncSpec.name,
+          () => spec_browser_sync.browserSyncSpec);
+      break;
     case 'btop':
       await spec_btop.loadLibrary();
       registerSpec(spec_btop.btopSpec.name, () => spec_btop.btopSpec);
       break;
     case 'budgets':
       await spec_aws_budgets.loadLibrary();
-      registerSpec(spec_aws_budgets.budgetsSpec.name, () => spec_aws_budgets.budgetsSpec);
+      registerSpec(spec_aws_budgets.budgetsSpec.name,
+          () => spec_aws_budgets.budgetsSpec);
       break;
     case 'build':
       await spec_dotnet_dotnet_build.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_build.buildSpec.name, () => spec_dotnet_dotnet_build.buildSpec);
+      registerSpec(spec_dotnet_dotnet_build.buildSpec.name,
+          () => spec_dotnet_dotnet_build.buildSpec);
       break;
     case 'build-server':
       await spec_dotnet_dotnet_build_server.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_build_server.buildServerSpec.name, () => spec_dotnet_dotnet_build_server.buildServerSpec);
+      registerSpec(spec_dotnet_dotnet_build_server.buildServerSpec.name,
+          () => spec_dotnet_dotnet_build_server.buildServerSpec);
       break;
     case 'build-storybook':
       await spec_build_storybook.loadLibrary();
-      registerSpec(spec_build_storybook.buildStorybookSpec.name, () => spec_build_storybook.buildStorybookSpec);
+      registerSpec(spec_build_storybook.buildStorybookSpec.name,
+          () => spec_build_storybook.buildStorybookSpec);
       break;
     case 'builds':
       await spec_gcloud_builds.loadLibrary();
-      registerSpec(spec_gcloud_builds.buildsSpec.name, () => spec_gcloud_builds.buildsSpec);
+      registerSpec(spec_gcloud_builds.buildsSpec.name,
+          () => spec_gcloud_builds.buildsSpec);
       break;
     case 'bun':
       await spec_bun.loadLibrary();
@@ -1865,6 +3975,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'bundle':
       await spec_bundle.loadLibrary();
       registerSpec(spec_bundle.bundleSpec.name, () => spec_bundle.bundleSpec);
+      break;
+    case 'bunx':
+      await spec_bunx.loadLibrary();
+      registerSpec(spec_bunx.bunxSpec.name, () => spec_bunx.bunxSpec);
       break;
     case 'bw':
       await spec_bw.loadLibrary();
@@ -1884,11 +3998,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'cache':
       await spec_az_2_53_0_cache.loadLibrary();
-      registerSpec(spec_az_2_53_0_cache.cacheSpec.name, () => spec_az_2_53_0_cache.cacheSpec);
+      registerSpec(spec_az_2_53_0_cache.cacheSpec.name,
+          () => spec_az_2_53_0_cache.cacheSpec);
       break;
     case 'caffeinate':
       await spec_caffeinate.loadLibrary();
-      registerSpec(spec_caffeinate.caffeinateSpec.name, () => spec_caffeinate.caffeinateSpec);
+      registerSpec(spec_caffeinate.caffeinateSpec.name,
+          () => spec_caffeinate.caffeinateSpec);
       break;
     case 'cal':
       await spec_cal.loadLibrary();
@@ -1898,9 +4014,15 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_cap.loadLibrary();
       registerSpec(spec_cap.capSpec.name, () => spec_cap.capSpec);
       break;
+    case 'capacitor':
+      await spec_capacitor.loadLibrary();
+      registerSpec(spec_capacitor.capacitorSpec.name,
+          () => spec_capacitor.capacitorSpec);
+      break;
     case 'capacity':
       await spec_az_2_53_0_capacity.loadLibrary();
-      registerSpec(spec_az_2_53_0_capacity.capacitySpec.name, () => spec_az_2_53_0_capacity.capacitySpec);
+      registerSpec(spec_az_2_53_0_capacity.capacitySpec.name,
+          () => spec_az_2_53_0_capacity.capacitySpec);
       break;
     case 'cat':
       await spec_cat.loadLibrary();
@@ -1924,15 +4046,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'cdn':
       await spec_az_2_53_0_cdn.loadLibrary();
-      registerSpec(spec_az_2_53_0_cdn.cdnSpec.name, () => spec_az_2_53_0_cdn.cdnSpec);
+      registerSpec(
+          spec_az_2_53_0_cdn.cdnSpec.name, () => spec_az_2_53_0_cdn.cdnSpec);
       break;
     case 'ce':
       await spec_aws_ce.loadLibrary();
       registerSpec(spec_aws_ce.ceSpec.name, () => spec_aws_ce.ceSpec);
       break;
+    case 'cf':
+      await spec_cf.loadLibrary();
+      registerSpec(spec_cf.cfSpec.name, () => spec_cf.cfSpec);
+      break;
     case 'change-analysis':
       await spec_az_2_53_0_change_analysis.loadLibrary();
-      registerSpec(spec_az_2_53_0_change_analysis.changeAnalysisSpec.name, () => spec_az_2_53_0_change_analysis.changeAnalysisSpec);
+      registerSpec(spec_az_2_53_0_change_analysis.changeAnalysisSpec.name,
+          () => spec_az_2_53_0_change_analysis.changeAnalysisSpec);
       break;
     case 'charm':
       await spec_charm.loadLibrary();
@@ -1940,35 +4068,44 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'chatbot':
       await spec_aws_chatbot.loadLibrary();
-      registerSpec(spec_aws_chatbot.chatbotSpec.name, () => spec_aws_chatbot.chatbotSpec);
+      registerSpec(spec_aws_chatbot.chatbotSpec.name,
+          () => spec_aws_chatbot.chatbotSpec);
       break;
     case 'cheat-sheet':
       await spec_gcloud_cheat_sheet.loadLibrary();
-      registerSpec(spec_gcloud_cheat_sheet.cheatSheetSpec.name, () => spec_gcloud_cheat_sheet.cheatSheetSpec);
+      registerSpec(spec_gcloud_cheat_sheet.cheatSheetSpec.name,
+          () => spec_gcloud_cheat_sheet.cheatSheetSpec);
       break;
     case 'chime':
       await spec_aws_chime.loadLibrary();
-      registerSpec(spec_aws_chime.chimeSpec.name, () => spec_aws_chime.chimeSpec);
+      registerSpec(
+          spec_aws_chime.chimeSpec.name, () => spec_aws_chime.chimeSpec);
       break;
     case 'chime-sdk-identity':
       await spec_aws_chime_sdk_identity.loadLibrary();
-      registerSpec(spec_aws_chime_sdk_identity.chimeSdkIdentitySpec.name, () => spec_aws_chime_sdk_identity.chimeSdkIdentitySpec);
+      registerSpec(spec_aws_chime_sdk_identity.chimeSdkIdentitySpec.name,
+          () => spec_aws_chime_sdk_identity.chimeSdkIdentitySpec);
       break;
     case 'chime-sdk-media-pipelines':
       await spec_aws_chime_sdk_media_pipelines.loadLibrary();
-      registerSpec(spec_aws_chime_sdk_media_pipelines.chimeSdkMediaPipelinesSpec.name, () => spec_aws_chime_sdk_media_pipelines.chimeSdkMediaPipelinesSpec);
+      registerSpec(
+          spec_aws_chime_sdk_media_pipelines.chimeSdkMediaPipelinesSpec.name,
+          () => spec_aws_chime_sdk_media_pipelines.chimeSdkMediaPipelinesSpec);
       break;
     case 'chime-sdk-meetings':
       await spec_aws_chime_sdk_meetings.loadLibrary();
-      registerSpec(spec_aws_chime_sdk_meetings.chimeSdkMeetingsSpec.name, () => spec_aws_chime_sdk_meetings.chimeSdkMeetingsSpec);
+      registerSpec(spec_aws_chime_sdk_meetings.chimeSdkMeetingsSpec.name,
+          () => spec_aws_chime_sdk_meetings.chimeSdkMeetingsSpec);
       break;
     case 'chime-sdk-messaging':
       await spec_aws_chime_sdk_messaging.loadLibrary();
-      registerSpec(spec_aws_chime_sdk_messaging.chimeSdkMessagingSpec.name, () => spec_aws_chime_sdk_messaging.chimeSdkMessagingSpec);
+      registerSpec(spec_aws_chime_sdk_messaging.chimeSdkMessagingSpec.name,
+          () => spec_aws_chime_sdk_messaging.chimeSdkMessagingSpec);
       break;
     case 'chime-sdk-voice':
       await spec_aws_chime_sdk_voice.loadLibrary();
-      registerSpec(spec_aws_chime_sdk_voice.chimeSdkVoiceSpec.name, () => spec_aws_chime_sdk_voice.chimeSdkVoiceSpec);
+      registerSpec(spec_aws_chime_sdk_voice.chimeSdkVoiceSpec.name,
+          () => spec_aws_chime_sdk_voice.chimeSdkVoiceSpec);
       break;
     case 'chmod':
       await spec_chmod.loadLibrary();
@@ -1984,7 +4121,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'circleci':
       await spec_circleci.loadLibrary();
-      registerSpec(spec_circleci.circleciSpec.name, () => spec_circleci.circleciSpec);
+      registerSpec(
+          spec_circleci.circleciSpec.name, () => spec_circleci.circleciSpec);
       break;
     case 'cl':
       await spec_cl.loadLibrary();
@@ -1996,19 +4134,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'clang++':
       await spec_clang__.loadLibrary();
-      registerSpec(spec_clang__.clangppSpec.name, () => spec_clang__.clangppSpec);
+      registerSpec(
+          spec_clang__.clangppSpec.name, () => spec_clang__.clangppSpec);
       break;
     case 'clean':
       await spec_dotnet_dotnet_clean.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_clean.cleanSpec.name, () => spec_dotnet_dotnet_clean.cleanSpec);
+      registerSpec(spec_dotnet_dotnet_clean.cleanSpec.name,
+          () => spec_dotnet_dotnet_clean.cleanSpec);
       break;
     case 'cleanrooms':
       await spec_aws_cleanrooms.loadLibrary();
-      registerSpec(spec_aws_cleanrooms.cleanroomsSpec.name, () => spec_aws_cleanrooms.cleanroomsSpec);
+      registerSpec(spec_aws_cleanrooms.cleanroomsSpec.name,
+          () => spec_aws_cleanrooms.cleanroomsSpec);
       break;
     case 'cleanroomsml':
       await spec_aws_cleanroomsml.loadLibrary();
-      registerSpec(spec_aws_cleanroomsml.cleanroomsmlSpec.name, () => spec_aws_cleanroomsml.cleanroomsmlSpec);
+      registerSpec(spec_aws_cleanroomsml.cleanroomsmlSpec.name,
+          () => spec_aws_cleanroomsml.cleanroomsmlSpec);
       break;
     case 'clear':
       await spec_clear.loadLibrary();
@@ -2020,11 +4162,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'cli-translator':
       await spec_az_2_53_0_cli_translator.loadLibrary();
-      registerSpec(spec_az_2_53_0_cli_translator.cliTranslatorSpec.name, () => spec_az_2_53_0_cli_translator.cliTranslatorSpec);
+      registerSpec(spec_az_2_53_0_cli_translator.cliTranslatorSpec.name,
+          () => spec_az_2_53_0_cli_translator.cliTranslatorSpec);
       break;
     case 'cliff-jumper':
       await spec_cliff_jumper.loadLibrary();
-      registerSpec(spec_cliff_jumper.cliffJumperSpec.name, () => spec_cliff_jumper.cliffJumperSpec);
+      registerSpec(spec_cliff_jumper.cliffJumperSpec.name,
+          () => spec_cliff_jumper.cliffJumperSpec);
       break;
     case 'clilol':
       await spec_clilol.loadLibrary();
@@ -2032,67 +4176,84 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'clojure':
       await spec_clojure.loadLibrary();
-      registerSpec(spec_clojure.clojureSpec.name, () => spec_clojure.clojureSpec);
+      registerSpec(
+          spec_clojure.clojureSpec.name, () => spec_clojure.clojureSpec);
       break;
     case 'cloud':
       await spec_az_2_53_0_cloud.loadLibrary();
-      registerSpec(spec_az_2_53_0_cloud.cloudSpec.name, () => spec_az_2_53_0_cloud.cloudSpec);
+      registerSpec(spec_az_2_53_0_cloud.cloudSpec.name,
+          () => spec_az_2_53_0_cloud.cloudSpec);
       break;
     case 'cloud-service':
       await spec_az_2_53_0_cloud_service.loadLibrary();
-      registerSpec(spec_az_2_53_0_cloud_service.cloudServiceSpec.name, () => spec_az_2_53_0_cloud_service.cloudServiceSpec);
+      registerSpec(spec_az_2_53_0_cloud_service.cloudServiceSpec.name,
+          () => spec_az_2_53_0_cloud_service.cloudServiceSpec);
       break;
     case 'cloud-shell':
       await spec_gcloud_cloud_shell.loadLibrary();
-      registerSpec(spec_gcloud_cloud_shell.cloudShellSpec.name, () => spec_gcloud_cloud_shell.cloudShellSpec);
+      registerSpec(spec_gcloud_cloud_shell.cloudShellSpec.name,
+          () => spec_gcloud_cloud_shell.cloudShellSpec);
       break;
     case 'cloud9':
       await spec_aws_cloud9.loadLibrary();
-      registerSpec(spec_aws_cloud9.cloud9Spec.name, () => spec_aws_cloud9.cloud9Spec);
+      registerSpec(
+          spec_aws_cloud9.cloud9Spec.name, () => spec_aws_cloud9.cloud9Spec);
       break;
     case 'cloudcontrol':
       await spec_aws_cloudcontrol.loadLibrary();
-      registerSpec(spec_aws_cloudcontrol.cloudcontrolSpec.name, () => spec_aws_cloudcontrol.cloudcontrolSpec);
+      registerSpec(spec_aws_cloudcontrol.cloudcontrolSpec.name,
+          () => spec_aws_cloudcontrol.cloudcontrolSpec);
       break;
     case 'clouddirectory':
       await spec_aws_clouddirectory.loadLibrary();
-      registerSpec(spec_aws_clouddirectory.clouddirectorySpec.name, () => spec_aws_clouddirectory.clouddirectorySpec);
+      registerSpec(spec_aws_clouddirectory.clouddirectorySpec.name,
+          () => spec_aws_clouddirectory.clouddirectorySpec);
       break;
     case 'cloudflared':
       await spec_cloudflared.loadLibrary();
-      registerSpec(spec_cloudflared.cloudflaredSpec.name, () => spec_cloudflared.cloudflaredSpec);
+      registerSpec(spec_cloudflared.cloudflaredSpec.name,
+          () => spec_cloudflared.cloudflaredSpec);
       break;
     case 'cloudfront':
       await spec_aws_cloudfront.loadLibrary();
-      registerSpec(spec_aws_cloudfront.cloudfrontSpec.name, () => spec_aws_cloudfront.cloudfrontSpec);
+      registerSpec(spec_aws_cloudfront.cloudfrontSpec.name,
+          () => spec_aws_cloudfront.cloudfrontSpec);
       break;
     case 'cloudfront-keyvaluestore':
       await spec_aws_cloudfront_keyvaluestore.loadLibrary();
-      registerSpec(spec_aws_cloudfront_keyvaluestore.cloudfrontKeyvaluestoreSpec.name, () => spec_aws_cloudfront_keyvaluestore.cloudfrontKeyvaluestoreSpec);
+      registerSpec(
+          spec_aws_cloudfront_keyvaluestore.cloudfrontKeyvaluestoreSpec.name,
+          () => spec_aws_cloudfront_keyvaluestore.cloudfrontKeyvaluestoreSpec);
       break;
     case 'cloudhsm':
       await spec_aws_cloudhsm.loadLibrary();
-      registerSpec(spec_aws_cloudhsm.cloudhsmSpec.name, () => spec_aws_cloudhsm.cloudhsmSpec);
+      registerSpec(spec_aws_cloudhsm.cloudhsmSpec.name,
+          () => spec_aws_cloudhsm.cloudhsmSpec);
       break;
     case 'cloudhsmv2':
       await spec_aws_cloudhsmv2.loadLibrary();
-      registerSpec(spec_aws_cloudhsmv2.cloudhsmv2Spec.name, () => spec_aws_cloudhsmv2.cloudhsmv2Spec);
+      registerSpec(spec_aws_cloudhsmv2.cloudhsmv2Spec.name,
+          () => spec_aws_cloudhsmv2.cloudhsmv2Spec);
       break;
     case 'cloudsearch':
       await spec_aws_cloudsearch.loadLibrary();
-      registerSpec(spec_aws_cloudsearch.cloudsearchSpec.name, () => spec_aws_cloudsearch.cloudsearchSpec);
+      registerSpec(spec_aws_cloudsearch.cloudsearchSpec.name,
+          () => spec_aws_cloudsearch.cloudsearchSpec);
       break;
     case 'cloudsearchdomain':
       await spec_aws_cloudsearchdomain.loadLibrary();
-      registerSpec(spec_aws_cloudsearchdomain.cloudsearchdomainSpec.name, () => spec_aws_cloudsearchdomain.cloudsearchdomainSpec);
+      registerSpec(spec_aws_cloudsearchdomain.cloudsearchdomainSpec.name,
+          () => spec_aws_cloudsearchdomain.cloudsearchdomainSpec);
       break;
     case 'cloudtrail':
       await spec_aws_cloudtrail.loadLibrary();
-      registerSpec(spec_aws_cloudtrail.cloudtrailSpec.name, () => spec_aws_cloudtrail.cloudtrailSpec);
+      registerSpec(spec_aws_cloudtrail.cloudtrailSpec.name,
+          () => spec_aws_cloudtrail.cloudtrailSpec);
       break;
     case 'cloudtrail-data':
       await spec_aws_cloudtrail_data.loadLibrary();
-      registerSpec(spec_aws_cloudtrail_data.cloudtrailDataSpec.name, () => spec_aws_cloudtrail_data.cloudtrailDataSpec);
+      registerSpec(spec_aws_cloudtrail_data.cloudtrailDataSpec.name,
+          () => spec_aws_cloudtrail_data.cloudtrailDataSpec);
       break;
     case 'cmake':
       await spec_cmake.loadLibrary();
@@ -2108,209 +4269,276 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'code-insiders':
       await spec_code_insiders.loadLibrary();
-      registerSpec(spec_code_insiders.codeInsidersSpec.name, () => spec_code_insiders.codeInsidersSpec);
+      registerSpec(spec_code_insiders.codeInsidersSpec.name,
+          () => spec_code_insiders.codeInsidersSpec);
       break;
     case 'codeartifact':
       await spec_aws_codeartifact.loadLibrary();
-      registerSpec(spec_aws_codeartifact.codeartifactSpec.name, () => spec_aws_codeartifact.codeartifactSpec);
+      registerSpec(spec_aws_codeartifact.codeartifactSpec.name,
+          () => spec_aws_codeartifact.codeartifactSpec);
       break;
     case 'codebuild':
       await spec_aws_codebuild.loadLibrary();
-      registerSpec(spec_aws_codebuild.codebuildSpec.name, () => spec_aws_codebuild.codebuildSpec);
+      registerSpec(spec_aws_codebuild.codebuildSpec.name,
+          () => spec_aws_codebuild.codebuildSpec);
       break;
     case 'codecatalyst':
       await spec_aws_codecatalyst.loadLibrary();
-      registerSpec(spec_aws_codecatalyst.codecatalystSpec.name, () => spec_aws_codecatalyst.codecatalystSpec);
+      registerSpec(spec_aws_codecatalyst.codecatalystSpec.name,
+          () => spec_aws_codecatalyst.codecatalystSpec);
       break;
     case 'codecommit':
       await spec_aws_codecommit.loadLibrary();
-      registerSpec(spec_aws_codecommit.codecommitSpec.name, () => spec_aws_codecommit.codecommitSpec);
+      registerSpec(spec_aws_codecommit.codecommitSpec.name,
+          () => spec_aws_codecommit.codecommitSpec);
       break;
     case 'codeconnections':
       await spec_aws_codeconnections.loadLibrary();
-      registerSpec(spec_aws_codeconnections.codeconnectionsSpec.name, () => spec_aws_codeconnections.codeconnectionsSpec);
+      registerSpec(spec_aws_codeconnections.codeconnectionsSpec.name,
+          () => spec_aws_codeconnections.codeconnectionsSpec);
       break;
     case 'codeguru-reviewer':
       await spec_aws_codeguru_reviewer.loadLibrary();
-      registerSpec(spec_aws_codeguru_reviewer.codeguruReviewerSpec.name, () => spec_aws_codeguru_reviewer.codeguruReviewerSpec);
+      registerSpec(spec_aws_codeguru_reviewer.codeguruReviewerSpec.name,
+          () => spec_aws_codeguru_reviewer.codeguruReviewerSpec);
       break;
     case 'codeguru-security':
       await spec_aws_codeguru_security.loadLibrary();
-      registerSpec(spec_aws_codeguru_security.codeguruSecuritySpec.name, () => spec_aws_codeguru_security.codeguruSecuritySpec);
+      registerSpec(spec_aws_codeguru_security.codeguruSecuritySpec.name,
+          () => spec_aws_codeguru_security.codeguruSecuritySpec);
       break;
     case 'codeguruprofiler':
       await spec_aws_codeguruprofiler.loadLibrary();
-      registerSpec(spec_aws_codeguruprofiler.codeguruprofilerSpec.name, () => spec_aws_codeguruprofiler.codeguruprofilerSpec);
+      registerSpec(spec_aws_codeguruprofiler.codeguruprofilerSpec.name,
+          () => spec_aws_codeguruprofiler.codeguruprofilerSpec);
       break;
     case 'codepipeline':
       await spec_aws_codepipeline.loadLibrary();
-      registerSpec(spec_aws_codepipeline.codepipelineSpec.name, () => spec_aws_codepipeline.codepipelineSpec);
+      registerSpec(spec_aws_codepipeline.codepipelineSpec.name,
+          () => spec_aws_codepipeline.codepipelineSpec);
       break;
     case 'codesign':
       await spec_codesign.loadLibrary();
-      registerSpec(spec_codesign.codesignSpec.name, () => spec_codesign.codesignSpec);
+      registerSpec(
+          spec_codesign.codesignSpec.name, () => spec_codesign.codesignSpec);
       break;
     case 'codestar':
       await spec_aws_codestar.loadLibrary();
-      registerSpec(spec_aws_codestar.codestarSpec.name, () => spec_aws_codestar.codestarSpec);
+      registerSpec(spec_aws_codestar.codestarSpec.name,
+          () => spec_aws_codestar.codestarSpec);
       break;
     case 'codestar-connections':
       await spec_aws_codestar_connections.loadLibrary();
-      registerSpec(spec_aws_codestar_connections.codestarConnectionsSpec.name, () => spec_aws_codestar_connections.codestarConnectionsSpec);
+      registerSpec(spec_aws_codestar_connections.codestarConnectionsSpec.name,
+          () => spec_aws_codestar_connections.codestarConnectionsSpec);
       break;
     case 'codestar-notifications':
       await spec_aws_codestar_notifications.loadLibrary();
-      registerSpec(spec_aws_codestar_notifications.codestarNotificationsSpec.name, () => spec_aws_codestar_notifications.codestarNotificationsSpec);
+      registerSpec(
+          spec_aws_codestar_notifications.codestarNotificationsSpec.name,
+          () => spec_aws_codestar_notifications.codestarNotificationsSpec);
       break;
     case 'cognitiveservices':
       await spec_az_2_53_0_cognitiveservices.loadLibrary();
-      registerSpec(spec_az_2_53_0_cognitiveservices.cognitiveservicesSpec.name, () => spec_az_2_53_0_cognitiveservices.cognitiveservicesSpec);
+      registerSpec(spec_az_2_53_0_cognitiveservices.cognitiveservicesSpec.name,
+          () => spec_az_2_53_0_cognitiveservices.cognitiveservicesSpec);
       break;
     case 'cognito-identity':
       await spec_aws_cognito_identity.loadLibrary();
-      registerSpec(spec_aws_cognito_identity.cognitoIdentitySpec.name, () => spec_aws_cognito_identity.cognitoIdentitySpec);
+      registerSpec(spec_aws_cognito_identity.cognitoIdentitySpec.name,
+          () => spec_aws_cognito_identity.cognitoIdentitySpec);
       break;
     case 'cognito-idp':
       await spec_aws_cognito_idp.loadLibrary();
-      registerSpec(spec_aws_cognito_idp.cognitoIdpSpec.name, () => spec_aws_cognito_idp.cognitoIdpSpec);
+      registerSpec(spec_aws_cognito_idp.cognitoIdpSpec.name,
+          () => spec_aws_cognito_idp.cognitoIdpSpec);
       break;
     case 'cognito-sync':
       await spec_aws_cognito_sync.loadLibrary();
-      registerSpec(spec_aws_cognito_sync.cognitoSyncSpec.name, () => spec_aws_cognito_sync.cognitoSyncSpec);
+      registerSpec(spec_aws_cognito_sync.cognitoSyncSpec.name,
+          () => spec_aws_cognito_sync.cognitoSyncSpec);
       break;
     case 'command':
       await spec_command.loadLibrary();
-      registerSpec(spec_command.commandSpec.name, () => spec_command.commandSpec);
+      registerSpec(
+          spec_command.commandSpec.name, () => spec_command.commandSpec);
       break;
     case 'command-change':
       await spec_az_2_53_0_command_change.loadLibrary();
-      registerSpec(spec_az_2_53_0_command_change.commandChangeSpec.name, () => spec_az_2_53_0_command_change.commandChangeSpec);
+      registerSpec(spec_az_2_53_0_command_change.commandChangeSpec.name,
+          () => spec_az_2_53_0_command_change.commandChangeSpec);
       break;
     case 'communication':
       await spec_az_2_53_0_communication.loadLibrary();
-      registerSpec(spec_az_2_53_0_communication.communicationSpec.name, () => spec_az_2_53_0_communication.communicationSpec);
+      registerSpec(spec_az_2_53_0_communication.communicationSpec.name,
+          () => spec_az_2_53_0_communication.communicationSpec);
       break;
     case 'components':
       await spec_gcloud_components.loadLibrary();
-      registerSpec(spec_gcloud_components.componentsSpec.name, () => spec_gcloud_components.componentsSpec);
+      registerSpec(spec_gcloud_components.componentsSpec.name,
+          () => spec_gcloud_components.componentsSpec);
       break;
     case 'composer':
+      await spec_composer.loadLibrary();
+      registerSpec(
+          spec_composer.composerSpec.name, () => spec_composer.composerSpec);
       await spec_gcloud_composer.loadLibrary();
-      registerSpec(spec_gcloud_composer.composerSpec.name, () => spec_gcloud_composer.composerSpec);
+      registerSpec(spec_gcloud_composer.composerSpec.name,
+          () => spec_gcloud_composer.composerSpec);
       break;
     case 'comprehend':
       await spec_aws_comprehend.loadLibrary();
-      registerSpec(spec_aws_comprehend.comprehendSpec.name, () => spec_aws_comprehend.comprehendSpec);
+      registerSpec(spec_aws_comprehend.comprehendSpec.name,
+          () => spec_aws_comprehend.comprehendSpec);
       break;
     case 'comprehendmedical':
       await spec_aws_comprehendmedical.loadLibrary();
-      registerSpec(spec_aws_comprehendmedical.comprehendmedicalSpec.name, () => spec_aws_comprehendmedical.comprehendmedicalSpec);
+      registerSpec(spec_aws_comprehendmedical.comprehendmedicalSpec.name,
+          () => spec_aws_comprehendmedical.comprehendmedicalSpec);
       break;
     case 'compute':
       await spec_gcloud_compute.loadLibrary();
-      registerSpec(spec_gcloud_compute.computeSpec.name, () => spec_gcloud_compute.computeSpec);
+      registerSpec(spec_gcloud_compute.computeSpec.name,
+          () => spec_gcloud_compute.computeSpec);
       break;
     case 'compute-optimizer':
       await spec_aws_compute_optimizer.loadLibrary();
-      registerSpec(spec_aws_compute_optimizer.computeOptimizerSpec.name, () => spec_aws_compute_optimizer.computeOptimizerSpec);
+      registerSpec(spec_aws_compute_optimizer.computeOptimizerSpec.name,
+          () => spec_aws_compute_optimizer.computeOptimizerSpec);
+      break;
+    case 'conda':
+      await spec_conda.loadLibrary();
+      registerSpec(spec_conda.condaSpec.name, () => spec_conda.condaSpec);
       break;
     case 'confcom':
       await spec_az_2_53_0_confcom.loadLibrary();
-      registerSpec(spec_az_2_53_0_confcom.confcomSpec.name, () => spec_az_2_53_0_confcom.confcomSpec);
+      registerSpec(spec_az_2_53_0_confcom.confcomSpec.name,
+          () => spec_az_2_53_0_confcom.confcomSpec);
       break;
     case 'confidentialledger':
       await spec_az_2_53_0_confidentialledger.loadLibrary();
-      registerSpec(spec_az_2_53_0_confidentialledger.confidentialledgerSpec.name, () => spec_az_2_53_0_confidentialledger.confidentialledgerSpec);
+      registerSpec(
+          spec_az_2_53_0_confidentialledger.confidentialledgerSpec.name,
+          () => spec_az_2_53_0_confidentialledger.confidentialledgerSpec);
       break;
     case 'config':
       await spec_az_2_53_0_config.loadLibrary();
-      registerSpec(spec_az_2_53_0_config.configSpec.name, () => spec_az_2_53_0_config.configSpec);
+      registerSpec(spec_az_2_53_0_config.configSpec.name,
+          () => spec_az_2_53_0_config.configSpec);
       await spec_gcloud_config.loadLibrary();
-      registerSpec(spec_gcloud_config.configSpec.name, () => spec_gcloud_config.configSpec);
+      registerSpec(spec_gcloud_config.configSpec.name,
+          () => spec_gcloud_config.configSpec);
       break;
     case 'configservice':
       await spec_aws_configservice.loadLibrary();
-      registerSpec(spec_aws_configservice.configserviceSpec.name, () => spec_aws_configservice.configserviceSpec);
+      registerSpec(spec_aws_configservice.configserviceSpec.name,
+          () => spec_aws_configservice.configserviceSpec);
       break;
     case 'configure':
       await spec_aws_configure.loadLibrary();
-      registerSpec(spec_aws_configure.configureSpec.name, () => spec_aws_configure.configureSpec);
+      registerSpec(spec_aws_configure.configureSpec.name,
+          () => spec_aws_configure.configureSpec);
       await spec_az_2_53_0_configure.loadLibrary();
-      registerSpec(spec_az_2_53_0_configure.configureSpec.name, () => spec_az_2_53_0_configure.configureSpec);
+      registerSpec(spec_az_2_53_0_configure.configureSpec.name,
+          () => spec_az_2_53_0_configure.configureSpec);
       break;
     case 'confluent':
       await spec_az_2_53_0_confluent.loadLibrary();
-      registerSpec(spec_az_2_53_0_confluent.confluentSpec.name, () => spec_az_2_53_0_confluent.confluentSpec);
+      registerSpec(spec_az_2_53_0_confluent.confluentSpec.name,
+          () => spec_az_2_53_0_confluent.confluentSpec);
       break;
     case 'connect':
       await spec_aws_connect.loadLibrary();
-      registerSpec(spec_aws_connect.connectSpec.name, () => spec_aws_connect.connectSpec);
+      registerSpec(spec_aws_connect.connectSpec.name,
+          () => spec_aws_connect.connectSpec);
       break;
     case 'connect-contact-lens':
       await spec_aws_connect_contact_lens.loadLibrary();
-      registerSpec(spec_aws_connect_contact_lens.connectContactLensSpec.name, () => spec_aws_connect_contact_lens.connectContactLensSpec);
+      registerSpec(spec_aws_connect_contact_lens.connectContactLensSpec.name,
+          () => spec_aws_connect_contact_lens.connectContactLensSpec);
       break;
     case 'connectcampaigns':
       await spec_aws_connectcampaigns.loadLibrary();
-      registerSpec(spec_aws_connectcampaigns.connectcampaignsSpec.name, () => spec_aws_connectcampaigns.connectcampaignsSpec);
+      registerSpec(spec_aws_connectcampaigns.connectcampaignsSpec.name,
+          () => spec_aws_connectcampaigns.connectcampaignsSpec);
       break;
     case 'connectcampaignsv2':
       await spec_aws_connectcampaignsv2.loadLibrary();
-      registerSpec(spec_aws_connectcampaignsv2.connectcampaignsv2Spec.name, () => spec_aws_connectcampaignsv2.connectcampaignsv2Spec);
+      registerSpec(spec_aws_connectcampaignsv2.connectcampaignsv2Spec.name,
+          () => spec_aws_connectcampaignsv2.connectcampaignsv2Spec);
       break;
     case 'connectcases':
       await spec_aws_connectcases.loadLibrary();
-      registerSpec(spec_aws_connectcases.connectcasesSpec.name, () => spec_aws_connectcases.connectcasesSpec);
+      registerSpec(spec_aws_connectcases.connectcasesSpec.name,
+          () => spec_aws_connectcases.connectcasesSpec);
       break;
     case 'connectedk8s':
       await spec_az_2_53_0_connectedk8s.loadLibrary();
-      registerSpec(spec_az_2_53_0_connectedk8s.connectedk8sSpec.name, () => spec_az_2_53_0_connectedk8s.connectedk8sSpec);
+      registerSpec(spec_az_2_53_0_connectedk8s.connectedk8sSpec.name,
+          () => spec_az_2_53_0_connectedk8s.connectedk8sSpec);
       break;
     case 'connectedmachine':
       await spec_az_2_53_0_connectedmachine.loadLibrary();
-      registerSpec(spec_az_2_53_0_connectedmachine.connectedmachineSpec.name, () => spec_az_2_53_0_connectedmachine.connectedmachineSpec);
+      registerSpec(spec_az_2_53_0_connectedmachine.connectedmachineSpec.name,
+          () => spec_az_2_53_0_connectedmachine.connectedmachineSpec);
       break;
     case 'connectedvmware':
       await spec_az_2_53_0_connectedvmware.loadLibrary();
-      registerSpec(spec_az_2_53_0_connectedvmware.connectedvmwareSpec.name, () => spec_az_2_53_0_connectedvmware.connectedvmwareSpec);
+      registerSpec(spec_az_2_53_0_connectedvmware.connectedvmwareSpec.name,
+          () => spec_az_2_53_0_connectedvmware.connectedvmwareSpec);
       break;
     case 'connection':
       await spec_az_2_53_0_connection.loadLibrary();
-      registerSpec(spec_az_2_53_0_connection.connectionSpec.name, () => spec_az_2_53_0_connection.connectionSpec);
+      registerSpec(spec_az_2_53_0_connection.connectionSpec.name,
+          () => spec_az_2_53_0_connection.connectionSpec);
       break;
     case 'connectparticipant':
       await spec_aws_connectparticipant.loadLibrary();
-      registerSpec(spec_aws_connectparticipant.connectparticipantSpec.name, () => spec_aws_connectparticipant.connectparticipantSpec);
+      registerSpec(spec_aws_connectparticipant.connectparticipantSpec.name,
+          () => spec_aws_connectparticipant.connectparticipantSpec);
       break;
     case 'consumption':
       await spec_az_2_53_0_consumption.loadLibrary();
-      registerSpec(spec_az_2_53_0_consumption.consumptionSpec.name, () => spec_az_2_53_0_consumption.consumptionSpec);
+      registerSpec(spec_az_2_53_0_consumption.consumptionSpec.name,
+          () => spec_az_2_53_0_consumption.consumptionSpec);
       break;
     case 'container':
       await spec_az_2_53_0_container.loadLibrary();
-      registerSpec(spec_az_2_53_0_container.containerSpec.name, () => spec_az_2_53_0_container.containerSpec);
+      registerSpec(spec_az_2_53_0_container.containerSpec.name,
+          () => spec_az_2_53_0_container.containerSpec);
       await spec_gcloud_container.loadLibrary();
-      registerSpec(spec_gcloud_container.containerSpec.name, () => spec_gcloud_container.containerSpec);
+      registerSpec(spec_gcloud_container.containerSpec.name,
+          () => spec_gcloud_container.containerSpec);
       break;
     case 'containerapp':
       await spec_az_2_53_0_containerapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_containerapp.containerappSpec.name, () => spec_az_2_53_0_containerapp.containerappSpec);
+      registerSpec(spec_az_2_53_0_containerapp.containerappSpec.name,
+          () => spec_az_2_53_0_containerapp.containerappSpec);
       break;
     case 'controlcatalog':
       await spec_aws_controlcatalog.loadLibrary();
-      registerSpec(spec_aws_controlcatalog.controlcatalogSpec.name, () => spec_aws_controlcatalog.controlcatalogSpec);
+      registerSpec(spec_aws_controlcatalog.controlcatalogSpec.name,
+          () => spec_aws_controlcatalog.controlcatalogSpec);
       break;
     case 'controltower':
       await spec_aws_controltower.loadLibrary();
-      registerSpec(spec_aws_controltower.controltowerSpec.name, () => spec_aws_controltower.controltowerSpec);
+      registerSpec(spec_aws_controltower.controltowerSpec.name,
+          () => spec_aws_controltower.controltowerSpec);
+      break;
+    case 'copilot':
+      await spec_copilot.loadLibrary();
+      registerSpec(
+          spec_copilot.copilotSpec.name, () => spec_copilot.copilotSpec);
       break;
     case 'copyfile':
       await spec_copyfile.loadLibrary();
-      registerSpec(spec_copyfile.copyfileSpec.name, () => spec_copyfile.copyfileSpec);
+      registerSpec(
+          spec_copyfile.copyfileSpec.name, () => spec_copyfile.copyfileSpec);
       break;
     case 'copypath':
       await spec_copypath.loadLibrary();
-      registerSpec(spec_copypath.copypathSpec.name, () => spec_copypath.copypathSpec);
+      registerSpec(
+          spec_copypath.copypathSpec.name, () => spec_copypath.copypathSpec);
       break;
     case 'cosign':
       await spec_cosign.loadLibrary();
@@ -2318,15 +4546,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'cosmosdb':
       await spec_az_2_53_0_cosmosdb.loadLibrary();
-      registerSpec(spec_az_2_53_0_cosmosdb.cosmosdbSpec.name, () => spec_az_2_53_0_cosmosdb.cosmosdbSpec);
+      registerSpec(spec_az_2_53_0_cosmosdb.cosmosdbSpec.name,
+          () => spec_az_2_53_0_cosmosdb.cosmosdbSpec);
       break;
     case 'cost-optimization-hub':
       await spec_aws_cost_optimization_hub.loadLibrary();
-      registerSpec(spec_aws_cost_optimization_hub.costOptimizationHubSpec.name, () => spec_aws_cost_optimization_hub.costOptimizationHubSpec);
+      registerSpec(spec_aws_cost_optimization_hub.costOptimizationHubSpec.name,
+          () => spec_aws_cost_optimization_hub.costOptimizationHubSpec);
       break;
     case 'costmanagement':
       await spec_az_2_53_0_costmanagement.loadLibrary();
-      registerSpec(spec_az_2_53_0_costmanagement.costmanagementSpec.name, () => spec_az_2_53_0_costmanagement.costmanagementSpec);
+      registerSpec(spec_az_2_53_0_costmanagement.costmanagementSpec.name,
+          () => spec_az_2_53_0_costmanagement.costmanagementSpec);
       break;
     case 'cot':
       await spec_cot.loadLibrary();
@@ -2338,43 +4569,53 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'create-completion-spec':
       await spec_create_completion_spec.loadLibrary();
-      registerSpec(spec_create_completion_spec.createCompletionSpecSpec.name, () => spec_create_completion_spec.createCompletionSpecSpec);
+      registerSpec(spec_create_completion_spec.createCompletionSpecSpec.name,
+          () => spec_create_completion_spec.createCompletionSpecSpec);
       break;
     case 'create-next-app':
       await spec_create_next_app.loadLibrary();
-      registerSpec(spec_create_next_app.createNextAppSpec.name, () => spec_create_next_app.createNextAppSpec);
+      registerSpec(spec_create_next_app.createNextAppSpec.name,
+          () => spec_create_next_app.createNextAppSpec);
       break;
     case 'create-nx-workspace':
       await spec_create_nx_workspace.loadLibrary();
-      registerSpec(spec_create_nx_workspace.createNxWorkspaceSpec.name, () => spec_create_nx_workspace.createNxWorkspaceSpec);
+      registerSpec(spec_create_nx_workspace.createNxWorkspaceSpec.name,
+          () => spec_create_nx_workspace.createNxWorkspaceSpec);
       break;
     case 'create-react-app':
       await spec_create_react_app.loadLibrary();
-      registerSpec(spec_create_react_app.createReactAppSpec.name, () => spec_create_react_app.createReactAppSpec);
+      registerSpec(spec_create_react_app.createReactAppSpec.name,
+          () => spec_create_react_app.createReactAppSpec);
       break;
     case 'create-react-native-app':
       await spec_create_react_native_app.loadLibrary();
-      registerSpec(spec_create_react_native_app.createReactNativeAppSpec.name, () => spec_create_react_native_app.createReactNativeAppSpec);
+      registerSpec(spec_create_react_native_app.createReactNativeAppSpec.name,
+          () => spec_create_react_native_app.createReactNativeAppSpec);
       break;
     case 'create-redwood-app':
       await spec_create_redwood_app.loadLibrary();
-      registerSpec(spec_create_redwood_app.createRedwoodAppSpec.name, () => spec_create_redwood_app.createRedwoodAppSpec);
+      registerSpec(spec_create_redwood_app.createRedwoodAppSpec.name,
+          () => spec_create_redwood_app.createRedwoodAppSpec);
       break;
     case 'create-remix':
       await spec_create_remix.loadLibrary();
-      registerSpec(spec_create_remix.createRemixSpec.name, () => spec_create_remix.createRemixSpec);
+      registerSpec(spec_create_remix.createRemixSpec.name,
+          () => spec_create_remix.createRemixSpec);
       break;
     case 'create-t3-app':
       await spec_create_t3_app.loadLibrary();
-      registerSpec(spec_create_t3_app.createT3AppSpec.name, () => spec_create_t3_app.createT3AppSpec);
+      registerSpec(spec_create_t3_app.createT3AppSpec.name,
+          () => spec_create_t3_app.createT3AppSpec);
       break;
     case 'create-video':
       await spec_create_video.loadLibrary();
-      registerSpec(spec_create_video.createVideoSpec.name, () => spec_create_video.createVideoSpec);
+      registerSpec(spec_create_video.createVideoSpec.name,
+          () => spec_create_video.createVideoSpec);
       break;
     case 'create-web3-frontend':
       await spec_create_web3_frontend.loadLibrary();
-      registerSpec(spec_create_web3_frontend.createWeb3FrontendSpec.name, () => spec_create_web3_frontend.createWeb3FrontendSpec);
+      registerSpec(spec_create_web3_frontend.createWeb3FrontendSpec.name,
+          () => spec_create_web3_frontend.createWeb3FrontendSpec);
       break;
     case 'croc':
       await spec_croc.loadLibrary();
@@ -2382,7 +4623,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'crontab':
       await spec_crontab.loadLibrary();
-      registerSpec(spec_crontab.crontabSpec.name, () => spec_crontab.crontabSpec);
+      registerSpec(
+          spec_crontab.crontabSpec.name, () => spec_crontab.crontabSpec);
       break;
     case 'csdx':
       await spec_csdx.loadLibrary();
@@ -2390,7 +4632,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'csvmware':
       await spec_az_2_53_0_csvmware.loadLibrary();
-      registerSpec(spec_az_2_53_0_csvmware.csvmwareSpec.name, () => spec_az_2_53_0_csvmware.csvmwareSpec);
+      registerSpec(spec_az_2_53_0_csvmware.csvmwareSpec.name,
+          () => spec_az_2_53_0_csvmware.csvmwareSpec);
       break;
     case 'cur':
       await spec_aws_cur.loadLibrary();
@@ -2402,91 +4645,115 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'custom-providers':
       await spec_az_2_53_0_custom_providers.loadLibrary();
-      registerSpec(spec_az_2_53_0_custom_providers.customProvidersSpec.name, () => spec_az_2_53_0_custom_providers.customProvidersSpec);
+      registerSpec(spec_az_2_53_0_custom_providers.customProvidersSpec.name,
+          () => spec_az_2_53_0_custom_providers.customProvidersSpec);
       break;
     case 'customer-profiles':
       await spec_aws_customer_profiles.loadLibrary();
-      registerSpec(spec_aws_customer_profiles.customerProfilesSpec.name, () => spec_aws_customer_profiles.customerProfilesSpec);
+      registerSpec(spec_aws_customer_profiles.customerProfilesSpec.name,
+          () => spec_aws_customer_profiles.customerProfilesSpec);
       break;
     case 'customlocation':
       await spec_az_2_53_0_customlocation.loadLibrary();
-      registerSpec(spec_az_2_53_0_customlocation.customlocationSpec.name, () => spec_az_2_53_0_customlocation.customlocationSpec);
+      registerSpec(spec_az_2_53_0_customlocation.customlocationSpec.name,
+          () => spec_az_2_53_0_customlocation.customlocationSpec);
       break;
     case 'cut':
       await spec_cut.loadLibrary();
       registerSpec(spec_cut.cutSpec.name, () => spec_cut.cutSpec);
       break;
-    case 'dart':
-      await spec_dart.loadLibrary();
-      registerSpec(spec_dart.dartSpec.name, () => spec_dart.dartSpec);
+    case 'cw':
+      await spec_cw.loadLibrary();
+      registerSpec(spec_cw.cwSpec.name, () => spec_cw.cwSpec);
       break;
+    // case 'dart':
+    //   await spec_dart.loadLibrary();
+    //   registerSpec(spec_dart.dartSpec.name, () => spec_dart.dartSpec);
+    //   break;
     case 'data-catalog':
       await spec_gcloud_data_catalog.loadLibrary();
-      registerSpec(spec_gcloud_data_catalog.dataCatalogSpec.name, () => spec_gcloud_data_catalog.dataCatalogSpec);
+      registerSpec(spec_gcloud_data_catalog.dataCatalogSpec.name,
+          () => spec_gcloud_data_catalog.dataCatalogSpec);
       break;
     case 'databox':
       await spec_az_2_53_0_databox.loadLibrary();
-      registerSpec(spec_az_2_53_0_databox.databoxSpec.name, () => spec_az_2_53_0_databox.databoxSpec);
+      registerSpec(spec_az_2_53_0_databox.databoxSpec.name,
+          () => spec_az_2_53_0_databox.databoxSpec);
       break;
     case 'databoxedge':
       await spec_az_2_53_0_databoxedge.loadLibrary();
-      registerSpec(spec_az_2_53_0_databoxedge.databoxedgeSpec.name, () => spec_az_2_53_0_databoxedge.databoxedgeSpec);
+      registerSpec(spec_az_2_53_0_databoxedge.databoxedgeSpec.name,
+          () => spec_az_2_53_0_databoxedge.databoxedgeSpec);
       break;
     case 'databrew':
       await spec_aws_databrew.loadLibrary();
-      registerSpec(spec_aws_databrew.databrewSpec.name, () => spec_aws_databrew.databrewSpec);
+      registerSpec(spec_aws_databrew.databrewSpec.name,
+          () => spec_aws_databrew.databrewSpec);
       break;
     case 'databricks':
       await spec_az_2_53_0_databricks.loadLibrary();
-      registerSpec(spec_az_2_53_0_databricks.databricksSpec.name, () => spec_az_2_53_0_databricks.databricksSpec);
+      registerSpec(spec_az_2_53_0_databricks.databricksSpec.name,
+          () => spec_az_2_53_0_databricks.databricksSpec);
       break;
     case 'datadog':
       await spec_az_2_53_0_datadog.loadLibrary();
-      registerSpec(spec_az_2_53_0_datadog.datadogSpec.name, () => spec_az_2_53_0_datadog.datadogSpec);
+      registerSpec(spec_az_2_53_0_datadog.datadogSpec.name,
+          () => spec_az_2_53_0_datadog.datadogSpec);
       break;
     case 'dataexchange':
       await spec_aws_dataexchange.loadLibrary();
-      registerSpec(spec_aws_dataexchange.dataexchangeSpec.name, () => spec_aws_dataexchange.dataexchangeSpec);
+      registerSpec(spec_aws_dataexchange.dataexchangeSpec.name,
+          () => spec_aws_dataexchange.dataexchangeSpec);
       break;
     case 'datafactory':
       await spec_az_2_53_0_datafactory.loadLibrary();
-      registerSpec(spec_az_2_53_0_datafactory.datafactorySpec.name, () => spec_az_2_53_0_datafactory.datafactorySpec);
+      registerSpec(spec_az_2_53_0_datafactory.datafactorySpec.name,
+          () => spec_az_2_53_0_datafactory.datafactorySpec);
       break;
     case 'dataflow':
       await spec_gcloud_dataflow.loadLibrary();
-      registerSpec(spec_gcloud_dataflow.dataflowSpec.name, () => spec_gcloud_dataflow.dataflowSpec);
+      registerSpec(spec_gcloud_dataflow.dataflowSpec.name,
+          () => spec_gcloud_dataflow.dataflowSpec);
       break;
     case 'datamigration':
       await spec_az_2_53_0_datamigration.loadLibrary();
-      registerSpec(spec_az_2_53_0_datamigration.datamigrationSpec.name, () => spec_az_2_53_0_datamigration.datamigrationSpec);
+      registerSpec(spec_az_2_53_0_datamigration.datamigrationSpec.name,
+          () => spec_az_2_53_0_datamigration.datamigrationSpec);
       break;
     case 'datapipeline':
       await spec_aws_datapipeline.loadLibrary();
-      registerSpec(spec_aws_datapipeline.datapipelineSpec.name, () => spec_aws_datapipeline.datapipelineSpec);
+      registerSpec(spec_aws_datapipeline.datapipelineSpec.name,
+          () => spec_aws_datapipeline.datapipelineSpec);
       break;
     case 'dataproc':
       await spec_gcloud_dataproc.loadLibrary();
-      registerSpec(spec_gcloud_dataproc.dataprocSpec.name, () => spec_gcloud_dataproc.dataprocSpec);
+      registerSpec(spec_gcloud_dataproc.dataprocSpec.name,
+          () => spec_gcloud_dataproc.dataprocSpec);
       break;
     case 'dataprotection':
       await spec_az_2_53_0_dataprotection.loadLibrary();
-      registerSpec(spec_az_2_53_0_dataprotection.dataprotectionSpec.name, () => spec_az_2_53_0_dataprotection.dataprotectionSpec);
+      registerSpec(spec_az_2_53_0_dataprotection.dataprotectionSpec.name,
+          () => spec_az_2_53_0_dataprotection.dataprotectionSpec);
       break;
     case 'datashare':
       await spec_az_2_53_0_datashare.loadLibrary();
-      registerSpec(spec_az_2_53_0_datashare.datashareSpec.name, () => spec_az_2_53_0_datashare.datashareSpec);
+      registerSpec(spec_az_2_53_0_datashare.datashareSpec.name,
+          () => spec_az_2_53_0_datashare.datashareSpec);
       break;
     case 'datastore':
       await spec_gcloud_datastore.loadLibrary();
-      registerSpec(spec_gcloud_datastore.datastoreSpec.name, () => spec_gcloud_datastore.datastoreSpec);
+      registerSpec(spec_gcloud_datastore.datastoreSpec.name,
+          () => spec_gcloud_datastore.datastoreSpec);
       break;
     case 'datasync':
       await spec_aws_datasync.loadLibrary();
-      registerSpec(spec_aws_datasync.datasyncSpec.name, () => spec_aws_datasync.datasyncSpec);
+      registerSpec(spec_aws_datasync.datasyncSpec.name,
+          () => spec_aws_datasync.datasyncSpec);
       break;
     case 'datazone':
       await spec_aws_datazone.loadLibrary();
-      registerSpec(spec_aws_datazone.datazoneSpec.name, () => spec_aws_datazone.datazoneSpec);
+      registerSpec(spec_aws_datazone.datazoneSpec.name,
+          () => spec_aws_datazone.datazoneSpec);
       break;
     case 'date':
       await spec_date.loadLibrary();
@@ -2494,7 +4761,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dateseq':
       await spec_dateseq.loadLibrary();
-      registerSpec(spec_dateseq.dateseqSpec.name, () => spec_dateseq.dateseqSpec);
+      registerSpec(
+          spec_dateseq.dateseqSpec.name, () => spec_dateseq.dateseqSpec);
       break;
     case 'datree':
       await spec_datree.loadLibrary();
@@ -2518,23 +4786,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ddosify':
       await spec_ddosify.loadLibrary();
-      registerSpec(spec_ddosify.ddosifySpec.name, () => spec_ddosify.ddosifySpec);
+      registerSpec(
+          spec_ddosify.ddosifySpec.name, () => spec_ddosify.ddosifySpec);
       break;
     case 'deadline':
       await spec_aws_deadline.loadLibrary();
-      registerSpec(spec_aws_deadline.deadlineSpec.name, () => spec_aws_deadline.deadlineSpec);
+      registerSpec(spec_aws_deadline.deadlineSpec.name,
+          () => spec_aws_deadline.deadlineSpec);
       break;
     case 'debug':
       await spec_gcloud_debug.loadLibrary();
-      registerSpec(spec_gcloud_debug.debugSpec.name, () => spec_gcloud_debug.debugSpec);
+      registerSpec(
+          spec_gcloud_debug.debugSpec.name, () => spec_gcloud_debug.debugSpec);
       break;
     case 'dedicated-hsm':
       await spec_az_2_53_0_dedicated_hsm.loadLibrary();
-      registerSpec(spec_az_2_53_0_dedicated_hsm.dedicatedHsmSpec.name, () => spec_az_2_53_0_dedicated_hsm.dedicatedHsmSpec);
+      registerSpec(spec_az_2_53_0_dedicated_hsm.dedicatedHsmSpec.name,
+          () => spec_az_2_53_0_dedicated_hsm.dedicatedHsmSpec);
       break;
     case 'demo':
       await spec_az_2_53_0_demo.loadLibrary();
-      registerSpec(spec_az_2_53_0_demo.demoSpec.name, () => spec_az_2_53_0_demo.demoSpec);
+      registerSpec(spec_az_2_53_0_demo.demoSpec.name,
+          () => spec_az_2_53_0_demo.demoSpec);
       break;
     case 'deno':
       await spec_deno.loadLibrary();
@@ -2542,23 +4815,34 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'deploy':
       await spec_aws_deploy.loadLibrary();
-      registerSpec(spec_aws_deploy.deploySpec.name, () => spec_aws_deploy.deploySpec);
+      registerSpec(
+          spec_aws_deploy.deploySpec.name, () => spec_aws_deploy.deploySpec);
+      break;
+    case 'deployctl':
+      await spec_deployctl.loadLibrary();
+      registerSpec(spec_deployctl.deployctlSpec.name,
+          () => spec_deployctl.deployctlSpec);
       break;
     case 'deployment':
       await spec_az_2_53_0_deployment.loadLibrary();
-      registerSpec(spec_az_2_53_0_deployment.deploymentSpec.name, () => spec_az_2_53_0_deployment.deploymentSpec);
+      registerSpec(spec_az_2_53_0_deployment.deploymentSpec.name,
+          () => spec_az_2_53_0_deployment.deploymentSpec);
       break;
     case 'deployment-manager':
       await spec_gcloud_deployment_manager.loadLibrary();
-      registerSpec(spec_gcloud_deployment_manager.deploymentManagerSpec.name, () => spec_gcloud_deployment_manager.deploymentManagerSpec);
+      registerSpec(spec_gcloud_deployment_manager.deploymentManagerSpec.name,
+          () => spec_gcloud_deployment_manager.deploymentManagerSpec);
       break;
     case 'deployment-scripts':
       await spec_az_2_53_0_deployment_scripts.loadLibrary();
-      registerSpec(spec_az_2_53_0_deployment_scripts.deploymentScriptsSpec.name, () => spec_az_2_53_0_deployment_scripts.deploymentScriptsSpec);
+      registerSpec(spec_az_2_53_0_deployment_scripts.deploymentScriptsSpec.name,
+          () => spec_az_2_53_0_deployment_scripts.deploymentScriptsSpec);
       break;
     case 'desktopvirtualization':
       await spec_az_2_53_0_desktopvirtualization.loadLibrary();
-      registerSpec(spec_az_2_53_0_desktopvirtualization.desktopvirtualizationSpec.name, () => spec_az_2_53_0_desktopvirtualization.desktopvirtualizationSpec);
+      registerSpec(
+          spec_az_2_53_0_desktopvirtualization.desktopvirtualizationSpec.name,
+          () => spec_az_2_53_0_desktopvirtualization.desktopvirtualizationSpec);
       break;
     case 'deta':
       await spec_deta.loadLibrary();
@@ -2566,23 +4850,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'detective':
       await spec_aws_detective.loadLibrary();
-      registerSpec(spec_aws_detective.detectiveSpec.name, () => spec_aws_detective.detectiveSpec);
+      registerSpec(spec_aws_detective.detectiveSpec.name,
+          () => spec_aws_detective.detectiveSpec);
       break;
     case 'devcenter':
       await spec_az_2_53_0_devcenter.loadLibrary();
-      registerSpec(spec_az_2_53_0_devcenter.devcenterSpec.name, () => spec_az_2_53_0_devcenter.devcenterSpec);
+      registerSpec(spec_az_2_53_0_devcenter.devcenterSpec.name,
+          () => spec_az_2_53_0_devcenter.devcenterSpec);
       break;
     case 'devicefarm':
       await spec_aws_devicefarm.loadLibrary();
-      registerSpec(spec_aws_devicefarm.devicefarmSpec.name, () => spec_aws_devicefarm.devicefarmSpec);
+      registerSpec(spec_aws_devicefarm.devicefarmSpec.name,
+          () => spec_aws_devicefarm.devicefarmSpec);
       break;
     case 'devops':
       await spec_az_2_53_0_devops.loadLibrary();
-      registerSpec(spec_az_2_53_0_devops.devopsSpec.name, () => spec_az_2_53_0_devops.devopsSpec);
+      registerSpec(spec_az_2_53_0_devops.devopsSpec.name,
+          () => spec_az_2_53_0_devops.devopsSpec);
       break;
     case 'devops-guru':
       await spec_aws_devops_guru.loadLibrary();
-      registerSpec(spec_aws_devops_guru.devopsGuruSpec.name, () => spec_aws_devops_guru.devopsGuruSpec);
+      registerSpec(spec_aws_devops_guru.devopsGuruSpec.name,
+          () => spec_aws_devops_guru.devopsGuruSpec);
       break;
     case 'df':
       await spec_df.loadLibrary();
@@ -2598,31 +4887,43 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'directconnect':
       await spec_aws_directconnect.loadLibrary();
-      registerSpec(spec_aws_directconnect.directconnectSpec.name, () => spec_aws_directconnect.directconnectSpec);
+      registerSpec(spec_aws_directconnect.directconnectSpec.name,
+          () => spec_aws_directconnect.directconnectSpec);
+      break;
+    case 'direnv':
+      await spec_direnv.loadLibrary();
+      registerSpec(spec_direnv.direnvSpec.name, () => spec_direnv.direnvSpec);
       break;
     case 'dirname':
       await spec_dirname.loadLibrary();
-      registerSpec(spec_dirname.dirnameSpec.name, () => spec_dirname.dirnameSpec);
+      registerSpec(
+          spec_dirname.dirnameSpec.name, () => spec_dirname.dirnameSpec);
       break;
     case 'discovery':
       await spec_aws_discovery.loadLibrary();
-      registerSpec(spec_aws_discovery.discoverySpec.name, () => spec_aws_discovery.discoverySpec);
+      registerSpec(spec_aws_discovery.discoverySpec.name,
+          () => spec_aws_discovery.discoverySpec);
       break;
     case 'disk':
       await spec_az_2_53_0_disk.loadLibrary();
-      registerSpec(spec_az_2_53_0_disk.diskSpec.name, () => spec_az_2_53_0_disk.diskSpec);
+      registerSpec(spec_az_2_53_0_disk.diskSpec.name,
+          () => spec_az_2_53_0_disk.diskSpec);
       break;
     case 'disk-access':
       await spec_az_2_53_0_disk_access.loadLibrary();
-      registerSpec(spec_az_2_53_0_disk_access.diskAccessSpec.name, () => spec_az_2_53_0_disk_access.diskAccessSpec);
+      registerSpec(spec_az_2_53_0_disk_access.diskAccessSpec.name,
+          () => spec_az_2_53_0_disk_access.diskAccessSpec);
       break;
     case 'disk-encryption-set':
       await spec_az_2_53_0_disk_encryption_set.loadLibrary();
-      registerSpec(spec_az_2_53_0_disk_encryption_set.diskEncryptionSetSpec.name, () => spec_az_2_53_0_disk_encryption_set.diskEncryptionSetSpec);
+      registerSpec(
+          spec_az_2_53_0_disk_encryption_set.diskEncryptionSetSpec.name,
+          () => spec_az_2_53_0_disk_encryption_set.diskEncryptionSetSpec);
       break;
     case 'disk-pool':
       await spec_az_2_53_0_disk_pool.loadLibrary();
-      registerSpec(spec_az_2_53_0_disk_pool.diskPoolSpec.name, () => spec_az_2_53_0_disk_pool.diskPoolSpec);
+      registerSpec(spec_az_2_53_0_disk_pool.diskPoolSpec.name,
+          () => spec_az_2_53_0_disk_pool.diskPoolSpec);
       break;
     case 'ditto':
       await spec_ditto.loadLibrary();
@@ -2630,7 +4931,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dla':
       await spec_az_2_53_0_dla.loadLibrary();
-      registerSpec(spec_az_2_53_0_dla.dlaSpec.name, () => spec_az_2_53_0_dla.dlaSpec);
+      registerSpec(
+          spec_az_2_53_0_dla.dlaSpec.name, () => spec_az_2_53_0_dla.dlaSpec);
       break;
     case 'dlm':
       await spec_aws_dlm.loadLibrary();
@@ -2638,17 +4940,20 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dls':
       await spec_az_2_53_0_dls.loadLibrary();
-      registerSpec(spec_az_2_53_0_dls.dlsSpec.name, () => spec_az_2_53_0_dls.dlsSpec);
+      registerSpec(
+          spec_az_2_53_0_dls.dlsSpec.name, () => spec_az_2_53_0_dls.dlsSpec);
       break;
     case 'dms':
       await spec_aws_dms.loadLibrary();
       registerSpec(spec_aws_dms.dmsSpec.name, () => spec_aws_dms.dmsSpec);
       await spec_az_2_53_0_dms.loadLibrary();
-      registerSpec(spec_az_2_53_0_dms.dmsSpec.name, () => spec_az_2_53_0_dms.dmsSpec);
+      registerSpec(
+          spec_az_2_53_0_dms.dmsSpec.name, () => spec_az_2_53_0_dms.dmsSpec);
       break;
     case 'dnc':
       await spec_az_2_53_0_dnc.loadLibrary();
-      registerSpec(spec_az_2_53_0_dnc.dncSpec.name, () => spec_az_2_53_0_dnc.dncSpec);
+      registerSpec(
+          spec_az_2_53_0_dnc.dncSpec.name, () => spec_az_2_53_0_dnc.dncSpec);
       break;
     case 'dns':
       await spec_gcloud_dns.loadLibrary();
@@ -2656,7 +4961,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dns-resolver':
       await spec_az_2_53_0_dns_resolver.loadLibrary();
-      registerSpec(spec_az_2_53_0_dns_resolver.dnsResolverSpec.name, () => spec_az_2_53_0_dns_resolver.dnsResolverSpec);
+      registerSpec(spec_az_2_53_0_dns_resolver.dnsResolverSpec.name,
+          () => spec_az_2_53_0_dns_resolver.dnsResolverSpec);
       break;
     case 'do':
       await spec_do.loadLibrary();
@@ -2664,19 +4970,30 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'do-release-upgrade':
       await spec_do_release_upgrade.loadLibrary();
-      registerSpec(spec_do_release_upgrade.doReleaseUpgradeSpec.name, () => spec_do_release_upgrade.doReleaseUpgradeSpec);
+      registerSpec(spec_do_release_upgrade.doReleaseUpgradeSpec.name,
+          () => spec_do_release_upgrade.doReleaseUpgradeSpec);
       break;
     case 'docdb':
       await spec_aws_docdb.loadLibrary();
-      registerSpec(spec_aws_docdb.docdbSpec.name, () => spec_aws_docdb.docdbSpec);
+      registerSpec(
+          spec_aws_docdb.docdbSpec.name, () => spec_aws_docdb.docdbSpec);
       break;
     case 'docdb-elastic':
       await spec_aws_docdb_elastic.loadLibrary();
-      registerSpec(spec_aws_docdb_elastic.docdbElasticSpec.name, () => spec_aws_docdb_elastic.docdbElasticSpec);
+      registerSpec(spec_aws_docdb_elastic.docdbElasticSpec.name,
+          () => spec_aws_docdb_elastic.docdbElasticSpec);
       break;
     case 'docker':
+      await spec_docker.loadLibrary();
+      registerSpec(spec_docker.dockerSpec.name, () => spec_docker.dockerSpec);
       await spec_gcloud_docker.loadLibrary();
-      registerSpec(spec_gcloud_docker.dockerSpec.name, () => spec_gcloud_docker.dockerSpec);
+      registerSpec(spec_gcloud_docker.dockerSpec.name,
+          () => spec_gcloud_docker.dockerSpec);
+      break;
+    case 'docker-compose':
+      await spec_docker_compose.loadLibrary();
+      registerSpec(spec_docker_compose.dockerComposeSpec.name,
+          () => spec_docker_compose.dockerComposeSpec);
       break;
     case 'doctl':
       await spec_doctl.loadLibrary();
@@ -2692,11 +5009,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'domains':
       await spec_gcloud_domains.loadLibrary();
-      registerSpec(spec_gcloud_domains.domainsSpec.name, () => spec_gcloud_domains.domainsSpec);
+      registerSpec(spec_gcloud_domains.domainsSpec.name,
+          () => spec_gcloud_domains.domainsSpec);
       break;
     case 'dos2unix':
       await spec_dos2unix.loadLibrary();
-      registerSpec(spec_dos2unix.dos2unixSpec.name, () => spec_dos2unix.dos2unixSpec);
+      registerSpec(
+          spec_dos2unix.dos2unixSpec.name, () => spec_dos2unix.dos2unixSpec);
       break;
     case 'dotenv':
       await spec_dotenv.loadLibrary();
@@ -2704,11 +5023,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dotenv-vault':
       await spec_dotenv_vault.loadLibrary();
-      registerSpec(spec_dotenv_vault.dotenvVaultSpec.name, () => spec_dotenv_vault.dotenvVaultSpec);
+      registerSpec(spec_dotenv_vault.dotenvVaultSpec.name,
+          () => spec_dotenv_vault.dotenvVaultSpec);
       break;
     case 'dotslash':
       await spec_dotslash.loadLibrary();
-      registerSpec(spec_dotslash.dotslashSpec.name, () => spec_dotslash.dotslashSpec);
+      registerSpec(
+          spec_dotslash.dotslashSpec.name, () => spec_dotslash.dotslashSpec);
       break;
     case 'dpkg':
       await spec_dpkg.loadLibrary();
@@ -2728,7 +5049,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ds-data':
       await spec_aws_ds_data.loadLibrary();
-      registerSpec(spec_aws_ds_data.dsDataSpec.name, () => spec_aws_ds_data.dsDataSpec);
+      registerSpec(
+          spec_aws_ds_data.dsDataSpec.name, () => spec_aws_ds_data.dsDataSpec);
       break;
     case 'dsql':
       await spec_aws_dsql.loadLibrary();
@@ -2736,7 +5058,12 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dt':
       await spec_az_2_53_0_dt.loadLibrary();
-      registerSpec(spec_az_2_53_0_dt.dtSpec.name, () => spec_az_2_53_0_dt.dtSpec);
+      registerSpec(
+          spec_az_2_53_0_dt.dtSpec.name, () => spec_az_2_53_0_dt.dtSpec);
+      break;
+    case 'dtm':
+      await spec_dtm.loadLibrary();
+      registerSpec(spec_dtm.dtmSpec.name, () => spec_dtm.dtmSpec);
       break;
     case 'du':
       await spec_du.loadLibrary();
@@ -2748,23 +5075,31 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dynamodb':
       await spec_aws_dynamodb.loadLibrary();
-      registerSpec(spec_aws_dynamodb.dynamodbSpec.name, () => spec_aws_dynamodb.dynamodbSpec);
+      registerSpec(spec_aws_dynamodb.dynamodbSpec.name,
+          () => spec_aws_dynamodb.dynamodbSpec);
       break;
     case 'dynamodbstreams':
       await spec_aws_dynamodbstreams.loadLibrary();
-      registerSpec(spec_aws_dynamodbstreams.dynamodbstreamsSpec.name, () => spec_aws_dynamodbstreams.dynamodbstreamsSpec);
+      registerSpec(spec_aws_dynamodbstreams.dynamodbstreamsSpec.name,
+          () => spec_aws_dynamodbstreams.dynamodbstreamsSpec);
       break;
     case 'dynatrace':
       await spec_az_2_53_0_dynatrace.loadLibrary();
-      registerSpec(spec_az_2_53_0_dynatrace.dynatraceSpec.name, () => spec_az_2_53_0_dynatrace.dynatraceSpec);
+      registerSpec(spec_az_2_53_0_dynatrace.dynatraceSpec.name,
+          () => spec_az_2_53_0_dynatrace.dynatraceSpec);
       break;
+    // case 'eas':
+    //   await spec_eas.loadLibrary();
+    //   registerSpec(spec_eas.easSpec.name, () => spec_eas.easSpec);
+    //   break;
     case 'ebs':
       await spec_aws_ebs.loadLibrary();
       registerSpec(spec_aws_ebs.ebsSpec.name, () => spec_aws_ebs.ebsSpec);
       break;
     case 'ec2-instance-connect':
       await spec_aws_ec2_instance_connect.loadLibrary();
-      registerSpec(spec_aws_ec2_instance_connect.ec2InstanceConnectSpec.name, () => spec_aws_ec2_instance_connect.ec2InstanceConnectSpec);
+      registerSpec(spec_aws_ec2_instance_connect.ec2InstanceConnectSpec.name,
+          () => spec_aws_ec2_instance_connect.ec2InstanceConnectSpec);
       break;
     case 'echo':
       await spec_echo.loadLibrary();
@@ -2776,11 +5111,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ecr-public':
       await spec_aws_ecr_public.loadLibrary();
-      registerSpec(spec_aws_ecr_public.ecrPublicSpec.name, () => spec_aws_ecr_public.ecrPublicSpec);
+      registerSpec(spec_aws_ecr_public.ecrPublicSpec.name,
+          () => spec_aws_ecr_public.ecrPublicSpec);
       break;
     case 'edgeorder':
       await spec_az_2_53_0_edgeorder.loadLibrary();
-      registerSpec(spec_az_2_53_0_edgeorder.edgeorderSpec.name, () => spec_az_2_53_0_edgeorder.edgeorderSpec);
+      registerSpec(spec_az_2_53_0_edgeorder.edgeorderSpec.name,
+          () => spec_az_2_53_0_edgeorder.edgeorderSpec);
       break;
     case 'efs':
       await spec_aws_efs.loadLibrary();
@@ -2788,27 +5125,33 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'eks-auth':
       await spec_aws_eks_auth.loadLibrary();
-      registerSpec(spec_aws_eks_auth.eksAuthSpec.name, () => spec_aws_eks_auth.eksAuthSpec);
+      registerSpec(spec_aws_eks_auth.eksAuthSpec.name,
+          () => spec_aws_eks_auth.eksAuthSpec);
       break;
     case 'elastic':
       await spec_az_2_53_0_elastic.loadLibrary();
-      registerSpec(spec_az_2_53_0_elastic.elasticSpec.name, () => spec_az_2_53_0_elastic.elasticSpec);
+      registerSpec(spec_az_2_53_0_elastic.elasticSpec.name,
+          () => spec_az_2_53_0_elastic.elasticSpec);
       break;
     case 'elastic-inference':
       await spec_aws_elastic_inference.loadLibrary();
-      registerSpec(spec_aws_elastic_inference.elasticInferenceSpec.name, () => spec_aws_elastic_inference.elasticInferenceSpec);
+      registerSpec(spec_aws_elastic_inference.elasticInferenceSpec.name,
+          () => spec_aws_elastic_inference.elasticInferenceSpec);
       break;
     case 'elastic-san':
       await spec_az_2_53_0_elastic_san.loadLibrary();
-      registerSpec(spec_az_2_53_0_elastic_san.elasticSanSpec.name, () => spec_az_2_53_0_elastic_san.elasticSanSpec);
+      registerSpec(spec_az_2_53_0_elastic_san.elasticSanSpec.name,
+          () => spec_az_2_53_0_elastic_san.elasticSanSpec);
       break;
     case 'elasticache':
       await spec_aws_elasticache.loadLibrary();
-      registerSpec(spec_aws_elasticache.elasticacheSpec.name, () => spec_aws_elasticache.elasticacheSpec);
+      registerSpec(spec_aws_elasticache.elasticacheSpec.name,
+          () => spec_aws_elasticache.elasticacheSpec);
       break;
     case 'elastictranscoder':
       await spec_aws_elastictranscoder.loadLibrary();
-      registerSpec(spec_aws_elastictranscoder.elastictranscoderSpec.name, () => spec_aws_elastictranscoder.elastictranscoderSpec);
+      registerSpec(spec_aws_elastictranscoder.elastictranscoderSpec.name,
+          () => spec_aws_elastictranscoder.elastictranscoderSpec);
       break;
     case 'elb':
       await spec_aws_elb.loadLibrary();
@@ -2816,27 +5159,36 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'elbv2':
       await spec_aws_elbv2.loadLibrary();
-      registerSpec(spec_aws_elbv2.elbv2Spec.name, () => spec_aws_elbv2.elbv2Spec);
+      registerSpec(
+          spec_aws_elbv2.elbv2Spec.name, () => spec_aws_elbv2.elbv2Spec);
       break;
     case 'electron':
       await spec_electron.loadLibrary();
-      registerSpec(spec_electron.electronSpec.name, () => spec_electron.electronSpec);
+      registerSpec(
+          spec_electron.electronSpec.name, () => spec_electron.electronSpec);
       break;
     case 'eleventy':
       await spec_eleventy.loadLibrary();
-      registerSpec(spec_eleventy.eleventySpec.name, () => spec_eleventy.eleventySpec);
+      registerSpec(
+          spec_eleventy.eleventySpec.name, () => spec_eleventy.eleventySpec);
       break;
     case 'elif':
       await spec_elif.loadLibrary();
       registerSpec(spec_elif.elifSpec.name, () => spec_elif.elifSpec);
       break;
+    case 'elm':
+      await spec_elm.loadLibrary();
+      registerSpec(spec_elm.elmSpec.name, () => spec_elm.elmSpec);
+      break;
     case 'elm-format':
       await spec_elm_format.loadLibrary();
-      registerSpec(spec_elm_format.elmFormatSpec.name, () => spec_elm_format.elmFormatSpec);
+      registerSpec(spec_elm_format.elmFormatSpec.name,
+          () => spec_elm_format.elmFormatSpec);
       break;
     case 'elm-review':
       await spec_elm_review.loadLibrary();
-      registerSpec(spec_elm_review.elmReviewSpec.name, () => spec_elm_review.elmReviewSpec);
+      registerSpec(spec_elm_review.elmReviewSpec.name,
+          () => spec_elm_review.elmReviewSpec);
       break;
     case 'else':
       await spec_else.loadLibrary();
@@ -2852,15 +5204,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'emr-containers':
       await spec_aws_emr_containers.loadLibrary();
-      registerSpec(spec_aws_emr_containers.emrContainersSpec.name, () => spec_aws_emr_containers.emrContainersSpec);
+      registerSpec(spec_aws_emr_containers.emrContainersSpec.name,
+          () => spec_aws_emr_containers.emrContainersSpec);
       break;
     case 'emr-serverless':
       await spec_aws_emr_serverless.loadLibrary();
-      registerSpec(spec_aws_emr_serverless.emrServerlessSpec.name, () => spec_aws_emr_serverless.emrServerlessSpec);
+      registerSpec(spec_aws_emr_serverless.emrServerlessSpec.name,
+          () => spec_aws_emr_serverless.emrServerlessSpec);
       break;
     case 'enapter':
       await spec_enapter.loadLibrary();
-      registerSpec(spec_enapter.enapterSpec.name, () => spec_enapter.enapterSpec);
+      registerSpec(
+          spec_enapter.enapterSpec.name, () => spec_enapter.enapterSpec);
       break;
     case 'encore':
       await spec_encore.loadLibrary();
@@ -2868,19 +5223,31 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'endpoints':
       await spec_gcloud_endpoints.loadLibrary();
-      registerSpec(spec_gcloud_endpoints.endpointsSpec.name, () => spec_gcloud_endpoints.endpointsSpec);
+      registerSpec(spec_gcloud_endpoints.endpointsSpec.name,
+          () => spec_gcloud_endpoints.endpointsSpec);
       break;
     case 'entityresolution':
       await spec_aws_entityresolution.loadLibrary();
-      registerSpec(spec_aws_entityresolution.entityresolutionSpec.name, () => spec_aws_entityresolution.entityresolutionSpec);
+      registerSpec(spec_aws_entityresolution.entityresolutionSpec.name,
+          () => spec_aws_entityresolution.entityresolutionSpec);
       break;
     case 'env':
       await spec_env.loadLibrary();
       registerSpec(spec_env.envSpec.name, () => spec_env.envSpec);
       break;
+    case 'envchain':
+      await spec_envchain.loadLibrary();
+      registerSpec(
+          spec_envchain.envchainSpec.name, () => spec_envchain.envchainSpec);
+      break;
     case 'es':
       await spec_aws_es.loadLibrary();
       registerSpec(spec_aws_es.esSpec.name, () => spec_aws_es.esSpec);
+      break;
+    case 'esbuild':
+      await spec_esbuild.loadLibrary();
+      registerSpec(
+          spec_esbuild.esbuildSpec.name, () => spec_esbuild.esbuildSpec);
       break;
     case 'eslint':
       await spec_eslint.loadLibrary();
@@ -2888,19 +5255,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'eventgrid':
       await spec_az_2_53_0_eventgrid.loadLibrary();
-      registerSpec(spec_az_2_53_0_eventgrid.eventgridSpec.name, () => spec_az_2_53_0_eventgrid.eventgridSpec);
+      registerSpec(spec_az_2_53_0_eventgrid.eventgridSpec.name,
+          () => spec_az_2_53_0_eventgrid.eventgridSpec);
       break;
     case 'eventhubs':
       await spec_az_2_53_0_eventhubs.loadLibrary();
-      registerSpec(spec_az_2_53_0_eventhubs.eventhubsSpec.name, () => spec_az_2_53_0_eventhubs.eventhubsSpec);
+      registerSpec(spec_az_2_53_0_eventhubs.eventhubsSpec.name,
+          () => spec_az_2_53_0_eventhubs.eventhubsSpec);
       break;
     case 'events':
       await spec_aws_events.loadLibrary();
-      registerSpec(spec_aws_events.eventsSpec.name, () => spec_aws_events.eventsSpec);
+      registerSpec(
+          spec_aws_events.eventsSpec.name, () => spec_aws_events.eventsSpec);
       break;
     case 'evidently':
       await spec_aws_evidently.loadLibrary();
-      registerSpec(spec_aws_evidently.evidentlySpec.name, () => spec_aws_evidently.evidentlySpec);
+      registerSpec(spec_aws_evidently.evidentlySpec.name,
+          () => spec_aws_evidently.evidentlySpec);
       break;
     case 'exa':
       await spec_exa.loadLibrary();
@@ -2912,7 +5283,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'exercism':
       await spec_exercism.loadLibrary();
-      registerSpec(spec_exercism.exercismSpec.name, () => spec_exercism.exercismSpec);
+      registerSpec(
+          spec_exercism.exercismSpec.name, () => spec_exercism.exercismSpec);
       break;
     case 'export':
       await spec_export.loadLibrary();
@@ -2920,7 +5292,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'extension':
       await spec_az_2_53_0_extension.loadLibrary();
-      registerSpec(spec_az_2_53_0_extension.extensionSpec.name, () => spec_az_2_53_0_extension.extensionSpec);
+      registerSpec(spec_az_2_53_0_extension.extensionSpec.name,
+          () => spec_az_2_53_0_extension.extensionSpec);
       break;
     case 'eza':
       await spec_eza.loadLibrary();
@@ -2928,7 +5301,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'fastlane':
       await spec_fastlane.loadLibrary();
-      registerSpec(spec_fastlane.fastlaneSpec.name, () => spec_fastlane.fastlaneSpec);
+      registerSpec(
+          spec_fastlane.fastlaneSpec.name, () => spec_fastlane.fastlaneSpec);
       break;
     case 'fastly':
       await spec_fastly.loadLibrary();
@@ -2944,17 +5318,25 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'feature':
       await spec_az_2_53_0_feature.loadLibrary();
-      registerSpec(spec_az_2_53_0_feature.featureSpec.name, () => spec_az_2_53_0_feature.featureSpec);
+      registerSpec(spec_az_2_53_0_feature.featureSpec.name,
+          () => spec_az_2_53_0_feature.featureSpec);
       break;
     case 'feedback':
       await spec_az_2_53_0_feedback.loadLibrary();
-      registerSpec(spec_az_2_53_0_feedback.feedbackSpec.name, () => spec_az_2_53_0_feedback.feedbackSpec);
+      registerSpec(spec_az_2_53_0_feedback.feedbackSpec.name,
+          () => spec_az_2_53_0_feedback.feedbackSpec);
       await spec_gcloud_feedback.loadLibrary();
-      registerSpec(spec_gcloud_feedback.feedbackSpec.name, () => spec_gcloud_feedback.feedbackSpec);
+      registerSpec(spec_gcloud_feedback.feedbackSpec.name,
+          () => spec_gcloud_feedback.feedbackSpec);
+      break;
+    case 'ffmpeg':
+      await spec_ffmpeg.loadLibrary();
+      registerSpec(spec_ffmpeg.ffmpegSpec.name, () => spec_ffmpeg.ffmpegSpec);
       break;
     case 'figterm':
       await spec_figterm.loadLibrary();
-      registerSpec(spec_figterm.figtermSpec.name, () => spec_figterm.figtermSpec);
+      registerSpec(
+          spec_figterm.figtermSpec.name, () => spec_figterm.figtermSpec);
       break;
     case 'file':
       await spec_file.loadLibrary();
@@ -2962,37 +5344,52 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'filestore':
       await spec_gcloud_filestore.loadLibrary();
-      registerSpec(spec_gcloud_filestore.filestoreSpec.name, () => spec_gcloud_filestore.filestoreSpec);
+      registerSpec(spec_gcloud_filestore.filestoreSpec.name,
+          () => spec_gcloud_filestore.filestoreSpec);
+      break;
+    case 'fin':
+      await spec_fin.loadLibrary();
+      registerSpec(spec_fin.finSpec.name, () => spec_fin.finSpec);
       break;
     case 'find':
       await spec_az_2_53_0_find.loadLibrary();
-      registerSpec(spec_az_2_53_0_find.findSpec.name, () => spec_az_2_53_0_find.findSpec);
+      registerSpec(spec_az_2_53_0_find.findSpec.name,
+          () => spec_az_2_53_0_find.findSpec);
       await spec_find.loadLibrary();
       registerSpec(spec_find.findSpec.name, () => spec_find.findSpec);
       break;
     case 'finspace':
       await spec_aws_finspace.loadLibrary();
-      registerSpec(spec_aws_finspace.finspaceSpec.name, () => spec_aws_finspace.finspaceSpec);
+      registerSpec(spec_aws_finspace.finspaceSpec.name,
+          () => spec_aws_finspace.finspaceSpec);
       break;
     case 'finspace-data':
       await spec_aws_finspace_data.loadLibrary();
-      registerSpec(spec_aws_finspace_data.finspaceDataSpec.name, () => spec_aws_finspace_data.finspaceDataSpec);
+      registerSpec(spec_aws_finspace_data.finspaceDataSpec.name,
+          () => spec_aws_finspace_data.finspaceDataSpec);
       break;
     case 'firebase':
+      await spec_firebase.loadLibrary();
+      registerSpec(
+          spec_firebase.firebaseSpec.name, () => spec_firebase.firebaseSpec);
       await spec_gcloud_firebase.loadLibrary();
-      registerSpec(spec_gcloud_firebase.firebaseSpec.name, () => spec_gcloud_firebase.firebaseSpec);
+      registerSpec(spec_gcloud_firebase.firebaseSpec.name,
+          () => spec_gcloud_firebase.firebaseSpec);
       break;
     case 'firefox':
       await spec_firefox.loadLibrary();
-      registerSpec(spec_firefox.firefoxSpec.name, () => spec_firefox.firefoxSpec);
+      registerSpec(
+          spec_firefox.firefoxSpec.name, () => spec_firefox.firefoxSpec);
       break;
     case 'firehose':
       await spec_aws_firehose.loadLibrary();
-      registerSpec(spec_aws_firehose.firehoseSpec.name, () => spec_aws_firehose.firehoseSpec);
+      registerSpec(spec_aws_firehose.firehoseSpec.name,
+          () => spec_aws_firehose.firehoseSpec);
       break;
     case 'firestore':
       await spec_gcloud_firestore.loadLibrary();
-      registerSpec(spec_gcloud_firestore.firestoreSpec.name, () => spec_gcloud_firestore.firestoreSpec);
+      registerSpec(spec_gcloud_firestore.firestoreSpec.name,
+          () => spec_gcloud_firestore.firestoreSpec);
       break;
     case 'fis':
       await spec_aws_fis.loadLibrary();
@@ -3000,11 +5397,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'fleet':
       await spec_az_2_53_0_fleet.loadLibrary();
-      registerSpec(spec_az_2_53_0_fleet.fleetSpec.name, () => spec_az_2_53_0_fleet.fleetSpec);
+      registerSpec(spec_az_2_53_0_fleet.fleetSpec.name,
+          () => spec_az_2_53_0_fleet.fleetSpec);
       break;
     case 'fluid-relay':
       await spec_az_2_53_0_fluid_relay.loadLibrary();
-      registerSpec(spec_az_2_53_0_fluid_relay.fluidRelaySpec.name, () => spec_az_2_53_0_fluid_relay.fluidRelaySpec);
+      registerSpec(spec_az_2_53_0_fluid_relay.fluidRelaySpec.name,
+          () => spec_az_2_53_0_fluid_relay.fluidRelaySpec);
       break;
     case 'fms':
       await spec_aws_fms.loadLibrary();
@@ -3020,7 +5419,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'footprint':
       await spec_az_2_53_0_footprint.loadLibrary();
-      registerSpec(spec_az_2_53_0_footprint.footprintSpec.name, () => spec_az_2_53_0_footprint.footprintSpec);
+      registerSpec(spec_az_2_53_0_footprint.footprintSpec.name,
+          () => spec_az_2_53_0_footprint.footprintSpec);
       break;
     case 'for':
       await spec_for.loadLibrary();
@@ -3032,23 +5432,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'forecast':
       await spec_aws_forecast.loadLibrary();
-      registerSpec(spec_aws_forecast.forecastSpec.name, () => spec_aws_forecast.forecastSpec);
+      registerSpec(spec_aws_forecast.forecastSpec.name,
+          () => spec_aws_forecast.forecastSpec);
       break;
     case 'forecastquery':
       await spec_aws_forecastquery.loadLibrary();
-      registerSpec(spec_aws_forecastquery.forecastquerySpec.name, () => spec_aws_forecastquery.forecastquerySpec);
+      registerSpec(spec_aws_forecastquery.forecastquerySpec.name,
+          () => spec_aws_forecastquery.forecastquerySpec);
       break;
     case 'format':
       await spec_dotnet_dotnet_format.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_format.formatSpec.name, () => spec_dotnet_dotnet_format.formatSpec);
+      registerSpec(spec_dotnet_dotnet_format.formatSpec.name,
+          () => spec_dotnet_dotnet_format.formatSpec);
       break;
     case 'frauddetector':
       await spec_aws_frauddetector.loadLibrary();
-      registerSpec(spec_aws_frauddetector.frauddetectorSpec.name, () => spec_aws_frauddetector.frauddetectorSpec);
+      registerSpec(spec_aws_frauddetector.frauddetectorSpec.name,
+          () => spec_aws_frauddetector.frauddetectorSpec);
       break;
     case 'freetier':
       await spec_aws_freetier.loadLibrary();
-      registerSpec(spec_aws_freetier.freetierSpec.name, () => spec_aws_freetier.freetierSpec);
+      registerSpec(spec_aws_freetier.freetierSpec.name,
+          () => spec_aws_freetier.freetierSpec);
       break;
     case 'fsx':
       await spec_aws_fsx.loadLibrary();
@@ -3056,21 +5461,25 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'functionapp':
       await spec_az_2_53_0_functionapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_functionapp.functionappSpec.name, () => spec_az_2_53_0_functionapp.functionappSpec);
+      registerSpec(spec_az_2_53_0_functionapp.functionappSpec.name,
+          () => spec_az_2_53_0_functionapp.functionappSpec);
       break;
     case 'functions':
       await spec_gcloud_functions.loadLibrary();
-      registerSpec(spec_gcloud_functions.functionsSpec.name, () => spec_gcloud_functions.functionsSpec);
+      registerSpec(spec_gcloud_functions.functionsSpec.name,
+          () => spec_gcloud_functions.functionsSpec);
       break;
     case 'fzf':
       await spec_az_2_53_0_fzf.loadLibrary();
-      registerSpec(spec_az_2_53_0_fzf.fzfSpec.name, () => spec_az_2_53_0_fzf.fzfSpec);
+      registerSpec(
+          spec_az_2_53_0_fzf.fzfSpec.name, () => spec_az_2_53_0_fzf.fzfSpec);
       await spec_fzf.loadLibrary();
       registerSpec(spec_fzf.fzfSpec.name, () => spec_fzf.fzfSpec);
       break;
     case 'fzf-tmux':
       await spec_fzf_tmux.loadLibrary();
-      registerSpec(spec_fzf_tmux.fzfTmuxSpec.name, () => spec_fzf_tmux.fzfTmuxSpec);
+      registerSpec(
+          spec_fzf_tmux.fzfTmuxSpec.name, () => spec_fzf_tmux.fzfTmuxSpec);
       break;
     case 'g++':
       await spec_g__.loadLibrary();
@@ -3078,15 +5487,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'game':
       await spec_gcloud_game.loadLibrary();
-      registerSpec(spec_gcloud_game.gameSpec.name, () => spec_gcloud_game.gameSpec);
+      registerSpec(
+          spec_gcloud_game.gameSpec.name, () => spec_gcloud_game.gameSpec);
       break;
     case 'gamelift':
       await spec_aws_gamelift.loadLibrary();
-      registerSpec(spec_aws_gamelift.gameliftSpec.name, () => spec_aws_gamelift.gameliftSpec);
+      registerSpec(spec_aws_gamelift.gameliftSpec.name,
+          () => spec_aws_gamelift.gameliftSpec);
       break;
     case 'ganache-cli':
       await spec_ganache_cli.loadLibrary();
-      registerSpec(spec_ganache_cli.ganacheCliSpec.name, () => spec_ganache_cli.ganacheCliSpec);
+      registerSpec(spec_ganache_cli.ganacheCliSpec.name,
+          () => spec_ganache_cli.ganacheCliSpec);
       break;
     case 'gatsby':
       await spec_gatsby.loadLibrary();
@@ -3102,15 +5514,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'geo-maps':
       await spec_aws_geo_maps.loadLibrary();
-      registerSpec(spec_aws_geo_maps.geoMapsSpec.name, () => spec_aws_geo_maps.geoMapsSpec);
+      registerSpec(spec_aws_geo_maps.geoMapsSpec.name,
+          () => spec_aws_geo_maps.geoMapsSpec);
       break;
     case 'geo-places':
       await spec_aws_geo_places.loadLibrary();
-      registerSpec(spec_aws_geo_places.geoPlacesSpec.name, () => spec_aws_geo_places.geoPlacesSpec);
+      registerSpec(spec_aws_geo_places.geoPlacesSpec.name,
+          () => spec_aws_geo_places.geoPlacesSpec);
       break;
     case 'geo-routes':
       await spec_aws_geo_routes.loadLibrary();
-      registerSpec(spec_aws_geo_routes.geoRoutesSpec.name, () => spec_aws_geo_routes.geoRoutesSpec);
+      registerSpec(spec_aws_geo_routes.geoRoutesSpec.name,
+          () => spec_aws_geo_routes.geoRoutesSpec);
       break;
     case 'ghq':
       await spec_ghq.loadLibrary();
@@ -3122,11 +5537,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'git-quick-stats':
       await spec_git_quick_stats.loadLibrary();
-      registerSpec(spec_git_quick_stats.gitQuickStatsSpec.name, () => spec_git_quick_stats.gitQuickStatsSpec);
+      registerSpec(spec_git_quick_stats.gitQuickStatsSpec.name,
+          () => spec_git_quick_stats.gitQuickStatsSpec);
       break;
     case 'git_push_example':
       await spec_example_git_push.loadLibrary();
-      registerSpec(spec_example_git_push.git_push_exampleSpec.name, () => spec_example_git_push.git_push_exampleSpec);
+      registerSpec(spec_example_git_push.git_push_exampleSpec.name,
+          () => spec_example_git_push.git_push_exampleSpec);
       break;
     case 'github':
       await spec_github.loadLibrary();
@@ -3134,11 +5551,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'glacier':
       await spec_aws_glacier.loadLibrary();
-      registerSpec(spec_aws_glacier.glacierSpec.name, () => spec_aws_glacier.glacierSpec);
+      registerSpec(spec_aws_glacier.glacierSpec.name,
+          () => spec_aws_glacier.glacierSpec);
       break;
     case 'globalaccelerator':
       await spec_aws_globalaccelerator.loadLibrary();
-      registerSpec(spec_aws_globalaccelerator.globalacceleratorSpec.name, () => spec_aws_globalaccelerator.globalacceleratorSpec);
+      registerSpec(spec_aws_globalaccelerator.globalacceleratorSpec.name,
+          () => spec_aws_globalaccelerator.globalacceleratorSpec);
       break;
     case 'glow':
       await spec_glow.loadLibrary();
@@ -3146,7 +5565,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'gltfjsx':
       await spec_gltfjsx.loadLibrary();
-      registerSpec(spec_gltfjsx.gltfjsxSpec.name, () => spec_gltfjsx.gltfjsxSpec);
+      registerSpec(
+          spec_gltfjsx.gltfjsxSpec.name, () => spec_gltfjsx.gltfjsxSpec);
       break;
     case 'glue':
       await spec_aws_glue.loadLibrary();
@@ -3158,7 +5578,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'go-task':
       await spec_task_go_task.loadLibrary();
-      registerSpec(spec_task_go_task.goTaskSpec.name, () => spec_task_go_task.goTaskSpec);
+      registerSpec(spec_task_go_task.goTaskSpec.name,
+          () => spec_task_go_task.goTaskSpec);
       break;
     case 'goctl':
       await spec_goctl.loadLibrary();
@@ -3166,11 +5587,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'googler':
       await spec_googler.loadLibrary();
-      registerSpec(spec_googler.googlerSpec.name, () => spec_googler.googlerSpec);
+      registerSpec(
+          spec_googler.googlerSpec.name, () => spec_googler.googlerSpec);
       break;
     case 'goreleaser':
       await spec_goreleaser.loadLibrary();
-      registerSpec(spec_goreleaser.goreleaserSpec.name, () => spec_goreleaser.goreleaserSpec);
+      registerSpec(spec_goreleaser.goreleaserSpec.name,
+          () => spec_goreleaser.goreleaserSpec);
       break;
     case 'goto':
       await spec_goto.loadLibrary();
@@ -3182,29 +5605,36 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'grafana':
       await spec_aws_grafana.loadLibrary();
-      registerSpec(spec_aws_grafana.grafanaSpec.name, () => spec_aws_grafana.grafanaSpec);
+      registerSpec(spec_aws_grafana.grafanaSpec.name,
+          () => spec_aws_grafana.grafanaSpec);
       await spec_az_2_53_0_grafana.loadLibrary();
-      registerSpec(spec_az_2_53_0_grafana.grafanaSpec.name, () => spec_az_2_53_0_grafana.grafanaSpec);
+      registerSpec(spec_az_2_53_0_grafana.grafanaSpec.name,
+          () => spec_az_2_53_0_grafana.grafanaSpec);
       break;
     case 'graph':
       await spec_az_2_53_0_graph.loadLibrary();
-      registerSpec(spec_az_2_53_0_graph.graphSpec.name, () => spec_az_2_53_0_graph.graphSpec);
+      registerSpec(spec_az_2_53_0_graph.graphSpec.name,
+          () => spec_az_2_53_0_graph.graphSpec);
       break;
     case 'graph-services':
       await spec_az_2_53_0_graph_services.loadLibrary();
-      registerSpec(spec_az_2_53_0_graph_services.graphServicesSpec.name, () => spec_az_2_53_0_graph_services.graphServicesSpec);
+      registerSpec(spec_az_2_53_0_graph_services.graphServicesSpec.name,
+          () => spec_az_2_53_0_graph_services.graphServicesSpec);
       break;
     case 'graphcdn':
       await spec_graphcdn.loadLibrary();
-      registerSpec(spec_graphcdn.graphcdnSpec.name, () => spec_graphcdn.graphcdnSpec);
+      registerSpec(
+          spec_graphcdn.graphcdnSpec.name, () => spec_graphcdn.graphcdnSpec);
       break;
     case 'greengrass':
       await spec_aws_greengrass.loadLibrary();
-      registerSpec(spec_aws_greengrass.greengrassSpec.name, () => spec_aws_greengrass.greengrassSpec);
+      registerSpec(spec_aws_greengrass.greengrassSpec.name,
+          () => spec_aws_greengrass.greengrassSpec);
       break;
     case 'greengrassv2':
       await spec_aws_greengrassv2.loadLibrary();
-      registerSpec(spec_aws_greengrassv2.greengrassv2Spec.name, () => spec_aws_greengrassv2.greengrassv2Spec);
+      registerSpec(spec_aws_greengrassv2.greengrassv2Spec.name,
+          () => spec_aws_greengrassv2.greengrassv2Spec);
       break;
     case 'grep':
       await spec_grep.loadLibrary();
@@ -3220,11 +5650,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'groundstation':
       await spec_aws_groundstation.loadLibrary();
-      registerSpec(spec_aws_groundstation.groundstationSpec.name, () => spec_aws_groundstation.groundstationSpec);
+      registerSpec(spec_aws_groundstation.groundstationSpec.name,
+          () => spec_aws_groundstation.groundstationSpec);
       break;
     case 'group':
       await spec_az_2_53_0_group.loadLibrary();
-      registerSpec(spec_az_2_53_0_group.groupSpec.name, () => spec_az_2_53_0_group.groupSpec);
+      registerSpec(spec_az_2_53_0_group.groupSpec.name,
+          () => spec_az_2_53_0_group.groupSpec);
       break;
     case 'gt':
       await spec_gt.loadLibrary();
@@ -3232,23 +5664,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'guardduty':
       await spec_aws_guardduty.loadLibrary();
-      registerSpec(spec_aws_guardduty.guarddutySpec.name, () => spec_aws_guardduty.guarddutySpec);
+      registerSpec(spec_aws_guardduty.guarddutySpec.name,
+          () => spec_aws_guardduty.guarddutySpec);
       break;
     case 'guestconfig':
       await spec_az_2_53_0_guestconfig.loadLibrary();
-      registerSpec(spec_az_2_53_0_guestconfig.guestconfigSpec.name, () => spec_az_2_53_0_guestconfig.guestconfigSpec);
+      registerSpec(spec_az_2_53_0_guestconfig.guestconfigSpec.name,
+          () => spec_az_2_53_0_guestconfig.guestconfigSpec);
       break;
     case 'hack':
       await spec_az_2_53_0_hack.loadLibrary();
-      registerSpec(spec_az_2_53_0_hack.hackSpec.name, () => spec_az_2_53_0_hack.hackSpec);
+      registerSpec(spec_az_2_53_0_hack.hackSpec.name,
+          () => spec_az_2_53_0_hack.hackSpec);
       break;
     case 'hanainstance':
       await spec_az_2_53_0_hanainstance.loadLibrary();
-      registerSpec(spec_az_2_53_0_hanainstance.hanainstanceSpec.name, () => spec_az_2_53_0_hanainstance.hanainstanceSpec);
+      registerSpec(spec_az_2_53_0_hanainstance.hanainstanceSpec.name,
+          () => spec_az_2_53_0_hanainstance.hanainstanceSpec);
       break;
     case 'hardhat':
       await spec_hardhat.loadLibrary();
-      registerSpec(spec_hardhat.hardhatSpec.name, () => spec_hardhat.hardhatSpec);
+      registerSpec(
+          spec_hardhat.hardhatSpec.name, () => spec_hardhat.hardhatSpec);
       break;
     case 'hasura':
       await spec_hasura.loadLibrary();
@@ -3256,11 +5693,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hb-service':
       await spec_hb_service.loadLibrary();
-      registerSpec(spec_hb_service.hbServiceSpec.name, () => spec_hb_service.hbServiceSpec);
+      registerSpec(spec_hb_service.hbServiceSpec.name,
+          () => spec_hb_service.hbServiceSpec);
       break;
     case 'hdinsight':
       await spec_az_2_53_0_hdinsight.loadLibrary();
-      registerSpec(spec_az_2_53_0_hdinsight.hdinsightSpec.name, () => spec_az_2_53_0_hdinsight.hdinsightSpec);
+      registerSpec(spec_az_2_53_0_hdinsight.hdinsightSpec.name,
+          () => spec_az_2_53_0_hdinsight.hdinsightSpec);
       break;
     case 'head':
       await spec_head.loadLibrary();
@@ -3268,23 +5707,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'health':
       await spec_aws_health.loadLibrary();
-      registerSpec(spec_aws_health.healthSpec.name, () => spec_aws_health.healthSpec);
+      registerSpec(
+          spec_aws_health.healthSpec.name, () => spec_aws_health.healthSpec);
       break;
     case 'healthbot':
       await spec_az_2_53_0_healthbot.loadLibrary();
-      registerSpec(spec_az_2_53_0_healthbot.healthbotSpec.name, () => spec_az_2_53_0_healthbot.healthbotSpec);
+      registerSpec(spec_az_2_53_0_healthbot.healthbotSpec.name,
+          () => spec_az_2_53_0_healthbot.healthbotSpec);
       break;
     case 'healthcare':
       await spec_gcloud_healthcare.loadLibrary();
-      registerSpec(spec_gcloud_healthcare.healthcareSpec.name, () => spec_gcloud_healthcare.healthcareSpec);
+      registerSpec(spec_gcloud_healthcare.healthcareSpec.name,
+          () => spec_gcloud_healthcare.healthcareSpec);
       break;
     case 'healthcareapis':
       await spec_az_2_53_0_healthcareapis.loadLibrary();
-      registerSpec(spec_az_2_53_0_healthcareapis.healthcareapisSpec.name, () => spec_az_2_53_0_healthcareapis.healthcareapisSpec);
+      registerSpec(spec_az_2_53_0_healthcareapis.healthcareapisSpec.name,
+          () => spec_az_2_53_0_healthcareapis.healthcareapisSpec);
       break;
     case 'healthlake':
       await spec_aws_healthlake.loadLibrary();
-      registerSpec(spec_aws_healthlake.healthlakeSpec.name, () => spec_aws_healthlake.healthlakeSpec);
+      registerSpec(spec_aws_healthlake.healthlakeSpec.name,
+          () => spec_aws_healthlake.healthlakeSpec);
       break;
     case 'helm':
       await spec_helm.loadLibrary();
@@ -3292,19 +5736,24 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'helmfile':
       await spec_helmfile.loadLibrary();
-      registerSpec(spec_helmfile.helmfileSpec.name, () => spec_helmfile.helmfileSpec);
+      registerSpec(
+          spec_helmfile.helmfileSpec.name, () => spec_helmfile.helmfileSpec);
       break;
     case 'help':
       await spec_dotnet_dotnet_help.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_help.helpSpec.name, () => spec_dotnet_dotnet_help.helpSpec);
+      registerSpec(spec_dotnet_dotnet_help.helpSpec.name,
+          () => spec_dotnet_dotnet_help.helpSpec);
       await spec_gcloud_help.loadLibrary();
-      registerSpec(spec_gcloud_help.helpSpec.name, () => spec_gcloud_help.helpSpec);
+      registerSpec(
+          spec_gcloud_help.helpSpec.name, () => spec_gcloud_help.helpSpec);
       break;
     case 'heroku':
       await spec_heroku_8_0_0.loadLibrary();
-      registerSpec(spec_heroku_8_0_0.herokuSpec.name, () => spec_heroku_8_0_0.herokuSpec);
+      registerSpec(spec_heroku_8_0_0.herokuSpec.name,
+          () => spec_heroku_8_0_0.herokuSpec);
       await spec_heroku_8_6_0.loadLibrary();
-      registerSpec(spec_heroku_8_6_0.herokuSpec.name, () => spec_heroku_8_6_0.herokuSpec);
+      registerSpec(spec_heroku_8_6_0.herokuSpec.name,
+          () => spec_heroku_8_6_0.herokuSpec);
       break;
     case 'hexo':
       await spec_hexo.loadLibrary();
@@ -3312,7 +5761,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'history':
       await spec_aws_history.loadLibrary();
-      registerSpec(spec_aws_history.historySpec.name, () => spec_aws_history.historySpec);
+      registerSpec(spec_aws_history.historySpec.name,
+          () => spec_aws_history.historySpec);
       break;
     case 'homey':
       await spec_homey.loadLibrary();
@@ -3320,7 +5770,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'honeycode':
       await spec_aws_honeycode.loadLibrary();
-      registerSpec(spec_aws_honeycode.honeycodeSpec.name, () => spec_aws_honeycode.honeycodeSpec);
+      registerSpec(spec_aws_honeycode.honeycodeSpec.name,
+          () => spec_aws_honeycode.honeycodeSpec);
       break;
     case 'hop':
       await spec_hop.loadLibrary();
@@ -3328,11 +5779,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hostname':
       await spec_hostname.loadLibrary();
-      registerSpec(spec_hostname.hostnameSpec.name, () => spec_hostname.hostnameSpec);
+      registerSpec(
+          spec_hostname.hostnameSpec.name, () => spec_hostname.hostnameSpec);
       break;
     case 'hpc-cache':
       await spec_az_2_53_0_hpc_cache.loadLibrary();
-      registerSpec(spec_az_2_53_0_hpc_cache.hpcCacheSpec.name, () => spec_az_2_53_0_hpc_cache.hpcCacheSpec);
+      registerSpec(spec_az_2_53_0_hpc_cache.hpcCacheSpec.name,
+          () => spec_az_2_53_0_hpc_cache.hpcCacheSpec);
       break;
     case 'htop':
       await spec_htop.loadLibrary();
@@ -3344,7 +5797,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'http.server':
       await spec_python_http_server.loadLibrary();
-      registerSpec(spec_python_http_server.httpServerSpec.name, () => spec_python_http_server.httpServerSpec);
+      registerSpec(spec_python_http_server.httpServerSpec.name,
+          () => spec_python_http_server.httpServerSpec);
       break;
     case 'httpy':
       await spec_httpy.loadLibrary();
@@ -3360,7 +5814,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hybridaks':
       await spec_az_2_53_0_hybridaks.loadLibrary();
-      registerSpec(spec_az_2_53_0_hybridaks.hybridaksSpec.name, () => spec_az_2_53_0_hybridaks.hybridaksSpec);
+      registerSpec(spec_az_2_53_0_hybridaks.hybridaksSpec.name,
+          () => spec_az_2_53_0_hybridaks.hybridaksSpec);
       break;
     case 'hyper':
       await spec_hyper.loadLibrary();
@@ -3368,7 +5823,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hyperfine':
       await spec_hyperfine.loadLibrary();
-      registerSpec(spec_hyperfine.hyperfineSpec.name, () => spec_hyperfine.hyperfineSpec);
+      registerSpec(spec_hyperfine.hyperfineSpec.name,
+          () => spec_hyperfine.hyperfineSpec);
       break;
     case 'iam':
       await spec_gcloud_iam.loadLibrary();
@@ -3388,13 +5844,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'identity':
       await spec_az_2_53_0_identity.loadLibrary();
-      registerSpec(spec_az_2_53_0_identity.identitySpec.name, () => spec_az_2_53_0_identity.identitySpec);
+      registerSpec(spec_az_2_53_0_identity.identitySpec.name,
+          () => spec_az_2_53_0_identity.identitySpec);
       await spec_gcloud_identity.loadLibrary();
-      registerSpec(spec_gcloud_identity.identitySpec.name, () => spec_gcloud_identity.identitySpec);
+      registerSpec(spec_gcloud_identity.identitySpec.name,
+          () => spec_gcloud_identity.identitySpec);
       break;
     case 'identitystore':
       await spec_aws_identitystore.loadLibrary();
-      registerSpec(spec_aws_identitystore.identitystoreSpec.name, () => spec_aws_identitystore.identitystoreSpec);
+      registerSpec(spec_aws_identitystore.identitystoreSpec.name,
+          () => spec_aws_identitystore.identitystoreSpec);
       break;
     case 'iex':
       await spec_iex.loadLibrary();
@@ -3406,19 +5865,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'image':
       await spec_az_2_53_0_image.loadLibrary();
-      registerSpec(spec_az_2_53_0_image.imageSpec.name, () => spec_az_2_53_0_image.imageSpec);
+      registerSpec(spec_az_2_53_0_image.imageSpec.name,
+          () => spec_az_2_53_0_image.imageSpec);
       break;
     case 'imagebuilder':
       await spec_aws_imagebuilder.loadLibrary();
-      registerSpec(spec_aws_imagebuilder.imagebuilderSpec.name, () => spec_aws_imagebuilder.imagebuilderSpec);
+      registerSpec(spec_aws_imagebuilder.imagebuilderSpec.name,
+          () => spec_aws_imagebuilder.imagebuilderSpec);
       break;
     case 'import-export':
       await spec_az_2_53_0_import_export.loadLibrary();
-      registerSpec(spec_az_2_53_0_import_export.importExportSpec.name, () => spec_az_2_53_0_import_export.importExportSpec);
+      registerSpec(spec_az_2_53_0_import_export.importExportSpec.name,
+          () => spec_az_2_53_0_import_export.importExportSpec);
       break;
     case 'importexport':
       await spec_aws_importexport.loadLibrary();
-      registerSpec(spec_aws_importexport.importexportSpec.name, () => spec_aws_importexport.importexportSpec);
+      registerSpec(spec_aws_importexport.importexportSpec.name,
+          () => spec_aws_importexport.importexportSpec);
       break;
     case 'index':
       await spec_appwrite.loadLibrary();
@@ -3426,113 +5889,140 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'info':
       await spec_gcloud_info.loadLibrary();
-      registerSpec(spec_gcloud_info.infoSpec.name, () => spec_gcloud_info.infoSpec);
+      registerSpec(
+          spec_gcloud_info.infoSpec.name, () => spec_gcloud_info.infoSpec);
       break;
     case 'init':
       await spec_az_2_53_0_init.loadLibrary();
-      registerSpec(spec_az_2_53_0_init.initSpec.name, () => spec_az_2_53_0_init.initSpec);
+      registerSpec(spec_az_2_53_0_init.initSpec.name,
+          () => spec_az_2_53_0_init.initSpec);
       await spec_gcloud_init.loadLibrary();
-      registerSpec(spec_gcloud_init.initSpec.name, () => spec_gcloud_init.initSpec);
+      registerSpec(
+          spec_gcloud_init.initSpec.name, () => spec_gcloud_init.initSpec);
       break;
     case 'inspector':
       await spec_aws_inspector.loadLibrary();
-      registerSpec(spec_aws_inspector.inspectorSpec.name, () => spec_aws_inspector.inspectorSpec);
+      registerSpec(spec_aws_inspector.inspectorSpec.name,
+          () => spec_aws_inspector.inspectorSpec);
       break;
     case 'inspector-scan':
       await spec_aws_inspector_scan.loadLibrary();
-      registerSpec(spec_aws_inspector_scan.inspectorScanSpec.name, () => spec_aws_inspector_scan.inspectorScanSpec);
+      registerSpec(spec_aws_inspector_scan.inspectorScanSpec.name,
+          () => spec_aws_inspector_scan.inspectorScanSpec);
       break;
     case 'inspector2':
       await spec_aws_inspector2.loadLibrary();
-      registerSpec(spec_aws_inspector2.inspector2Spec.name, () => spec_aws_inspector2.inspector2Spec);
+      registerSpec(spec_aws_inspector2.inspector2Spec.name,
+          () => spec_aws_inspector2.inspector2Spec);
       break;
     case 'install':
       await spec_install.loadLibrary();
-      registerSpec(spec_install.installSpec.name, () => spec_install.installSpec);
+      registerSpec(
+          spec_install.installSpec.name, () => spec_install.installSpec);
       break;
     case 'interactive':
       await spec_az_2_53_0_interactive.loadLibrary();
-      registerSpec(spec_az_2_53_0_interactive.interactiveSpec.name, () => spec_az_2_53_0_interactive.interactiveSpec);
+      registerSpec(spec_az_2_53_0_interactive.interactiveSpec.name,
+          () => spec_az_2_53_0_interactive.interactiveSpec);
       break;
     case 'internet-analyzer':
       await spec_az_2_53_0_internet_analyzer.loadLibrary();
-      registerSpec(spec_az_2_53_0_internet_analyzer.internetAnalyzerSpec.name, () => spec_az_2_53_0_internet_analyzer.internetAnalyzerSpec);
+      registerSpec(spec_az_2_53_0_internet_analyzer.internetAnalyzerSpec.name,
+          () => spec_az_2_53_0_internet_analyzer.internetAnalyzerSpec);
       break;
     case 'internetmonitor':
       await spec_aws_internetmonitor.loadLibrary();
-      registerSpec(spec_aws_internetmonitor.internetmonitorSpec.name, () => spec_aws_internetmonitor.internetmonitorSpec);
+      registerSpec(spec_aws_internetmonitor.internetmonitorSpec.name,
+          () => spec_aws_internetmonitor.internetmonitorSpec);
       break;
     case 'invoicing':
       await spec_aws_invoicing.loadLibrary();
-      registerSpec(spec_aws_invoicing.invoicingSpec.name, () => spec_aws_invoicing.invoicingSpec);
+      registerSpec(spec_aws_invoicing.invoicingSpec.name,
+          () => spec_aws_invoicing.invoicingSpec);
       break;
     case 'iot':
       await spec_aws_iot.loadLibrary();
       registerSpec(spec_aws_iot.iotSpec.name, () => spec_aws_iot.iotSpec);
       await spec_az_2_53_0_iot.loadLibrary();
-      registerSpec(spec_az_2_53_0_iot.iotSpec.name, () => spec_az_2_53_0_iot.iotSpec);
+      registerSpec(
+          spec_az_2_53_0_iot.iotSpec.name, () => spec_az_2_53_0_iot.iotSpec);
       await spec_gcloud_iot.loadLibrary();
       registerSpec(spec_gcloud_iot.iotSpec.name, () => spec_gcloud_iot.iotSpec);
       break;
     case 'iot-data':
       await spec_aws_iot_data.loadLibrary();
-      registerSpec(spec_aws_iot_data.iotDataSpec.name, () => spec_aws_iot_data.iotDataSpec);
+      registerSpec(spec_aws_iot_data.iotDataSpec.name,
+          () => spec_aws_iot_data.iotDataSpec);
       break;
     case 'iot-jobs-data':
       await spec_aws_iot_jobs_data.loadLibrary();
-      registerSpec(spec_aws_iot_jobs_data.iotJobsDataSpec.name, () => spec_aws_iot_jobs_data.iotJobsDataSpec);
+      registerSpec(spec_aws_iot_jobs_data.iotJobsDataSpec.name,
+          () => spec_aws_iot_jobs_data.iotJobsDataSpec);
       break;
     case 'iot1click-devices':
       await spec_aws_iot1click_devices.loadLibrary();
-      registerSpec(spec_aws_iot1click_devices.iot1clickDevicesSpec.name, () => spec_aws_iot1click_devices.iot1clickDevicesSpec);
+      registerSpec(spec_aws_iot1click_devices.iot1clickDevicesSpec.name,
+          () => spec_aws_iot1click_devices.iot1clickDevicesSpec);
       break;
     case 'iot1click-projects':
       await spec_aws_iot1click_projects.loadLibrary();
-      registerSpec(spec_aws_iot1click_projects.iot1clickProjectsSpec.name, () => spec_aws_iot1click_projects.iot1clickProjectsSpec);
+      registerSpec(spec_aws_iot1click_projects.iot1clickProjectsSpec.name,
+          () => spec_aws_iot1click_projects.iot1clickProjectsSpec);
       break;
     case 'iotanalytics':
       await spec_aws_iotanalytics.loadLibrary();
-      registerSpec(spec_aws_iotanalytics.iotanalyticsSpec.name, () => spec_aws_iotanalytics.iotanalyticsSpec);
+      registerSpec(spec_aws_iotanalytics.iotanalyticsSpec.name,
+          () => spec_aws_iotanalytics.iotanalyticsSpec);
       break;
     case 'iotdeviceadvisor':
       await spec_aws_iotdeviceadvisor.loadLibrary();
-      registerSpec(spec_aws_iotdeviceadvisor.iotdeviceadvisorSpec.name, () => spec_aws_iotdeviceadvisor.iotdeviceadvisorSpec);
+      registerSpec(spec_aws_iotdeviceadvisor.iotdeviceadvisorSpec.name,
+          () => spec_aws_iotdeviceadvisor.iotdeviceadvisorSpec);
       break;
     case 'iotevents':
       await spec_aws_iotevents.loadLibrary();
-      registerSpec(spec_aws_iotevents.ioteventsSpec.name, () => spec_aws_iotevents.ioteventsSpec);
+      registerSpec(spec_aws_iotevents.ioteventsSpec.name,
+          () => spec_aws_iotevents.ioteventsSpec);
       break;
     case 'iotevents-data':
       await spec_aws_iotevents_data.loadLibrary();
-      registerSpec(spec_aws_iotevents_data.ioteventsDataSpec.name, () => spec_aws_iotevents_data.ioteventsDataSpec);
+      registerSpec(spec_aws_iotevents_data.ioteventsDataSpec.name,
+          () => spec_aws_iotevents_data.ioteventsDataSpec);
       break;
     case 'iotfleethub':
       await spec_aws_iotfleethub.loadLibrary();
-      registerSpec(spec_aws_iotfleethub.iotfleethubSpec.name, () => spec_aws_iotfleethub.iotfleethubSpec);
+      registerSpec(spec_aws_iotfleethub.iotfleethubSpec.name,
+          () => spec_aws_iotfleethub.iotfleethubSpec);
       break;
     case 'iotfleetwise':
       await spec_aws_iotfleetwise.loadLibrary();
-      registerSpec(spec_aws_iotfleetwise.iotfleetwiseSpec.name, () => spec_aws_iotfleetwise.iotfleetwiseSpec);
+      registerSpec(spec_aws_iotfleetwise.iotfleetwiseSpec.name,
+          () => spec_aws_iotfleetwise.iotfleetwiseSpec);
       break;
     case 'iotsecuretunneling':
       await spec_aws_iotsecuretunneling.loadLibrary();
-      registerSpec(spec_aws_iotsecuretunneling.iotsecuretunnelingSpec.name, () => spec_aws_iotsecuretunneling.iotsecuretunnelingSpec);
+      registerSpec(spec_aws_iotsecuretunneling.iotsecuretunnelingSpec.name,
+          () => spec_aws_iotsecuretunneling.iotsecuretunnelingSpec);
       break;
     case 'iotsitewise':
       await spec_aws_iotsitewise.loadLibrary();
-      registerSpec(spec_aws_iotsitewise.iotsitewiseSpec.name, () => spec_aws_iotsitewise.iotsitewiseSpec);
+      registerSpec(spec_aws_iotsitewise.iotsitewiseSpec.name,
+          () => spec_aws_iotsitewise.iotsitewiseSpec);
       break;
     case 'iotthingsgraph':
       await spec_aws_iotthingsgraph.loadLibrary();
-      registerSpec(spec_aws_iotthingsgraph.iotthingsgraphSpec.name, () => spec_aws_iotthingsgraph.iotthingsgraphSpec);
+      registerSpec(spec_aws_iotthingsgraph.iotthingsgraphSpec.name,
+          () => spec_aws_iotthingsgraph.iotthingsgraphSpec);
       break;
     case 'iottwinmaker':
       await spec_aws_iottwinmaker.loadLibrary();
-      registerSpec(spec_aws_iottwinmaker.iottwinmakerSpec.name, () => spec_aws_iottwinmaker.iottwinmakerSpec);
+      registerSpec(spec_aws_iottwinmaker.iottwinmakerSpec.name,
+          () => spec_aws_iottwinmaker.iottwinmakerSpec);
       break;
     case 'iotwireless':
       await spec_aws_iotwireless.loadLibrary();
-      registerSpec(spec_aws_iotwireless.iotwirelessSpec.name, () => spec_aws_iotwireless.iotwirelessSpec);
+      registerSpec(spec_aws_iotwireless.iotwirelessSpec.name,
+          () => spec_aws_iotwireless.iotwirelessSpec);
       break;
     case 'ivs':
       await spec_aws_ivs.loadLibrary();
@@ -3540,11 +6030,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ivs-realtime':
       await spec_aws_ivs_realtime.loadLibrary();
-      registerSpec(spec_aws_ivs_realtime.ivsRealtimeSpec.name, () => spec_aws_ivs_realtime.ivsRealtimeSpec);
+      registerSpec(spec_aws_ivs_realtime.ivsRealtimeSpec.name,
+          () => spec_aws_ivs_realtime.ivsRealtimeSpec);
       break;
     case 'ivschat':
       await spec_aws_ivschat.loadLibrary();
-      registerSpec(spec_aws_ivschat.ivschatSpec.name, () => spec_aws_ivschat.ivschatSpec);
+      registerSpec(spec_aws_ivschat.ivschatSpec.name,
+          () => spec_aws_ivschat.ivschatSpec);
       break;
     case 'j':
       await spec_j.loadLibrary();
@@ -3580,7 +6072,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'jupyter':
       await spec_jupyter.loadLibrary();
-      registerSpec(spec_jupyter.jupyterSpec.name, () => spec_jupyter.jupyterSpec);
+      registerSpec(
+          spec_jupyter.jupyterSpec.name, () => spec_jupyter.jupyterSpec);
       break;
     case 'k6':
       await spec_k6.loadLibrary();
@@ -3588,15 +6081,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'k8s-configuration':
       await spec_az_2_53_0_k8s_configuration.loadLibrary();
-      registerSpec(spec_az_2_53_0_k8s_configuration.k8sConfigurationSpec.name, () => spec_az_2_53_0_k8s_configuration.k8sConfigurationSpec);
+      registerSpec(spec_az_2_53_0_k8s_configuration.k8sConfigurationSpec.name,
+          () => spec_az_2_53_0_k8s_configuration.k8sConfigurationSpec);
       break;
     case 'k8s-extension':
       await spec_az_2_53_0_k8s_extension.loadLibrary();
-      registerSpec(spec_az_2_53_0_k8s_extension.k8sExtensionSpec.name, () => spec_az_2_53_0_k8s_extension.k8sExtensionSpec);
+      registerSpec(spec_az_2_53_0_k8s_extension.k8sExtensionSpec.name,
+          () => spec_az_2_53_0_k8s_extension.k8sExtensionSpec);
       break;
     case 'k8sconfiguration':
       await spec_az_2_53_0_k8sconfiguration.loadLibrary();
-      registerSpec(spec_az_2_53_0_k8sconfiguration.k8sconfigurationSpec.name, () => spec_az_2_53_0_k8sconfiguration.k8sconfigurationSpec);
+      registerSpec(spec_az_2_53_0_k8sconfiguration.k8sconfigurationSpec.name,
+          () => spec_az_2_53_0_k8sconfiguration.k8sconfigurationSpec);
       break;
     case 'k9s':
       await spec_k9s.loadLibrary();
@@ -3604,39 +6100,48 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'kafka':
       await spec_aws_kafka.loadLibrary();
-      registerSpec(spec_aws_kafka.kafkaSpec.name, () => spec_aws_kafka.kafkaSpec);
+      registerSpec(
+          spec_aws_kafka.kafkaSpec.name, () => spec_aws_kafka.kafkaSpec);
       break;
     case 'kafkaconnect':
       await spec_aws_kafkaconnect.loadLibrary();
-      registerSpec(spec_aws_kafkaconnect.kafkaconnectSpec.name, () => spec_aws_kafkaconnect.kafkaconnectSpec);
+      registerSpec(spec_aws_kafkaconnect.kafkaconnectSpec.name,
+          () => spec_aws_kafkaconnect.kafkaconnectSpec);
       break;
     case 'kafkactl':
       await spec_kafkactl.loadLibrary();
-      registerSpec(spec_kafkactl.kafkactlSpec.name, () => spec_kafkactl.kafkactlSpec);
+      registerSpec(
+          spec_kafkactl.kafkactlSpec.name, () => spec_kafkactl.kafkactlSpec);
       break;
     case 'kdoctor':
       await spec_kdoctor.loadLibrary();
-      registerSpec(spec_kdoctor.kdoctorSpec.name, () => spec_kdoctor.kdoctorSpec);
+      registerSpec(
+          spec_kdoctor.kdoctorSpec.name, () => spec_kdoctor.kdoctorSpec);
       break;
     case 'kendra':
       await spec_aws_kendra.loadLibrary();
-      registerSpec(spec_aws_kendra.kendraSpec.name, () => spec_aws_kendra.kendraSpec);
+      registerSpec(
+          spec_aws_kendra.kendraSpec.name, () => spec_aws_kendra.kendraSpec);
       break;
     case 'kendra-ranking':
       await spec_aws_kendra_ranking.loadLibrary();
-      registerSpec(spec_aws_kendra_ranking.kendraRankingSpec.name, () => spec_aws_kendra_ranking.kendraRankingSpec);
+      registerSpec(spec_aws_kendra_ranking.kendraRankingSpec.name,
+          () => spec_aws_kendra_ranking.kendraRankingSpec);
       break;
     case 'keyspaces':
       await spec_aws_keyspaces.loadLibrary();
-      registerSpec(spec_aws_keyspaces.keyspacesSpec.name, () => spec_aws_keyspaces.keyspacesSpec);
+      registerSpec(spec_aws_keyspaces.keyspacesSpec.name,
+          () => spec_aws_keyspaces.keyspacesSpec);
       break;
     case 'keytool':
       await spec_keytool.loadLibrary();
-      registerSpec(spec_keytool.keytoolSpec.name, () => spec_keytool.keytoolSpec);
+      registerSpec(
+          spec_keytool.keytoolSpec.name, () => spec_keytool.keytoolSpec);
       break;
     case 'keyvault':
       await spec_az_2_53_0_keyvault.loadLibrary();
-      registerSpec(spec_az_2_53_0_keyvault.keyvaultSpec.name, () => spec_az_2_53_0_keyvault.keyvaultSpec);
+      registerSpec(spec_az_2_53_0_keyvault.keyvaultSpec.name,
+          () => spec_az_2_53_0_keyvault.keyvaultSpec);
       break;
     case 'kill':
       await spec_kill.loadLibrary();
@@ -3644,7 +6149,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'killall':
       await spec_killall.loadLibrary();
-      registerSpec(spec_killall.killallSpec.name, () => spec_killall.killallSpec);
+      registerSpec(
+          spec_killall.killallSpec.name, () => spec_killall.killallSpec);
       break;
     case 'kind':
       await spec_kind.loadLibrary();
@@ -3652,35 +6158,50 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'kinesis':
       await spec_aws_kinesis.loadLibrary();
-      registerSpec(spec_aws_kinesis.kinesisSpec.name, () => spec_aws_kinesis.kinesisSpec);
+      registerSpec(spec_aws_kinesis.kinesisSpec.name,
+          () => spec_aws_kinesis.kinesisSpec);
       break;
     case 'kinesis-video-archived-media':
       await spec_aws_kinesis_video_archived_media.loadLibrary();
-      registerSpec(spec_aws_kinesis_video_archived_media.kinesisVideoArchivedMediaSpec.name, () => spec_aws_kinesis_video_archived_media.kinesisVideoArchivedMediaSpec);
+      registerSpec(
+          spec_aws_kinesis_video_archived_media
+              .kinesisVideoArchivedMediaSpec.name,
+          () => spec_aws_kinesis_video_archived_media
+              .kinesisVideoArchivedMediaSpec);
       break;
     case 'kinesis-video-media':
       await spec_aws_kinesis_video_media.loadLibrary();
-      registerSpec(spec_aws_kinesis_video_media.kinesisVideoMediaSpec.name, () => spec_aws_kinesis_video_media.kinesisVideoMediaSpec);
+      registerSpec(spec_aws_kinesis_video_media.kinesisVideoMediaSpec.name,
+          () => spec_aws_kinesis_video_media.kinesisVideoMediaSpec);
       break;
     case 'kinesis-video-signaling':
       await spec_aws_kinesis_video_signaling.loadLibrary();
-      registerSpec(spec_aws_kinesis_video_signaling.kinesisVideoSignalingSpec.name, () => spec_aws_kinesis_video_signaling.kinesisVideoSignalingSpec);
+      registerSpec(
+          spec_aws_kinesis_video_signaling.kinesisVideoSignalingSpec.name,
+          () => spec_aws_kinesis_video_signaling.kinesisVideoSignalingSpec);
       break;
     case 'kinesis-video-webrtc-storage':
       await spec_aws_kinesis_video_webrtc_storage.loadLibrary();
-      registerSpec(spec_aws_kinesis_video_webrtc_storage.kinesisVideoWebrtcStorageSpec.name, () => spec_aws_kinesis_video_webrtc_storage.kinesisVideoWebrtcStorageSpec);
+      registerSpec(
+          spec_aws_kinesis_video_webrtc_storage
+              .kinesisVideoWebrtcStorageSpec.name,
+          () => spec_aws_kinesis_video_webrtc_storage
+              .kinesisVideoWebrtcStorageSpec);
       break;
     case 'kinesisanalytics':
       await spec_aws_kinesisanalytics.loadLibrary();
-      registerSpec(spec_aws_kinesisanalytics.kinesisanalyticsSpec.name, () => spec_aws_kinesisanalytics.kinesisanalyticsSpec);
+      registerSpec(spec_aws_kinesisanalytics.kinesisanalyticsSpec.name,
+          () => spec_aws_kinesisanalytics.kinesisanalyticsSpec);
       break;
     case 'kinesisanalyticsv2':
       await spec_aws_kinesisanalyticsv2.loadLibrary();
-      registerSpec(spec_aws_kinesisanalyticsv2.kinesisanalyticsv2Spec.name, () => spec_aws_kinesisanalyticsv2.kinesisanalyticsv2Spec);
+      registerSpec(spec_aws_kinesisanalyticsv2.kinesisanalyticsv2Spec.name,
+          () => spec_aws_kinesisanalyticsv2.kinesisanalyticsv2Spec);
       break;
     case 'kinesisvideo':
       await spec_aws_kinesisvideo.loadLibrary();
-      registerSpec(spec_aws_kinesisvideo.kinesisvideoSpec.name, () => spec_aws_kinesisvideo.kinesisvideoSpec);
+      registerSpec(spec_aws_kinesisvideo.kinesisvideoSpec.name,
+          () => spec_aws_kinesisvideo.kinesisvideoSpec);
       break;
     case 'kitty':
       await spec_kitty.loadLibrary();
@@ -3702,31 +6223,48 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'kotlinc':
       await spec_kotlinc.loadLibrary();
-      registerSpec(spec_kotlinc.kotlincSpec.name, () => spec_kotlinc.kotlincSpec);
+      registerSpec(
+          spec_kotlinc.kotlincSpec.name, () => spec_kotlinc.kotlincSpec);
+      break;
+    case 'kubecolor':
+      await spec_kubecolor.loadLibrary();
+      registerSpec(spec_kubecolor.kubecolorSpec.name,
+          () => spec_kubecolor.kubecolorSpec);
+      break;
+    case 'kubectl':
+      await spec_kubectl.loadLibrary();
+      registerSpec(
+          spec_kubectl.kubectlSpec.name, () => spec_kubectl.kubectlSpec);
       break;
     case 'kusto':
       await spec_az_2_53_0_kusto.loadLibrary();
-      registerSpec(spec_az_2_53_0_kusto.kustoSpec.name, () => spec_az_2_53_0_kusto.kustoSpec);
+      registerSpec(spec_az_2_53_0_kusto.kustoSpec.name,
+          () => spec_az_2_53_0_kusto.kustoSpec);
       break;
     case 'lab':
       await spec_az_2_53_0_lab.loadLibrary();
-      registerSpec(spec_az_2_53_0_lab.labSpec.name, () => spec_az_2_53_0_lab.labSpec);
+      registerSpec(
+          spec_az_2_53_0_lab.labSpec.name, () => spec_az_2_53_0_lab.labSpec);
       break;
     case 'lakeformation':
       await spec_aws_lakeformation.loadLibrary();
-      registerSpec(spec_aws_lakeformation.lakeformationSpec.name, () => spec_aws_lakeformation.lakeformationSpec);
+      registerSpec(spec_aws_lakeformation.lakeformationSpec.name,
+          () => spec_aws_lakeformation.lakeformationSpec);
       break;
     case 'laravel':
       await spec_laravel.loadLibrary();
-      registerSpec(spec_laravel.laravelSpec.name, () => spec_laravel.laravelSpec);
+      registerSpec(
+          spec_laravel.laravelSpec.name, () => spec_laravel.laravelSpec);
       break;
     case 'launch-wizard':
       await spec_aws_launch_wizard.loadLibrary();
-      registerSpec(spec_aws_launch_wizard.launchWizardSpec.name, () => spec_aws_launch_wizard.launchWizardSpec);
+      registerSpec(spec_aws_launch_wizard.launchWizardSpec.name,
+          () => spec_aws_launch_wizard.launchWizardSpec);
       break;
     case 'launchctl':
       await spec_launchctl.loadLibrary();
-      registerSpec(spec_launchctl.launchctlSpec.name, () => spec_launchctl.launchctlSpec);
+      registerSpec(spec_launchctl.launchctlSpec.name,
+          () => spec_launchctl.launchctlSpec);
       break;
     case 'ldd':
       await spec_ldd.loadLibrary();
@@ -3742,35 +6280,49 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'lex-models':
       await spec_aws_lex_models.loadLibrary();
-      registerSpec(spec_aws_lex_models.lexModelsSpec.name, () => spec_aws_lex_models.lexModelsSpec);
+      registerSpec(spec_aws_lex_models.lexModelsSpec.name,
+          () => spec_aws_lex_models.lexModelsSpec);
       break;
     case 'lex-runtime':
       await spec_aws_lex_runtime.loadLibrary();
-      registerSpec(spec_aws_lex_runtime.lexRuntimeSpec.name, () => spec_aws_lex_runtime.lexRuntimeSpec);
+      registerSpec(spec_aws_lex_runtime.lexRuntimeSpec.name,
+          () => spec_aws_lex_runtime.lexRuntimeSpec);
       break;
     case 'lexv2-models':
       await spec_aws_lexv2_models.loadLibrary();
-      registerSpec(spec_aws_lexv2_models.lexv2ModelsSpec.name, () => spec_aws_lexv2_models.lexv2ModelsSpec);
+      registerSpec(spec_aws_lexv2_models.lexv2ModelsSpec.name,
+          () => spec_aws_lexv2_models.lexv2ModelsSpec);
       break;
     case 'lexv2-runtime':
       await spec_aws_lexv2_runtime.loadLibrary();
-      registerSpec(spec_aws_lexv2_runtime.lexv2RuntimeSpec.name, () => spec_aws_lexv2_runtime.lexv2RuntimeSpec);
+      registerSpec(spec_aws_lexv2_runtime.lexv2RuntimeSpec.name,
+          () => spec_aws_lexv2_runtime.lexv2RuntimeSpec);
       break;
     case 'license-manager':
       await spec_aws_license_manager.loadLibrary();
-      registerSpec(spec_aws_license_manager.licenseManagerSpec.name, () => spec_aws_license_manager.licenseManagerSpec);
+      registerSpec(spec_aws_license_manager.licenseManagerSpec.name,
+          () => spec_aws_license_manager.licenseManagerSpec);
       break;
     case 'license-manager-linux-subscriptions':
       await spec_aws_license_manager_linux_subscriptions.loadLibrary();
-      registerSpec(spec_aws_license_manager_linux_subscriptions.licenseManagerLinuxSubscriptionsSpec.name, () => spec_aws_license_manager_linux_subscriptions.licenseManagerLinuxSubscriptionsSpec);
+      registerSpec(
+          spec_aws_license_manager_linux_subscriptions
+              .licenseManagerLinuxSubscriptionsSpec.name,
+          () => spec_aws_license_manager_linux_subscriptions
+              .licenseManagerLinuxSubscriptionsSpec);
       break;
     case 'license-manager-user-subscriptions':
       await spec_aws_license_manager_user_subscriptions.loadLibrary();
-      registerSpec(spec_aws_license_manager_user_subscriptions.licenseManagerUserSubscriptionsSpec.name, () => spec_aws_license_manager_user_subscriptions.licenseManagerUserSubscriptionsSpec);
+      registerSpec(
+          spec_aws_license_manager_user_subscriptions
+              .licenseManagerUserSubscriptionsSpec.name,
+          () => spec_aws_license_manager_user_subscriptions
+              .licenseManagerUserSubscriptionsSpec);
       break;
     case 'lightsail':
       await spec_aws_lightsail.loadLibrary();
-      registerSpec(spec_aws_lightsail.lightsailSpec.name, () => spec_aws_lightsail.lightsailSpec);
+      registerSpec(spec_aws_lightsail.lightsailSpec.name,
+          () => spec_aws_lightsail.lightsailSpec);
       break;
     case 'lima':
       await spec_lima.loadLibrary();
@@ -3778,7 +6330,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'list':
       await spec_dotnet_dotnet_list.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_list.listSpec.name, () => spec_dotnet_dotnet_list.listSpec);
+      registerSpec(spec_dotnet_dotnet_list.listSpec.name,
+          () => spec_dotnet_dotnet_list.listSpec);
       break;
     case 'ln':
       await spec_ln.loadLibrary();
@@ -3786,15 +6339,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'load':
       await spec_az_2_53_0_load.loadLibrary();
-      registerSpec(spec_az_2_53_0_load.loadSpec.name, () => spec_az_2_53_0_load.loadSpec);
+      registerSpec(spec_az_2_53_0_load.loadSpec.name,
+          () => spec_az_2_53_0_load.loadSpec);
       break;
     case 'location':
       await spec_aws_location.loadLibrary();
-      registerSpec(spec_aws_location.locationSpec.name, () => spec_aws_location.locationSpec);
+      registerSpec(spec_aws_location.locationSpec.name,
+          () => spec_aws_location.locationSpec);
       break;
     case 'lock':
       await spec_az_2_53_0_lock.loadLibrary();
-      registerSpec(spec_az_2_53_0_lock.lockSpec.name, () => spec_az_2_53_0_lock.lockSpec);
+      registerSpec(spec_az_2_53_0_lock.lockSpec.name,
+          () => spec_az_2_53_0_lock.lockSpec);
       break;
     case 'locust':
       await spec_locust.loadLibrary();
@@ -3802,23 +6358,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'logging':
       await spec_gcloud_logging.loadLibrary();
-      registerSpec(spec_gcloud_logging.loggingSpec.name, () => spec_gcloud_logging.loggingSpec);
+      registerSpec(spec_gcloud_logging.loggingSpec.name,
+          () => spec_gcloud_logging.loggingSpec);
       break;
     case 'logic':
       await spec_az_2_53_0_logic.loadLibrary();
-      registerSpec(spec_az_2_53_0_logic.logicSpec.name, () => spec_az_2_53_0_logic.logicSpec);
+      registerSpec(spec_az_2_53_0_logic.logicSpec.name,
+          () => spec_az_2_53_0_logic.logicSpec);
       break;
     case 'logicapp':
       await spec_az_2_53_0_logicapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_logicapp.logicappSpec.name, () => spec_az_2_53_0_logicapp.logicappSpec);
+      registerSpec(spec_az_2_53_0_logicapp.logicappSpec.name,
+          () => spec_az_2_53_0_logicapp.logicappSpec);
       break;
     case 'login':
       await spec_az_2_53_0_login.loadLibrary();
-      registerSpec(spec_az_2_53_0_login.loginSpec.name, () => spec_az_2_53_0_login.loginSpec);
+      registerSpec(spec_az_2_53_0_login.loginSpec.name,
+          () => spec_az_2_53_0_login.loginSpec);
       break;
     case 'logout':
       await spec_az_2_53_0_logout.loadLibrary();
-      registerSpec(spec_az_2_53_0_logout.logoutSpec.name, () => spec_az_2_53_0_logout.logoutSpec);
+      registerSpec(spec_az_2_53_0_logout.logoutSpec.name,
+          () => spec_az_2_53_0_logout.logoutSpec);
       break;
     case 'logs':
       await spec_aws_logs.loadLibrary();
@@ -3826,19 +6387,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'logz':
       await spec_az_2_53_0_logz.loadLibrary();
-      registerSpec(spec_az_2_53_0_logz.logzSpec.name, () => spec_az_2_53_0_logz.logzSpec);
+      registerSpec(spec_az_2_53_0_logz.logzSpec.name,
+          () => spec_az_2_53_0_logz.logzSpec);
       break;
     case 'lookoutequipment':
       await spec_aws_lookoutequipment.loadLibrary();
-      registerSpec(spec_aws_lookoutequipment.lookoutequipmentSpec.name, () => spec_aws_lookoutequipment.lookoutequipmentSpec);
+      registerSpec(spec_aws_lookoutequipment.lookoutequipmentSpec.name,
+          () => spec_aws_lookoutequipment.lookoutequipmentSpec);
       break;
     case 'lookoutmetrics':
       await spec_aws_lookoutmetrics.loadLibrary();
-      registerSpec(spec_aws_lookoutmetrics.lookoutmetricsSpec.name, () => spec_aws_lookoutmetrics.lookoutmetricsSpec);
+      registerSpec(spec_aws_lookoutmetrics.lookoutmetricsSpec.name,
+          () => spec_aws_lookoutmetrics.lookoutmetricsSpec);
       break;
     case 'lookoutvision':
       await spec_aws_lookoutvision.loadLibrary();
-      registerSpec(spec_aws_lookoutvision.lookoutvisionSpec.name, () => spec_aws_lookoutvision.lookoutvisionSpec);
+      registerSpec(spec_aws_lookoutvision.lookoutvisionSpec.name,
+          () => spec_aws_lookoutvision.lookoutvisionSpec);
       break;
     case 'lp':
       await spec_lp.loadLibrary();
@@ -3878,15 +6443,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'machinelearning':
       await spec_aws_machinelearning.loadLibrary();
-      registerSpec(spec_aws_machinelearning.machinelearningSpec.name, () => spec_aws_machinelearning.machinelearningSpec);
+      registerSpec(spec_aws_machinelearning.machinelearningSpec.name,
+          () => spec_aws_machinelearning.machinelearningSpec);
       break;
     case 'macie':
       await spec_aws_macie.loadLibrary();
-      registerSpec(spec_aws_macie.macieSpec.name, () => spec_aws_macie.macieSpec);
+      registerSpec(
+          spec_aws_macie.macieSpec.name, () => spec_aws_macie.macieSpec);
       break;
     case 'macie2':
       await spec_aws_macie2.loadLibrary();
-      registerSpec(spec_aws_macie2.macie2Spec.name, () => spec_aws_macie2.macie2Spec);
+      registerSpec(
+          spec_aws_macie2.macie2Spec.name, () => spec_aws_macie2.macie2Spec);
       break;
     case 'mackup':
       await spec_mackup.loadLibrary();
@@ -3894,15 +6462,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'magento':
       await spec_magento.loadLibrary();
-      registerSpec(spec_magento.magentoSpec.name, () => spec_magento.magentoSpec);
+      registerSpec(
+          spec_magento.magentoSpec.name, () => spec_magento.magentoSpec);
       break;
     case 'maigret':
       await spec_maigret.loadLibrary();
-      registerSpec(spec_maigret.maigretSpec.name, () => spec_maigret.maigretSpec);
+      registerSpec(
+          spec_maigret.maigretSpec.name, () => spec_maigret.maigretSpec);
       break;
     case 'mailmanager':
       await spec_aws_mailmanager.loadLibrary();
-      registerSpec(spec_aws_mailmanager.mailmanagerSpec.name, () => spec_aws_mailmanager.mailmanagerSpec);
+      registerSpec(spec_aws_mailmanager.mailmanagerSpec.name,
+          () => spec_aws_mailmanager.mailmanagerSpec);
       break;
     case 'mailsy':
       await spec_mailsy.loadLibrary();
@@ -3910,11 +6481,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'main':
       await spec_shell_config.loadLibrary();
-      registerSpec(spec_shell_config.mainSpec.name, () => spec_shell_config.mainSpec);
+      registerSpec(
+          spec_shell_config.mainSpec.name, () => spec_shell_config.mainSpec);
       break;
     case 'maintenance':
       await spec_az_2_53_0_maintenance.loadLibrary();
-      registerSpec(spec_az_2_53_0_maintenance.maintenanceSpec.name, () => spec_az_2_53_0_maintenance.maintenanceSpec);
+      registerSpec(spec_az_2_53_0_maintenance.maintenanceSpec.name,
+          () => spec_az_2_53_0_maintenance.maintenanceSpec);
       break;
     case 'make':
       await spec_make.loadLibrary();
@@ -3922,59 +6495,79 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'managed-cassandra':
       await spec_az_2_53_0_managed_cassandra.loadLibrary();
-      registerSpec(spec_az_2_53_0_managed_cassandra.managedCassandraSpec.name, () => spec_az_2_53_0_managed_cassandra.managedCassandraSpec);
+      registerSpec(spec_az_2_53_0_managed_cassandra.managedCassandraSpec.name,
+          () => spec_az_2_53_0_managed_cassandra.managedCassandraSpec);
       break;
     case 'managedapp':
       await spec_az_2_53_0_managedapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_managedapp.managedappSpec.name, () => spec_az_2_53_0_managedapp.managedappSpec);
+      registerSpec(spec_az_2_53_0_managedapp.managedappSpec.name,
+          () => spec_az_2_53_0_managedapp.managedappSpec);
       break;
     case 'managedblockchain':
       await spec_aws_managedblockchain.loadLibrary();
-      registerSpec(spec_aws_managedblockchain.managedblockchainSpec.name, () => spec_aws_managedblockchain.managedblockchainSpec);
+      registerSpec(spec_aws_managedblockchain.managedblockchainSpec.name,
+          () => spec_aws_managedblockchain.managedblockchainSpec);
       break;
     case 'managedblockchain-query':
       await spec_aws_managedblockchain_query.loadLibrary();
-      registerSpec(spec_aws_managedblockchain_query.managedblockchainQuerySpec.name, () => spec_aws_managedblockchain_query.managedblockchainQuerySpec);
+      registerSpec(
+          spec_aws_managedblockchain_query.managedblockchainQuerySpec.name,
+          () => spec_aws_managedblockchain_query.managedblockchainQuerySpec);
       break;
     case 'managedservices':
       await spec_az_2_53_0_managedservices.loadLibrary();
-      registerSpec(spec_az_2_53_0_managedservices.managedservicesSpec.name, () => spec_az_2_53_0_managedservices.managedservicesSpec);
+      registerSpec(spec_az_2_53_0_managedservices.managedservicesSpec.name,
+          () => spec_az_2_53_0_managedservices.managedservicesSpec);
       break;
     case 'managementpartner':
       await spec_az_2_53_0_managementpartner.loadLibrary();
-      registerSpec(spec_az_2_53_0_managementpartner.managementpartnerSpec.name, () => spec_az_2_53_0_managementpartner.managementpartnerSpec);
+      registerSpec(spec_az_2_53_0_managementpartner.managementpartnerSpec.name,
+          () => spec_az_2_53_0_managementpartner.managementpartnerSpec);
       break;
     case 'maps':
       await spec_az_2_53_0_maps.loadLibrary();
-      registerSpec(spec_az_2_53_0_maps.mapsSpec.name, () => spec_az_2_53_0_maps.mapsSpec);
+      registerSpec(spec_az_2_53_0_maps.mapsSpec.name,
+          () => spec_az_2_53_0_maps.mapsSpec);
       break;
     case 'mariadb':
       await spec_az_2_53_0_mariadb.loadLibrary();
-      registerSpec(spec_az_2_53_0_mariadb.mariadbSpec.name, () => spec_az_2_53_0_mariadb.mariadbSpec);
+      registerSpec(spec_az_2_53_0_mariadb.mariadbSpec.name,
+          () => spec_az_2_53_0_mariadb.mariadbSpec);
       break;
     case 'marketplace-agreement':
       await spec_aws_marketplace_agreement.loadLibrary();
-      registerSpec(spec_aws_marketplace_agreement.marketplaceAgreementSpec.name, () => spec_aws_marketplace_agreement.marketplaceAgreementSpec);
+      registerSpec(spec_aws_marketplace_agreement.marketplaceAgreementSpec.name,
+          () => spec_aws_marketplace_agreement.marketplaceAgreementSpec);
       break;
     case 'marketplace-catalog':
       await spec_aws_marketplace_catalog.loadLibrary();
-      registerSpec(spec_aws_marketplace_catalog.marketplaceCatalogSpec.name, () => spec_aws_marketplace_catalog.marketplaceCatalogSpec);
+      registerSpec(spec_aws_marketplace_catalog.marketplaceCatalogSpec.name,
+          () => spec_aws_marketplace_catalog.marketplaceCatalogSpec);
       break;
     case 'marketplace-deployment':
       await spec_aws_marketplace_deployment.loadLibrary();
-      registerSpec(spec_aws_marketplace_deployment.marketplaceDeploymentSpec.name, () => spec_aws_marketplace_deployment.marketplaceDeploymentSpec);
+      registerSpec(
+          spec_aws_marketplace_deployment.marketplaceDeploymentSpec.name,
+          () => spec_aws_marketplace_deployment.marketplaceDeploymentSpec);
       break;
     case 'marketplace-entitlement':
       await spec_aws_marketplace_entitlement.loadLibrary();
-      registerSpec(spec_aws_marketplace_entitlement.marketplaceEntitlementSpec.name, () => spec_aws_marketplace_entitlement.marketplaceEntitlementSpec);
+      registerSpec(
+          spec_aws_marketplace_entitlement.marketplaceEntitlementSpec.name,
+          () => spec_aws_marketplace_entitlement.marketplaceEntitlementSpec);
       break;
     case 'marketplace-reporting':
       await spec_aws_marketplace_reporting.loadLibrary();
-      registerSpec(spec_aws_marketplace_reporting.marketplaceReportingSpec.name, () => spec_aws_marketplace_reporting.marketplaceReportingSpec);
+      registerSpec(spec_aws_marketplace_reporting.marketplaceReportingSpec.name,
+          () => spec_aws_marketplace_reporting.marketplaceReportingSpec);
       break;
     case 'marketplacecommerceanalytics':
       await spec_aws_marketplacecommerceanalytics.loadLibrary();
-      registerSpec(spec_aws_marketplacecommerceanalytics.marketplacecommerceanalyticsSpec.name, () => spec_aws_marketplacecommerceanalytics.marketplacecommerceanalyticsSpec);
+      registerSpec(
+          spec_aws_marketplacecommerceanalytics
+              .marketplacecommerceanalyticsSpec.name,
+          () => spec_aws_marketplacecommerceanalytics
+              .marketplacecommerceanalyticsSpec);
       break;
     case 'mas':
       await spec_mas.loadLibrary();
@@ -3994,47 +6587,58 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'mediaconnect':
       await spec_aws_mediaconnect.loadLibrary();
-      registerSpec(spec_aws_mediaconnect.mediaconnectSpec.name, () => spec_aws_mediaconnect.mediaconnectSpec);
+      registerSpec(spec_aws_mediaconnect.mediaconnectSpec.name,
+          () => spec_aws_mediaconnect.mediaconnectSpec);
       break;
     case 'mediaconvert':
       await spec_aws_mediaconvert.loadLibrary();
-      registerSpec(spec_aws_mediaconvert.mediaconvertSpec.name, () => spec_aws_mediaconvert.mediaconvertSpec);
+      registerSpec(spec_aws_mediaconvert.mediaconvertSpec.name,
+          () => spec_aws_mediaconvert.mediaconvertSpec);
       break;
     case 'medialive':
       await spec_aws_medialive.loadLibrary();
-      registerSpec(spec_aws_medialive.medialiveSpec.name, () => spec_aws_medialive.medialiveSpec);
+      registerSpec(spec_aws_medialive.medialiveSpec.name,
+          () => spec_aws_medialive.medialiveSpec);
       break;
     case 'mediapackage':
       await spec_aws_mediapackage.loadLibrary();
-      registerSpec(spec_aws_mediapackage.mediapackageSpec.name, () => spec_aws_mediapackage.mediapackageSpec);
+      registerSpec(spec_aws_mediapackage.mediapackageSpec.name,
+          () => spec_aws_mediapackage.mediapackageSpec);
       break;
     case 'mediapackage-vod':
       await spec_aws_mediapackage_vod.loadLibrary();
-      registerSpec(spec_aws_mediapackage_vod.mediapackageVodSpec.name, () => spec_aws_mediapackage_vod.mediapackageVodSpec);
+      registerSpec(spec_aws_mediapackage_vod.mediapackageVodSpec.name,
+          () => spec_aws_mediapackage_vod.mediapackageVodSpec);
       break;
     case 'mediapackagev2':
       await spec_aws_mediapackagev2.loadLibrary();
-      registerSpec(spec_aws_mediapackagev2.mediapackagev2Spec.name, () => spec_aws_mediapackagev2.mediapackagev2Spec);
+      registerSpec(spec_aws_mediapackagev2.mediapackagev2Spec.name,
+          () => spec_aws_mediapackagev2.mediapackagev2Spec);
       break;
     case 'mediastore':
       await spec_aws_mediastore.loadLibrary();
-      registerSpec(spec_aws_mediastore.mediastoreSpec.name, () => spec_aws_mediastore.mediastoreSpec);
+      registerSpec(spec_aws_mediastore.mediastoreSpec.name,
+          () => spec_aws_mediastore.mediastoreSpec);
       break;
     case 'mediastore-data':
       await spec_aws_mediastore_data.loadLibrary();
-      registerSpec(spec_aws_mediastore_data.mediastoreDataSpec.name, () => spec_aws_mediastore_data.mediastoreDataSpec);
+      registerSpec(spec_aws_mediastore_data.mediastoreDataSpec.name,
+          () => spec_aws_mediastore_data.mediastoreDataSpec);
       break;
     case 'mediatailor':
       await spec_aws_mediatailor.loadLibrary();
-      registerSpec(spec_aws_mediatailor.mediatailorSpec.name, () => spec_aws_mediatailor.mediatailorSpec);
+      registerSpec(spec_aws_mediatailor.mediatailorSpec.name,
+          () => spec_aws_mediatailor.mediatailorSpec);
       break;
     case 'medical-imaging':
       await spec_aws_medical_imaging.loadLibrary();
-      registerSpec(spec_aws_medical_imaging.medicalImagingSpec.name, () => spec_aws_medical_imaging.medicalImagingSpec);
+      registerSpec(spec_aws_medical_imaging.medicalImagingSpec.name,
+          () => spec_aws_medical_imaging.medicalImagingSpec);
       break;
     case 'memorydb':
       await spec_aws_memorydb.loadLibrary();
-      registerSpec(spec_aws_memorydb.memorydbSpec.name, () => spec_aws_memorydb.memorydbSpec);
+      registerSpec(spec_aws_memorydb.memorydbSpec.name,
+          () => spec_aws_memorydb.memorydbSpec);
       break;
     case 'meroxa':
       await spec_meroxa.loadLibrary();
@@ -4042,15 +6646,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'mesh':
       await spec_az_2_53_0_mesh.loadLibrary();
-      registerSpec(spec_az_2_53_0_mesh.meshSpec.name, () => spec_az_2_53_0_mesh.meshSpec);
+      registerSpec(spec_az_2_53_0_mesh.meshSpec.name,
+          () => spec_az_2_53_0_mesh.meshSpec);
       break;
     case 'meta':
       await spec_gcloud_meta.loadLibrary();
-      registerSpec(spec_gcloud_meta.metaSpec.name, () => spec_gcloud_meta.metaSpec);
+      registerSpec(
+          spec_gcloud_meta.metaSpec.name, () => spec_gcloud_meta.metaSpec);
       break;
     case 'meteringmarketplace':
       await spec_aws_meteringmarketplace.loadLibrary();
-      registerSpec(spec_aws_meteringmarketplace.meteringmarketplaceSpec.name, () => spec_aws_meteringmarketplace.meteringmarketplaceSpec);
+      registerSpec(spec_aws_meteringmarketplace.meteringmarketplaceSpec.name,
+          () => spec_aws_meteringmarketplace.meteringmarketplaceSpec);
       break;
     case 'mgh':
       await spec_aws_mgh.loadLibrary();
@@ -4066,35 +6673,47 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'migrate':
       await spec_dotnet_dotnet_migrate.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_migrate.migrateSpec.name, () => spec_dotnet_dotnet_migrate.migrateSpec);
+      registerSpec(spec_dotnet_dotnet_migrate.migrateSpec.name,
+          () => spec_dotnet_dotnet_migrate.migrateSpec);
       break;
     case 'migration-hub-refactor-spaces':
       await spec_aws_migration_hub_refactor_spaces.loadLibrary();
-      registerSpec(spec_aws_migration_hub_refactor_spaces.migrationHubRefactorSpacesSpec.name, () => spec_aws_migration_hub_refactor_spaces.migrationHubRefactorSpacesSpec);
+      registerSpec(
+          spec_aws_migration_hub_refactor_spaces
+              .migrationHubRefactorSpacesSpec.name,
+          () => spec_aws_migration_hub_refactor_spaces
+              .migrationHubRefactorSpacesSpec);
       break;
     case 'migrationhub-config':
       await spec_aws_migrationhub_config.loadLibrary();
-      registerSpec(spec_aws_migrationhub_config.migrationhubConfigSpec.name, () => spec_aws_migrationhub_config.migrationhubConfigSpec);
+      registerSpec(spec_aws_migrationhub_config.migrationhubConfigSpec.name,
+          () => spec_aws_migrationhub_config.migrationhubConfigSpec);
       break;
     case 'migrationhuborchestrator':
       await spec_aws_migrationhuborchestrator.loadLibrary();
-      registerSpec(spec_aws_migrationhuborchestrator.migrationhuborchestratorSpec.name, () => spec_aws_migrationhuborchestrator.migrationhuborchestratorSpec);
+      registerSpec(
+          spec_aws_migrationhuborchestrator.migrationhuborchestratorSpec.name,
+          () => spec_aws_migrationhuborchestrator.migrationhuborchestratorSpec);
       break;
     case 'migrationhubstrategy':
       await spec_aws_migrationhubstrategy.loadLibrary();
-      registerSpec(spec_aws_migrationhubstrategy.migrationhubstrategySpec.name, () => spec_aws_migrationhubstrategy.migrationhubstrategySpec);
+      registerSpec(spec_aws_migrationhubstrategy.migrationhubstrategySpec.name,
+          () => spec_aws_migrationhubstrategy.migrationhubstrategySpec);
       break;
     case 'mikro-orm':
       await spec_mikro_orm.loadLibrary();
-      registerSpec(spec_mikro_orm.mikroOrmSpec.name, () => spec_mikro_orm.mikroOrmSpec);
+      registerSpec(
+          spec_mikro_orm.mikroOrmSpec.name, () => spec_mikro_orm.mikroOrmSpec);
       break;
     case 'minectl':
       await spec_minectl.loadLibrary();
-      registerSpec(spec_minectl.minectlSpec.name, () => spec_minectl.minectlSpec);
+      registerSpec(
+          spec_minectl.minectlSpec.name, () => spec_minectl.minectlSpec);
       break;
     case 'minikube':
       await spec_minikube.loadLibrary();
-      registerSpec(spec_minikube.minikubeSpec.name, () => spec_minikube.minikubeSpec);
+      registerSpec(
+          spec_minikube.minikubeSpec.name, () => spec_minikube.minikubeSpec);
       break;
     case 'mix':
       await spec_mix.loadLibrary();
@@ -4118,13 +6737,15 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ml':
       await spec_az_2_53_0_ml.loadLibrary();
-      registerSpec(spec_az_2_53_0_ml.mlSpec.name, () => spec_az_2_53_0_ml.mlSpec);
+      registerSpec(
+          spec_az_2_53_0_ml.mlSpec.name, () => spec_az_2_53_0_ml.mlSpec);
       await spec_gcloud_ml.loadLibrary();
       registerSpec(spec_gcloud_ml.mlSpec.name, () => spec_gcloud_ml.mlSpec);
       break;
     case 'ml-engine':
       await spec_gcloud_ml_engine.loadLibrary();
-      registerSpec(spec_gcloud_ml_engine.mlEngineSpec.name, () => spec_gcloud_ml_engine.mlEngineSpec);
+      registerSpec(spec_gcloud_ml_engine.mlEngineSpec.name,
+          () => spec_gcloud_ml_engine.mlEngineSpec);
       break;
     case 'mob':
       await spec_mob.loadLibrary();
@@ -4132,35 +6753,43 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'mobile':
       await spec_aws_mobile.loadLibrary();
-      registerSpec(spec_aws_mobile.mobileSpec.name, () => spec_aws_mobile.mobileSpec);
+      registerSpec(
+          spec_aws_mobile.mobileSpec.name, () => spec_aws_mobile.mobileSpec);
       break;
     case 'mobile-network':
       await spec_az_2_53_0_mobile_network.loadLibrary();
-      registerSpec(spec_az_2_53_0_mobile_network.mobileNetworkSpec.name, () => spec_az_2_53_0_mobile_network.mobileNetworkSpec);
+      registerSpec(spec_az_2_53_0_mobile_network.mobileNetworkSpec.name,
+          () => spec_az_2_53_0_mobile_network.mobileNetworkSpec);
       break;
     case 'molecule':
       await spec_molecule.loadLibrary();
-      registerSpec(spec_molecule.moleculeSpec.name, () => spec_molecule.moleculeSpec);
+      registerSpec(
+          spec_molecule.moleculeSpec.name, () => spec_molecule.moleculeSpec);
       break;
     case 'mongocli':
       await spec_mongocli.loadLibrary();
-      registerSpec(spec_mongocli.mongocliSpec.name, () => spec_mongocli.mongocliSpec);
+      registerSpec(
+          spec_mongocli.mongocliSpec.name, () => spec_mongocli.mongocliSpec);
       break;
     case 'mongoimport':
       await spec_mongoimport.loadLibrary();
-      registerSpec(spec_mongoimport.mongoimportSpec.name, () => spec_mongoimport.mongoimportSpec);
+      registerSpec(spec_mongoimport.mongoimportSpec.name,
+          () => spec_mongoimport.mongoimportSpec);
       break;
     case 'mongosh':
       await spec_mongosh.loadLibrary();
-      registerSpec(spec_mongosh.mongoshSpec.name, () => spec_mongosh.mongoshSpec);
+      registerSpec(
+          spec_mongosh.mongoshSpec.name, () => spec_mongosh.mongoshSpec);
       break;
     case 'monitor':
       await spec_az_2_53_0_monitor.loadLibrary();
-      registerSpec(spec_az_2_53_0_monitor.monitorSpec.name, () => spec_az_2_53_0_monitor.monitorSpec);
+      registerSpec(spec_az_2_53_0_monitor.monitorSpec.name,
+          () => spec_az_2_53_0_monitor.monitorSpec);
       break;
     case 'monitoring':
       await spec_gcloud_monitoring.loadLibrary();
-      registerSpec(spec_gcloud_monitoring.monitoringSpec.name, () => spec_gcloud_monitoring.monitoringSpec);
+      registerSpec(spec_gcloud_monitoring.monitoringSpec.name,
+          () => spec_gcloud_monitoring.monitoringSpec);
       break;
     case 'more':
       await spec_more.loadLibrary();
@@ -4180,15 +6809,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'msbuild':
       await spec_dotnet_dotnet_msbuild.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_msbuild.msbuildSpec.name, () => spec_dotnet_dotnet_msbuild.msbuildSpec);
+      registerSpec(spec_dotnet_dotnet_msbuild.msbuildSpec.name,
+          () => spec_dotnet_dotnet_msbuild.msbuildSpec);
       break;
     case 'mturk':
       await spec_aws_mturk.loadLibrary();
-      registerSpec(spec_aws_mturk.mturkSpec.name, () => spec_aws_mturk.mturkSpec);
+      registerSpec(
+          spec_aws_mturk.mturkSpec.name, () => spec_aws_mturk.mturkSpec);
       break;
     case 'multipass':
       await spec_multipass.loadLibrary();
-      registerSpec(spec_multipass.multipassSpec.name, () => spec_multipass.multipassSpec);
+      registerSpec(spec_multipass.multipassSpec.name,
+          () => spec_multipass.multipassSpec);
       break;
     case 'mv':
       await spec_mv.loadLibrary();
@@ -4208,7 +6840,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'mysql':
       await spec_az_2_53_0_mysql.loadLibrary();
-      registerSpec(spec_az_2_53_0_mysql.mysqlSpec.name, () => spec_az_2_53_0_mysql.mysqlSpec);
+      registerSpec(spec_az_2_53_0_mysql.mysqlSpec.name,
+          () => spec_az_2_53_0_mysql.mysqlSpec);
       await spec_mysql.loadLibrary();
       registerSpec(spec_mysql.mysqlSpec.name, () => spec_mysql.mysqlSpec);
       break;
@@ -4222,7 +6855,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nativescript':
       await spec_nativescript.loadLibrary();
-      registerSpec(spec_nativescript.nativescriptSpec.name, () => spec_nativescript.nativescriptSpec);
+      registerSpec(spec_nativescript.nativescriptSpec.name,
+          () => spec_nativescript.nativescriptSpec);
       break;
     case 'nc':
       await spec_nc.loadLibrary();
@@ -4238,19 +6872,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'neofetch':
       await spec_neofetch.loadLibrary();
-      registerSpec(spec_neofetch.neofetchSpec.name, () => spec_neofetch.neofetchSpec);
+      registerSpec(
+          spec_neofetch.neofetchSpec.name, () => spec_neofetch.neofetchSpec);
       break;
     case 'neptune':
       await spec_aws_neptune.loadLibrary();
-      registerSpec(spec_aws_neptune.neptuneSpec.name, () => spec_aws_neptune.neptuneSpec);
+      registerSpec(spec_aws_neptune.neptuneSpec.name,
+          () => spec_aws_neptune.neptuneSpec);
       break;
     case 'neptune-graph':
       await spec_aws_neptune_graph.loadLibrary();
-      registerSpec(spec_aws_neptune_graph.neptuneGraphSpec.name, () => spec_aws_neptune_graph.neptuneGraphSpec);
+      registerSpec(spec_aws_neptune_graph.neptuneGraphSpec.name,
+          () => spec_aws_neptune_graph.neptuneGraphSpec);
       break;
     case 'neptunedata':
       await spec_aws_neptunedata.loadLibrary();
-      registerSpec(spec_aws_neptunedata.neptunedataSpec.name, () => spec_aws_neptunedata.neptunedataSpec);
+      registerSpec(spec_aws_neptunedata.neptunedataSpec.name,
+          () => spec_aws_neptunedata.neptunedataSpec);
       break;
     case 'nest':
       await spec_nest.loadLibrary();
@@ -4258,51 +6896,63 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'netappfiles':
       await spec_az_2_53_0_netappfiles.loadLibrary();
-      registerSpec(spec_az_2_53_0_netappfiles.netappfilesSpec.name, () => spec_az_2_53_0_netappfiles.netappfilesSpec);
+      registerSpec(spec_az_2_53_0_netappfiles.netappfilesSpec.name,
+          () => spec_az_2_53_0_netappfiles.netappfilesSpec);
       break;
     case 'netlify':
       await spec_netlify.loadLibrary();
-      registerSpec(spec_netlify.netlifySpec.name, () => spec_netlify.netlifySpec);
+      registerSpec(
+          spec_netlify.netlifySpec.name, () => spec_netlify.netlifySpec);
       break;
     case 'network':
       await spec_az_2_53_0_network.loadLibrary();
-      registerSpec(spec_az_2_53_0_network.networkSpec.name, () => spec_az_2_53_0_network.networkSpec);
+      registerSpec(spec_az_2_53_0_network.networkSpec.name,
+          () => spec_az_2_53_0_network.networkSpec);
       break;
     case 'network-firewall':
       await spec_aws_network_firewall.loadLibrary();
-      registerSpec(spec_aws_network_firewall.networkFirewallSpec.name, () => spec_aws_network_firewall.networkFirewallSpec);
+      registerSpec(spec_aws_network_firewall.networkFirewallSpec.name,
+          () => spec_aws_network_firewall.networkFirewallSpec);
       break;
     case 'network-function':
       await spec_az_2_53_0_network_function.loadLibrary();
-      registerSpec(spec_az_2_53_0_network_function.networkFunctionSpec.name, () => spec_az_2_53_0_network_function.networkFunctionSpec);
+      registerSpec(spec_az_2_53_0_network_function.networkFunctionSpec.name,
+          () => spec_az_2_53_0_network_function.networkFunctionSpec);
       break;
     case 'network-management':
       await spec_gcloud_network_management.loadLibrary();
-      registerSpec(spec_gcloud_network_management.networkManagementSpec.name, () => spec_gcloud_network_management.networkManagementSpec);
+      registerSpec(spec_gcloud_network_management.networkManagementSpec.name,
+          () => spec_gcloud_network_management.networkManagementSpec);
       break;
     case 'networkcloud':
       await spec_az_2_53_0_networkcloud.loadLibrary();
-      registerSpec(spec_az_2_53_0_networkcloud.networkcloudSpec.name, () => spec_az_2_53_0_networkcloud.networkcloudSpec);
+      registerSpec(spec_az_2_53_0_networkcloud.networkcloudSpec.name,
+          () => spec_az_2_53_0_networkcloud.networkcloudSpec);
       break;
     case 'networkfabric':
       await spec_az_2_53_0_networkfabric.loadLibrary();
-      registerSpec(spec_az_2_53_0_networkfabric.networkfabricSpec.name, () => spec_az_2_53_0_networkfabric.networkfabricSpec);
+      registerSpec(spec_az_2_53_0_networkfabric.networkfabricSpec.name,
+          () => spec_az_2_53_0_networkfabric.networkfabricSpec);
       break;
     case 'networkflowmonitor':
       await spec_aws_networkflowmonitor.loadLibrary();
-      registerSpec(spec_aws_networkflowmonitor.networkflowmonitorSpec.name, () => spec_aws_networkflowmonitor.networkflowmonitorSpec);
+      registerSpec(spec_aws_networkflowmonitor.networkflowmonitorSpec.name,
+          () => spec_aws_networkflowmonitor.networkflowmonitorSpec);
       break;
     case 'networkmanager':
       await spec_aws_networkmanager.loadLibrary();
-      registerSpec(spec_aws_networkmanager.networkmanagerSpec.name, () => spec_aws_networkmanager.networkmanagerSpec);
+      registerSpec(spec_aws_networkmanager.networkmanagerSpec.name,
+          () => spec_aws_networkmanager.networkmanagerSpec);
       break;
     case 'networkmonitor':
       await spec_aws_networkmonitor.loadLibrary();
-      registerSpec(spec_aws_networkmonitor.networkmonitorSpec.name, () => spec_aws_networkmonitor.networkmonitorSpec);
+      registerSpec(spec_aws_networkmonitor.networkmonitorSpec.name,
+          () => spec_aws_networkmonitor.networkmonitorSpec);
       break;
     case 'new-relic':
       await spec_az_2_53_0_new_relic.loadLibrary();
-      registerSpec(spec_az_2_53_0_new_relic.newRelicSpec.name, () => spec_az_2_53_0_new_relic.newRelicSpec);
+      registerSpec(spec_az_2_53_0_new_relic.newRelicSpec.name,
+          () => spec_az_2_53_0_new_relic.newRelicSpec);
       break;
     case 'newman':
       await spec_newman.loadLibrary();
@@ -4310,7 +6960,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'next':
       await spec_az_2_53_0_next.loadLibrary();
-      registerSpec(spec_az_2_53_0_next.nextSpec.name, () => spec_az_2_53_0_next.nextSpec);
+      registerSpec(spec_az_2_53_0_next.nextSpec.name,
+          () => spec_az_2_53_0_next.nextSpec);
       await spec_next.loadLibrary();
       registerSpec(spec_next.nextSpec.name, () => spec_next.nextSpec);
       break;
@@ -4320,7 +6971,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nginx':
       await spec_az_2_53_0_nginx.loadLibrary();
-      registerSpec(spec_az_2_53_0_nginx.nginxSpec.name, () => spec_az_2_53_0_nginx.nginxSpec);
+      registerSpec(spec_az_2_53_0_nginx.nginxSpec.name,
+          () => spec_az_2_53_0_nginx.nginxSpec);
       await spec_nginx.loadLibrary();
       registerSpec(spec_nginx.nginxSpec.name, () => spec_nginx.nginxSpec);
       break;
@@ -4338,7 +6990,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nimble':
       await spec_aws_nimble.loadLibrary();
-      registerSpec(spec_aws_nimble.nimbleSpec.name, () => spec_aws_nimble.nimbleSpec);
+      registerSpec(
+          spec_aws_nimble.nimbleSpec.name, () => spec_aws_nimble.nimbleSpec);
       break;
     case 'nl':
       await spec_nl.loadLibrary();
@@ -4350,7 +7003,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nocorrect':
       await spec_nocorrect.loadLibrary();
-      registerSpec(spec_nocorrect.nocorrectSpec.name, () => spec_nocorrect.nocorrectSpec);
+      registerSpec(spec_nocorrect.nocorrectSpec.name,
+          () => spec_nocorrect.nocorrectSpec);
       break;
     case 'node':
       await spec_node.loadLibrary();
@@ -4362,19 +7016,24 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'northflank':
       await spec_northflank.loadLibrary();
-      registerSpec(spec_northflank.northflankSpec.name, () => spec_northflank.northflankSpec);
+      registerSpec(spec_northflank.northflankSpec.name,
+          () => spec_northflank.northflankSpec);
       break;
     case 'notification-hub':
       await spec_az_2_53_0_notification_hub.loadLibrary();
-      registerSpec(spec_az_2_53_0_notification_hub.notificationHubSpec.name, () => spec_az_2_53_0_notification_hub.notificationHubSpec);
+      registerSpec(spec_az_2_53_0_notification_hub.notificationHubSpec.name,
+          () => spec_az_2_53_0_notification_hub.notificationHubSpec);
       break;
     case 'notifications':
       await spec_aws_notifications.loadLibrary();
-      registerSpec(spec_aws_notifications.notificationsSpec.name, () => spec_aws_notifications.notificationsSpec);
+      registerSpec(spec_aws_notifications.notificationsSpec.name,
+          () => spec_aws_notifications.notificationsSpec);
       break;
     case 'notificationscontacts':
       await spec_aws_notificationscontacts.loadLibrary();
-      registerSpec(spec_aws_notificationscontacts.notificationscontactsSpec.name, () => spec_aws_notificationscontacts.notificationscontactsSpec);
+      registerSpec(
+          spec_aws_notificationscontacts.notificationscontactsSpec.name,
+          () => spec_aws_notificationscontacts.notificationscontactsSpec);
       break;
     case 'np':
       await spec_np.loadLibrary();
@@ -4426,7 +7085,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'observabilityadmin':
       await spec_aws_observabilityadmin.loadLibrary();
-      registerSpec(spec_aws_observabilityadmin.observabilityadminSpec.name, () => spec_aws_observabilityadmin.observabilityadminSpec);
+      registerSpec(spec_aws_observabilityadmin.observabilityadminSpec.name,
+          () => spec_aws_observabilityadmin.observabilityadminSpec);
       break;
     case 'oci':
       await spec_oci.loadLibrary();
@@ -4438,11 +7098,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'offazure':
       await spec_az_2_53_0_offazure.loadLibrary();
-      registerSpec(spec_az_2_53_0_offazure.offazureSpec.name, () => spec_az_2_53_0_offazure.offazureSpec);
+      registerSpec(spec_az_2_53_0_offazure.offazureSpec.name,
+          () => spec_az_2_53_0_offazure.offazureSpec);
       break;
     case 'oh-my-posh':
       await spec_oh_my_posh.loadLibrary();
-      registerSpec(spec_oh_my_posh.ohMyPoshSpec.name, () => spec_oh_my_posh.ohMyPoshSpec);
+      registerSpec(spec_oh_my_posh.ohMyPoshSpec.name,
+          () => spec_oh_my_posh.ohMyPoshSpec);
       break;
     case 'okta':
       await spec_okta.loadLibrary();
@@ -4454,7 +7116,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'omics':
       await spec_aws_omics.loadLibrary();
-      registerSpec(spec_aws_omics.omicsSpec.name, () => spec_aws_omics.omicsSpec);
+      registerSpec(
+          spec_aws_omics.omicsSpec.name, () => spec_aws_omics.omicsSpec);
       break;
     case 'omz':
       await spec_omz.loadLibrary();
@@ -4462,7 +7125,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'onboardbase':
       await spec_onboardbase.loadLibrary();
-      registerSpec(spec_onboardbase.onboardbaseSpec.name, () => spec_onboardbase.onboardbaseSpec);
+      registerSpec(spec_onboardbase.onboardbaseSpec.name,
+          () => spec_onboardbase.onboardbaseSpec);
       break;
     case 'opa':
       await spec_opa.loadLibrary();
@@ -4474,37 +7138,46 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'opensearch':
       await spec_aws_opensearch.loadLibrary();
-      registerSpec(spec_aws_opensearch.opensearchSpec.name, () => spec_aws_opensearch.opensearchSpec);
+      registerSpec(spec_aws_opensearch.opensearchSpec.name,
+          () => spec_aws_opensearch.opensearchSpec);
       break;
     case 'opensearchserverless':
       await spec_aws_opensearchserverless.loadLibrary();
-      registerSpec(spec_aws_opensearchserverless.opensearchserverlessSpec.name, () => spec_aws_opensearchserverless.opensearchserverlessSpec);
+      registerSpec(spec_aws_opensearchserverless.opensearchserverlessSpec.name,
+          () => spec_aws_opensearchserverless.opensearchserverlessSpec);
       break;
     case 'opsworks':
       await spec_aws_opsworks.loadLibrary();
-      registerSpec(spec_aws_opsworks.opsworksSpec.name, () => spec_aws_opsworks.opsworksSpec);
+      registerSpec(spec_aws_opsworks.opsworksSpec.name,
+          () => spec_aws_opsworks.opsworksSpec);
       break;
     case 'opsworks-cm':
       await spec_aws_opsworks_cm.loadLibrary();
-      registerSpec(spec_aws_opsworks_cm.opsworksCmSpec.name, () => spec_aws_opsworks_cm.opsworksCmSpec);
+      registerSpec(spec_aws_opsworks_cm.opsworksCmSpec.name,
+          () => spec_aws_opsworks_cm.opsworksCmSpec);
       break;
     case 'opsworkscm':
       await spec_aws_opsworkscm.loadLibrary();
-      registerSpec(spec_aws_opsworkscm.opsworkscmSpec.name, () => spec_aws_opsworkscm.opsworkscmSpec);
+      registerSpec(spec_aws_opsworkscm.opsworkscmSpec.name,
+          () => spec_aws_opsworkscm.opsworkscmSpec);
       break;
     case 'orbital':
       await spec_az_2_53_0_orbital.loadLibrary();
-      registerSpec(spec_az_2_53_0_orbital.orbitalSpec.name, () => spec_az_2_53_0_orbital.orbitalSpec);
+      registerSpec(spec_az_2_53_0_orbital.orbitalSpec.name,
+          () => spec_az_2_53_0_orbital.orbitalSpec);
       break;
     case 'organizations':
       await spec_aws_organizations.loadLibrary();
-      registerSpec(spec_aws_organizations.organizationsSpec.name, () => spec_aws_organizations.organizationsSpec);
+      registerSpec(spec_aws_organizations.organizationsSpec.name,
+          () => spec_aws_organizations.organizationsSpec);
       await spec_gcloud_organizations.loadLibrary();
-      registerSpec(spec_gcloud_organizations.organizationsSpec.name, () => spec_gcloud_organizations.organizationsSpec);
+      registerSpec(spec_gcloud_organizations.organizationsSpec.name,
+          () => spec_gcloud_organizations.organizationsSpec);
       break;
     case 'osascript':
       await spec_osascript.loadLibrary();
-      registerSpec(spec_osascript.osascriptSpec.name, () => spec_osascript.osascriptSpec);
+      registerSpec(spec_osascript.osascriptSpec.name,
+          () => spec_osascript.osascriptSpec);
       break;
     case 'osis':
       await spec_aws_osis.loadLibrary();
@@ -4512,7 +7185,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'outposts':
       await spec_aws_outposts.loadLibrary();
-      registerSpec(spec_aws_outposts.outpostsSpec.name, () => spec_aws_outposts.outpostsSpec);
+      registerSpec(spec_aws_outposts.outpostsSpec.name,
+          () => spec_aws_outposts.outpostsSpec);
       break;
     case 'pac':
       await spec_pac.loadLibrary();
@@ -4520,23 +7194,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pack':
       await spec_dotnet_dotnet_pack.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_pack.packSpec.name, () => spec_dotnet_dotnet_pack.packSpec);
+      registerSpec(spec_dotnet_dotnet_pack.packSpec.name,
+          () => spec_dotnet_dotnet_pack.packSpec);
       break;
     case 'pageres':
       await spec_pageres.loadLibrary();
-      registerSpec(spec_pageres.pageresSpec.name, () => spec_pageres.pageresSpec);
+      registerSpec(
+          spec_pageres.pageresSpec.name, () => spec_pageres.pageresSpec);
       break;
     case 'palera1n':
       await spec_palera1n.loadLibrary();
-      registerSpec(spec_palera1n.palera1nSpec.name, () => spec_palera1n.palera1nSpec);
+      registerSpec(
+          spec_palera1n.palera1nSpec.name, () => spec_palera1n.palera1nSpec);
       break;
     case 'palo-alto':
       await spec_az_2_53_0_palo_alto.loadLibrary();
-      registerSpec(spec_az_2_53_0_palo_alto.paloAltoSpec.name, () => spec_az_2_53_0_palo_alto.paloAltoSpec);
+      registerSpec(spec_az_2_53_0_palo_alto.paloAltoSpec.name,
+          () => spec_az_2_53_0_palo_alto.paloAltoSpec);
       break;
     case 'panorama':
       await spec_aws_panorama.loadLibrary();
-      registerSpec(spec_aws_panorama.panoramaSpec.name, () => spec_aws_panorama.panoramaSpec);
+      registerSpec(spec_aws_panorama.panoramaSpec.name,
+          () => spec_aws_panorama.panoramaSpec);
       break;
     case 'paper':
       await spec_paper.loadLibrary();
@@ -4544,11 +7223,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'partnercenter':
       await spec_az_2_53_0_partnercenter.loadLibrary();
-      registerSpec(spec_az_2_53_0_partnercenter.partnercenterSpec.name, () => spec_az_2_53_0_partnercenter.partnercenterSpec);
+      registerSpec(spec_az_2_53_0_partnercenter.partnercenterSpec.name,
+          () => spec_az_2_53_0_partnercenter.partnercenterSpec);
       break;
     case 'partnercentral-selling':
       await spec_aws_partnercentral_selling.loadLibrary();
-      registerSpec(spec_aws_partnercentral_selling.partnercentralSellingSpec.name, () => spec_aws_partnercentral_selling.partnercentralSellingSpec);
+      registerSpec(
+          spec_aws_partnercentral_selling.partnercentralSellingSpec.name,
+          () => spec_aws_partnercentral_selling.partnercentralSellingSpec);
       break;
     case 'pass':
       await spec_pass.loadLibrary();
@@ -4568,23 +7250,29 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pathchk':
       await spec_pathchk.loadLibrary();
-      registerSpec(spec_pathchk.pathchkSpec.name, () => spec_pathchk.pathchkSpec);
+      registerSpec(
+          spec_pathchk.pathchkSpec.name, () => spec_pathchk.pathchkSpec);
       break;
     case 'payment-cryptography':
       await spec_aws_payment_cryptography.loadLibrary();
-      registerSpec(spec_aws_payment_cryptography.paymentCryptographySpec.name, () => spec_aws_payment_cryptography.paymentCryptographySpec);
+      registerSpec(spec_aws_payment_cryptography.paymentCryptographySpec.name,
+          () => spec_aws_payment_cryptography.paymentCryptographySpec);
       break;
     case 'payment-cryptography-data':
       await spec_aws_payment_cryptography_data.loadLibrary();
-      registerSpec(spec_aws_payment_cryptography_data.paymentCryptographyDataSpec.name, () => spec_aws_payment_cryptography_data.paymentCryptographyDataSpec);
+      registerSpec(
+          spec_aws_payment_cryptography_data.paymentCryptographyDataSpec.name,
+          () => spec_aws_payment_cryptography_data.paymentCryptographyDataSpec);
       break;
     case 'pca-connector-ad':
       await spec_aws_pca_connector_ad.loadLibrary();
-      registerSpec(spec_aws_pca_connector_ad.pcaConnectorAdSpec.name, () => spec_aws_pca_connector_ad.pcaConnectorAdSpec);
+      registerSpec(spec_aws_pca_connector_ad.pcaConnectorAdSpec.name,
+          () => spec_aws_pca_connector_ad.pcaConnectorAdSpec);
       break;
     case 'pca-connector-scep':
       await spec_aws_pca_connector_scep.loadLibrary();
-      registerSpec(spec_aws_pca_connector_scep.pcaConnectorScepSpec.name, () => spec_aws_pca_connector_scep.pcaConnectorScepSpec);
+      registerSpec(spec_aws_pca_connector_scep.pcaConnectorScepSpec.name,
+          () => spec_aws_pca_connector_scep.pcaConnectorScepSpec);
       break;
     case 'pcs':
       await spec_aws_pcs.loadLibrary();
@@ -4592,27 +7280,33 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pdfunite':
       await spec_pdfunite.loadLibrary();
-      registerSpec(spec_pdfunite.pdfuniteSpec.name, () => spec_pdfunite.pdfuniteSpec);
+      registerSpec(
+          spec_pdfunite.pdfuniteSpec.name, () => spec_pdfunite.pdfuniteSpec);
       break;
     case 'peering':
       await spec_az_2_53_0_peering.loadLibrary();
-      registerSpec(spec_az_2_53_0_peering.peeringSpec.name, () => spec_az_2_53_0_peering.peeringSpec);
+      registerSpec(spec_az_2_53_0_peering.peeringSpec.name,
+          () => spec_az_2_53_0_peering.peeringSpec);
       break;
     case 'personalize':
       await spec_aws_personalize.loadLibrary();
-      registerSpec(spec_aws_personalize.personalizeSpec.name, () => spec_aws_personalize.personalizeSpec);
+      registerSpec(spec_aws_personalize.personalizeSpec.name,
+          () => spec_aws_personalize.personalizeSpec);
       break;
     case 'personalize-events':
       await spec_aws_personalize_events.loadLibrary();
-      registerSpec(spec_aws_personalize_events.personalizeEventsSpec.name, () => spec_aws_personalize_events.personalizeEventsSpec);
+      registerSpec(spec_aws_personalize_events.personalizeEventsSpec.name,
+          () => spec_aws_personalize_events.personalizeEventsSpec);
       break;
     case 'personalize-runtime':
       await spec_aws_personalize_runtime.loadLibrary();
-      registerSpec(spec_aws_personalize_runtime.personalizeRuntimeSpec.name, () => spec_aws_personalize_runtime.personalizeRuntimeSpec);
+      registerSpec(spec_aws_personalize_runtime.personalizeRuntimeSpec.name,
+          () => spec_aws_personalize_runtime.personalizeRuntimeSpec);
       break;
     case 'pg_dump':
       await spec_pg_dump.loadLibrary();
-      registerSpec(spec_pg_dump.pg_dumpSpec.name, () => spec_pg_dump.pg_dumpSpec);
+      registerSpec(
+          spec_pg_dump.pg_dumpSpec.name, () => spec_pg_dump.pg_dumpSpec);
       break;
     case 'pgcli':
       await spec_pgcli.loadLibrary();
@@ -4624,11 +7318,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'phpunit':
       await spec_phpunit.loadLibrary();
-      registerSpec(spec_phpunit.phpunitSpec.name, () => spec_phpunit.phpunitSpec);
+      registerSpec(
+          spec_phpunit.phpunitSpec.name, () => spec_phpunit.phpunitSpec);
       break;
     case 'phpunit-watcher':
       await spec_phpunit_watcher.loadLibrary();
-      registerSpec(spec_phpunit_watcher.phpunitWatcherSpec.name, () => spec_phpunit_watcher.phpunitWatcherSpec);
+      registerSpec(spec_phpunit_watcher.phpunitWatcherSpec.name,
+          () => spec_phpunit_watcher.phpunitWatcherSpec);
       break;
     case 'pi':
       await spec_aws_pi.loadLibrary();
@@ -4644,19 +7340,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pinpoint':
       await spec_aws_pinpoint.loadLibrary();
-      registerSpec(spec_aws_pinpoint.pinpointSpec.name, () => spec_aws_pinpoint.pinpointSpec);
+      registerSpec(spec_aws_pinpoint.pinpointSpec.name,
+          () => spec_aws_pinpoint.pinpointSpec);
       break;
     case 'pinpoint-email':
       await spec_aws_pinpoint_email.loadLibrary();
-      registerSpec(spec_aws_pinpoint_email.pinpointEmailSpec.name, () => spec_aws_pinpoint_email.pinpointEmailSpec);
+      registerSpec(spec_aws_pinpoint_email.pinpointEmailSpec.name,
+          () => spec_aws_pinpoint_email.pinpointEmailSpec);
       break;
     case 'pinpoint-sms-voice':
       await spec_aws_pinpoint_sms_voice.loadLibrary();
-      registerSpec(spec_aws_pinpoint_sms_voice.pinpointSmsVoiceSpec.name, () => spec_aws_pinpoint_sms_voice.pinpointSmsVoiceSpec);
+      registerSpec(spec_aws_pinpoint_sms_voice.pinpointSmsVoiceSpec.name,
+          () => spec_aws_pinpoint_sms_voice.pinpointSmsVoiceSpec);
       break;
     case 'pinpoint-sms-voice-v2':
       await spec_aws_pinpoint_sms_voice_v2.loadLibrary();
-      registerSpec(spec_aws_pinpoint_sms_voice_v2.pinpointSmsVoiceV2Spec.name, () => spec_aws_pinpoint_sms_voice_v2.pinpointSmsVoiceV2Spec);
+      registerSpec(spec_aws_pinpoint_sms_voice_v2.pinpointSmsVoiceV2Spec.name,
+          () => spec_aws_pinpoint_sms_voice_v2.pinpointSmsVoiceV2Spec);
       break;
     case 'pip3':
       await spec_pip3.loadLibrary();
@@ -4664,7 +7364,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pipelines':
       await spec_az_2_53_0_pipelines.loadLibrary();
-      registerSpec(spec_az_2_53_0_pipelines.pipelinesSpec.name, () => spec_az_2_53_0_pipelines.pipelinesSpec);
+      registerSpec(spec_az_2_53_0_pipelines.pipelinesSpec.name,
+          () => spec_az_2_53_0_pipelines.pipelinesSpec);
       break;
     case 'pipenv':
       await spec_pipenv.loadLibrary();
@@ -4672,15 +7373,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pipes':
       await spec_aws_pipes.loadLibrary();
-      registerSpec(spec_aws_pipes.pipesSpec.name, () => spec_aws_pipes.pipesSpec);
+      registerSpec(
+          spec_aws_pipes.pipesSpec.name, () => spec_aws_pipes.pipesSpec);
       break;
     case 'pkg-config':
       await spec_pkg_config.loadLibrary();
-      registerSpec(spec_pkg_config.pkgConfigSpec.name, () => spec_pkg_config.pkgConfigSpec);
+      registerSpec(spec_pkg_config.pkgConfigSpec.name,
+          () => spec_pkg_config.pkgConfigSpec);
       break;
     case 'pkgutil':
       await spec_pkgutil.loadLibrary();
-      registerSpec(spec_pkgutil.pkgutilSpec.name, () => spec_pkgutil.pkgutilSpec);
+      registerSpec(
+          spec_pkgutil.pkgutilSpec.name, () => spec_pkgutil.pkgutilSpec);
       break;
     case 'pkill':
       await spec_pkill.loadLibrary();
@@ -4688,11 +7392,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'planter':
       await spec_planter.loadLibrary();
-      registerSpec(spec_planter.planterSpec.name, () => spec_planter.planterSpec);
+      registerSpec(
+          spec_planter.planterSpec.name, () => spec_planter.planterSpec);
       break;
     case 'playwright':
       await spec_playwright.loadLibrary();
-      registerSpec(spec_playwright.playwrightSpec.name, () => spec_playwright.playwrightSpec);
+      registerSpec(spec_playwright.playwrightSpec.name,
+          () => spec_playwright.playwrightSpec);
       break;
     case 'plutil':
       await spec_plutil.loadLibrary();
@@ -4712,7 +7418,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pocketbase':
       await spec_pocketbase.loadLibrary();
-      registerSpec(spec_pocketbase.pocketbaseSpec.name, () => spec_pocketbase.pocketbaseSpec);
+      registerSpec(spec_pocketbase.pocketbaseSpec.name,
+          () => spec_pocketbase.pocketbaseSpec);
       break;
     case 'poetry':
       await spec_poetry.loadLibrary();
@@ -4720,47 +7427,58 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'policy':
       await spec_az_2_53_0_policy.loadLibrary();
-      registerSpec(spec_az_2_53_0_policy.policySpec.name, () => spec_az_2_53_0_policy.policySpec);
+      registerSpec(spec_az_2_53_0_policy.policySpec.name,
+          () => spec_az_2_53_0_policy.policySpec);
       break;
     case 'policy-troubleshoot':
       await spec_gcloud_policy_troubleshoot.loadLibrary();
-      registerSpec(spec_gcloud_policy_troubleshoot.policyTroubleshootSpec.name, () => spec_gcloud_policy_troubleshoot.policyTroubleshootSpec);
+      registerSpec(spec_gcloud_policy_troubleshoot.policyTroubleshootSpec.name,
+          () => spec_gcloud_policy_troubleshoot.policyTroubleshootSpec);
       break;
     case 'polly':
       await spec_aws_polly.loadLibrary();
-      registerSpec(spec_aws_polly.pollySpec.name, () => spec_aws_polly.pollySpec);
+      registerSpec(
+          spec_aws_polly.pollySpec.name, () => spec_aws_polly.pollySpec);
       break;
     case 'portal':
       await spec_az_2_53_0_portal.loadLibrary();
-      registerSpec(spec_az_2_53_0_portal.portalSpec.name, () => spec_az_2_53_0_portal.portalSpec);
+      registerSpec(spec_az_2_53_0_portal.portalSpec.name,
+          () => spec_az_2_53_0_portal.portalSpec);
       break;
     case 'postgres':
       await spec_az_2_53_0_postgres.loadLibrary();
-      registerSpec(spec_az_2_53_0_postgres.postgresSpec.name, () => spec_az_2_53_0_postgres.postgresSpec);
+      registerSpec(spec_az_2_53_0_postgres.postgresSpec.name,
+          () => spec_az_2_53_0_postgres.postgresSpec);
       break;
     case 'powerbi':
       await spec_az_2_53_0_powerbi.loadLibrary();
-      registerSpec(spec_az_2_53_0_powerbi.powerbiSpec.name, () => spec_az_2_53_0_powerbi.powerbiSpec);
+      registerSpec(spec_az_2_53_0_powerbi.powerbiSpec.name,
+          () => spec_az_2_53_0_powerbi.powerbiSpec);
       break;
     case 'ppg':
       await spec_az_2_53_0_ppg.loadLibrary();
-      registerSpec(spec_az_2_53_0_ppg.ppgSpec.name, () => spec_az_2_53_0_ppg.ppgSpec);
+      registerSpec(
+          spec_az_2_53_0_ppg.ppgSpec.name, () => spec_az_2_53_0_ppg.ppgSpec);
       break;
     case 'premake':
       await spec_premake.loadLibrary();
-      registerSpec(spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
+      registerSpec(
+          spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
       break;
     case 'preset':
       await spec_preset_cli.loadLibrary();
-      registerSpec(spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
+      registerSpec(
+          spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
       break;
     case 'prettier':
       await spec_prettier.loadLibrary();
-      registerSpec(spec_prettier.prettierSpec.name, () => spec_prettier.prettierSpec);
+      registerSpec(
+          spec_prettier.prettierSpec.name, () => spec_prettier.prettierSpec);
       break;
     case 'pricing':
       await spec_aws_pricing.loadLibrary();
-      registerSpec(spec_aws_pricing.pricingSpec.name, () => spec_aws_pricing.pricingSpec);
+      registerSpec(spec_aws_pricing.pricingSpec.name,
+          () => spec_aws_pricing.pricingSpec);
       break;
     case 'prisma':
       await spec_prisma.loadLibrary();
@@ -4768,11 +7486,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'private-link':
       await spec_az_2_53_0_private_link.loadLibrary();
-      registerSpec(spec_az_2_53_0_private_link.privateLinkSpec.name, () => spec_az_2_53_0_private_link.privateLinkSpec);
+      registerSpec(spec_az_2_53_0_private_link.privateLinkSpec.name,
+          () => spec_az_2_53_0_private_link.privateLinkSpec);
       break;
     case 'privatenetworks':
       await spec_aws_privatenetworks.loadLibrary();
-      registerSpec(spec_aws_privatenetworks.privatenetworksSpec.name, () => spec_aws_privatenetworks.privatenetworksSpec);
+      registerSpec(spec_aws_privatenetworks.privatenetworksSpec.name,
+          () => spec_aws_privatenetworks.privatenetworksSpec);
       break;
     case 'pro':
       await spec_pro.loadLibrary();
@@ -4780,23 +7500,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'progressline':
       await spec_progressline.loadLibrary();
-      registerSpec(spec_progressline.progresslineSpec.name, () => spec_progressline.progresslineSpec);
+      registerSpec(spec_progressline.progresslineSpec.name,
+          () => spec_progressline.progresslineSpec);
       break;
     case 'projects':
       await spec_gcloud_projects.loadLibrary();
-      registerSpec(spec_gcloud_projects.projectsSpec.name, () => spec_gcloud_projects.projectsSpec);
+      registerSpec(spec_gcloud_projects.projectsSpec.name,
+          () => spec_gcloud_projects.projectsSpec);
       break;
     case 'proton':
       await spec_aws_proton.loadLibrary();
-      registerSpec(spec_aws_proton.protonSpec.name, () => spec_aws_proton.protonSpec);
+      registerSpec(
+          spec_aws_proton.protonSpec.name, () => spec_aws_proton.protonSpec);
       break;
     case 'provider':
       await spec_az_2_53_0_provider.loadLibrary();
-      registerSpec(spec_az_2_53_0_provider.providerSpec.name, () => spec_az_2_53_0_provider.providerSpec);
+      registerSpec(spec_az_2_53_0_provider.providerSpec.name,
+          () => spec_az_2_53_0_provider.providerSpec);
       break;
     case 'providerhub':
       await spec_az_2_53_0_providerhub.loadLibrary();
-      registerSpec(spec_az_2_53_0_providerhub.providerhubSpec.name, () => spec_az_2_53_0_providerhub.providerhubSpec);
+      registerSpec(spec_az_2_53_0_providerhub.providerhubSpec.name,
+          () => spec_az_2_53_0_providerhub.providerhubSpec);
       break;
     case 'pry':
       await spec_pry.loadLibrary();
@@ -4812,17 +7537,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'publish':
       await spec_dotnet_dotnet_publish.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_publish.publishSpec.name, () => spec_dotnet_dotnet_publish.publishSpec);
+      registerSpec(spec_dotnet_dotnet_publish.publishSpec.name,
+          () => spec_dotnet_dotnet_publish.publishSpec);
       await spec_publish.loadLibrary();
-      registerSpec(spec_publish.publishSpec.name, () => spec_publish.publishSpec);
+      registerSpec(
+          spec_publish.publishSpec.name, () => spec_publish.publishSpec);
       break;
     case 'pubsub':
       await spec_gcloud_pubsub.loadLibrary();
-      registerSpec(spec_gcloud_pubsub.pubsubSpec.name, () => spec_gcloud_pubsub.pubsubSpec);
+      registerSpec(spec_gcloud_pubsub.pubsubSpec.name,
+          () => spec_gcloud_pubsub.pubsubSpec);
       break;
     case 'purview':
       await spec_az_2_53_0_purview.loadLibrary();
-      registerSpec(spec_az_2_53_0_purview.purviewSpec.name, () => spec_az_2_53_0_purview.purviewSpec);
+      registerSpec(spec_az_2_53_0_purview.purviewSpec.name,
+          () => spec_az_2_53_0_purview.purviewSpec);
       break;
     case 'pushd':
       await spec_pushd.loadLibrary();
@@ -4842,15 +7571,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'qapps':
       await spec_aws_qapps.loadLibrary();
-      registerSpec(spec_aws_qapps.qappsSpec.name, () => spec_aws_qapps.qappsSpec);
+      registerSpec(
+          spec_aws_qapps.qappsSpec.name, () => spec_aws_qapps.qappsSpec);
       break;
     case 'qbusiness':
       await spec_aws_qbusiness.loadLibrary();
-      registerSpec(spec_aws_qbusiness.qbusinessSpec.name, () => spec_aws_qbusiness.qbusinessSpec);
+      registerSpec(spec_aws_qbusiness.qbusinessSpec.name,
+          () => spec_aws_qbusiness.qbusinessSpec);
       break;
     case 'qconnect':
       await spec_aws_qconnect.loadLibrary();
-      registerSpec(spec_aws_qconnect.qconnectSpec.name, () => spec_aws_qconnect.qconnectSpec);
+      registerSpec(spec_aws_qconnect.qconnectSpec.name,
+          () => spec_aws_qconnect.qconnectSpec);
       break;
     case 'qldb':
       await spec_aws_qldb.loadLibrary();
@@ -4858,7 +7590,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'qldb-session':
       await spec_aws_qldb_session.loadLibrary();
-      registerSpec(spec_aws_qldb_session.qldbSessionSpec.name, () => spec_aws_qldb_session.qldbSessionSpec);
+      registerSpec(spec_aws_qldb_session.qldbSessionSpec.name,
+          () => spec_aws_qldb_session.qldbSessionSpec);
       break;
     case 'qodana':
       await spec_qodana.loadLibrary();
@@ -4866,7 +7599,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'quantum':
       await spec_az_2_53_0_quantum.loadLibrary();
-      registerSpec(spec_az_2_53_0_quantum.quantumSpec.name, () => spec_az_2_53_0_quantum.quantumSpec);
+      registerSpec(spec_az_2_53_0_quantum.quantumSpec.name,
+          () => spec_az_2_53_0_quantum.quantumSpec);
       break;
     case 'quasar':
       await spec_quasar.loadLibrary();
@@ -4874,23 +7608,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'quickmail':
       await spec_quickmail.loadLibrary();
-      registerSpec(spec_quickmail.quickmailSpec.name, () => spec_quickmail.quickmailSpec);
+      registerSpec(spec_quickmail.quickmailSpec.name,
+          () => spec_quickmail.quickmailSpec);
       break;
     case 'quicksight':
       await spec_aws_quicksight.loadLibrary();
-      registerSpec(spec_aws_quicksight.quicksightSpec.name, () => spec_aws_quicksight.quicksightSpec);
+      registerSpec(spec_aws_quicksight.quicksightSpec.name,
+          () => spec_aws_quicksight.quicksightSpec);
       break;
     case 'qumulo':
       await spec_az_2_53_0_qumulo.loadLibrary();
-      registerSpec(spec_az_2_53_0_qumulo.qumuloSpec.name, () => spec_az_2_53_0_qumulo.qumuloSpec);
+      registerSpec(spec_az_2_53_0_qumulo.qumuloSpec.name,
+          () => spec_az_2_53_0_qumulo.qumuloSpec);
       break;
     case 'quota':
       await spec_az_2_53_0_quota.loadLibrary();
-      registerSpec(spec_az_2_53_0_quota.quotaSpec.name, () => spec_az_2_53_0_quota.quotaSpec);
+      registerSpec(spec_az_2_53_0_quota.quotaSpec.name,
+          () => spec_az_2_53_0_quota.quotaSpec);
       break;
     case 'railway':
       await spec_railway.loadLibrary();
-      registerSpec(spec_railway.railwaySpec.name, () => spec_railway.railwaySpec);
+      registerSpec(
+          spec_railway.railwaySpec.name, () => spec_railway.railwaySpec);
       break;
     case 'rake':
       await spec_rake.loadLibrary();
@@ -4914,45 +7653,56 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'rds-data':
       await spec_aws_rds_data.loadLibrary();
-      registerSpec(spec_aws_rds_data.rdsDataSpec.name, () => spec_aws_rds_data.rdsDataSpec);
+      registerSpec(spec_aws_rds_data.rdsDataSpec.name,
+          () => spec_aws_rds_data.rdsDataSpec);
       break;
     case 'readlink':
       await spec_readlink.loadLibrary();
-      registerSpec(spec_readlink.readlinkSpec.name, () => spec_readlink.readlinkSpec);
+      registerSpec(
+          spec_readlink.readlinkSpec.name, () => spec_readlink.readlinkSpec);
       break;
     case 'recommender':
       await spec_gcloud_recommender.loadLibrary();
-      registerSpec(spec_gcloud_recommender.recommenderSpec.name, () => spec_gcloud_recommender.recommenderSpec);
+      registerSpec(spec_gcloud_recommender.recommenderSpec.name,
+          () => spec_gcloud_recommender.recommenderSpec);
       break;
     case 'redis':
       await spec_az_2_53_0_redis.loadLibrary();
-      registerSpec(spec_az_2_53_0_redis.redisSpec.name, () => spec_az_2_53_0_redis.redisSpec);
+      registerSpec(spec_az_2_53_0_redis.redisSpec.name,
+          () => spec_az_2_53_0_redis.redisSpec);
       await spec_gcloud_redis.loadLibrary();
-      registerSpec(spec_gcloud_redis.redisSpec.name, () => spec_gcloud_redis.redisSpec);
+      registerSpec(
+          spec_gcloud_redis.redisSpec.name, () => spec_gcloud_redis.redisSpec);
       break;
     case 'redisenterprise':
       await spec_az_2_53_0_redisenterprise.loadLibrary();
-      registerSpec(spec_az_2_53_0_redisenterprise.redisenterpriseSpec.name, () => spec_az_2_53_0_redisenterprise.redisenterpriseSpec);
+      registerSpec(spec_az_2_53_0_redisenterprise.redisenterpriseSpec.name,
+          () => spec_az_2_53_0_redisenterprise.redisenterpriseSpec);
       break;
     case 'redshift':
       await spec_aws_redshift.loadLibrary();
-      registerSpec(spec_aws_redshift.redshiftSpec.name, () => spec_aws_redshift.redshiftSpec);
+      registerSpec(spec_aws_redshift.redshiftSpec.name,
+          () => spec_aws_redshift.redshiftSpec);
       break;
     case 'redshift-data':
       await spec_aws_redshift_data.loadLibrary();
-      registerSpec(spec_aws_redshift_data.redshiftDataSpec.name, () => spec_aws_redshift_data.redshiftDataSpec);
+      registerSpec(spec_aws_redshift_data.redshiftDataSpec.name,
+          () => spec_aws_redshift_data.redshiftDataSpec);
       break;
     case 'redshift-serverless':
       await spec_aws_redshift_serverless.loadLibrary();
-      registerSpec(spec_aws_redshift_serverless.redshiftServerlessSpec.name, () => spec_aws_redshift_serverless.redshiftServerlessSpec);
+      registerSpec(spec_aws_redshift_serverless.redshiftServerlessSpec.name,
+          () => spec_aws_redshift_serverless.redshiftServerlessSpec);
       break;
     case 'rekognition':
       await spec_aws_rekognition.loadLibrary();
-      registerSpec(spec_aws_rekognition.rekognitionSpec.name, () => spec_aws_rekognition.rekognitionSpec);
+      registerSpec(spec_aws_rekognition.rekognitionSpec.name,
+          () => spec_aws_rekognition.rekognitionSpec);
       break;
     case 'relay':
       await spec_az_2_53_0_relay.loadLibrary();
-      registerSpec(spec_az_2_53_0_relay.relaySpec.name, () => spec_az_2_53_0_relay.relaySpec);
+      registerSpec(spec_az_2_53_0_relay.relaySpec.name,
+          () => spec_az_2_53_0_relay.relaySpec);
       break;
     case 'remix':
       await spec_remix.loadLibrary();
@@ -4960,11 +7710,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'remote-rendering-account':
       await spec_az_2_53_0_remote_rendering_account.loadLibrary();
-      registerSpec(spec_az_2_53_0_remote_rendering_account.remoteRenderingAccountSpec.name, () => spec_az_2_53_0_remote_rendering_account.remoteRenderingAccountSpec);
+      registerSpec(
+          spec_az_2_53_0_remote_rendering_account
+              .remoteRenderingAccountSpec.name,
+          () => spec_az_2_53_0_remote_rendering_account
+              .remoteRenderingAccountSpec);
       break;
     case 'remotion':
       await spec_remotion.loadLibrary();
-      registerSpec(spec_remotion.remotionSpec.name, () => spec_remotion.remotionSpec);
+      registerSpec(
+          spec_remotion.remotionSpec.name, () => spec_remotion.remotionSpec);
       break;
     case 'repeat':
       await spec_repeat.loadLibrary();
@@ -4972,59 +7727,75 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'repos':
       await spec_az_2_53_0_repos.loadLibrary();
-      registerSpec(spec_az_2_53_0_repos.reposSpec.name, () => spec_az_2_53_0_repos.reposSpec);
+      registerSpec(spec_az_2_53_0_repos.reposSpec.name,
+          () => spec_az_2_53_0_repos.reposSpec);
       break;
     case 'repostspace':
       await spec_aws_repostspace.loadLibrary();
-      registerSpec(spec_aws_repostspace.repostspaceSpec.name, () => spec_aws_repostspace.repostspaceSpec);
+      registerSpec(spec_aws_repostspace.repostspaceSpec.name,
+          () => spec_aws_repostspace.repostspaceSpec);
       break;
     case 'reservations':
       await spec_az_2_53_0_reservations.loadLibrary();
-      registerSpec(spec_az_2_53_0_reservations.reservationsSpec.name, () => spec_az_2_53_0_reservations.reservationsSpec);
+      registerSpec(spec_az_2_53_0_reservations.reservationsSpec.name,
+          () => spec_az_2_53_0_reservations.reservationsSpec);
       break;
     case 'resiliencehub':
       await spec_aws_resiliencehub.loadLibrary();
-      registerSpec(spec_aws_resiliencehub.resiliencehubSpec.name, () => spec_aws_resiliencehub.resiliencehubSpec);
+      registerSpec(spec_aws_resiliencehub.resiliencehubSpec.name,
+          () => spec_aws_resiliencehub.resiliencehubSpec);
       break;
     case 'resource':
       await spec_az_2_53_0_resource.loadLibrary();
-      registerSpec(spec_az_2_53_0_resource.resourceSpec.name, () => spec_az_2_53_0_resource.resourceSpec);
+      registerSpec(spec_az_2_53_0_resource.resourceSpec.name,
+          () => spec_az_2_53_0_resource.resourceSpec);
       break;
     case 'resource-explorer-2':
       await spec_aws_resource_explorer_2.loadLibrary();
-      registerSpec(spec_aws_resource_explorer_2.resourceExplorer2Spec.name, () => spec_aws_resource_explorer_2.resourceExplorer2Spec);
+      registerSpec(spec_aws_resource_explorer_2.resourceExplorer2Spec.name,
+          () => spec_aws_resource_explorer_2.resourceExplorer2Spec);
       break;
     case 'resource-groups':
       await spec_aws_resource_groups.loadLibrary();
-      registerSpec(spec_aws_resource_groups.resourceGroupsSpec.name, () => spec_aws_resource_groups.resourceGroupsSpec);
+      registerSpec(spec_aws_resource_groups.resourceGroupsSpec.name,
+          () => spec_aws_resource_groups.resourceGroupsSpec);
       break;
     case 'resource-manager':
       await spec_gcloud_resource_manager.loadLibrary();
-      registerSpec(spec_gcloud_resource_manager.resourceManagerSpec.name, () => spec_gcloud_resource_manager.resourceManagerSpec);
+      registerSpec(spec_gcloud_resource_manager.resourceManagerSpec.name,
+          () => spec_gcloud_resource_manager.resourceManagerSpec);
       break;
     case 'resource-mover':
       await spec_az_2_53_0_resource_mover.loadLibrary();
-      registerSpec(spec_az_2_53_0_resource_mover.resourceMoverSpec.name, () => spec_az_2_53_0_resource_mover.resourceMoverSpec);
+      registerSpec(spec_az_2_53_0_resource_mover.resourceMoverSpec.name,
+          () => spec_az_2_53_0_resource_mover.resourceMoverSpec);
       break;
     case 'resourcegroupstaggingapi':
       await spec_aws_resourcegroupstaggingapi.loadLibrary();
-      registerSpec(spec_aws_resourcegroupstaggingapi.resourcegroupstaggingapiSpec.name, () => spec_aws_resourcegroupstaggingapi.resourcegroupstaggingapiSpec);
+      registerSpec(
+          spec_aws_resourcegroupstaggingapi.resourcegroupstaggingapiSpec.name,
+          () => spec_aws_resourcegroupstaggingapi.resourcegroupstaggingapiSpec);
       break;
     case 'resourcemanagement':
       await spec_az_2_53_0_resourcemanagement.loadLibrary();
-      registerSpec(spec_az_2_53_0_resourcemanagement.resourcemanagementSpec.name, () => spec_az_2_53_0_resourcemanagement.resourcemanagementSpec);
+      registerSpec(
+          spec_az_2_53_0_resourcemanagement.resourcemanagementSpec.name,
+          () => spec_az_2_53_0_resourcemanagement.resourcemanagementSpec);
       break;
     case 'rest':
       await spec_az_2_53_0_rest.loadLibrary();
-      registerSpec(spec_az_2_53_0_rest.restSpec.name, () => spec_az_2_53_0_rest.restSpec);
+      registerSpec(spec_az_2_53_0_rest.restSpec.name,
+          () => spec_az_2_53_0_rest.restSpec);
       break;
     case 'restore':
       await spec_dotnet_dotnet_restore.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_restore.restoreSpec.name, () => spec_dotnet_dotnet_restore.restoreSpec);
+      registerSpec(spec_dotnet_dotnet_restore.restoreSpec.name,
+          () => spec_dotnet_dotnet_restore.restoreSpec);
       break;
     case 'restore-point':
       await spec_az_2_53_0_restore_point.loadLibrary();
-      registerSpec(spec_az_2_53_0_restore_point.restorePointSpec.name, () => spec_az_2_53_0_restore_point.restorePointSpec);
+      registerSpec(spec_az_2_53_0_restore_point.restorePointSpec.name,
+          () => spec_az_2_53_0_restore_point.restorePointSpec);
       break;
     case 'rg':
       await spec_rg.loadLibrary();
@@ -5040,7 +7811,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'robomaker':
       await spec_aws_robomaker.loadLibrary();
-      registerSpec(spec_aws_robomaker.robomakerSpec.name, () => spec_aws_robomaker.robomakerSpec);
+      registerSpec(spec_aws_robomaker.robomakerSpec.name,
+          () => spec_aws_robomaker.robomakerSpec);
       break;
     case 'rojo':
       await spec_rojo.loadLibrary();
@@ -5048,11 +7820,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'role':
       await spec_az_2_53_0_role.loadLibrary();
-      registerSpec(spec_az_2_53_0_role.roleSpec.name, () => spec_az_2_53_0_role.roleSpec);
+      registerSpec(spec_az_2_53_0_role.roleSpec.name,
+          () => spec_az_2_53_0_role.roleSpec);
       break;
     case 'rolesanywhere':
       await spec_aws_rolesanywhere.loadLibrary();
-      registerSpec(spec_aws_rolesanywhere.rolesanywhereSpec.name, () => spec_aws_rolesanywhere.rolesanywhereSpec);
+      registerSpec(spec_aws_rolesanywhere.rolesanywhereSpec.name,
+          () => spec_aws_rolesanywhere.rolesanywhereSpec);
       break;
     case 'rollup':
       await spec_rollup.loadLibrary();
@@ -5064,31 +7838,44 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'route53':
       await spec_aws_route53.loadLibrary();
-      registerSpec(spec_aws_route53.route53Spec.name, () => spec_aws_route53.route53Spec);
+      registerSpec(spec_aws_route53.route53Spec.name,
+          () => spec_aws_route53.route53Spec);
       break;
     case 'route53-recovery-cluster':
       await spec_aws_route53_recovery_cluster.loadLibrary();
-      registerSpec(spec_aws_route53_recovery_cluster.route53RecoveryClusterSpec.name, () => spec_aws_route53_recovery_cluster.route53RecoveryClusterSpec);
+      registerSpec(
+          spec_aws_route53_recovery_cluster.route53RecoveryClusterSpec.name,
+          () => spec_aws_route53_recovery_cluster.route53RecoveryClusterSpec);
       break;
     case 'route53-recovery-control-config':
       await spec_aws_route53_recovery_control_config.loadLibrary();
-      registerSpec(spec_aws_route53_recovery_control_config.route53RecoveryControlConfigSpec.name, () => spec_aws_route53_recovery_control_config.route53RecoveryControlConfigSpec);
+      registerSpec(
+          spec_aws_route53_recovery_control_config
+              .route53RecoveryControlConfigSpec.name,
+          () => spec_aws_route53_recovery_control_config
+              .route53RecoveryControlConfigSpec);
       break;
     case 'route53-recovery-readiness':
       await spec_aws_route53_recovery_readiness.loadLibrary();
-      registerSpec(spec_aws_route53_recovery_readiness.route53RecoveryReadinessSpec.name, () => spec_aws_route53_recovery_readiness.route53RecoveryReadinessSpec);
+      registerSpec(
+          spec_aws_route53_recovery_readiness.route53RecoveryReadinessSpec.name,
+          () =>
+              spec_aws_route53_recovery_readiness.route53RecoveryReadinessSpec);
       break;
     case 'route53domains':
       await spec_aws_route53domains.loadLibrary();
-      registerSpec(spec_aws_route53domains.route53domainsSpec.name, () => spec_aws_route53domains.route53domainsSpec);
+      registerSpec(spec_aws_route53domains.route53domainsSpec.name,
+          () => spec_aws_route53domains.route53domainsSpec);
       break;
     case 'route53profiles':
       await spec_aws_route53profiles.loadLibrary();
-      registerSpec(spec_aws_route53profiles.route53profilesSpec.name, () => spec_aws_route53profiles.route53profilesSpec);
+      registerSpec(spec_aws_route53profiles.route53profilesSpec.name,
+          () => spec_aws_route53profiles.route53profilesSpec);
       break;
     case 'route53resolver':
       await spec_aws_route53resolver.loadLibrary();
-      registerSpec(spec_aws_route53resolver.route53resolverSpec.name, () => spec_aws_route53resolver.route53resolverSpec);
+      registerSpec(spec_aws_route53resolver.route53resolverSpec.name,
+          () => spec_aws_route53resolver.route53resolverSpec);
       break;
     case 'rsync':
       await spec_rsync.loadLibrary();
@@ -5112,7 +7899,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'runtime.sagemaker':
       await spec_aws_runtime_sagemaker.loadLibrary();
-      registerSpec(spec_aws_runtime_sagemaker.runtimeSagemakerSpec.name, () => spec_aws_runtime_sagemaker.runtimeSagemakerSpec);
+      registerSpec(spec_aws_runtime_sagemaker.runtimeSagemakerSpec.name,
+          () => spec_aws_runtime_sagemaker.runtimeSagemakerSpec);
       break;
     case 'rushx':
       await spec_rushx.loadLibrary();
@@ -5128,43 +7916,56 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 's3control':
       await spec_aws_s3control.loadLibrary();
-      registerSpec(spec_aws_s3control.s3controlSpec.name, () => spec_aws_s3control.s3controlSpec);
+      registerSpec(spec_aws_s3control.s3controlSpec.name,
+          () => spec_aws_s3control.s3controlSpec);
       break;
     case 's3outposts':
       await spec_aws_s3outposts.loadLibrary();
-      registerSpec(spec_aws_s3outposts.s3outpostsSpec.name, () => spec_aws_s3outposts.s3outpostsSpec);
+      registerSpec(spec_aws_s3outposts.s3outpostsSpec.name,
+          () => spec_aws_s3outposts.s3outpostsSpec);
       break;
     case 's3tables':
       await spec_aws_s3tables.loadLibrary();
-      registerSpec(spec_aws_s3tables.s3tablesSpec.name, () => spec_aws_s3tables.s3tablesSpec);
+      registerSpec(spec_aws_s3tables.s3tablesSpec.name,
+          () => spec_aws_s3tables.s3tablesSpec);
       break;
     case 'sagemaker':
       await spec_aws_sagemaker.loadLibrary();
-      registerSpec(spec_aws_sagemaker.sagemakerSpec.name, () => spec_aws_sagemaker.sagemakerSpec);
+      registerSpec(spec_aws_sagemaker.sagemakerSpec.name,
+          () => spec_aws_sagemaker.sagemakerSpec);
       break;
     case 'sagemaker-a2i-runtime':
       await spec_aws_sagemaker_a2i_runtime.loadLibrary();
-      registerSpec(spec_aws_sagemaker_a2i_runtime.sagemakerA2iRuntimeSpec.name, () => spec_aws_sagemaker_a2i_runtime.sagemakerA2iRuntimeSpec);
+      registerSpec(spec_aws_sagemaker_a2i_runtime.sagemakerA2iRuntimeSpec.name,
+          () => spec_aws_sagemaker_a2i_runtime.sagemakerA2iRuntimeSpec);
       break;
     case 'sagemaker-edge':
       await spec_aws_sagemaker_edge.loadLibrary();
-      registerSpec(spec_aws_sagemaker_edge.sagemakerEdgeSpec.name, () => spec_aws_sagemaker_edge.sagemakerEdgeSpec);
+      registerSpec(spec_aws_sagemaker_edge.sagemakerEdgeSpec.name,
+          () => spec_aws_sagemaker_edge.sagemakerEdgeSpec);
       break;
     case 'sagemaker-featurestore-runtime':
       await spec_aws_sagemaker_featurestore_runtime.loadLibrary();
-      registerSpec(spec_aws_sagemaker_featurestore_runtime.sagemakerFeaturestoreRuntimeSpec.name, () => spec_aws_sagemaker_featurestore_runtime.sagemakerFeaturestoreRuntimeSpec);
+      registerSpec(
+          spec_aws_sagemaker_featurestore_runtime
+              .sagemakerFeaturestoreRuntimeSpec.name,
+          () => spec_aws_sagemaker_featurestore_runtime
+              .sagemakerFeaturestoreRuntimeSpec);
       break;
     case 'sagemaker-geospatial':
       await spec_aws_sagemaker_geospatial.loadLibrary();
-      registerSpec(spec_aws_sagemaker_geospatial.sagemakerGeospatialSpec.name, () => spec_aws_sagemaker_geospatial.sagemakerGeospatialSpec);
+      registerSpec(spec_aws_sagemaker_geospatial.sagemakerGeospatialSpec.name,
+          () => spec_aws_sagemaker_geospatial.sagemakerGeospatialSpec);
       break;
     case 'sagemaker-metrics':
       await spec_aws_sagemaker_metrics.loadLibrary();
-      registerSpec(spec_aws_sagemaker_metrics.sagemakerMetricsSpec.name, () => spec_aws_sagemaker_metrics.sagemakerMetricsSpec);
+      registerSpec(spec_aws_sagemaker_metrics.sagemakerMetricsSpec.name,
+          () => spec_aws_sagemaker_metrics.sagemakerMetricsSpec);
       break;
     case 'sagemaker-runtime':
       await spec_aws_sagemaker_runtime.loadLibrary();
-      registerSpec(spec_aws_sagemaker_runtime.sagemakerRuntimeSpec.name, () => spec_aws_sagemaker_runtime.sagemakerRuntimeSpec);
+      registerSpec(spec_aws_sagemaker_runtime.sagemakerRuntimeSpec.name,
+          () => spec_aws_sagemaker_runtime.sagemakerRuntimeSpec);
       break;
     case 'sake':
       await spec_sake.loadLibrary();
@@ -5180,15 +7981,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sapmonitor':
       await spec_az_2_53_0_sapmonitor.loadLibrary();
-      registerSpec(spec_az_2_53_0_sapmonitor.sapmonitorSpec.name, () => spec_az_2_53_0_sapmonitor.sapmonitorSpec);
+      registerSpec(spec_az_2_53_0_sapmonitor.sapmonitorSpec.name,
+          () => spec_az_2_53_0_sapmonitor.sapmonitorSpec);
       break;
     case 'sapphire':
       await spec_sapphire.loadLibrary();
-      registerSpec(spec_sapphire.sapphireSpec.name, () => spec_sapphire.sapphireSpec);
+      registerSpec(
+          spec_sapphire.sapphireSpec.name, () => spec_sapphire.sapphireSpec);
       break;
     case 'savingsplans':
       await spec_aws_savingsplans.loadLibrary();
-      registerSpec(spec_aws_savingsplans.savingsplansSpec.name, () => spec_aws_savingsplans.savingsplansSpec);
+      registerSpec(spec_aws_savingsplans.savingsplansSpec.name,
+          () => spec_aws_savingsplans.savingsplansSpec);
       break;
     case 'scc':
       await spec_gcloud_scc.loadLibrary();
@@ -5198,17 +8002,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'scenario':
       await spec_az_2_53_0_scenario.loadLibrary();
-      registerSpec(spec_az_2_53_0_scenario.scenarioSpec.name, () => spec_az_2_53_0_scenario.scenarioSpec);
+      registerSpec(spec_az_2_53_0_scenario.scenarioSpec.name,
+          () => spec_az_2_53_0_scenario.scenarioSpec);
       break;
     case 'scheduler':
       await spec_aws_scheduler.loadLibrary();
-      registerSpec(spec_aws_scheduler.schedulerSpec.name, () => spec_aws_scheduler.schedulerSpec);
+      registerSpec(spec_aws_scheduler.schedulerSpec.name,
+          () => spec_aws_scheduler.schedulerSpec);
       await spec_gcloud_scheduler.loadLibrary();
-      registerSpec(spec_gcloud_scheduler.schedulerSpec.name, () => spec_gcloud_scheduler.schedulerSpec);
+      registerSpec(spec_gcloud_scheduler.schedulerSpec.name,
+          () => spec_gcloud_scheduler.schedulerSpec);
       break;
     case 'schemas':
       await spec_aws_schemas.loadLibrary();
-      registerSpec(spec_aws_schemas.schemasSpec.name, () => spec_aws_schemas.schemasSpec);
+      registerSpec(spec_aws_schemas.schemasSpec.name,
+          () => spec_aws_schemas.schemasSpec);
       break;
     case 'scp':
       await spec_scp.loadLibrary();
@@ -5220,7 +8028,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'scvmm':
       await spec_az_2_53_0_scvmm.loadLibrary();
-      registerSpec(spec_az_2_53_0_scvmm.scvmmSpec.name, () => spec_az_2_53_0_scvmm.scvmmSpec);
+      registerSpec(spec_az_2_53_0_scvmm.scvmmSpec.name,
+          () => spec_az_2_53_0_scvmm.scvmmSpec);
       break;
     case 'sdb':
       await spec_aws_sdb.loadLibrary();
@@ -5228,27 +8037,33 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'search':
       await spec_az_2_53_0_search.loadLibrary();
-      registerSpec(spec_az_2_53_0_search.searchSpec.name, () => spec_az_2_53_0_search.searchSpec);
+      registerSpec(spec_az_2_53_0_search.searchSpec.name,
+          () => spec_az_2_53_0_search.searchSpec);
       break;
     case 'secrets':
       await spec_gcloud_secrets.loadLibrary();
-      registerSpec(spec_gcloud_secrets.secretsSpec.name, () => spec_gcloud_secrets.secretsSpec);
+      registerSpec(spec_gcloud_secrets.secretsSpec.name,
+          () => spec_gcloud_secrets.secretsSpec);
       break;
     case 'security':
       await spec_az_2_53_0_security.loadLibrary();
-      registerSpec(spec_az_2_53_0_security.securitySpec.name, () => spec_az_2_53_0_security.securitySpec);
+      registerSpec(spec_az_2_53_0_security.securitySpec.name,
+          () => spec_az_2_53_0_security.securitySpec);
       break;
     case 'security-ir':
       await spec_aws_security_ir.loadLibrary();
-      registerSpec(spec_aws_security_ir.securityIrSpec.name, () => spec_aws_security_ir.securityIrSpec);
+      registerSpec(spec_aws_security_ir.securityIrSpec.name,
+          () => spec_aws_security_ir.securityIrSpec);
       break;
     case 'securityhub':
       await spec_aws_securityhub.loadLibrary();
-      registerSpec(spec_aws_securityhub.securityhubSpec.name, () => spec_aws_securityhub.securityhubSpec);
+      registerSpec(spec_aws_securityhub.securityhubSpec.name,
+          () => spec_aws_securityhub.securityhubSpec);
       break;
     case 'securitylake':
       await spec_aws_securitylake.loadLibrary();
-      registerSpec(spec_aws_securitylake.securitylakeSpec.name, () => spec_aws_securitylake.securitylakeSpec);
+      registerSpec(spec_aws_securitylake.securitylakeSpec.name,
+          () => spec_aws_securitylake.securitylakeSpec);
       break;
     case 'sed':
       await spec_sed.loadLibrary();
@@ -5256,15 +8071,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'self-help':
       await spec_az_2_53_0_self_help.loadLibrary();
-      registerSpec(spec_az_2_53_0_self_help.selfHelpSpec.name, () => spec_az_2_53_0_self_help.selfHelpSpec);
+      registerSpec(spec_az_2_53_0_self_help.selfHelpSpec.name,
+          () => spec_az_2_53_0_self_help.selfHelpSpec);
       break;
     case 'self-test':
       await spec_az_2_53_0_self_test.loadLibrary();
-      registerSpec(spec_az_2_53_0_self_test.selfTestSpec.name, () => spec_az_2_53_0_self_test.selfTestSpec);
+      registerSpec(spec_az_2_53_0_self_test.selfTestSpec.name,
+          () => spec_az_2_53_0_self_test.selfTestSpec);
       break;
     case 'sentinel':
       await spec_az_2_53_0_sentinel.loadLibrary();
-      registerSpec(spec_az_2_53_0_sentinel.sentinelSpec.name, () => spec_az_2_53_0_sentinel.sentinelSpec);
+      registerSpec(spec_az_2_53_0_sentinel.sentinelSpec.name,
+          () => spec_az_2_53_0_sentinel.sentinelSpec);
       break;
     case 'seq':
       await spec_seq.loadLibrary();
@@ -5272,11 +8090,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sequelize':
       await spec_sequelize.loadLibrary();
-      registerSpec(spec_sequelize.sequelizeSpec.name, () => spec_sequelize.sequelizeSpec);
+      registerSpec(spec_sequelize.sequelizeSpec.name,
+          () => spec_sequelize.sequelizeSpec);
       break;
     case 'serial-console':
       await spec_az_2_53_0_serial_console.loadLibrary();
-      registerSpec(spec_az_2_53_0_serial_console.serialConsoleSpec.name, () => spec_az_2_53_0_serial_console.serialConsoleSpec);
+      registerSpec(spec_az_2_53_0_serial_console.serialConsoleSpec.name,
+          () => spec_az_2_53_0_serial_console.serialConsoleSpec);
       break;
     case 'serve':
       await spec_serve.loadLibrary();
@@ -5284,35 +8104,46 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'serverless':
       await spec_serverless.loadLibrary();
-      registerSpec(spec_serverless.serverlessSpec.name, () => spec_serverless.serverlessSpec);
+      registerSpec(spec_serverless.serverlessSpec.name,
+          () => spec_serverless.serverlessSpec);
       break;
     case 'serverlessrepo':
       await spec_aws_serverlessrepo.loadLibrary();
-      registerSpec(spec_aws_serverlessrepo.serverlessrepoSpec.name, () => spec_aws_serverlessrepo.serverlessrepoSpec);
+      registerSpec(spec_aws_serverlessrepo.serverlessrepoSpec.name,
+          () => spec_aws_serverlessrepo.serverlessrepoSpec);
       break;
     case 'service-quotas':
       await spec_aws_service_quotas.loadLibrary();
-      registerSpec(spec_aws_service_quotas.serviceQuotasSpec.name, () => spec_aws_service_quotas.serviceQuotasSpec);
+      registerSpec(spec_aws_service_quotas.serviceQuotasSpec.name,
+          () => spec_aws_service_quotas.serviceQuotasSpec);
       break;
     case 'servicebus':
       await spec_az_2_53_0_servicebus.loadLibrary();
-      registerSpec(spec_az_2_53_0_servicebus.servicebusSpec.name, () => spec_az_2_53_0_servicebus.servicebusSpec);
+      registerSpec(spec_az_2_53_0_servicebus.servicebusSpec.name,
+          () => spec_az_2_53_0_servicebus.servicebusSpec);
       break;
     case 'servicecatalog':
       await spec_aws_servicecatalog.loadLibrary();
-      registerSpec(spec_aws_servicecatalog.servicecatalogSpec.name, () => spec_aws_servicecatalog.servicecatalogSpec);
+      registerSpec(spec_aws_servicecatalog.servicecatalogSpec.name,
+          () => spec_aws_servicecatalog.servicecatalogSpec);
       break;
     case 'servicecatalog-appregistry':
       await spec_aws_servicecatalog_appregistry.loadLibrary();
-      registerSpec(spec_aws_servicecatalog_appregistry.servicecatalogAppregistrySpec.name, () => spec_aws_servicecatalog_appregistry.servicecatalogAppregistrySpec);
+      registerSpec(
+          spec_aws_servicecatalog_appregistry
+              .servicecatalogAppregistrySpec.name,
+          () => spec_aws_servicecatalog_appregistry
+              .servicecatalogAppregistrySpec);
       break;
     case 'servicediscovery':
       await spec_aws_servicediscovery.loadLibrary();
-      registerSpec(spec_aws_servicediscovery.servicediscoverySpec.name, () => spec_aws_servicediscovery.servicediscoverySpec);
+      registerSpec(spec_aws_servicediscovery.servicediscoverySpec.name,
+          () => spec_aws_servicediscovery.servicediscoverySpec);
       break;
     case 'services':
       await spec_gcloud_services.loadLibrary();
-      registerSpec(spec_gcloud_services.servicesSpec.name, () => spec_gcloud_services.servicesSpec);
+      registerSpec(spec_gcloud_services.servicesSpec.name,
+          () => spec_gcloud_services.servicesSpec);
       break;
     case 'ses':
       await spec_aws_ses.loadLibrary();
@@ -5320,11 +8151,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sesv2':
       await spec_aws_sesv2.loadLibrary();
-      registerSpec(spec_aws_sesv2.sesv2Spec.name, () => spec_aws_sesv2.sesv2Spec);
+      registerSpec(
+          spec_aws_sesv2.sesv2Spec.name, () => spec_aws_sesv2.sesv2Spec);
       break;
     case 'sf':
       await spec_az_2_53_0_sf.loadLibrary();
-      registerSpec(spec_az_2_53_0_sf.sfSpec.name, () => spec_az_2_53_0_sf.sfSpec);
+      registerSpec(
+          spec_az_2_53_0_sf.sfSpec.name, () => spec_az_2_53_0_sf.sfSpec);
       break;
     case 'sfdx':
       await spec_sfdx.loadLibrary();
@@ -5336,7 +8169,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sha1sum':
       await spec_sha1sum.loadLibrary();
-      registerSpec(spec_sha1sum.sha1sumSpec.name, () => spec_sha1sum.sha1sumSpec);
+      registerSpec(
+          spec_sha1sum.sha1sumSpec.name, () => spec_sha1sum.sha1sumSpec);
       break;
     case 'shasum':
       await spec_shasum.loadLibrary();
@@ -5348,11 +8182,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'shield':
       await spec_aws_shield.loadLibrary();
-      registerSpec(spec_aws_shield.shieldSpec.name, () => spec_aws_shield.shieldSpec);
+      registerSpec(
+          spec_aws_shield.shieldSpec.name, () => spec_aws_shield.shieldSpec);
       break;
     case 'shortcuts':
       await spec_shortcuts.loadLibrary();
-      registerSpec(spec_shortcuts.shortcutsSpec.name, () => spec_shortcuts.shortcutsSpec);
+      registerSpec(spec_shortcuts.shortcutsSpec.name,
+          () => spec_shortcuts.shortcutsSpec);
       break;
     case 'shred':
       await spec_shred.loadLibrary();
@@ -5360,19 +8196,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sidekiq':
       await spec_sidekiq.loadLibrary();
-      registerSpec(spec_sidekiq.sidekiqSpec.name, () => spec_sidekiq.sidekiqSpec);
+      registerSpec(
+          spec_sidekiq.sidekiqSpec.name, () => spec_sidekiq.sidekiqSpec);
       break;
     case 'sig':
       await spec_az_2_53_0_sig.loadLibrary();
-      registerSpec(spec_az_2_53_0_sig.sigSpec.name, () => spec_az_2_53_0_sig.sigSpec);
+      registerSpec(
+          spec_az_2_53_0_sig.sigSpec.name, () => spec_az_2_53_0_sig.sigSpec);
       break;
     case 'signalr':
       await spec_az_2_53_0_signalr.loadLibrary();
-      registerSpec(spec_az_2_53_0_signalr.signalrSpec.name, () => spec_az_2_53_0_signalr.signalrSpec);
+      registerSpec(spec_az_2_53_0_signalr.signalrSpec.name,
+          () => spec_az_2_53_0_signalr.signalrSpec);
       break;
     case 'signer':
       await spec_aws_signer.loadLibrary();
-      registerSpec(spec_aws_signer.signerSpec.name, () => spec_aws_signer.signerSpec);
+      registerSpec(
+          spec_aws_signer.signerSpec.name, () => spec_aws_signer.signerSpec);
       break;
     case 'simctl':
       await spec_simctl.loadLibrary();
@@ -5380,7 +8220,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'simspaceweaver':
       await spec_aws_simspaceweaver.loadLibrary();
-      registerSpec(spec_aws_simspaceweaver.simspaceweaverSpec.name, () => spec_aws_simspaceweaver.simspaceweaverSpec);
+      registerSpec(spec_aws_simspaceweaver.simspaceweaverSpec.name,
+          () => spec_aws_simspaceweaver.simspaceweaverSpec);
       break;
     case 'sips':
       await spec_sips.loadLibrary();
@@ -5388,7 +8229,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'site-recovery':
       await spec_az_2_53_0_site_recovery.loadLibrary();
-      registerSpec(spec_az_2_53_0_site_recovery.siteRecoverySpec.name, () => spec_az_2_53_0_site_recovery.siteRecoverySpec);
+      registerSpec(spec_az_2_53_0_site_recovery.siteRecoverySpec.name,
+          () => spec_az_2_53_0_site_recovery.siteRecoverySpec);
       break;
     case 'sl':
       await spec_sl.loadLibrary();
@@ -5404,19 +8246,24 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sms-voice':
       await spec_aws_sms_voice.loadLibrary();
-      registerSpec(spec_aws_sms_voice.smsVoiceSpec.name, () => spec_aws_sms_voice.smsVoiceSpec);
+      registerSpec(spec_aws_sms_voice.smsVoiceSpec.name,
+          () => spec_aws_sms_voice.smsVoiceSpec);
       break;
     case 'snapshot':
       await spec_az_2_53_0_snapshot.loadLibrary();
-      registerSpec(spec_az_2_53_0_snapshot.snapshotSpec.name, () => spec_az_2_53_0_snapshot.snapshotSpec);
+      registerSpec(spec_az_2_53_0_snapshot.snapshotSpec.name,
+          () => spec_az_2_53_0_snapshot.snapshotSpec);
       break;
     case 'snow-device-management':
       await spec_aws_snow_device_management.loadLibrary();
-      registerSpec(spec_aws_snow_device_management.snowDeviceManagementSpec.name, () => spec_aws_snow_device_management.snowDeviceManagementSpec);
+      registerSpec(
+          spec_aws_snow_device_management.snowDeviceManagementSpec.name,
+          () => spec_aws_snow_device_management.snowDeviceManagementSpec);
       break;
     case 'snowball':
       await spec_aws_snowball.loadLibrary();
-      registerSpec(spec_aws_snowball.snowballSpec.name, () => spec_aws_snowball.snowballSpec);
+      registerSpec(spec_aws_snowball.snowballSpec.name,
+          () => spec_aws_snowball.snowballSpec);
       break;
     case 'sns':
       await spec_aws_sns.loadLibrary();
@@ -5424,11 +8271,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'socialmessaging':
       await spec_aws_socialmessaging.loadLibrary();
-      registerSpec(spec_aws_socialmessaging.socialmessagingSpec.name, () => spec_aws_socialmessaging.socialmessagingSpec);
+      registerSpec(spec_aws_socialmessaging.socialmessagingSpec.name,
+          () => spec_aws_socialmessaging.socialmessagingSpec);
       break;
     case 'softwareupdate':
       await spec_softwareupdate.loadLibrary();
-      registerSpec(spec_softwareupdate.softwareupdateSpec.name, () => spec_softwareupdate.softwareupdateSpec);
+      registerSpec(spec_softwareupdate.softwareupdateSpec.name,
+          () => spec_softwareupdate.softwareupdateSpec);
       break;
     case 'sort':
       await spec_sort.loadLibrary();
@@ -5436,7 +8285,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'source':
       await spec_gcloud_source.loadLibrary();
-      registerSpec(spec_gcloud_source.sourceSpec.name, () => spec_gcloud_source.sourceSpec);
+      registerSpec(spec_gcloud_source.sourceSpec.name,
+          () => spec_gcloud_source.sourceSpec);
       await spec_source.loadLibrary();
       registerSpec(spec_source.sourceSpec.name, () => spec_source.sourceSpec);
       break;
@@ -5446,27 +8296,35 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'spanner':
       await spec_gcloud_spanner.loadLibrary();
-      registerSpec(spec_gcloud_spanner.spannerSpec.name, () => spec_gcloud_spanner.spannerSpec);
+      registerSpec(spec_gcloud_spanner.spannerSpec.name,
+          () => spec_gcloud_spanner.spannerSpec);
       break;
     case 'spatial-anchors-account':
       await spec_az_2_53_0_spatial_anchors_account.loadLibrary();
-      registerSpec(spec_az_2_53_0_spatial_anchors_account.spatialAnchorsAccountSpec.name, () => spec_az_2_53_0_spatial_anchors_account.spatialAnchorsAccountSpec);
+      registerSpec(
+          spec_az_2_53_0_spatial_anchors_account.spatialAnchorsAccountSpec.name,
+          () =>
+              spec_az_2_53_0_spatial_anchors_account.spatialAnchorsAccountSpec);
       break;
     case 'speedtest':
       await spec_speedtest.loadLibrary();
-      registerSpec(spec_speedtest.speedtestSpec.name, () => spec_speedtest.speedtestSpec);
+      registerSpec(spec_speedtest.speedtestSpec.name,
+          () => spec_speedtest.speedtestSpec);
       break;
     case 'speedtest-cli':
       await spec_speedtest_cli.loadLibrary();
-      registerSpec(spec_speedtest_cli.speedtestCliSpec.name, () => spec_speedtest_cli.speedtestCliSpec);
+      registerSpec(spec_speedtest_cli.speedtestCliSpec.name,
+          () => spec_speedtest_cli.speedtestCliSpec);
       break;
     case 'sphere':
       await spec_az_2_53_0_sphere.loadLibrary();
-      registerSpec(spec_az_2_53_0_sphere.sphereSpec.name, () => spec_az_2_53_0_sphere.sphereSpec);
+      registerSpec(spec_az_2_53_0_sphere.sphereSpec.name,
+          () => spec_az_2_53_0_sphere.sphereSpec);
       break;
     case 'splash-cli':
       await spec_splash.loadLibrary();
-      registerSpec(spec_splash.splashCliSpec.name, () => spec_splash.splashCliSpec);
+      registerSpec(
+          spec_splash.splashCliSpec.name, () => spec_splash.splashCliSpec);
       break;
     case 'split':
       await spec_split.loadLibrary();
@@ -5474,35 +8332,42 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'spotify':
       await spec_spotify.loadLibrary();
-      registerSpec(spec_spotify.spotifySpec.name, () => spec_spotify.spotifySpec);
+      registerSpec(
+          spec_spotify.spotifySpec.name, () => spec_spotify.spotifySpec);
       break;
     case 'spring':
       await spec_az_2_53_0_spring.loadLibrary();
-      registerSpec(spec_az_2_53_0_spring.springSpec.name, () => spec_az_2_53_0_spring.springSpec);
+      registerSpec(spec_az_2_53_0_spring.springSpec.name,
+          () => spec_az_2_53_0_spring.springSpec);
       await spec_spring.loadLibrary();
       registerSpec(spec_spring.springSpec.name, () => spec_spring.springSpec);
       break;
     case 'spring-cloud':
       await spec_az_2_53_0_spring_cloud.loadLibrary();
-      registerSpec(spec_az_2_53_0_spring_cloud.springCloudSpec.name, () => spec_az_2_53_0_spring_cloud.springCloudSpec);
+      registerSpec(spec_az_2_53_0_spring_cloud.springCloudSpec.name,
+          () => spec_az_2_53_0_spring_cloud.springCloudSpec);
       break;
     case 'sql':
       await spec_az_2_53_0_sql.loadLibrary();
-      registerSpec(spec_az_2_53_0_sql.sqlSpec.name, () => spec_az_2_53_0_sql.sqlSpec);
+      registerSpec(
+          spec_az_2_53_0_sql.sqlSpec.name, () => spec_az_2_53_0_sql.sqlSpec);
       await spec_gcloud_sql.loadLibrary();
       registerSpec(spec_gcloud_sql.sqlSpec.name, () => spec_gcloud_sql.sqlSpec);
       break;
     case 'sqlfluff':
       await spec_sqlfluff.loadLibrary();
-      registerSpec(spec_sqlfluff.sqlfluffSpec.name, () => spec_sqlfluff.sqlfluffSpec);
+      registerSpec(
+          spec_sqlfluff.sqlfluffSpec.name, () => spec_sqlfluff.sqlfluffSpec);
       break;
     case 'sqlite3':
       await spec_sqlite3.loadLibrary();
-      registerSpec(spec_sqlite3.sqlite3Spec.name, () => spec_sqlite3.sqlite3Spec);
+      registerSpec(
+          spec_sqlite3.sqlite3Spec.name, () => spec_sqlite3.sqlite3Spec);
       break;
     case 'sqlmesh':
       await spec_sqlmesh.loadLibrary();
-      registerSpec(spec_sqlmesh.sqlmeshSpec.name, () => spec_sqlmesh.sqlmeshSpec);
+      registerSpec(
+          spec_sqlmesh.sqlmeshSpec.name, () => spec_sqlmesh.sqlmeshSpec);
       break;
     case 'sqs':
       await spec_aws_sqs.loadLibrary();
@@ -5514,15 +8379,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ssh':
       await spec_az_2_53_0_ssh.loadLibrary();
-      registerSpec(spec_az_2_53_0_ssh.sshSpec.name, () => spec_az_2_53_0_ssh.sshSpec);
+      registerSpec(
+          spec_az_2_53_0_ssh.sshSpec.name, () => spec_az_2_53_0_ssh.sshSpec);
       break;
     case 'ssh-keygen':
       await spec_ssh_keygen.loadLibrary();
-      registerSpec(spec_ssh_keygen.sshKeygenSpec.name, () => spec_ssh_keygen.sshKeygenSpec);
+      registerSpec(spec_ssh_keygen.sshKeygenSpec.name,
+          () => spec_ssh_keygen.sshKeygenSpec);
       break;
     case 'sshkey':
       await spec_az_2_53_0_sshkey.loadLibrary();
-      registerSpec(spec_az_2_53_0_sshkey.sshkeySpec.name, () => spec_az_2_53_0_sshkey.sshkeySpec);
+      registerSpec(spec_az_2_53_0_sshkey.sshkeySpec.name,
+          () => spec_az_2_53_0_sshkey.sshkeySpec);
       break;
     case 'ssm':
       await spec_aws_ssm.loadLibrary();
@@ -5530,19 +8398,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ssm-contacts':
       await spec_aws_ssm_contacts.loadLibrary();
-      registerSpec(spec_aws_ssm_contacts.ssmContactsSpec.name, () => spec_aws_ssm_contacts.ssmContactsSpec);
+      registerSpec(spec_aws_ssm_contacts.ssmContactsSpec.name,
+          () => spec_aws_ssm_contacts.ssmContactsSpec);
       break;
     case 'ssm-incidents':
       await spec_aws_ssm_incidents.loadLibrary();
-      registerSpec(spec_aws_ssm_incidents.ssmIncidentsSpec.name, () => spec_aws_ssm_incidents.ssmIncidentsSpec);
+      registerSpec(spec_aws_ssm_incidents.ssmIncidentsSpec.name,
+          () => spec_aws_ssm_incidents.ssmIncidentsSpec);
       break;
     case 'ssm-quicksetup':
       await spec_aws_ssm_quicksetup.loadLibrary();
-      registerSpec(spec_aws_ssm_quicksetup.ssmQuicksetupSpec.name, () => spec_aws_ssm_quicksetup.ssmQuicksetupSpec);
+      registerSpec(spec_aws_ssm_quicksetup.ssmQuicksetupSpec.name,
+          () => spec_aws_ssm_quicksetup.ssmQuicksetupSpec);
       break;
     case 'ssm-sap':
       await spec_aws_ssm_sap.loadLibrary();
-      registerSpec(spec_aws_ssm_sap.ssmSapSpec.name, () => spec_aws_ssm_sap.ssmSapSpec);
+      registerSpec(
+          spec_aws_ssm_sap.ssmSapSpec.name, () => spec_aws_ssm_sap.ssmSapSpec);
       break;
     case 'sso':
       await spec_aws_sso.loadLibrary();
@@ -5550,11 +8422,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sso-admin':
       await spec_aws_sso_admin.loadLibrary();
-      registerSpec(spec_aws_sso_admin.ssoAdminSpec.name, () => spec_aws_sso_admin.ssoAdminSpec);
+      registerSpec(spec_aws_sso_admin.ssoAdminSpec.name,
+          () => spec_aws_sso_admin.ssoAdminSpec);
       break;
     case 'sso-oidc':
       await spec_aws_sso_oidc.loadLibrary();
-      registerSpec(spec_aws_sso_oidc.ssoOidcSpec.name, () => spec_aws_sso_oidc.ssoOidcSpec);
+      registerSpec(spec_aws_sso_oidc.ssoOidcSpec.name,
+          () => spec_aws_sso_oidc.ssoOidcSpec);
       break;
     case 'st2':
       await spec_st2.loadLibrary();
@@ -5566,21 +8440,25 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'stack':
       await spec_az_2_53_0_stack.loadLibrary();
-      registerSpec(spec_az_2_53_0_stack.stackSpec.name, () => spec_az_2_53_0_stack.stackSpec);
+      registerSpec(spec_az_2_53_0_stack.stackSpec.name,
+          () => spec_az_2_53_0_stack.stackSpec);
       await spec_stack.loadLibrary();
       registerSpec(spec_stack.stackSpec.name, () => spec_stack.stackSpec);
       break;
     case 'stack-hci':
       await spec_az_2_53_0_stack_hci.loadLibrary();
-      registerSpec(spec_az_2_53_0_stack_hci.stackHciSpec.name, () => spec_az_2_53_0_stack_hci.stackHciSpec);
+      registerSpec(spec_az_2_53_0_stack_hci.stackHciSpec.name,
+          () => spec_az_2_53_0_stack_hci.stackHciSpec);
       break;
     case 'starkli':
       await spec_starkli.loadLibrary();
-      registerSpec(spec_starkli.starkliSpec.name, () => spec_starkli.starkliSpec);
+      registerSpec(
+          spec_starkli.starkliSpec.name, () => spec_starkli.starkliSpec);
       break;
     case 'start-storybook':
       await spec_start_storybook.loadLibrary();
-      registerSpec(spec_start_storybook.startStorybookSpec.name, () => spec_start_storybook.startStorybookSpec);
+      registerSpec(spec_start_storybook.startStorybookSpec.name,
+          () => spec_start_storybook.startStorybookSpec);
       break;
     case 'stat':
       await spec_stat.loadLibrary();
@@ -5588,39 +8466,48 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'staticwebapp':
       await spec_az_2_53_0_staticwebapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_staticwebapp.staticwebappSpec.name, () => spec_az_2_53_0_staticwebapp.staticwebappSpec);
+      registerSpec(spec_az_2_53_0_staticwebapp.staticwebappSpec.name,
+          () => spec_az_2_53_0_staticwebapp.staticwebappSpec);
       break;
     case 'steadybit':
       await spec_steadybit.loadLibrary();
-      registerSpec(spec_steadybit.steadybitSpec.name, () => spec_steadybit.steadybitSpec);
+      registerSpec(spec_steadybit.steadybitSpec.name,
+          () => spec_steadybit.steadybitSpec);
       break;
     case 'stencil':
       await spec_stencil.loadLibrary();
-      registerSpec(spec_stencil.stencilSpec.name, () => spec_stencil.stencilSpec);
+      registerSpec(
+          spec_stencil.stencilSpec.name, () => spec_stencil.stencilSpec);
       break;
     case 'stepfunctions':
       await spec_aws_stepfunctions.loadLibrary();
-      registerSpec(spec_aws_stepfunctions.stepfunctionsSpec.name, () => spec_aws_stepfunctions.stepfunctionsSpec);
+      registerSpec(spec_aws_stepfunctions.stepfunctionsSpec.name,
+          () => spec_aws_stepfunctions.stepfunctionsSpec);
       break;
     case 'storage':
       await spec_az_2_53_0_storage.loadLibrary();
-      registerSpec(spec_az_2_53_0_storage.storageSpec.name, () => spec_az_2_53_0_storage.storageSpec);
+      registerSpec(spec_az_2_53_0_storage.storageSpec.name,
+          () => spec_az_2_53_0_storage.storageSpec);
       break;
     case 'storage-mover':
       await spec_az_2_53_0_storage_mover.loadLibrary();
-      registerSpec(spec_az_2_53_0_storage_mover.storageMoverSpec.name, () => spec_az_2_53_0_storage_mover.storageMoverSpec);
+      registerSpec(spec_az_2_53_0_storage_mover.storageMoverSpec.name,
+          () => spec_az_2_53_0_storage_mover.storageMoverSpec);
       break;
     case 'storagegateway':
       await spec_aws_storagegateway.loadLibrary();
-      registerSpec(spec_aws_storagegateway.storagegatewaySpec.name, () => spec_aws_storagegateway.storagegatewaySpec);
+      registerSpec(spec_aws_storagegateway.storagegatewaySpec.name,
+          () => spec_aws_storagegateway.storagegatewaySpec);
       break;
     case 'storagesync':
       await spec_az_2_53_0_storagesync.loadLibrary();
-      registerSpec(spec_az_2_53_0_storagesync.storagesyncSpec.name, () => spec_az_2_53_0_storagesync.storagesyncSpec);
+      registerSpec(spec_az_2_53_0_storagesync.storagesyncSpec.name,
+          () => spec_az_2_53_0_storagesync.storagesyncSpec);
       break;
     case 'store':
       await spec_dotnet_dotnet_store.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_store.storeSpec.name, () => spec_dotnet_dotnet_store.storeSpec);
+      registerSpec(spec_dotnet_dotnet_store.storeSpec.name,
+          () => spec_dotnet_dotnet_store.storeSpec);
       break;
     case 'stow':
       await spec_stow.loadLibrary();
@@ -5628,11 +8515,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'stream-analytics':
       await spec_az_2_53_0_stream_analytics.loadLibrary();
-      registerSpec(spec_az_2_53_0_stream_analytics.streamAnalyticsSpec.name, () => spec_az_2_53_0_stream_analytics.streamAnalyticsSpec);
+      registerSpec(spec_az_2_53_0_stream_analytics.streamAnalyticsSpec.name,
+          () => spec_az_2_53_0_stream_analytics.streamAnalyticsSpec);
       break;
     case 'streamlit':
       await spec_streamlit.loadLibrary();
-      registerSpec(spec_streamlit.streamlitSpec.name, () => spec_streamlit.streamlitSpec);
+      registerSpec(spec_streamlit.streamlitSpec.name,
+          () => spec_streamlit.streamlitSpec);
       break;
     case 'stripe':
       await spec_stripe.loadLibrary();
@@ -5656,35 +8545,44 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'suitecloud':
       await spec_suitecloud.loadLibrary();
-      registerSpec(spec_suitecloud.suitecloudSpec.name, () => spec_suitecloud.suitecloudSpec);
+      registerSpec(spec_suitecloud.suitecloudSpec.name,
+          () => spec_suitecloud.suitecloudSpec);
       break;
     case 'supabase':
       await spec_supabase.loadLibrary();
-      registerSpec(spec_supabase.supabaseSpec.name, () => spec_supabase.supabaseSpec);
+      registerSpec(
+          spec_supabase.supabaseSpec.name, () => spec_supabase.supabaseSpec);
       break;
     case 'supplychain':
       await spec_aws_supplychain.loadLibrary();
-      registerSpec(spec_aws_supplychain.supplychainSpec.name, () => spec_aws_supplychain.supplychainSpec);
+      registerSpec(spec_aws_supplychain.supplychainSpec.name,
+          () => spec_aws_supplychain.supplychainSpec);
       break;
     case 'support':
       await spec_aws_support.loadLibrary();
-      registerSpec(spec_aws_support.supportSpec.name, () => spec_aws_support.supportSpec);
+      registerSpec(spec_aws_support.supportSpec.name,
+          () => spec_aws_support.supportSpec);
       await spec_az_2_53_0_support.loadLibrary();
-      registerSpec(spec_az_2_53_0_support.supportSpec.name, () => spec_az_2_53_0_support.supportSpec);
+      registerSpec(spec_az_2_53_0_support.supportSpec.name,
+          () => spec_az_2_53_0_support.supportSpec);
       break;
     case 'support-app':
       await spec_aws_support_app.loadLibrary();
-      registerSpec(spec_aws_support_app.supportAppSpec.name, () => spec_aws_support_app.supportAppSpec);
+      registerSpec(spec_aws_support_app.supportAppSpec.name,
+          () => spec_aws_support_app.supportAppSpec);
       break;
     case 'surreal':
       await spec_surreal.loadLibrary();
-      registerSpec(spec_surreal.surrealSpec.name, () => spec_surreal.surrealSpec);
+      registerSpec(
+          spec_surreal.surrealSpec.name, () => spec_surreal.surrealSpec);
       break;
     case 'survey':
       await spec_az_2_53_0_survey.loadLibrary();
-      registerSpec(spec_az_2_53_0_survey.surveySpec.name, () => spec_az_2_53_0_survey.surveySpec);
+      registerSpec(spec_az_2_53_0_survey.surveySpec.name,
+          () => spec_az_2_53_0_survey.surveySpec);
       await spec_gcloud_survey.loadLibrary();
-      registerSpec(spec_gcloud_survey.surveySpec.name, () => spec_gcloud_survey.surveySpec);
+      registerSpec(spec_gcloud_survey.surveySpec.name,
+          () => spec_gcloud_survey.surveySpec);
       break;
     case 'svn':
       await spec_svn.loadLibrary();
@@ -5696,13 +8594,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sw_vers':
       await spec_sw_vers.loadLibrary();
-      registerSpec(spec_sw_vers.sw_versSpec.name, () => spec_sw_vers.sw_versSpec);
+      registerSpec(
+          spec_sw_vers.sw_versSpec.name, () => spec_sw_vers.sw_versSpec);
       break;
     case 'swagger-typescript-api':
       await spec_swagger_typescript_api.loadLibrary();
-      registerSpec(spec_swagger_typescript_api.swaggerTypescriptApiSpec.name, () => spec_swagger_typescript_api.swaggerTypescriptApiSpec);
+      registerSpec(spec_swagger_typescript_api.swaggerTypescriptApiSpec.name,
+          () => spec_swagger_typescript_api.swaggerTypescriptApiSpec);
       await spec_swagger_typescript_api_1.loadLibrary();
-      registerSpec(spec_swagger_typescript_api_1.swaggerTypescriptApiSpec.name, () => spec_swagger_typescript_api_1.swaggerTypescriptApiSpec);
+      registerSpec(spec_swagger_typescript_api_1.swaggerTypescriptApiSpec.name,
+          () => spec_swagger_typescript_api_1.swaggerTypescriptApiSpec);
       break;
     case 'swc':
       await spec_swc.loadLibrary();
@@ -5718,15 +8619,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'symfony':
       await spec_symfony.loadLibrary();
-      registerSpec(spec_symfony.symfonySpec.name, () => spec_symfony.symfonySpec);
+      registerSpec(
+          spec_symfony.symfonySpec.name, () => spec_symfony.symfonySpec);
       break;
     case 'synapse':
       await spec_az_2_53_0_synapse.loadLibrary();
-      registerSpec(spec_az_2_53_0_synapse.synapseSpec.name, () => spec_az_2_53_0_synapse.synapseSpec);
+      registerSpec(spec_az_2_53_0_synapse.synapseSpec.name,
+          () => spec_az_2_53_0_synapse.synapseSpec);
       break;
     case 'synthetics':
       await spec_aws_synthetics.loadLibrary();
-      registerSpec(spec_aws_synthetics.syntheticsSpec.name, () => spec_aws_synthetics.syntheticsSpec);
+      registerSpec(spec_aws_synthetics.syntheticsSpec.name,
+          () => spec_aws_synthetics.syntheticsSpec);
       break;
     case 'sysctl':
       await spec_sysctl.loadLibrary();
@@ -5738,7 +8642,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tag':
       await spec_az_2_53_0_tag.loadLibrary();
-      registerSpec(spec_az_2_53_0_tag.tagSpec.name, () => spec_az_2_53_0_tag.tagSpec);
+      registerSpec(
+          spec_az_2_53_0_tag.tagSpec.name, () => spec_az_2_53_0_tag.tagSpec);
       break;
     case 'tail':
       await spec_tail.loadLibrary();
@@ -5746,15 +8651,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tailcall':
       await spec_tailcall.loadLibrary();
-      registerSpec(spec_tailcall.tailcallSpec.name, () => spec_tailcall.tailcallSpec);
+      registerSpec(
+          spec_tailcall.tailcallSpec.name, () => spec_tailcall.tailcallSpec);
       break;
     case 'tailwindcss':
       await spec_tailwindcss.loadLibrary();
-      registerSpec(spec_tailwindcss.tailwindcssSpec.name, () => spec_tailwindcss.tailwindcssSpec);
+      registerSpec(spec_tailwindcss.tailwindcssSpec.name,
+          () => spec_tailwindcss.tailwindcssSpec);
       break;
     case 'tangram':
       await spec_tangram.loadLibrary();
-      registerSpec(spec_tangram.tangramSpec.name, () => spec_tangram.tangramSpec);
+      registerSpec(
+          spec_tangram.tangramSpec.name, () => spec_tangram.tangramSpec);
       break;
     case 'taplo':
       await spec_taplo.loadLibrary();
@@ -5770,15 +8678,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tasks':
       await spec_gcloud_tasks.loadLibrary();
-      registerSpec(spec_gcloud_tasks.tasksSpec.name, () => spec_gcloud_tasks.tasksSpec);
+      registerSpec(
+          spec_gcloud_tasks.tasksSpec.name, () => spec_gcloud_tasks.tasksSpec);
       break;
     case 'taskwarrior':
       await spec_task_taskwarrior.loadLibrary();
-      registerSpec(spec_task_taskwarrior.taskwarriorSpec.name, () => spec_task_taskwarrior.taskwarriorSpec);
+      registerSpec(spec_task_taskwarrior.taskwarriorSpec.name,
+          () => spec_task_taskwarrior.taskwarriorSpec);
       break;
     case 'taxsettings':
       await spec_aws_taxsettings.loadLibrary();
-      registerSpec(spec_aws_taxsettings.taxsettingsSpec.name, () => spec_aws_taxsettings.taxsettingsSpec);
+      registerSpec(spec_aws_taxsettings.taxsettingsSpec.name,
+          () => spec_aws_taxsettings.taxsettingsSpec);
       break;
     case 'tb':
       await spec_tb.loadLibrary();
@@ -5786,7 +8697,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tccutil':
       await spec_tccutil.loadLibrary();
-      registerSpec(spec_tccutil.tccutilSpec.name, () => spec_tccutil.tccutilSpec);
+      registerSpec(
+          spec_tccutil.tccutilSpec.name, () => spec_tccutil.tccutilSpec);
       break;
     case 'tee':
       await spec_tee.loadLibrary();
@@ -5794,11 +8706,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'term':
       await spec_az_2_53_0_term.loadLibrary();
-      registerSpec(spec_az_2_53_0_term.termSpec.name, () => spec_az_2_53_0_term.termSpec);
+      registerSpec(spec_az_2_53_0_term.termSpec.name,
+          () => spec_az_2_53_0_term.termSpec);
       break;
     case 'textract':
       await spec_aws_textract.loadLibrary();
-      registerSpec(spec_aws_textract.textractSpec.name, () => spec_aws_textract.textractSpec);
+      registerSpec(spec_aws_textract.textractSpec.name,
+          () => spec_aws_textract.textractSpec);
       break;
     case 'tfenv':
       await spec_tfenv.loadLibrary();
@@ -5814,15 +8728,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'timestream-influxdb':
       await spec_aws_timestream_influxdb.loadLibrary();
-      registerSpec(spec_aws_timestream_influxdb.timestreamInfluxdbSpec.name, () => spec_aws_timestream_influxdb.timestreamInfluxdbSpec);
+      registerSpec(spec_aws_timestream_influxdb.timestreamInfluxdbSpec.name,
+          () => spec_aws_timestream_influxdb.timestreamInfluxdbSpec);
       break;
     case 'timestream-query':
       await spec_aws_timestream_query.loadLibrary();
-      registerSpec(spec_aws_timestream_query.timestreamQuerySpec.name, () => spec_aws_timestream_query.timestreamQuerySpec);
+      registerSpec(spec_aws_timestream_query.timestreamQuerySpec.name,
+          () => spec_aws_timestream_query.timestreamQuerySpec);
       break;
     case 'timestream-write':
       await spec_aws_timestream_write.loadLibrary();
-      registerSpec(spec_aws_timestream_write.timestreamWriteSpec.name, () => spec_aws_timestream_write.timestreamWriteSpec);
+      registerSpec(spec_aws_timestream_write.timestreamWriteSpec.name,
+          () => spec_aws_timestream_write.timestreamWriteSpec);
       break;
     case 'tkn':
       await spec_tkn.loadLibrary();
@@ -5850,7 +8767,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'topic':
       await spec_gcloud_topic.loadLibrary();
-      registerSpec(spec_gcloud_topic.topicSpec.name, () => spec_gcloud_topic.topicSpec);
+      registerSpec(
+          spec_gcloud_topic.topicSpec.name, () => spec_gcloud_topic.topicSpec);
       break;
     case 'touch':
       await spec_touch.loadLibrary();
@@ -5862,19 +8780,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'traceroute':
       await spec_traceroute.loadLibrary();
-      registerSpec(spec_traceroute.tracerouteSpec.name, () => spec_traceroute.tracerouteSpec);
+      registerSpec(spec_traceroute.tracerouteSpec.name,
+          () => spec_traceroute.tracerouteSpec);
       break;
     case 'transcribe':
       await spec_aws_transcribe.loadLibrary();
-      registerSpec(spec_aws_transcribe.transcribeSpec.name, () => spec_aws_transcribe.transcribeSpec);
+      registerSpec(spec_aws_transcribe.transcribeSpec.name,
+          () => spec_aws_transcribe.transcribeSpec);
       break;
     case 'transfer':
       await spec_aws_transfer.loadLibrary();
-      registerSpec(spec_aws_transfer.transferSpec.name, () => spec_aws_transfer.transferSpec);
+      registerSpec(spec_aws_transfer.transferSpec.name,
+          () => spec_aws_transfer.transferSpec);
       break;
     case 'translate':
       await spec_aws_translate.loadLibrary();
-      registerSpec(spec_aws_translate.translateSpec.name, () => spec_aws_translate.translateSpec);
+      registerSpec(spec_aws_translate.translateSpec.name,
+          () => spec_aws_translate.translateSpec);
       break;
     case 'trap':
       await spec_trap.loadLibrary();
@@ -5894,11 +8816,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'truffle':
       await spec_truffle.loadLibrary();
-      registerSpec(spec_truffle.truffleSpec.name, () => spec_truffle.truffleSpec);
+      registerSpec(
+          spec_truffle.truffleSpec.name, () => spec_truffle.truffleSpec);
       break;
     case 'truncate':
       await spec_truncate.loadLibrary();
-      registerSpec(spec_truncate.truncateSpec.name, () => spec_truncate.truncateSpec);
+      registerSpec(
+          spec_truncate.truncateSpec.name, () => spec_truncate.truncateSpec);
       break;
     case 'trunk':
       await spec_trunk.loadLibrary();
@@ -5906,11 +8830,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'trustedadvisor':
       await spec_aws_trustedadvisor.loadLibrary();
-      registerSpec(spec_aws_trustedadvisor.trustedadvisorSpec.name, () => spec_aws_trustedadvisor.trustedadvisorSpec);
+      registerSpec(spec_aws_trustedadvisor.trustedadvisorSpec.name,
+          () => spec_aws_trustedadvisor.trustedadvisorSpec);
       break;
     case 'ts':
       await spec_az_2_53_0_ts.loadLibrary();
-      registerSpec(spec_az_2_53_0_ts.tsSpec.name, () => spec_az_2_53_0_ts.tsSpec);
+      registerSpec(
+          spec_az_2_53_0_ts.tsSpec.name, () => spec_az_2_53_0_ts.tsSpec);
       break;
     case 'ts-node':
       await spec_ts_node.loadLibrary();
@@ -5922,7 +8848,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tsi':
       await spec_az_2_53_0_tsi.loadLibrary();
-      registerSpec(spec_az_2_53_0_tsi.tsiSpec.name, () => spec_az_2_53_0_tsi.tsiSpec);
+      registerSpec(
+          spec_az_2_53_0_tsi.tsiSpec.name, () => spec_az_2_53_0_tsi.tsiSpec);
       break;
     case 'tsx':
       await spec_tsx.loadLibrary();
@@ -5942,7 +8869,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'typeorm':
       await spec_typeorm.loadLibrary();
-      registerSpec(spec_typeorm.typeormSpec.name, () => spec_typeorm.typeormSpec);
+      registerSpec(
+          spec_typeorm.typeormSpec.name, () => spec_typeorm.typeormSpec);
       break;
     case 'typos':
       await spec_typos.loadLibrary();
@@ -5958,7 +8886,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ubuntu-advantage':
       await spec_ubuntu_advantage.loadLibrary();
-      registerSpec(spec_ubuntu_advantage.ubuntuAdvantageSpec.name, () => spec_ubuntu_advantage.ubuntuAdvantageSpec);
+      registerSpec(spec_ubuntu_advantage.ubuntuAdvantageSpec.name,
+          () => spec_ubuntu_advantage.ubuntuAdvantageSpec);
       break;
     case 'uname':
       await spec_uname.loadLibrary();
@@ -5970,7 +8899,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'unix2dos':
       await spec_unix2dos.loadLibrary();
-      registerSpec(spec_unix2dos.unix2dosSpec.name, () => spec_unix2dos.unix2dosSpec);
+      registerSpec(
+          spec_unix2dos.unix2dosSpec.name, () => spec_unix2dos.unix2dosSpec);
       break;
     case 'unset':
       await spec_unset.loadLibrary();
@@ -5986,7 +8916,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'upgrade':
       await spec_az_2_53_0_upgrade.loadLibrary();
-      registerSpec(spec_az_2_53_0_upgrade.upgradeSpec.name, () => spec_az_2_53_0_upgrade.upgradeSpec);
+      registerSpec(spec_az_2_53_0_upgrade.upgradeSpec.name,
+          () => spec_az_2_53_0_upgrade.upgradeSpec);
       break;
     case 'v':
       await spec_v.loadLibrary();
@@ -6010,13 +8941,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'verifiedpermissions':
       await spec_aws_verifiedpermissions.loadLibrary();
-      registerSpec(spec_aws_verifiedpermissions.verifiedpermissionsSpec.name, () => spec_aws_verifiedpermissions.verifiedpermissionsSpec);
+      registerSpec(spec_aws_verifiedpermissions.verifiedpermissionsSpec.name,
+          () => spec_aws_verifiedpermissions.verifiedpermissionsSpec);
       break;
     case 'version':
       await spec_az_2_53_0_version.loadLibrary();
-      registerSpec(spec_az_2_53_0_version.versionSpec.name, () => spec_az_2_53_0_version.versionSpec);
+      registerSpec(spec_az_2_53_0_version.versionSpec.name,
+          () => spec_az_2_53_0_version.versionSpec);
       await spec_gcloud_version.loadLibrary();
-      registerSpec(spec_gcloud_version.versionSpec.name, () => spec_gcloud_version.versionSpec);
+      registerSpec(spec_gcloud_version.versionSpec.name,
+          () => spec_gcloud_version.versionSpec);
       break;
     case 'vi':
       await spec_vi.loadLibrary();
@@ -6040,19 +8974,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'vm':
       await spec_az_2_53_0_vm.loadLibrary();
-      registerSpec(spec_az_2_53_0_vm.vmSpec.name, () => spec_az_2_53_0_vm.vmSpec);
+      registerSpec(
+          spec_az_2_53_0_vm.vmSpec.name, () => spec_az_2_53_0_vm.vmSpec);
       break;
     case 'vmss':
       await spec_az_2_53_0_vmss.loadLibrary();
-      registerSpec(spec_az_2_53_0_vmss.vmssSpec.name, () => spec_az_2_53_0_vmss.vmssSpec);
+      registerSpec(spec_az_2_53_0_vmss.vmssSpec.name,
+          () => spec_az_2_53_0_vmss.vmssSpec);
       break;
     case 'vmware':
       await spec_az_2_53_0_vmware.loadLibrary();
-      registerSpec(spec_az_2_53_0_vmware.vmwareSpec.name, () => spec_az_2_53_0_vmware.vmwareSpec);
+      registerSpec(spec_az_2_53_0_vmware.vmwareSpec.name,
+          () => spec_az_2_53_0_vmware.vmwareSpec);
       break;
     case 'voice-id':
       await spec_aws_voice_id.loadLibrary();
-      registerSpec(spec_aws_voice_id.voiceIdSpec.name, () => spec_aws_voice_id.voiceIdSpec);
+      registerSpec(spec_aws_voice_id.voiceIdSpec.name,
+          () => spec_aws_voice_id.voiceIdSpec);
       break;
     case 'volta':
       await spec_volta.loadLibrary();
@@ -6060,7 +8998,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'vpc-lattice':
       await spec_aws_vpc_lattice.loadLibrary();
-      registerSpec(spec_aws_vpc_lattice.vpcLatticeSpec.name, () => spec_aws_vpc_lattice.vpcLatticeSpec);
+      registerSpec(spec_aws_vpc_lattice.vpcLatticeSpec.name,
+          () => spec_aws_vpc_lattice.vpcLatticeSpec);
       break;
     case 'vr':
       await spec_vr.loadLibrary();
@@ -6084,23 +9023,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'waf-regional':
       await spec_aws_waf_regional.loadLibrary();
-      registerSpec(spec_aws_waf_regional.wafRegionalSpec.name, () => spec_aws_waf_regional.wafRegionalSpec);
+      registerSpec(spec_aws_waf_regional.wafRegionalSpec.name,
+          () => spec_aws_waf_regional.wafRegionalSpec);
       break;
     case 'wafv2':
       await spec_aws_wafv2.loadLibrary();
-      registerSpec(spec_aws_wafv2.wafv2Spec.name, () => spec_aws_wafv2.wafv2Spec);
+      registerSpec(
+          spec_aws_wafv2.wafv2Spec.name, () => spec_aws_wafv2.wafv2Spec);
       break;
     case 'wasm-bindgen':
       await spec_wasm_bindgen.loadLibrary();
-      registerSpec(spec_wasm_bindgen.wasmBindgenSpec.name, () => spec_wasm_bindgen.wasmBindgenSpec);
+      registerSpec(spec_wasm_bindgen.wasmBindgenSpec.name,
+          () => spec_wasm_bindgen.wasmBindgenSpec);
       break;
     case 'wasm-pack':
       await spec_wasm_pack.loadLibrary();
-      registerSpec(spec_wasm_pack.wasmPackSpec.name, () => spec_wasm_pack.wasmPackSpec);
+      registerSpec(
+          spec_wasm_pack.wasmPackSpec.name, () => spec_wasm_pack.wasmPackSpec);
       break;
     case 'watchman':
       await spec_watchman.loadLibrary();
-      registerSpec(spec_watchman.watchmanSpec.name, () => spec_watchman.watchmanSpec);
+      registerSpec(
+          spec_watchman.watchmanSpec.name, () => spec_watchman.watchmanSpec);
       break;
     case 'wc':
       await spec_wc.loadLibrary();
@@ -6112,19 +9056,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'webapp':
       await spec_az_2_53_0_webapp.loadLibrary();
-      registerSpec(spec_az_2_53_0_webapp.webappSpec.name, () => spec_az_2_53_0_webapp.webappSpec);
+      registerSpec(spec_az_2_53_0_webapp.webappSpec.name,
+          () => spec_az_2_53_0_webapp.webappSpec);
       break;
     case 'webpubsub':
       await spec_az_2_53_0_webpubsub.loadLibrary();
-      registerSpec(spec_az_2_53_0_webpubsub.webpubsubSpec.name, () => spec_az_2_53_0_webpubsub.webpubsubSpec);
+      registerSpec(spec_az_2_53_0_webpubsub.webpubsubSpec.name,
+          () => spec_az_2_53_0_webpubsub.webpubsubSpec);
       break;
     case 'wellarchitected':
       await spec_aws_wellarchitected.loadLibrary();
-      registerSpec(spec_aws_wellarchitected.wellarchitectedSpec.name, () => spec_aws_wellarchitected.wellarchitectedSpec);
+      registerSpec(spec_aws_wellarchitected.wellarchitectedSpec.name,
+          () => spec_aws_wellarchitected.wellarchitectedSpec);
       break;
     case 'wezterm':
       await spec_wezterm.loadLibrary();
-      registerSpec(spec_wezterm.weztermSpec.name, () => spec_wezterm.weztermSpec);
+      registerSpec(
+          spec_wezterm.weztermSpec.name, () => spec_wezterm.weztermSpec);
       break;
     case 'wget':
       await spec_wget.loadLibrary();
@@ -6140,7 +9088,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'whereis':
       await spec_whereis.loadLibrary();
-      registerSpec(spec_whereis.whereisSpec.name, () => spec_whereis.whereisSpec);
+      registerSpec(
+          spec_whereis.whereisSpec.name, () => spec_whereis.whereisSpec);
       break;
     case 'which':
       await spec_which.loadLibrary();
@@ -6160,7 +9109,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wifi-password':
       await spec_wifi_password.loadLibrary();
-      registerSpec(spec_wifi_password.wifiPasswordSpec.name, () => spec_wifi_password.wifiPasswordSpec);
+      registerSpec(spec_wifi_password.wifiPasswordSpec.name,
+          () => spec_wifi_password.wifiPasswordSpec);
       break;
     case 'wing':
       await spec_wing.loadLibrary();
@@ -6168,39 +9118,49 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wisdom':
       await spec_aws_wisdom.loadLibrary();
-      registerSpec(spec_aws_wisdom.wisdomSpec.name, () => spec_aws_wisdom.wisdomSpec);
+      registerSpec(
+          spec_aws_wisdom.wisdomSpec.name, () => spec_aws_wisdom.wisdomSpec);
       break;
     case 'workdocs':
       await spec_aws_workdocs.loadLibrary();
-      registerSpec(spec_aws_workdocs.workdocsSpec.name, () => spec_aws_workdocs.workdocsSpec);
+      registerSpec(spec_aws_workdocs.workdocsSpec.name,
+          () => spec_aws_workdocs.workdocsSpec);
       break;
     case 'worklink':
       await spec_aws_worklink.loadLibrary();
-      registerSpec(spec_aws_worklink.worklinkSpec.name, () => spec_aws_worklink.worklinkSpec);
+      registerSpec(spec_aws_worklink.worklinkSpec.name,
+          () => spec_aws_worklink.worklinkSpec);
       break;
     case 'workloads':
       await spec_az_2_53_0_workloads.loadLibrary();
-      registerSpec(spec_az_2_53_0_workloads.workloadsSpec.name, () => spec_az_2_53_0_workloads.workloadsSpec);
+      registerSpec(spec_az_2_53_0_workloads.workloadsSpec.name,
+          () => spec_az_2_53_0_workloads.workloadsSpec);
       break;
     case 'workmail':
       await spec_aws_workmail.loadLibrary();
-      registerSpec(spec_aws_workmail.workmailSpec.name, () => spec_aws_workmail.workmailSpec);
+      registerSpec(spec_aws_workmail.workmailSpec.name,
+          () => spec_aws_workmail.workmailSpec);
       break;
     case 'workmailmessageflow':
       await spec_aws_workmailmessageflow.loadLibrary();
-      registerSpec(spec_aws_workmailmessageflow.workmailmessageflowSpec.name, () => spec_aws_workmailmessageflow.workmailmessageflowSpec);
+      registerSpec(spec_aws_workmailmessageflow.workmailmessageflowSpec.name,
+          () => spec_aws_workmailmessageflow.workmailmessageflowSpec);
       break;
     case 'workspaces':
       await spec_aws_workspaces.loadLibrary();
-      registerSpec(spec_aws_workspaces.workspacesSpec.name, () => spec_aws_workspaces.workspacesSpec);
+      registerSpec(spec_aws_workspaces.workspacesSpec.name,
+          () => spec_aws_workspaces.workspacesSpec);
       break;
     case 'workspaces-thin-client':
       await spec_aws_workspaces_thin_client.loadLibrary();
-      registerSpec(spec_aws_workspaces_thin_client.workspacesThinClientSpec.name, () => spec_aws_workspaces_thin_client.workspacesThinClientSpec);
+      registerSpec(
+          spec_aws_workspaces_thin_client.workspacesThinClientSpec.name,
+          () => spec_aws_workspaces_thin_client.workspacesThinClientSpec);
       break;
     case 'workspaces-web':
       await spec_aws_workspaces_web.loadLibrary();
-      registerSpec(spec_aws_workspaces_web.workspacesWebSpec.name, () => spec_aws_workspaces_web.workspacesWebSpec);
+      registerSpec(spec_aws_workspaces_web.workspacesWebSpec.name,
+          () => spec_aws_workspaces_web.workspacesWebSpec);
       break;
     case 'wp':
       await spec_wp.loadLibrary();
@@ -6208,7 +9168,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wrangler':
       await spec_wrangler.loadLibrary();
-      registerSpec(spec_wrangler.wranglerSpec.name, () => spec_wrangler.wranglerSpec);
+      registerSpec(
+          spec_wrangler.wranglerSpec.name, () => spec_wrangler.wranglerSpec);
       break;
     case 'wrk':
       await spec_wrk.loadLibrary();
@@ -6228,15 +9189,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'xcode-select':
       await spec_xcode_select.loadLibrary();
-      registerSpec(spec_xcode_select.xcodeSelectSpec.name, () => spec_xcode_select.xcodeSelectSpec);
+      registerSpec(spec_xcode_select.xcodeSelectSpec.name,
+          () => spec_xcode_select.xcodeSelectSpec);
       break;
     case 'xcodebuild':
       await spec_xcodebuild.loadLibrary();
-      registerSpec(spec_xcodebuild.xcodebuildSpec.name, () => spec_xcodebuild.xcodebuildSpec);
+      registerSpec(spec_xcodebuild.xcodebuildSpec.name,
+          () => spec_xcodebuild.xcodebuildSpec);
       break;
     case 'xcodeproj':
       await spec_xcodeproj.loadLibrary();
-      registerSpec(spec_xcodeproj.xcodeprojSpec.name, () => spec_xcodeproj.xcodeprojSpec);
+      registerSpec(spec_xcodeproj.xcodeprojSpec.name,
+          () => spec_xcodeproj.xcodeprojSpec);
       break;
     case 'xcodes':
       await spec_xcodes.loadLibrary();
@@ -6248,11 +9212,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'xdg-mime':
       await spec_xdg_mime.loadLibrary();
-      registerSpec(spec_xdg_mime.xdgMimeSpec.name, () => spec_xdg_mime.xdgMimeSpec);
+      registerSpec(
+          spec_xdg_mime.xdgMimeSpec.name, () => spec_xdg_mime.xdgMimeSpec);
       break;
     case 'xdg-open':
       await spec_xdg_open.loadLibrary();
-      registerSpec(spec_xdg_open.xdgOpenSpec.name, () => spec_xdg_open.xdgOpenSpec);
+      registerSpec(
+          spec_xdg_open.xdgOpenSpec.name, () => spec_xdg_open.xdgOpenSpec);
       break;
     case 'xed':
       await spec_xed.loadLibrary();
@@ -6288,7 +9254,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'zapier-platform-cli':
       await spec_zapier.loadLibrary();
-      registerSpec(spec_zapier.zapierPlatformCliSpec.name, () => spec_zapier.zapierPlatformCliSpec);
+      registerSpec(spec_zapier.zapierPlatformCliSpec.name,
+          () => spec_zapier.zapierPlatformCliSpec);
       break;
     case 'zed':
       await spec_zed.loadLibrary();
@@ -6304,7 +9271,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'zipcloak':
       await spec_zipcloak.loadLibrary();
-      registerSpec(spec_zipcloak.zipcloakSpec.name, () => spec_zipcloak.zipcloakSpec);
+      registerSpec(
+          spec_zipcloak.zipcloakSpec.name, () => spec_zipcloak.zipcloakSpec);
       break;
     case 'zoxide':
       await spec_zoxide.loadLibrary();

@@ -1,12 +1,27 @@
 // AI-generated from TypeScript source: gcc.ts
 // Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
 
 import 'package:autocomplete/src/spec.dart';
 import 'clang.dart';
 
-/// Completion spec for `gcc` CLI
-final FigSpec gccSpec = FigSpec(
+/// 标准选项
+final FigOption stdOption = FigOption(
+  name: '-std',
+  description: 'Language standard to compile for',
+  args: [
+    FigArg(
+      name: 'value',
+      suggestions: [
+        ...stdCSuggestions,
+        ...stdCPPSuggestions,
+      ],
+    ),
+  ],
+  requiresSeparator: true,
+);
+
+/// Base spec (options without -std); gcc spec = gccBase + stdOption
+final FigSpec gccBase = FigSpec(
     name: 'gcc',
     description: 'The default compiler for most linux distributions',
     options: [
@@ -2829,13 +2844,11 @@ final FigSpec gccSpec = FigSpec(
           name: '-z',
           description: 'Pass -z <arg> to the linker',
           args: [Arg(name: 'arg', description: 'Arg')]),
-      Option(
-          name: '-std',
-          description: 'Language standard to compile for',
-          args: [
-            Arg(
-                name: 'value',
-                suggestions: [...stdCSuggestions, ...stdCPPSuggestions])
-          ],
-          requiresSeparator: true),
     ]);
+
+/// completionSpec = { ...gccBase, options: [...gccBase.options, stdOption] }
+final FigSpec gccSpec = FigSpec(
+  name: gccBase.name,
+  description: gccBase.description,
+  options: [...(gccBase.options ?? []), stdOption],
+);

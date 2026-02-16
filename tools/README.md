@@ -4,15 +4,15 @@
 
 ## 文件与职责
 
-| 文件 | 职责 |
-|------|------|
-| `converter-engine.cjs` | 单文件转换引擎（规则/解析 + 类型识别 + 复杂度检测） |
-| `ts-to-dart-converter.cjs` | 批量扫描与转换（断点续传、多进程、进度统计、错误/needsManual 列表） |
-| `converter-worker.cjs` | 多进程模式下的子进程 worker（从 stdin 读任务，向 stdout 写结果） |
-| `converter-worker-redis.cjs` | Redis 模式下的 worker（从 Redis 队列取任务、写结果，需 `--redis`） |
-| `run-conversion.sh` | 一键入口（环境检查 + 调用 `ts-to-dart-converter.cjs`） |
-| `test-converter.cjs` | 小样本自检（覆盖可自动转换与 needsManual） |
-| `generate-all-specs.cjs` | 独立脚本：生成 `dart/lib/specs/all_specs.dart`（与 TS→Dart 转换解耦） |
+| 文件                               | 职责                                                                                                       |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `converter-engine.cjs`             | 单文件转换引擎（规则/解析 + 类型识别 + 复杂度检测）                                                        |
+| `ts-to-dart-converter.cjs`         | 批量扫描与转换（断点续传、多进程、进度统计、错误/needsManual 列表）                                        |
+| `converter-worker.cjs`             | 多进程模式下的子进程 worker（从 stdin 读任务，向 stdout 写结果）                                           |
+| `run-conversion.sh`                | 一键入口（环境检查 + 调用 `ts-to-dart-converter.cjs`）                                                     |
+| `test-converter.cjs`               | 小样本自检（覆盖可自动转换与 needsManual）                                                                 |
+| `generate-all-specs.cjs`           | 独立脚本：生成 `dart/lib/specs/all_specs.dart`（与 TS→Dart 转换解耦）                                      |
+| `extract-and-convert-snippets.cjs` | 从大 TS 文件中提取 `Fig.Suggestion[]` / `Fig.Option[]` / `Fig.Spec` 等变量，转为 Dart 片段，便于拆分后拼回 |
 
 ## 快速开始
 
@@ -24,6 +24,9 @@ cd /path/to/autocomplete
 
 # 可选：先跑小样本自检
 node tools/test-converter.cjs
+
+# 只转换单个 TS 文件（可传相对或绝对路径）
+node tools/ts-to-dart-converter.cjs src/git.ts
 
 # 批量转换（单进程，适合调试）
 node tools/ts-to-dart-converter.cjs
@@ -37,17 +40,22 @@ cd tools && ./run-conversion.sh
 
 ## 命令参数
 
-| 参数 | 说明 |
-|------|------|
-| 无参数 | 单进程顺序转换 |
-| `-j N` 或 `--jobs N` | 使用 N 个子进程并行转换（例如 `-j4`），每个文件只被一个进程处理，无重复、无冲突 |
-| `--redis` | 使用 Redis 队列分发任务与收集结果（需安装 `redis` 包并启动 Redis 服务，见下文） |
+| 参数                     | 说明                                                                                  |
+| ------------------------ | ------------------------------------------------------------------------------------- |
+| `<path/to/file.ts>`      | 只转换该 TS 文件（单文件模式，可与 `-j` 无关）                                        |
+| 无参数                   | 批量扫描 `src/`，单进程顺序转换                                                       |
+| `-j N` 或 `--jobs N`     | 批量时使用 N 个子进程并行转换（例如 `-j4`），每个文件只被一个进程处理，无重复、无冲突 |
+| `--force`                | 强制转换复杂文件，不能转的用 `// TS_UNCONVERTED_*` 注释 + `null` 保留                  |
+| `--emit-unconverted`     | 与 `--force` 同用：将无法转换处尽量写成 Dart 代码（如 `true`、`sharedOpts.selector`）而非注释+null，便于人工后续处理；**默认关闭** |
 
 示例：
 
 ```bash
+node tools/ts-to-dart-converter.cjs src/git.ts
 node tools/ts-to-dart-converter.cjs -j4
 node tools/ts-to-dart-converter.cjs -j8 --jobs 8
+# 强制转换且尽量把未转换内容写成 Dart 代码（需人工检查）
+node tools/ts-to-dart-converter.cjs --force --emit-unconverted src/git.ts
 ```
 
 转换完建议做一次静态检查：
@@ -57,21 +65,9 @@ cd dart
 dart analyze lib/specs/
 ```
 
-## 多进程如何通信？不用 Redis 可以吗？
+## 多进程如何通信？
 
-**可以不用 Redis，默认多进程模式已经能完成并行转换，且任务之间不会冲突、不会重复。**
-
-- **不用 Redis 时（默认）**  
-  - 主进程在内存里维护一个**任务队列**（待转换文件列表）。  
-  - 主进程 **spawn N 个子进程**（每个运行 `converter-worker.cjs`），通过 **stdin / stdout 管道**与每个子进程通信。  
-  - 主进程向某个子进程的 stdin 写入一行 JSON（`{"tsFilePath": "绝对路径"}`），该子进程转换完后向 stdout 写一行 JSON 结果；主进程收到后把**下一个**任务从队列里取出再发给这个子进程，直到队列空再发 `{"exit": true}`。  
-  - 每个文件只会被派给一个子进程，队列由主进程单线程分配，因此**不会重复、不会冲突**。  
-
-- **用 Redis 时（`--redis`）**  
-  - 主进程把待转换文件路径 **LPUSH** 到 Redis 列表（如 `ts2dart:queue`），然后 **BRPOP** 另一个列表（如 `ts2dart:results`）收结果。  
-  - 子进程（`converter-worker-redis.cjs`）从 Redis **BRPOP** 取任务，转换后 **LPUSH** 结果到 `ts2dart:results`。  
-  - **好处**：可把 worker 放到其它机器、多机共用同一队列；主进程崩溃后队列仍在 Redis，可重新拉取继续跑；可用 redis-cli 查看队列长度、结果等。  
-  - 单机、本仓库批量转换一般用 **默认多进程（不装 Redis）** 即可。
+主进程在内存里维护**任务队列**，**spawn N 个子进程**（每个运行 `converter-worker.cjs`），通过 **stdin / stdout 管道**与每个子进程通信：主进程向子进程 stdin 写入一行 JSON（`{"tsFilePath": "绝对路径"}`），子进程转换完后向 stdout 写一行 JSON 结果；主进程收到后再派发下一个任务，直到队列空再发 `{"exit": true}`。每个文件只会被派给一个子进程，**不会重复、不会冲突**。
 
 ## 全量转换（记录日志）
 
@@ -107,13 +103,6 @@ node tools/ts-to-dart-converter.cjs -j4
 node tools/ts-to-dart-converter.cjs -j4
 ```
 
-### 想用 Redis 模式（`--redis`）
-
-1. 安装依赖：`pnpm add redis`（或 `npm i redis`）。  
-2. 确保本机已启动 Redis（或设置 `REDIS_URL`，如 `redis://host:6379`）。  
-3. 执行：`node tools/ts-to-dart-converter.cjs -j4 --redis`。  
-4. 使用方式与默认多进程一致，只是任务与结果通过 Redis 交换。
-
 ## 输出与断点续传
 
 - `conversion-progress.json`：已完成 / 失败 / needsManual 的记录
@@ -121,6 +110,32 @@ node tools/ts-to-dart-converter.cjs -j4
 - `../dart/lib/specs/**/*.dart`：生成的 Dart specs
 
 重复运行会自动跳过已完成项（除非你删除 `conversion-progress.json` 或删除已生成的 `.dart` 文件）。
+
+## 大文件拆分：提取并转换片段（如 git.ts）
+
+当单个 TS 文件很大（如 `lib/src/git.ts` 或 `src/git.ts`），可先**提取**其中的数组和 spec，**单独转成 Dart 片段**，再手动拼回主文件。
+
+支持的提取模式：
+
+- `const name: Fig.Suggestion[] = [ ... ]`
+- `const name: Fig.Option[] = [ ... ]`
+- `const name: Fig.Subcommand[] = [ ... ]`
+- `const name: Fig.Spec = { ... }`
+
+**命令（在项目根目录执行）：**
+
+```bash
+# 列出当前可提取的变量名（不转换）
+node tools/extract-and-convert-snippets.cjs src/git.ts --list
+
+# 提取并转换所有上述变量，输出到 tools/snippet-output/*.dart
+node tools/extract-and-convert-snippets.cjs src/git.ts
+
+# 只处理指定变量（多个用逗号分隔）
+node tools/extract-and-convert-snippets.cjs src/git.ts --only=configSuggestions,addOptions,daemonServices
+```
+
+输出在 `tools/snippet-output/<变量名>.dart`，把需要的内容复制到你的主 Dart 文件（如 `dart/lib/specs/git.dart`）中即可。若 TS 路径在别处（如 `lib/src/git.ts`），把第一个参数改成对应路径即可。
 
 ## 不覆盖 AI/人工编辑的 Dart 文件
 
@@ -132,6 +147,7 @@ node tools/ts-to-dart-converter.cjs -j4
 ## Option / Suggestion / Subcommand 变量支持
 
 - 顶层 `const name: Fig.Option[] = [ ... ]`、`const name: Fig.Suggestion[] = [ ... ]` 和 `const name: Fig.Subcommand[] = [ ... ]` 会被识别并转换为 Dart 的 `final List<Option> name = ...` / `final List<FigSuggestion> name = ...` / `final List<FigSubcommand> name = ...`，并写在 spec 前。
+- 常见变量名（如 `configSuggestions`、`addOptions`、`daemonServices`、`completionSpec`）均按上述规则处理：`Fig.Suggestion[]` → `List<FigSuggestion>`，`Fig.Option[]` → `List<Option>`，`Fig.Spec` → 主 spec 对象。
 - spec 内 `options: [...commonOptions, ...otherOptions]`、`options: installOptions`、`subcommands: subCommands` 或 `subcommands: [...subCommands]` 会正确输出为 Dart 的 spread / 变量引用。
 - 仅支持**顶层**声明的 Option[] / Suggestion[] / Subcommand[] 变量；spec 内对其它变量（如 `args: folderPathArg`）的引用暂未自动解析，可能被标为复杂类型或需手动处理。
 
@@ -163,7 +179,7 @@ node generate-all-specs.cjs
 
 - 当前 `ts-to-dart-converter.cjs` 的 `USE_AI_API=true` 分支未实现，会直接报错；默认使用离线规则转换即可。
 - 生成代码以 `FigSpec` 为主；`generate-all-specs.cjs` 同时兼容 `FigSpec` 与 `CompletionSpec` 两种声明方式。
-- 多进程时**不需要安装 Redis**；默认通过主进程内存队列 + 子进程 stdin/stdout 通信即可保证任务不重复、不冲突。
+- 多进程通过主进程内存队列 + 子进程 stdin/stdout 通信，任务不重复、不冲突。
 
 ---
 
@@ -178,6 +194,7 @@ Successfully updated the TypeScript to Dart conversion to use `FigSpec` as the p
 ### 1. Updated `dart/lib/src/spec.dart`
 
 **Before:**
+
 ```dart
 typedef CompletionSpec = FigSpec;
 typedef Subcommand = FigSubcommand;
@@ -188,6 +205,7 @@ typedef Generator = FigGenerator;
 ```
 
 **After:**
+
 ```dart
 // Removed CompletionSpec typedef - use FigSpec directly
 typedef Subcommand = FigSubcommand;
@@ -198,6 +216,7 @@ typedef Generator = FigGenerator;
 ```
 
 **Rationale:**
+
 - `FigSpec` better mirrors TypeScript's `Fig.Spec` structure
 - Removed `Suggestion` typedef to fix naming conflict with runtime `Suggestion` class
 - All internal classes already use `Fig*` prefix, so consistent to use `FigSpec`
@@ -205,6 +224,7 @@ typedef Generator = FigGenerator;
 ### 2. Fixed `dart/lib/src/runtime.dart`
 
 **Issue Fixed:**
+
 - Resolved 8 linter errors caused by `Suggestion` type ambiguity
 - The runtime now correctly uses `Suggestion` from `model.dart`
 - Spec files use `FigSuggestion` when needed
@@ -214,11 +234,13 @@ typedef Generator = FigGenerator;
 ### 3. Updated Conversion Tool `tools/converter-engine.cjs`
 
 **Before:**
+
 ```javascript
 return `const CompletionSpec ${variableName} = CompletionSpec${dartSpec};\n`;
 ```
 
 **After:**
+
 ```javascript
 return `const FigSpec ${variableName} = FigSpec${dartSpec};\n`;
 ```
@@ -226,6 +248,7 @@ return `const FigSpec ${variableName} = FigSpec${dartSpec};\n`;
 ### 4. Updated Spec Files
 
 All spec files now use `FigSpec`:
+
 - ✅ `dart/lib/specs/astro.dart`
 - ✅ `dart/lib/specs/brew.dart`
 - ✅ `dart/lib/specs/cd.dart`
@@ -234,6 +257,7 @@ All spec files now use `FigSpec`:
 - ✅ `dart/lib/specs/tree.dart`
 
 **Example:**
+
 ```dart
 const FigSpec astroSpec = FigSpec(
   name: 'astro',
@@ -245,6 +269,7 @@ const FigSpec astroSpec = FigSpec(
 ### 5. Updated Test Output Files
 
 Updated all test conversion outputs to use `FigSpec`:
+
 - ✅ `tools/test-output/astro.dart`
 - ✅ `tools/test-output/brew.dart`
 - ✅ `tools/test-output/git.dart`
@@ -259,6 +284,7 @@ Updated all test conversion outputs to use `FigSpec`:
 ### 7. Updated Registry `dart/lib/specs/all_specs.dart`
 
 Added missing spec registrations:
+
 ```dart
 registerSpec('astro', () => astroSpec);
 registerSpec('brew', () => brewSpec);
@@ -266,15 +292,15 @@ registerSpec('brew', () => brewSpec);
 
 ## 📊 Type Mapping Reference
 
-| TypeScript | Dart Class | Typedef | Usage |
-|------------|------------|---------|-------|
-| `Fig.Spec` | `FigSpec` | ❌ | Use `FigSpec` directly |
-| Subcommand | `FigSubcommand` | `Subcommand` ✅ | Can use either |
-| Option | `FigOption` | `Option` ✅ | Can use either |
-| Arg | `FigArg` | `Arg` ✅ | Can use either |
-| Generator | `FigGenerator` | `Generator` ✅ | Can use either |
-| - | `FigSuggestion` | ❌ | Spec-level suggestions |
-| - | `Suggestion` | ❌ | Runtime suggestions (model.dart) |
+| TypeScript | Dart Class      | Typedef         | Usage                            |
+| ---------- | --------------- | --------------- | -------------------------------- |
+| `Fig.Spec` | `FigSpec`       | ❌              | Use `FigSpec` directly           |
+| Subcommand | `FigSubcommand` | `Subcommand` ✅ | Can use either                   |
+| Option     | `FigOption`     | `Option` ✅     | Can use either                   |
+| Arg        | `FigArg`        | `Arg` ✅        | Can use either                   |
+| Generator  | `FigGenerator`  | `Generator` ✅  | Can use either                   |
+| -          | `FigSuggestion` | ❌              | Spec-level suggestions           |
+| -          | `Suggestion`    | ❌              | Runtime suggestions (model.dart) |
 
 ## 🔍 Key Design Decisions
 
@@ -299,6 +325,7 @@ registerSpec('brew', () => brewSpec);
 ## ✅ Verification
 
 All changes verified:
+
 ```bash
 cd dart
 dart analyze lib/src/spec.dart lib/src/runtime.dart lib/specs/ --fatal-infos
@@ -308,6 +335,7 @@ dart analyze lib/src/spec.dart lib/src/runtime.dart lib/specs/ --fatal-infos
 ## 🚀 Usage Example
 
 **TypeScript source (`src/astro.ts`):**
+
 ```typescript
 const completionSpec: Fig.Spec = {
   name: "astro",
@@ -323,6 +351,7 @@ export default completionSpec;
 ```
 
 **Dart output (`dart/lib/specs/astro.dart`):**
+
 ```dart
 import 'package:autocomplete/src/spec.dart';
 

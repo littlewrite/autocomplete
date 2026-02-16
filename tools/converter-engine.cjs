@@ -1,7 +1,10 @@
 /**
  * 智能 TypeScript → Dart 转换引擎
  *
- * 使用 AST 解析和模式匹配进行转换
+ * 使用 AST 解析和模式匹配进行转换。
+ * 能转换大部分代码即可，不求十全十美；无法完成转换的地方用注释标记：
+ * 约定为 // TS_UNCONVERTED_START (可选 label) ... // TS_UNCONVERTED_END，该段下方 Dart 可能为 null。
+ * 生成文件头中会说明，可用 grep TS_UNCONVERTED 快速定位。
  */
 
 const fs = require("fs");
@@ -26,7 +29,12 @@ const FIG_SUGGESTION_ALLOWED_KEYS = new Set([
   "icon",
   "priority",
   "insertValue",
+  "replaceValue",
   "hidden",
+  "deprecated",
+  "displayName",
+  "type",
+  "isDangerous",
 ]);
 const OPTION_ALLOWED_KEYS = new Set([
   "name",
@@ -100,6 +108,8 @@ class TsToDartConverter {
     this.options = options;
     /** When true: do not throw on complex types; emit original TS as // TS_UNCONVERTED_* comments and null in Dart. */
     this.commentFallback = !!options.commentFallback;
+    /** When true (and commentFallback): emit unconverted TS as Dart code instead of comment + null (e.g. true → true, sharedOpts.selector → sharedOpts.selector). Not default; for manual cleanup. */
+    this.emitUnconverted = !!options.emitUnconverted;
     this.imports = new Set();
     this.complexityWarnings = []; // 收集复杂类型警告
     this.hasComplexTypes = false; // 标记是否包含复杂类型
@@ -111,6 +121,9 @@ class TsToDartConverter {
     this.optionListDart = {};
     this.suggestionListDart = {};
     this.subcommandListDart = {};
+    /** Record<string, Fig.Subcommand> map variable names (e.g. sharedCommands) → for resolution and Dart map literal */
+    this.subcommandMapVarNames = new Set();
+    this.subcommandMapDart = {};
     /** Fig.Generator blocks: TS source to emit as commented block for later manual/AI conversion */
     this.generatorBlocks = [];
   }
@@ -167,6 +180,59 @@ class TsToDartConverter {
   }
 
   /**
+   * 判断未转换的原始值是否“安全”直接写入 Dart，而不破坏外层括号/结构。
+   * 若包含 ) ] } , 或换行，可能提前闭合列表/对象，导致难以定位的解析错误，故不直接写入。
+   * 例外：整段为字符串字面量（以 " 或 ' 包裹）时，内部字符不会破坏结构，视为安全。
+   */
+  rawValueSafeToEmitAsDart(rawValue) {
+    const s = String(rawValue).trim();
+    const isStringLiteral =
+      (s.startsWith('"') && s.endsWith('"')) ||
+      (s.startsWith("'") && s.endsWith("'"));
+    if (isStringLiteral) return true;
+    if (s.includes("\n")) return false;
+    if (s.includes(")")) return false;
+    if (s.includes("]")) return false;
+    if (s.includes("}")) return false;
+    if (s.includes(",")) return false;
+    return true;
+  }
+
+  /**
+   * 将无法转换的 TS 原始值尽量转成可写入 Dart 的代码（供 emitUnconverted 时使用）
+   * - true/false、数字、字符串字面量 → 直接对应 Dart
+   * - 布尔上下文下 "tru"/"fals" 等常见笔误 → true/false
+   * - 其余视为表达式（如 sharedOpts.selector）→ 原样输出，由人工后续处理
+   */
+  rawValueToDart(rawValue, propertyName = "") {
+    const value = String(rawValue).trim();
+    const key = this.cleanKey(propertyName);
+    const isBooleanContext = [
+      "isOptional",
+      "isVariadic",
+      "isDangerous",
+      "isRepeatable",
+      "isPersistent",
+      "hidden",
+      "deprecated",
+    ].includes(key);
+    if (value === "true" || value === "false") return value;
+    if (isBooleanContext && value === "tru") return "true";
+    if (isBooleanContext && value === "fals") return "false";
+    if (/^-?\d+$/.test(value)) return value;
+    if (/^-?\d+\.\d+$/.test(value)) return value;
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      const rawContent = value.slice(1, -1);
+      const content = this.unescapeJsStringContent(rawContent);
+      return "'" + this.escapeDartSingleQuoted(content) + "'";
+    }
+    return value;
+  }
+
+  /**
    * 检测文件复杂度
    */
   detectComplexity() {
@@ -214,6 +280,7 @@ class TsToDartConverter {
     return `// Auto-generated from TypeScript source: ${fileName}
 // Generated at: ${today}
 // WARNING: Manual changes may be overwritten!
+// Unconverted parts are marked with: // TS_UNCONVERTED_START ... // TS_UNCONVERTED_END (grep TS_UNCONVERTED to find them).
 
 `;
   }
@@ -253,6 +320,7 @@ class TsToDartConverter {
 
   /**
    * 从 code 的 startIndex（指向 { 的位置）起，按括号平衡提取到匹配的 }，返回 { ... } 的完整字符串（含首尾花括号）
+   * 模板字符串内的 ${ } 也会参与深度计数，以便正确匹配外层对象的 }
    */
   extractBalancedBraceObject(code, startIndex) {
     if (code[startIndex] !== "{") return null;
@@ -262,6 +330,7 @@ class TsToDartConverter {
     for (let i = startIndex; i < code.length; i++) {
       const c = code[i];
       const prev = i > 0 ? code[i - 1] : "";
+      const next = i + 1 < code.length ? code[i + 1] : "";
       if (!inString) {
         if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
           inString = true;
@@ -271,7 +340,15 @@ class TsToDartConverter {
           depth--;
           if (depth === 0) return code.slice(startIndex, i + 1);
         }
-      } else if (c === stringChar && prev !== "\\") inString = false;
+      } else {
+        if (c === stringChar && prev !== "\\") {
+          inString = false;
+        } else if (stringChar === "`" && c === "{" && next === "$") {
+          depth++;
+        } else if (stringChar === "`" && c === "}") {
+          depth--;
+        }
+      }
     }
     return null;
   }
@@ -328,7 +405,9 @@ class TsToDartConverter {
   }
 
   /**
-   * 提取顶层 const name: Fig.Option[] = [ ... ] 和 Fig.Suggestion[] = [ ... ]，填充 optionListVarNames / suggestionListVarNames 及对应 Dart
+   * 提取顶层 const name: Fig.Option[] = [ ... ]、Fig.Suggestion[] = [ ... ]、Fig.Subcommand[] = [ ... ]，
+   * 填充 optionListVarNames / suggestionListVarNames / subcommandListVarNames 及对应 Dart。
+   * 支持常见变量名如 configSuggestions、addOptions、daemonServices 等（任意合法标识符均可）。
    */
   extractAndConvertListVariables() {
     const code = this.tsCode;
@@ -366,10 +445,57 @@ class TsToDartConverter {
       const dartArr = this.convertArray(arrSrc, 0, "subcommands");
       this.subcommandListDart[varName] = dartArr;
     }
+
+    // Record<string, Fig.Subcommand> = { key: {...}, ... }
+    const subcommandMapRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Record\s*<\s*string\s*,\s*Fig\.Subcommand\s*>\s*=\s*\{/g;
+    while ((m = subcommandMapRegex.exec(code)) !== null) {
+      const varName = m[1];
+      const braceStart = m.index + m[0].length - 1;
+      if (code[braceStart] !== "{") continue;
+      const objSrc = this.extractBalancedBraceObject(code, braceStart);
+      if (!objSrc) continue;
+      this.subcommandMapVarNames.add(varName);
+      const dartMap = this.convertRecordSubcommandToDartMap(objSrc);
+      this.subcommandMapDart[varName] = dartMap;
+    }
+  }
+
+  /**
+   * 将 TS 的 Record<string, Fig.Subcommand> 对象字面量转为 Dart Map<String, Subcommand> 字面量
+   * 使用专用解析逻辑（按 key: { 逐段提取），避免改动 parseProperties 影响 FigSpec 解析
+   */
+  convertRecordSubcommandToDartMap(objStr) {
+    const inner = objStr.trim();
+    if (!inner.startsWith("{") || !inner.endsWith("}")) return "{}";
+    const content = inner.slice(1, -1).trim();
+    if (!content) return "{}";
+    const indent = "  ";
+    const nextIndent = "    ";
+    const entries = [];
+    let i = 0;
+    const keyColonBrace = /^\s*([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*\{/;
+    while (i < content.length) {
+      const rest = content.slice(i);
+      const match = rest.match(keyColonBrace);
+      if (!match) break;
+      const key = match[1];
+      const braceStartInRest = rest.indexOf("{");
+      const braceStart = i + braceStartInRest;
+      const valueObj = this.extractBalancedBraceObject(content, braceStart);
+      if (!valueObj) break;
+      const keyEscaped = key.replace(/'/g, "\\'");
+      const dartSub = this.detectObjectType(valueObj.trim(), 1, "subcommands");
+      entries.push(`${nextIndent}'${keyEscaped}': ${dartSub}`);
+      i = braceStart + valueObj.length;
+      const afterComma = content.slice(i).match(/^\s*,/);
+      if (afterComma) i += afterComma[0].length;
+    }
+    return entries.length === 0 ? "{}" : "{\n" + entries.join(",\n") + "\n" + indent + "}";
   }
 
   /**
    * 从 code 的 startIndex（指向 { 的位置）起，用括号平衡提取完整对象，返回 { ... } 字符串
+   * 模板字符串内的 ${ } 参与深度计数（与 extractBalancedBraceObject 一致）
    */
   extractSpecObjectFromPosition(code, startIndex) {
     if (code[startIndex] !== "{") return null;
@@ -379,6 +505,7 @@ class TsToDartConverter {
     for (let i = startIndex; i < code.length; i++) {
       const c = code[i];
       const prev = i > 0 ? code[i - 1] : "";
+      const next = i + 1 < code.length ? code[i + 1] : "";
       if (!inString) {
         if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
           inString = true;
@@ -388,7 +515,11 @@ class TsToDartConverter {
           depth--;
           if (depth === 0) return code.slice(startIndex, i + 1);
         }
-      } else if (c === stringChar && prev !== "\\") inString = false;
+      } else {
+        if (c === stringChar && prev !== "\\") inString = false;
+        else if (stringChar === "`" && c === "{" && next === "$") depth++;
+        else if (stringChar === "`" && c === "}") depth--;
+      }
     }
     return null;
   }
@@ -473,6 +604,11 @@ class TsToDartConverter {
     if (Object.keys(this.subcommandListDart).length > 0) {
       for (const [name, dartList] of Object.entries(this.subcommandListDart)) {
         out += `final List<FigSubcommand> ${name} = ${dartList};\n\n`;
+      }
+    }
+    if (Object.keys(this.subcommandMapDart).length > 0) {
+      for (const [name, dartMap] of Object.entries(this.subcommandMapDart)) {
+        out += `final Map<String, Subcommand> ${name} = ${dartMap};\n\n`;
       }
     }
     out += `/// Completion spec for \`${specName}\` CLI\nfinal FigSpec ${safeVarName} = FigSpec${dartSpec};\n`;
@@ -939,10 +1075,10 @@ class TsToDartConverter {
       return `gitGenerators['${gitGenMatch[1]}']`;
     }
 
-    // sharedCommands 引用: sharedCommands.xxx → sharedCommands['xxx']!
-    const sharedCmdMatch = value.match(/^sharedCommands\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
-    if (sharedCmdMatch) {
-      return `sharedCommands['${sharedCmdMatch[1]}']!`;
+    // Record<string, Fig.Subcommand> 引用: mapVar.key → mapVar['key']!
+    const mapVarKeyMatch = value.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\.([a-zA-Z_][a-zA-Z0-9_]*)$/);
+    if (mapVarKeyMatch && this.subcommandMapVarNames.has(mapVarKeyMatch[1])) {
+      return `${mapVarKeyMatch[1]}['${mapVarKeyMatch[2]}']!`;
     }
 
     // 数组（若 value 尾部落入外层对象的 "}" 会被 parseProperties 吃进，先剥掉再转，避免 template: ["filepaths"] 变成 ["filepaths"] } 少 ]）
@@ -974,6 +1110,16 @@ class TsToDartConverter {
       if (v === "default") return "FilterStrategy.defaultStrategy";
     }
 
+    // FigSuggestion.type: 字符串转 SuggestionType 枚举
+    if (
+      this.cleanKey(propertyName) === "type" &&
+      (value.startsWith('"') || value.startsWith("'"))
+    ) {
+      const v = value.slice(1, -1).toLowerCase();
+      const suggestionTypes = ["subcommand", "option", "arg", "file", "folder", "mixin", "shortcut", "special"];
+      if (suggestionTypes.includes(v)) return `SuggestionType.${v}`;
+    }
+
     // 对象
     if (value.startsWith("{")) {
       // argsItem 为 args 数组元素上下文，必须显式输出 Arg(...)，因 Dart 的 args 是 dynamic 无法推断
@@ -998,6 +1144,9 @@ class TsToDartConverter {
 
     // 函数或其他复杂类型
     if (this.commentFallback) {
+      if (this.emitUnconverted && this.rawValueSafeToEmitAsDart(value)) {
+        return this.rawValueToDart(value, propertyName);
+      }
       return {
         __commentFallback: true,
         comment: this.formatUnconvertedComment(value, propertyName || this.cleanKey(propertyName)),
@@ -1423,7 +1572,7 @@ class TsToDartConverter {
  * 快速转换函数（供外部调用）
  * @param {string} tsFilePath - 源 TS 文件路径
  * @param {string} tsCode - 源 TS 源码
- * @param {{ commentFallback?: boolean }} [options] - commentFallback: 复杂类型不抛错，用 // TS_UNCONVERTED_* 注释保留原 TS
+ * @param {{ commentFallback?: boolean, emitUnconverted?: boolean }} [options] - commentFallback: 复杂类型不抛错，用 // TS_UNCONVERTED_* 注释保留原 TS；emitUnconverted: 开启时将无法转换处尽量写成 Dart 代码（如 true、表达式）而非注释+null，需配合 commentFallback，非默认
  */
 function convertTsToDart(tsFilePath, tsCode, options = {}) {
   const converter = new TsToDartConverter(tsFilePath, tsCode, options);
