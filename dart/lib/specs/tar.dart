@@ -1,8 +1,65 @@
 // Auto-generated from TypeScript source: tar.ts
-// Generated at: 2026-02-12
+// Generated at: 2026-02-16
 // WARNING: Manual changes may be overwritten!
+// Unconverted parts are marked with: // TS_UNCONVERTED_START ... // TS_UNCONVERTED_END (grep TS_UNCONVERTED to find them).
 
 import 'package:autocomplete/src/spec.dart';
+
+final List<FigSuggestion> sizeSuffixe = [
+  FigSuggestion(name: 'Blocks', insertValue: '{cursor}b'),
+  FigSuggestion(name: 'Bytes', insertValue: '{cursor}c'),
+  FigSuggestion(name: 'Gigabytes', insertValue: '{cursor}G'),
+  FigSuggestion(name: 'Kilobytes', insertValue: '{cursor}K'),
+  FigSuggestion(name: 'Megabytes', insertValue: '{cursor}M'),
+  FigSuggestion(name: 'Petabytes', insertValue: '{cursor}P'),
+  FigSuggestion(name: 'Terabytes', insertValue: '{cursor}T'),
+  FigSuggestion(name: 'Words', insertValue: '{cursor}w'),
+];
+
+final List<String> compressionExclusive = [
+  "a",
+  "-a",
+  "--auto-compress",
+  "I",
+  "-I",
+  "--use-compress-program",
+  "j",
+  "-j",
+  "--bzip2",
+  "J",
+  "-J",
+  "--xz",
+  "--lzip",
+  "--lzma",
+  "--lzop",
+  "--no-auto-compress",
+  "z",
+  "-z",
+  "--gzip",
+  "--gunzip",
+  "--ungzip",
+  "Z",
+  "-Z",
+  "--compress",
+  "--uncompress",
+  "--zstd",
+];
+
+final List<String> keepExclusives = [
+  "k",
+  "-k",
+  "--keep-old-files",
+  "--overwrite",
+  "--overwrite-dir",
+  "--recursive-unlink",
+  "--skip-old-files",
+  "U",
+  "-U",
+  "--unlink-first",
+  "O",
+  "-O",
+  "--to-stdout",
+];
 
 final List<String> overwriteExclusives = [
   "k",
@@ -21,6 +78,18 @@ final List<String> overwriteExclusives = [
   "--to-stdout",
 ];
 
+final FigOption occurrenceOption = FigOption(
+  name: '--occurrence',
+  description: 'Process only the Nth occurrence of each file in the archive',
+  args: [
+    FigArg(
+      name: 'N',
+      defaultValue: '1',
+      isOptional: true,
+    ),
+  ],
+);
+
 final List<Option> fileOptions = [
   Option(
       name: ['f', '-f', '--file'],
@@ -37,7 +106,7 @@ final List<Option> fileOptions = [
   Option(
       name: ['L', '-L', '--tape-length'],
       description: 'Change tape after writing Nx1024 bytes',
-      args: [Arg(name: 'N')]),
+      args: [Arg(name: 'N', suggestions: sizeSuffixe)]),
   Option(
       name: ['M', '-M', '--multi-volume'],
       description: 'Create/list/extract multi-volume archive'),
@@ -60,30 +129,50 @@ final List<Option> fileOptions = [
 final List<Option> compressionOptions = [
   Option(
       name: ['a', '-a', '--auto-compress'],
-      description: 'Use archive suffix to determine the compression program'),
+      description: 'Use archive suffix to determine the compression program',
+      exclusiveOn: compressionExclusive),
   Option(
       name: ['I', '-I', '--use-compress-program'],
       description: 'Filter data through COMMAND',
+      exclusiveOn: compressionExclusive,
       args: [Arg(name: 'COMMAN')]),
   Option(
       name: ['j', '-j', '--bzip2'],
-      description: 'Filter the archive through bzip2'),
+      description: 'Filter the archive through bzip2',
+      exclusiveOn: compressionExclusive),
   Option(
-      name: ['J', '-J', '--xz'], description: 'Filter the archive through xz'),
-  Option(name: '--lzip', description: 'Filter the archive through lzip'),
-  Option(name: '--lzma', description: 'Filter the archive through lzma'),
-  Option(name: '--lzop', description: 'Filter the archive through lzop'),
+      name: ['J', '-J', '--xz'],
+      description: 'Filter the archive through xz',
+      exclusiveOn: compressionExclusive),
+  Option(
+      name: '--lzip',
+      description: 'Filter the archive through lzip',
+      exclusiveOn: compressionExclusive),
+  Option(
+      name: '--lzma',
+      description: 'Filter the archive through lzma',
+      exclusiveOn: compressionExclusive),
+  Option(
+      name: '--lzop',
+      description: 'Filter the archive through lzop',
+      exclusiveOn: compressionExclusive),
   Option(
       name: '--no-auto-compress',
       description:
-          'Do not use archive suffix to determine the compression program'),
+          'Do not use archive suffix to determine the compression program',
+      exclusiveOn: compressionExclusive),
   Option(
       name: ['z', '-z', '--gzip', '--gunzip', '--ungzip'],
-      description: 'Filter the archive through gzip'),
+      description: 'Filter the archive through gzip',
+      exclusiveOn: compressionExclusive),
   Option(
       name: ['Z', '-Z', '--compress', '--uncompress'],
-      description: 'Filter the archive through compress'),
-  Option(name: '--zstd', description: 'Filter the archive through zstd'),
+      description: 'Filter the archive through compress',
+      exclusiveOn: compressionExclusive),
+  Option(
+      name: '--zstd',
+      description: 'Filter the archive through zstd',
+      exclusiveOn: compressionExclusive),
   Option(
       name: ['--transform', '--xform'],
       description: 'Use sed replace EXPRESSION to transform file names',
@@ -344,6 +433,7 @@ final List<Option> readOptions = [
       name: '--no-seek',
       description: 'Assume the archive is not seekable',
       exclusiveOn: ['n', '-n', '--seek']),
+  occurrenceOption,
   Option(
       name: ['B', '-B', '--read-full-records'],
       description:
@@ -883,7 +973,7 @@ final FigSpec tarSpec = FigSpec(
       Subcommand(
           name: ['d', '-d', '--diff', '--compare'],
           description: 'Find differences between archive and file system',
-          options: [...fileOptions],
+          options: [...fileOptions, occurrenceOption],
           args: [
             Arg(
                 name: 'FILE',
@@ -921,19 +1011,22 @@ final FigSpec tarSpec = FigSpec(
                   '--keep-newer-files',
                   '--keep-directory-symlink',
                   '--no-overwrite-dir',
-                  ...overwriteExclusives,
+                  ...keepExclusives,
                 ]),
             Option(
                 name: '--keep-newer-files',
                 description:
-                    'Don\'t replace existing files that are newer than their archive copies'),
+                    'Don\'t replace existing files that are newer than their archive copies',
+                exclusiveOn: keepExclusives),
             Option(
                 name: '--keep-directory-symlink',
                 description:
-                    'Don\'t replace existing symlinks to directories when extracting'),
+                    'Don\'t replace existing symlinks to directories when extracting',
+                exclusiveOn: keepExclusives),
             Option(
                 name: '--no-overwrite-dir',
-                description: 'Preserve metadata of existing directories'),
+                description: 'Preserve metadata of existing directories',
+                exclusiveOn: keepExclusives),
             Option(
                 name: '--one-top-level',
                 description: 'Extract all files into DIR',
@@ -949,24 +1042,26 @@ final FigSpec tarSpec = FigSpec(
             Option(
                 name: '--overwrite-dir',
                 description:
-                    'Overwrite metadata of existing directories when extracting'),
+                    'Overwrite metadata of existing directories when extracting',
+                exclusiveOn: overwriteExclusives),
             Option(
                 name: '--recursive-unlink',
                 description:
-                    'Recursively remove all files in the directory prior to extracting it'),
+                    'Recursively remove all files in the directory prior to extracting it',
+                exclusiveOn: overwriteExclusives),
             Option(
                 name: '--skip-old-files',
                 description:
                     'Don\'t replace existing files when extracting, silently skip over them',
-                exclusiveOn: []),
+                exclusiveOn: [...keepExclusives, ...overwriteExclusives]),
             Option(
                 name: ['U', '-U', '--unlink-first'],
                 description: 'Remove each file prior to extracting over it',
-                exclusiveOn: []),
+                exclusiveOn: [...keepExclusives, ...overwriteExclusives]),
             Option(
                 name: ['O', '-O', '--to-stdout'],
                 description: 'Extract files to standard output',
-                exclusiveOn: []),
+                exclusiveOn: [...keepExclusives, ...overwriteExclusives]),
             Option(
                 name: '--to-command',
                 description: 'Pipe extracted files to COMMAND',
@@ -1132,7 +1227,7 @@ final FigSpec tarSpec = FigSpec(
       Subcommand(
           name: '--delete',
           description: 'Delete from the archive',
-          options: [...fileOptions],
+          options: [...fileOptions, occurrenceOption],
           args: [Arg(name: 'MEMBER', isVariadic: true)]),
       Subcommand(
           name: '--test-label',

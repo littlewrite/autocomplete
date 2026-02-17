@@ -24,14 +24,14 @@ void main() async {
 - `lib/specs/`: one Dart file per command (e.g. `cd.dart`, `ls.dart`). **`all_specs.dart`** imports every spec and exposes `registerAllSpecs()` (Dart has no dynamic import, so all specs are wired there).
 - `assets/icons/`: icons/logos for specs. TS sources often use URLs or data URIs; here they are stored as files so Flutter can bundle them. See `assets/icons/README.md`.
 - `tool/list_specs.dart`: list TS spec files under repo `src/` for migration tracking.
-- `example/run_suggest.dart`: example that calls `getSuggestions` for a few commands.
+- `example/example.dart`: example that calls `getSuggestions` for a few commands.
 
 ## Run example
 
 From this directory (`dart/`):
 
 ```bash
-dart run example/run_suggest.dart
+dart run example/example.dart
 ```
 
 ## Adding a new spec

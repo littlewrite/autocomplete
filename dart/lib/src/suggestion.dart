@@ -51,6 +51,57 @@ FilterStrategy? normalizeFilterStrategy(dynamic s) {
   return null;
 }
 
+/// Parse string (e.g. from JSON) to [SuggestionType]. Returns null if unknown.
+SuggestionType? suggestionTypeFromString(dynamic v) {
+  if (v == null || v is! String) return null;
+  switch (v) {
+    case 'arg': return SuggestionType.arg;
+    case 'file': return SuggestionType.file;
+    case 'folder': return SuggestionType.folder;
+    case 'option': return SuggestionType.option;
+    case 'subcommand': return SuggestionType.subcommand;
+    case 'mixin': return SuggestionType.mixin;
+    case 'shortcut': return SuggestionType.shortcut;
+    case 'special': return SuggestionType.special;
+    default: return null;
+  }
+}
+
+/// Convert dynamic (FigSuggestion, Map from JSON, etc.) to [FigSuggestion]. Returns null if not convertible.
+FigSuggestion? toFigSuggestion(dynamic s) {
+  if (s == null) return null;
+  if (s is FigSuggestion) return s;
+  if (s is! Map) return null;
+  final m = s as Map<Object?, Object?>;
+  final name = m['name'];
+  if (name == null) return null;
+  final nameVal = name is List
+      ? name.map((e) => e?.toString()).whereType<String>().toList()
+      : [name.toString()];
+  if (nameVal.isEmpty) return null;
+  final desc = m['description'];
+  final description = desc == null
+      ? null
+      : (desc is List
+          ? desc.map((e) => e?.toString()).whereType<String>().join('\n')
+          : desc.toString());
+  return FigSuggestion(
+    name: nameVal.length == 1 ? nameVal.single : nameVal,
+    displayName: m['displayName']?.toString(),
+    description: description,
+    icon: m['icon']?.toString(),
+    priority: (m['priority'] is int) ? m['priority'] as int : 50,
+    insertValue: m['insertValue']?.toString(),
+    replaceValue: m['replaceValue']?.toString(),
+    type: suggestionTypeFromString(m['type']),
+    hidden: m['hidden'] == true,
+    isDangerous: m['isDangerous'] == true,
+    deprecated: m['deprecated'],
+    previewComponent: m['previewComponent']?.toString(),
+    loadSpec: m['loadSpec'],
+  );
+}
+
 Suggestion? toSuggestion(FigSuggestion s, {SuggestionType? type, String? name}) {
   final n = name ?? longName(s.name);
   if (n.isEmpty) return null;

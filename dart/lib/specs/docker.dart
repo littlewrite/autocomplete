@@ -3,7 +3,6 @@
 
 import 'dart:convert';
 
-import 'package:autocomplete/specs/nvm.dart';
 import 'package:autocomplete/src/spec.dart';
 
 /// Post-process for `docker ps`-style output (JSON lines with .Names, .Image).

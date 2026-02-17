@@ -1,8 +1,8 @@
 // Example: get suggestions for a command line. Run from dart/:
 //
-//   dart run example/run_suggest.dart ls
-//   dart run example/run_suggest.dart "git sta"
-//   dart run example/run_suggest.dart "cd " --shell zsh
+//   dart run example/example.dart ls
+//   dart run example/example.dart "git sta"
+//   dart run example/example.dart "cd " --shell zsh
 //
 // First argument = command line string to complete.
 // --shell (or -s) = shell name (bash|zsh|fish|pwsh|powershell|cmd|xonsh|nushell). Default: bash.
@@ -51,10 +51,9 @@ void main(List<String> args) async {
   }
 
   if (cmd == null || cmd.isEmpty) {
-    print(
-        'Usage: dart run example/run_suggest.dart <command_line> [--shell bash]');
-    print('Example: dart run example/run_suggest.dart ls');
-    print('         dart run example/run_suggest.dart "git sta" -s zsh');
+    print('Usage: dart run example/example.dart <command_line> [--shell bash]');
+    print('Example: dart run example/example.dart ls');
+    print('         dart run example/example.dart "git sta" -s zsh');
     exit(1);
   }
 

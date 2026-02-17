@@ -48,6 +48,83 @@ class FigCache {
       };
 }
 
+// ============================================================================
+// Generator custom callback types (aligned with Fig.ExecuteCommandFunction, Fig.GeneratorContext)
+// ============================================================================
+
+/// Input to run a shell command. Aligns with Fig.ExecuteCommandInput.
+class ExecuteCommandInput {
+  const ExecuteCommandInput({
+    required this.command,
+    required this.args,
+    this.cwd,
+    this.env,
+    this.timeout,
+  });
+
+  final String command;
+  final List<String> args;
+  final String? cwd;
+  final Map<String, String?>? env;
+  final int? timeout;
+}
+
+/// Output of running a shell command. Aligns with Fig.ExecuteCommandOutput.
+class ExecuteCommandOutput {
+  const ExecuteCommandOutput({
+    required this.stdout,
+    required this.stderr,
+    required this.status,
+  });
+
+  final String stdout;
+  final String stderr;
+  final int status;
+}
+
+/// Async function to execute a command. Aligns with Fig.ExecuteCommandFunction.
+typedef ExecuteCommandFunction = Future<ExecuteCommandOutput> Function(
+    ExecuteCommandInput input);
+
+/// Context about the current shell session. Aligns with Fig.ShellContext.
+class FigShellContext {
+  const FigShellContext({
+    required this.currentWorkingDirectory,
+    this.environmentVariables = const {},
+    this.currentProcess = '',
+    this.sshPrefix = '',
+  });
+
+  final String currentWorkingDirectory;
+  final Map<String, String> environmentVariables;
+  final String currentProcess;
+  final String sshPrefix;
+}
+
+/// Context passed to generator [FigCustomGeneratorCallback]. Aligns with Fig.GeneratorContext (ShellContext & { isDangerous?, searchTerm }).
+class FigGeneratorContext extends FigShellContext {
+  const FigGeneratorContext({
+    required super.currentWorkingDirectory,
+    super.environmentVariables,
+    super.currentProcess,
+    super.sshPrefix,
+    this.isDangerous,
+    this.searchTerm = '',
+  });
+
+  final bool? isDangerous;
+  final String searchTerm;
+}
+
+/// Type of [FigGenerator.custom] when it is an async callback.
+/// Aligns with Fig.Generator.custom: (tokens, executeCommand, generatorContext) => Promise<Suggestion[]>.
+/// Runtime may pass null for [executeCommand] and [generatorContext] when not available.
+typedef FigCustomGeneratorCallback = Future<List<FigSuggestion>> Function(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? generatorContext,
+);
+
 /// Normalize args to List<FigArg>? (TS/JS allows single object or array; Dart unified as list).
 List<FigArg>? _normalizeArgs(dynamic a) {
   if (a == null) return null;
@@ -189,8 +266,10 @@ class FigGenerator {
   /// Timeout in ms (default 5000 in TS).
   final int? scriptTimeout;
 
-  /// Static list used when TS would use `custom: async () => list`. Serializable; use with [getQueryTerm] for comma-separated etc.
-  final List<FigSuggestion>? custom;
+  /// Either a static [List<FigSuggestion>] or [FigCustomGeneratorCallback].
+  /// Runtime uses `is List` / `is Function` to distinguish; callbacks are invoked as `custom(tokens, executeCommand, generatorContext)` (pass nulls when not available).
+  /// Only static list is serialized to JSON; callbacks are not.
+  final Object? custom;
 
   Map<String, dynamic> toJson() => {
         if (script != null) 'script': script,
@@ -203,8 +282,10 @@ class FigGenerator {
           'trigger': trigger,
         if (splitOn != null) 'splitOn': splitOn,
         if (scriptTimeout != null) 'scriptTimeout': scriptTimeout,
-        if (custom != null && custom!.isNotEmpty)
-          'custom': custom!.map((s) => s.toJson()).toList(),
+        if (custom is List && (custom as List).isNotEmpty)
+          'custom': (custom as List)
+              .map((s) => (s as FigSuggestion).toJson())
+              .toList(),
       };
 }
 
@@ -351,6 +432,7 @@ class FigOption {
     this.icon,
     this.priority,
     this.deprecated,
+    this.hidden = false,
   }) : args = _normalizeArgs(args);
 
   /// Option name(s), e.g. ["-a", "--all"] or "-a".
@@ -359,6 +441,7 @@ class FigOption {
 
   /// String or List<String> (multi-line in TS; converter may emit list).
   final dynamic description;
+  final bool hidden;
 
   /// Argument(s) for this option (TS/JS allows single object or array; Dart unified as list).
   final List<FigArg>? args;
@@ -409,6 +492,7 @@ class FigOption {
         if (icon != null) 'icon': icon,
         if (priority != null) 'priority': priority,
         if (deprecated != null) 'deprecated': deprecated,
+        if (hidden) 'hidden': true,
       };
 }
 
@@ -435,11 +519,13 @@ class FigSubcommand {
     this.replaceValue,
     this.isDangerous,
     this.deprecated,
+    this.hidden = false,
   }) : args = _normalizeArgs(args);
 
   final dynamic name; // String or List<String>
   final String? displayName;
   final String? description;
+  final bool hidden;
   final List<FigSubcommand>? subcommands;
   final List<FigOption>? options;
 
@@ -509,6 +595,7 @@ class FigSubcommand {
         if (replaceValue != null) 'replaceValue': replaceValue,
         if (isDangerous == true) 'isDangerous': true,
         if (deprecated != null) 'deprecated': deprecated,
+        if (hidden) 'hidden': true,
       };
 }
 

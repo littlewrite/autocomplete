@@ -1,33 +1,28 @@
-// Auto-generated from TypeScript source: nr.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: nr.ts
 import 'package:autocomplete/src/spec.dart';
+import 'npm.dart';
 
-/// Completion spec for `nr` CLI
-final FigSpec nrSpec = FigSpec(
-  name: 'nr',
-  description: 'Use the right package manager - run',
+final FigSpec completionSpec = FigSpec(
+  name: "nr",
+  description: "Use the right package manager - run",
   options: [
-
-    Option(
-      name: ['-h', '--help'],
-      description: 'Output usage information'
-    )
+    FigOption(
+      name: ["-h", "--help"],
+      description: "Output usage information",
+    ),
   ],
-  args: [
-    Arg(
-    name: 'script',
-    description: 'The script to run',
-    filterStrategy: 'fuzzy'
-  )
-  ],
+  args: FigArg(
+    name: "script",
+    description: "The script to run",
+    filterStrategy: FilterStrategy.fuzzy,
+    generators: npmScriptsGenerator,
+  ),
   additionalSuggestions: [
-
     FigSuggestion(
-      name: '-',
-      insertValue: '-\n',
-      description: 'Run the last command'
-    )
-  ]
+      name: "-",
+      insertValue: "-\n",
+      description: "Run the last command",
+      type: SuggestionType.shortcut,
+    ),
+  ],
 );

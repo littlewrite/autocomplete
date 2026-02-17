@@ -25,8 +25,9 @@ const ALL_SPECS_FILE = "all_specs.dart";
 const OUTPUT_PATH = path.join(SPECS_DIR, ALL_SPECS_FILE);
 
 // 匹配: final FigSpec xxxSpec = 或 const CompletionSpec xxxSpec =
+// 忽略以 _ 开头的私有变量
 const SPEC_VAR_REGEX =
-  /(?:final|const)\s+(?:FigSpec|CompletionSpec)\s+(\w+)\s*=/;
+  /(?:final|const)\s+(?:FigSpec|CompletionSpec)\s+([a-zA-Z][\w]*)\s*=/;
 
 /**
  * 递归收集 specs 目录下所有 .dart 文件相对路径（不含 all_specs.dart）
@@ -101,6 +102,11 @@ function main() {
       continue;
     }
 
+    if (rel === "z.dart") {
+      console.log("Checking z.dart content...");
+      console.log("Content start:", content.substring(0, 100));
+      console.log("Regex match:", content.match(SPEC_VAR_REGEX));
+    }
     const parsed = parseSpecFile(content);
     if (!parsed) {
       skipped.push(rel);

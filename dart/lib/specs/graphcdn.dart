@@ -1,92 +1,88 @@
-// Auto-generated from TypeScript source: graphcdn.ts
-// Generated at: 2026-02-12
-// WARNING: Manual changes may be overwritten!
-
+// AI-generated from TypeScript source: src/graphcdn.ts
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `graphcdn` CLI
+final FigOption helpOption = FigOption(
+  name: ['--help', '-h'],
+);
+
 final FigSpec graphcdnSpec = FigSpec(
   name: 'graphcdn',
   description: 'GraphCDN CLI',
   subcommands: [
-
-    Subcommand(
+    FigSubcommand(
       name: 'login',
       description: 'Authenticate the CLI',
       options: [
-
-        Option(
-          name: '--token',
+        FigOption(
+          name: ['--token'],
           args: [
-            Arg(
-            name: 'token'
-          )
-          ]
-        )
-      ]
+            FigArg(
+              name: 'token',
+            ),
+          ],
+        ),
+        helpOption,
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'init',
       description: 'Create a new GraphCDN service',
       options: [
-
-        Option(
+        FigOption(
           name: ['-y', '--yes'],
-          description: 'Skip all the questions and just init'
-        )
-      ]
+          description: 'Skip all the questions and just init',
+        ),
+        helpOption,
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'pull',
       description: 'Pull the latest service configuration',
       options: [
-
-        Option(
-          name: '--service',
-          description: 'Name of the service to pull from (only required without graphcdn.yml)',
+        FigOption(
+          name: ['--service'],
+          description:
+              'Name of the service to pull from (only required without graphcdn.yml)',
           args: [
-            Arg(
-            name: 'service',
-            description: 'Name of the environment to pull from'
-          )
-          ]
+            FigArg(
+              name: 'service',
+              description: 'Name of the environment to pull from',
+            ),
+          ],
         ),
-        Option(
-          name: '--env',
+        FigOption(
+          name: ['--env'],
           args: [
-            Arg(
-            name: 'env'
-          )
-          ]
-        )
-      ]
+            FigArg(
+              name: 'env',
+            ),
+          ],
+        ),
+        helpOption,
+      ],
     ),
-    Subcommand(
+    FigSubcommand(
       name: 'push',
       description: 'Push and deploy the latest app configuration',
       options: [
-
-        Option(
-          name: '--env',
+        FigOption(
+          name: ['--env'],
           args: [
-            Arg(
-            name: 'env'
-          )
-          ]
-        )
+            FigArg(
+              name: 'env',
+            ),
+          ],
+        ),
+        helpOption,
       ],
       args: [
-        Arg(
-        name: 'field',
-        isOptional: true,
-        suggestions: [
-
-          FigSuggestion(name: 'schema'),
-          FigSuggestion(name: 'rules')
-        ]
-      )
-      ]
-    )
+        FigArg(
+          name: 'field',
+          isOptional: true,
+          suggestions: ['schema', 'rules'],
+        ),
+      ],
+    ),
   ],
-  options: []
+  options: [helpOption],
 );

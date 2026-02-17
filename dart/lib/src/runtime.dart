@@ -1,5 +1,6 @@
 // Runtime: getSuggestions, loadSpec, runSubcommand/Arg/Option (reference: inshellisense runtime.ts).
 
+import 'dart:async';
 import 'dart:io';
 
 import 'adapter.dart';
@@ -67,17 +68,89 @@ Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd,
       .toList();
 }
 
+/// Build [ExecuteCommandFunction] for generator custom callbacks. Uses [adapter].runProcess or Process.run.
+ExecuteCommandFunction _createExecuteCommand(String cwd, CompleteAdapter? adapter) {
+  return (ExecuteCommandInput input) async {
+    final workDir = input.cwd ?? cwd;
+    final env = input.env != null
+        ? Map<String, String>.fromEntries(
+            input.env!.entries.where((e) => e.value != null).map((e) => MapEntry(e.key, e.value!)))
+        : null;
+    if (adapter != null) {
+      final result = await adapter.runProcess(
+        input.command,
+        input.args,
+        workingDirectory: workDir,
+      );
+      return ExecuteCommandOutput(
+        stdout: result.stdout,
+        stderr: result.stderr,
+        status: result.exitCode,
+      );
+    }
+    final runFuture = Process.run(
+      input.command,
+      input.args,
+      workingDirectory: workDir,
+      environment: env,
+      runInShell: false,
+    );
+    final result = input.timeout != null
+        ? await runFuture.timeout(
+            Duration(milliseconds: input.timeout!),
+            onTimeout: () => throw TimeoutException('executeCommand timed out'),
+          )
+        : await runFuture;
+    return ExecuteCommandOutput(
+      stdout: (result.stdout as String?) ?? '',
+      stderr: (result.stderr as String?) ?? '',
+      status: result.exitCode,
+    );
+  };
+}
+
 /// Run generator (script + postProcess, or custom). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], or returns [gen.customSuggestions].
 /// When [adapter] is non-null, uses [adapter.runProcess]; otherwise uses Process.run.
 Future<List<Suggestion>> runGeneratorSuggestions(
     FigGenerator? gen, List<CommandToken> allTokens, String cwd,
     [CompleteAdapter? adapter]) async {
   if (gen == null) return [];
-  if (gen.custom != null && gen.custom!.isNotEmpty) {
-    return gen.custom!
-        .map((s) => toSuggestion(s))
-        .whereType<Suggestion>()
-        .toList();
+  final custom = gen.custom;
+  if (custom != null) {
+    if (custom is List && custom.isNotEmpty) {
+      return custom
+          .map((s) => toFigSuggestion(s))
+          .whereType<FigSuggestion>()
+          .map((s) => toSuggestion(s))
+          .whereType<Suggestion>()
+          .toList();
+    }
+    if (custom is Function) {
+      final tokens = allTokens.map((t) => t.token).toList();
+      final executeCommand = _createExecuteCommand(cwd, adapter);
+      final generatorContext = FigGeneratorContext(
+        currentWorkingDirectory: cwd,
+        environmentVariables: Platform.environment,
+        currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
+        sshPrefix: '',
+        searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
+      );
+      try {
+        final result = custom(tokens, executeCommand, generatorContext);
+        final raw = result is Future ? await result : result;
+        final list = raw is List ? raw : <dynamic>[];
+        return list
+            .map((s) => toFigSuggestion(s))
+            .whereType<FigSuggestion>()
+            .map((s) => toSuggestion(s))
+            .whereType<Suggestion>()
+            .toList();
+      } catch (e, st) {
+        print('[Fig generator] custom callback error: $e');
+        print(st);
+        return [];
+      }
+    }
   }
   if (gen.template != null) {
     final templates = await runTemplates(gen.template, cwd, adapter);

@@ -65,8 +65,8 @@ final FigOption noEnableAsserts = FigOption(
   exclusiveOn: ['--enable-asserts'],
 );
 
-/// 定义环境变量的子命令
-final FigSubcommand define = FigSubcommand(
+/// 定义环境变量的选项
+final FigOption define = FigOption(
   name: ['-D', '--define'],
   description:
       'Define an environment declaration. To specify multiple declarations, '
@@ -119,8 +119,8 @@ final List<FigOption> globalOptions = [
 ];
 
 /// 编译选项列表
-final List<FigSubcommand> compileOptions = [
-  FigSubcommand(
+final List<FigOption> compileOptions = [
+  FigOption(
     name: ['-o', '--output'],
     description: 'Write the output to <file-name>',
     args: [
@@ -130,44 +130,17 @@ final List<FigSubcommand> compileOptions = [
       ),
     ],
   ),
-  // verbosity 需要作为 Option 而不是 Subcommand
-  FigOption(
-    name: '--verbosity',
-    description: 'Sets the verbosity level of the compilation',
-    args: [
-      FigArg(
-        name: 'verbosity-level',
-        suggestions: [
-          FigSuggestion(
-            name: 'all',
-            description: 'Show all messages',
-          ),
-          FigSuggestion(
-            name: 'error',
-            description: 'Show only error messages',
-          ),
-          FigSuggestion(
-            name: 'info',
-            description: 'Show error, warning, and info messages',
-          ),
-          FigSuggestion(
-            name: 'warning',
-            description: 'Show only error and warning messages',
-          ),
-        ],
-      ),
-    ],
-  ),
+  verbosity,
 ];
 
 /// AOT 编译选项列表
-final List<FigSubcommand> aotOptions = [
+final List<FigOption> aotOptions = [
   define,
-  FigSubcommand(
+  FigOption(
     name: '--enable-asserts',
     description: 'Enable assert statements',
   ),
-  FigSubcommand(
+  FigOption(
     name: ['-p', '--packages'],
     description:
         'Get package locations from the specified file instead of .packages. '
@@ -180,11 +153,11 @@ final List<FigSubcommand> aotOptions = [
       ),
     ],
   ),
-  FigSubcommand(
+  FigOption(
     name: ['--no-sound-null-safety', '--sound-null-safety'],
     description: 'Respect the nullability of types at runtime',
   ),
-  FigSubcommand(
+  FigOption(
     name: ['-S', '--save-debugging-info'],
     description:
         'Remove debugging information from the output and save it separately '
@@ -362,7 +335,7 @@ final FigSpec dartSpec = FigSpec(
                         FigSuggestion(
                             name: 'changed',
                             description:
-                                'Nly the names of files whose formatting is changed'),
+                                'Only the names of files whose formatting is changed'),
                         FigSuggestion(
                             name: 'none',
                             description: 'No file names or directories')
@@ -383,7 +356,7 @@ final FigSpec dartSpec = FigSpec(
             Option(
                 name: '--set-exit-if-changed',
                 description:
-                    'Return exist code 1 if there are any formatting changes'),
+                    'Return exit code 1 if there are any formatting changes'),
             Option(name: '--fix', description: 'Apply all style fixes'),
             Option(
                 name: '--fix-doc-comments',
@@ -421,7 +394,7 @@ final FigSpec dartSpec = FigSpec(
             Option(
                 name: ['-i', '--indent'],
                 description: 'Add this many spaces of leading indentation',
-                args: [Arg(name: 'number-of-space')]),
+                args: [Arg(name: 'number-of-spaces')]),
             Option(
                 name: '--follow-links',
                 description:
@@ -435,7 +408,7 @@ final FigSpec dartSpec = FigSpec(
                 name: '--stdin-name',
                 description:
                     'Use this path in error messages when input is read from stdin. (defaults to \'stdin\')',
-                args: [Arg(name: 'nam')])
+                args: [Arg(name: 'name')])
           ],
           args: [
             Arg(
@@ -487,7 +460,7 @@ final FigSpec dartSpec = FigSpec(
                 name: '--summary',
                 description:
                     'Output a machine-readable summary of migration changes',
-                args: [Arg(name: 'path', template: 'filepath')]),
+                args: [Arg(name: 'path', template: 'filepaths')]),
             Option(
                 name: '--ignore-exceptions',
                 description:
@@ -495,7 +468,7 @@ final FigSpec dartSpec = FigSpec(
             Option(
                 name: '--sdk-path',
                 description: 'The path to the Dart SDK',
-                args: [Arg(name: 'sdk-pat')])
+                args: [Arg(name: 'sdk-path')])
           ]),
       Subcommand(name: 'pub', description: 'Work with packages', options: [
         ...globalOptions,
@@ -540,7 +513,7 @@ final FigSpec dartSpec = FigSpec(
               noPrecompile
             ],
             args: [
-              Arg(name: 'package', description: 'Dart pub package nam')
+              Arg(name: 'package', description: 'Dart pub package name')
             ]),
         Subcommand(
             name: 'cache',
@@ -562,7 +535,7 @@ final FigSpec dartSpec = FigSpec(
                         description: 'Version constraint')
                   ],
                   args: [
-                    Arg(name: 'packag')
+                    Arg(name: 'package')
                   ]),
               Subcommand(
                   name: 'repair',
@@ -647,7 +620,7 @@ final FigSpec dartSpec = FigSpec(
                         name: ['-u', '--hosted-url'],
                         description:
                             'A custom pub server URL for the package. Only applies when using the \'hosted\' source',
-                        args: [Arg(name: 'ur')])
+                        args: [Arg(name: 'url')])
                   ]),
               Subcommand(
                   name: 'deactivate',
@@ -669,7 +642,7 @@ final FigSpec dartSpec = FigSpec(
                         name: '--enable-experiment',
                         description:
                             'Runs the executable in a VM with the given experiments enabled. (Will disable snapshotting, resulting in slower startup)',
-                        args: [Arg(name: 'experimen')]),
+                        args: [Arg(name: 'experiment')]),
                     Option(
                         name: '--sound-null-safety',
                         description:
@@ -873,7 +846,7 @@ final FigSpec dartSpec = FigSpec(
         Option(
             name: '--root-certs-file',
             description:
-                'The The path to a file containing the trusted root certificates to use for secure socket connections',
+                'The path to a file containing the trusted root certificates to use for secure socket connections',
             args: [Arg(name: 'path', template: 'filepaths')]),
         Option(
             name: '--root-certs-cache',

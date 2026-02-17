@@ -405,14 +405,14 @@ class TsToDartConverter {
   }
 
   /**
-   * 提取顶层 const name: Fig.Option[] = [ ... ]、Fig.Suggestion[] = [ ... ]、Fig.Subcommand[] = [ ... ]，
+   * 提取顶层 (export )?const name: Fig.Option[] | Array<Fig.Option> = [ ... ]、同形式的 Suggestion/Subcommand，
    * 填充 optionListVarNames / suggestionListVarNames / subcommandListVarNames 及对应 Dart。
-   * 支持常见变量名如 configSuggestions、addOptions、daemonServices 等（任意合法标识符均可）。
+   * 支持 export const packageList: Array<Fig.Suggestion> = [ ... ] 等写法。
    */
   extractAndConvertListVariables() {
     const code = this.tsCode;
-    // Fig.Option[] = [
-    const optionRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Option\[\]\s*=\s*\[/g;
+    // (export )?const name: Fig.Option[] | Array<Fig.Option> = [
+    const optionRegex = /(?:export\s+)?const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(?:Fig\.Option\[\]|Array\s*<\s*Fig\.Option\s*>)\s*=\s*\[/g;
     let m;
     while ((m = optionRegex.exec(code)) !== null) {
       const varName = m[1];
@@ -423,8 +423,8 @@ class TsToDartConverter {
       const dartArr = this.convertArray(arrSrc, 0, "options");
       this.optionListDart[varName] = dartArr;
     }
-    // Fig.Suggestion[] = [
-    const suggestionRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Suggestion\[\]\s*=\s*\[/g;
+    // (export )?const name: Fig.Suggestion[] | Array<Fig.Suggestion> = [
+    const suggestionRegex = /(?:export\s+)?const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(?:Fig\.Suggestion\[\]|Array\s*<\s*Fig\.Suggestion\s*>)\s*=\s*\[/g;
     while ((m = suggestionRegex.exec(code)) !== null) {
       const varName = m[1];
       const startBracket = m.index + m[0].length - 1;
@@ -434,8 +434,8 @@ class TsToDartConverter {
       const dartArr = this.convertArray(arrSrc, 0, "suggestions");
       this.suggestionListDart[varName] = dartArr;
     }
-    // Fig.Subcommand[] = [
-    const subcommandRegex = /const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Subcommand\[\]\s*=\s*\[/g;
+    // (export )?const name: Fig.Subcommand[] | Array<Fig.Subcommand> = [
+    const subcommandRegex = /(?:export\s+)?const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(?:Fig\.Subcommand\[\]|Array\s*<\s*Fig\.Subcommand\s*>)\s*=\s*\[/g;
     while ((m = subcommandRegex.exec(code)) !== null) {
       const varName = m[1];
       const startBracket = m.index + m[0].length - 1;
