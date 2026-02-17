@@ -544,8 +544,12 @@ Future<SuggestionBlob?> runArg(
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
+/// Empty token triggers no suggestions; only the v2 bucket for the first character is used.
 SuggestionBlob runCommand(CommandToken token) {
-  final names = getSpecNames().where((s) => s.startsWith(token.token)).toList();
+  if (token.token.isEmpty) {
+    return SuggestionBlob(suggestions: [], charactersToDrop: 0);
+  }
+  final names = getSpecNamesWithPrefix(token.token);
   final suggestions = names
       .map((s) => Suggestion(
           name: s,

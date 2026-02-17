@@ -153,7 +153,7 @@ function main() {
 }
 
 /**
- * 生成 all_specs_v2.dart 内容：deferred import + v2SpecNames + ensureSpecLoadedV2 switch
+ * 生成 all_specs_v2.dart 内容：deferred import + v2SpecNamesByFirstChar + ensureSpecLoadedV2 switch
  */
 function generateV2Dart(entries) {
   const lines = [
@@ -172,21 +172,50 @@ function generateV2Dart(entries) {
     );
   }
 
-  const byCommandForNames = new Map();
-  for (const e of entries) byCommandForNames.set(e.commandName, true);
-  const sortedNames = [...byCommandForNames.keys()].sort();
-
+  // Group command names by first character (lowercase) so one bucket per char; each bucket = separate const list.
+  const byFirstChar = new Map();
+  for (const e of entries) {
+    const name = e.commandName;
+    const first = name.length ? name[0] : "";
+    const key = first >= "A" && first <= "Z" ? first.toLowerCase() : first;
+    if (!byFirstChar.has(key)) byFirstChar.set(key, new Set());
+    byFirstChar.get(key).add(name);
+  }
+  const sortedKeys = [...byFirstChar.keys()].sort();
+  function varSuffix(k) {
+    if (k === "-") return "minus";
+    if (k === "@") return "at";
+    return k;
+  }
   lines.push("");
   lines.push(
-    "/// Command names available in this v2 bundle (for command-name completion without loading)."
+    "/// Command names by first character (lowercase). One const list per char; lookup via [getV2SpecNamesForFirstChar]."
   );
-  lines.push("const List<String> v2SpecNames = [" + sortedNames.map((n) => `'${n.replace(/'/g, "\\'")}'`).join(", ") + "];");
+  for (const k of sortedKeys) {
+    const names = [...byFirstChar.get(k)].sort();
+    const list = names.map((n) => `'${n.replace(/'/g, "\\'")}'`).join(", ");
+    lines.push("const List<String> v2SpecNamesFirstChar_" + varSuffix(k) + " = [" + list + "];");
+  }
   lines.push("");
   lines.push(
-    "/// One-time setup: register v2 command names so getSpecNames() includes them; no specs loaded yet."
+    "/// Returns the list of v2 command names whose first character (ignoring case) equals [firstChar]."
+  );
+  lines.push("List<String> getV2SpecNamesForFirstChar(String firstChar) {");
+  lines.push("  if (firstChar.isEmpty) return const [];");
+  lines.push("  final c = firstChar.length == 1 ? firstChar.toLowerCase() : firstChar[0].toLowerCase();");
+  lines.push("  switch (c) {");
+  for (const k of sortedKeys) {
+    lines.push("    case '" + (k === "'" ? "\\'" : k) + "': return v2SpecNamesFirstChar_" + varSuffix(k) + ";");
+  }
+  lines.push("    default: return const [];");
+  lines.push("  }");
+  lines.push("}");
+  lines.push("");
+  lines.push(
+    "/// One-time setup: register v2 spec-names getter; no specs loaded yet."
   );
   lines.push("void registerBuiltinSpecsV2() {");
-  lines.push("  registerV2SpecNames(v2SpecNames);");
+  lines.push("  registerV2SpecNamesGetter(getV2SpecNamesForFirstChar);");
   lines.push("}");
   lines.push("");
   lines.push(

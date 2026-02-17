@@ -21,17 +21,15 @@ void setMaxLoadedSpecs(int n) {
   _maxLoadedSpecs = n;
 }
 
-/// When using deferred specs (e.g. all_specs_v2), names listed here are included in [getSpecNames]
-/// so command-name completion works before any spec is loaded. [ensureSpecLoaded] is responsible for loading and registering.
-Set<String>? _v2SpecNames;
+/// When using deferred specs (e.g. all_specs_v2), a getter returns the list for a given first char (switch over const lists).
+List<String> Function(String firstChar)? _v2SpecNamesGetter;
 
-/// Register command names that are available for lazy load (v2). Included in [getSpecNames].
-void registerV2SpecNames(Iterable<String> names) {
-  _v2SpecNames ??= {};
-  _v2SpecNames!.addAll(names);
+/// Register the v2 spec-names getter (e.g. [getV2SpecNamesForFirstChar]). Used by [getSpecNamesWithPrefix].
+void registerV2SpecNamesGetter(List<String> Function(String firstChar) getter) {
+  _v2SpecNamesGetter = getter;
 }
 
-/// Unregister the spec for [name] so it can be GC'd. Name may stay in _v2SpecNames for command-name completion.
+/// Unregister the spec for [name] so it can be GC'd. Name may stay in v2 first-char lists for command-name completion.
 void unregisterSpec(String name) {
   _registry.remove(name);
   _lruOrder.remove(name);
@@ -61,10 +59,31 @@ FigSpec? getSpec(String name) {
   return loader();
 }
 
-/// All registered command names (excluding @scoped and reserved). When v2 is used, includes [registerV2SpecNames] names.
+/// Command names that start with [prefix] (case-insensitive). Empty [prefix] returns [] (no suggestion).
+/// Merges already-loaded specs and the v2 bucket for [prefix]'s first character (lowercase).
+List<String> getSpecNamesWithPrefix(String prefix) {
+  if (prefix.isEmpty) return [];
+  final prefixLower = prefix.toLowerCase();
+  final fromRegistry = _registry.keys
+      .where((k) => !k.startsWith('@') && k != '-')
+      .where((s) => s.toLowerCase().startsWith(prefixLower))
+      .toList();
+  final fromV2 = (_v2SpecNamesGetter?.call(prefixLower[0]) ?? <String>[])
+      .where((s) => s.toLowerCase().startsWith(prefixLower))
+      .toList();
+  return <String>{...fromRegistry, ...fromV2}.toList()..sort();
+}
+
+/// All registered command names (excluding @scoped and reserved). When v2 is used, builds by calling the getter for each first char.
 List<String> getSpecNames() {
   final fromRegistry = _registry.keys.where((k) => !k.startsWith('@') && k != '-');
-  final fromV2 = _v2SpecNames ?? <String>{};
+  Set<String> fromV2 = {};
+  if (_v2SpecNamesGetter != null) {
+    const firstChars = ['-', '@', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    for (final c in firstChars) {
+      fromV2.addAll(_v2SpecNamesGetter!(c));
+    }
+  }
   return <String>{...fromRegistry, ...fromV2}.toList()..sort();
 }
 
