@@ -16,12 +16,12 @@ import 'dart:io';
 
 void main() async {
   // 1. 注册内置的补全规范 (cd, ls, git, tree 等)
-  registerBuiltinSpecs(); 
-  
+  registerBuiltinSpecs();
+
   // 2. 获取补全建议
   // 参数: 输入的命令字符串, 当前工作目录, Shell 类型
   final blob = await getSuggestions('git sta', Directory.current.path, Shell.bash);
-  
+
   // blob.suggestions 是一个列表，包含建议项 (Suggestion)
   // 例如: [Suggestion(name: 'status', ...)]
   if (blob != null) {
@@ -60,18 +60,23 @@ dart run example/example.dart "cd " --shell zsh
 非常欢迎大家参与到这个项目中来！由于这是一个庞大的移植工程，我们非常需要社区的帮助。
 
 ### 1. 修正与改进 Spec (Fixing Specs)
+
 目前的 Dart Spec 文件（位于 `lib/specs/`）大多是通过脚本从 TypeScript **批量转换**而来的。
+
 - **存在的问题**: 由于自动化转换的局限性，某些复杂的 Spec 逻辑、类型或参数可能存在错误或遗漏。
 - **如何帮助**: 如果你在使用中发现某个命令的补全不准确，或者报错，欢迎直接修改对应的 `lib/specs/<command>.dart` 文件并提交 PR。我们非常欢迎人工校对和修复！
 
 ### 2. 辅助脚本 (Tools)
+
 如果你在仓库中看到 `tools/` 目录（或根目录下的相关脚本），它们通常用于：
+
 - **批量转换**: 将上游的 TS Spec 转换为 Dart 代码。
 - **列表生成**: 扫描并生成 `all_specs.dart` 等索引文件。
 - **校验**: 检查 Spec 文件的语法和结构正确性。
-详细的使用说明请参考各脚本文件头部的注释。
+  详细的使用说明请参考各脚本文件头部的注释。
 
 ### 3. 添加新规范 (Adding a new spec)
+
 1. 在 `lib/specs/` 下添加 `<command>.dart` 文件，定义一个 `FigSpec` (例如 `const FigSpec myCommandSpec = ...`)。
 2. 在 **`lib/specs/all_specs_v2.dart`** 中：
    - 添加 `import '<command>.dart';`
@@ -92,6 +97,5 @@ cd dart && dart pub publish
 - **[withfig/autocomplete](https://github.com/withfig/autocomplete)** (MIT License): 本项目的补全规范数据 (Specs) 主要来源于此仓库。
 - **[microsoft/inshellisense](https://github.com/microsoft/inshellisense)** (MIT License): 本项目的运行时逻辑 (Runtime)、解析器设计参考了该项目的 TypeScript 实现。
 - **[withfig/autocomplete-tools](https://github.com/withfig/autocomplete-tools)**: 提供了关于 Spec 结构的工具和定义参考。
-- **[@withfig/autocomplete-types](https://www.npmjs.com/package/@withfig/autocomplete-types)**: 提供了 Spec 的类型定义参考。
 
 感谢所有为这些开源项目做出贡献的开发者！
