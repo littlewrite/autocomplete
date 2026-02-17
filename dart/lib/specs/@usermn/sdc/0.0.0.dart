@@ -1,64 +1,49 @@
-// Auto-generated from 0.0.0.ts
-// Generated at: 2026-02-12
+// AI-generated from TypeScript source: index.ts
 
 import 'package:autocomplete/src/spec.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// const completion: Fig.Subcommand = {
-//   name: "sdc",
-//   description: '"setup dominic\'s computer" cli tool',
-//   subcommands: [
-//     {
-//       name: "help",
-//       description: "Display help for command",
-//       priority: 49,
-//       args: {
-//         name: "command",
-//         isOptional: true,
-//         template: "help",
-//       },
-//     },
-//   ],
-//   options: [
-//     {
-//       name: ["-V", "--version"],
-//       description: "Output the version number",
-//     },
-//     {
-//       name: ["-f", "--force"],
-//       description: "Bypass checks",
-//     },
-//     {
-//       name: "--no-end-clear",
-//       description:
-//         "Skip clearing the console at the end so that output can be viewed",
-//     },
-//     {
-//       name: ["-h", "--help"],
-//       description: "Display help for command",
-//       priority: 49,
-//     },
-//   ],
-// };
-// 
-// const versions: Fig.VersionDiffMap = {};
-// 
-// versions["0.0.4"] = {};
-// 
-// versions["0.0.7"] = {
-//   options: [
-//     {
-//       name: "--debug-options",
-//       description: "Print options to console for debugging",
-//     },
-//     {
-//       name: ["-c", "--confirm-commands"],
-//       description: "Confirm commands before running them",
-//     },
-//   ],
-// };
-// 
-// export { versions };
-// export default completion;
-// 
+final usermnSds0Spec = FigSpec(
+  name: "sdc",
+  description: '"setup dominic\'s computer" cli tool',
+  subcommands: [
+    FigSubcommand(
+      name: "help",
+      description: "Display help for command",
+      priority: 49,
+      args: FigArg(
+        name: "command",
+        isOptional: true,
+        template: "help",
+      ),
+    ),
+  ],
+  options: [
+    FigOption(
+      name: ["-V", "--version"],
+      description: "Output the version number",
+    ),
+    FigOption(
+      name: ["-f", "--force"],
+      description: "Bypass checks",
+    ),
+    FigOption(
+      name: "--no-end-clear",
+      description:
+          "Skip clearing the console at the end so that output can be viewed",
+    ),
+    FigOption(
+      name: ["-h", "--help"],
+      description: "Display help for command",
+      priority: 49,
+    ),
+    // Options from version 0.0.7
+    FigOption(
+      name: "--debug-options",
+      description: "Print options to console for debugging",
+    ),
+    FigOption(
+      name: ["-c", "--confirm-commands"],
+      description: "Confirm commands before running them",
+    ),
+  ],
+);

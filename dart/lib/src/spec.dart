@@ -92,23 +92,21 @@ typedef ExecuteCommandFunction = Future<ExecuteCommandOutput> Function(
 class FigShellContext {
   const FigShellContext({
     required this.currentWorkingDirectory,
-    this.environmentVariables = const {},
     this.currentProcess = '',
     this.sshPrefix = '',
   });
 
   final String currentWorkingDirectory;
-  final Map<String, String> environmentVariables;
   final String currentProcess;
   final String sshPrefix;
 }
 
 /// Context passed to generator [FigCustomGeneratorCallback]. Aligns with Fig.GeneratorContext (ShellContext & { isDangerous?, searchTerm }).
 /// [adapter] is provided so custom generators can access the file system (e.g. [CompleteAdapter.listDirectory]) without using dart:io.
+/// Environment variables are read lazily from [adapter] when [getEnv], [getEnvs], or [environmentVariables] is accessed.
 class FigGeneratorContext extends FigShellContext {
-  const FigGeneratorContext({
+  FigGeneratorContext({
     required super.currentWorkingDirectory,
-    super.environmentVariables,
     super.currentProcess,
     super.sshPrefix,
     this.isDangerous,
@@ -122,11 +120,15 @@ class FigGeneratorContext extends FigShellContext {
   /// Adapter for path resolution and directory listing. Use [adapter.listDirectory] and map to [FigSuggestion] for filepath suggestions.
   final CompleteAdapter adapter;
 
-  /// One env by [envKey]. Use [getEnvs] for the full map.
-  String? getEnv(String envKey) => environmentVariables[envKey];
+  /// Lazily resolved from [adapter.getEnvs()] when first accessed.
+  /// Shadows super [FigShellContext.environmentVariables] so generators never pay for env until used.
+  Map<String, String> get environmentVariables => adapter.getEnvs();
 
-  /// All environment variables (from adapter.getEnvs()).
-  Map<String, String> get getEnvs => environmentVariables;
+  /// One env by [envKey]. Use [getEnvs] for the full map. Resolved from adapter on demand.
+  String? getEnv(String envKey) => adapter.getEnv(envKey);
+
+  /// All environment variables (from adapter.getEnvs(), called when accessed).
+  Map<String, String> get getEnvs => adapter.getEnvs();
 }
 
 /// Type of [FigGenerator.custom] when it is an async callback.

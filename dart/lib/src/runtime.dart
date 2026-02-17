@@ -11,12 +11,6 @@ import 'shell.dart';
 import 'suggestion.dart';
 import 'template.dart';
 
-/// Resolve cwd for path completion (e.g. expand ~).
-Future<String> resolveCwd(
-    String cwd, Shell shell, CompleteAdapter adapter) async {
-  return adapter.resolveCwd(cwd, shell);
-}
-
 /// Load spec for the command represented by tokens (first token = command name).
 FigSpec? loadSpec(List<CommandToken> tokens) {
   if (tokens.isEmpty) return null;
@@ -103,7 +97,6 @@ Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
       final executeCommand = _createExecuteCommand(cwd, adapter);
       final generatorContext = FigGeneratorContext(
         currentWorkingDirectory: cwd,
-        environmentVariables: adapter.getEnvs(),
         currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
         sshPrefix: '',
         searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
@@ -169,7 +162,6 @@ Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     final tokens = allTokens.map((t) => t.token).toList();
     final generatorContext = FigGeneratorContext(
       currentWorkingDirectory: cwd,
-      environmentVariables: adapter.getEnvs(),
       currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
       sshPrefix: '',
       searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
@@ -572,7 +564,8 @@ Future<SuggestionBlob?> getSuggestions(
   final subcommand = getSubcommand(spec);
   if (subcommand == null) return null;
 
-  final resolvedCwd = await resolveCwd(cwd, shell, adapter);
+  final resolvedCwd = await adapter.resolveCwd(cwd, shell);
+
   final result = await runSubcommand(
       activeCmd.skip(1).toList(),
       activeCmd,

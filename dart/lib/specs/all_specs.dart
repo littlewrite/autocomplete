@@ -1339,7 +1339,8 @@ void registerAllSpecs() {
   registerSpec(cliSpec.name, () => cliSpec);
   registerSpec(figPublishSpecSpec.name, () => figPublishSpecSpec);
   registerSpec(presetSpec.name, () => presetSpec);
-  registerSpec(withfigAutocompleteToolsSpec.name, () => withfigAutocompleteToolsSpec);
+  registerSpec(
+      withfigAutocompleteToolsSpec.name, () => withfigAutocompleteToolsSpec);
   registerSpec(wordpressCreateBlockSpec.name, () => wordpressCreateBlockSpec);
   registerSpec(actSpec.name, () => actSpec);
   registerSpec(adbSpec.name, () => adbSpec);
@@ -1378,17 +1379,21 @@ void registerAllSpecs() {
   registerSpec(amplifybackendSpec.name, () => amplifybackendSpec);
   registerSpec(amplifyuibuilderSpec.name, () => amplifyuibuilderSpec);
   registerSpec(apigatewaySpec.name, () => apigatewaySpec);
-  registerSpec(apigatewaymanagementapiSpec.name, () => apigatewaymanagementapiSpec);
+  registerSpec(
+      apigatewaymanagementapiSpec.name, () => apigatewaymanagementapiSpec);
   registerSpec(apigatewayv2Spec.name, () => apigatewayv2Spec);
-  registerSpec(aws_appconfig.appconfigSpec.name, () => aws_appconfig.appconfigSpec);
+  registerSpec(
+      aws_appconfig.appconfigSpec.name, () => aws_appconfig.appconfigSpec);
   registerSpec(appconfigdataSpec.name, () => appconfigdataSpec);
   registerSpec(appfabricSpec.name, () => appfabricSpec);
   registerSpec(appflowSpec.name, () => appflowSpec);
   registerSpec(appintegrationsSpec.name, () => appintegrationsSpec);
-  registerSpec(applicationAutoscalingSpec.name, () => applicationAutoscalingSpec);
+  registerSpec(
+      applicationAutoscalingSpec.name, () => applicationAutoscalingSpec);
   registerSpec(applicationInsightsSpec.name, () => applicationInsightsSpec);
   registerSpec(applicationSignalsSpec.name, () => applicationSignalsSpec);
-  registerSpec(applicationcostprofilerSpec.name, () => applicationcostprofilerSpec);
+  registerSpec(
+      applicationcostprofilerSpec.name, () => applicationcostprofilerSpec);
   registerSpec(appmeshSpec.name, () => appmeshSpec);
   registerSpec(apprunnerSpec.name, () => apprunnerSpec);
   registerSpec(appstreamSpec.name, () => appstreamSpec);
@@ -1409,7 +1414,8 @@ void registerAllSpecs() {
   registerSpec(bcmPricingCalculatorSpec.name, () => bcmPricingCalculatorSpec);
   registerSpec(bedrockAgentRuntimeSpec.name, () => bedrockAgentRuntimeSpec);
   registerSpec(bedrockAgentSpec.name, () => bedrockAgentSpec);
-  registerSpec(bedrockDataAutomationRuntimeSpec.name, () => bedrockDataAutomationRuntimeSpec);
+  registerSpec(bedrockDataAutomationRuntimeSpec.name,
+      () => bedrockDataAutomationRuntimeSpec);
   registerSpec(bedrockDataAutomationSpec.name, () => bedrockDataAutomationSpec);
   registerSpec(bedrockRuntimeSpec.name, () => bedrockRuntimeSpec);
   registerSpec(bedrockSpec.name, () => bedrockSpec);
@@ -1420,7 +1426,8 @@ void registerAllSpecs() {
   registerSpec(ceSpec.name, () => ceSpec);
   registerSpec(chatbotSpec.name, () => chatbotSpec);
   registerSpec(chimeSdkIdentitySpec.name, () => chimeSdkIdentitySpec);
-  registerSpec(chimeSdkMediaPipelinesSpec.name, () => chimeSdkMediaPipelinesSpec);
+  registerSpec(
+      chimeSdkMediaPipelinesSpec.name, () => chimeSdkMediaPipelinesSpec);
   registerSpec(chimeSdkMeetingsSpec.name, () => chimeSdkMeetingsSpec);
   registerSpec(chimeSdkMessagingSpec.name, () => chimeSdkMessagingSpec);
   registerSpec(chimeSdkVoiceSpec.name, () => chimeSdkVoiceSpec);
@@ -1430,7 +1437,8 @@ void registerAllSpecs() {
   registerSpec(cloud9Spec.name, () => cloud9Spec);
   registerSpec(cloudcontrolSpec.name, () => cloudcontrolSpec);
   registerSpec(clouddirectorySpec.name, () => clouddirectorySpec);
-  registerSpec(cloudfrontKeyvaluestoreSpec.name, () => cloudfrontKeyvaluestoreSpec);
+  registerSpec(
+      cloudfrontKeyvaluestoreSpec.name, () => cloudfrontKeyvaluestoreSpec);
   registerSpec(cloudfrontSpec.name, () => cloudfrontSpec);
   registerSpec(cloudhsmSpec.name, () => cloudhsmSpec);
   registerSpec(cloudhsmv2Spec.name, () => cloudhsmv2Spec);
@@ -1457,7 +1465,8 @@ void registerAllSpecs() {
   registerSpec(comprehendmedicalSpec.name, () => comprehendmedicalSpec);
   registerSpec(computeOptimizerSpec.name, () => computeOptimizerSpec);
   registerSpec(configserviceSpec.name, () => configserviceSpec);
-  registerSpec(aws_configure.configureSpec.name, () => aws_configure.configureSpec);
+  registerSpec(
+      aws_configure.configureSpec.name, () => aws_configure.configureSpec);
   registerSpec(connectContactLensSpec.name, () => connectContactLensSpec);
   registerSpec(connectSpec.name, () => connectSpec);
   registerSpec(connectcampaignsSpec.name, () => connectcampaignsSpec);
@@ -1568,10 +1577,12 @@ void registerAllSpecs() {
   registerSpec(kendraRankingSpec.name, () => kendraRankingSpec);
   registerSpec(kendraSpec.name, () => kendraSpec);
   registerSpec(keyspacesSpec.name, () => keyspacesSpec);
-  registerSpec(kinesisVideoArchivedMediaSpec.name, () => kinesisVideoArchivedMediaSpec);
+  registerSpec(
+      kinesisVideoArchivedMediaSpec.name, () => kinesisVideoArchivedMediaSpec);
   registerSpec(kinesisVideoMediaSpec.name, () => kinesisVideoMediaSpec);
   registerSpec(kinesisVideoSignalingSpec.name, () => kinesisVideoSignalingSpec);
-  registerSpec(kinesisVideoWebrtcStorageSpec.name, () => kinesisVideoWebrtcStorageSpec);
+  registerSpec(
+      kinesisVideoWebrtcStorageSpec.name, () => kinesisVideoWebrtcStorageSpec);
   registerSpec(kinesisSpec.name, () => kinesisSpec);
   registerSpec(kinesisanalyticsSpec.name, () => kinesisanalyticsSpec);
   registerSpec(kinesisanalyticsv2Spec.name, () => kinesisanalyticsv2Spec);
@@ -1583,8 +1594,10 @@ void registerAllSpecs() {
   registerSpec(lexRuntimeSpec.name, () => lexRuntimeSpec);
   registerSpec(lexv2ModelsSpec.name, () => lexv2ModelsSpec);
   registerSpec(lexv2RuntimeSpec.name, () => lexv2RuntimeSpec);
-  registerSpec(licenseManagerLinuxSubscriptionsSpec.name, () => licenseManagerLinuxSubscriptionsSpec);
-  registerSpec(licenseManagerUserSubscriptionsSpec.name, () => licenseManagerUserSubscriptionsSpec);
+  registerSpec(licenseManagerLinuxSubscriptionsSpec.name,
+      () => licenseManagerLinuxSubscriptionsSpec);
+  registerSpec(licenseManagerUserSubscriptionsSpec.name,
+      () => licenseManagerUserSubscriptionsSpec);
   registerSpec(licenseManagerSpec.name, () => licenseManagerSpec);
   registerSpec(lightsailSpec.name, () => lightsailSpec);
   registerSpec(locationSpec.name, () => locationSpec);
@@ -1597,14 +1610,17 @@ void registerAllSpecs() {
   registerSpec(macieSpec.name, () => macieSpec);
   registerSpec(macie2Spec.name, () => macie2Spec);
   registerSpec(mailmanagerSpec.name, () => mailmanagerSpec);
-  registerSpec(managedblockchainQuerySpec.name, () => managedblockchainQuerySpec);
+  registerSpec(
+      managedblockchainQuerySpec.name, () => managedblockchainQuerySpec);
   registerSpec(managedblockchainSpec.name, () => managedblockchainSpec);
   registerSpec(marketplaceAgreementSpec.name, () => marketplaceAgreementSpec);
   registerSpec(marketplaceCatalogSpec.name, () => marketplaceCatalogSpec);
   registerSpec(marketplaceDeploymentSpec.name, () => marketplaceDeploymentSpec);
-  registerSpec(marketplaceEntitlementSpec.name, () => marketplaceEntitlementSpec);
+  registerSpec(
+      marketplaceEntitlementSpec.name, () => marketplaceEntitlementSpec);
   registerSpec(marketplaceReportingSpec.name, () => marketplaceReportingSpec);
-  registerSpec(marketplacecommerceanalyticsSpec.name, () => marketplacecommerceanalyticsSpec);
+  registerSpec(marketplacecommerceanalyticsSpec.name,
+      () => marketplacecommerceanalyticsSpec);
   registerSpec(mediaconnectSpec.name, () => mediaconnectSpec);
   registerSpec(mediaconvertSpec.name, () => mediaconvertSpec);
   registerSpec(medialiveSpec.name, () => medialiveSpec);
@@ -1619,9 +1635,11 @@ void registerAllSpecs() {
   registerSpec(meteringmarketplaceSpec.name, () => meteringmarketplaceSpec);
   registerSpec(mghSpec.name, () => mghSpec);
   registerSpec(mgnSpec.name, () => mgnSpec);
-  registerSpec(migrationHubRefactorSpacesSpec.name, () => migrationHubRefactorSpacesSpec);
+  registerSpec(migrationHubRefactorSpacesSpec.name,
+      () => migrationHubRefactorSpacesSpec);
   registerSpec(migrationhubConfigSpec.name, () => migrationhubConfigSpec);
-  registerSpec(migrationhuborchestratorSpec.name, () => migrationhuborchestratorSpec);
+  registerSpec(
+      migrationhuborchestratorSpec.name, () => migrationhuborchestratorSpec);
   registerSpec(migrationhubstrategySpec.name, () => migrationhubstrategySpec);
   registerSpec(mobileSpec.name, () => mobileSpec);
   registerSpec(mqSpec.name, () => mqSpec);
@@ -1645,12 +1663,14 @@ void registerAllSpecs() {
   registerSpec(opsworksCmSpec.name, () => opsworksCmSpec);
   registerSpec(opsworksSpec.name, () => opsworksSpec);
   registerSpec(opsworkscmSpec.name, () => opsworkscmSpec);
-  registerSpec(aws_organizations.organizationsSpec.name, () => aws_organizations.organizationsSpec);
+  registerSpec(aws_organizations.organizationsSpec.name,
+      () => aws_organizations.organizationsSpec);
   registerSpec(osisSpec.name, () => osisSpec);
   registerSpec(outpostsSpec.name, () => outpostsSpec);
   registerSpec(panoramaSpec.name, () => panoramaSpec);
   registerSpec(partnercentralSellingSpec.name, () => partnercentralSellingSpec);
-  registerSpec(paymentCryptographyDataSpec.name, () => paymentCryptographyDataSpec);
+  registerSpec(
+      paymentCryptographyDataSpec.name, () => paymentCryptographyDataSpec);
   registerSpec(paymentCryptographySpec.name, () => paymentCryptographySpec);
   registerSpec(pcaConnectorAdSpec.name, () => pcaConnectorAdSpec);
   registerSpec(pcaConnectorScepSpec.name, () => pcaConnectorScepSpec);
@@ -1686,12 +1706,16 @@ void registerAllSpecs() {
   registerSpec(resiliencehubSpec.name, () => resiliencehubSpec);
   registerSpec(resourceExplorer2Spec.name, () => resourceExplorer2Spec);
   registerSpec(resourceGroupsSpec.name, () => resourceGroupsSpec);
-  registerSpec(resourcegroupstaggingapiSpec.name, () => resourcegroupstaggingapiSpec);
+  registerSpec(
+      resourcegroupstaggingapiSpec.name, () => resourcegroupstaggingapiSpec);
   registerSpec(robomakerSpec.name, () => robomakerSpec);
   registerSpec(rolesanywhereSpec.name, () => rolesanywhereSpec);
-  registerSpec(route53RecoveryClusterSpec.name, () => route53RecoveryClusterSpec);
-  registerSpec(route53RecoveryControlConfigSpec.name, () => route53RecoveryControlConfigSpec);
-  registerSpec(route53RecoveryReadinessSpec.name, () => route53RecoveryReadinessSpec);
+  registerSpec(
+      route53RecoveryClusterSpec.name, () => route53RecoveryClusterSpec);
+  registerSpec(route53RecoveryControlConfigSpec.name,
+      () => route53RecoveryControlConfigSpec);
+  registerSpec(
+      route53RecoveryReadinessSpec.name, () => route53RecoveryReadinessSpec);
   registerSpec(route53Spec.name, () => route53Spec);
   registerSpec(route53domainsSpec.name, () => route53domainsSpec);
   registerSpec(route53profilesSpec.name, () => route53profilesSpec);
@@ -1703,13 +1727,15 @@ void registerAllSpecs() {
   registerSpec(s3tablesSpec.name, () => s3tablesSpec);
   registerSpec(sagemakerA2iRuntimeSpec.name, () => sagemakerA2iRuntimeSpec);
   registerSpec(sagemakerEdgeSpec.name, () => sagemakerEdgeSpec);
-  registerSpec(sagemakerFeaturestoreRuntimeSpec.name, () => sagemakerFeaturestoreRuntimeSpec);
+  registerSpec(sagemakerFeaturestoreRuntimeSpec.name,
+      () => sagemakerFeaturestoreRuntimeSpec);
   registerSpec(sagemakerGeospatialSpec.name, () => sagemakerGeospatialSpec);
   registerSpec(sagemakerMetricsSpec.name, () => sagemakerMetricsSpec);
   registerSpec(sagemakerRuntimeSpec.name, () => sagemakerRuntimeSpec);
   registerSpec(sagemakerSpec.name, () => sagemakerSpec);
   registerSpec(savingsplansSpec.name, () => savingsplansSpec);
-  registerSpec(aws_scheduler.schedulerSpec.name, () => aws_scheduler.schedulerSpec);
+  registerSpec(
+      aws_scheduler.schedulerSpec.name, () => aws_scheduler.schedulerSpec);
   registerSpec(schemasSpec.name, () => schemasSpec);
   registerSpec(sdbSpec.name, () => sdbSpec);
   registerSpec(securityIrSpec.name, () => securityIrSpec);
@@ -1717,7 +1743,8 @@ void registerAllSpecs() {
   registerSpec(securitylakeSpec.name, () => securitylakeSpec);
   registerSpec(serverlessrepoSpec.name, () => serverlessrepoSpec);
   registerSpec(serviceQuotasSpec.name, () => serviceQuotasSpec);
-  registerSpec(servicecatalogAppregistrySpec.name, () => servicecatalogAppregistrySpec);
+  registerSpec(
+      servicecatalogAppregistrySpec.name, () => servicecatalogAppregistrySpec);
   registerSpec(servicecatalogSpec.name, () => servicecatalogSpec);
   registerSpec(servicediscoverySpec.name, () => servicediscoverySpec);
   registerSpec(sesSpec.name, () => sesSpec);
@@ -1776,7 +1803,8 @@ void registerAllSpecs() {
   registerSpec(awsumeSpec.name, () => awsumeSpec);
   registerSpec(az.azSpec.name, () => az.azSpec);
   registerSpec(az_2_53_0.azSpec.name, () => az_2_53_0.azSpec);
-  registerSpec(az_2_53_0_account.accountSpec.name, () => az_2_53_0_account.accountSpec);
+  registerSpec(
+      az_2_53_0_account.accountSpec.name, () => az_2_53_0_account.accountSpec);
   registerSpec(acrSpec.name, () => acrSpec);
   registerSpec(adSpec.name, () => adSpec);
   registerSpec(adpSpec.name, () => adpSpec);
@@ -1789,23 +1817,27 @@ void registerAllSpecs() {
   registerSpec(amlfsSpec.name, () => amlfsSpec);
   registerSpec(amsSpec.name, () => amsSpec);
   registerSpec(apimSpec.name, () => apimSpec);
-  registerSpec(az_2_53_0_appconfig.appconfigSpec.name, () => az_2_53_0_appconfig.appconfigSpec);
+  registerSpec(az_2_53_0_appconfig.appconfigSpec.name,
+      () => az_2_53_0_appconfig.appconfigSpec);
   registerSpec(appserviceSpec.name, () => appserviceSpec);
   registerSpec(arcapplianceSpec.name, () => arcapplianceSpec);
   registerSpec(arcdataSpec.name, () => arcdataSpec);
   registerSpec(aroSpec.name, () => aroSpec);
-  registerSpec(az_2_53_0_artifacts.artifactsSpec.name, () => az_2_53_0_artifacts.artifactsSpec);
+  registerSpec(az_2_53_0_artifacts.artifactsSpec.name,
+      () => az_2_53_0_artifacts.artifactsSpec);
   registerSpec(attestationSpec.name, () => attestationSpec);
   registerSpec(automanageSpec.name, () => automanageSpec);
   registerSpec(automationSpec.name, () => automationSpec);
   registerSpec(azurestackhciSpec.name, () => azurestackhciSpec);
-  registerSpec(az_2_53_0_backup.backupSpec.name, () => az_2_53_0_backup.backupSpec);
+  registerSpec(
+      az_2_53_0_backup.backupSpec.name, () => az_2_53_0_backup.backupSpec);
   registerSpec(baremetalinstanceSpec.name, () => baremetalinstanceSpec);
   registerSpec(az_2_53_0_batch.batchSpec.name, () => az_2_53_0_batch.batchSpec);
   registerSpec(batchaiSpec.name, () => batchaiSpec);
   registerSpec(bicepSpec.name, () => bicepSpec);
   registerSpec(billingBenefitsSpec.name, () => billingBenefitsSpec);
-  registerSpec(az_2_53_0_billing.billingSpec.name, () => az_2_53_0_billing.billingSpec);
+  registerSpec(
+      az_2_53_0_billing.billingSpec.name, () => az_2_53_0_billing.billingSpec);
   registerSpec(blockchainSpec.name, () => blockchainSpec);
   registerSpec(blueprintSpec.name, () => blueprintSpec);
   registerSpec(boardsSpec.name, () => boardsSpec);
@@ -1822,15 +1854,18 @@ void registerAllSpecs() {
   registerSpec(communicationSpec.name, () => communicationSpec);
   registerSpec(confcomSpec.name, () => confcomSpec);
   registerSpec(confidentialledgerSpec.name, () => confidentialledgerSpec);
-  registerSpec(az_2_53_0_config.configSpec.name, () => az_2_53_0_config.configSpec);
-  registerSpec(az_2_53_0_configure.configureSpec.name, () => az_2_53_0_configure.configureSpec);
+  registerSpec(
+      az_2_53_0_config.configSpec.name, () => az_2_53_0_config.configSpec);
+  registerSpec(az_2_53_0_configure.configureSpec.name,
+      () => az_2_53_0_configure.configureSpec);
   registerSpec(confluentSpec.name, () => confluentSpec);
   registerSpec(connectedk8sSpec.name, () => connectedk8sSpec);
   registerSpec(connectedmachineSpec.name, () => connectedmachineSpec);
   registerSpec(connectedvmwareSpec.name, () => connectedvmwareSpec);
   registerSpec(connectionSpec.name, () => connectionSpec);
   registerSpec(consumptionSpec.name, () => consumptionSpec);
-  registerSpec(az_2_53_0_container.containerSpec.name, () => az_2_53_0_container.containerSpec);
+  registerSpec(az_2_53_0_container.containerSpec.name,
+      () => az_2_53_0_container.containerSpec);
   registerSpec(containerappSpec.name, () => containerappSpec);
   registerSpec(cosmosdbSpec.name, () => cosmosdbSpec);
   registerSpec(costmanagementSpec.name, () => costmanagementSpec);
@@ -1870,14 +1905,16 @@ void registerAllSpecs() {
   registerSpec(eventhubsSpec.name, () => eventhubsSpec);
   registerSpec(extensionSpec.name, () => extensionSpec);
   registerSpec(featureSpec.name, () => featureSpec);
-  registerSpec(az_2_53_0_feedback.feedbackSpec.name, () => az_2_53_0_feedback.feedbackSpec);
+  registerSpec(az_2_53_0_feedback.feedbackSpec.name,
+      () => az_2_53_0_feedback.feedbackSpec);
   registerSpec(az_2_53_0_find.findSpec.name, () => az_2_53_0_find.findSpec);
   registerSpec(fleetSpec.name, () => fleetSpec);
   registerSpec(fluidRelaySpec.name, () => fluidRelaySpec);
   registerSpec(footprintSpec.name, () => footprintSpec);
   registerSpec(functionappSpec.name, () => functionappSpec);
   registerSpec(az_2_53_0_fzf.fzfSpec.name, () => az_2_53_0_fzf.fzfSpec);
-  registerSpec(az_2_53_0_grafana.grafanaSpec.name, () => az_2_53_0_grafana.grafanaSpec);
+  registerSpec(
+      az_2_53_0_grafana.grafanaSpec.name, () => az_2_53_0_grafana.grafanaSpec);
   registerSpec(graphServicesSpec.name, () => graphServicesSpec);
   registerSpec(graphSpec.name, () => graphSpec);
   registerSpec(groupSpec.name, () => groupSpec);
@@ -1889,7 +1926,8 @@ void registerAllSpecs() {
   registerSpec(healthcareapisSpec.name, () => healthcareapisSpec);
   registerSpec(hpcCacheSpec.name, () => hpcCacheSpec);
   registerSpec(hybridaksSpec.name, () => hybridaksSpec);
-  registerSpec(az_2_53_0_identity.identitySpec.name, () => az_2_53_0_identity.identitySpec);
+  registerSpec(az_2_53_0_identity.identitySpec.name,
+      () => az_2_53_0_identity.identitySpec);
   registerSpec(imageSpec.name, () => imageSpec);
   registerSpec(importExportSpec.name, () => importExportSpec);
   registerSpec(az_2_53_0_init.initSpec.name, () => az_2_53_0_init.initSpec);
@@ -1951,7 +1989,8 @@ void registerAllSpecs() {
   registerSpec(az_2_53_0_redis.redisSpec.name, () => az_2_53_0_redis.redisSpec);
   registerSpec(redisenterpriseSpec.name, () => redisenterpriseSpec);
   registerSpec(relaySpec.name, () => relaySpec);
-  registerSpec(remoteRenderingAccountSpec.name, () => remoteRenderingAccountSpec);
+  registerSpec(
+      remoteRenderingAccountSpec.name, () => remoteRenderingAccountSpec);
   registerSpec(reposSpec.name, () => reposSpec);
   registerSpec(reservationsSpec.name, () => reservationsSpec);
   registerSpec(resourceMoverSpec.name, () => resourceMoverSpec);
@@ -1978,7 +2017,8 @@ void registerAllSpecs() {
   registerSpec(spatialAnchorsAccountSpec.name, () => spatialAnchorsAccountSpec);
   registerSpec(sphereSpec.name, () => sphereSpec);
   registerSpec(springCloudSpec.name, () => springCloudSpec);
-  registerSpec(az_2_53_0_spring.springSpec.name, () => az_2_53_0_spring.springSpec);
+  registerSpec(
+      az_2_53_0_spring.springSpec.name, () => az_2_53_0_spring.springSpec);
   registerSpec(az_2_53_0_sql.sqlSpec.name, () => az_2_53_0_sql.sqlSpec);
   registerSpec(az_2_53_0_ssh.sshSpec.name, () => az_2_53_0_ssh.sshSpec);
   registerSpec(sshkeySpec.name, () => sshkeySpec);
@@ -1989,15 +2029,18 @@ void registerAllSpecs() {
   registerSpec(storageSpec.name, () => storageSpec);
   registerSpec(storagesyncSpec.name, () => storagesyncSpec);
   registerSpec(streamAnalyticsSpec.name, () => streamAnalyticsSpec);
-  registerSpec(az_2_53_0_support.supportSpec.name, () => az_2_53_0_support.supportSpec);
-  registerSpec(az_2_53_0_survey.surveySpec.name, () => az_2_53_0_survey.surveySpec);
+  registerSpec(
+      az_2_53_0_support.supportSpec.name, () => az_2_53_0_support.supportSpec);
+  registerSpec(
+      az_2_53_0_survey.surveySpec.name, () => az_2_53_0_survey.surveySpec);
   registerSpec(synapseSpec.name, () => synapseSpec);
   registerSpec(tagSpec.name, () => tagSpec);
   registerSpec(termSpec.name, () => termSpec);
   registerSpec(tsSpec.name, () => tsSpec);
   registerSpec(tsiSpec.name, () => tsiSpec);
   registerSpec(upgradeSpec.name, () => upgradeSpec);
-  registerSpec(az_2_53_0_version.versionSpec.name, () => az_2_53_0_version.versionSpec);
+  registerSpec(
+      az_2_53_0_version.versionSpec.name, () => az_2_53_0_version.versionSpec);
   registerSpec(vmSpec.name, () => vmSpec);
   registerSpec(vmssSpec.name, () => vmssSpec);
   registerSpec(vmwareSpec.name, () => vmwareSpec);
@@ -2115,12 +2158,14 @@ void registerAllSpecs() {
   registerSpec(buildSpec.name, () => buildSpec);
   registerSpec(cleanSpec.name, () => cleanSpec);
   registerSpec(formatSpec.name, () => formatSpec);
-  registerSpec(dotnet_dotnet_help.helpSpec.name, () => dotnet_dotnet_help.helpSpec);
+  registerSpec(
+      dotnet_dotnet_help.helpSpec.name, () => dotnet_dotnet_help.helpSpec);
   registerSpec(listSpec.name, () => listSpec);
   registerSpec(migrateSpec.name, () => migrateSpec);
   registerSpec(msbuildSpec.name, () => msbuildSpec);
   registerSpec(packSpec.name, () => packSpec);
-  registerSpec(dotnet_dotnet_publish.publishSpec.name, () => dotnet_dotnet_publish.publishSpec);
+  registerSpec(dotnet_dotnet_publish.publishSpec.name,
+      () => dotnet_dotnet_publish.publishSpec);
   registerSpec(restoreSpec.name, () => restoreSpec);
   registerSpec(storeSpec.name, () => storeSpec);
   registerSpec(dotslashSpec.name, () => dotslashSpec);
@@ -2146,7 +2191,6 @@ void registerAllSpecs() {
   registerSpec(esbuildSpec.name, () => esbuildSpec);
   registerSpec(eslintSpec.name, () => eslintSpec);
   registerSpec(exaSpec.name, () => exaSpec);
-  registerSpec(git_push_exampleSpec.name, () => git_push_exampleSpec);
   registerSpec(execSpec.name, () => execSpec);
   registerSpec(exercismSpec.name, () => exercismSpec);
   registerSpec(exportSpec.name, () => exportSpec);
@@ -2182,7 +2226,8 @@ void registerAllSpecs() {
   registerSpec(anthosSpec.name, () => anthosSpec);
   registerSpec(apigeeSpec.name, () => apigeeSpec);
   registerSpec(appSpec.name, () => appSpec);
-  registerSpec(gcloud_artifacts.artifactsSpec.name, () => gcloud_artifacts.artifactsSpec);
+  registerSpec(gcloud_artifacts.artifactsSpec.name,
+      () => gcloud_artifacts.artifactsSpec);
   registerSpec(assetSpec.name, () => assetSpec);
   registerSpec(authSpec.name, () => authSpec);
   registerSpec(bigtableSpec.name, () => bigtableSpec);
@@ -2190,10 +2235,12 @@ void registerAllSpecs() {
   registerSpec(cheatSheetSpec.name, () => cheatSheetSpec);
   registerSpec(cloudShellSpec.name, () => cloudShellSpec);
   registerSpec(componentsSpec.name, () => componentsSpec);
-  registerSpec(gcloud_composer.composerSpec.name, () => gcloud_composer.composerSpec);
+  registerSpec(
+      gcloud_composer.composerSpec.name, () => gcloud_composer.composerSpec);
   registerSpec(computeSpec.name, () => computeSpec);
   registerSpec(gcloud_config.configSpec.name, () => gcloud_config.configSpec);
-  registerSpec(gcloud_container.containerSpec.name, () => gcloud_container.containerSpec);
+  registerSpec(gcloud_container.containerSpec.name,
+      () => gcloud_container.containerSpec);
   registerSpec(dataCatalogSpec.name, () => dataCatalogSpec);
   registerSpec(dataflowSpec.name, () => dataflowSpec);
   registerSpec(dataprocSpec.name, () => dataprocSpec);
@@ -2204,9 +2251,11 @@ void registerAllSpecs() {
   registerSpec(gcloud_docker.dockerSpec.name, () => gcloud_docker.dockerSpec);
   registerSpec(domainsSpec.name, () => domainsSpec);
   registerSpec(endpointsSpec.name, () => endpointsSpec);
-  registerSpec(gcloud_feedback.feedbackSpec.name, () => gcloud_feedback.feedbackSpec);
+  registerSpec(
+      gcloud_feedback.feedbackSpec.name, () => gcloud_feedback.feedbackSpec);
   registerSpec(filestoreSpec.name, () => filestoreSpec);
-  registerSpec(gcloud_firebase.firebaseSpec.name, () => gcloud_firebase.firebaseSpec);
+  registerSpec(
+      gcloud_firebase.firebaseSpec.name, () => gcloud_firebase.firebaseSpec);
   registerSpec(firestoreSpec.name, () => firestoreSpec);
   registerSpec(functionsSpec.name, () => functionsSpec);
   registerSpec(gameSpec.name, () => gameSpec);
@@ -2214,7 +2263,8 @@ void registerAllSpecs() {
   registerSpec(gcloud_help.helpSpec.name, () => gcloud_help.helpSpec);
   registerSpec(iamSpec.name, () => iamSpec);
   registerSpec(iapSpec.name, () => iapSpec);
-  registerSpec(gcloud_identity.identitySpec.name, () => gcloud_identity.identitySpec);
+  registerSpec(
+      gcloud_identity.identitySpec.name, () => gcloud_identity.identitySpec);
   registerSpec(infoSpec.name, () => infoSpec);
   registerSpec(gcloud_init.initSpec.name, () => gcloud_init.initSpec);
   registerSpec(gcloud_iot.iotSpec.name, () => gcloud_iot.iotSpec);
@@ -2225,7 +2275,8 @@ void registerAllSpecs() {
   registerSpec(gcloud_ml.mlSpec.name, () => gcloud_ml.mlSpec);
   registerSpec(monitoringSpec.name, () => monitoringSpec);
   registerSpec(networkManagementSpec.name, () => networkManagementSpec);
-  registerSpec(gcloud_organizations.organizationsSpec.name, () => gcloud_organizations.organizationsSpec);
+  registerSpec(gcloud_organizations.organizationsSpec.name,
+      () => gcloud_organizations.organizationsSpec);
   registerSpec(policyTroubleshootSpec.name, () => policyTroubleshootSpec);
   registerSpec(projectsSpec.name, () => projectsSpec);
   registerSpec(pubsubSpec.name, () => pubsubSpec);
@@ -2234,7 +2285,8 @@ void registerAllSpecs() {
   registerSpec(resourceManagerSpec.name, () => resourceManagerSpec);
   registerSpec(runSpec.name, () => runSpec);
   registerSpec(gcloud_scc.sccSpec.name, () => gcloud_scc.sccSpec);
-  registerSpec(gcloud_scheduler.schedulerSpec.name, () => gcloud_scheduler.schedulerSpec);
+  registerSpec(gcloud_scheduler.schedulerSpec.name,
+      () => gcloud_scheduler.schedulerSpec);
   registerSpec(secretsSpec.name, () => secretsSpec);
   registerSpec(servicesSpec.name, () => servicesSpec);
   registerSpec(gcloud_source.sourceSpec.name, () => gcloud_source.sourceSpec);
@@ -2243,7 +2295,8 @@ void registerAllSpecs() {
   registerSpec(gcloud_survey.surveySpec.name, () => gcloud_survey.surveySpec);
   registerSpec(tasksSpec.name, () => tasksSpec);
   registerSpec(topicSpec.name, () => topicSpec);
-  registerSpec(gcloud_version.versionSpec.name, () => gcloud_version.versionSpec);
+  registerSpec(
+      gcloud_version.versionSpec.name, () => gcloud_version.versionSpec);
   registerSpec(gemSpec.name, () => gemSpec);
   registerSpec(ghqSpec.name, () => ghqSpec);
   registerSpec(gitQuickStatsSpec.name, () => gitQuickStatsSpec);
@@ -2543,8 +2596,10 @@ void registerAllSpecs() {
   registerSpec(svnSpec.name, () => svnSpec);
   registerSpec(svokitSpec.name, () => svokitSpec);
   registerSpec(sw_versSpec.name, () => sw_versSpec);
-  registerSpec(swagger_typescript_api.swaggerTypescriptApiSpec.name, () => swagger_typescript_api.swaggerTypescriptApiSpec);
-  registerSpec(swagger_typescript_api_1.swaggerTypescriptApiSpec.name, () => swagger_typescript_api_1.swaggerTypescriptApiSpec);
+  registerSpec(swagger_typescript_api.swaggerTypescriptApiSpec.name,
+      () => swagger_typescript_api.swaggerTypescriptApiSpec);
+  registerSpec(swagger_typescript_api_1.swaggerTypescriptApiSpec.name,
+      () => swagger_typescript_api_1.swaggerTypescriptApiSpec);
   registerSpec(swcSpec.name, () => swcSpec);
   registerSpec(swiftSpec.name, () => swiftSpec);
   registerSpec(symfonySpec.name, () => symfonySpec);

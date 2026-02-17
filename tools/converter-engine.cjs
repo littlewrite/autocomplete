@@ -553,11 +553,35 @@ class TsToDartConverter {
   }
 
   /**
+   * 提取根级 Fig.Subcommand 对象（用于仅导出 const xxx: Fig.Subcommand = { ... } 的文件）
+   * 正则匹配 (export )?const <name>: Fig.Subcommand = {，再用括号平衡提取完整对象。
+   * @returns {{ varName: string, obj: string } | null}
+   */
+  extractSubcommandRootByBalancedBraces() {
+    const code = this.tsCode;
+    const regex = /(?:export\s+)?const\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*Fig\.Subcommand\s*=\s*\{/g;
+    const candidates = [];
+    let m;
+    while ((m = regex.exec(code)) !== null) {
+      const braceStart = m.index + m[0].length - 1;
+      const obj = this.extractSpecObjectFromPosition(code, braceStart);
+      if (!obj) continue;
+      candidates.push({ varName: m[1], obj });
+    }
+    if (candidates.length === 0) return null;
+    if (candidates.length === 1) return candidates[0];
+    // 多个时取内容最多的（主 root 通常最大）
+    candidates.sort((a, b) => b.obj.length - a.obj.length);
+    return candidates[0];
+  }
+
+  /**
    * 转换主要内容
    */
   convertMainContent() {
     // 提取 spec 对象（优先用括号平衡，支持 const completion / completionSpec 等任意变量名）
     let specObject = this.extractSpecObjectByBalancedBraces();
+    let isSubcommandRoot = false;
     if (!specObject) {
       // 再试一次：单次匹配 const <name>: Fig.Spec = { 并用括号平衡提取（避免全局 regex 状态问题）
       const altMatch = this.tsCode.match(/const\s+\w+\s*:\s*Fig\.Spec\s*=\s*\{/);
@@ -567,10 +591,18 @@ class TsToDartConverter {
       }
     }
     if (!specObject) {
+      // 支持根级 const xxx: Fig.Subcommand = { ... }（如 infracost、shopify 等）
+      const subcommandRoot = this.extractSubcommandRootByBalancedBraces();
+      if (subcommandRoot) {
+        specObject = subcommandRoot.obj;
+        isSubcommandRoot = true;
+      }
+    }
+    if (!specObject) {
       const specMatch = this.tsCode.match(
         /const\s+completionSpec:\s*Fig\.Spec\s*=\s*({[\s\S]*?});?\s*export\s+default/
       );
-      if (!specMatch) throw new Error("Could not find Fig.Spec definition (expected const completionSpec or const <name>: Fig.Spec = { ... })");
+      if (!specMatch) throw new Error("Could not find Fig.Spec or Fig.Subcommand definition (expected const <name>: Fig.Spec = { ... } or const <name>: Fig.Subcommand = { ... })");
       specObject = specMatch[1];
     }
     // 移除 TS 注释，避免生成无效 Dart（如 asr 中的 // Only uncomment...）
@@ -581,8 +613,15 @@ class TsToDartConverter {
     const specName = nameMatch ? nameMatch[1] : "unknown";
     const variableName = this.sanitizeVariableName(specName);
 
-    // 转换对象为 Dart（仅保留 FigSpec 支持的键，避免 isPersistent 等 TS 写法落入根 spec）
-    const dartSpec = this.convertObject(specObject, 0, FIG_SPEC_ALLOWED_KEYS);
+    // 根为 Fig.Subcommand 时按 Subcommand 转，再包成 FigSpec(subcommands: [ ... ])
+    let dartSpec;
+    if (isSubcommandRoot) {
+      const dartSubcommand = this.detectObjectType(specObject, 0, "subcommands");
+      dartSpec = "(\n  subcommands: [\n    " + dartSubcommand + "\n  ]\n)";
+    } else {
+      // 转换对象为 Dart（仅保留 FigSpec 支持的键，避免 isPersistent 等 TS 写法落入根 spec）
+      dartSpec = this.convertObject(specObject, 0, FIG_SPEC_ALLOWED_KEYS);
+    }
 
     const safeVarName =
       variableName && /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(variableName)

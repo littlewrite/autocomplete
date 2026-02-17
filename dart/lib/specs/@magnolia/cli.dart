@@ -1,9 +1,5 @@
-// Auto-generated from cli.ts
-// Generated at: 2026-02-12
+// AI-generated from TypeScript source: @magnolia/cli.ts
 
-import 'package:autocomplete/src/spec.dart';
+import '../mgnl.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// export { default } from "../mgnl";
-// 
+final magnoliaCliSpec = mgnlSpec;
