@@ -1,6 +1,6 @@
 // Fig-style autocomplete: specs + runtime (parse command, get suggestions).
-// Use getSuggestions(cmd, cwd, shell) for completion. Call registerBuiltinSpecs() first.
-// Optional [CompleteAdapter] for remote/SSH: getSuggestions(cmd, cwd, shell, adapter: myAdapter).
+// Call getSuggestions(cmd, cwd, shell, adapter: myAdapter). [adapter] is required.
+// For a local (dart:io) implementation, copy example/local_adapter.dart into your project.
 //
 // Default: specs v2 (deferred load) — only the requested command's spec is loaded. For eager
 // load of all specs, import package:autocomplete/specs/all_specs.dart and call registerAllSpecs().

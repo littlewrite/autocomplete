@@ -1,8 +1,8 @@
-/* eslint-disable @withfig/fig-linter/no-missing-default-export */
+// AI-generated from TypeScript
+//* eslint-disable @withfig/fig-linter/no-missing-default-export */
 
 import 'dart:convert';
 import 'package:autocomplete/src/spec.dart';
-import 'package:autocomplete/src/generators.dart';
 import 'config_schema.dart';
 import 'deno_doc.dart';
 
@@ -272,32 +272,20 @@ FigGenerator generatePreferredFilepaths({
 final FigGenerator generateRunnableFiles =
     FigGenerator(custom: (tokens, executeCommand, context) async {
   // Replicating filepaths({ matches: /\.(m?(j|t)sx?)$/i, editFileSuggestions: { priority: 75 } })
-  // We use filepathsAsync from ../generators.dart if available, or implement logic.
-  // Since we need regex matching which filepathsAsync doesn't support fully (only extensions),
-  // we'll filter manually.
+  // Use context.adapter for file system access (no dart:io).
+  if (context == null) return [];
 
-  final cwd = context?.currentWorkingDirectory ?? "";
-  // extensions: js, ts, jsx, tsx, mjs, mts
+  final cwd = context.currentWorkingDirectory;
+  final adapter = context.adapter;
   final extensions = ["js", "ts", "jsx", "tsx", "mjs", "mts"];
 
-  final suggestions = await filepathsAsync(cwd, extensions: extensions);
-
-  // Apply priority 75
-  return suggestions
-      .map((s) => FigSuggestion(
-            name: s.name,
-            displayName: s.displayName,
-            description: s.description,
-            icon: s.icon,
+  final entries = await adapter.listDirectory(cwd,
+      foldersOnly: false, extensions: extensions);
+  return entries
+      .map((e) => FigSuggestion(
+            name: e.name,
+            type: e.isDirectory ? SuggestionType.folder : SuggestionType.file,
             priority: 75,
-            insertValue: s.insertValue,
-            replaceValue: s.replaceValue,
-            type: s.type,
-            hidden: s.hidden,
-            isDangerous: s.isDangerous,
-            deprecated: s.deprecated,
-            previewComponent: s.previewComponent,
-            loadSpec: s.loadSpec,
           ))
       .toList();
 });

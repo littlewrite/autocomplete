@@ -1,3 +1,4 @@
+// AI-generated from TypeScript
 
 class DocNode {
   final String kind;
@@ -40,9 +41,8 @@ class DocNode {
       interfaceDef: json['interfaceDef'] != null
           ? InterfaceDef.fromJson(json['interfaceDef'])
           : null,
-      classDef: json['classDef'] != null
-          ? ClassDef.fromJson(json['classDef'])
-          : null,
+      classDef:
+          json['classDef'] != null ? ClassDef.fromJson(json['classDef']) : null,
       variableDef: json['variableDef'],
       functionDef: json['functionDef'],
       enumDef: json['enumDef'],
@@ -56,9 +56,8 @@ class NamespaceDef {
   final List<DocNode> elements;
   NamespaceDef({required this.elements});
   factory NamespaceDef.fromJson(Map<String, dynamic> json) => NamespaceDef(
-        elements: (json['elements'] as List)
-            .map((e) => DocNode.fromJson(e))
-            .toList(),
+        elements:
+            (json['elements'] as List).map((e) => DocNode.fromJson(e)).toList(),
       );
 }
 

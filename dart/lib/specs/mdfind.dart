@@ -1,11 +1,11 @@
 // AI-generated from TypeScript source: mdfind.ts
-import 'dart:io';
+
 import 'package:autocomplete/src/spec.dart';
 
 final FigGenerator smartFolderGenerator = FigGenerator(
   trigger: '/',
-  script: (List<String> tokens) {
-    var home = Platform.environment['HOME'];
+  script: (List<String> tokens, FigGeneratorContext? ctx) {
+    final home = ctx?.getEnv('HOME') ?? '';
     return ['ls', '-1A', '$home/Library/Saved Searches/'];
   },
   postProcess: (String out, [List<String>? tokens]) {

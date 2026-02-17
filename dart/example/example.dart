@@ -12,6 +12,8 @@ import 'dart:io';
 
 import 'package:autocomplete/autocomplete.dart';
 
+import 'local_adapter.dart';
+
 Shell _parseShell(String name) {
   switch (name.toLowerCase()) {
     case 'bash':
@@ -60,7 +62,7 @@ void main(List<String> args) async {
   registerBuiltinSpecs();
   final cwd = Directory.current.path;
 
-  final blob = await getSuggestions(cmd, cwd, shell);
+  final blob = await getSuggestions(cmd, cwd, shell, LocalCompleteAdapter());
   if (blob == null) {
     print('(no spec or no suggestions)');
     exit(0);

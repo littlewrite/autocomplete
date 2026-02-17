@@ -1,3 +1,5 @@
+// AI-generated from TypeScript
+
 class DenoConfigurationFileSchema {
   DenoConfigurationFileSchema({
     this.compilerOptions,

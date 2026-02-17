@@ -1,7 +1,6 @@
 // Runtime: getSuggestions, loadSpec, runSubcommand/Arg/Option (reference: inshellisense runtime.ts).
 
 import 'dart:async';
-import 'dart:io';
 
 import 'adapter.dart';
 import 'model.dart';
@@ -13,16 +12,9 @@ import 'suggestion.dart';
 import 'template.dart';
 
 /// Resolve cwd for path completion (e.g. expand ~).
-/// When [adapter] is non-null, uses [adapter.resolveCwd]; otherwise uses local Platform.environment.
-Future<String> resolveCwd(String cwd, Shell shell,
-    [CompleteAdapter? adapter]) async {
-  if (adapter != null) return adapter.resolveCwd(cwd, shell);
-  if (cwd.startsWith('~')) {
-    final home = Platform.environment['HOME'] ?? '';
-    if (cwd == '~' || cwd == '~/') return home;
-    if (cwd.startsWith('~/')) return '$home${cwd.substring(1)}';
-  }
-  return cwd;
+Future<String> resolveCwd(
+    String cwd, Shell shell, CompleteAdapter adapter) async {
+  return adapter.resolveCwd(cwd, shell);
 }
 
 /// Load spec for the command represented by tokens (first token = command name).
@@ -52,8 +44,8 @@ List<FigArg> getArgs(List<FigArg>? args) {
 }
 
 /// Run templates for an arg and return suggestions.
-Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd,
-    [CompleteAdapter? adapter]) async {
+Future<List<Suggestion>> runTemplateSuggestions(
+    FigArg? arg, String cwd, CompleteAdapter adapter) async {
   if (arg == null) return [];
   final template = arg.template;
   if (template == null) return [];
@@ -68,32 +60,15 @@ Future<List<Suggestion>> runTemplateSuggestions(FigArg? arg, String cwd,
       .toList();
 }
 
-/// Build [ExecuteCommandFunction] for generator custom callbacks. Uses [adapter].runProcess or Process.run.
-ExecuteCommandFunction _createExecuteCommand(String cwd, CompleteAdapter? adapter) {
+/// Build [ExecuteCommandFunction] for generator custom callbacks.
+ExecuteCommandFunction _createExecuteCommand(
+    String cwd, CompleteAdapter adapter) {
   return (ExecuteCommandInput input) async {
     final workDir = input.cwd ?? cwd;
-    final env = input.env != null
-        ? Map<String, String>.fromEntries(
-            input.env!.entries.where((e) => e.value != null).map((e) => MapEntry(e.key, e.value!)))
-        : null;
-    if (adapter != null) {
-      final result = await adapter.runProcess(
-        input.command,
-        input.args,
-        workingDirectory: workDir,
-      );
-      return ExecuteCommandOutput(
-        stdout: result.stdout,
-        stderr: result.stderr,
-        status: result.exitCode,
-      );
-    }
-    final runFuture = Process.run(
+    final runFuture = adapter.runProcess(
       input.command,
       input.args,
       workingDirectory: workDir,
-      environment: env,
-      runInShell: false,
     );
     final result = input.timeout != null
         ? await runFuture.timeout(
@@ -102,18 +77,16 @@ ExecuteCommandFunction _createExecuteCommand(String cwd, CompleteAdapter? adapte
           )
         : await runFuture;
     return ExecuteCommandOutput(
-      stdout: (result.stdout as String?) ?? '',
-      stderr: (result.stderr as String?) ?? '',
+      stdout: result.stdout,
+      stderr: result.stderr,
       status: result.exitCode,
     );
   };
 }
 
 /// Run generator (script + postProcess, or custom). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], or returns [gen.customSuggestions].
-/// When [adapter] is non-null, uses [adapter.runProcess]; otherwise uses Process.run.
-Future<List<Suggestion>> runGeneratorSuggestions(
-    FigGenerator? gen, List<CommandToken> allTokens, String cwd,
-    [CompleteAdapter? adapter]) async {
+Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
+    List<CommandToken> allTokens, String cwd, CompleteAdapter adapter) async {
   if (gen == null) return [];
   final custom = gen.custom;
   if (custom != null) {
@@ -130,10 +103,11 @@ Future<List<Suggestion>> runGeneratorSuggestions(
       final executeCommand = _createExecuteCommand(cwd, adapter);
       final generatorContext = FigGeneratorContext(
         currentWorkingDirectory: cwd,
-        environmentVariables: Platform.environment,
+        environmentVariables: adapter.getEnvs(),
         currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
         sshPrefix: '',
         searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
+        adapter: adapter,
       );
       try {
         final result = custom(tokens, executeCommand, generatorContext);
@@ -193,30 +167,32 @@ Future<List<Suggestion>> runGeneratorSuggestions(
     scriptList = rawScript.cast<String>();
   } else if (rawScript is Function) {
     final tokens = allTokens.map((t) => t.token).toList();
-    final result = rawScript(tokens);
+    final generatorContext = FigGeneratorContext(
+      currentWorkingDirectory: cwd,
+      environmentVariables: adapter.getEnvs(),
+      currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
+      sshPrefix: '',
+      searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
+      adapter: adapter,
+    );
+    dynamic result;
+    try {
+      result = rawScript(tokens, generatorContext);
+    } catch (_) {
+      result = rawScript(tokens);
+    }
     scriptList = (result is List) ? result.cast<String>() : <String>[];
   } else {
     return [];
   }
   if (scriptList.isEmpty) return [];
   try {
-    String stdout;
-    if (adapter != null) {
-      final result = await adapter.runProcess(
-        scriptList.first,
-        scriptList.length > 1 ? scriptList.sublist(1) : [],
-        workingDirectory: cwd,
-      );
-      stdout = result.stdout;
-    } else {
-      final result = await Process.run(
-        scriptList.first,
-        scriptList.length > 1 ? scriptList.sublist(1) : [],
-        workingDirectory: cwd,
-        runInShell: false,
-      );
-      stdout = (result.stdout as String?) ?? '';
-    }
+    final result = await adapter.runProcess(
+      scriptList.first,
+      scriptList.length > 1 ? scriptList.sublist(1) : [],
+      workingDirectory: cwd,
+    );
+    final stdout = result.stdout;
     final tokens = allTokens.map((t) => t.token).toList();
     final figSuggestions = gen.postProcess!(stdout, tokens);
     return figSuggestions
@@ -238,9 +214,9 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   List<CommandToken> acceptedTokens,
   List<CommandToken> allTokens,
   String cwd,
-  Shell shell, [
-  CompleteAdapter? adapter,
-]) async {
+  Shell shell,
+  CompleteAdapter adapter,
+) async {
   if (argsDepleted && argsFromSubcommand) return null;
   final partial = partialToken?.token ?? '';
   final allOptions = <FigOption>[
@@ -283,9 +259,9 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   List<CommandToken> allTokens,
   bool variadicArgBound,
   String cwd,
-  Shell shell, [
-  CompleteAdapter? adapter,
-]) async {
+  Shell shell,
+  CompleteAdapter adapter,
+) async {
   if (args.isEmpty) return null;
   final activeArg = args.first;
   final partial = partialToken?.token ?? '';
@@ -326,9 +302,9 @@ Future<SuggestionBlob?> runOption(
   String cwd,
   Shell shell,
   List<FigOption> persistentOptions,
-  List<CommandToken> acceptedTokens, [
-  CompleteAdapter? adapter,
-]) async {
+  List<CommandToken> acceptedTokens,
+  CompleteAdapter adapter,
+) async {
   if (tokens.isEmpty) return null;
   final activeToken = tokens.first;
   if (option.args != null) {
@@ -352,11 +328,11 @@ Future<SuggestionBlob?> runOption(
       subcommand,
       cwd,
       shell,
+      adapter,
       persistentOptions,
       [...acceptedTokens, activeToken],
       false,
-      false,
-      adapter);
+      false);
 }
 
 FigOption? getOption(CommandToken token, List<FigOption> options) {
@@ -372,12 +348,12 @@ Future<SuggestionBlob?> runSubcommand(
   List<CommandToken> allTokens,
   FigSubcommand subcommand,
   String cwd,
-  Shell shell, [
+  Shell shell,
+  CompleteAdapter adapter, [
   List<FigOption> persistentOptions = const [],
   List<CommandToken> acceptedTokens = const [],
   bool argsDepleted = false,
   bool argsUsed = false,
-  CompleteAdapter? adapter,
 ]) async {
   if (tokens.isEmpty) {
     return getSubcommandDrivenRecommendation(
@@ -427,11 +403,11 @@ Future<SuggestionBlob?> runSubcommand(
         nextSub,
         cwd,
         shell,
+        adapter,
         persistentOptions,
         [...acceptedTokens, activeToken],
         false,
-        false,
-        adapter);
+        false);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
@@ -444,11 +420,11 @@ Future<SuggestionBlob?> runSubcommand(
       subcommand,
       cwd,
       shell,
+      adapter,
       persistentOptions,
       [...acceptedTokens, activeToken],
       false,
-      false,
-      adapter);
+      false);
 }
 
 Future<SuggestionBlob?> runArg(
@@ -461,12 +437,12 @@ Future<SuggestionBlob?> runArg(
   List<FigOption> persistentOptions,
   List<CommandToken> acceptedTokens,
   bool fromOption,
-  bool fromVariadic, [
-  CompleteAdapter? adapter,
-]) async {
+  bool fromVariadic,
+  CompleteAdapter adapter,
+) async {
   if (args.isEmpty) {
-    return runSubcommand(tokens, allTokens, subcommand, cwd, shell,
-        persistentOptions, acceptedTokens, true, !fromOption, adapter);
+    return runSubcommand(tokens, allTokens, subcommand, cwd, shell, adapter,
+        persistentOptions, acceptedTokens, true, !fromOption);
   }
   if (tokens.isEmpty) {
     return getArgDrivenRecommendation(args, subcommand, persistentOptions, null,
@@ -523,11 +499,11 @@ Future<SuggestionBlob?> runArg(
           nextSub,
           cwd,
           shell,
+          adapter,
           persistentOptions,
           [...acceptedTokens, activeToken],
           false,
-          false,
-          adapter);
+          false);
   }
   return runArg(
       tokens.skip(1).toList(),
@@ -573,13 +549,12 @@ void setDefaultEnsureSpecLoaded(EnsureSpecLoaded? f) {
 }
 
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
-/// When [adapter] is non-null, uses it for path resolution, directory listing, and process execution (e.g. for remote/SSH). Otherwise uses default local dart:io and Process.run.
-/// When [ensureSpecLoaded] (or the default set by [setDefaultEnsureSpecLoaded]) is non-null, it is awaited with the command name before loading the spec (v2 deferred load).
+/// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
-  Shell shell, {
-  CompleteAdapter? adapter,
+  Shell shell,
+  CompleteAdapter adapter, {
   EnsureSpecLoaded? ensureSpecLoaded,
 }) async {
   final activeCmd = parseCommand(cmd, shell);
@@ -604,11 +579,11 @@ Future<SuggestionBlob?> getSuggestions(
       subcommand,
       resolvedCwd,
       shell,
+      adapter,
       const [],
       const [],
       false,
-      false,
-      adapter);
+      false);
   if (result == null) return null;
   if (result.suggestions.isEmpty && result.argumentDescription == null)
     return null;

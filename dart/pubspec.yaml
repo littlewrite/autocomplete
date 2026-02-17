@@ -14,7 +14,7 @@ environment:
   sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
-  yaml: ^3.1.3
+  yaml: ^3.1.0
 
 # Assets for icons/logos referenced by specs (Flutter bundling; JS/TS may not use this).
 # The 'flutter' section here allows a consuming Flutter app to bundle these assets,

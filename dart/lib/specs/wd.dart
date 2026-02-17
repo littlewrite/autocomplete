@@ -1,10 +1,11 @@
 // AI-generated from TypeScript source: wd.ts
-import 'dart:io';
+
 import 'package:autocomplete/src/spec.dart';
 
 final FigGenerator warpPointsGenerator = FigGenerator(
-  script: (List<String> tokens) {
-    return ['cat', '${Platform.environment['HOME']}/.warprc'];
+  script: (List<String> tokens, FigGeneratorContext? ctx) {
+    final home = ctx?.getEnv('HOME') ?? '';
+    return ['cat', '$home/.warprc'];
   },
   postProcess: (String out, [List<String>? tokens]) {
     final RegExp exp = RegExp(r'^(\w+)', multiLine: true);

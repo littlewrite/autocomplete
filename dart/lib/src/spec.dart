@@ -1,5 +1,7 @@
 // Fig-style completion spec types. Aligned with Fig schema / @withfig/autocomplete-types.
 
+import 'adapter.dart';
+
 /// Filter strategy for matching partial input to suggestions.
 enum FilterStrategy {
   fuzzy,
@@ -102,6 +104,7 @@ class FigShellContext {
 }
 
 /// Context passed to generator [FigCustomGeneratorCallback]. Aligns with Fig.GeneratorContext (ShellContext & { isDangerous?, searchTerm }).
+/// [adapter] is provided so custom generators can access the file system (e.g. [CompleteAdapter.listDirectory]) without using dart:io.
 class FigGeneratorContext extends FigShellContext {
   const FigGeneratorContext({
     required super.currentWorkingDirectory,
@@ -110,10 +113,20 @@ class FigGeneratorContext extends FigShellContext {
     super.sshPrefix,
     this.isDangerous,
     this.searchTerm = '',
+    required this.adapter,
   });
 
   final bool? isDangerous;
   final String searchTerm;
+
+  /// Adapter for path resolution and directory listing. Use [adapter.listDirectory] and map to [FigSuggestion] for filepath suggestions.
+  final CompleteAdapter adapter;
+
+  /// One env by [envKey]. Use [getEnvs] for the full map.
+  String? getEnv(String envKey) => environmentVariables[envKey];
+
+  /// All environment variables (from adapter.getEnvs()).
+  Map<String, String> get getEnvs => environmentVariables;
 }
 
 /// Type of [FigGenerator.custom] when it is an async callback.

@@ -1,8 +1,6 @@
 // Completion adapter: abstract file system and process so runtime can run
-// locally or remotely (e.g. SSH). When [CompleteAdapter] is null, runtime
-// uses dart:io and Process.run; when non-null, it uses the adapter.
-
-import 'dart:io';
+// locally or remotely (e.g. SSH). Implement this and pass to [getSuggestions].
+// For a local (dart:io) implementation, see example/local_adapter.dart (copy to your project).
 
 import 'shell.dart';
 
@@ -29,9 +27,13 @@ class ProcessRunResult {
 
 /// Adapter for path resolution, directory listing, and process execution.
 /// Implement this to run completion in a different environment (e.g. remote via SSH).
-/// When [getSuggestions] is called without an adapter, the default local behavior
-/// (dart:io + Process.run) is used.
 abstract class CompleteAdapter {
+  /// All environment variables. Use [getEnv] for a single key.
+  Map<String, String> getEnvs();
+
+  /// One environment variable by [envKey]. Returns null if not set.
+  String? getEnv(String envKey);
+
   /// Resolve [cwd] for path completion (e.g. expand ~ to home).
   Future<String> resolveCwd(String cwd, Shell shell);
 
@@ -51,63 +53,4 @@ abstract class CompleteAdapter {
     List<String> arguments, {
     String? workingDirectory,
   });
-}
-
-/// Local adapter: uses dart:io and Process.run (same as default when no adapter).
-/// Use this to exercise the adapter path in tests or when you want one code path.
-class LocalCompleteAdapter implements CompleteAdapter {
-  @override
-  Future<String> resolveCwd(String cwd, Shell shell) async {
-    if (cwd.startsWith('~')) {
-      final home = Platform.environment['HOME'] ?? '';
-      if (cwd == '~' || cwd == '~/') return home;
-      if (cwd.startsWith('~/')) return '$home${cwd.substring(1)}';
-    }
-    return cwd;
-  }
-
-  @override
-  Future<List<FileSystemEntry>> listDirectory(
-    String path, {
-    bool foldersOnly = false,
-    List<String>? extensions,
-  }) async {
-    final dir = Directory(path);
-    if (!await dir.exists()) return [];
-    final out = <FileSystemEntry>[];
-    await for (final e in dir.list(followLinks: false)) {
-      final name = e.path.split(Platform.pathSeparator).last;
-      if (name.isEmpty || name == '.') continue;
-      if (e is Directory) {
-        out.add(FileSystemEntry(name: name, isDirectory: true));
-      } else {
-        if (foldersOnly) continue;
-        if (extensions != null && extensions.isNotEmpty) {
-          final ext = name.contains('.') ? name.split('.').last : '';
-          if (!extensions.any((x) => x == ext)) continue;
-        }
-        out.add(FileSystemEntry(name: name, isDirectory: false));
-      }
-    }
-    return out;
-  }
-
-  @override
-  Future<ProcessRunResult> runProcess(
-    String executable,
-    List<String> arguments, {
-    String? workingDirectory,
-  }) async {
-    final result = await Process.run(
-      executable,
-      arguments,
-      workingDirectory: workingDirectory,
-      runInShell: false,
-    );
-    return ProcessRunResult(
-      stdout: (result.stdout as String?) ?? '',
-      stderr: (result.stderr as String?) ?? '',
-      exitCode: result.exitCode,
-    );
-  }
 }
