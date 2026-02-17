@@ -82,14 +82,6 @@ dart run example/example.dart "cd " --shell zsh
    - 添加 `import '<command>.dart';`
    - 在 `registerAllSpecs()` 方法中添加 `registerSpec('<command>', () => <command>Spec);`。
 
-## 发布 (Publishing)
-
-本包位于 [autocomplete](https://github.com/withfig/autocomplete) 仓库的 `dart/` 目录下。从仓库根目录发布到 pub.dev：
-
-```bash
-cd dart && dart pub publish
-```
-
 ## 致谢 (Acknowledgements)
 
 本项目是开源社区协作的成果，特别感谢以下项目提供的灵感、规范数据和参考实现：

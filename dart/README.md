@@ -89,14 +89,6 @@ If you see a `tools/` directory in the repository (or related scripts in the roo
    - Add `import '<command>.dart';`
    - Add `registerSpec('<command>', () => <command>Spec);` inside the `registerAllSpecs()` method.
 
-## Publishing
-
-This package lives under the `dart/` directory of the [autocomplete](https://github.com/withfig/autocomplete) repository. To publish to pub.dev from the repo root:
-
-```bash
-cd dart && dart pub publish
-```
-
 ## Acknowledgements
 
 This project is the result of open-source community collaboration. Special thanks to the following projects for providing inspiration, spec data, and reference implementations:
