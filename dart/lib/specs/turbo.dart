@@ -3,8 +3,11 @@ import 'dart:convert';
 import 'package:autocomplete/src/spec.dart';
 import 'package:autocomplete/specs/git.dart';
 
+const turboIcon = 'asset://icons/turbo.png';
+
 final FigSpec turboSpec = FigSpec(
   name: 'turbo',
+  icon: turboIcon,
   description:
       'Turborepo is a high-performance build system for JavaScript and TypeScript codebases',
   options: [
@@ -81,7 +84,7 @@ final FigSpec turboSpec = FigSpec(
     FigSubcommand(
       name: 'run',
       description: 'Run tasks in your monorepo',
-      icon: 'assets/icons/turbo.png',
+      icon: turboIcon,
       args: [
         FigArg(
           name: 'tasks',
@@ -121,7 +124,7 @@ final FigSpec turboSpec = FigSpec(
                       description: descriptionParts.isNotEmpty
                           ? "Task: ${descriptionParts.join(', ')}"
                           : "Task",
-                      icon: 'assets/icons/turbo.png',
+                      icon: turboIcon,
                     );
                   }).toList();
                 } catch (e) {

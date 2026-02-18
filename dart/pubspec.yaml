@@ -1,7 +1,7 @@
 name: autocomplete
 description: Fig-style CLI completion specs and runtime (parse command, load spec, get suggestions). Pure Dart, no Flutter.
-version: 0.1.0
-repository: https://github.com/littlewrite/autocomplete/tree/main/dart
+version: 0.1.1-dev.1
+repository: https://github.com/littlewrite/autocomplete/tree/master/dart
 issue_tracker: https://github.com/littlewrite/autocomplete/issues
 topics:
   - autocomplete
@@ -20,7 +20,3 @@ dependencies:
 flutter:
   assets:
     - assets/icons/
-
-dev_dependencies:
-  lints: ^2.0.0
-  test: ^1.21.0

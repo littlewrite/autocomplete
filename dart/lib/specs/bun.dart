@@ -5,6 +5,8 @@
 import 'dart:convert';
 import 'package:autocomplete/src/spec.dart';
 
+const bunIcon = 'asset://icons/esbuild.png';
+
 final FigGenerator npmScriptsGenerator = FigGenerator(
   script: ['cat', 'package.json'],
   postProcess: (out, [tokens]) {
@@ -539,6 +541,7 @@ final List<FigOption> dependencyOptions = [
 /// Completion spec for `bun` CLI
 final FigSpec bunSpec = FigSpec(
     name: 'bun',
+    icon: 'asset://bun.png',
     description:
         'A fast bundler, transpiler, JavaScript Runtime and package manager for web software',
     args: [
@@ -568,6 +571,7 @@ final FigSpec bunSpec = FigSpec(
     subcommands: [
       FigSubcommand(
           name: ['c', 'create'],
+          icon: 'asset://bun.png',
           description: 'Start a new project from a template',
           args: [
             FigArg(
@@ -613,6 +617,7 @@ final FigSpec bunSpec = FigSpec(
           ]),
       FigSubcommand(
           name: 'run',
+          icon: 'asset://bun.png',
           description: 'Run a package.json script or executable',
           args: [
             FigArg(name: 'script', filterStrategy: 'fuzzy', generators: [
@@ -651,6 +656,7 @@ final FigSpec bunSpec = FigSpec(
           ]),
       FigSubcommand(
           name: ['build', 'bun'],
+          icon: 'asset://bun.png',
           description: 'Bundle files using Bun\'s native bundler',
           args: [
             FigArg(
@@ -663,6 +669,7 @@ final FigSpec bunSpec = FigSpec(
           options: [...buildOnlyParams, ...sharedPublicParams]),
       FigSubcommand(
           name: 'update',
+          icon: 'asset://bun.png',
           description: 'Update outdated dependencies',
           options: dependencyOptions,
           args: [
@@ -691,6 +698,7 @@ final FigSpec bunSpec = FigSpec(
           ]),
       FigSubcommand(
           name: 'pm',
+          icon: 'asset://bun.png',
           description: 'Package manager utilities',
           subcommands: [
             FigSubcommand(
@@ -727,14 +735,26 @@ final FigSpec bunSpec = FigSpec(
       ]),
       FigSubcommand(
           name: 'x',
+          icon: 'asset://bun.png',
           description: 'Execute a package binary (dlx)',
           args: [
             FigArg(name: 'package', generators: [npmSearchGenerator]),
             FigArg(name: 'args', isVariadic: true)
           ]),
-      FigSubcommand(name: 'repl', description: 'Start the Bun REPL'),
-      FigSubcommand(name: 'init', description: 'Start a new empty Bun project'),
-      FigSubcommand(name: 'upgrade', description: 'Upgrade Bun', options: [
-        FigOption(name: '--canary', description: 'Upgrade to the canary build')
-      ])
+      FigSubcommand(
+          name: 'repl',
+          icon: 'asset://bun.png',
+          description: 'Start the Bun REPL'),
+      FigSubcommand(
+          name: 'init',
+          icon: 'asset://bun.png',
+          description: 'Start a new empty Bun project'),
+      FigSubcommand(
+          name: 'upgrade',
+          icon: 'asset://bun.png',
+          description: 'Upgrade Bun',
+          options: [
+            FigOption(
+                name: '--canary', description: 'Upgrade to the canary build')
+          ])
     ]);

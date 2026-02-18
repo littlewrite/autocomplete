@@ -1,7 +1,7 @@
 // AI-generated from TypeScript source: src/esbuild.ts
 import 'package:autocomplete/src/spec.dart';
 
-const String icon = "";
+const esbuildIcon = 'asset://icons/esbuild.png';
 
 const Set<String> ignoreExtensions = {'', 'sample', 'env'};
 
@@ -21,10 +21,11 @@ FigGenerator extensionsKeyValueGenerator({List<String>? values}) {
         final key = '.$ext';
         if (values != null && values.isNotEmpty) {
           for (final val in values) {
-            suggestions.add(FigSuggestion(name: '$key=$val', icon: icon));
+            suggestions
+                .add(FigSuggestion(name: '$key=$val', icon: esbuildIcon));
           }
         } else {
-          suggestions.add(FigSuggestion(name: '$key=', icon: icon));
+          suggestions.add(FigSuggestion(name: '$key=', icon: esbuildIcon));
         }
       }
       return suggestions;
@@ -38,7 +39,7 @@ List<FigSuggestion> staticKeyValueSuggestions(
   final suggestions = <FigSuggestion>[];
   for (final key in keys) {
     for (final val in values) {
-      suggestions.add(FigSuggestion(name: '$key=$val', icon: icon));
+      suggestions.add(FigSuggestion(name: '$key=$val', icon: esbuildIcon));
     }
   }
   return suggestions;
@@ -47,7 +48,7 @@ List<FigSuggestion> staticKeyValueSuggestions(
 final FigSpec esbuildSpec = FigSpec(
   name: 'esbuild',
   description: 'An extremely fast JavaScript bundler',
-  icon: icon,
+  icon: esbuildIcon,
   parserDirectives: ParserDirectives(optionArgSeparators: ['=', ':']),
   args: [
     FigArg(
@@ -291,8 +292,8 @@ final FigSpec esbuildSpec = FigSpec(
         FigArg(
           name: 'ext=text',
           suggestions: [
-            FigSuggestion(name: 'css=', icon: icon),
-            FigSuggestion(name: 'js=', icon: icon),
+            FigSuggestion(name: 'css=', icon: esbuildIcon),
+            FigSuggestion(name: 'js=', icon: esbuildIcon),
           ],
         )
       ],
