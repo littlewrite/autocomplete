@@ -1,12 +1,11 @@
 // AI-generated from TypeScript source: 3.0.0.ts
 // Generated at: 2026-02-17
-// WARNING: Manual changes may be overwritten!
-// Unconverted parts are marked with: // TS_UNCONVERTED_START ... // TS_UNCONVERTED_END (grep TS_UNCONVERTED to find them).
 
 import 'package:autocomplete/src/spec.dart';
 
 /// Completion spec for `shopify` CLI
-final FigSubcommand shopifySpec = FigSubcommand(
+// final FigSubcommand shopifySpec = FigSubcommand( // TODO
+final shopifySpec = FigSpec(
     name: "shopify",
     description:
         "Shopify CLI is a command-line interface tool that helps you build Shopify apps and themes. It quickly generates Shopify apps, themes, and custom storefronts. You can also use it to automate many common development tasks. Visit https://shopify.dev/apps/tools/cli to know more",

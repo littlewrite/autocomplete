@@ -1,7 +1,5 @@
 // AI-generated from TypeScript source: git.ts
 
-import 'dart:io';
-
 import 'package:autocomplete/src/spec.dart';
 
 String filterMessages(String out) {
@@ -3208,20 +3206,14 @@ final List<FigSuggestion> daemonServices = [
 ];
 
 /// Generates git spec with subcommands from `git help -a` (external commands), merged with [optionalCommands].
-Future<FigSpec> gitGenerateSpec(dynamic _, dynamic executeShellCommand) async {
-  String stdout;
-  if (executeShellCommand != null && executeShellCommand is Function) {
-    final result = await executeShellCommand({
-      'command': 'git',
-      'args': ['help', '-a']
-    });
-    stdout = (result is Map ? result['stdout'] : (result as dynamic).stdout)
-            as String? ??
-        '';
-  } else {
-    final result = await Process.run('git', ['help', '-a'], runInShell: false);
-    stdout = (result.stdout as String?) ?? '';
-  }
+/// Uses adapter-provided [executeShellCommand]; the runtime passes it when invoking generateSpec.
+Future<FigSpec> gitGenerateSpec(
+    List<String> tokens, ExecuteCommandFunction executeShellCommand) async {
+  final result = await executeShellCommand(const ExecuteCommandInput(
+    command: 'git',
+    args: ['help', '-a'],
+  ));
+  final stdout = result.stdout;
   final lines = stdout.trim().split('\n');
   final start = lines.indexWhere((val) =>
       RegExp(r'external commands', caseSensitive: false).hasMatch(val));

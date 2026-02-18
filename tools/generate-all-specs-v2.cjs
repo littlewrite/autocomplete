@@ -23,16 +23,23 @@ const OUTPUT_PATH = path.join(SPECS_DIR, OUTPUT_FILE);
 
 const PACKAGE_SPECS_PREFIX = "package:autocomplete/specs/";
 
-const SPEC_VAR_REGEX =
+// 匹配两种写法: final FigSpec xxx = 或 final xxx = FigSpec(
+const SPEC_VAR_REGEX_TYPED =
   /(?:final|const)\s+(?:FigSpec|CompletionSpec)\s+(\w+)\s*=/;
+const SPEC_VAR_REGEX_UNTYPED =
+  /(?:final|const)\s+(\w+)\s*=\s*[\s\n]*FigSpec\s*\(/;
 
 /**
- * 从 FigSpec( 之后的内容中解析第一个 name: '...' 或 name: "..." 作为命令名
+ * 从某段内容中解析第一个 name: '...' 或 name: "..." 作为命令名
+ * @param {string} content - 整文件内容
+ * @param {number} [startIndex] - 若提供，则从 content.slice(startIndex) 里找 name；否则先找 FigSpec( 再找 name
  */
-function parseSpecName(content) {
-  const idx = content.indexOf("FigSpec(");
-  if (idx === -1) return null;
-  const after = content.slice(idx);
+function parseSpecName(content, startIndex) {
+  const slice =
+    startIndex != null ? content.slice(startIndex) : content;
+  const figSpecIdx = slice.indexOf("FigSpec(");
+  const searchFrom = startIndex == null ? (figSpecIdx === -1 ? 0 : figSpecIdx) : 0;
+  const after = slice.slice(searchFrom);
   const match = after.match(/name:\s*['"]([^'"]+)['"]/);
   return match ? match[1] : null;
 }
@@ -65,13 +72,43 @@ function collectDartFiles(dir, baseDir, list) {
 
 /**
  * 从 Dart 文件内容中解析 spec 变量名与命令名
+ * 优先匹配 FigSpec/CompletionSpec 声明；若无则从文件末尾往上找 FigSubcommand( 或 Subcommand(，再取前面的 final/const var =
  */
 function parseSpecFile(content) {
-  const varMatch = content.match(SPEC_VAR_REGEX);
-  if (!varMatch) return null;
-  const specName = parseSpecName(content);
-  if (!specName) return null;
-  return { specVar: varMatch[1], commandName: specName };
+  let specVar = null;
+  let nameSearchStart = null; // 若设，则 parseSpecName(content, nameSearchStart) 从该位置起找 name
+
+  const typedMatch = content.match(SPEC_VAR_REGEX_TYPED);
+  if (typedMatch) {
+    specVar = typedMatch[1];
+    nameSearchStart = null; // 用整文件，parseSpecName 会先找 FigSpec(
+  } else {
+    const untypedMatch = content.match(SPEC_VAR_REGEX_UNTYPED);
+    if (untypedMatch) {
+      specVar = untypedMatch[1];
+      nameSearchStart = null;
+    }
+  }
+
+  if (!specVar) {
+    // 备选：从下往上找 FigSubcommand( 或 Subcommand(，再取前面最近的 final/const xxx =
+    const figSubIdx = content.lastIndexOf("FigSubcommand(");
+    const subIdx = content.lastIndexOf("Subcommand(");
+    const targetIdx = figSubIdx >= 0 ? figSubIdx : subIdx;
+    if (targetIdx >= 0) {
+      const before = content.slice(0, targetIdx);
+      const varMatches = [...before.matchAll(/(?:final|const)\s+(\w+)\s*=/g)];
+      if (varMatches.length > 0) {
+        specVar = varMatches[varMatches.length - 1][1];
+        nameSearchStart = targetIdx;
+      }
+    }
+  }
+
+  if (!specVar) return null;
+  const commandName = parseSpecName(content, nameSearchStart);
+  if (!commandName) return null;
+  return { specVar, commandName };
 }
 
 /**

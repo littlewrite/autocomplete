@@ -1,6 +1,11 @@
+## 0.1.3
+
+- Update spec definitions.
+- Refactor code structure.
+
 ## 0.1.2-dev
 
-- Opt
+- Optimization and bug fixes.
 
 ## 0.1.1-dev.1
 

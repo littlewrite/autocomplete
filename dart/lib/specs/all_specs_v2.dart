@@ -7,10 +7,18 @@ import 'package:autocomplete/src/registry.dart';
 // Deferred imports: must be at top level; path is compile-time constant.
 import 'package:autocomplete/specs/-.dart' deferred as spec_p_;
 import 'package:autocomplete/specs/@capgo/cli.dart' deferred as spec_capgo_cli;
-import 'package:autocomplete/specs/@fig/publish-spec.dart' deferred as spec_fig_publish_spec;
-import 'package:autocomplete/specs/@preset/cli.dart' deferred as spec_preset_cli;
-import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart' deferred as spec_withfig_autocomplete_tools;
-import 'package:autocomplete/specs/@wordpress/create-block.dart' deferred as spec_wordpress_create_block;
+import 'package:autocomplete/specs/@fig/publish-spec.dart'
+    deferred as spec_fig_publish_spec;
+import 'package:autocomplete/specs/@preset/cli.dart'
+    deferred as spec_preset_cli;
+import 'package:autocomplete/specs/@usermn/sdc/0.0.0.dart'
+    deferred as spec_usermn_sdc_0_0_0;
+import 'package:autocomplete/specs/@usermn/sdc/sdc.dart'
+    deferred as spec_usermn_sdc_sdc;
+import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart'
+    deferred as spec_withfig_autocomplete_tools;
+import 'package:autocomplete/specs/@wordpress/create-block.dart'
+    deferred as spec_wordpress_create_block;
 import 'package:autocomplete/specs/act.dart' deferred as spec_act;
 import 'package:autocomplete/specs/adb.dart' deferred as spec_adb;
 import 'package:autocomplete/specs/adr.dart' deferred as spec_adr;
@@ -21,10 +29,14 @@ import 'package:autocomplete/specs/agrippa.dart' deferred as spec_agrippa;
 import 'package:autocomplete/specs/airflow.dart' deferred as spec_airflow;
 import 'package:autocomplete/specs/aliases.dart' deferred as spec_aliases;
 import 'package:autocomplete/specs/ampx.dart' deferred as spec_ampx;
-import 'package:autocomplete/specs/ansible-config.dart' deferred as spec_ansible_config;
-import 'package:autocomplete/specs/ansible-galaxy.dart' deferred as spec_ansible_galaxy;
-import 'package:autocomplete/specs/ansible-lint.dart' deferred as spec_ansible_lint;
-import 'package:autocomplete/specs/ansible-playbook.dart' deferred as spec_ansible_playbook;
+import 'package:autocomplete/specs/ansible-config.dart'
+    deferred as spec_ansible_config;
+import 'package:autocomplete/specs/ansible-galaxy.dart'
+    deferred as spec_ansible_galaxy;
+import 'package:autocomplete/specs/ansible-lint.dart'
+    deferred as spec_ansible_lint;
+import 'package:autocomplete/specs/ansible-playbook.dart'
+    deferred as spec_ansible_playbook;
 import 'package:autocomplete/specs/ansible.dart' deferred as spec_ansible;
 import 'package:autocomplete/specs/appwrite.dart' deferred as spec_appwrite;
 import 'package:autocomplete/specs/apt.dart' deferred as spec_apt;
@@ -35,7 +47,8 @@ import 'package:autocomplete/specs/asciinema.dart' deferred as spec_asciinema;
 import 'package:autocomplete/specs/asr.dart' deferred as spec_asr;
 import 'package:autocomplete/specs/astro.dart' deferred as spec_astro;
 import 'package:autocomplete/specs/atlas.dart' deferred as spec_atlas;
-import 'package:autocomplete/specs/authchanger.dart' deferred as spec_authchanger;
+import 'package:autocomplete/specs/authchanger.dart'
+    deferred as spec_authchanger;
 import 'package:autocomplete/specs/autocannon.dart' deferred as spec_autocannon;
 import 'package:autocomplete/specs/autojump.dart' deferred as spec_autojump;
 import 'package:autocomplete/specs/aws-vault.dart' deferred as spec_aws_vault;
@@ -58,9 +71,11 @@ import 'package:autocomplete/specs/blitz.dart' deferred as spec_blitz;
 import 'package:autocomplete/specs/br.dart' deferred as spec_br;
 import 'package:autocomplete/specs/brew.dart' deferred as spec_brew;
 import 'package:autocomplete/specs/broot.dart' deferred as spec_broot;
-import 'package:autocomplete/specs/browser-sync.dart' deferred as spec_browser_sync;
+import 'package:autocomplete/specs/browser-sync.dart'
+    deferred as spec_browser_sync;
 import 'package:autocomplete/specs/btop.dart' deferred as spec_btop;
-import 'package:autocomplete/specs/build-storybook.dart' deferred as spec_build_storybook;
+import 'package:autocomplete/specs/build-storybook.dart'
+    deferred as spec_build_storybook;
 import 'package:autocomplete/specs/bun.dart' deferred as spec_bun;
 import 'package:autocomplete/specs/bundle.dart' deferred as spec_bundle;
 import 'package:autocomplete/specs/bunx.dart' deferred as spec_bunx;
@@ -88,17 +103,21 @@ import 'package:autocomplete/specs/cl.dart' deferred as spec_cl;
 import 'package:autocomplete/specs/clang++.dart' deferred as spec_clang__;
 import 'package:autocomplete/specs/clang.dart' deferred as spec_clang;
 import 'package:autocomplete/specs/clear.dart' deferred as spec_clear;
-import 'package:autocomplete/specs/cliff-jumper.dart' deferred as spec_cliff_jumper;
+import 'package:autocomplete/specs/cliff-jumper.dart'
+    deferred as spec_cliff_jumper;
 import 'package:autocomplete/specs/clilol.dart' deferred as spec_clilol;
 import 'package:autocomplete/specs/clojure.dart' deferred as spec_clojure;
-import 'package:autocomplete/specs/cloudflared.dart' deferred as spec_cloudflared;
+import 'package:autocomplete/specs/cloudflared.dart'
+    deferred as spec_cloudflared;
 import 'package:autocomplete/specs/cmake.dart' deferred as spec_cmake;
 import 'package:autocomplete/specs/coda.dart' deferred as spec_coda;
-import 'package:autocomplete/specs/code-insiders.dart' deferred as spec_code_insiders;
+import 'package:autocomplete/specs/code-insiders.dart'
+    deferred as spec_code_insiders;
 import 'package:autocomplete/specs/code.dart' deferred as spec_code;
 import 'package:autocomplete/specs/codesign.dart' deferred as spec_codesign;
 import 'package:autocomplete/specs/command.dart' deferred as spec_command;
-import 'package:autocomplete/specs/commercelayer.dart' deferred as spec_commercelayer;
+import 'package:autocomplete/specs/commercelayer.dart'
+    deferred as spec_commercelayer;
 import 'package:autocomplete/specs/composer.dart' deferred as spec_composer;
 import 'package:autocomplete/specs/conda.dart' deferred as spec_conda;
 import 'package:autocomplete/specs/copilot.dart' deferred as spec_copilot;
@@ -107,16 +126,26 @@ import 'package:autocomplete/specs/copypath.dart' deferred as spec_copypath;
 import 'package:autocomplete/specs/cosign.dart' deferred as spec_cosign;
 import 'package:autocomplete/specs/cot.dart' deferred as spec_cot;
 import 'package:autocomplete/specs/cp.dart' deferred as spec_cp;
-import 'package:autocomplete/specs/create-completion-spec.dart' deferred as spec_create_completion_spec;
-import 'package:autocomplete/specs/create-next-app.dart' deferred as spec_create_next_app;
-import 'package:autocomplete/specs/create-nx-workspace.dart' deferred as spec_create_nx_workspace;
-import 'package:autocomplete/specs/create-react-app.dart' deferred as spec_create_react_app;
-import 'package:autocomplete/specs/create-react-native-app.dart' deferred as spec_create_react_native_app;
-import 'package:autocomplete/specs/create-redwood-app.dart' deferred as spec_create_redwood_app;
-import 'package:autocomplete/specs/create-remix.dart' deferred as spec_create_remix;
-import 'package:autocomplete/specs/create-t3-app.dart' deferred as spec_create_t3_app;
-import 'package:autocomplete/specs/create-video.dart' deferred as spec_create_video;
-import 'package:autocomplete/specs/create-web3-frontend.dart' deferred as spec_create_web3_frontend;
+import 'package:autocomplete/specs/create-completion-spec.dart'
+    deferred as spec_create_completion_spec;
+import 'package:autocomplete/specs/create-next-app.dart'
+    deferred as spec_create_next_app;
+import 'package:autocomplete/specs/create-nx-workspace.dart'
+    deferred as spec_create_nx_workspace;
+import 'package:autocomplete/specs/create-react-app.dart'
+    deferred as spec_create_react_app;
+import 'package:autocomplete/specs/create-react-native-app.dart'
+    deferred as spec_create_react_native_app;
+import 'package:autocomplete/specs/create-redwood-app.dart'
+    deferred as spec_create_redwood_app;
+import 'package:autocomplete/specs/create-remix.dart'
+    deferred as spec_create_remix;
+import 'package:autocomplete/specs/create-t3-app.dart'
+    deferred as spec_create_t3_app;
+import 'package:autocomplete/specs/create-video.dart'
+    deferred as spec_create_video;
+import 'package:autocomplete/specs/create-web3-frontend.dart'
+    deferred as spec_create_web3_frontend;
 import 'package:autocomplete/specs/croc.dart' deferred as spec_croc;
 import 'package:autocomplete/specs/crontab.dart' deferred as spec_crontab;
 import 'package:autocomplete/specs/csdx.dart' deferred as spec_csdx;
@@ -140,28 +169,43 @@ import 'package:autocomplete/specs/dig.dart' deferred as spec_dig;
 import 'package:autocomplete/specs/direnv.dart' deferred as spec_direnv;
 import 'package:autocomplete/specs/dirname.dart' deferred as spec_dirname;
 import 'package:autocomplete/specs/ditto.dart' deferred as spec_ditto;
-import 'package:autocomplete/specs/do-release-upgrade.dart' deferred as spec_do_release_upgrade;
+import 'package:autocomplete/specs/do-release-upgrade.dart'
+    deferred as spec_do_release_upgrade;
 import 'package:autocomplete/specs/do.dart' deferred as spec_do;
-import 'package:autocomplete/specs/docker-compose.dart' deferred as spec_docker_compose;
+import 'package:autocomplete/specs/docker-compose.dart'
+    deferred as spec_docker_compose;
 import 'package:autocomplete/specs/docker.dart' deferred as spec_docker;
 import 'package:autocomplete/specs/doctl.dart' deferred as spec_doctl;
 import 'package:autocomplete/specs/dog.dart' deferred as spec_dog;
 import 'package:autocomplete/specs/doggo.dart' deferred as spec_doggo;
 import 'package:autocomplete/specs/dos2unix.dart' deferred as spec_dos2unix;
-import 'package:autocomplete/specs/dotenv-vault.dart' deferred as spec_dotenv_vault;
+import 'package:autocomplete/specs/dotenv-vault.dart'
+    deferred as spec_dotenv_vault;
 import 'package:autocomplete/specs/dotenv.dart' deferred as spec_dotenv;
-import 'package:autocomplete/specs/dotnet/dotnet-build-server.dart' deferred as spec_dotnet_dotnet_build_server;
-import 'package:autocomplete/specs/dotnet/dotnet-build.dart' deferred as spec_dotnet_dotnet_build;
-import 'package:autocomplete/specs/dotnet/dotnet-clean.dart' deferred as spec_dotnet_dotnet_clean;
-import 'package:autocomplete/specs/dotnet/dotnet-format.dart' deferred as spec_dotnet_dotnet_format;
-import 'package:autocomplete/specs/dotnet/dotnet-help.dart' deferred as spec_dotnet_dotnet_help;
-import 'package:autocomplete/specs/dotnet/dotnet-list.dart' deferred as spec_dotnet_dotnet_list;
-import 'package:autocomplete/specs/dotnet/dotnet-migrate.dart' deferred as spec_dotnet_dotnet_migrate;
-import 'package:autocomplete/specs/dotnet/dotnet-msbuild.dart' deferred as spec_dotnet_dotnet_msbuild;
-import 'package:autocomplete/specs/dotnet/dotnet-pack.dart' deferred as spec_dotnet_dotnet_pack;
-import 'package:autocomplete/specs/dotnet/dotnet-publish.dart' deferred as spec_dotnet_dotnet_publish;
-import 'package:autocomplete/specs/dotnet/dotnet-restore.dart' deferred as spec_dotnet_dotnet_restore;
-import 'package:autocomplete/specs/dotnet/dotnet-store.dart' deferred as spec_dotnet_dotnet_store;
+import 'package:autocomplete/specs/dotnet/dotnet-build-server.dart'
+    deferred as spec_dotnet_dotnet_build_server;
+import 'package:autocomplete/specs/dotnet/dotnet-build.dart'
+    deferred as spec_dotnet_dotnet_build;
+import 'package:autocomplete/specs/dotnet/dotnet-clean.dart'
+    deferred as spec_dotnet_dotnet_clean;
+import 'package:autocomplete/specs/dotnet/dotnet-format.dart'
+    deferred as spec_dotnet_dotnet_format;
+import 'package:autocomplete/specs/dotnet/dotnet-help.dart'
+    deferred as spec_dotnet_dotnet_help;
+import 'package:autocomplete/specs/dotnet/dotnet-list.dart'
+    deferred as spec_dotnet_dotnet_list;
+import 'package:autocomplete/specs/dotnet/dotnet-migrate.dart'
+    deferred as spec_dotnet_dotnet_migrate;
+import 'package:autocomplete/specs/dotnet/dotnet-msbuild.dart'
+    deferred as spec_dotnet_dotnet_msbuild;
+import 'package:autocomplete/specs/dotnet/dotnet-pack.dart'
+    deferred as spec_dotnet_dotnet_pack;
+import 'package:autocomplete/specs/dotnet/dotnet-publish.dart'
+    deferred as spec_dotnet_dotnet_publish;
+import 'package:autocomplete/specs/dotnet/dotnet-restore.dart'
+    deferred as spec_dotnet_dotnet_restore;
+import 'package:autocomplete/specs/dotnet/dotnet-store.dart'
+    deferred as spec_dotnet_dotnet_store;
 import 'package:autocomplete/specs/dotslash.dart' deferred as spec_dotslash;
 import 'package:autocomplete/specs/dpkg.dart' deferred as spec_dpkg;
 import 'package:autocomplete/specs/dprint.dart' deferred as spec_dprint;
@@ -173,6 +217,7 @@ import 'package:autocomplete/specs/echo.dart' deferred as spec_echo;
 import 'package:autocomplete/specs/electron.dart' deferred as spec_electron;
 import 'package:autocomplete/specs/eleventy.dart' deferred as spec_eleventy;
 import 'package:autocomplete/specs/elif.dart' deferred as spec_elif;
+import 'package:autocomplete/specs/elixir.dart' deferred as spec_elixir;
 import 'package:autocomplete/specs/elm-format.dart' deferred as spec_elm_format;
 import 'package:autocomplete/specs/elm-review.dart' deferred as spec_elm_review;
 import 'package:autocomplete/specs/elm.dart' deferred as spec_elm;
@@ -185,6 +230,10 @@ import 'package:autocomplete/specs/envchain.dart' deferred as spec_envchain;
 import 'package:autocomplete/specs/esbuild.dart' deferred as spec_esbuild;
 import 'package:autocomplete/specs/eslint.dart' deferred as spec_eslint;
 import 'package:autocomplete/specs/exa.dart' deferred as spec_exa;
+import 'package:autocomplete/specs/example/git_push.dart'
+    deferred as spec_example_git_push;
+import 'package:autocomplete/specs/example/trigger.dart'
+    deferred as spec_example_trigger;
 import 'package:autocomplete/specs/exec.dart' deferred as spec_exec;
 import 'package:autocomplete/specs/exercism.dart' deferred as spec_exercism;
 import 'package:autocomplete/specs/export.dart' deferred as spec_export;
@@ -194,6 +243,7 @@ import 'package:autocomplete/specs/fastly.dart' deferred as spec_fastly;
 import 'package:autocomplete/specs/fd.dart' deferred as spec_fd;
 import 'package:autocomplete/specs/fdisk.dart' deferred as spec_fdisk;
 import 'package:autocomplete/specs/ffmpeg.dart' deferred as spec_ffmpeg;
+import 'package:autocomplete/specs/fig/fig.dart' deferred as spec_fig_fig;
 import 'package:autocomplete/specs/figterm.dart' deferred as spec_figterm;
 import 'package:autocomplete/specs/file.dart' deferred as spec_file;
 import 'package:autocomplete/specs/fin.dart' deferred as spec_fin;
@@ -210,13 +260,15 @@ import 'package:autocomplete/specs/fvm.dart' deferred as spec_fvm;
 import 'package:autocomplete/specs/fzf-tmux.dart' deferred as spec_fzf_tmux;
 import 'package:autocomplete/specs/fzf.dart' deferred as spec_fzf;
 import 'package:autocomplete/specs/g++.dart' deferred as spec_g__;
-import 'package:autocomplete/specs/ganache-cli.dart' deferred as spec_ganache_cli;
+import 'package:autocomplete/specs/ganache-cli.dart'
+    deferred as spec_ganache_cli;
 import 'package:autocomplete/specs/gatsby.dart' deferred as spec_gatsby;
 import 'package:autocomplete/specs/gcc.dart' deferred as spec_gcc;
 import 'package:autocomplete/specs/gcloud.dart' deferred as spec_gcloud;
 import 'package:autocomplete/specs/gem.dart' deferred as spec_gem;
 import 'package:autocomplete/specs/ghq.dart' deferred as spec_ghq;
-import 'package:autocomplete/specs/git-quick-stats.dart' deferred as spec_git_quick_stats;
+import 'package:autocomplete/specs/git-quick-stats.dart'
+    deferred as spec_git_quick_stats;
 import 'package:autocomplete/specs/git.dart' deferred as spec_git;
 import 'package:autocomplete/specs/github.dart' deferred as spec_github;
 import 'package:autocomplete/specs/glow.dart' deferred as spec_glow;
@@ -239,8 +291,12 @@ import 'package:autocomplete/specs/head.dart' deferred as spec_head;
 import 'package:autocomplete/specs/helm.dart' deferred as spec_helm;
 import 'package:autocomplete/specs/helmfile.dart' deferred as spec_helmfile;
 import 'package:autocomplete/specs/herd.dart' deferred as spec_herd;
-import 'package:autocomplete/specs/heroku/8.0.0.dart' deferred as spec_heroku_8_0_0;
-import 'package:autocomplete/specs/heroku/8.6.0.dart' deferred as spec_heroku_8_6_0;
+import 'package:autocomplete/specs/heroku/8.0.0.dart'
+    deferred as spec_heroku_8_0_0;
+import 'package:autocomplete/specs/heroku/8.6.0.dart'
+    deferred as spec_heroku_8_6_0;
+import 'package:autocomplete/specs/heroku/index.dart'
+    deferred as spec_heroku_index;
 import 'package:autocomplete/specs/hexo.dart' deferred as spec_hexo;
 import 'package:autocomplete/specs/homey.dart' deferred as spec_homey;
 import 'package:autocomplete/specs/hop.dart' deferred as spec_hop;
@@ -258,8 +314,12 @@ import 'package:autocomplete/specs/id.dart' deferred as spec_id;
 import 'package:autocomplete/specs/idea.dart' deferred as spec_idea;
 import 'package:autocomplete/specs/iex.dart' deferred as spec_iex;
 import 'package:autocomplete/specs/if.dart' deferred as spec_if;
-import 'package:autocomplete/specs/infracost/0.10.0.dart' deferred as spec_infracost_0_10_0;
-import 'package:autocomplete/specs/infracost/0.9.0.dart' deferred as spec_infracost_0_9_0;
+import 'package:autocomplete/specs/infracost/0.10.0.dart'
+    deferred as spec_infracost_0_10_0;
+import 'package:autocomplete/specs/infracost/0.9.0.dart'
+    deferred as spec_infracost_0_9_0;
+import 'package:autocomplete/specs/infracost/index.dart'
+    deferred as spec_infracost_index;
 import 'package:autocomplete/specs/install.dart' deferred as spec_install;
 import 'package:autocomplete/specs/j.dart' deferred as spec_j;
 import 'package:autocomplete/specs/java.dart' deferred as spec_java;
@@ -300,19 +360,23 @@ import 'package:autocomplete/specs/lpass.dart' deferred as spec_lpass;
 import 'package:autocomplete/specs/ls.dart' deferred as spec_ls;
 import 'package:autocomplete/specs/lsblk.dart' deferred as spec_lsblk;
 import 'package:autocomplete/specs/lsd.dart' deferred as spec_lsd;
+import 'package:autocomplete/specs/lsof.dart' deferred as spec_lsof;
 import 'package:autocomplete/specs/luz.dart' deferred as spec_luz;
 import 'package:autocomplete/specs/lvim.dart' deferred as spec_lvim;
 import 'package:autocomplete/specs/m.dart' deferred as spec_m;
 import 'package:autocomplete/specs/mackup.dart' deferred as spec_mackup;
+import 'package:autocomplete/specs/magento.dart' deferred as spec_magento;
 import 'package:autocomplete/specs/maigret.dart' deferred as spec_maigret;
 import 'package:autocomplete/specs/mailsy.dart' deferred as spec_mailsy;
 import 'package:autocomplete/specs/make.dart' deferred as spec_make;
+import 'package:autocomplete/specs/man.dart' deferred as spec_man;
 import 'package:autocomplete/specs/mas.dart' deferred as spec_mas;
 import 'package:autocomplete/specs/mask.dart' deferred as spec_mask;
 import 'package:autocomplete/specs/mdfind.dart' deferred as spec_mdfind;
 import 'package:autocomplete/specs/mdls.dart' deferred as spec_mdls;
 import 'package:autocomplete/specs/meroxa.dart' deferred as spec_meroxa;
 import 'package:autocomplete/specs/meta.dart' deferred as spec_meta;
+import 'package:autocomplete/specs/mgnl.dart' deferred as spec_mgnl;
 import 'package:autocomplete/specs/micro.dart' deferred as spec_micro;
 import 'package:autocomplete/specs/mikro-orm.dart' deferred as spec_mikro_orm;
 import 'package:autocomplete/specs/minectl.dart' deferred as spec_minectl;
@@ -325,7 +389,8 @@ import 'package:autocomplete/specs/mknod.dart' deferred as spec_mknod;
 import 'package:autocomplete/specs/mob.dart' deferred as spec_mob;
 import 'package:autocomplete/specs/molecule.dart' deferred as spec_molecule;
 import 'package:autocomplete/specs/mongocli.dart' deferred as spec_mongocli;
-import 'package:autocomplete/specs/mongoimport.dart' deferred as spec_mongoimport;
+import 'package:autocomplete/specs/mongoimport.dart'
+    deferred as spec_mongoimport;
 import 'package:autocomplete/specs/mongosh.dart' deferred as spec_mongosh;
 import 'package:autocomplete/specs/more.dart' deferred as spec_more;
 import 'package:autocomplete/specs/mosh.dart' deferred as spec_mosh;
@@ -337,7 +402,8 @@ import 'package:autocomplete/specs/mypy.dart' deferred as spec_mypy;
 import 'package:autocomplete/specs/mysql.dart' deferred as spec_mysql;
 import 'package:autocomplete/specs/n.dart' deferred as spec_n;
 import 'package:autocomplete/specs/nano.dart' deferred as spec_nano;
-import 'package:autocomplete/specs/nativescript.dart' deferred as spec_nativescript;
+import 'package:autocomplete/specs/nativescript.dart'
+    deferred as spec_nativescript;
 import 'package:autocomplete/specs/nc.dart' deferred as spec_nc;
 import 'package:autocomplete/specs/ncal.dart' deferred as spec_ncal;
 import 'package:autocomplete/specs/ncu.dart' deferred as spec_ncu;
@@ -376,7 +442,8 @@ import 'package:autocomplete/specs/oh-my-posh.dart' deferred as spec_oh_my_posh;
 import 'package:autocomplete/specs/okta.dart' deferred as spec_okta;
 import 'package:autocomplete/specs/ollama.dart' deferred as spec_ollama;
 import 'package:autocomplete/specs/omz.dart' deferred as spec_omz;
-import 'package:autocomplete/specs/onboardbase.dart' deferred as spec_onboardbase;
+import 'package:autocomplete/specs/onboardbase.dart'
+    deferred as spec_onboardbase;
 import 'package:autocomplete/specs/op.dart' deferred as spec_op;
 import 'package:autocomplete/specs/opa.dart' deferred as spec_opa;
 import 'package:autocomplete/specs/open.dart' deferred as spec_open;
@@ -393,8 +460,14 @@ import 'package:autocomplete/specs/pdfunite.dart' deferred as spec_pdfunite;
 import 'package:autocomplete/specs/pg_dump.dart' deferred as spec_pg_dump;
 import 'package:autocomplete/specs/pgcli.dart' deferred as spec_pgcli;
 import 'package:autocomplete/specs/php.dart' deferred as spec_php;
+import 'package:autocomplete/specs/php/artisan.dart'
+    deferred as spec_php_artisan;
+import 'package:autocomplete/specs/php/bin_console.dart'
+    deferred as spec_php_bin_console;
+import 'package:autocomplete/specs/php/please.dart' deferred as spec_php_please;
 import 'package:autocomplete/specs/phpunit.dart' deferred as spec_phpunit;
-import 'package:autocomplete/specs/phpunit_watcher.dart' deferred as spec_phpunit_watcher;
+import 'package:autocomplete/specs/phpunit_watcher.dart'
+    deferred as spec_phpunit_watcher;
 import 'package:autocomplete/specs/pijul.dart' deferred as spec_pijul;
 import 'package:autocomplete/specs/ping.dart' deferred as spec_ping;
 import 'package:autocomplete/specs/pip.dart' deferred as spec_pip;
@@ -418,7 +491,8 @@ import 'package:autocomplete/specs/premake.dart' deferred as spec_premake;
 import 'package:autocomplete/specs/prettier.dart' deferred as spec_prettier;
 import 'package:autocomplete/specs/prisma.dart' deferred as spec_prisma;
 import 'package:autocomplete/specs/pro.dart' deferred as spec_pro;
-import 'package:autocomplete/specs/progressline.dart' deferred as spec_progressline;
+import 'package:autocomplete/specs/progressline.dart'
+    deferred as spec_progressline;
 import 'package:autocomplete/specs/pry.dart' deferred as spec_pry;
 import 'package:autocomplete/specs/ps.dart' deferred as spec_ps;
 import 'package:autocomplete/specs/psql.dart' deferred as spec_psql;
@@ -427,7 +501,8 @@ import 'package:autocomplete/specs/pushd.dart' deferred as spec_pushd;
 import 'package:autocomplete/specs/pwd.dart' deferred as spec_pwd;
 import 'package:autocomplete/specs/pyenv.dart' deferred as spec_pyenv;
 import 'package:autocomplete/specs/pytest.dart' deferred as spec_pytest;
-import 'package:autocomplete/specs/python/http.server.dart' deferred as spec_python_http_server;
+import 'package:autocomplete/specs/python/http.server.dart'
+    deferred as spec_python_http_server;
 import 'package:autocomplete/specs/qodana.dart' deferred as spec_qodana;
 import 'package:autocomplete/specs/quasar.dart' deferred as spec_quasar;
 import 'package:autocomplete/specs/quickmail.dart' deferred as spec_quickmail;
@@ -468,8 +543,15 @@ import 'package:autocomplete/specs/sfdx.dart' deferred as spec_sfdx;
 import 'package:autocomplete/specs/sftp.dart' deferred as spec_sftp;
 import 'package:autocomplete/specs/sha1sum.dart' deferred as spec_sha1sum;
 import 'package:autocomplete/specs/shasum.dart' deferred as spec_shasum;
-import 'package:autocomplete/specs/shell-config.dart' deferred as spec_shell_config;
+import 'package:autocomplete/specs/shell-config.dart'
+    deferred as spec_shell_config;
 import 'package:autocomplete/specs/shelve.dart' deferred as spec_shelve;
+import 'package:autocomplete/specs/shopify/2.0.0.dart'
+    deferred as spec_shopify_2_0_0;
+import 'package:autocomplete/specs/shopify/3.0.0.dart'
+    deferred as spec_shopify_3_0_0;
+import 'package:autocomplete/specs/shopify/index.dart'
+    deferred as spec_shopify_index;
 import 'package:autocomplete/specs/shortcuts.dart' deferred as spec_shortcuts;
 import 'package:autocomplete/specs/shred.dart' deferred as spec_shred;
 import 'package:autocomplete/specs/sidekiq.dart' deferred as spec_sidekiq;
@@ -477,11 +559,13 @@ import 'package:autocomplete/specs/simctl.dart' deferred as spec_simctl;
 import 'package:autocomplete/specs/sips.dart' deferred as spec_sips;
 import 'package:autocomplete/specs/sl.dart' deferred as spec_sl;
 import 'package:autocomplete/specs/sls.dart' deferred as spec_sls;
-import 'package:autocomplete/specs/softwareupdate.dart' deferred as spec_softwareupdate;
+import 'package:autocomplete/specs/softwareupdate.dart'
+    deferred as spec_softwareupdate;
 import 'package:autocomplete/specs/sort.dart' deferred as spec_sort;
 import 'package:autocomplete/specs/source.dart' deferred as spec_source;
 import 'package:autocomplete/specs/space.dart' deferred as spec_space;
-import 'package:autocomplete/specs/speedtest-cli.dart' deferred as spec_speedtest_cli;
+import 'package:autocomplete/specs/speedtest-cli.dart'
+    deferred as spec_speedtest_cli;
 import 'package:autocomplete/specs/speedtest.dart' deferred as spec_speedtest;
 import 'package:autocomplete/specs/splash.dart' deferred as spec_splash;
 import 'package:autocomplete/specs/split.dart' deferred as spec_split;
@@ -497,7 +581,8 @@ import 'package:autocomplete/specs/st2.dart' deferred as spec_st2;
 import 'package:autocomplete/specs/sta.dart' deferred as spec_sta;
 import 'package:autocomplete/specs/stack.dart' deferred as spec_stack;
 import 'package:autocomplete/specs/starkli.dart' deferred as spec_starkli;
-import 'package:autocomplete/specs/start-storybook.dart' deferred as spec_start_storybook;
+import 'package:autocomplete/specs/start-storybook.dart'
+    deferred as spec_start_storybook;
 import 'package:autocomplete/specs/stat.dart' deferred as spec_stat;
 import 'package:autocomplete/specs/steadybit.dart' deferred as spec_steadybit;
 import 'package:autocomplete/specs/stencil.dart' deferred as spec_stencil;
@@ -513,8 +598,10 @@ import 'package:autocomplete/specs/surreal.dart' deferred as spec_surreal;
 import 'package:autocomplete/specs/svn.dart' deferred as spec_svn;
 import 'package:autocomplete/specs/svokit.dart' deferred as spec_svokit;
 import 'package:autocomplete/specs/sw_vers.dart' deferred as spec_sw_vers;
-import 'package:autocomplete/specs/swagger-typescript-api.dart' deferred as spec_swagger_typescript_api;
-import 'package:autocomplete/specs/swagger_typescript_api.dart' deferred as spec_swagger_typescript_api_1;
+import 'package:autocomplete/specs/swagger-typescript-api.dart'
+    deferred as spec_swagger_typescript_api;
+import 'package:autocomplete/specs/swagger_typescript_api.dart'
+    deferred as spec_swagger_typescript_api_1;
 import 'package:autocomplete/specs/swc.dart' deferred as spec_swc;
 import 'package:autocomplete/specs/swift.dart' deferred as spec_swift;
 import 'package:autocomplete/specs/symfony.dart' deferred as spec_symfony;
@@ -522,14 +609,20 @@ import 'package:autocomplete/specs/sysctl.dart' deferred as spec_sysctl;
 import 'package:autocomplete/specs/tac.dart' deferred as spec_tac;
 import 'package:autocomplete/specs/tail.dart' deferred as spec_tail;
 import 'package:autocomplete/specs/tailcall.dart' deferred as spec_tailcall;
-import 'package:autocomplete/specs/tailwindcss.dart' deferred as spec_tailwindcss;
+import 'package:autocomplete/specs/tailwindcss.dart'
+    deferred as spec_tailwindcss;
 import 'package:autocomplete/specs/tangram.dart' deferred as spec_tangram;
 import 'package:autocomplete/specs/taplo.dart' deferred as spec_taplo;
 import 'package:autocomplete/specs/tar.dart' deferred as spec_tar;
 import 'package:autocomplete/specs/task.dart' deferred as spec_task;
-import 'package:autocomplete/specs/task/taskwarrior.dart' deferred as spec_task_taskwarrior;
-import 'package:autocomplete/specs/task_go_task.dart' deferred as spec_task_go_task;
-import 'package:autocomplete/specs/task_taskwarrior.dart' deferred as spec_task_taskwarrior_1;
+import 'package:autocomplete/specs/task/go_task.dart'
+    deferred as spec_task_go_task;
+import 'package:autocomplete/specs/task/taskwarrior.dart'
+    deferred as spec_task_taskwarrior;
+import 'package:autocomplete/specs/task_go_task.dart'
+    deferred as spec_task_go_task_1;
+import 'package:autocomplete/specs/task_taskwarrior.dart'
+    deferred as spec_task_taskwarrior_1;
 import 'package:autocomplete/specs/tb.dart' deferred as spec_tb;
 import 'package:autocomplete/specs/tccutil.dart' deferred as spec_tccutil;
 import 'package:autocomplete/specs/tee.dart' deferred as spec_tee;
@@ -564,7 +657,8 @@ import 'package:autocomplete/specs/typeorm.dart' deferred as spec_typeorm;
 import 'package:autocomplete/specs/typos.dart' deferred as spec_typos;
 import 'package:autocomplete/specs/typst.dart' deferred as spec_typst;
 import 'package:autocomplete/specs/ua.dart' deferred as spec_ua;
-import 'package:autocomplete/specs/ubuntu-advantage.dart' deferred as spec_ubuntu_advantage;
+import 'package:autocomplete/specs/ubuntu-advantage.dart'
+    deferred as spec_ubuntu_advantage;
 import 'package:autocomplete/specs/uname.dart' deferred as spec_uname;
 import 'package:autocomplete/specs/uniq.dart' deferred as spec_uniq;
 import 'package:autocomplete/specs/unix2dos.dart' deferred as spec_unix2dos;
@@ -588,7 +682,8 @@ import 'package:autocomplete/specs/vr.dart' deferred as spec_vr;
 import 'package:autocomplete/specs/vtex.dart' deferred as spec_vtex;
 import 'package:autocomplete/specs/vue.dart' deferred as spec_vue;
 import 'package:autocomplete/specs/w.dart' deferred as spec_w;
-import 'package:autocomplete/specs/wasm-bindgen.dart' deferred as spec_wasm_bindgen;
+import 'package:autocomplete/specs/wasm-bindgen.dart'
+    deferred as spec_wasm_bindgen;
 import 'package:autocomplete/specs/wasm-pack.dart' deferred as spec_wasm_pack;
 import 'package:autocomplete/specs/watchman.dart' deferred as spec_watchman;
 import 'package:autocomplete/specs/wc.dart' deferred as spec_wc;
@@ -603,7 +698,8 @@ import 'package:autocomplete/specs/which.dart' deferred as spec_which;
 import 'package:autocomplete/specs/while.dart' deferred as spec_while;
 import 'package:autocomplete/specs/who.dart' deferred as spec_who;
 import 'package:autocomplete/specs/whois.dart' deferred as spec_whois;
-import 'package:autocomplete/specs/wifi_password.dart' deferred as spec_wifi_password;
+import 'package:autocomplete/specs/wifi_password.dart'
+    deferred as spec_wifi_password;
 import 'package:autocomplete/specs/wing.dart' deferred as spec_wing;
 import 'package:autocomplete/specs/wp.dart' deferred as spec_wp;
 import 'package:autocomplete/specs/wrangler.dart' deferred as spec_wrangler;
@@ -611,7 +707,8 @@ import 'package:autocomplete/specs/wrk.dart' deferred as spec_wrk;
 import 'package:autocomplete/specs/wscat.dart' deferred as spec_wscat;
 import 'package:autocomplete/specs/xargs.dart' deferred as spec_xargs;
 import 'package:autocomplete/specs/xc.dart' deferred as spec_xc;
-import 'package:autocomplete/specs/xcode-select.dart' deferred as spec_xcode_select;
+import 'package:autocomplete/specs/xcode-select.dart'
+    deferred as spec_xcode_select;
 import 'package:autocomplete/specs/xcodebuild.dart' deferred as spec_xcodebuild;
 import 'package:autocomplete/specs/xcodeproj.dart' deferred as spec_xcodeproj;
 import 'package:autocomplete/specs/xcodes.dart' deferred as spec_xcodes;
@@ -637,68 +734,758 @@ import 'package:autocomplete/specs/zoxide.dart' deferred as spec_zoxide;
 
 /// Command names by first character (lowercase). One const list per char; lookup via [getV2SpecNamesForFirstChar].
 const List<String> v2SpecNamesFirstChar_minus = ['-'];
-const List<String> v2SpecNamesFirstChar_at = ['@commercelayer/cli', '@fig/publish-spec', '@forge/cli', '@withfig/autocomplete-tools', '@wordpress/create-block'];
-const List<String> v2SpecNamesFirstChar_a = ['act', 'adb', 'adr', 'afplay', 'aftman', 'ag', 'agrippa', 'airflow', 'aliases', 'ampx', 'ansible', 'ansible-config', 'ansible-galaxy', 'ansible-lint', 'ansible-playbook', 'apt', 'arch', 'argo', 'asar', 'asciinema', 'asr', 'astro', 'atlas', 'authchanger', 'autocannon', 'autojump', 'aws', 'aws-vault', 'awsume', 'az'];
-const List<String> v2SpecNamesFirstChar_b = ['babel', 'banner', 'barnard59', 'base32', 'base64', 'basename', 'basenc', 'bat', 'bazel', 'bc', 'bcd', 'bit', 'blitz', 'br', 'brew', 'broot', 'browser-sync', 'btop', 'build', 'build-server', 'build-storybook', 'bun', 'bundle', 'bunx', 'bw', 'bwdc', 'bws'];
-const List<String> v2SpecNamesFirstChar_c = ['c++', 'caffeinate', 'cal', 'cap', 'capacitor', 'cargo', 'cat', 'cci', 'cd', 'cdk', 'cdk8s', 'cf', 'charm', 'chmod', 'chown', 'cicada', 'circleci', 'cl', 'clang', 'clang++', 'clean', 'clear', 'cli', 'cliff-jumper', 'clilol', 'clojure', 'cloudflared', 'cmake', 'coda', 'code', 'code-insiders', 'codesign', 'command', 'composer', 'conda', 'copilot', 'copyfile', 'copypath', 'cosign', 'cot', 'cp', 'create-completion-spec', 'create-next-app', 'create-nx-workspace', 'create-react-app', 'create-react-native-app', 'create-redwood-app', 'create-remix', 'create-t3-app', 'create-video', 'create-web3-frontend', 'croc', 'crontab', 'csdx', 'curl', 'cut', 'cw'];
-const List<String> v2SpecNamesFirstChar_d = ['dart', 'date', 'dateseq', 'datree', 'dbt', 'dd', 'ddev', 'ddosify', 'deno', 'deployctl', 'deta', 'df', 'diff', 'dig', 'direnv', 'dirname', 'ditto', 'do', 'do-release-upgrade', 'docker', 'docker-compose', 'doctl', 'dog', 'doggo', 'dos2unix', 'dotenv', 'dotenv-vault', 'dotslash', 'dpkg', 'dprint', 'dtm', 'du', 'dust'];
-const List<String> v2SpecNamesFirstChar_e = ['eas', 'echo', 'electron', 'eleventy', 'elif', 'elm', 'elm-format', 'elm-review', 'else', 'emacs', 'enapter', 'encore', 'env', 'envchain', 'esbuild', 'eslint', 'exa', 'exec', 'exercism', 'export', 'eza'];
-const List<String> v2SpecNamesFirstChar_f = ['fastlane', 'fastly', 'fd', 'fdisk', 'ffmpeg', 'figterm', 'file', 'fin', 'find', 'firebase', 'firefox', 'flutter', 'fmt', 'fold', 'for', 'forc', 'format', 'fvm', 'fzf', 'fzf-tmux'];
-const List<String> v2SpecNamesFirstChar_g = ['g++', 'ganache-cli', 'gatsby', 'gcc', 'gcloud', 'gem', 'ghq', 'git', 'git-quick-stats', 'github', 'glow', 'gltfjsx', 'go', 'go-task', 'goctl', 'googler', 'goreleaser', 'goto', 'gradle', 'graphcdn', 'grep', 'grex', 'gron', 'gt'];
-const List<String> v2SpecNamesFirstChar_h = ['hardhat', 'hasura', 'hb-service', 'head', 'helm', 'helmfile', 'help', 'herd', 'heroku', 'hexo', 'homey', 'hop', 'hostname', 'htop', 'http', 'http.server', 'httpy', 'hub', 'hugo', 'hx', 'hyper', 'hyperfine'];
-const List<String> v2SpecNamesFirstChar_i = ['iconv', 'id', 'iex', 'if', 'index', 'infracost', 'install'];
-const List<String> v2SpecNamesFirstChar_j = ['j', 'java', 'jenv', 'jest', 'jmeter', 'join', 'jq', 'julia', 'jupyter'];
-const List<String> v2SpecNamesFirstChar_k = ['k3d', 'k6', 'k9s', 'kafkactl', 'kdoctor', 'keytool', 'kill', 'killall', 'kind', 'kitty', 'klist', 'knex', 'kotlinc', 'kubecolor', 'kubectl', 'kubectx', 'kubens'];
-const List<String> v2SpecNamesFirstChar_l = ['laravel', 'launchctl', 'ldd', 'leaf', 'less', 'lima', 'list', 'ln', 'locust', 'lp', 'lpass', 'ls', 'lsblk', 'lsd', 'luz', 'lvim'];
-const List<String> v2SpecNamesFirstChar_m = ['m', 'mackup', 'maigret', 'mailsy', 'main', 'make', 'mas', 'mask', 'mdfind', 'mdls', 'meroxa', 'meta', 'micro', 'migrate', 'mikro-orm', 'minectl', 'minikube', 'mix', 'mkdir', 'mkdocs', 'mkfifo', 'mknod', 'mob', 'molecule', 'mongocli', 'mongoimport', 'mongosh', 'more', 'mosh', 'mount', 'msbuild', 'multipass', 'mv', 'mvn', 'mypy', 'mysql'];
-const List<String> v2SpecNamesFirstChar_n = ['n', 'nano', 'nativescript', 'nc', 'ncal', 'ncu', 'neofetch', 'nest', 'netlify', 'newman', 'next', 'nextflow', 'ng', 'nginx', 'ngrok', 'nhost', 'ni', 'nl', 'nmap', 'nocorrect', 'node', 'noglob', 'northflank', 'np', 'npm', 'npx', 'nr', 'nrm', 'ns', 'nu', 'nuxi', 'nuxt', 'nvim', 'nvm', 'nylas'];
-const List<String> v2SpecNamesFirstChar_o = ['oci', 'od', 'oh-my-posh', 'okta', 'ollama', 'omz', 'onboardbase', 'op', 'opa', 'open', 'osascript'];
-const List<String> v2SpecNamesFirstChar_p = ['pac', 'pack', 'pageres', 'palera1n', 'paper', 'pass', 'passwd', 'paste', 'path', 'pathchk', 'pdfunite', 'pg_dump', 'pgcli', 'php', 'phpunit', 'phpunit-watcher', 'pijul', 'ping', 'pip', 'pip3', 'pipenv', 'pkg-config', 'pkgutil', 'pkill', 'planter', 'playwright', 'plutil', 'pm2', 'pmset', 'pnpm', 'pnpx', 'pocketbase', 'pod', 'podman', 'poetry', 'premake', 'preset', 'prettier', 'prisma', 'pro', 'progressline', 'pry', 'ps', 'psql', 'publish', 'pushd', 'pwd', 'pyenv', 'pytest'];
+const List<String> v2SpecNamesFirstChar_at = [
+  '@commercelayer/cli',
+  '@fig/publish-spec',
+  '@forge/cli',
+  '@withfig/autocomplete-tools',
+  '@wordpress/create-block'
+];
+const List<String> v2SpecNamesFirstChar_a = [
+  'act',
+  'adb',
+  'adr',
+  'afplay',
+  'aftman',
+  'ag',
+  'agrippa',
+  'airflow',
+  'aliases',
+  'ampx',
+  'ansible',
+  'ansible-config',
+  'ansible-galaxy',
+  'ansible-lint',
+  'ansible-playbook',
+  'apt',
+  'arch',
+  'argo',
+  'artisan',
+  'asar',
+  'asciinema',
+  'asr',
+  'astro',
+  'atlas',
+  'authchanger',
+  'autocannon',
+  'autojump',
+  'aws',
+  'aws-vault',
+  'awsume',
+  'az'
+];
+const List<String> v2SpecNamesFirstChar_b = [
+  'babel',
+  'banner',
+  'barnard59',
+  'base32',
+  'base64',
+  'basename',
+  'basenc',
+  'bat',
+  'bazel',
+  'bc',
+  'bcd',
+  'bin-console',
+  'bit',
+  'blitz',
+  'br',
+  'brew',
+  'broot',
+  'browser-sync',
+  'btop',
+  'build',
+  'build-server',
+  'build-storybook',
+  'bun',
+  'bundle',
+  'bunx',
+  'bw',
+  'bwdc',
+  'bws'
+];
+const List<String> v2SpecNamesFirstChar_c = [
+  'c++',
+  'caffeinate',
+  'cal',
+  'cap',
+  'capacitor',
+  'cargo',
+  'cat',
+  'cci',
+  'cd',
+  'cdk',
+  'cdk8s',
+  'cf',
+  'charm',
+  'chmod',
+  'chown',
+  'cicada',
+  'circleci',
+  'cl',
+  'clang',
+  'clang++',
+  'clean',
+  'clear',
+  'cli',
+  'cliff-jumper',
+  'clilol',
+  'clojure',
+  'cloudflared',
+  'cmake',
+  'coda',
+  'code',
+  'code-insiders',
+  'codesign',
+  'command',
+  'composer',
+  'conda',
+  'copilot',
+  'copyfile',
+  'copypath',
+  'cosign',
+  'cot',
+  'cp',
+  'create-completion-spec',
+  'create-next-app',
+  'create-nx-workspace',
+  'create-react-app',
+  'create-react-native-app',
+  'create-redwood-app',
+  'create-remix',
+  'create-t3-app',
+  'create-video',
+  'create-web3-frontend',
+  'croc',
+  'crontab',
+  'csdx',
+  'curl',
+  'cut',
+  'cw'
+];
+const List<String> v2SpecNamesFirstChar_d = [
+  'dart',
+  'date',
+  'dateseq',
+  'datree',
+  'dbt',
+  'dd',
+  'ddev',
+  'ddosify',
+  'deno',
+  'deployctl',
+  'deta',
+  'df',
+  'diff',
+  'dig',
+  'direnv',
+  'dirname',
+  'ditto',
+  'do',
+  'do-release-upgrade',
+  'docker',
+  'docker-compose',
+  'doctl',
+  'dog',
+  'doggo',
+  'dos2unix',
+  'dotenv',
+  'dotenv-vault',
+  'dotslash',
+  'dpkg',
+  'dprint',
+  'dtm',
+  'du',
+  'dust'
+];
+const List<String> v2SpecNamesFirstChar_e = [
+  'eas',
+  'echo',
+  'electron',
+  'eleventy',
+  'elif',
+  'elixir',
+  'elm',
+  'elm-format',
+  'elm-review',
+  'else',
+  'emacs',
+  'enapter',
+  'encore',
+  'env',
+  'envchain',
+  'esbuild',
+  'eslint',
+  'exa',
+  'exec',
+  'exercism',
+  'export',
+  'eza'
+];
+const List<String> v2SpecNamesFirstChar_f = [
+  'fastlane',
+  'fastly',
+  'fd',
+  'fdisk',
+  'ffmpeg',
+  'fig',
+  'figterm',
+  'file',
+  'fin',
+  'find',
+  'firebase',
+  'firefox',
+  'flutter',
+  'fmt',
+  'fold',
+  'for',
+  'forc',
+  'format',
+  'fvm',
+  'fzf',
+  'fzf-tmux'
+];
+const List<String> v2SpecNamesFirstChar_g = [
+  'g++',
+  'ganache-cli',
+  'gatsby',
+  'gcc',
+  'gcloud',
+  'gem',
+  'ghq',
+  'git',
+  'git-quick-stats',
+  'git_push_example',
+  'github',
+  'glow',
+  'gltfjsx',
+  'go',
+  'go-task',
+  'goctl',
+  'googler',
+  'goreleaser',
+  'goto',
+  'gradle',
+  'graphcdn',
+  'grep',
+  'grex',
+  'gron',
+  'gt'
+];
+const List<String> v2SpecNamesFirstChar_h = [
+  'hardhat',
+  'hasura',
+  'hb-service',
+  'head',
+  'helm',
+  'helmfile',
+  'help',
+  'herd',
+  'heroku',
+  'hexo',
+  'homey',
+  'hop',
+  'hostname',
+  'htop',
+  'http',
+  'http.server',
+  'httpy',
+  'hub',
+  'hugo',
+  'hx',
+  'hyper',
+  'hyperfine'
+];
+const List<String> v2SpecNamesFirstChar_i = [
+  'iconv',
+  'id',
+  'iex',
+  'if',
+  'index',
+  'infracost',
+  'install'
+];
+const List<String> v2SpecNamesFirstChar_j = [
+  'j',
+  'java',
+  'jenv',
+  'jest',
+  'jmeter',
+  'join',
+  'jq',
+  'julia',
+  'jupyter'
+];
+const List<String> v2SpecNamesFirstChar_k = [
+  'k3d',
+  'k6',
+  'k9s',
+  'kafkactl',
+  'kdoctor',
+  'keytool',
+  'kill',
+  'killall',
+  'kind',
+  'kitty',
+  'klist',
+  'knex',
+  'kotlinc',
+  'kubecolor',
+  'kubectl',
+  'kubectx',
+  'kubens'
+];
+const List<String> v2SpecNamesFirstChar_l = [
+  'laravel',
+  'launchctl',
+  'ldd',
+  'leaf',
+  'less',
+  'lima',
+  'list',
+  'ln',
+  'locust',
+  'lp',
+  'lpass',
+  'ls',
+  'lsblk',
+  'lsd',
+  'lsof',
+  'luz',
+  'lvim'
+];
+const List<String> v2SpecNamesFirstChar_m = [
+  'm',
+  'mackup',
+  'magento',
+  'maigret',
+  'mailsy',
+  'main',
+  'make',
+  'man',
+  'mas',
+  'mask',
+  'mdfind',
+  'mdls',
+  'meroxa',
+  'meta',
+  'mgnl',
+  'micro',
+  'migrate',
+  'mikro-orm',
+  'minectl',
+  'minikube',
+  'mix',
+  'mkdir',
+  'mkdocs',
+  'mkfifo',
+  'mknod',
+  'mob',
+  'molecule',
+  'mongocli',
+  'mongoimport',
+  'mongosh',
+  'more',
+  'mosh',
+  'mount',
+  'msbuild',
+  'multipass',
+  'mv',
+  'mvn',
+  'mypy',
+  'mysql'
+];
+const List<String> v2SpecNamesFirstChar_n = [
+  'n',
+  'nano',
+  'nativescript',
+  'nc',
+  'ncal',
+  'ncu',
+  'neofetch',
+  'nest',
+  'netlify',
+  'newman',
+  'next',
+  'nextflow',
+  'ng',
+  'nginx',
+  'ngrok',
+  'nhost',
+  'ni',
+  'nl',
+  'nmap',
+  'nocorrect',
+  'node',
+  'noglob',
+  'northflank',
+  'np',
+  'npm',
+  'npx',
+  'nr',
+  'nrm',
+  'ns',
+  'nu',
+  'nuxi',
+  'nuxt',
+  'nvim',
+  'nvm',
+  'nylas'
+];
+const List<String> v2SpecNamesFirstChar_o = [
+  'oci',
+  'od',
+  'oh-my-posh',
+  'okta',
+  'ollama',
+  'omz',
+  'onboardbase',
+  'op',
+  'opa',
+  'open',
+  'osascript'
+];
+const List<String> v2SpecNamesFirstChar_p = [
+  'pac',
+  'pack',
+  'pageres',
+  'palera1n',
+  'paper',
+  'pass',
+  'passwd',
+  'paste',
+  'path',
+  'pathchk',
+  'pdfunite',
+  'pg_dump',
+  'pgcli',
+  'php',
+  'phpunit',
+  'phpunit-watcher',
+  'pijul',
+  'ping',
+  'pip',
+  'pip3',
+  'pipenv',
+  'pkg-config',
+  'pkgutil',
+  'pkill',
+  'planter',
+  'playwright',
+  'please',
+  'plutil',
+  'pm2',
+  'pmset',
+  'pnpm',
+  'pnpx',
+  'pocketbase',
+  'pod',
+  'podman',
+  'poetry',
+  'premake',
+  'preset',
+  'prettier',
+  'prisma',
+  'pro',
+  'progressline',
+  'pry',
+  'ps',
+  'psql',
+  'publish',
+  'pushd',
+  'pwd',
+  'pyenv',
+  'pytest'
+];
 const List<String> v2SpecNamesFirstChar_q = ['qodana', 'quasar', 'quickmail'];
-const List<String> v2SpecNamesFirstChar_r = ['Rscript', 'railway', 'rake', 'rbenv', 'readlink', 'remix', 'remotion', 'repeat', 'restore', 'rg', 'rm', 'rmdir', 'robot', 'rojo', 'rollup', 'rome', 'rsync', 'ruby', 'ruff', 'rushx', 'rustc', 'rvm'];
-const List<String> v2SpecNamesFirstChar_s = ['sake', 'sam', 'sanity', 'sapphire', 'scc', 'scp', 'screen', 'sed', 'seq', 'sequelize', 'serve', 'serverless', 'sfdx', 'sftp', 'sha1sum', 'shasum', 'shelve', 'shortcuts', 'shred', 'sidekiq', 'simctl', 'sips', 'sl', 'sls', 'softwareupdate', 'sort', 'source', 'space', 'speedtest', 'speedtest-cli', 'splash-cli', 'split', 'spotify', 'spring', 'sqlfluff', 'sqlite3', 'sqlmesh', 'src', 'ssh', 'ssh-keygen', 'st2', 'sta', 'stack', 'starkli', 'start-storybook', 'stat', 'steadybit', 'stencil', 'store', 'stow', 'streamlit', 'stripe', 'su', 'subl', 'sudo', 'suitecloud', 'supabase', 'surreal', 'svn', 'svokit', 'sw_vers', 'swagger-typescript-api', 'swc', 'swift', 'symfony', 'sysctl'];
-const List<String> v2SpecNamesFirstChar_t = ['tac', 'tail', 'tailcall', 'tailwindcss', 'tangram', 'taplo', 'tar', 'task', 'taskwarrior', 'tb', 'tccutil', 'tee', 'tfenv', 'then', 'time', 'tkn', 'tldr', 'tmutil', 'tmux', 'tmuxinator', 'tns', 'tokei', 'top', 'touch', 'tr', 'traceroute', 'trap', 'trash', 'tree', 'trex', 'truffle', 'truncate', 'trunk', 'ts-node', 'tsc', 'tsx', 'tuist', 'turbo', 'twiggy', 'typeorm', 'typos', 'typst'];
-const List<String> v2SpecNamesFirstChar_u = ['ua', 'ubuntu-advantage', 'uname', 'uniq', 'unix2dos', 'unset', 'until', 'unzip', 'uv'];
-const List<String> v2SpecNamesFirstChar_v = ['v', 'vale', 'vapor', 'vault', 'vela', 'vercel', 'vi', 'vim', 'vimr', 'visudo', 'vite', 'volta', 'vr', 'vtex', 'vue'];
-const List<String> v2SpecNamesFirstChar_w = ['w', 'wasm-bindgen', 'wasm-pack', 'watchman', 'wc', 'wd', 'webpack', 'wezterm', 'wget', 'whence', 'where', 'whereis', 'which', 'while', 'who', 'whois', 'wifi-password', 'wing', 'wp', 'wrangler', 'wrk', 'wscat'];
-const List<String> v2SpecNamesFirstChar_x = ['xargs', 'xc', 'xcode-select', 'xcodebuild', 'xcodeproj', 'xcodes', 'xcrun', 'xdg-mime', 'xdg-open', 'xed', 'xxd'];
-const List<String> v2SpecNamesFirstChar_y = ['yalc', 'yank', 'yarn', 'ykman', 'yo', 'yomo', 'youtube-dl'];
-const List<String> v2SpecNamesFirstChar_z = ['z', 'zapier-platform-cli', 'zed', 'zig', 'zip', 'zipcloak', 'zoxide'];
+const List<String> v2SpecNamesFirstChar_r = [
+  'Rscript',
+  'railway',
+  'rake',
+  'rbenv',
+  'readlink',
+  'remix',
+  'remotion',
+  'repeat',
+  'restore',
+  'rg',
+  'rm',
+  'rmdir',
+  'robot',
+  'rojo',
+  'rollup',
+  'rome',
+  'rsync',
+  'ruby',
+  'ruff',
+  'rushx',
+  'rustc',
+  'rvm'
+];
+const List<String> v2SpecNamesFirstChar_s = [
+  'sake',
+  'sam',
+  'sanity',
+  'sapphire',
+  'scc',
+  'scp',
+  'screen',
+  'sdc',
+  'sed',
+  'seq',
+  'sequelize',
+  'serve',
+  'serverless',
+  'sfdx',
+  'sftp',
+  'sha1sum',
+  'shasum',
+  'shelve',
+  'shopify',
+  'shortcuts',
+  'shred',
+  'sidekiq',
+  'simctl',
+  'sips',
+  'sl',
+  'sls',
+  'softwareupdate',
+  'sort',
+  'source',
+  'space',
+  'speedtest',
+  'speedtest-cli',
+  'splash-cli',
+  'split',
+  'spotify',
+  'spring',
+  'sqlfluff',
+  'sqlite3',
+  'sqlmesh',
+  'src',
+  'ssh',
+  'ssh-keygen',
+  'st2',
+  'sta',
+  'stack',
+  'starkli',
+  'start-storybook',
+  'stat',
+  'steadybit',
+  'stencil',
+  'store',
+  'stow',
+  'streamlit',
+  'stripe',
+  'su',
+  'subl',
+  'sudo',
+  'suitecloud',
+  'supabase',
+  'surreal',
+  'svn',
+  'svokit',
+  'sw_vers',
+  'swagger-typescript-api',
+  'swc',
+  'swift',
+  'symfony',
+  'sysctl'
+];
+const List<String> v2SpecNamesFirstChar_t = [
+  'tac',
+  'tail',
+  'tailcall',
+  'tailwindcss',
+  'tangram',
+  'taplo',
+  'tar',
+  'task',
+  'taskwarrior',
+  'tb',
+  'tccutil',
+  'tee',
+  'tfenv',
+  'then',
+  'time',
+  'tkn',
+  'tldr',
+  'tmutil',
+  'tmux',
+  'tmuxinator',
+  'tns',
+  'tokei',
+  'top',
+  'touch',
+  'tr',
+  'traceroute',
+  'trap',
+  'trash',
+  'tree',
+  'trex',
+  'trigger_example',
+  'truffle',
+  'truncate',
+  'trunk',
+  'ts-node',
+  'tsc',
+  'tsx',
+  'tuist',
+  'turbo',
+  'twiggy',
+  'typeorm',
+  'typos',
+  'typst'
+];
+const List<String> v2SpecNamesFirstChar_u = [
+  'ua',
+  'ubuntu-advantage',
+  'uname',
+  'uniq',
+  'unix2dos',
+  'unset',
+  'until',
+  'unzip',
+  'uv'
+];
+const List<String> v2SpecNamesFirstChar_v = [
+  'v',
+  'vale',
+  'vapor',
+  'vault',
+  'vela',
+  'vercel',
+  'vi',
+  'vim',
+  'vimr',
+  'visudo',
+  'vite',
+  'volta',
+  'vr',
+  'vtex',
+  'vue'
+];
+const List<String> v2SpecNamesFirstChar_w = [
+  'w',
+  'wasm-bindgen',
+  'wasm-pack',
+  'watchman',
+  'wc',
+  'wd',
+  'webpack',
+  'wezterm',
+  'wget',
+  'whence',
+  'where',
+  'whereis',
+  'which',
+  'while',
+  'who',
+  'whois',
+  'wifi-password',
+  'wing',
+  'wp',
+  'wrangler',
+  'wrk',
+  'wscat'
+];
+const List<String> v2SpecNamesFirstChar_x = [
+  'xargs',
+  'xc',
+  'xcode-select',
+  'xcodebuild',
+  'xcodeproj',
+  'xcodes',
+  'xcrun',
+  'xdg-mime',
+  'xdg-open',
+  'xed',
+  'xxd'
+];
+const List<String> v2SpecNamesFirstChar_y = [
+  'yalc',
+  'yank',
+  'yarn',
+  'ykman',
+  'yo',
+  'yomo',
+  'youtube-dl'
+];
+const List<String> v2SpecNamesFirstChar_z = [
+  'z',
+  'zapier-platform-cli',
+  'zed',
+  'zig',
+  'zip',
+  'zipcloak',
+  'zoxide'
+];
 
 /// Returns the list of v2 command names whose first character (ignoring case) equals [firstChar].
 List<String> getV2SpecNamesForFirstChar(String firstChar) {
   if (firstChar.isEmpty) return const [];
-  final c = firstChar.length == 1 ? firstChar.toLowerCase() : firstChar[0].toLowerCase();
+  final c = firstChar.length == 1
+      ? firstChar.toLowerCase()
+      : firstChar[0].toLowerCase();
   switch (c) {
-    case '-': return v2SpecNamesFirstChar_minus;
-    case '@': return v2SpecNamesFirstChar_at;
-    case 'a': return v2SpecNamesFirstChar_a;
-    case 'b': return v2SpecNamesFirstChar_b;
-    case 'c': return v2SpecNamesFirstChar_c;
-    case 'd': return v2SpecNamesFirstChar_d;
-    case 'e': return v2SpecNamesFirstChar_e;
-    case 'f': return v2SpecNamesFirstChar_f;
-    case 'g': return v2SpecNamesFirstChar_g;
-    case 'h': return v2SpecNamesFirstChar_h;
-    case 'i': return v2SpecNamesFirstChar_i;
-    case 'j': return v2SpecNamesFirstChar_j;
-    case 'k': return v2SpecNamesFirstChar_k;
-    case 'l': return v2SpecNamesFirstChar_l;
-    case 'm': return v2SpecNamesFirstChar_m;
-    case 'n': return v2SpecNamesFirstChar_n;
-    case 'o': return v2SpecNamesFirstChar_o;
-    case 'p': return v2SpecNamesFirstChar_p;
-    case 'q': return v2SpecNamesFirstChar_q;
-    case 'r': return v2SpecNamesFirstChar_r;
-    case 's': return v2SpecNamesFirstChar_s;
-    case 't': return v2SpecNamesFirstChar_t;
-    case 'u': return v2SpecNamesFirstChar_u;
-    case 'v': return v2SpecNamesFirstChar_v;
-    case 'w': return v2SpecNamesFirstChar_w;
-    case 'x': return v2SpecNamesFirstChar_x;
-    case 'y': return v2SpecNamesFirstChar_y;
-    case 'z': return v2SpecNamesFirstChar_z;
-    default: return const [];
+    case '-':
+      return v2SpecNamesFirstChar_minus;
+    case '@':
+      return v2SpecNamesFirstChar_at;
+    case 'a':
+      return v2SpecNamesFirstChar_a;
+    case 'b':
+      return v2SpecNamesFirstChar_b;
+    case 'c':
+      return v2SpecNamesFirstChar_c;
+    case 'd':
+      return v2SpecNamesFirstChar_d;
+    case 'e':
+      return v2SpecNamesFirstChar_e;
+    case 'f':
+      return v2SpecNamesFirstChar_f;
+    case 'g':
+      return v2SpecNamesFirstChar_g;
+    case 'h':
+      return v2SpecNamesFirstChar_h;
+    case 'i':
+      return v2SpecNamesFirstChar_i;
+    case 'j':
+      return v2SpecNamesFirstChar_j;
+    case 'k':
+      return v2SpecNamesFirstChar_k;
+    case 'l':
+      return v2SpecNamesFirstChar_l;
+    case 'm':
+      return v2SpecNamesFirstChar_m;
+    case 'n':
+      return v2SpecNamesFirstChar_n;
+    case 'o':
+      return v2SpecNamesFirstChar_o;
+    case 'p':
+      return v2SpecNamesFirstChar_p;
+    case 'q':
+      return v2SpecNamesFirstChar_q;
+    case 'r':
+      return v2SpecNamesFirstChar_r;
+    case 's':
+      return v2SpecNamesFirstChar_s;
+    case 't':
+      return v2SpecNamesFirstChar_t;
+    case 'u':
+      return v2SpecNamesFirstChar_u;
+    case 'v':
+      return v2SpecNamesFirstChar_v;
+    case 'w':
+      return v2SpecNamesFirstChar_w;
+    case 'x':
+      return v2SpecNamesFirstChar_x;
+    case 'y':
+      return v2SpecNamesFirstChar_y;
+    case 'z':
+      return v2SpecNamesFirstChar_z;
+    default:
+      return const [];
   }
 }
 
@@ -717,11 +1504,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case '@commercelayer/cli':
       await spec_commercelayer.loadLibrary();
-      registerSpec(spec_commercelayer.commercelayerCliSpec.name, () => spec_commercelayer.commercelayerCliSpec);
+      registerSpec(spec_commercelayer.commercelayerCliSpec.name,
+          () => spec_commercelayer.commercelayerCliSpec);
       break;
     case '@fig/publish-spec':
       await spec_fig_publish_spec.loadLibrary();
-      registerSpec(spec_fig_publish_spec.figPublishSpecSpec.name, () => spec_fig_publish_spec.figPublishSpecSpec);
+      registerSpec(spec_fig_publish_spec.figPublishSpecSpec.name,
+          () => spec_fig_publish_spec.figPublishSpecSpec);
       break;
     case '@forge/cli':
       await spec_forge.loadLibrary();
@@ -729,15 +1518,19 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case '@withfig/autocomplete-tools':
       await spec_withfig_autocomplete_tools.loadLibrary();
-      registerSpec(spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec.name, () => spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec);
+      registerSpec(
+          spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec.name,
+          () => spec_withfig_autocomplete_tools.withfigAutocompleteToolsSpec);
       break;
     case '@wordpress/create-block':
       await spec_wordpress_create_block.loadLibrary();
-      registerSpec(spec_wordpress_create_block.wordpressCreateBlockSpec.name, () => spec_wordpress_create_block.wordpressCreateBlockSpec);
+      registerSpec(spec_wordpress_create_block.wordpressCreateBlockSpec.name,
+          () => spec_wordpress_create_block.wordpressCreateBlockSpec);
       break;
     case 'Rscript':
       await spec_rscript.loadLibrary();
-      registerSpec(spec_rscript.RscriptSpec.name, () => spec_rscript.RscriptSpec);
+      registerSpec(
+          spec_rscript.RscriptSpec.name, () => spec_rscript.RscriptSpec);
       break;
     case 'act':
       await spec_act.loadLibrary();
@@ -765,15 +1558,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'agrippa':
       await spec_agrippa.loadLibrary();
-      registerSpec(spec_agrippa.agrippaSpec.name, () => spec_agrippa.agrippaSpec);
+      registerSpec(
+          spec_agrippa.agrippaSpec.name, () => spec_agrippa.agrippaSpec);
       break;
     case 'airflow':
       await spec_airflow.loadLibrary();
-      registerSpec(spec_airflow.airflowSpec.name, () => spec_airflow.airflowSpec);
+      registerSpec(
+          spec_airflow.airflowSpec.name, () => spec_airflow.airflowSpec);
       break;
     case 'aliases':
       await spec_aliases.loadLibrary();
-      registerSpec(spec_aliases.aliasesSpec.name, () => spec_aliases.aliasesSpec);
+      registerSpec(
+          spec_aliases.aliasesSpec.name, () => spec_aliases.aliasesSpec);
       break;
     case 'ampx':
       await spec_ampx.loadLibrary();
@@ -781,23 +1577,28 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ansible':
       await spec_ansible.loadLibrary();
-      registerSpec(spec_ansible.ansibleSpec.name, () => spec_ansible.ansibleSpec);
+      registerSpec(
+          spec_ansible.ansibleSpec.name, () => spec_ansible.ansibleSpec);
       break;
     case 'ansible-config':
       await spec_ansible_config.loadLibrary();
-      registerSpec(spec_ansible_config.ansibleConfigSpec.name, () => spec_ansible_config.ansibleConfigSpec);
+      registerSpec(spec_ansible_config.ansibleConfigSpec.name,
+          () => spec_ansible_config.ansibleConfigSpec);
       break;
     case 'ansible-galaxy':
       await spec_ansible_galaxy.loadLibrary();
-      registerSpec(spec_ansible_galaxy.ansibleGalaxySpec.name, () => spec_ansible_galaxy.ansibleGalaxySpec);
+      registerSpec(spec_ansible_galaxy.ansibleGalaxySpec.name,
+          () => spec_ansible_galaxy.ansibleGalaxySpec);
       break;
     case 'ansible-lint':
       await spec_ansible_lint.loadLibrary();
-      registerSpec(spec_ansible_lint.ansibleLintSpec.name, () => spec_ansible_lint.ansibleLintSpec);
+      registerSpec(spec_ansible_lint.ansibleLintSpec.name,
+          () => spec_ansible_lint.ansibleLintSpec);
       break;
     case 'ansible-playbook':
       await spec_ansible_playbook.loadLibrary();
-      registerSpec(spec_ansible_playbook.ansiblePlaybookSpec.name, () => spec_ansible_playbook.ansiblePlaybookSpec);
+      registerSpec(spec_ansible_playbook.ansiblePlaybookSpec.name,
+          () => spec_ansible_playbook.ansiblePlaybookSpec);
       break;
     case 'apt':
       await spec_apt.loadLibrary();
@@ -811,13 +1612,19 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_argo.loadLibrary();
       registerSpec(spec_argo.argoSpec.name, () => spec_argo.argoSpec);
       break;
+    case 'artisan':
+      await spec_php_artisan.loadLibrary();
+      registerSpec(spec_php_artisan.completionSpec.name,
+          () => spec_php_artisan.completionSpec);
+      break;
     case 'asar':
       await spec_asar.loadLibrary();
       registerSpec(spec_asar.asarSpec.name, () => spec_asar.asarSpec);
       break;
     case 'asciinema':
       await spec_asciinema.loadLibrary();
-      registerSpec(spec_asciinema.asciinemaSpec.name, () => spec_asciinema.asciinemaSpec);
+      registerSpec(spec_asciinema.asciinemaSpec.name,
+          () => spec_asciinema.asciinemaSpec);
       break;
     case 'asr':
       await spec_asr.loadLibrary();
@@ -833,15 +1640,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'authchanger':
       await spec_authchanger.loadLibrary();
-      registerSpec(spec_authchanger.authchangerSpec.name, () => spec_authchanger.authchangerSpec);
+      registerSpec(spec_authchanger.authchangerSpec.name,
+          () => spec_authchanger.authchangerSpec);
       break;
     case 'autocannon':
       await spec_autocannon.loadLibrary();
-      registerSpec(spec_autocannon.autocannonSpec.name, () => spec_autocannon.autocannonSpec);
+      registerSpec(spec_autocannon.autocannonSpec.name,
+          () => spec_autocannon.autocannonSpec);
       break;
     case 'autojump':
       await spec_autojump.loadLibrary();
-      registerSpec(spec_autojump.autojumpSpec.name, () => spec_autojump.autojumpSpec);
+      registerSpec(
+          spec_autojump.autojumpSpec.name, () => spec_autojump.autojumpSpec);
       break;
     case 'aws':
       await spec_aws.loadLibrary();
@@ -849,7 +1659,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'aws-vault':
       await spec_aws_vault.loadLibrary();
-      registerSpec(spec_aws_vault.awsVaultSpec.name, () => spec_aws_vault.awsVaultSpec);
+      registerSpec(
+          spec_aws_vault.awsVaultSpec.name, () => spec_aws_vault.awsVaultSpec);
       break;
     case 'awsume':
       await spec_awsume.loadLibrary();
@@ -869,7 +1680,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'barnard59':
       await spec_barnard59.loadLibrary();
-      registerSpec(spec_barnard59.barnard59Spec.name, () => spec_barnard59.barnard59Spec);
+      registerSpec(spec_barnard59.barnard59Spec.name,
+          () => spec_barnard59.barnard59Spec);
       break;
     case 'base32':
       await spec_base32.loadLibrary();
@@ -881,7 +1693,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'basename':
       await spec_basename.loadLibrary();
-      registerSpec(spec_basename.basenameSpec.name, () => spec_basename.basenameSpec);
+      registerSpec(
+          spec_basename.basenameSpec.name, () => spec_basename.basenameSpec);
       break;
     case 'basenc':
       await spec_basenc.loadLibrary();
@@ -902,6 +1715,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'bcd':
       await spec_bcd.loadLibrary();
       registerSpec(spec_bcd.bcdSpec.name, () => spec_bcd.bcdSpec);
+      break;
+    case 'bin-console':
+      await spec_php_bin_console.loadLibrary();
+      registerSpec(spec_php_bin_console.completionSpec.name,
+          () => spec_php_bin_console.completionSpec);
       break;
     case 'bit':
       await spec_bit.loadLibrary();
@@ -925,7 +1743,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'browser-sync':
       await spec_browser_sync.loadLibrary();
-      registerSpec(spec_browser_sync.browserSyncSpec.name, () => spec_browser_sync.browserSyncSpec);
+      registerSpec(spec_browser_sync.browserSyncSpec.name,
+          () => spec_browser_sync.browserSyncSpec);
       break;
     case 'btop':
       await spec_btop.loadLibrary();
@@ -933,15 +1752,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'build':
       await spec_dotnet_dotnet_build.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_build.buildSpec.name, () => spec_dotnet_dotnet_build.buildSpec);
+      registerSpec(spec_dotnet_dotnet_build.buildSpec.name,
+          () => spec_dotnet_dotnet_build.buildSpec);
       break;
     case 'build-server':
       await spec_dotnet_dotnet_build_server.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_build_server.buildServerSpec.name, () => spec_dotnet_dotnet_build_server.buildServerSpec);
+      registerSpec(spec_dotnet_dotnet_build_server.buildServerSpec.name,
+          () => spec_dotnet_dotnet_build_server.buildServerSpec);
       break;
     case 'build-storybook':
       await spec_build_storybook.loadLibrary();
-      registerSpec(spec_build_storybook.buildStorybookSpec.name, () => spec_build_storybook.buildStorybookSpec);
+      registerSpec(spec_build_storybook.buildStorybookSpec.name,
+          () => spec_build_storybook.buildStorybookSpec);
       break;
     case 'bun':
       await spec_bun.loadLibrary();
@@ -973,7 +1795,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'caffeinate':
       await spec_caffeinate.loadLibrary();
-      registerSpec(spec_caffeinate.caffeinateSpec.name, () => spec_caffeinate.caffeinateSpec);
+      registerSpec(spec_caffeinate.caffeinateSpec.name,
+          () => spec_caffeinate.caffeinateSpec);
       break;
     case 'cal':
       await spec_cal.loadLibrary();
@@ -985,7 +1808,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'capacitor':
       await spec_capacitor.loadLibrary();
-      registerSpec(spec_capacitor.capacitorSpec.name, () => spec_capacitor.capacitorSpec);
+      registerSpec(spec_capacitor.capacitorSpec.name,
+          () => spec_capacitor.capacitorSpec);
       break;
     case 'cargo':
       await spec_cargo.loadLibrary();
@@ -1033,7 +1857,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'circleci':
       await spec_circleci.loadLibrary();
-      registerSpec(spec_circleci.circleciSpec.name, () => spec_circleci.circleciSpec);
+      registerSpec(
+          spec_circleci.circleciSpec.name, () => spec_circleci.circleciSpec);
       break;
     case 'cl':
       await spec_cl.loadLibrary();
@@ -1045,11 +1870,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'clang++':
       await spec_clang__.loadLibrary();
-      registerSpec(spec_clang__.clangppSpec.name, () => spec_clang__.clangppSpec);
+      registerSpec(
+          spec_clang__.clangppSpec.name, () => spec_clang__.clangppSpec);
       break;
     case 'clean':
       await spec_dotnet_dotnet_clean.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_clean.cleanSpec.name, () => spec_dotnet_dotnet_clean.cleanSpec);
+      registerSpec(spec_dotnet_dotnet_clean.cleanSpec.name,
+          () => spec_dotnet_dotnet_clean.cleanSpec);
       break;
     case 'clear':
       await spec_clear.loadLibrary();
@@ -1061,7 +1888,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'cliff-jumper':
       await spec_cliff_jumper.loadLibrary();
-      registerSpec(spec_cliff_jumper.cliffJumperSpec.name, () => spec_cliff_jumper.cliffJumperSpec);
+      registerSpec(spec_cliff_jumper.cliffJumperSpec.name,
+          () => spec_cliff_jumper.cliffJumperSpec);
       break;
     case 'clilol':
       await spec_clilol.loadLibrary();
@@ -1069,11 +1897,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'clojure':
       await spec_clojure.loadLibrary();
-      registerSpec(spec_clojure.clojureSpec.name, () => spec_clojure.clojureSpec);
+      registerSpec(
+          spec_clojure.clojureSpec.name, () => spec_clojure.clojureSpec);
       break;
     case 'cloudflared':
       await spec_cloudflared.loadLibrary();
-      registerSpec(spec_cloudflared.cloudflaredSpec.name, () => spec_cloudflared.cloudflaredSpec);
+      registerSpec(spec_cloudflared.cloudflaredSpec.name,
+          () => spec_cloudflared.cloudflaredSpec);
       break;
     case 'cmake':
       await spec_cmake.loadLibrary();
@@ -1089,19 +1919,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'code-insiders':
       await spec_code_insiders.loadLibrary();
-      registerSpec(spec_code_insiders.codeInsidersSpec.name, () => spec_code_insiders.codeInsidersSpec);
+      registerSpec(spec_code_insiders.codeInsidersSpec.name,
+          () => spec_code_insiders.codeInsidersSpec);
       break;
     case 'codesign':
       await spec_codesign.loadLibrary();
-      registerSpec(spec_codesign.codesignSpec.name, () => spec_codesign.codesignSpec);
+      registerSpec(
+          spec_codesign.codesignSpec.name, () => spec_codesign.codesignSpec);
       break;
     case 'command':
       await spec_command.loadLibrary();
-      registerSpec(spec_command.commandSpec.name, () => spec_command.commandSpec);
+      registerSpec(
+          spec_command.commandSpec.name, () => spec_command.commandSpec);
       break;
     case 'composer':
       await spec_composer.loadLibrary();
-      registerSpec(spec_composer.composerSpec.name, () => spec_composer.composerSpec);
+      registerSpec(
+          spec_composer.composerSpec.name, () => spec_composer.composerSpec);
       break;
     case 'conda':
       await spec_conda.loadLibrary();
@@ -1109,15 +1943,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'copilot':
       await spec_copilot.loadLibrary();
-      registerSpec(spec_copilot.copilotSpec.name, () => spec_copilot.copilotSpec);
+      registerSpec(
+          spec_copilot.copilotSpec.name, () => spec_copilot.copilotSpec);
       break;
     case 'copyfile':
       await spec_copyfile.loadLibrary();
-      registerSpec(spec_copyfile.copyfileSpec.name, () => spec_copyfile.copyfileSpec);
+      registerSpec(
+          spec_copyfile.copyfileSpec.name, () => spec_copyfile.copyfileSpec);
       break;
     case 'copypath':
       await spec_copypath.loadLibrary();
-      registerSpec(spec_copypath.copypathSpec.name, () => spec_copypath.copypathSpec);
+      registerSpec(
+          spec_copypath.copypathSpec.name, () => spec_copypath.copypathSpec);
       break;
     case 'cosign':
       await spec_cosign.loadLibrary();
@@ -1133,43 +1970,53 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'create-completion-spec':
       await spec_create_completion_spec.loadLibrary();
-      registerSpec(spec_create_completion_spec.createCompletionSpecSpec.name, () => spec_create_completion_spec.createCompletionSpecSpec);
+      registerSpec(spec_create_completion_spec.createCompletionSpecSpec.name,
+          () => spec_create_completion_spec.createCompletionSpecSpec);
       break;
     case 'create-next-app':
       await spec_create_next_app.loadLibrary();
-      registerSpec(spec_create_next_app.createNextAppSpec.name, () => spec_create_next_app.createNextAppSpec);
+      registerSpec(spec_create_next_app.createNextAppSpec.name,
+          () => spec_create_next_app.createNextAppSpec);
       break;
     case 'create-nx-workspace':
       await spec_create_nx_workspace.loadLibrary();
-      registerSpec(spec_create_nx_workspace.createNxWorkspaceSpec.name, () => spec_create_nx_workspace.createNxWorkspaceSpec);
+      registerSpec(spec_create_nx_workspace.createNxWorkspaceSpec.name,
+          () => spec_create_nx_workspace.createNxWorkspaceSpec);
       break;
     case 'create-react-app':
       await spec_create_react_app.loadLibrary();
-      registerSpec(spec_create_react_app.createReactAppSpec.name, () => spec_create_react_app.createReactAppSpec);
+      registerSpec(spec_create_react_app.createReactAppSpec.name,
+          () => spec_create_react_app.createReactAppSpec);
       break;
     case 'create-react-native-app':
       await spec_create_react_native_app.loadLibrary();
-      registerSpec(spec_create_react_native_app.createReactNativeAppSpec.name, () => spec_create_react_native_app.createReactNativeAppSpec);
+      registerSpec(spec_create_react_native_app.createReactNativeAppSpec.name,
+          () => spec_create_react_native_app.createReactNativeAppSpec);
       break;
     case 'create-redwood-app':
       await spec_create_redwood_app.loadLibrary();
-      registerSpec(spec_create_redwood_app.createRedwoodAppSpec.name, () => spec_create_redwood_app.createRedwoodAppSpec);
+      registerSpec(spec_create_redwood_app.createRedwoodAppSpec.name,
+          () => spec_create_redwood_app.createRedwoodAppSpec);
       break;
     case 'create-remix':
       await spec_create_remix.loadLibrary();
-      registerSpec(spec_create_remix.createRemixSpec.name, () => spec_create_remix.createRemixSpec);
+      registerSpec(spec_create_remix.createRemixSpec.name,
+          () => spec_create_remix.createRemixSpec);
       break;
     case 'create-t3-app':
       await spec_create_t3_app.loadLibrary();
-      registerSpec(spec_create_t3_app.createT3AppSpec.name, () => spec_create_t3_app.createT3AppSpec);
+      registerSpec(spec_create_t3_app.createT3AppSpec.name,
+          () => spec_create_t3_app.createT3AppSpec);
       break;
     case 'create-video':
       await spec_create_video.loadLibrary();
-      registerSpec(spec_create_video.createVideoSpec.name, () => spec_create_video.createVideoSpec);
+      registerSpec(spec_create_video.createVideoSpec.name,
+          () => spec_create_video.createVideoSpec);
       break;
     case 'create-web3-frontend':
       await spec_create_web3_frontend.loadLibrary();
-      registerSpec(spec_create_web3_frontend.createWeb3FrontendSpec.name, () => spec_create_web3_frontend.createWeb3FrontendSpec);
+      registerSpec(spec_create_web3_frontend.createWeb3FrontendSpec.name,
+          () => spec_create_web3_frontend.createWeb3FrontendSpec);
       break;
     case 'croc':
       await spec_croc.loadLibrary();
@@ -1177,7 +2024,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'crontab':
       await spec_crontab.loadLibrary();
-      registerSpec(spec_crontab.crontabSpec.name, () => spec_crontab.crontabSpec);
+      registerSpec(
+          spec_crontab.crontabSpec.name, () => spec_crontab.crontabSpec);
       break;
     case 'csdx':
       await spec_csdx.loadLibrary();
@@ -1205,7 +2053,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dateseq':
       await spec_dateseq.loadLibrary();
-      registerSpec(spec_dateseq.dateseqSpec.name, () => spec_dateseq.dateseqSpec);
+      registerSpec(
+          spec_dateseq.dateseqSpec.name, () => spec_dateseq.dateseqSpec);
       break;
     case 'datree':
       await spec_datree.loadLibrary();
@@ -1225,7 +2074,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ddosify':
       await spec_ddosify.loadLibrary();
-      registerSpec(spec_ddosify.ddosifySpec.name, () => spec_ddosify.ddosifySpec);
+      registerSpec(
+          spec_ddosify.ddosifySpec.name, () => spec_ddosify.ddosifySpec);
       break;
     case 'deno':
       await spec_deno.loadLibrary();
@@ -1233,7 +2083,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'deployctl':
       await spec_deployctl.loadLibrary();
-      registerSpec(spec_deployctl.deployctlSpec.name, () => spec_deployctl.deployctlSpec);
+      registerSpec(spec_deployctl.deployctlSpec.name,
+          () => spec_deployctl.deployctlSpec);
       break;
     case 'deta':
       await spec_deta.loadLibrary();
@@ -1257,7 +2108,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dirname':
       await spec_dirname.loadLibrary();
-      registerSpec(spec_dirname.dirnameSpec.name, () => spec_dirname.dirnameSpec);
+      registerSpec(
+          spec_dirname.dirnameSpec.name, () => spec_dirname.dirnameSpec);
       break;
     case 'ditto':
       await spec_ditto.loadLibrary();
@@ -1269,7 +2121,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'do-release-upgrade':
       await spec_do_release_upgrade.loadLibrary();
-      registerSpec(spec_do_release_upgrade.doReleaseUpgradeSpec.name, () => spec_do_release_upgrade.doReleaseUpgradeSpec);
+      registerSpec(spec_do_release_upgrade.doReleaseUpgradeSpec.name,
+          () => spec_do_release_upgrade.doReleaseUpgradeSpec);
       break;
     case 'docker':
       await spec_docker.loadLibrary();
@@ -1277,7 +2130,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'docker-compose':
       await spec_docker_compose.loadLibrary();
-      registerSpec(spec_docker_compose.dockerComposeSpec.name, () => spec_docker_compose.dockerComposeSpec);
+      registerSpec(spec_docker_compose.dockerComposeSpec.name,
+          () => spec_docker_compose.dockerComposeSpec);
       break;
     case 'doctl':
       await spec_doctl.loadLibrary();
@@ -1293,7 +2147,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dos2unix':
       await spec_dos2unix.loadLibrary();
-      registerSpec(spec_dos2unix.dos2unixSpec.name, () => spec_dos2unix.dos2unixSpec);
+      registerSpec(
+          spec_dos2unix.dos2unixSpec.name, () => spec_dos2unix.dos2unixSpec);
       break;
     case 'dotenv':
       await spec_dotenv.loadLibrary();
@@ -1301,11 +2156,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'dotenv-vault':
       await spec_dotenv_vault.loadLibrary();
-      registerSpec(spec_dotenv_vault.dotenvVaultSpec.name, () => spec_dotenv_vault.dotenvVaultSpec);
+      registerSpec(spec_dotenv_vault.dotenvVaultSpec.name,
+          () => spec_dotenv_vault.dotenvVaultSpec);
       break;
     case 'dotslash':
       await spec_dotslash.loadLibrary();
-      registerSpec(spec_dotslash.dotslashSpec.name, () => spec_dotslash.dotslashSpec);
+      registerSpec(
+          spec_dotslash.dotslashSpec.name, () => spec_dotslash.dotslashSpec);
       break;
     case 'dpkg':
       await spec_dpkg.loadLibrary();
@@ -1337,15 +2194,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'electron':
       await spec_electron.loadLibrary();
-      registerSpec(spec_electron.electronSpec.name, () => spec_electron.electronSpec);
+      registerSpec(
+          spec_electron.electronSpec.name, () => spec_electron.electronSpec);
       break;
     case 'eleventy':
       await spec_eleventy.loadLibrary();
-      registerSpec(spec_eleventy.eleventySpec.name, () => spec_eleventy.eleventySpec);
+      registerSpec(
+          spec_eleventy.eleventySpec.name, () => spec_eleventy.eleventySpec);
       break;
     case 'elif':
       await spec_elif.loadLibrary();
       registerSpec(spec_elif.elifSpec.name, () => spec_elif.elifSpec);
+      break;
+    case 'elixir':
+      await spec_elixir.loadLibrary();
+      registerSpec(spec_elixir.elixirSpec.name, () => spec_elixir.elixirSpec);
       break;
     case 'elm':
       await spec_elm.loadLibrary();
@@ -1353,11 +2216,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'elm-format':
       await spec_elm_format.loadLibrary();
-      registerSpec(spec_elm_format.elmFormatSpec.name, () => spec_elm_format.elmFormatSpec);
+      registerSpec(spec_elm_format.elmFormatSpec.name,
+          () => spec_elm_format.elmFormatSpec);
       break;
     case 'elm-review':
       await spec_elm_review.loadLibrary();
-      registerSpec(spec_elm_review.elmReviewSpec.name, () => spec_elm_review.elmReviewSpec);
+      registerSpec(spec_elm_review.elmReviewSpec.name,
+          () => spec_elm_review.elmReviewSpec);
       break;
     case 'else':
       await spec_else.loadLibrary();
@@ -1369,7 +2234,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'enapter':
       await spec_enapter.loadLibrary();
-      registerSpec(spec_enapter.enapterSpec.name, () => spec_enapter.enapterSpec);
+      registerSpec(
+          spec_enapter.enapterSpec.name, () => spec_enapter.enapterSpec);
       break;
     case 'encore':
       await spec_encore.loadLibrary();
@@ -1381,11 +2247,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'envchain':
       await spec_envchain.loadLibrary();
-      registerSpec(spec_envchain.envchainSpec.name, () => spec_envchain.envchainSpec);
+      registerSpec(
+          spec_envchain.envchainSpec.name, () => spec_envchain.envchainSpec);
       break;
     case 'esbuild':
       await spec_esbuild.loadLibrary();
-      registerSpec(spec_esbuild.esbuildSpec.name, () => spec_esbuild.esbuildSpec);
+      registerSpec(
+          spec_esbuild.esbuildSpec.name, () => spec_esbuild.esbuildSpec);
       break;
     case 'eslint':
       await spec_eslint.loadLibrary();
@@ -1401,7 +2269,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'exercism':
       await spec_exercism.loadLibrary();
-      registerSpec(spec_exercism.exercismSpec.name, () => spec_exercism.exercismSpec);
+      registerSpec(
+          spec_exercism.exercismSpec.name, () => spec_exercism.exercismSpec);
       break;
     case 'export':
       await spec_export.loadLibrary();
@@ -1413,7 +2282,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'fastlane':
       await spec_fastlane.loadLibrary();
-      registerSpec(spec_fastlane.fastlaneSpec.name, () => spec_fastlane.fastlaneSpec);
+      registerSpec(
+          spec_fastlane.fastlaneSpec.name, () => spec_fastlane.fastlaneSpec);
       break;
     case 'fastly':
       await spec_fastly.loadLibrary();
@@ -1431,9 +2301,15 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_ffmpeg.loadLibrary();
       registerSpec(spec_ffmpeg.ffmpegSpec.name, () => spec_ffmpeg.ffmpegSpec);
       break;
+    case 'fig':
+      await spec_fig_fig.loadLibrary();
+      registerSpec(
+          spec_fig_fig.completionSpec.name, () => spec_fig_fig.completionSpec);
+      break;
     case 'figterm':
       await spec_figterm.loadLibrary();
-      registerSpec(spec_figterm.figtermSpec.name, () => spec_figterm.figtermSpec);
+      registerSpec(
+          spec_figterm.figtermSpec.name, () => spec_figterm.figtermSpec);
       break;
     case 'file':
       await spec_file.loadLibrary();
@@ -1449,15 +2325,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'firebase':
       await spec_firebase.loadLibrary();
-      registerSpec(spec_firebase.firebaseSpec.name, () => spec_firebase.firebaseSpec);
+      registerSpec(
+          spec_firebase.firebaseSpec.name, () => spec_firebase.firebaseSpec);
       break;
     case 'firefox':
       await spec_firefox.loadLibrary();
-      registerSpec(spec_firefox.firefoxSpec.name, () => spec_firefox.firefoxSpec);
+      registerSpec(
+          spec_firefox.firefoxSpec.name, () => spec_firefox.firefoxSpec);
       break;
     case 'flutter':
       await spec_flutter.loadLibrary();
-      registerSpec(spec_flutter.flutterSpec.name, () => spec_flutter.flutterSpec);
+      registerSpec(
+          spec_flutter.flutterSpec.name, () => spec_flutter.flutterSpec);
       break;
     case 'fmt':
       await spec_fmt.loadLibrary();
@@ -1477,7 +2356,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'format':
       await spec_dotnet_dotnet_format.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_format.formatSpec.name, () => spec_dotnet_dotnet_format.formatSpec);
+      registerSpec(spec_dotnet_dotnet_format.formatSpec.name,
+          () => spec_dotnet_dotnet_format.formatSpec);
       break;
     case 'fvm':
       await spec_fvm.loadLibrary();
@@ -1489,7 +2369,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'fzf-tmux':
       await spec_fzf_tmux.loadLibrary();
-      registerSpec(spec_fzf_tmux.fzfTmuxSpec.name, () => spec_fzf_tmux.fzfTmuxSpec);
+      registerSpec(
+          spec_fzf_tmux.fzfTmuxSpec.name, () => spec_fzf_tmux.fzfTmuxSpec);
       break;
     case 'g++':
       await spec_g__.loadLibrary();
@@ -1497,7 +2378,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ganache-cli':
       await spec_ganache_cli.loadLibrary();
-      registerSpec(spec_ganache_cli.ganacheCliSpec.name, () => spec_ganache_cli.ganacheCliSpec);
+      registerSpec(spec_ganache_cli.ganacheCliSpec.name,
+          () => spec_ganache_cli.ganacheCliSpec);
       break;
     case 'gatsby':
       await spec_gatsby.loadLibrary();
@@ -1525,7 +2407,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'git-quick-stats':
       await spec_git_quick_stats.loadLibrary();
-      registerSpec(spec_git_quick_stats.gitQuickStatsSpec.name, () => spec_git_quick_stats.gitQuickStatsSpec);
+      registerSpec(spec_git_quick_stats.gitQuickStatsSpec.name,
+          () => spec_git_quick_stats.gitQuickStatsSpec);
       break;
     case 'github':
       await spec_github.loadLibrary();
@@ -1537,7 +2420,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'gltfjsx':
       await spec_gltfjsx.loadLibrary();
-      registerSpec(spec_gltfjsx.gltfjsxSpec.name, () => spec_gltfjsx.gltfjsxSpec);
+      registerSpec(
+          spec_gltfjsx.gltfjsxSpec.name, () => spec_gltfjsx.gltfjsxSpec);
       break;
     case 'go':
       await spec_go.loadLibrary();
@@ -1545,7 +2429,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'go-task':
       await spec_task_go_task.loadLibrary();
-      registerSpec(spec_task_go_task.goTaskSpec.name, () => spec_task_go_task.goTaskSpec);
+      registerSpec(spec_task_go_task.completionSpec.name,
+          () => spec_task_go_task.completionSpec);
+      await spec_task_go_task_1.loadLibrary();
+      registerSpec(spec_task_go_task_1.goTaskSpec.name,
+          () => spec_task_go_task_1.goTaskSpec);
       break;
     case 'goctl':
       await spec_goctl.loadLibrary();
@@ -1553,11 +2441,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'googler':
       await spec_googler.loadLibrary();
-      registerSpec(spec_googler.googlerSpec.name, () => spec_googler.googlerSpec);
+      registerSpec(
+          spec_googler.googlerSpec.name, () => spec_googler.googlerSpec);
       break;
     case 'goreleaser':
       await spec_goreleaser.loadLibrary();
-      registerSpec(spec_goreleaser.goreleaserSpec.name, () => spec_goreleaser.goreleaserSpec);
+      registerSpec(spec_goreleaser.goreleaserSpec.name,
+          () => spec_goreleaser.goreleaserSpec);
       break;
     case 'goto':
       await spec_goto.loadLibrary();
@@ -1569,7 +2459,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'graphcdn':
       await spec_graphcdn.loadLibrary();
-      registerSpec(spec_graphcdn.graphcdnSpec.name, () => spec_graphcdn.graphcdnSpec);
+      registerSpec(
+          spec_graphcdn.graphcdnSpec.name, () => spec_graphcdn.graphcdnSpec);
       break;
     case 'grep':
       await spec_grep.loadLibrary();
@@ -1589,7 +2480,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hardhat':
       await spec_hardhat.loadLibrary();
-      registerSpec(spec_hardhat.hardhatSpec.name, () => spec_hardhat.hardhatSpec);
+      registerSpec(
+          spec_hardhat.hardhatSpec.name, () => spec_hardhat.hardhatSpec);
       break;
     case 'hasura':
       await spec_hasura.loadLibrary();
@@ -1597,7 +2489,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hb-service':
       await spec_hb_service.loadLibrary();
-      registerSpec(spec_hb_service.hbServiceSpec.name, () => spec_hb_service.hbServiceSpec);
+      registerSpec(spec_hb_service.hbServiceSpec.name,
+          () => spec_hb_service.hbServiceSpec);
       break;
     case 'head':
       await spec_head.loadLibrary();
@@ -1609,11 +2502,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'helmfile':
       await spec_helmfile.loadLibrary();
-      registerSpec(spec_helmfile.helmfileSpec.name, () => spec_helmfile.helmfileSpec);
+      registerSpec(
+          spec_helmfile.helmfileSpec.name, () => spec_helmfile.helmfileSpec);
       break;
     case 'help':
       await spec_dotnet_dotnet_help.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_help.helpSpec.name, () => spec_dotnet_dotnet_help.helpSpec);
+      registerSpec(spec_dotnet_dotnet_help.helpSpec.name,
+          () => spec_dotnet_dotnet_help.helpSpec);
       break;
     case 'herd':
       await spec_herd.loadLibrary();
@@ -1621,9 +2516,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'heroku':
       await spec_heroku_8_0_0.loadLibrary();
-      registerSpec(spec_heroku_8_0_0.herokuSpec.name, () => spec_heroku_8_0_0.herokuSpec);
+      registerSpec(spec_heroku_8_0_0.herokuSpec.name,
+          () => spec_heroku_8_0_0.herokuSpec);
       await spec_heroku_8_6_0.loadLibrary();
-      registerSpec(spec_heroku_8_6_0.herokuSpec.name, () => spec_heroku_8_6_0.herokuSpec);
+      registerSpec(spec_heroku_8_6_0.herokuSpec.name,
+          () => spec_heroku_8_6_0.herokuSpec);
+      await spec_heroku_index.loadLibrary();
+      registerSpec(spec_heroku_index.completionSpec.name,
+          () => spec_heroku_index.completionSpec);
       break;
     case 'hexo':
       await spec_hexo.loadLibrary();
@@ -1639,7 +2539,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hostname':
       await spec_hostname.loadLibrary();
-      registerSpec(spec_hostname.hostnameSpec.name, () => spec_hostname.hostnameSpec);
+      registerSpec(
+          spec_hostname.hostnameSpec.name, () => spec_hostname.hostnameSpec);
       break;
     case 'htop':
       await spec_htop.loadLibrary();
@@ -1651,7 +2552,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'http.server':
       await spec_python_http_server.loadLibrary();
-      registerSpec(spec_python_http_server.httpServerSpec.name, () => spec_python_http_server.httpServerSpec);
+      registerSpec(spec_python_http_server.httpServerSpec.name,
+          () => spec_python_http_server.httpServerSpec);
       break;
     case 'httpy':
       await spec_httpy.loadLibrary();
@@ -1675,7 +2577,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'hyperfine':
       await spec_hyperfine.loadLibrary();
-      registerSpec(spec_hyperfine.hyperfineSpec.name, () => spec_hyperfine.hyperfineSpec);
+      registerSpec(spec_hyperfine.hyperfineSpec.name,
+          () => spec_hyperfine.hyperfineSpec);
       break;
     case 'iconv':
       await spec_iconv.loadLibrary();
@@ -1698,14 +2601,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_appwrite.indexSpec.name, () => spec_appwrite.indexSpec);
       break;
     case 'infracost':
-      await spec_infracost_0_10_0.loadLibrary();
-      registerSpec(spec_infracost_0_10_0.infracostSpec.name, () => spec_infracost_0_10_0.infracostSpec);
-      await spec_infracost_0_9_0.loadLibrary();
-      registerSpec(spec_infracost_0_9_0.infracostSpec.name, () => spec_infracost_0_9_0.infracostSpec);
+      await spec_infracost_index.loadLibrary();
+      registerSpec(spec_infracost_index.completionSpec.name,
+          () => spec_infracost_index.completionSpec);
       break;
     case 'install':
       await spec_install.loadLibrary();
-      registerSpec(spec_install.installSpec.name, () => spec_install.installSpec);
+      registerSpec(
+          spec_install.installSpec.name, () => spec_install.installSpec);
       break;
     case 'j':
       await spec_j.loadLibrary();
@@ -1741,7 +2644,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'jupyter':
       await spec_jupyter.loadLibrary();
-      registerSpec(spec_jupyter.jupyterSpec.name, () => spec_jupyter.jupyterSpec);
+      registerSpec(
+          spec_jupyter.jupyterSpec.name, () => spec_jupyter.jupyterSpec);
       break;
     case 'k3d':
       await spec_k3d.loadLibrary();
@@ -1757,15 +2661,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'kafkactl':
       await spec_kafkactl.loadLibrary();
-      registerSpec(spec_kafkactl.kafkactlSpec.name, () => spec_kafkactl.kafkactlSpec);
+      registerSpec(
+          spec_kafkactl.kafkactlSpec.name, () => spec_kafkactl.kafkactlSpec);
       break;
     case 'kdoctor':
       await spec_kdoctor.loadLibrary();
-      registerSpec(spec_kdoctor.kdoctorSpec.name, () => spec_kdoctor.kdoctorSpec);
+      registerSpec(
+          spec_kdoctor.kdoctorSpec.name, () => spec_kdoctor.kdoctorSpec);
       break;
     case 'keytool':
       await spec_keytool.loadLibrary();
-      registerSpec(spec_keytool.keytoolSpec.name, () => spec_keytool.keytoolSpec);
+      registerSpec(
+          spec_keytool.keytoolSpec.name, () => spec_keytool.keytoolSpec);
       break;
     case 'kill':
       await spec_kill.loadLibrary();
@@ -1773,7 +2680,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'killall':
       await spec_killall.loadLibrary();
-      registerSpec(spec_killall.killallSpec.name, () => spec_killall.killallSpec);
+      registerSpec(
+          spec_killall.killallSpec.name, () => spec_killall.killallSpec);
       break;
     case 'kind':
       await spec_kind.loadLibrary();
@@ -1793,19 +2701,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'kotlinc':
       await spec_kotlinc.loadLibrary();
-      registerSpec(spec_kotlinc.kotlincSpec.name, () => spec_kotlinc.kotlincSpec);
+      registerSpec(
+          spec_kotlinc.kotlincSpec.name, () => spec_kotlinc.kotlincSpec);
       break;
     case 'kubecolor':
       await spec_kubecolor.loadLibrary();
-      registerSpec(spec_kubecolor.kubecolorSpec.name, () => spec_kubecolor.kubecolorSpec);
+      registerSpec(spec_kubecolor.kubecolorSpec.name,
+          () => spec_kubecolor.kubecolorSpec);
       break;
     case 'kubectl':
       await spec_kubectl.loadLibrary();
-      registerSpec(spec_kubectl.kubectlSpec.name, () => spec_kubectl.kubectlSpec);
+      registerSpec(
+          spec_kubectl.kubectlSpec.name, () => spec_kubectl.kubectlSpec);
       break;
     case 'kubectx':
       await spec_kubectx.loadLibrary();
-      registerSpec(spec_kubectx.kubectxSpec.name, () => spec_kubectx.kubectxSpec);
+      registerSpec(
+          spec_kubectx.kubectxSpec.name, () => spec_kubectx.kubectxSpec);
       break;
     case 'kubens':
       await spec_kubens.loadLibrary();
@@ -1813,11 +2725,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'laravel':
       await spec_laravel.loadLibrary();
-      registerSpec(spec_laravel.laravelSpec.name, () => spec_laravel.laravelSpec);
+      registerSpec(
+          spec_laravel.laravelSpec.name, () => spec_laravel.laravelSpec);
       break;
     case 'launchctl':
       await spec_launchctl.loadLibrary();
-      registerSpec(spec_launchctl.launchctlSpec.name, () => spec_launchctl.launchctlSpec);
+      registerSpec(spec_launchctl.launchctlSpec.name,
+          () => spec_launchctl.launchctlSpec);
       break;
     case 'ldd':
       await spec_ldd.loadLibrary();
@@ -1837,7 +2751,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'list':
       await spec_dotnet_dotnet_list.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_list.listSpec.name, () => spec_dotnet_dotnet_list.listSpec);
+      registerSpec(spec_dotnet_dotnet_list.listSpec.name,
+          () => spec_dotnet_dotnet_list.listSpec);
       break;
     case 'ln':
       await spec_ln.loadLibrary();
@@ -1867,6 +2782,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_lsd.loadLibrary();
       registerSpec(spec_lsd.lsdSpec.name, () => spec_lsd.lsdSpec);
       break;
+    case 'lsof':
+      await spec_lsof.loadLibrary();
+      registerSpec(
+          spec_lsof.completionSpec.name, () => spec_lsof.completionSpec);
+      break;
     case 'luz':
       await spec_luz.loadLibrary();
       registerSpec(spec_luz.luzSpec.name, () => spec_luz.luzSpec);
@@ -1883,9 +2803,15 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_mackup.loadLibrary();
       registerSpec(spec_mackup.mackupSpec.name, () => spec_mackup.mackupSpec);
       break;
+    case 'magento':
+      await spec_magento.loadLibrary();
+      registerSpec(
+          spec_magento.completionSpec.name, () => spec_magento.completionSpec);
+      break;
     case 'maigret':
       await spec_maigret.loadLibrary();
-      registerSpec(spec_maigret.maigretSpec.name, () => spec_maigret.maigretSpec);
+      registerSpec(
+          spec_maigret.maigretSpec.name, () => spec_maigret.maigretSpec);
       break;
     case 'mailsy':
       await spec_mailsy.loadLibrary();
@@ -1893,11 +2819,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'main':
       await spec_shell_config.loadLibrary();
-      registerSpec(spec_shell_config.mainSpec.name, () => spec_shell_config.mainSpec);
+      registerSpec(
+          spec_shell_config.mainSpec.name, () => spec_shell_config.mainSpec);
       break;
     case 'make':
       await spec_make.loadLibrary();
       registerSpec(spec_make.makeSpec.name, () => spec_make.makeSpec);
+      break;
+    case 'man':
+      await spec_man.loadLibrary();
+      registerSpec(spec_man.completionSpec.name, () => spec_man.completionSpec);
       break;
     case 'mas':
       await spec_mas.loadLibrary();
@@ -1923,25 +2854,33 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_meta.loadLibrary();
       registerSpec(spec_meta.metaSpec.name, () => spec_meta.metaSpec);
       break;
+    case 'mgnl':
+      await spec_mgnl.loadLibrary();
+      registerSpec(spec_mgnl.mgnlSpec.name, () => spec_mgnl.mgnlSpec);
+      break;
     case 'micro':
       await spec_micro.loadLibrary();
       registerSpec(spec_micro.microSpec.name, () => spec_micro.microSpec);
       break;
     case 'migrate':
       await spec_dotnet_dotnet_migrate.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_migrate.migrateSpec.name, () => spec_dotnet_dotnet_migrate.migrateSpec);
+      registerSpec(spec_dotnet_dotnet_migrate.migrateSpec.name,
+          () => spec_dotnet_dotnet_migrate.migrateSpec);
       break;
     case 'mikro-orm':
       await spec_mikro_orm.loadLibrary();
-      registerSpec(spec_mikro_orm.mikroOrmSpec.name, () => spec_mikro_orm.mikroOrmSpec);
+      registerSpec(
+          spec_mikro_orm.mikroOrmSpec.name, () => spec_mikro_orm.mikroOrmSpec);
       break;
     case 'minectl':
       await spec_minectl.loadLibrary();
-      registerSpec(spec_minectl.minectlSpec.name, () => spec_minectl.minectlSpec);
+      registerSpec(
+          spec_minectl.minectlSpec.name, () => spec_minectl.minectlSpec);
       break;
     case 'minikube':
       await spec_minikube.loadLibrary();
-      registerSpec(spec_minikube.minikubeSpec.name, () => spec_minikube.minikubeSpec);
+      registerSpec(
+          spec_minikube.minikubeSpec.name, () => spec_minikube.minikubeSpec);
       break;
     case 'mix':
       await spec_mix.loadLibrary();
@@ -1969,19 +2908,23 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'molecule':
       await spec_molecule.loadLibrary();
-      registerSpec(spec_molecule.moleculeSpec.name, () => spec_molecule.moleculeSpec);
+      registerSpec(
+          spec_molecule.moleculeSpec.name, () => spec_molecule.moleculeSpec);
       break;
     case 'mongocli':
       await spec_mongocli.loadLibrary();
-      registerSpec(spec_mongocli.mongocliSpec.name, () => spec_mongocli.mongocliSpec);
+      registerSpec(
+          spec_mongocli.mongocliSpec.name, () => spec_mongocli.mongocliSpec);
       break;
     case 'mongoimport':
       await spec_mongoimport.loadLibrary();
-      registerSpec(spec_mongoimport.mongoimportSpec.name, () => spec_mongoimport.mongoimportSpec);
+      registerSpec(spec_mongoimport.mongoimportSpec.name,
+          () => spec_mongoimport.mongoimportSpec);
       break;
     case 'mongosh':
       await spec_mongosh.loadLibrary();
-      registerSpec(spec_mongosh.mongoshSpec.name, () => spec_mongosh.mongoshSpec);
+      registerSpec(
+          spec_mongosh.mongoshSpec.name, () => spec_mongosh.mongoshSpec);
       break;
     case 'more':
       await spec_more.loadLibrary();
@@ -1997,11 +2940,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'msbuild':
       await spec_dotnet_dotnet_msbuild.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_msbuild.msbuildSpec.name, () => spec_dotnet_dotnet_msbuild.msbuildSpec);
+      registerSpec(spec_dotnet_dotnet_msbuild.msbuildSpec.name,
+          () => spec_dotnet_dotnet_msbuild.msbuildSpec);
       break;
     case 'multipass':
       await spec_multipass.loadLibrary();
-      registerSpec(spec_multipass.multipassSpec.name, () => spec_multipass.multipassSpec);
+      registerSpec(spec_multipass.multipassSpec.name,
+          () => spec_multipass.multipassSpec);
       break;
     case 'mv':
       await spec_mv.loadLibrary();
@@ -2029,7 +2974,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nativescript':
       await spec_nativescript.loadLibrary();
-      registerSpec(spec_nativescript.nativescriptSpec.name, () => spec_nativescript.nativescriptSpec);
+      registerSpec(spec_nativescript.nativescriptSpec.name,
+          () => spec_nativescript.nativescriptSpec);
       break;
     case 'nc':
       await spec_nc.loadLibrary();
@@ -2045,7 +2991,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'neofetch':
       await spec_neofetch.loadLibrary();
-      registerSpec(spec_neofetch.neofetchSpec.name, () => spec_neofetch.neofetchSpec);
+      registerSpec(
+          spec_neofetch.neofetchSpec.name, () => spec_neofetch.neofetchSpec);
       break;
     case 'nest':
       await spec_nest.loadLibrary();
@@ -2053,7 +3000,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'netlify':
       await spec_netlify.loadLibrary();
-      registerSpec(spec_netlify.netlifySpec.name, () => spec_netlify.netlifySpec);
+      registerSpec(
+          spec_netlify.netlifySpec.name, () => spec_netlify.netlifySpec);
       break;
     case 'newman':
       await spec_newman.loadLibrary();
@@ -2065,7 +3013,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nextflow':
       await spec_nextflow.loadLibrary();
-      registerSpec(spec_nextflow.nextflowSpec.name, () => spec_nextflow.nextflowSpec);
+      registerSpec(
+          spec_nextflow.nextflowSpec.name, () => spec_nextflow.nextflowSpec);
       break;
     case 'ng':
       await spec_ng.loadLibrary();
@@ -2097,7 +3046,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'nocorrect':
       await spec_nocorrect.loadLibrary();
-      registerSpec(spec_nocorrect.nocorrectSpec.name, () => spec_nocorrect.nocorrectSpec);
+      registerSpec(spec_nocorrect.nocorrectSpec.name,
+          () => spec_nocorrect.nocorrectSpec);
       break;
     case 'node':
       await spec_node.loadLibrary();
@@ -2109,7 +3059,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'northflank':
       await spec_northflank.loadLibrary();
-      registerSpec(spec_northflank.northflankSpec.name, () => spec_northflank.northflankSpec);
+      registerSpec(spec_northflank.northflankSpec.name,
+          () => spec_northflank.northflankSpec);
       break;
     case 'np':
       await spec_np.loadLibrary();
@@ -2169,7 +3120,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'oh-my-posh':
       await spec_oh_my_posh.loadLibrary();
-      registerSpec(spec_oh_my_posh.ohMyPoshSpec.name, () => spec_oh_my_posh.ohMyPoshSpec);
+      registerSpec(spec_oh_my_posh.ohMyPoshSpec.name,
+          () => spec_oh_my_posh.ohMyPoshSpec);
       break;
     case 'okta':
       await spec_okta.loadLibrary();
@@ -2185,7 +3137,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'onboardbase':
       await spec_onboardbase.loadLibrary();
-      registerSpec(spec_onboardbase.onboardbaseSpec.name, () => spec_onboardbase.onboardbaseSpec);
+      registerSpec(spec_onboardbase.onboardbaseSpec.name,
+          () => spec_onboardbase.onboardbaseSpec);
       break;
     case 'op':
       await spec_op.loadLibrary();
@@ -2201,7 +3154,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'osascript':
       await spec_osascript.loadLibrary();
-      registerSpec(spec_osascript.osascriptSpec.name, () => spec_osascript.osascriptSpec);
+      registerSpec(spec_osascript.osascriptSpec.name,
+          () => spec_osascript.osascriptSpec);
       break;
     case 'pac':
       await spec_pac.loadLibrary();
@@ -2209,15 +3163,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pack':
       await spec_dotnet_dotnet_pack.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_pack.packSpec.name, () => spec_dotnet_dotnet_pack.packSpec);
+      registerSpec(spec_dotnet_dotnet_pack.packSpec.name,
+          () => spec_dotnet_dotnet_pack.packSpec);
       break;
     case 'pageres':
       await spec_pageres.loadLibrary();
-      registerSpec(spec_pageres.pageresSpec.name, () => spec_pageres.pageresSpec);
+      registerSpec(
+          spec_pageres.pageresSpec.name, () => spec_pageres.pageresSpec);
       break;
     case 'palera1n':
       await spec_palera1n.loadLibrary();
-      registerSpec(spec_palera1n.palera1nSpec.name, () => spec_palera1n.palera1nSpec);
+      registerSpec(
+          spec_palera1n.palera1nSpec.name, () => spec_palera1n.palera1nSpec);
       break;
     case 'paper':
       await spec_paper.loadLibrary();
@@ -2241,15 +3198,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pathchk':
       await spec_pathchk.loadLibrary();
-      registerSpec(spec_pathchk.pathchkSpec.name, () => spec_pathchk.pathchkSpec);
+      registerSpec(
+          spec_pathchk.pathchkSpec.name, () => spec_pathchk.pathchkSpec);
       break;
     case 'pdfunite':
       await spec_pdfunite.loadLibrary();
-      registerSpec(spec_pdfunite.pdfuniteSpec.name, () => spec_pdfunite.pdfuniteSpec);
+      registerSpec(
+          spec_pdfunite.pdfuniteSpec.name, () => spec_pdfunite.pdfuniteSpec);
       break;
     case 'pg_dump':
       await spec_pg_dump.loadLibrary();
-      registerSpec(spec_pg_dump.pg_dumpSpec.name, () => spec_pg_dump.pg_dumpSpec);
+      registerSpec(
+          spec_pg_dump.pg_dumpSpec.name, () => spec_pg_dump.pg_dumpSpec);
       break;
     case 'pgcli':
       await spec_pgcli.loadLibrary();
@@ -2261,11 +3221,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'phpunit':
       await spec_phpunit.loadLibrary();
-      registerSpec(spec_phpunit.phpunitSpec.name, () => spec_phpunit.phpunitSpec);
+      registerSpec(
+          spec_phpunit.phpunitSpec.name, () => spec_phpunit.phpunitSpec);
       break;
     case 'phpunit-watcher':
       await spec_phpunit_watcher.loadLibrary();
-      registerSpec(spec_phpunit_watcher.phpunitWatcherSpec.name, () => spec_phpunit_watcher.phpunitWatcherSpec);
+      registerSpec(spec_phpunit_watcher.phpunitWatcherSpec.name,
+          () => spec_phpunit_watcher.phpunitWatcherSpec);
       break;
     case 'pijul':
       await spec_pijul.loadLibrary();
@@ -2289,11 +3251,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pkg-config':
       await spec_pkg_config.loadLibrary();
-      registerSpec(spec_pkg_config.pkgConfigSpec.name, () => spec_pkg_config.pkgConfigSpec);
+      registerSpec(spec_pkg_config.pkgConfigSpec.name,
+          () => spec_pkg_config.pkgConfigSpec);
       break;
     case 'pkgutil':
       await spec_pkgutil.loadLibrary();
-      registerSpec(spec_pkgutil.pkgutilSpec.name, () => spec_pkgutil.pkgutilSpec);
+      registerSpec(
+          spec_pkgutil.pkgutilSpec.name, () => spec_pkgutil.pkgutilSpec);
       break;
     case 'pkill':
       await spec_pkill.loadLibrary();
@@ -2301,11 +3265,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'planter':
       await spec_planter.loadLibrary();
-      registerSpec(spec_planter.planterSpec.name, () => spec_planter.planterSpec);
+      registerSpec(
+          spec_planter.planterSpec.name, () => spec_planter.planterSpec);
       break;
     case 'playwright':
       await spec_playwright.loadLibrary();
-      registerSpec(spec_playwright.playwrightSpec.name, () => spec_playwright.playwrightSpec);
+      registerSpec(spec_playwright.playwrightSpec.name,
+          () => spec_playwright.playwrightSpec);
+      break;
+    case 'please':
+      await spec_php_please.loadLibrary();
+      registerSpec(spec_php_please.completionSpec.name,
+          () => spec_php_please.completionSpec);
       break;
     case 'plutil':
       await spec_plutil.loadLibrary();
@@ -2329,7 +3300,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'pocketbase':
       await spec_pocketbase.loadLibrary();
-      registerSpec(spec_pocketbase.pocketbaseSpec.name, () => spec_pocketbase.pocketbaseSpec);
+      registerSpec(spec_pocketbase.pocketbaseSpec.name,
+          () => spec_pocketbase.pocketbaseSpec);
       break;
     case 'pod':
       await spec_pod.loadLibrary();
@@ -2345,15 +3317,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'premake':
       await spec_premake.loadLibrary();
-      registerSpec(spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
+      registerSpec(
+          spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
       break;
     case 'preset':
       await spec_preset_cli.loadLibrary();
-      registerSpec(spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
+      registerSpec(
+          spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
       break;
     case 'prettier':
       await spec_prettier.loadLibrary();
-      registerSpec(spec_prettier.prettierSpec.name, () => spec_prettier.prettierSpec);
+      registerSpec(
+          spec_prettier.prettierSpec.name, () => spec_prettier.prettierSpec);
       break;
     case 'prisma':
       await spec_prisma.loadLibrary();
@@ -2365,7 +3340,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'progressline':
       await spec_progressline.loadLibrary();
-      registerSpec(spec_progressline.progresslineSpec.name, () => spec_progressline.progresslineSpec);
+      registerSpec(spec_progressline.progresslineSpec.name,
+          () => spec_progressline.progresslineSpec);
       break;
     case 'pry':
       await spec_pry.loadLibrary();
@@ -2381,9 +3357,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'publish':
       await spec_dotnet_dotnet_publish.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_publish.publishSpec.name, () => spec_dotnet_dotnet_publish.publishSpec);
+      registerSpec(spec_dotnet_dotnet_publish.publishSpec.name,
+          () => spec_dotnet_dotnet_publish.publishSpec);
       await spec_publish.loadLibrary();
-      registerSpec(spec_publish.publishSpec.name, () => spec_publish.publishSpec);
+      registerSpec(
+          spec_publish.publishSpec.name, () => spec_publish.publishSpec);
       break;
     case 'pushd':
       await spec_pushd.loadLibrary();
@@ -2411,11 +3389,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'quickmail':
       await spec_quickmail.loadLibrary();
-      registerSpec(spec_quickmail.quickmailSpec.name, () => spec_quickmail.quickmailSpec);
+      registerSpec(spec_quickmail.quickmailSpec.name,
+          () => spec_quickmail.quickmailSpec);
       break;
     case 'railway':
       await spec_railway.loadLibrary();
-      registerSpec(spec_railway.railwaySpec.name, () => spec_railway.railwaySpec);
+      registerSpec(
+          spec_railway.railwaySpec.name, () => spec_railway.railwaySpec);
       break;
     case 'rake':
       await spec_rake.loadLibrary();
@@ -2427,7 +3407,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'readlink':
       await spec_readlink.loadLibrary();
-      registerSpec(spec_readlink.readlinkSpec.name, () => spec_readlink.readlinkSpec);
+      registerSpec(
+          spec_readlink.readlinkSpec.name, () => spec_readlink.readlinkSpec);
       break;
     case 'remix':
       await spec_remix.loadLibrary();
@@ -2435,7 +3416,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'remotion':
       await spec_remotion.loadLibrary();
-      registerSpec(spec_remotion.remotionSpec.name, () => spec_remotion.remotionSpec);
+      registerSpec(
+          spec_remotion.remotionSpec.name, () => spec_remotion.remotionSpec);
       break;
     case 'repeat':
       await spec_repeat.loadLibrary();
@@ -2443,7 +3425,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'restore':
       await spec_dotnet_dotnet_restore.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_restore.restoreSpec.name, () => spec_dotnet_dotnet_restore.restoreSpec);
+      registerSpec(spec_dotnet_dotnet_restore.restoreSpec.name,
+          () => spec_dotnet_dotnet_restore.restoreSpec);
       break;
     case 'rg':
       await spec_rg.loadLibrary();
@@ -2459,7 +3442,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'robot':
       await spec_robot.loadLibrary();
-      registerSpec(spec_robot.completionSpec.name, () => spec_robot.completionSpec);
+      registerSpec(
+          spec_robot.completionSpec.name, () => spec_robot.completionSpec);
       break;
     case 'rojo':
       await spec_rojo.loadLibrary();
@@ -2511,7 +3495,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sapphire':
       await spec_sapphire.loadLibrary();
-      registerSpec(spec_sapphire.sapphireSpec.name, () => spec_sapphire.sapphireSpec);
+      registerSpec(
+          spec_sapphire.sapphireSpec.name, () => spec_sapphire.sapphireSpec);
       break;
     case 'scc':
       await spec_scc.loadLibrary();
@@ -2525,6 +3510,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_screen.loadLibrary();
       registerSpec(spec_screen.screenSpec.name, () => spec_screen.screenSpec);
       break;
+    case 'sdc':
+      await spec_usermn_sdc_0_0_0.loadLibrary();
+      registerSpec(spec_usermn_sdc_0_0_0.usermnSds0Spec.name,
+          () => spec_usermn_sdc_0_0_0.usermnSds0Spec);
+      await spec_usermn_sdc_sdc.loadLibrary();
+      registerSpec(spec_usermn_sdc_sdc.usermnSdcSpec.name,
+          () => spec_usermn_sdc_sdc.usermnSdcSpec);
+      break;
     case 'sed':
       await spec_sed.loadLibrary();
       registerSpec(spec_sed.sedSpec.name, () => spec_sed.sedSpec);
@@ -2535,7 +3528,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sequelize':
       await spec_sequelize.loadLibrary();
-      registerSpec(spec_sequelize.sequelizeSpec.name, () => spec_sequelize.sequelizeSpec);
+      registerSpec(spec_sequelize.sequelizeSpec.name,
+          () => spec_sequelize.sequelizeSpec);
       break;
     case 'serve':
       await spec_serve.loadLibrary();
@@ -2543,7 +3537,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'serverless':
       await spec_serverless.loadLibrary();
-      registerSpec(spec_serverless.serverlessSpec.name, () => spec_serverless.serverlessSpec);
+      registerSpec(spec_serverless.serverlessSpec.name,
+          () => spec_serverless.serverlessSpec);
       break;
     case 'sfdx':
       await spec_sfdx.loadLibrary();
@@ -2555,7 +3550,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sha1sum':
       await spec_sha1sum.loadLibrary();
-      registerSpec(spec_sha1sum.sha1sumSpec.name, () => spec_sha1sum.sha1sumSpec);
+      registerSpec(
+          spec_sha1sum.sha1sumSpec.name, () => spec_sha1sum.sha1sumSpec);
       break;
     case 'shasum':
       await spec_shasum.loadLibrary();
@@ -2565,9 +3561,21 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_shelve.loadLibrary();
       registerSpec(spec_shelve.shelveSpec.name, () => spec_shelve.shelveSpec);
       break;
+    case 'shopify':
+      await spec_shopify_2_0_0.loadLibrary();
+      registerSpec(spec_shopify_2_0_0.shopifySpec.name,
+          () => spec_shopify_2_0_0.shopifySpec);
+      await spec_shopify_3_0_0.loadLibrary();
+      registerSpec(spec_shopify_3_0_0.shopifySpec.name,
+          () => spec_shopify_3_0_0.shopifySpec);
+      await spec_shopify_index.loadLibrary();
+      registerSpec(spec_shopify_index.completionSpec.name,
+          () => spec_shopify_index.completionSpec);
+      break;
     case 'shortcuts':
       await spec_shortcuts.loadLibrary();
-      registerSpec(spec_shortcuts.shortcutsSpec.name, () => spec_shortcuts.shortcutsSpec);
+      registerSpec(spec_shortcuts.shortcutsSpec.name,
+          () => spec_shortcuts.shortcutsSpec);
       break;
     case 'shred':
       await spec_shred.loadLibrary();
@@ -2575,7 +3583,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sidekiq':
       await spec_sidekiq.loadLibrary();
-      registerSpec(spec_sidekiq.sidekiqSpec.name, () => spec_sidekiq.sidekiqSpec);
+      registerSpec(
+          spec_sidekiq.sidekiqSpec.name, () => spec_sidekiq.sidekiqSpec);
       break;
     case 'simctl':
       await spec_simctl.loadLibrary();
@@ -2595,7 +3604,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'softwareupdate':
       await spec_softwareupdate.loadLibrary();
-      registerSpec(spec_softwareupdate.softwareupdateSpec.name, () => spec_softwareupdate.softwareupdateSpec);
+      registerSpec(spec_softwareupdate.softwareupdateSpec.name,
+          () => spec_softwareupdate.softwareupdateSpec);
       break;
     case 'sort':
       await spec_sort.loadLibrary();
@@ -2611,15 +3621,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'speedtest':
       await spec_speedtest.loadLibrary();
-      registerSpec(spec_speedtest.speedtestSpec.name, () => spec_speedtest.speedtestSpec);
+      registerSpec(spec_speedtest.speedtestSpec.name,
+          () => spec_speedtest.speedtestSpec);
       break;
     case 'speedtest-cli':
       await spec_speedtest_cli.loadLibrary();
-      registerSpec(spec_speedtest_cli.speedtestCliSpec.name, () => spec_speedtest_cli.speedtestCliSpec);
+      registerSpec(spec_speedtest_cli.speedtestCliSpec.name,
+          () => spec_speedtest_cli.speedtestCliSpec);
       break;
     case 'splash-cli':
       await spec_splash.loadLibrary();
-      registerSpec(spec_splash.splashCliSpec.name, () => spec_splash.splashCliSpec);
+      registerSpec(
+          spec_splash.splashCliSpec.name, () => spec_splash.splashCliSpec);
       break;
     case 'split':
       await spec_split.loadLibrary();
@@ -2627,7 +3640,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'spotify':
       await spec_spotify.loadLibrary();
-      registerSpec(spec_spotify.spotifySpec.name, () => spec_spotify.spotifySpec);
+      registerSpec(
+          spec_spotify.spotifySpec.name, () => spec_spotify.spotifySpec);
       break;
     case 'spring':
       await spec_spring.loadLibrary();
@@ -2635,15 +3649,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sqlfluff':
       await spec_sqlfluff.loadLibrary();
-      registerSpec(spec_sqlfluff.sqlfluffSpec.name, () => spec_sqlfluff.sqlfluffSpec);
+      registerSpec(
+          spec_sqlfluff.sqlfluffSpec.name, () => spec_sqlfluff.sqlfluffSpec);
       break;
     case 'sqlite3':
       await spec_sqlite3.loadLibrary();
-      registerSpec(spec_sqlite3.sqlite3Spec.name, () => spec_sqlite3.sqlite3Spec);
+      registerSpec(
+          spec_sqlite3.sqlite3Spec.name, () => spec_sqlite3.sqlite3Spec);
       break;
     case 'sqlmesh':
       await spec_sqlmesh.loadLibrary();
-      registerSpec(spec_sqlmesh.sqlmeshSpec.name, () => spec_sqlmesh.sqlmeshSpec);
+      registerSpec(
+          spec_sqlmesh.sqlmeshSpec.name, () => spec_sqlmesh.sqlmeshSpec);
       break;
     case 'src':
       await spec_src.loadLibrary();
@@ -2655,7 +3672,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ssh-keygen':
       await spec_ssh_keygen.loadLibrary();
-      registerSpec(spec_ssh_keygen.sshKeygenSpec.name, () => spec_ssh_keygen.sshKeygenSpec);
+      registerSpec(spec_ssh_keygen.sshKeygenSpec.name,
+          () => spec_ssh_keygen.sshKeygenSpec);
       break;
     case 'st2':
       await spec_st2.loadLibrary();
@@ -2671,11 +3689,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'starkli':
       await spec_starkli.loadLibrary();
-      registerSpec(spec_starkli.starkliSpec.name, () => spec_starkli.starkliSpec);
+      registerSpec(
+          spec_starkli.starkliSpec.name, () => spec_starkli.starkliSpec);
       break;
     case 'start-storybook':
       await spec_start_storybook.loadLibrary();
-      registerSpec(spec_start_storybook.startStorybookSpec.name, () => spec_start_storybook.startStorybookSpec);
+      registerSpec(spec_start_storybook.startStorybookSpec.name,
+          () => spec_start_storybook.startStorybookSpec);
       break;
     case 'stat':
       await spec_stat.loadLibrary();
@@ -2683,15 +3703,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'steadybit':
       await spec_steadybit.loadLibrary();
-      registerSpec(spec_steadybit.steadybitSpec.name, () => spec_steadybit.steadybitSpec);
+      registerSpec(spec_steadybit.steadybitSpec.name,
+          () => spec_steadybit.steadybitSpec);
       break;
     case 'stencil':
       await spec_stencil.loadLibrary();
-      registerSpec(spec_stencil.stencilSpec.name, () => spec_stencil.stencilSpec);
+      registerSpec(
+          spec_stencil.stencilSpec.name, () => spec_stencil.stencilSpec);
       break;
     case 'store':
       await spec_dotnet_dotnet_store.loadLibrary();
-      registerSpec(spec_dotnet_dotnet_store.storeSpec.name, () => spec_dotnet_dotnet_store.storeSpec);
+      registerSpec(spec_dotnet_dotnet_store.storeSpec.name,
+          () => spec_dotnet_dotnet_store.storeSpec);
       break;
     case 'stow':
       await spec_stow.loadLibrary();
@@ -2699,7 +3722,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'streamlit':
       await spec_streamlit.loadLibrary();
-      registerSpec(spec_streamlit.streamlitSpec.name, () => spec_streamlit.streamlitSpec);
+      registerSpec(spec_streamlit.streamlitSpec.name,
+          () => spec_streamlit.streamlitSpec);
       break;
     case 'stripe':
       await spec_stripe.loadLibrary();
@@ -2719,15 +3743,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'suitecloud':
       await spec_suitecloud.loadLibrary();
-      registerSpec(spec_suitecloud.suitecloudSpec.name, () => spec_suitecloud.suitecloudSpec);
+      registerSpec(spec_suitecloud.suitecloudSpec.name,
+          () => spec_suitecloud.suitecloudSpec);
       break;
     case 'supabase':
       await spec_supabase.loadLibrary();
-      registerSpec(spec_supabase.supabaseSpec.name, () => spec_supabase.supabaseSpec);
+      registerSpec(
+          spec_supabase.supabaseSpec.name, () => spec_supabase.supabaseSpec);
       break;
     case 'surreal':
       await spec_surreal.loadLibrary();
-      registerSpec(spec_surreal.surrealSpec.name, () => spec_surreal.surrealSpec);
+      registerSpec(
+          spec_surreal.surrealSpec.name, () => spec_surreal.surrealSpec);
       break;
     case 'svn':
       await spec_svn.loadLibrary();
@@ -2739,13 +3766,16 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'sw_vers':
       await spec_sw_vers.loadLibrary();
-      registerSpec(spec_sw_vers.sw_versSpec.name, () => spec_sw_vers.sw_versSpec);
+      registerSpec(
+          spec_sw_vers.sw_versSpec.name, () => spec_sw_vers.sw_versSpec);
       break;
     case 'swagger-typescript-api':
       await spec_swagger_typescript_api.loadLibrary();
-      registerSpec(spec_swagger_typescript_api.swaggerTypescriptApiSpec.name, () => spec_swagger_typescript_api.swaggerTypescriptApiSpec);
+      registerSpec(spec_swagger_typescript_api.swaggerTypescriptApiSpec.name,
+          () => spec_swagger_typescript_api.swaggerTypescriptApiSpec);
       await spec_swagger_typescript_api_1.loadLibrary();
-      registerSpec(spec_swagger_typescript_api_1.swaggerTypescriptApiSpec.name, () => spec_swagger_typescript_api_1.swaggerTypescriptApiSpec);
+      registerSpec(spec_swagger_typescript_api_1.swaggerTypescriptApiSpec.name,
+          () => spec_swagger_typescript_api_1.swaggerTypescriptApiSpec);
       break;
     case 'swc':
       await spec_swc.loadLibrary();
@@ -2757,7 +3787,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'symfony':
       await spec_symfony.loadLibrary();
-      registerSpec(spec_symfony.symfonySpec.name, () => spec_symfony.symfonySpec);
+      registerSpec(
+          spec_symfony.symfonySpec.name, () => spec_symfony.symfonySpec);
       break;
     case 'sysctl':
       await spec_sysctl.loadLibrary();
@@ -2773,15 +3804,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tailcall':
       await spec_tailcall.loadLibrary();
-      registerSpec(spec_tailcall.tailcallSpec.name, () => spec_tailcall.tailcallSpec);
+      registerSpec(
+          spec_tailcall.tailcallSpec.name, () => spec_tailcall.tailcallSpec);
       break;
     case 'tailwindcss':
       await spec_tailwindcss.loadLibrary();
-      registerSpec(spec_tailwindcss.tailwindcssSpec.name, () => spec_tailwindcss.tailwindcssSpec);
+      registerSpec(spec_tailwindcss.tailwindcssSpec.name,
+          () => spec_tailwindcss.tailwindcssSpec);
       break;
     case 'tangram':
       await spec_tangram.loadLibrary();
-      registerSpec(spec_tangram.tangramSpec.name, () => spec_tangram.tangramSpec);
+      registerSpec(
+          spec_tangram.tangramSpec.name, () => spec_tangram.tangramSpec);
       break;
     case 'taplo':
       await spec_taplo.loadLibrary();
@@ -2797,9 +3831,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'taskwarrior':
       await spec_task_taskwarrior.loadLibrary();
-      registerSpec(spec_task_taskwarrior.taskwarriorSpec.name, () => spec_task_taskwarrior.taskwarriorSpec);
+      registerSpec(spec_task_taskwarrior.taskwarriorSpec.name,
+          () => spec_task_taskwarrior.taskwarriorSpec);
       await spec_task_taskwarrior_1.loadLibrary();
-      registerSpec(spec_task_taskwarrior_1.taskwarriorSpec.name, () => spec_task_taskwarrior_1.taskwarriorSpec);
+      registerSpec(spec_task_taskwarrior_1.taskwarriorSpec.name,
+          () => spec_task_taskwarrior_1.taskwarriorSpec);
       break;
     case 'tb':
       await spec_tb.loadLibrary();
@@ -2807,7 +3843,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tccutil':
       await spec_tccutil.loadLibrary();
-      registerSpec(spec_tccutil.tccutilSpec.name, () => spec_tccutil.tccutilSpec);
+      registerSpec(
+          spec_tccutil.tccutilSpec.name, () => spec_tccutil.tccutilSpec);
       break;
     case 'tee':
       await spec_tee.loadLibrary();
@@ -2843,7 +3880,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'tmuxinator':
       await spec_tmuxinator.loadLibrary();
-      registerSpec(spec_tmuxinator.tmuxinatorSpec.name, () => spec_tmuxinator.tmuxinatorSpec);
+      registerSpec(spec_tmuxinator.tmuxinatorSpec.name,
+          () => spec_tmuxinator.tmuxinatorSpec);
       break;
     case 'tns':
       await spec_tns.loadLibrary();
@@ -2867,7 +3905,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'traceroute':
       await spec_traceroute.loadLibrary();
-      registerSpec(spec_traceroute.tracerouteSpec.name, () => spec_traceroute.tracerouteSpec);
+      registerSpec(spec_traceroute.tracerouteSpec.name,
+          () => spec_traceroute.tracerouteSpec);
       break;
     case 'trap':
       await spec_trap.loadLibrary();
@@ -2887,11 +3926,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'truffle':
       await spec_truffle.loadLibrary();
-      registerSpec(spec_truffle.truffleSpec.name, () => spec_truffle.truffleSpec);
+      registerSpec(
+          spec_truffle.truffleSpec.name, () => spec_truffle.truffleSpec);
       break;
     case 'truncate':
       await spec_truncate.loadLibrary();
-      registerSpec(spec_truncate.truncateSpec.name, () => spec_truncate.truncateSpec);
+      registerSpec(
+          spec_truncate.truncateSpec.name, () => spec_truncate.truncateSpec);
       break;
     case 'trunk':
       await spec_trunk.loadLibrary();
@@ -2923,7 +3964,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'typeorm':
       await spec_typeorm.loadLibrary();
-      registerSpec(spec_typeorm.typeormSpec.name, () => spec_typeorm.typeormSpec);
+      registerSpec(
+          spec_typeorm.typeormSpec.name, () => spec_typeorm.typeormSpec);
       break;
     case 'typos':
       await spec_typos.loadLibrary();
@@ -2939,7 +3981,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'ubuntu-advantage':
       await spec_ubuntu_advantage.loadLibrary();
-      registerSpec(spec_ubuntu_advantage.ubuntuAdvantageSpec.name, () => spec_ubuntu_advantage.ubuntuAdvantageSpec);
+      registerSpec(spec_ubuntu_advantage.ubuntuAdvantageSpec.name,
+          () => spec_ubuntu_advantage.ubuntuAdvantageSpec);
       break;
     case 'uname':
       await spec_uname.loadLibrary();
@@ -2951,7 +3994,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'unix2dos':
       await spec_unix2dos.loadLibrary();
-      registerSpec(spec_unix2dos.unix2dosSpec.name, () => spec_unix2dos.unix2dosSpec);
+      registerSpec(
+          spec_unix2dos.unix2dosSpec.name, () => spec_unix2dos.unix2dosSpec);
       break;
     case 'unset':
       await spec_unset.loadLibrary();
@@ -3035,15 +4079,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wasm-bindgen':
       await spec_wasm_bindgen.loadLibrary();
-      registerSpec(spec_wasm_bindgen.wasmBindgenSpec.name, () => spec_wasm_bindgen.wasmBindgenSpec);
+      registerSpec(spec_wasm_bindgen.wasmBindgenSpec.name,
+          () => spec_wasm_bindgen.wasmBindgenSpec);
       break;
     case 'wasm-pack':
       await spec_wasm_pack.loadLibrary();
-      registerSpec(spec_wasm_pack.wasmPackSpec.name, () => spec_wasm_pack.wasmPackSpec);
+      registerSpec(
+          spec_wasm_pack.wasmPackSpec.name, () => spec_wasm_pack.wasmPackSpec);
       break;
     case 'watchman':
       await spec_watchman.loadLibrary();
-      registerSpec(spec_watchman.watchmanSpec.name, () => spec_watchman.watchmanSpec);
+      registerSpec(
+          spec_watchman.watchmanSpec.name, () => spec_watchman.watchmanSpec);
       break;
     case 'wc':
       await spec_wc.loadLibrary();
@@ -3055,11 +4102,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'webpack':
       await spec_webpack.loadLibrary();
-      registerSpec(spec_webpack.webpackSpec.name, () => spec_webpack.webpackSpec);
+      registerSpec(
+          spec_webpack.webpackSpec.name, () => spec_webpack.webpackSpec);
       break;
     case 'wezterm':
       await spec_wezterm.loadLibrary();
-      registerSpec(spec_wezterm.weztermSpec.name, () => spec_wezterm.weztermSpec);
+      registerSpec(
+          spec_wezterm.weztermSpec.name, () => spec_wezterm.weztermSpec);
       break;
     case 'wget':
       await spec_wget.loadLibrary();
@@ -3075,7 +4124,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'whereis':
       await spec_whereis.loadLibrary();
-      registerSpec(spec_whereis.whereisSpec.name, () => spec_whereis.whereisSpec);
+      registerSpec(
+          spec_whereis.whereisSpec.name, () => spec_whereis.whereisSpec);
       break;
     case 'which':
       await spec_which.loadLibrary();
@@ -3095,7 +4145,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wifi-password':
       await spec_wifi_password.loadLibrary();
-      registerSpec(spec_wifi_password.wifiPasswordSpec.name, () => spec_wifi_password.wifiPasswordSpec);
+      registerSpec(spec_wifi_password.wifiPasswordSpec.name,
+          () => spec_wifi_password.wifiPasswordSpec);
       break;
     case 'wing':
       await spec_wing.loadLibrary();
@@ -3107,7 +4158,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'wrangler':
       await spec_wrangler.loadLibrary();
-      registerSpec(spec_wrangler.wranglerSpec.name, () => spec_wrangler.wranglerSpec);
+      registerSpec(
+          spec_wrangler.wranglerSpec.name, () => spec_wrangler.wranglerSpec);
       break;
     case 'wrk':
       await spec_wrk.loadLibrary();
@@ -3127,15 +4179,18 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'xcode-select':
       await spec_xcode_select.loadLibrary();
-      registerSpec(spec_xcode_select.xcodeSelectSpec.name, () => spec_xcode_select.xcodeSelectSpec);
+      registerSpec(spec_xcode_select.xcodeSelectSpec.name,
+          () => spec_xcode_select.xcodeSelectSpec);
       break;
     case 'xcodebuild':
       await spec_xcodebuild.loadLibrary();
-      registerSpec(spec_xcodebuild.xcodebuildSpec.name, () => spec_xcodebuild.xcodebuildSpec);
+      registerSpec(spec_xcodebuild.xcodebuildSpec.name,
+          () => spec_xcodebuild.xcodebuildSpec);
       break;
     case 'xcodeproj':
       await spec_xcodeproj.loadLibrary();
-      registerSpec(spec_xcodeproj.xcodeprojSpec.name, () => spec_xcodeproj.xcodeprojSpec);
+      registerSpec(spec_xcodeproj.xcodeprojSpec.name,
+          () => spec_xcodeproj.xcodeprojSpec);
       break;
     case 'xcodes':
       await spec_xcodes.loadLibrary();
@@ -3147,11 +4202,13 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'xdg-mime':
       await spec_xdg_mime.loadLibrary();
-      registerSpec(spec_xdg_mime.xdgMimeSpec.name, () => spec_xdg_mime.xdgMimeSpec);
+      registerSpec(
+          spec_xdg_mime.xdgMimeSpec.name, () => spec_xdg_mime.xdgMimeSpec);
       break;
     case 'xdg-open':
       await spec_xdg_open.loadLibrary();
-      registerSpec(spec_xdg_open.xdgOpenSpec.name, () => spec_xdg_open.xdgOpenSpec);
+      registerSpec(
+          spec_xdg_open.xdgOpenSpec.name, () => spec_xdg_open.xdgOpenSpec);
       break;
     case 'xed':
       await spec_xed.loadLibrary();
@@ -3187,7 +4244,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'youtube-dl':
       await spec_youtube_dl.loadLibrary();
-      registerSpec(spec_youtube_dl.youtubeDlSpec.name, () => spec_youtube_dl.youtubeDlSpec);
+      registerSpec(spec_youtube_dl.youtubeDlSpec.name,
+          () => spec_youtube_dl.youtubeDlSpec);
       break;
     case 'z':
       await spec_z.loadLibrary();
@@ -3195,7 +4253,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'zapier-platform-cli':
       await spec_zapier.loadLibrary();
-      registerSpec(spec_zapier.zapierPlatformCliSpec.name, () => spec_zapier.zapierPlatformCliSpec);
+      registerSpec(spec_zapier.zapierPlatformCliSpec.name,
+          () => spec_zapier.zapierPlatformCliSpec);
       break;
     case 'zed':
       await spec_zed.loadLibrary();
@@ -3211,7 +4270,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
       break;
     case 'zipcloak':
       await spec_zipcloak.loadLibrary();
-      registerSpec(spec_zipcloak.zipcloakSpec.name, () => spec_zipcloak.zipcloakSpec);
+      registerSpec(
+          spec_zipcloak.zipcloakSpec.name, () => spec_zipcloak.zipcloakSpec);
       break;
     case 'zoxide':
       await spec_zoxide.loadLibrary();

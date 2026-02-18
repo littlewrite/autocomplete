@@ -88,6 +88,21 @@ class ExecuteCommandOutput {
 typedef ExecuteCommandFunction = Future<ExecuteCommandOutput> Function(
     ExecuteCommandInput input);
 
+/// Callback to dynamically generate a *root* spec at runtime. Aligns with Fig generateSpec on Spec.
+/// The runtime passes [executeCommand] built from [CompleteAdapter] (no dart:io Process).
+/// Returns [FigSpec] or null (e.g. pnpm when generation fails).
+typedef FigGenerateSpecCallback = Future<FigSpec?> Function(
+  List<String> tokens,
+  ExecuteCommandFunction executeCommand,
+);
+
+/// Callback to dynamically generate a *subcommand* at runtime. Aligns with Fig generateSpec on Subcommand.
+/// [executeCommand] may be null when not available. Implementations may accept an optional third param [FigGeneratorContext] (e.g. fig settings/run/cli).
+typedef FigGenerateSubcommandCallback = Future<FigSubcommand?> Function(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+);
+
 /// Context about the current shell session. Aligns with Fig.ShellContext.
 class FigShellContext {
   const FigShellContext({
@@ -557,8 +572,8 @@ class FigSubcommand {
   /// (string | Suggestion)[] in TS.
   final List<dynamic>? additionalSuggestions;
 
-  /// Async function in TS; dynamic so not serialized to JSON.
-  final dynamic generateSpec;
+  /// Dynamically generate a subcommand at runtime (see [FigGenerateSubcommandCallback]). Not serialized to JSON.
+  final FigGenerateSubcommandCallback? generateSpec;
 
   /// Function or string in TS.
   final dynamic generateSpecCacheKey;
@@ -648,7 +663,7 @@ class FigSpec {
   final String? icon;
 
   /// Enum or string (e.g. 'fuzzy') for converter/generated code compatibility.
-  final dynamic filterStrategy;
+  final FilterStrategy? filterStrategy;
   final bool hidden;
   final String? insertValue;
   final String? replaceValue;
@@ -664,8 +679,8 @@ class FigSpec {
   /// (string | Suggestion)[] in TS; appended below subcommand suggestions.
   final List<dynamic>? additionalSuggestions;
 
-  /// Dynamic spec (e.g. from TS generateSpec). Runtime may resolve to subcommands/options.
-  final dynamic generateSpec;
+  /// Dynamically generate a root spec at runtime (see [FigGenerateSpecCallback]). Runtime calls with adapter-provided executeCommand.
+  final FigGenerateSpecCallback? generateSpec;
 
   final dynamic loadSpec;
 
@@ -683,10 +698,7 @@ class FigSpec {
         if (args != null && args!.isNotEmpty)
           'args': args!.map((e) => e.toJson()).toList(),
         if (icon != null) 'icon': icon,
-        if (filterStrategy != null)
-          'filterStrategy': filterStrategy is FilterStrategy
-              ? filterStrategy!.name
-              : filterStrategy,
+        'filterStrategy': filterStrategy,
         if (hidden) 'hidden': hidden,
         if (parserDirectives != null)
           'parserDirectives': parserDirectives is ParserDirectives

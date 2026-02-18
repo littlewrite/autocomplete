@@ -4,7 +4,8 @@
 import 'package:autocomplete/src/spec.dart';
 
 /// Completion spec for `shopify` CLI
-final FigSubcommand shopifySpec = FigSubcommand(
+// final FigSubcommand shopifySpec = FigSubcommand( // TODO
+final shopifySpec = FigSpec(
     name: "shopify",
     description:
         "Shopify CLI helps you build Shopify apps. It quickly generates Node.js, Ruby on Rails, and PHP apps, app extensions, Shopify Scripts (beta), and Shopify themes. You can also use it for Shopify themes and when automating many common development tasks. Visit https://shopify.dev/apps/tools/cli to know more",

@@ -28,7 +28,7 @@ FigSubcommand? getSubcommand(FigSpec? spec) {
     options: spec.options,
     args: spec.args,
     icon: spec.icon,
-    filterStrategy: spec.filterStrategy,
+    filterStrategy: normalizeFilterStrategy(spec.filterStrategy),
   );
 }
 
@@ -559,12 +559,27 @@ Future<SuggestionBlob?> getSuggestions(
     evictOldSpecsIfNeeded();
     await ensure(rootToken.token);
   }
-  final spec = loadSpec(activeCmd);
+  FigSpec? spec = loadSpec(activeCmd);
   if (spec == null) return null;
-  final subcommand = getSubcommand(spec);
-  if (subcommand == null) return null;
 
   final resolvedCwd = await adapter.resolveCwd(cwd, shell);
+
+  // Resolve generateSpec with adapter-provided executeCommand (no dart:io Process.run).
+  final gen = spec.generateSpec;
+  if (gen != null) {
+    try {
+      final tokens = activeCmd.map((t) => t.token).toList();
+      final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
+      final generated = await gen(tokens, executeCommand);
+      if (generated != null) spec = generated;
+    } catch (e, st) {
+      print('[Fig generateSpec] error: $e');
+      print(st);
+    }
+  }
+
+  final subcommand = getSubcommand(spec);
+  if (subcommand == null) return null;
 
   final result = await runSubcommand(
       activeCmd.skip(1).toList(),

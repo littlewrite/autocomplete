@@ -1,8 +1,6 @@
 // AI-generated from TypeScript source: fin.ts
 // Generated at: 2026-02-16
 
-import 'dart:io';
-
 import 'package:autocomplete/src/spec.dart';
 
 /// 数据库生成器
@@ -729,15 +727,15 @@ final FigSpec finSpec = FigSpec(
         name: ['version', '--version', 'v', '-v'],
         description: 'Print fin version. [v, -v] prints short version')
   ],
-  generateSpec: (List<String> tokens, [dynamic executeShellCommand]) async {
+  generateSpec:
+      (List<String> tokens, ExecuteCommandFunction executeShellCommand) async {
     final newSubcommands = <Subcommand>[];
     try {
-      final result = await Process.run(
-        'bash',
-        ['-c', 'ls -1 ~/.docksal/commands/'],
-        runInShell: false,
-      );
-      final stdout = result.stdout as String? ?? '';
+      final result = await executeShellCommand(const ExecuteCommandInput(
+        command: 'bash',
+        args: ['-c', 'ls -1 ~/.docksal/commands/'],
+      ));
+      final stdout = result.stdout;
       for (final command in stdout.split('\n')) {
         if (command.trim().isNotEmpty) {
           newSubcommands.add(Subcommand(
