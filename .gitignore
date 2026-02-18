@@ -8,7 +8,7 @@ npm-debug.log
 
 .idea
 .vscode
-specs
+/specs
 
 # we use pnpm-lock.yaml for dependency management
 package-lock.json
