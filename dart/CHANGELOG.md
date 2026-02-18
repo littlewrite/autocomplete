@@ -1,3 +1,9 @@
+## 0.1.4
+
+- Fix multi-version spec selection (e.g. heroku, shopify, infracost) so the correct spec is chosen at runtime based on CLI version.
+- Add CONTRIBUTING.md with contribution and spec-writing guidelines.
+- Update spec definitions (elixir, fin, git, heroku, pnpm, shopify) and generator/runtime logic.
+
 ## 0.1.3
 
 - Update spec definitions.
