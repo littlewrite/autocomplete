@@ -814,7 +814,6 @@ import 'envchain.dart';
 import 'esbuild.dart';
 import 'eslint.dart';
 import 'exa.dart';
-import 'example/git_push.dart';
 import 'exec.dart';
 import 'exercism.dart';
 import 'export.dart';

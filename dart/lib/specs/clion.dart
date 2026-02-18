@@ -1,12 +1,5 @@
-// Auto-generated from clion.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: goland.ts
 import 'package:autocomplete/src/spec.dart';
+import 'idea.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// import { generateInteliJCompletionSpec } from "./idea";
-// 
-// const completionSpec = generateInteliJCompletionSpec("clion", "CLion");
-// export default completionSpec;
-// 
+final FigSpec golandSpec = generateInteliJCompletionSpec("clion", "CLion");
