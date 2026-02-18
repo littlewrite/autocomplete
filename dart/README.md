@@ -98,3 +98,21 @@ This project is the result of open-source community collaboration. Special thank
 - **[withfig/autocomplete-tools](https://github.com/withfig/autocomplete-tools)**: Provided tools and definition references regarding Spec structure.
 
 Thanks to all developers who have contributed to these open-source projects!
+
+## F&Q (Common Issues)
+
+1. Why is some command completion inaccurate?
+
+- This may be due to errors during the automated conversion process. The automated conversion script cannot cover all complex TypeScript logic.
+
+- You can directly modify the corresponding Dart file to correct the error.
+
+2. Why is some completion suggestions placed in directories like `dart_aws/`, `dart_az/`, `dart_gcloud/`, and `dart_xxx/`?
+
+- Due to limitations of pub.dev, the completion content for these commands is too extensive, resulting in a large project size exceeding 100MB (uncompressed).
+
+- Therefore, this code is not currently included in the project and cannot be accessed at present. It will be released as a separate package later.
+
+3. Why is the implementation of the `local adapter` placed in the `./example` directory?
+
+- Because the local adapter uses `dart:io`, which is not included to allow this project to be cross-platform (web). But I've defined the interface, and you can implement it yourself according to your needs, or you can directly copy the code from the example.

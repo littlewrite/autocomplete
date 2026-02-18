@@ -91,3 +91,16 @@ dart run example/example.dart "cd " --shell zsh
 - **[withfig/autocomplete-tools](https://github.com/withfig/autocomplete-tools)**: 提供了关于 Spec 结构的工具和定义参考。
 
 感谢所有为这些开源项目做出贡献的开发者！
+
+## 常见问题 (Common Issues)
+
+1. 为什么有些命令的补全不准确？
+   - 这可能是由于自动化转换过程中出现的错误导致的。自动转换脚本不能覆盖所有复杂的 TypeScript 逻辑。
+   - 你可以直接修改对应的 Dart 文件来修正错误。
+
+2. 为什么部分补全建议的代码放在了 `dart_aws/`, `dart_az/`, `dart_gcloud/`, `dart_xxx/` 等目录下？
+   - 因为 pub.dev 的限制，这些命令的补全内容太多，导致整个项目的体积庞大，超过了100MB（未压缩）的限制。
+   - 所以这些代码确实没有引入项目，当前你无法访问他，后续会推出分包。
+
+3. 为什么要把 `local adapter` 的实现放到 `./example` 目录下？
+  - 因为 local adapter 的代码用了 `dart:io` ，为了能让本项目跨 `web `平台，就没引入。但我定义好接口，你可以按照需求自己实现，或者直接 copy example 中的代码。
