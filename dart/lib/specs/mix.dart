@@ -1,6 +1,8 @@
 // AI-generated from TypeScript source: mix.ts
 import 'package:autocomplete/src/spec.dart';
 
+const String mixIcon = 'asset://icons/mix.png';
+
 final FigGenerator preferredScriptFilepaths = const FigGenerator(
   template: 'filepaths',
 );
@@ -26,7 +28,7 @@ List<FigSuggestion> makeTaskSuggestions(String out, [List<String>? tokens]) {
 final FigSpec mixSpec = FigSpec(
   name: 'mix',
   description: 'Build tool for Elixir',
-  icon: 'assets/icons/elixir.jpeg',
+  icon: mixIcon,
   subcommands: [
     FigSubcommand(
       name: 'new',
