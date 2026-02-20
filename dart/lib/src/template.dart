@@ -47,13 +47,13 @@ Future<List<TemplateSuggestion>> foldersTemplate(String cwd,
 }
 
 /// Run templates (e.g. ["filepaths", "folders"]) and return combined suggestions.
-Future<List<TemplateSuggestion>> runTemplates(
+Future<Iterable<TemplateSuggestion>> runTemplates(
   dynamic template,
   String cwd,
   CompleteAdapter adapter,
 ) async {
   final list = template is List ? template : [template];
-  final results = <List<TemplateSuggestion>>[];
+  final results = <Iterable<TemplateSuggestion>>[];
   for (final t in list) {
     try {
       if (t == 'filepaths') {
@@ -61,13 +61,13 @@ Future<List<TemplateSuggestion>> runTemplates(
       } else if (t == 'folders') {
         results.add(await foldersTemplate(cwd, adapter));
       } else if (t == 'history' || t == 'help') {
-        results.add([]);
+        results.add(const []);
       } else {
-        results.add([]);
+        results.add(const []);
       }
     } catch (_) {
-      results.add([]);
+      results.add(const []);
     }
   }
-  return results.expand((x) => x).toList();
+  return results.expand((x) => x);
 }

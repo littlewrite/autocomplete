@@ -33,7 +33,7 @@ class SuggestionBlob {
     this.charactersToDrop = 0,
   });
 
-  final List<Suggestion> suggestions;
+  final Iterable<Suggestion> suggestions;
   final String? argumentDescription;
   final int charactersToDrop;
 }

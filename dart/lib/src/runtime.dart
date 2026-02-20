@@ -10,6 +10,27 @@ import 'spec.dart';
 import 'shell.dart';
 import 'suggestion.dart';
 import 'template.dart';
+import 'context.dart';
+
+typedef LogCallback = void Function(String message,
+    [Object? error, StackTrace? stackTrace]);
+
+void _printLogger(String message, [Object? error, StackTrace? stackTrace]) {
+  if (error != null) {
+    print('$message: $error');
+  } else {
+    print(message);
+  }
+  if (stackTrace != null) {
+    print(stackTrace);
+  }
+}
+
+LogCallback? _defaultLogger = _printLogger;
+
+void setDefaultLogger(LogCallback? logger) {
+  _defaultLogger = logger;
+}
 
 /// Load spec for the command represented by tokens (first token = command name).
 FigSpec? loadSpec(List<CommandToken> tokens) {
@@ -33,25 +54,22 @@ FigSubcommand? getSubcommand(FigSpec? spec) {
 }
 
 List<FigArg> getArgs(List<FigArg>? args) {
-  if (args == null) return [];
-  return List<FigArg>.from(args);
+  return args ?? const [];
 }
 
 /// Run templates for an arg and return suggestions.
-Future<List<Suggestion>> runTemplateSuggestions(
+Future<Iterable<Suggestion>> runTemplateSuggestions(
     FigArg? arg, String cwd, CompleteAdapter adapter) async {
-  if (arg == null) return [];
+  if (arg == null) return const [];
   final template = arg.template;
-  if (template == null) return [];
+  if (template == null) return const [];
   final raw = await runTemplates(template, cwd, adapter);
-  return raw
-      .map((t) => Suggestion(
-          name: t.name,
-          allNames: [t.name],
-          icon: iconForType(t.type),
-          priority: t.priority,
-          type: t.type))
-      .toList();
+  return raw.map((t) => Suggestion(
+      name: t.name,
+      allNames: [t.name],
+      icon: iconForType(t.type),
+      priority: t.priority,
+      type: t.type));
 }
 
 /// Build [ExecuteCommandFunction] for generator custom callbacks.
@@ -78,19 +96,14 @@ ExecuteCommandFunction _createExecuteCommand(
   };
 }
 
-/// Run generator (script + postProcess, or custom). Runs [gen.script] in [cwd], passes stdout to [gen.postProcess], or returns [gen.customSuggestions].
-Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
-    List<CommandToken> allTokens, String cwd, CompleteAdapter adapter) async {
-  if (gen == null) return [];
+Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
+    List<CommandToken> allTokens, String cwd, CompleteAdapter adapter,
+    {LogCallback? logger}) async {
+  if (gen == null) return const [];
   final custom = gen.custom;
   if (custom != null) {
     if (custom is List && custom.isNotEmpty) {
-      return custom
-          .map((s) => toFigSuggestion(s))
-          .whereType<FigSuggestion>()
-          .map((s) => toSuggestion(s))
-          .whereType<Suggestion>()
-          .toList();
+      return custom.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
     }
     if (custom is Function) {
       final tokens = allTokens.map((t) => t.token).toList();
@@ -106,16 +119,10 @@ Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         final result = custom(tokens, executeCommand, generatorContext);
         final raw = result is Future ? await result : result;
         final list = raw is List ? raw : <dynamic>[];
-        return list
-            .map((s) => toFigSuggestion(s))
-            .whereType<FigSuggestion>()
-            .map((s) => toSuggestion(s))
-            .whereType<Suggestion>()
-            .toList();
+        return list.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
       } catch (e, st) {
-        print('[Fig generator] custom callback error: $e');
-        print(st);
-        return [];
+        logger?.call('[Fig generator] custom callback error', e, st);
+        return const [];
       }
     }
   }
@@ -129,115 +136,114 @@ Future<List<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
             icon: iconForType(t.type)))
         .toList();
 
+    List<FigSuggestion> filtered;
     if (gen.filterTemplateSuggestions != null) {
       // dynamic call: (List<FigSuggestion>) -> List<FigSuggestion>
       try {
-        final filtered = gen.filterTemplateSuggestions!(figSuggestions);
-        if (filtered is List) {
-          figSuggestions = filtered.cast<FigSuggestion>();
-        }
+        filtered = gen.filterTemplateSuggestions!(figSuggestions);
       } catch (e) {
-        // ignore filter error
+        logger?.call('[Fig generator] filterTemplateSuggestions error', e);
+        filtered = figSuggestions;
+      }
+    } else {
+      filtered = figSuggestions;
+    }
+
+    if (gen.postProcess != null) {
+      // Not implemented yet
+    }
+    return filtered.map((s) => toSuggestion(s)).whereType<Suggestion>();
+  }
+
+  if (gen.script != null && gen.postProcess != null) {
+    final rawScript = gen.script;
+    List<String> scriptList;
+    if (rawScript is List) {
+      scriptList = rawScript.cast<String>();
+    } else if (rawScript is Function) {
+      final tokens = allTokens.map((t) => t.token).toList();
+      final generatorContext = FigGeneratorContext(
+        currentWorkingDirectory: cwd,
+        currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
+        sshPrefix: '',
+        searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
+        adapter: adapter,
+      );
+      dynamic result;
+      try {
+        result = rawScript(tokens, generatorContext);
+      } catch (_) {
+        result = rawScript(tokens);
+      }
+      scriptList = (result is List) ? result.cast<String>() : <String>[];
+    } else {
+      return const [];
+    }
+
+    if (scriptList.isNotEmpty) {
+      try {
+        final result = await adapter.runProcess(
+          scriptList.first,
+          scriptList.length > 1 ? scriptList.sublist(1) : [],
+          workingDirectory: cwd,
+        );
+        final stdout = result.stdout;
+        final tokens = allTokens.map((t) => t.token).toList();
+        final figSuggestions = gen.postProcess!(stdout, tokens);
+        return figSuggestions
+            .map((s) => toSuggestionDynamic(s))
+            .whereType<Suggestion>();
+      } catch (e) {
+        logger?.call('[Fig generator] script error', e);
+        return const [];
       }
     }
-
-    return figSuggestions
-        .map((s) => Suggestion(
-            name: s.nameSingle ?? '',
-            allNames: s.nameList,
-            description: s.description is String ? s.description : null,
-            icon: s.icon ?? iconForType(s.type),
-            priority: s.priority,
-            type: s.type ?? SuggestionType.file))
-        .toList();
   }
 
-  if (gen.script == null || gen.postProcess == null) return [];
-  // Resolve script: may be List<String> or Function(List<String>) -> List<String>
-  final rawScript = gen.script;
-  List<String> scriptList;
-  if (rawScript is List) {
-    scriptList = rawScript.cast<String>();
-  } else if (rawScript is Function) {
-    final tokens = allTokens.map((t) => t.token).toList();
-    final generatorContext = FigGeneratorContext(
-      currentWorkingDirectory: cwd,
-      currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
-      sshPrefix: '',
-      searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
-      adapter: adapter,
-    );
-    dynamic result;
-    try {
-      result = rawScript(tokens, generatorContext);
-    } catch (_) {
-      result = rawScript(tokens);
-    }
-    scriptList = (result is List) ? result.cast<String>() : <String>[];
-  } else {
-    return [];
-  }
-  if (scriptList.isEmpty) return [];
-  try {
-    final result = await adapter.runProcess(
-      scriptList.first,
-      scriptList.length > 1 ? scriptList.sublist(1) : [],
-      workingDirectory: cwd,
-    );
-    final stdout = result.stdout;
-    final tokens = allTokens.map((t) => t.token).toList();
-    final figSuggestions = gen.postProcess!(stdout, tokens);
-    return figSuggestions
-        .map((s) => toSuggestion(s))
-        .whereType<Suggestion>()
-        .toList();
-  } catch (_) {
-    return [];
-  }
+  return const [];
 }
 
 /// Subcommand-driven recommendation: show subcommands, options, and arg suggestions (templates/generators).
 Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   FigSubcommand subcommand,
-  List<FigOption> persistentOptions,
   CommandToken? partialToken,
   bool argsDepleted,
   bool argsFromSubcommand,
-  List<CommandToken> acceptedTokens,
-  List<CommandToken> allTokens,
-  String cwd,
-  Shell shell,
-  CompleteAdapter adapter,
-) async {
+  CompletionContext context, {
+  LogCallback? logger,
+}) async {
   if (argsDepleted && argsFromSubcommand) return null;
   final partial = partialToken?.token ?? '';
-  final allOptions = <FigOption>[
-    ...persistentOptions,
-    ...(subcommand.options ?? [])
-  ];
+  final allOptions =
+      context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
   if (!argsFromSubcommand) {
     suggestions.addAll(filterSubcommandSuggestions(
         subcommand.subcommands, subcommand.filterStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
-        acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(),
+        context.acceptedTokens
+            .where((t) => t.isOption)
+            .map((t) => t.token)
+            .toSet(),
         subcommand.filterStrategy,
         partial));
   }
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
-    suggestions.addAll(await runTemplateSuggestions(activeArg, cwd, adapter));
+    suggestions.addAll(
+        await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
     for (final gen in activeArg.generatorsList) {
-      suggestions
-          .addAll(await runGeneratorSuggestions(gen, allTokens, cwd, adapter));
+      suggestions.addAll(await runGeneratorSuggestions(
+          gen, context.allTokens, context.cwd, context.adapter,
+          logger: logger));
     }
     suggestions.addAll(filterSuggestions(
         activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   }
-  suggestions = removeDuplicates(sortByPriority(
-      removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
+  suggestions = removeDuplicates(sortByPriority(removeHidden(
+      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
   return SuggestionBlob(suggestions: suggestions);
 }
 
@@ -245,27 +251,23 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
 Future<SuggestionBlob?> getArgDrivenRecommendation(
   List<FigArg> args,
   FigSubcommand subcommand,
-  List<FigOption> persistentOptions,
   CommandToken? partialToken,
-  List<CommandToken> acceptedTokens,
-  List<CommandToken> allTokens,
   bool variadicArgBound,
-  String cwd,
-  Shell shell,
-  CompleteAdapter adapter,
-) async {
+  CompletionContext context, {
+  LogCallback? logger,
+}) async {
   if (args.isEmpty) return null;
   final activeArg = args.first;
   final partial = partialToken?.token ?? '';
-  final allOptions = <FigOption>[
-    ...persistentOptions,
-    ...(subcommand.options ?? [])
-  ];
+  final allOptions =
+      context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
-  suggestions.addAll(await runTemplateSuggestions(activeArg, cwd, adapter));
+  suggestions.addAll(
+      await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
   for (final gen in activeArg.generatorsList) {
-    suggestions
-        .addAll(await runGeneratorSuggestions(gen, allTokens, cwd, adapter));
+    suggestions.addAll(await runGeneratorSuggestions(
+        gen, context.allTokens, context.cwd, context.adapter,
+        logger: logger));
   }
   suggestions.addAll(filterSuggestions(
       activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
@@ -274,12 +276,15 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
         subcommand.subcommands, activeArg.filterStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
-        acceptedTokens.where((t) => t.isOption).map((t) => t.token).toSet(),
+        context.acceptedTokens
+            .where((t) => t.isOption)
+            .map((t) => t.token)
+            .toSet(),
         activeArg.filterStrategy,
         partial));
   }
-  suggestions = removeDuplicates(sortByPriority(
-      removeHidden(removeAccepted(suggestions, acceptedTokens), partialToken)));
+  suggestions = removeDuplicates(sortByPriority(removeHidden(
+      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
   return SuggestionBlob(
       suggestions: suggestions,
       argumentDescription: activeArg.description ?? activeArg.name);
@@ -287,47 +292,21 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
 
 /// Handle option: if option has args, runArg; else continue runSubcommand.
 Future<SuggestionBlob?> runOption(
-  List<CommandToken> tokens,
-  List<CommandToken> allTokens,
   FigOption option,
   FigSubcommand subcommand,
-  String cwd,
-  Shell shell,
-  List<FigOption> persistentOptions,
-  List<CommandToken> acceptedTokens,
-  CompleteAdapter adapter,
-) async {
-  if (tokens.isEmpty) return null;
-  final activeToken = tokens.first;
+  CompletionContext context, {
+  LogCallback? logger,
+}) async {
+  // Consume the option token
+  context.advance();
   if (option.args != null) {
     final args = getArgs(option.args);
-    return runArg(
-        tokens.skip(1).toList(),
-        allTokens,
-        args,
-        subcommand,
-        cwd,
-        shell,
-        persistentOptions,
-        [...acceptedTokens, activeToken],
-        true,
-        false,
-        adapter);
+    return runArg(args, subcommand, context, true, false, logger: logger);
   }
-  return runSubcommand(
-      tokens.skip(1).toList(),
-      allTokens,
-      subcommand,
-      cwd,
-      shell,
-      adapter,
-      persistentOptions,
-      [...acceptedTokens, activeToken],
-      false,
-      false);
+  return runSubcommand(subcommand, context, false, false, logger);
 }
 
-FigOption? getOption(CommandToken token, List<FigOption> options) {
+FigOption? getOption(CommandToken token, Iterable<FigOption> options) {
   for (final o in options) {
     if (o.nameList.contains(token.token)) return o;
   }
@@ -336,198 +315,226 @@ FigOption? getOption(CommandToken token, List<FigOption> options) {
 
 /// Recursive: run subcommand matching.
 Future<SuggestionBlob?> runSubcommand(
-  List<CommandToken> tokens,
-  List<CommandToken> allTokens,
   FigSubcommand subcommand,
-  String cwd,
-  Shell shell,
-  CompleteAdapter adapter, [
-  List<FigOption> persistentOptions = const [],
-  List<CommandToken> acceptedTokens = const [],
+  CompletionContext context, [
   bool argsDepleted = false,
   bool argsUsed = false,
+  LogCallback? logger,
 ]) async {
-  if (tokens.isEmpty) {
+  if (context.isAtEnd) {
     return getSubcommandDrivenRecommendation(
-        subcommand,
-        persistentOptions,
-        null,
-        argsDepleted,
-        argsUsed,
-        acceptedTokens,
-        allTokens,
-        cwd,
-        shell,
-        adapter);
+        subcommand, null, argsDepleted, argsUsed, context,
+        logger: logger);
   }
-  final partialToken = tokens.first;
+  final partialToken = context.currentToken;
   if (!partialToken.complete) {
     return getSubcommandDrivenRecommendation(
-        subcommand,
-        persistentOptions,
-        partialToken,
-        argsDepleted,
-        argsUsed,
-        acceptedTokens,
-        allTokens,
-        cwd,
-        shell,
-        adapter);
+        subcommand, partialToken, argsDepleted, argsUsed, context,
+        logger: logger);
   }
-  final activeToken = tokens.first;
-  final allOptions = <FigOption>[
-    ...persistentOptions,
-    ...(subcommand.options ?? [])
-  ];
+  final activeToken = context.currentToken;
+  final allOptions =
+      context.persistentOptions.followedBy(subcommand.options ?? []);
   final option = getOption(activeToken, allOptions);
   if (option != null) {
-    return runOption(tokens, allTokens, option, subcommand, cwd, shell,
-        persistentOptions, acceptedTokens, adapter);
+    return runOption(option, subcommand, context, logger: logger);
   }
   final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
         (s) => s!.nameList.contains(activeToken.token),
         orElse: () => null,
       );
   if (nextSub != null) {
-    return runSubcommand(
-        tokens.skip(1).toList(),
-        allTokens,
-        nextSub,
-        cwd,
-        shell,
-        adapter,
-        persistentOptions,
-        [...acceptedTokens, activeToken],
-        false,
-        false);
+    if (subcommand.options != null) {
+      context.persistentOptions
+          .addAll(subcommand.options!.where((o) => o.isPersistent));
+    }
+    context.advance();
+    return runSubcommand(nextSub, context, false, false, logger);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
-    return runArg(tokens, allTokens, args, subcommand, cwd, shell, allOptions,
-        acceptedTokens, false, false, adapter);
+    return runArg(args, subcommand, context, false, false, logger: logger);
   }
-  return runSubcommand(
-      tokens.skip(1).toList(),
-      allTokens,
-      subcommand,
-      cwd,
-      shell,
-      adapter,
-      persistentOptions,
-      [...acceptedTokens, activeToken],
-      false,
-      false);
+  context.advance();
+  return runSubcommand(subcommand, context, false, false, logger);
 }
 
 Future<SuggestionBlob?> runArg(
-  List<CommandToken> tokens,
-  List<CommandToken> allTokens,
   List<FigArg> args,
   FigSubcommand subcommand,
-  String cwd,
-  Shell shell,
-  List<FigOption> persistentOptions,
-  List<CommandToken> acceptedTokens,
+  CompletionContext context,
   bool fromOption,
-  bool fromVariadic,
-  CompleteAdapter adapter,
-) async {
+  bool fromVariadic, {
+  LogCallback? logger,
+}) async {
   if (args.isEmpty) {
-    return runSubcommand(tokens, allTokens, subcommand, cwd, shell, adapter,
-        persistentOptions, acceptedTokens, true, !fromOption);
+    return runSubcommand(subcommand, context, true, !fromOption, logger);
   }
-  if (tokens.isEmpty) {
-    return getArgDrivenRecommendation(args, subcommand, persistentOptions, null,
-        acceptedTokens, allTokens, fromVariadic, cwd, shell, adapter);
-  }
-  if (!tokens.first.complete) {
+  if (context.isAtEnd) {
     return getArgDrivenRecommendation(
-        args,
-        subcommand,
-        persistentOptions,
-        tokens.first,
-        acceptedTokens,
-        allTokens,
-        fromVariadic,
-        cwd,
-        shell,
-        adapter);
+        args, subcommand, null, fromVariadic, context,
+        logger: logger);
   }
-  final activeToken = tokens.first;
+  if (!context.currentToken.complete) {
+    return getArgDrivenRecommendation(
+        args, subcommand, context.currentToken, fromVariadic, context,
+        logger: logger);
+  }
+  final activeToken = context.currentToken;
   final activeArg = args.first;
-  final allOpts = <FigOption>[
-    ...persistentOptions,
-    ...(subcommand.options ?? [])
-  ];
+  final allOptions =
+      context.persistentOptions.followedBy(subcommand.options ?? []);
   if (args.every((a) => a.isOptional) && activeToken.isOption) {
-    final option = getOption(activeToken, allOpts);
+    final option = getOption(activeToken, allOptions);
     if (option != null)
-      return runOption(tokens, allTokens, option, subcommand, cwd, shell,
-          persistentOptions, acceptedTokens, adapter);
+      return runOption(option, subcommand, context, logger: logger);
   }
   if (activeArg.isVariadic) {
-    return runArg(
-        tokens.skip(1).toList(),
-        allTokens,
-        args,
-        subcommand,
-        cwd,
-        shell,
-        persistentOptions,
-        [...acceptedTokens, activeToken],
-        fromOption,
-        true,
-        adapter);
+    context.advance();
+    return runArg(args, subcommand, context, fromOption, true, logger: logger);
   }
   if (activeArg.isOptional) {
     final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
           (s) => s!.nameList.contains(activeToken.token),
           orElse: () => null,
         );
-    if (nextSub != null)
-      return runSubcommand(
-          tokens.skip(1).toList(),
-          allTokens,
-          nextSub,
-          cwd,
-          shell,
-          adapter,
-          persistentOptions,
-          [...acceptedTokens, activeToken],
-          false,
-          false);
+    if (nextSub != null) {
+      if (subcommand.options != null) {
+        context.persistentOptions
+            .addAll(subcommand.options!.where((o) => o.isPersistent));
+      }
+      context.advance();
+      return runSubcommand(nextSub, context, false, false, logger);
+    }
   }
-  return runArg(
-      tokens.skip(1).toList(),
-      allTokens,
-      args.sublist(1),
-      subcommand,
-      cwd,
-      shell,
-      persistentOptions,
-      [...acceptedTokens, activeToken],
-      fromOption,
-      false,
-      adapter);
+  context.advance();
+  return runArg(args.sublist(1), subcommand, context, fromOption, false,
+      logger: logger);
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
 /// Empty token triggers no suggestions; only the v2 bucket for the first character is used.
 SuggestionBlob runCommand(CommandToken token) {
   if (token.token.isEmpty) {
-    return SuggestionBlob(suggestions: [], charactersToDrop: 0);
+    return const SuggestionBlob(suggestions: [], charactersToDrop: 0);
   }
   final names = getSpecNamesWithPrefix(token.token);
-  final suggestions = names
-      .map((s) => Suggestion(
-          name: s,
-          allNames: [s],
-          icon: suggestionIconSubcommand,
-          priority: 40,
-          type: SuggestionType.subcommand))
-      .toList();
+  final suggestions = names.map((s) => Suggestion(
+      name: s,
+      allNames: [s],
+      icon: suggestionIconSubcommand,
+      priority: 40,
+      type: SuggestionType.subcommand));
   return SuggestionBlob(
       suggestions: suggestions, charactersToDrop: token.tokenLength);
+}
+
+/// Autocomplete engine that manages state and caching.
+class AutocompleteEngine {
+  /// Cache for generated specs (e.g. git help -a).
+  /// Key: specName|cwd
+  final Map<String, FigSpec> _generateSpecCache = {};
+
+  /// EnsureSpecLoaded callback for this engine instance.
+  EnsureSpecLoaded? _ensureSpecLoaded;
+
+  LogCallback? _logger;
+
+  /// Set the ensureSpecLoaded callback.
+  void setEnsureSpecLoaded(EnsureSpecLoaded? f) {
+    _ensureSpecLoaded = f;
+  }
+
+  void setLogger(LogCallback? f) {
+    _logger = f;
+  }
+
+  /// Clear all internal caches.
+  void clearCache() {
+    _generateSpecCache.clear();
+  }
+
+  /// Dispose the engine (alias for clearCache for now).
+  void dispose() {
+    clearCache();
+  }
+
+  /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
+  /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
+  Future<SuggestionBlob?> getSuggestions(
+    String cmd,
+    String cwd,
+    Shell shell,
+    CompleteAdapter adapter, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    LogCallback? logger,
+  }) async {
+    final log = logger ?? _logger ?? _defaultLogger;
+    final activeCmd = parseCommand(cmd, shell);
+
+    if (activeCmd.isEmpty) return null;
+    final rootToken = activeCmd.first;
+    if (!rootToken.complete) return runCommand(rootToken);
+
+    final ensure =
+        ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded;
+    if (ensure != null) {
+      evictOldSpecsIfNeeded();
+      await ensure(rootToken.token);
+    }
+    FigSpec? spec = loadSpec(activeCmd);
+    if (spec == null) return null;
+
+    final resolvedCwd = await adapter.resolveCwd(cwd, shell);
+
+    // Resolve generateSpec with adapter-provided executeCommand (no dart:io Process.run).
+    final gen = spec.generateSpec;
+    if (gen != null) {
+      try {
+        final cacheKey = '${spec.name}|$resolvedCwd';
+        FigSpec? generated;
+        if (_generateSpecCache.containsKey(cacheKey)) {
+          generated = _generateSpecCache[cacheKey];
+        } else {
+          final tokens = activeCmd.map((t) => t.token).toList();
+          final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
+          generated = await gen(tokens, executeCommand);
+          if (generated != null) {
+            _generateSpecCache[cacheKey] = generated;
+          }
+        }
+
+        if (generated != null) {
+          spec = _mergeSpecs(spec, generated);
+        }
+      } catch (e, st) {
+        log?.call('[Fig generateSpec] error', e, st);
+      }
+    }
+
+    final subcommand = getSubcommand(spec);
+    if (subcommand == null) return null;
+
+    final context = CompletionContext(
+      allTokens: activeCmd,
+      cwd: resolvedCwd,
+      shell: shell,
+      adapter: adapter,
+      currentIndex: 1,
+    );
+
+    final result = await runSubcommand(subcommand, context, false, false, log);
+    if (result == null) return null;
+    if (result.suggestions.isEmpty && result.argumentDescription == null)
+      return null;
+    final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
+    final charactersToDrop =
+        lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+    return SuggestionBlob(
+        suggestions: result.suggestions,
+        argumentDescription: result.argumentDescription,
+        charactersToDrop: charactersToDrop);
+  }
 }
 
 /// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].
@@ -540,66 +547,61 @@ void setDefaultEnsureSpecLoaded(EnsureSpecLoaded? f) {
   _defaultEnsureSpecLoaded = f;
 }
 
+// Global default engine for backward compatibility.
+final _defaultEngine = AutocompleteEngine();
+
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
+/// Uses a default global [AutocompleteEngine] instance.
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
   Shell shell,
   CompleteAdapter adapter, {
   EnsureSpecLoaded? ensureSpecLoaded,
-}) async {
-  final activeCmd = parseCommand(cmd, shell);
-  if (activeCmd.isEmpty) return null;
-  final rootToken = activeCmd.first;
-  if (!rootToken.complete) return runCommand(rootToken);
+  LogCallback? logger,
+}) {
+  return _defaultEngine.getSuggestions(cmd, cwd, shell, adapter,
+      ensureSpecLoaded: ensureSpecLoaded, logger: logger);
+}
 
-  final ensure = ensureSpecLoaded ?? _defaultEnsureSpecLoaded;
-  if (ensure != null) {
-    evictOldSpecsIfNeeded();
-    await ensure(rootToken.token);
-  }
-  FigSpec? spec = loadSpec(activeCmd);
-  if (spec == null) return null;
+/// Clear the default engine cache.
+void clearDefaultCache() {
+  _defaultEngine.clearCache();
+}
 
-  final resolvedCwd = await adapter.resolveCwd(cwd, shell);
-
-  // Resolve generateSpec with adapter-provided executeCommand (no dart:io Process.run).
-  final gen = spec.generateSpec;
-  if (gen != null) {
-    try {
-      final tokens = activeCmd.map((t) => t.token).toList();
-      final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
-      final generated = await gen(tokens, executeCommand);
-      if (generated != null) spec = generated;
-    } catch (e, st) {
-      print('[Fig generateSpec] error: $e');
-      print(st);
-    }
-  }
-
-  final subcommand = getSubcommand(spec);
-  if (subcommand == null) return null;
-
-  final result = await runSubcommand(
-      activeCmd.skip(1).toList(),
-      activeCmd,
-      subcommand,
-      resolvedCwd,
-      shell,
-      adapter,
-      const [],
-      const [],
-      false,
-      false);
-  if (result == null) return null;
-  if (result.suggestions.isEmpty && result.argumentDescription == null)
-    return null;
-  final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
-  final charactersToDrop =
-      lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
-  return SuggestionBlob(
-      suggestions: result.suggestions,
-      argumentDescription: result.argumentDescription,
-      charactersToDrop: charactersToDrop);
+FigSpec _mergeSpecs(FigSpec original, FigSpec generated) {
+  return FigSpec(
+    name: generated.name,
+    displayName: generated.displayName ?? original.displayName,
+    description: generated.description ?? original.description,
+    subcommands: [
+      ...?original.subcommands,
+      ...?generated.subcommands,
+    ],
+    options: [
+      ...?original.options,
+      ...?generated.options,
+    ],
+    args: [
+      ...?original.args,
+      ...?generated.args,
+    ],
+    icon: generated.icon ?? original.icon,
+    filterStrategy: generated.filterStrategy ?? original.filterStrategy,
+    hidden: generated.hidden || original.hidden,
+    insertValue: generated.insertValue ?? original.insertValue,
+    replaceValue: generated.replaceValue ?? original.replaceValue,
+    priority: generated.priority ?? original.priority,
+    deprecated: generated.deprecated ?? original.deprecated,
+    parserDirectives: generated.parserDirectives ?? original.parserDirectives,
+    requiresSubcommand:
+        generated.requiresSubcommand ?? original.requiresSubcommand,
+    additionalSuggestions: [
+      ...?original.additionalSuggestions,
+      ...?generated.additionalSuggestions,
+    ],
+    generateSpec: original.generateSpec,
+    loadSpec: generated.loadSpec ?? original.loadSpec,
+  );
 }
