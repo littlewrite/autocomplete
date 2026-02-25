@@ -214,6 +214,34 @@ Suggestion? toSuggestion(FigSuggestion s,
   );
 }
 
+bool _matchesPrefix(String candidate, String patternLower) {
+  return candidate.toLowerCase().startsWith(patternLower);
+}
+
+bool _matchesFuzzy(String candidate, String patternLower) {
+  if (patternLower.isEmpty) return true;
+  final lower = candidate.toLowerCase();
+  var j = 0;
+  for (var i = 0; i < lower.length; i++) {
+    if (lower[i] == patternLower[j]) {
+      j++;
+      if (j >= patternLower.length) return true;
+    }
+  }
+  return false;
+}
+
+String? _firstMatchingName(
+  Iterable<String> names,
+  String patternLower,
+  bool Function(String, String) matcher,
+) {
+  for (final n in names) {
+    if (matcher(n, patternLower)) return n;
+  }
+  return null;
+}
+
 Iterable<Suggestion> filterSuggestions(
   Iterable<FigSuggestion> suggestions,
   dynamic strategy,
@@ -231,11 +259,8 @@ Iterable<Suggestion> filterSuggestions(
     case FilterStrategy.fuzzy:
       return suggestions.map((s) {
         final names = s.nameList;
-        final match = names.any((n) => n.toLowerCase().contains(lower));
-        if (!match) return null;
-        final name = names.cast<String?>().firstWhere(
-            (n) => n!.toLowerCase().contains(lower),
-            orElse: () => names.first);
+        final name = _firstMatchingName(names, lower, _matchesFuzzy);
+        if (name == null) return null;
         return toSuggestion(s, type: suggestionType, name: name);
       }).whereType<Suggestion>();
     case FilterStrategy.prefix:
@@ -243,12 +268,57 @@ Iterable<Suggestion> filterSuggestions(
     case null:
       return suggestions.map((s) {
         final names = s.nameList;
-        final match = names.any((n) => n.toLowerCase().startsWith(lower));
-        if (!match) return null;
-        final name = names.cast<String?>().firstWhere(
-            (n) => n!.toLowerCase().startsWith(lower),
-            orElse: () => names.first);
+        final name = _firstMatchingName(names, lower, _matchesPrefix);
+        if (name == null) return null;
         return toSuggestion(s, type: suggestionType, name: name);
+      }).whereType<Suggestion>();
+  }
+}
+
+Iterable<Suggestion> filterSuggestionList(
+  Iterable<Suggestion> suggestions,
+  dynamic strategy,
+  String? partial,
+) {
+  if (partial == null || partial.isEmpty) return suggestions;
+  final strat = normalizeFilterStrategy(strategy);
+  final lower = partial.toLowerCase();
+  switch (strat) {
+    case FilterStrategy.fuzzy:
+      return suggestions.map((s) {
+        final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
+        final matched = _firstMatchingName(names, lower, _matchesFuzzy);
+        if (matched == null) return null;
+        if (matched == s.name) return s;
+        return Suggestion(
+          name: matched,
+          allNames: s.allNames,
+          description: s.description,
+          icon: s.icon,
+          priority: s.priority,
+          insertValue: s.insertValue,
+          type: s.type,
+          hidden: s.hidden,
+        );
+      }).whereType<Suggestion>();
+    case FilterStrategy.prefix:
+    case FilterStrategy.defaultStrategy:
+    case null:
+      return suggestions.map((s) {
+        final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
+        final matched = _firstMatchingName(names, lower, _matchesPrefix);
+        if (matched == null) return null;
+        if (matched == s.name) return s;
+        return Suggestion(
+          name: matched,
+          allNames: s.allNames,
+          description: s.description,
+          icon: s.icon,
+          priority: s.priority,
+          insertValue: s.insertValue,
+          type: s.type,
+          hidden: s.hidden,
+        );
       }).whereType<Suggestion>();
   }
 }

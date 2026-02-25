@@ -232,12 +232,16 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
-    suggestions.addAll(
-        await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
+    final templateSuggestions =
+        await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+    suggestions.addAll(filterSuggestionList(
+        templateSuggestions, activeArg.filterStrategy, partial));
     for (final gen in activeArg.generatorsList) {
-      suggestions.addAll(await runGeneratorSuggestions(
+      final generated = await runGeneratorSuggestions(
           gen, context.allTokens, context.cwd, context.adapter,
-          logger: logger));
+          logger: logger);
+      suggestions.addAll(
+          filterSuggestionList(generated, activeArg.filterStrategy, partial));
     }
     suggestions.addAll(filterSuggestions(
         activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
@@ -262,12 +266,16 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
-  suggestions.addAll(
-      await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
+  final templateSuggestions =
+      await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+  suggestions.addAll(filterSuggestionList(
+      templateSuggestions, activeArg.filterStrategy, partial));
   for (final gen in activeArg.generatorsList) {
-    suggestions.addAll(await runGeneratorSuggestions(
+    final generated = await runGeneratorSuggestions(
         gen, context.allTokens, context.cwd, context.adapter,
-        logger: logger));
+        logger: logger);
+    suggestions.addAll(
+        filterSuggestionList(generated, activeArg.filterStrategy, partial));
   }
   suggestions.addAll(filterSuggestions(
       activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));

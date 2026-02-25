@@ -1,6 +1,6 @@
 name: autocomplete
 description: Fig-style CLI completion specs and runtime (parse command, load spec, get suggestions). Pure Dart
-version: 0.1.5
+version: 0.2.0
 repository: https://github.com/littlewrite/autocomplete
 issue_tracker: https://github.com/littlewrite/autocomplete/issues
 topics:
@@ -13,6 +13,9 @@ environment:
 
 dependencies:
   yaml: ^3.1.0
+
+dev_dependencies:
+  test: any
 
 # Assets for icons/logos referenced by specs (Flutter bundling; JS/TS may not use this).
 # The 'flutter' section here allows a consuming Flutter app to bundle these assets,
