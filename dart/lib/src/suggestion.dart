@@ -202,9 +202,7 @@ Suggestion? toSuggestion(FigSuggestion s,
     {SuggestionType? type, String? name}) {
   final n = name ?? longName(s.name);
   if (n.isEmpty) return null;
-  final desc = s.description is List
-      ? (s.description as List).join('\n')
-      : s.description as String?;
+  final desc = _descriptionFromDynamic(s.description);
   final resolvedType = type ?? s.type;
   return Suggestion(
     name: n,
@@ -309,9 +307,7 @@ Iterable<Suggestion> filterSubcommandSuggestions(
   final asSuggestions = subcommands.map((s) {
     final names = s.nameList;
     if (names.isEmpty) return null;
-    final desc = s.description is List
-        ? (s.description as List).join('\n')
-        : s.description as String?;
+    final desc = _descriptionFromDynamic(s.description);
     return Suggestion(
       name: _primaryName(names),
       allNames: names,
@@ -348,9 +344,7 @@ Iterable<Suggestion> filterOptionSuggestions(
   final asSuggestions = valid.map((o) {
     final names = o.nameList;
     if (names.isEmpty) return null;
-    final desc = o.description is List
-        ? (o.description as List).join('\n')
-        : o.description as String?;
+    final desc = _descriptionFromDynamic(o.description);
     return Suggestion(
       name: _primaryName(names),
       allNames: names,

@@ -54,6 +54,21 @@ int _strLength(String s) {
   return s.length;
 }
 
+/// Returns true when the character at [idx] in [s] is preceded by an odd number
+/// of consecutive backslashes (i.e. the character is escape-quoted).
+///
+/// Example: `\\"` has two backslashes before `"`, so even count → NOT escaped.
+///          `\"`  has one backslash before `"`, so odd count  → IS escaped.
+bool _isEscapedAt(String s, int idx) {
+  var count = 0;
+  var j = idx - 1;
+  while (j >= 0 && s[j] == '\\') {
+    count++;
+    j--;
+  }
+  return count.isOdd;
+}
+
 /// Lex [command] into [CommandToken]s.
 ///
 /// Supports:
@@ -84,9 +99,9 @@ List<CommandToken> _lex(String command, Shell shell) {
       final start = i;
 
       // Scan until an unescaped closing quote (or end of input).
-      // At the first iteration i >= 1, so command[i-1] is always valid.
+      // Uses _isEscapedAt to correctly handle double-backslash before quote (e.g. \\" closes).
       while (i < command.length) {
-        if (command[i] == quoteChar && command[i - 1] != r'\') break;
+        if (command[i] == quoteChar && !_isEscapedAt(command, i)) break;
         i++;
       }
 

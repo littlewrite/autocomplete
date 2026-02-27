@@ -59,7 +59,8 @@ void main(List<String> args) async {
   registerBuiltinSpecs();
   final cwd = Directory.current.path;
 
-  final blob = await getSuggestions(cmd, cwd, shell, LocalCompleteAdapter());
+  final engine = AutocompleteEngine();
+  final blob = await engine.getSuggestions(cmd, cwd, shell, LocalCompleteAdapter());
   if (blob == null) {
     print('(no spec or no suggestions)');
     exit(0);
