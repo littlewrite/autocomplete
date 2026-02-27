@@ -10,6 +10,9 @@ class CompletionContext {
   final Shell shell;
   final CompleteAdapter adapter;
 
+  /// Optional callback to ensure a spec is loaded on demand (e.g. for subcommand loadSpec resolution).
+  final Future<void> Function(String command)? ensureSpecLoaded;
+
   /// Current index in [allTokens].
   int currentIndex;
 
@@ -19,11 +22,18 @@ class CompletionContext {
   /// Options that persist down the tree (e.g. global flags).
   final List<FigOption> persistentOptions = [];
 
+  /// Cache for resolved loadSpec subcommands within this completion traversal.
+  /// Key: loadSpec string (e.g. "git"); value: the resolved [FigSubcommand] data.
+  /// Avoids repeated registry lookups and object allocations when the same
+  /// subcommand is visited more than once within a single getSuggestions call.
+  final Map<String, FigSubcommand> resolvedSubcommandCache = {};
+
   CompletionContext({
     required this.allTokens,
     required this.cwd,
     required this.shell,
     required this.adapter,
+    this.ensureSpecLoaded,
     this.currentIndex = 0,
   });
 
@@ -39,7 +49,31 @@ class CompletionContext {
     }
   }
 
-  /// Add persistent options to the context.
+  /// Add persistent options to the context, skipping duplicates by option name.
+  ///
+  /// Unlike a plain [List.addAll], this method checks existing [persistentOptions]
+  /// names first so that the same persistent option is never added twice even
+  /// when the same subcommand is visited on multiple recursive paths.
+  void addPersistentOptionsDeduped(List<FigOption>? options) {
+    if (options == null || options.isEmpty) return;
+    if (persistentOptions.isEmpty) {
+      for (final o in options) {
+        if (o.isPersistent) persistentOptions.add(o);
+      }
+      return;
+    }
+    final existingNames =
+        persistentOptions.expand((o) => o.nameList).toSet();
+    for (final o in options) {
+      if (!o.isPersistent) continue;
+      if (o.nameList.every((n) => !existingNames.contains(n))) {
+        persistentOptions.add(o);
+        existingNames.addAll(o.nameList);
+      }
+    }
+  }
+
+  /// Add persistent options to the context (legacy, no dedup).
   void addPersistentOptions(List<FigOption>? options) {
     if (options != null) {
       persistentOptions.addAll(options);

@@ -13,6 +13,7 @@ class Suggestion {
     this.insertValue,
     this.type,
     this.hidden = false,
+    this.pathy = false,
   });
 
   final String name;
@@ -23,6 +24,12 @@ class Suggestion {
   final String? insertValue;
   final SuggestionType? type;
   final bool hidden;
+
+  /// Whether this suggestion represents a file or folder path.
+  ///
+  /// When true and the current token is NOT quoted, spaces in [name]/[insertValue]
+  /// will be backslash-escaped by [adjustPathSuggestions] before presenting to the user.
+  final bool pathy;
 }
 
 /// Result of getSuggestions: list of suggestions and optional metadata.

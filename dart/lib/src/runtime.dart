@@ -69,7 +69,8 @@ Future<Iterable<Suggestion>> runTemplateSuggestions(
       allNames: [t.name],
       icon: iconForType(t.type),
       priority: t.priority,
-      type: t.type));
+      type: t.type,
+      pathy: t.type == SuggestionType.file || t.type == SuggestionType.folder));
 }
 
 /// Build [ExecuteCommandFunction] for generator custom callbacks.
@@ -103,7 +104,10 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   final custom = gen.custom;
   if (custom != null) {
     if (custom is List && custom.isNotEmpty) {
-      return custom.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
+      // Generator-provided list: use priority 60 when unspecified (matches inshellisense).
+      return custom
+          .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
+          .whereType<Suggestion>();
     }
     if (custom is Function) {
       final tokens = allTokens.map((t) => t.token).toList();
@@ -119,7 +123,10 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         final result = custom(tokens, executeCommand, generatorContext);
         final raw = result is Future ? await result : result;
         final list = raw is List ? raw : <dynamic>[];
-        return list.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
+        // Generator-provided list: use priority 60 when unspecified (matches inshellisense).
+        return list
+            .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
+            .whereType<Suggestion>();
       } catch (e, st) {
         logger?.call('[Fig generator] custom callback error', e, st);
         return const [];
@@ -159,7 +166,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     final rawScript = gen.script;
     List<String> scriptList;
     if (rawScript is List) {
-      scriptList = rawScript.cast<String>();
+      // Use toString() instead of cast<String>() to avoid lazy-cast RuntimeErrors
+      // when the spec returns a List<dynamic> rather than a List<String>.
+      scriptList = rawScript.map((e) => e.toString()).toList();
     } else if (rawScript is Function) {
       final tokens = allTokens.map((t) => t.token).toList();
       final generatorContext = FigGeneratorContext(
@@ -175,7 +184,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
       } catch (_) {
         result = rawScript(tokens);
       }
-      scriptList = (result is List) ? result.cast<String>() : <String>[];
+      scriptList = (result is List)
+          ? result.map((e) => e.toString()).toList()
+          : <String>[];
     } else {
       return const [];
     }
@@ -190,8 +201,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         final stdout = result.stdout;
         final tokens = allTokens.map((t) => t.token).toList();
         final figSuggestions = gen.postProcess!(stdout, tokens);
+        // Script-generated suggestions: use priority 60 when unspecified (matches inshellisense).
         return figSuggestions
-            .map((s) => toSuggestionDynamic(s))
+            .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
             .whereType<Suggestion>();
       } catch (e) {
         logger?.call('[Fig generator] script error', e);
@@ -247,7 +259,9 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
         activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
+      removeAccepted(
+          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
+      partialToken)));
   return SuggestionBlob(suggestions: suggestions);
 }
 
@@ -292,7 +306,9 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
         partial));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
+      removeAccepted(
+          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
+      partialToken)));
   return SuggestionBlob(
       suggestions: suggestions,
       argumentDescription: activeArg.description ?? activeArg.name);
@@ -321,6 +337,90 @@ FigOption? getOption(CommandToken token, Iterable<FigOption> options) {
   return null;
 }
 
+/// Find the first subcommand whose name list contains [tokenName].
+FigSubcommand? _findSubcommand(FigSubcommand subcommand, String tokenName) {
+  if (subcommand.subcommands == null) return null;
+  for (final s in subcommand.subcommands!) {
+    if (s.nameList.contains(tokenName)) return s;
+  }
+  return null;
+}
+
+/// Resolve a subcommand's [FigSubcommand.loadSpec] to its full spec.
+///
+/// Mirrors JS inshellisense `genSubcommand`: when a matched subcommand carries a
+/// `loadSpec` string or [FigSubcommand] object, this loads/merges the extra data
+/// and returns an enriched copy (the original is not mutated).  If loading fails
+/// or the type is unsupported the original [sub] is returned unchanged.
+///
+/// Results for string-keyed specs are stored in [CompletionContext.resolvedSubcommandCache]
+/// so repeated traversals within the same getSuggestions call pay the cost only once.
+Future<FigSubcommand> _resolveSubcommandSpec(
+  FigSubcommand sub,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  final ls = sub.loadSpec;
+  if (ls == null) return sub;
+
+  // Fast path: already resolved this spec key in the current traversal.
+  if (ls is String) {
+    final cached = context.resolvedSubcommandCache[ls];
+    if (cached != null) {
+      return FigSubcommand(
+        name: sub.name,
+        description: cached.description ?? sub.description,
+        subcommands: cached.subcommands ?? sub.subcommands,
+        options: cached.options ?? sub.options,
+        args: cached.args ?? sub.args,
+        icon: sub.icon ?? cached.icon,
+        filterStrategy: sub.filterStrategy ?? cached.filterStrategy,
+      );
+    }
+  }
+
+  try {
+    FigSubcommand? loaded;
+    if (ls is String) {
+      // Ensure the named spec is registered (deferred import path).
+      await context.ensureSpecLoaded?.call(ls);
+      final spec = getSpec(ls);
+      if (spec != null) {
+        loaded = FigSubcommand(
+          name: spec.name,
+          description: spec.description,
+          subcommands: spec.subcommands,
+          options: spec.options,
+          args: spec.args,
+          icon: spec.icon,
+          filterStrategy: spec.filterStrategy,
+        );
+        // Store raw loaded data so subsequent resolutions of the same key reuse it.
+        context.resolvedSubcommandCache[ls] = loaded;
+      }
+    } else if (ls is FigSubcommand) {
+      loaded = ls;
+    }
+    // Function-typed loadSpec is not supported in static Dart specs; skip.
+    if (loaded == null) return sub;
+
+    // Loaded spec wins; fall back to original fields where loaded has nothing.
+    return FigSubcommand(
+      name: sub.name,
+      description: loaded.description ?? sub.description,
+      subcommands: loaded.subcommands ?? sub.subcommands,
+      options: loaded.options ?? sub.options,
+      args: loaded.args ?? sub.args,
+      icon: sub.icon ?? loaded.icon,
+      filterStrategy: sub.filterStrategy ?? loaded.filterStrategy,
+      // Clear loadSpec so this subcommand is not resolved again on the next call.
+    );
+  } catch (e, st) {
+    logger?.call('[Fig loadSpec] error resolving subcommand loadSpec', e, st);
+    return sub;
+  }
+}
+
 /// Recursive: run subcommand matching.
 Future<SuggestionBlob?> runSubcommand(
   FigSubcommand subcommand,
@@ -343,21 +443,21 @@ Future<SuggestionBlob?> runSubcommand(
   final activeToken = context.currentToken;
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
-  final option = getOption(activeToken, allOptions);
-  if (option != null) {
-    return runOption(option, subcommand, context, logger: logger);
-  }
-  final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
-        (s) => s!.nameList.contains(activeToken.token),
-        orElse: () => null,
-      );
-  if (nextSub != null) {
-    if (subcommand.options != null) {
-      context.persistentOptions
-          .addAll(subcommand.options!.where((o) => o.isPersistent));
+  if (activeToken.isOption) {
+    final option = getOption(activeToken, allOptions);
+    if (option != null) {
+      return runOption(option, subcommand, context, logger: logger);
     }
+    // Unknown option token: stop traversal and return no suggestions,
+    // matching JS inshellisense behavior.
+    return null;
+  }
+  final nextSub = _findSubcommand(subcommand, activeToken.token);
+  if (nextSub != null) {
+    context.addPersistentOptionsDeduped(subcommand.options);
     context.advance();
-    return runSubcommand(nextSub, context, false, false, logger);
+    final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+    return runSubcommand(resolvedSub, context, false, false, logger);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
@@ -396,23 +496,33 @@ Future<SuggestionBlob?> runArg(
     final option = getOption(activeToken, allOptions);
     if (option != null)
       return runOption(option, subcommand, context, logger: logger);
+    // Unknown option in all-optional-arg context: no suggestions.
+    return null;
   }
   if (activeArg.isVariadic) {
     context.advance();
     return runArg(args, subcommand, context, fromOption, true, logger: logger);
   }
+  // isCommand: the current token is itself a CLI command whose spec should be
+  // loaded and traversed. Mirrors JS inshellisense runArg isCommand branch
+  // (e.g. `sudo git commit` — sudo's arg has isCommand: true).
+  if (activeArg.isCommand == true) {
+    await context.ensureSpecLoaded?.call(activeToken.token);
+    final cmdTokens = context.allTokens.sublist(context.currentIndex);
+    final cmdSpec = loadSpec(cmdTokens);
+    if (cmdSpec == null) return null;
+    final cmdSub = getSubcommand(cmdSpec);
+    if (cmdSub == null) return null;
+    context.advance();
+    return runSubcommand(cmdSub, context, false, false, logger);
+  }
   if (activeArg.isOptional) {
-    final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
-          (s) => s!.nameList.contains(activeToken.token),
-          orElse: () => null,
-        );
+    final nextSub = _findSubcommand(subcommand, activeToken.token);
     if (nextSub != null) {
-      if (subcommand.options != null) {
-        context.persistentOptions
-            .addAll(subcommand.options!.where((o) => o.isPersistent));
-      }
+      context.addPersistentOptionsDeduped(subcommand.options);
       context.advance();
-      return runSubcommand(nextSub, context, false, false, logger);
+      final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+      return runSubcommand(resolvedSub, context, false, false, logger);
     }
   }
   context.advance();
@@ -442,6 +552,18 @@ class AutocompleteEngine {
   /// Cache for generated specs (e.g. git help -a).
   /// Key: specName|cwd
   final Map<String, FigSpec> _generateSpecCache = {};
+
+  /// Max entries in [_generateSpecCache]. Oldest entry (insertion order) is
+  /// evicted when the limit is reached, preventing unbounded growth when cwd
+  /// changes frequently.
+  static const int _generateSpecCacheMaxSize = 20;
+
+  void _putGenerateSpecCache(String key, FigSpec spec) {
+    if (_generateSpecCache.length >= _generateSpecCacheMaxSize) {
+      _generateSpecCache.remove(_generateSpecCache.keys.first);
+    }
+    _generateSpecCache[key] = spec;
+  }
 
   /// EnsureSpecLoaded callback for this engine instance.
   EnsureSpecLoaded? _ensureSpecLoaded;
@@ -508,7 +630,7 @@ class AutocompleteEngine {
           final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
           generated = await gen(tokens, executeCommand);
           if (generated != null) {
-            _generateSpecCache[cacheKey] = generated;
+            _putGenerateSpecCache(cacheKey, generated);
           }
         }
 
@@ -529,6 +651,7 @@ class AutocompleteEngine {
       shell: shell,
       adapter: adapter,
       currentIndex: 1,
+      ensureSpecLoaded: ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
     );
 
     final result = await runSubcommand(subcommand, context, false, false, log);
