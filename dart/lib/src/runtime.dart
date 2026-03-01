@@ -229,34 +229,38 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
+  final strategy =
+      context.filterStrategyOverride ?? subcommand.filterStrategy;
   if (!argsFromSubcommand) {
     suggestions.addAll(filterSubcommandSuggestions(
-        subcommand.subcommands, subcommand.filterStrategy, partial));
+        subcommand.subcommands, strategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
         context.acceptedTokens
             .where((t) => t.isOption)
             .map((t) => t.token)
             .toSet(),
-        subcommand.filterStrategy,
+        strategy,
         partial));
   }
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
+    final argStrategy =
+        context.filterStrategyOverride ?? activeArg.filterStrategy;
     final templateSuggestions =
         await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
     suggestions.addAll(filterSuggestionList(
-        templateSuggestions, activeArg.filterStrategy, partial));
+        templateSuggestions, argStrategy, partial));
     for (final gen in activeArg.generatorsList) {
       final generated = await runGeneratorSuggestions(
           gen, context.allTokens, context.cwd, context.adapter,
           logger: logger);
       suggestions.addAll(
-          filterSuggestionList(generated, activeArg.filterStrategy, partial));
+          filterSuggestionList(generated, argStrategy, partial));
     }
     suggestions.addAll(filterSuggestions(
-        activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+        activeArg.suggestionsAsList, argStrategy, partial, null));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
       removeAccepted(
@@ -280,29 +284,33 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
+  // 优先使用调用方的 override（如 FaTerm 全局 fuzzy），其次用 spec 配置。
+  final override = context.filterStrategyOverride;
+  final argStrategy = override ?? activeArg.filterStrategy;
   final templateSuggestions =
       await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
   suggestions.addAll(filterSuggestionList(
-      templateSuggestions, activeArg.filterStrategy, partial));
+      templateSuggestions, argStrategy, partial));
   for (final gen in activeArg.generatorsList) {
     final generated = await runGeneratorSuggestions(
         gen, context.allTokens, context.cwd, context.adapter,
         logger: logger);
     suggestions.addAll(
-        filterSuggestionList(generated, activeArg.filterStrategy, partial));
+        filterSuggestionList(generated, argStrategy, partial));
   }
   suggestions.addAll(filterSuggestions(
-      activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+      activeArg.suggestionsAsList, argStrategy, partial, null));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
+    final subStrategy = override ?? subcommand.filterStrategy;
     suggestions.addAll(filterSubcommandSuggestions(
-        subcommand.subcommands, activeArg.filterStrategy, partial));
+        subcommand.subcommands, subStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
         context.acceptedTokens
             .where((t) => t.isOption)
             .map((t) => t.token)
             .toSet(),
-        activeArg.filterStrategy,
+        subStrategy,
         partial));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
@@ -597,6 +605,7 @@ class AutocompleteEngine {
     Shell shell,
     CompleteAdapter adapter, {
     EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
@@ -652,6 +661,7 @@ class AutocompleteEngine {
       adapter: adapter,
       currentIndex: 1,
       ensureSpecLoaded: ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
     );
 
     final result = await runSubcommand(subcommand, context, false, false, log);
@@ -684,16 +694,20 @@ final _defaultEngine = AutocompleteEngine();
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
 /// Uses a default global [AutocompleteEngine] instance.
+/// [filterStrategyOverride] when set (e.g. [FilterStrategy.fuzzy]) overrides spec-level filter for this call.
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
   Shell shell,
   CompleteAdapter adapter, {
   EnsureSpecLoaded? ensureSpecLoaded,
+  FilterStrategy? filterStrategyOverride,
   LogCallback? logger,
 }) {
   return _defaultEngine.getSuggestions(cmd, cwd, shell, adapter,
-      ensureSpecLoaded: ensureSpecLoaded, logger: logger);
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger);
 }
 
 /// Clear the default engine cache.

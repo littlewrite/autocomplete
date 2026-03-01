@@ -13,6 +13,10 @@ class CompletionContext {
   /// Optional callback to ensure a spec is loaded on demand (e.g. for subcommand loadSpec resolution).
   final Future<void> Function(String command)? ensureSpecLoaded;
 
+  /// When non-null, overrides spec-level [FigSpec.filterStrategy] / [FigSubcommand.filterStrategy] for this call.
+  /// Lets callers (e.g. FaTerm) always use fuzzy matching without changing specs.
+  final FilterStrategy? filterStrategyOverride;
+
   /// Current index in [allTokens].
   int currentIndex;
 
@@ -34,6 +38,7 @@ class CompletionContext {
     required this.shell,
     required this.adapter,
     this.ensureSpecLoaded,
+    this.filterStrategyOverride,
     this.currentIndex = 0,
   });
 
