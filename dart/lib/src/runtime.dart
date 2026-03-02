@@ -429,6 +429,72 @@ Future<FigSubcommand> _resolveSubcommandSpec(
   }
 }
 
+/// Attempt to resolve [activeToken] as a command alias via [parserDirectives.alias]
+/// defined on [subcommand.args].  Returns the expanded [CommandToken] list when
+/// expansion succeeds, or null when the token is not an alias or resolution fails.
+///
+/// Results (positive and negative) are stored in [context.aliasCache] keyed by
+/// "rootCmd|token" to avoid redundant shell invocations across calls.
+Future<List<CommandToken>?> _tryResolveAlias(
+  FigSubcommand subcommand,
+  CommandToken activeToken,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  final cache = context.aliasCache;
+  if (cache == null) return null;
+  final args = subcommand.args;
+  if (args == null || args.isEmpty) return null;
+
+  // Find the first arg that carries a parserDirectives.alias function.
+  Function? aliasResolver;
+  for (final arg in args) {
+    final pd = arg.parserDirectives;
+    if (pd is Map) {
+      final a = pd['alias'];
+      if (a is Function) {
+        aliasResolver = a;
+        break;
+      }
+    }
+  }
+  if (aliasResolver == null) return null;
+
+  // Use the root command name (first token) as part of the cache key.
+  final rootCmd =
+      context.allTokens.isNotEmpty ? context.allTokens.first.token : '';
+  final cacheKey = '$rootCmd|${activeToken.token}';
+
+  // Serve from cache (including negative entries stored as null).
+  if (cache.containsKey(cacheKey)) {
+    final cached = cache[cacheKey];
+    if (cached == null || cached.isEmpty) return null;
+    final tokens = parseCommand('$cached ', context.shell);
+    return tokens.isEmpty ? null : tokens;
+  }
+
+  try {
+    final executeCommand = _createExecuteCommand(context.cwd, context.adapter);
+    final raw = aliasResolver(activeToken.token, executeCommand);
+    final expanded =
+        ((raw is Future ? await raw : raw) as String? ?? '').trim();
+
+    // Cache result (null for empty = negative cache).
+    if (cache.length >= 8) cache.remove(cache.keys.first);
+    cache[cacheKey] = expanded.isEmpty ? null : expanded;
+
+    if (expanded.isEmpty) return null;
+    final tokens = parseCommand('$expanded ', context.shell);
+    return tokens.isEmpty ? null : tokens;
+  } catch (e, st) {
+    // Store negative cache entry so we don't retry on every keystroke.
+    if (cache.length >= 8) cache.remove(cache.keys.first);
+    cache[cacheKey] = null;
+    logger?.call('[parserDirectives.alias] failed to resolve alias', e, st);
+    return null;
+  }
+}
+
 /// Recursive: run subcommand matching.
 Future<SuggestionBlob?> runSubcommand(
   FigSubcommand subcommand,
@@ -466,6 +532,30 @@ Future<SuggestionBlob?> runSubcommand(
     context.advance();
     final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
     return runSubcommand(resolvedSub, context, false, false, logger);
+  }
+  // No direct subcommand match — try alias expansion (e.g. `git co` → `checkout`).
+  final expandedTokens =
+      await _tryResolveAlias(subcommand, activeToken, context, logger);
+  if (expandedTokens != null) {
+    // Splice expanded tokens in place of the alias token and retry traversal.
+    final newAllTokens = [
+      ...context.allTokens.sublist(0, context.currentIndex),
+      ...expandedTokens,
+      ...context.allTokens.sublist(context.currentIndex + 1),
+    ];
+    final newContext = CompletionContext(
+      allTokens: newAllTokens,
+      cwd: context.cwd,
+      shell: context.shell,
+      adapter: context.adapter,
+      currentIndex: context.currentIndex,
+      ensureSpecLoaded: context.ensureSpecLoaded,
+      filterStrategyOverride: context.filterStrategyOverride,
+      aliasCache: context.aliasCache,
+    );
+    newContext.acceptedTokens.addAll(context.acceptedTokens);
+    newContext.persistentOptions.addAll(context.persistentOptions);
+    return runSubcommand(subcommand, newContext, false, false, logger);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
@@ -564,7 +654,7 @@ class AutocompleteEngine {
   /// Max entries in [_generateSpecCache]. Oldest entry (insertion order) is
   /// evicted when the limit is reached, preventing unbounded growth when cwd
   /// changes frequently.
-  static const int _generateSpecCacheMaxSize = 20;
+  static const int _generateSpecCacheMaxSize = 8;
 
   void _putGenerateSpecCache(String key, FigSpec spec) {
     if (_generateSpecCache.length >= _generateSpecCacheMaxSize) {
@@ -572,6 +662,11 @@ class AutocompleteEngine {
     }
     _generateSpecCache[key] = spec;
   }
+
+  /// Cache for parserDirectives.alias resolution results.
+  /// Key: "cmdName|aliasToken"; value: expanded command string, or null (negative cache).
+  /// Avoids repeated `git config --get alias.X` calls for the same alias token.
+  final Map<String, String?> _aliasResolveCache = {};
 
   /// EnsureSpecLoaded callback for this engine instance.
   EnsureSpecLoaded? _ensureSpecLoaded;
@@ -590,6 +685,7 @@ class AutocompleteEngine {
   /// Clear all internal caches.
   void clearCache() {
     _generateSpecCache.clear();
+    _aliasResolveCache.clear();
   }
 
   /// Dispose the engine (alias for clearCache for now).
@@ -654,28 +750,179 @@ class AutocompleteEngine {
     final subcommand = getSubcommand(spec);
     if (subcommand == null) return null;
 
+    // Resolve cwd from the last typed token so that path-style arguments like
+    // `~/xh` or `./foo/bar` correctly scope template/generator suggestions to
+    // the intended directory (mirrors inshellisense runtime.ts resolveCwd call).
+    final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
+    final tokenCwdResult =
+        await _resolveTokenCwd(lastToken, resolvedCwd, adapter);
+    final effectiveCwd = tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
+    log?.call('[autocomplete] tokenCwd: '
+        'lastToken="${lastToken?.token}" '
+        'pathy=${tokenCwdResult.pathy} '
+        'complete=${tokenCwdResult.complete} '
+        'cwd="$effectiveCwd" '
+        'filterPartial="${tokenCwdResult.filterPartial}"');
+
+    // When pathy, replace the last token with a synthetic token whose `.token`
+    // field is the basename only (e.g. `"xh"` for `~/xh`, `""` for `~/`).
+    // The recommendation functions use `partialToken.token` as the filter prefix
+    // against directory listing results, so it must NOT include the path prefix.
+    List<CommandToken> effectiveTokens = activeCmd;
+    if (tokenCwdResult.pathy && activeCmd.isNotEmpty) {
+      final orig = activeCmd.last;
+      final basenameToken = CommandToken(
+        token: tokenCwdResult.filterPartial,
+        tokenLength: tokenCwdResult.basenameLength,
+        complete: orig.complete,
+        isOption: false,
+        isPath: true,
+        isPathComplete: tokenCwdResult.complete,
+        isQuoted: orig.isQuoted,
+      );
+      effectiveTokens = [
+        ...activeCmd.sublist(0, activeCmd.length - 1),
+        basenameToken,
+      ];
+    }
+
     final context = CompletionContext(
-      allTokens: activeCmd,
-      cwd: resolvedCwd,
+      allTokens: effectiveTokens,
+      cwd: effectiveCwd,
       shell: shell,
       adapter: adapter,
       currentIndex: 1,
       ensureSpecLoaded: ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
+      aliasCache: _aliasResolveCache,
     );
 
     final result = await runSubcommand(subcommand, context, false, false, log);
     if (result == null) return null;
     if (result.suggestions.isEmpty && result.argumentDescription == null)
       return null;
-    final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
-    final charactersToDrop =
-        lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+
+    // Compute charactersToDrop:
+    //  - pathy + complete (token ends with `/`): drop 0 (cursor is right after the slash)
+    //  - pathy + incomplete: drop the basename length (partial folder name)
+    //  - not pathy: drop the full last token length (normal partial token)
+    final int charactersToDrop;
+    if (tokenCwdResult.pathy) {
+      charactersToDrop =
+          tokenCwdResult.complete ? 0 : tokenCwdResult.basenameLength;
+    } else {
+      charactersToDrop =
+          lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+    }
+
+    log?.call('[autocomplete] result: '
+        '${result.suggestions.length} suggestions, '
+        'charactersToDrop=$charactersToDrop');
     return SuggestionBlob(
         suggestions: result.suggestions,
         argumentDescription: result.argumentDescription,
         charactersToDrop: charactersToDrop);
   }
+}
+
+class _TokenCwdResult {
+  const _TokenCwdResult({
+    required this.cwd,
+    required this.pathy,
+    required this.complete,
+    required this.basenameLength,
+    required this.filterPartial,
+  });
+
+  final String cwd;
+  final bool pathy;
+  final bool complete;
+
+  /// Length of the basename portion of the original token (used for charactersToDrop).
+  final int basenameLength;
+
+  /// The basename portion of the token to use as the filter prefix when listing
+  /// directory contents.  Empty string when the token ends with `/` (show all).
+  final String filterPartial;
+}
+
+/// Resolve an effective cwd based on the last typed token (mirrors inshellisense utils.ts resolveCwd).
+///
+/// When the token contains a path separator the user is navigating into a
+/// sub-directory.  We expand `~` using the HOME env var, then:
+///
+/// * Token ends with `/` (complete path): use the full resolved path as cwd,
+///   `complete = true`, `charactersToDrop = 0`.
+/// * Token does NOT end with `/` (incomplete, e.g. partial folder name):
+///   use the parent directory as cwd so the caller can list candidates and
+///   filter by the basename; `complete = false`,
+///   `charactersToDrop = basename.length`.
+///
+/// Returns `pathy: false` when the token does not look like a path (no separator).
+Future<_TokenCwdResult> _resolveTokenCwd(
+  CommandToken? cmdToken,
+  String baseCwd,
+  CompleteAdapter adapter,
+) async {
+  const sep = '/';
+  _TokenCwdResult notPathy() => _TokenCwdResult(
+      cwd: baseCwd,
+      pathy: false,
+      complete: false,
+      basenameLength: 0,
+      filterPartial: '');
+
+  if (cmdToken == null) return notPathy();
+
+  // Unescape `\ ` → space so we resolve the real path correctly.
+  final token = cmdToken.token.replaceAll('\\ ', ' ');
+  if (!token.contains(sep)) return notPathy();
+
+  // Expand leading `~` to $HOME.
+  String expanded;
+  if (token == '~' || token.startsWith('~/')) {
+    final home = adapter.getEnv('HOME') ?? '';
+    expanded = home + token.substring(1);
+  } else {
+    expanded = token;
+  }
+
+  // Resolve relative paths against baseCwd.
+  final String resolvedPath;
+  if (expanded.startsWith('/')) {
+    resolvedPath = expanded;
+  } else {
+    final base =
+        baseCwd.endsWith('/') ? baseCwd.substring(0, baseCwd.length - 1) : baseCwd;
+    resolvedPath = '$base/$expanded';
+  }
+
+  final complete = token.endsWith(sep);
+
+  if (complete) {
+    // Token ends with `/`: list the directory contents with no filter prefix.
+    return _TokenCwdResult(
+        cwd: resolvedPath,
+        pathy: true,
+        complete: true,
+        basenameLength: 0,
+        filterPartial: '');
+  }
+
+  // Token is an incomplete path (no trailing `/`).
+  // Use the parent directory so templates list siblings; the basename is the
+  // filter prefix so only matching entries are shown.
+  final lastSlash = resolvedPath.lastIndexOf('/');
+  if (lastSlash <= 0) return notPathy();
+  final parentPath = resolvedPath.substring(0, lastSlash + 1);
+  final basename = resolvedPath.substring(lastSlash + 1);
+  return _TokenCwdResult(
+    cwd: parentPath,
+    pathy: true,
+    complete: false,
+    basenameLength: basename.length,
+    filterPartial: basename,
+  );
 }
 
 /// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].

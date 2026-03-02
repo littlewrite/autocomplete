@@ -3254,7 +3254,19 @@ final FigSpec gitSpec = FigSpec(
           name: 'alias',
           description: 'Custom user defined git alias',
           isOptional: true,
-          generators: gitGenerators['aliases'])
+          generators: gitGenerators['aliases'],
+          parserDirectives: {
+            'alias': (String token, dynamic exec) async {
+              final result = await exec(ExecuteCommandInput(
+                command: 'git',
+                args: ['config', '--get', 'alias.$token'],
+              ));
+              if (result.status != 0) {
+                throw Exception('git alias not found: $token');
+              }
+              return (result.stdout as String).trim();
+            },
+          })
     ],
     options: [
       Option(name: '--version', description: 'Output version'),

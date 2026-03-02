@@ -32,6 +32,11 @@ class CompletionContext {
   /// subcommand is visited more than once within a single getSuggestions call.
   final Map<String, FigSubcommand> resolvedSubcommandCache = {};
 
+  /// Alias resolution cache shared from [AutocompleteEngine].
+  /// Key: "cmdName|token"; value: expanded command string, or null (negative cache).
+  /// Null map means alias resolution is disabled for this context.
+  final Map<String, String?>? aliasCache;
+
   CompletionContext({
     required this.allTokens,
     required this.cwd,
@@ -40,6 +45,7 @@ class CompletionContext {
     this.ensureSpecLoaded,
     this.filterStrategyOverride,
     this.currentIndex = 0,
+    this.aliasCache,
   });
 
   bool get isAtEnd => currentIndex >= allTokens.length;
