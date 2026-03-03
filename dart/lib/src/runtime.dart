@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'adapter.dart';
+import 'alias.dart';
 import 'model.dart';
 import 'parser.dart';
 import 'registry.dart';
@@ -668,6 +669,11 @@ class AutocompleteEngine {
   /// Avoids repeated `git config --get alias.X` calls for the same alias token.
   final Map<String, String?> _aliasResolveCache = {};
 
+  /// Shell-level alias cache: loaded once per shell type by running
+  /// `<shell> -i -c alias` via the adapter (mirrors TS alias.ts loadedAliases).
+  /// Key: Shell enum; value: alias-name → expanded CommandToken list.
+  final Map<Shell, Map<String, List<CommandToken>>> _shellAliasCache = {};
+
   /// EnsureSpecLoaded callback for this engine instance.
   EnsureSpecLoaded? _ensureSpecLoaded;
 
@@ -686,6 +692,27 @@ class AutocompleteEngine {
   void clearCache() {
     _generateSpecCache.clear();
     _aliasResolveCache.clear();
+    _shellAliasCache.clear();
+  }
+
+  /// Expand the root token of [tokens] via shell-level aliases (bash/zsh).
+  ///
+  /// Loads aliases lazily on first call per shell type.  Returns the expanded
+  /// token list when a match is found, otherwise null.
+  Future<List<CommandToken>?> _expandRootAlias(
+    List<CommandToken> tokens,
+    Shell shell,
+    String cwd,
+    CompleteAdapter adapter,
+    LogCallback? log,
+  ) async {
+    if (tokens.isEmpty || !tokens.first.complete) return null;
+    if (shell != Shell.bash && shell != Shell.zsh) return null;
+
+    if (!_shellAliasCache.containsKey(shell)) {
+      _shellAliasCache[shell] = await loadShellAliases(shell, adapter);
+    }
+    return aliasExpand(tokens, _shellAliasCache[shell]!);
   }
 
   /// Dispose the engine (alias for clearCache for now).
@@ -705,7 +732,7 @@ class AutocompleteEngine {
     LogCallback? logger,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
-    final activeCmd = parseCommand(cmd, shell);
+    var activeCmd = parseCommand(cmd, shell);
 
     if (activeCmd.isEmpty) return null;
     final rootToken = activeCmd.first;
@@ -718,7 +745,20 @@ class AutocompleteEngine {
       await ensure(rootToken.token);
     }
     FigSpec? spec = loadSpec(activeCmd);
-    if (spec == null) return null;
+    if (spec == null) {
+      // Try shell-level alias expansion (e.g. `tran` → `traceroute`).
+      // Mirrors TS runtime.ts: `activeCmd = aliasExpand(activeCmd)` before loadSpec.
+      final expanded =
+          await _expandRootAlias(activeCmd, shell, cwd, adapter, log);
+      if (expanded != null) {
+        activeCmd = expanded;
+        // Ensure the expanded root spec is registered (deferred v2 import).
+        final newRoot = activeCmd.first;
+        if (ensure != null) await ensure(newRoot.token);
+        spec = loadSpec(activeCmd);
+      }
+      if (spec == null) return null;
+    }
 
     final resolvedCwd = await adapter.resolveCwd(cwd, shell);
 
