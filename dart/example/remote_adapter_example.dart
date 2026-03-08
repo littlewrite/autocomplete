@@ -107,7 +107,8 @@ void main(List<String> args) async {
     env: {'HOME': '/tmp'},
   );
 
-  final blob = await getSuggestions(cmd, cwd, shell, adapter);
+  final engine = AutocompleteEngine();
+  final blob = await engine.getSuggestions(cmd, cwd, shell, adapter);
   if (blob == null) {
     print('(no spec or no suggestions; remote adapter is a stub)');
     exit(0);

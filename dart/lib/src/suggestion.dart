@@ -1,7 +1,7 @@
 // Suggestion building: merge, filter, path handling (reference: inshellisense suggestion.ts).
 
 import 'model.dart';
-import 'parser.dart';
+import 'parser.dart' show CommandToken;
 import 'spec.dart';
 
 const String suggestionIconFile = '📄';
@@ -33,9 +33,11 @@ String iconForType(SuggestionType? type) {
 
 String longName(dynamic name) {
   if (name == null) return '';
-  if (name is List)
-    return (name as List<String>)
-        .reduce((a, b) => a.length >= b.length ? a : b);
+  if (name is List) {
+    final list = name as List<String>;
+    if (list.isEmpty) return '';
+    return list.reduce((a, b) => a.length >= b.length ? a : b);
+  }
   return name as String;
 }
 
@@ -86,9 +88,9 @@ SuggestionType? _suggestionTypeFromDynamic(dynamic v) {
   return suggestionTypeFromString(v);
 }
 
-int _priorityFromDynamic(dynamic p) {
+int _priorityFromDynamic(dynamic p, {int defaultPriority = 50}) {
   if (p is num) return p.toInt();
-  return 50;
+  return defaultPriority;
 }
 
 List<String>? _nameListFromDynamic(dynamic name) {
@@ -170,7 +172,7 @@ FigSuggestion? toFigSuggestion(dynamic s) {
   );
 }
 
-Suggestion? toSuggestionDynamic(dynamic s) {
+Suggestion? toSuggestionDynamic(dynamic s, {int defaultPriority = 50}) {
   if (s == null) return null;
   if (s is Suggestion) return s;
   if (s is FigSuggestion) return toSuggestion(s);
@@ -186,10 +188,11 @@ Suggestion? toSuggestionDynamic(dynamic s) {
       allNames: nameVal,
       description: description,
       icon: icon,
-      priority: _priorityFromDynamic(m['priority']),
+      priority: _priorityFromDynamic(m['priority'], defaultPriority: defaultPriority),
       insertValue: m['insertValue']?.toString(),
       type: type,
       hidden: m['hidden'] == true,
+      pathy: type == SuggestionType.file || type == SuggestionType.folder,
     );
   }
   return null;
@@ -199,76 +202,132 @@ Suggestion? toSuggestion(FigSuggestion s,
     {SuggestionType? type, String? name}) {
   final n = name ?? longName(s.name);
   if (n.isEmpty) return null;
-  final desc = s.description is List
-      ? (s.description as List).join('\n')
-      : s.description as String?;
+  final desc = _descriptionFromDynamic(s.description);
+  final resolvedType = type ?? s.type;
   return Suggestion(
     name: n,
     allNames: s.nameList,
     description: desc,
-    icon: s.icon ?? iconForType(type ?? s.type),
+    icon: s.icon ?? iconForType(resolvedType),
     priority: s.priority,
     insertValue: s.insertValue,
-    type: type ?? s.type,
+    type: resolvedType,
     hidden: s.hidden,
+    pathy: resolvedType == SuggestionType.file || resolvedType == SuggestionType.folder,
   );
 }
 
+bool _matchesPrefix(String candidate, String patternLower) {
+  return candidate.toLowerCase().startsWith(patternLower);
+}
+
+bool _matchesFuzzy(String candidate, String patternLower) {
+  if (patternLower.isEmpty) return true;
+  final lower = candidate.toLowerCase();
+  var j = 0;
+  for (var i = 0; i < lower.length; i++) {
+    if (lower[i] == patternLower[j]) {
+      j++;
+      if (j >= patternLower.length) return true;
+    }
+  }
+  return false;
+}
+
+String? _firstMatchingName(
+  Iterable<String> names,
+  String patternLower,
+  bool Function(String, String) matcher,
+) {
+  for (final n in names) {
+    if (matcher(n, patternLower)) return n;
+  }
+  return null;
+}
+
+/// Filter [Suggestion]s by [strategy] and [partial] prefix/fuzzy text.
+///
+/// When [partial] is null or empty all suggestions pass through.
+/// The matched name (which may differ from [Suggestion.name]) is used as the
+/// display name so users see the alias that actually matched.
+Iterable<Suggestion> filterSuggestionList(
+  Iterable<Suggestion> suggestions,
+  dynamic strategy,
+  String? partial,
+) {
+  if (partial == null || partial.isEmpty) return suggestions;
+  final strat = normalizeFilterStrategy(strategy);
+  final lower = partial.toLowerCase();
+
+  final matcher = strat == FilterStrategy.fuzzy ? _matchesFuzzy : _matchesPrefix;
+
+  return suggestions.map((s) {
+    final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
+    final matched = _firstMatchingName(names, lower, matcher);
+    if (matched == null) return null;
+    if (matched == s.name) return s;
+    return Suggestion(
+      name: matched,
+      allNames: s.allNames,
+      description: s.description,
+      icon: s.icon,
+      priority: s.priority,
+      insertValue: s.insertValue,
+      type: s.type,
+      hidden: s.hidden,
+      pathy: s.pathy,
+    );
+  }).whereType<Suggestion>();
+}
+
+/// Convert [FigSuggestion]s to [Suggestion]s and filter by [strategy] / [partial].
+///
+/// Thin wrapper around [filterSuggestionList]: converts the spec-level objects
+/// first (applying [suggestionType]), then delegates all filter logic there.
 Iterable<Suggestion> filterSuggestions(
   Iterable<FigSuggestion> suggestions,
   dynamic strategy,
   String? partial,
   SuggestionType? suggestionType,
 ) {
-  if (partial == null || partial.isEmpty) {
-    return suggestions
-        .map((s) => toSuggestion(s, type: suggestionType))
-        .whereType<Suggestion>();
-  }
-  final strat = normalizeFilterStrategy(strategy);
-  final lower = partial.toLowerCase();
-  switch (strat) {
-    case FilterStrategy.fuzzy:
-      return suggestions.map((s) {
-        final names = s.nameList;
-        final match = names.any((n) => n.toLowerCase().contains(lower));
-        if (!match) return null;
-        final name = names.cast<String?>().firstWhere(
-            (n) => n!.toLowerCase().contains(lower),
-            orElse: () => names.first);
-        return toSuggestion(s, type: suggestionType, name: name);
-      }).whereType<Suggestion>();
-    case FilterStrategy.prefix:
-    case FilterStrategy.defaultStrategy:
-    case null:
-      return suggestions.map((s) {
-        final names = s.nameList;
-        final match = names.any((n) => n.toLowerCase().startsWith(lower));
-        if (!match) return null;
-        final name = names.cast<String?>().firstWhere(
-            (n) => n!.toLowerCase().startsWith(lower),
-            orElse: () => names.first);
-        return toSuggestion(s, type: suggestionType, name: name);
-      }).whereType<Suggestion>();
-  }
+  final asSuggestions = suggestions
+      .map((s) => toSuggestion(s, type: suggestionType))
+      .whereType<Suggestion>();
+  return filterSuggestionList(asSuggestions, strategy, partial);
 }
 
+/// Convert [FigSubcommand]s directly to [Suggestion]s and filter by [strategy] / [partial].
+///
+/// Previously went FigSubcommand → FigSuggestion → Suggestion (two object allocations
+/// per entry). Now converts in a single pass to reduce GC pressure when specs have
+/// many subcommands (e.g. git with 150+ subcommands).
 Iterable<Suggestion> filterSubcommandSuggestions(
     Iterable<FigSubcommand>? subcommands, dynamic strategy, String? partial) {
   if (subcommands == null || subcommands.isEmpty) return const [];
-  final strat = normalizeFilterStrategy(strategy);
   final asSuggestions = subcommands.map((s) {
-    return FigSuggestion(
-        name: s.nameList,
-        description: s.description,
-        icon: s.icon,
-        priority: 50,
-        type: SuggestionType.subcommand);
-  });
-  return filterSuggestions(
-      asSuggestions, strat, partial, SuggestionType.subcommand);
+    final names = s.nameList;
+    if (names.isEmpty) return null;
+    final desc = _descriptionFromDynamic(s.description);
+    return Suggestion(
+      name: _primaryName(names),
+      allNames: names,
+      description: desc,
+      icon: s.icon ?? iconForType(SuggestionType.subcommand),
+      priority: s.priority ?? 50,
+      type: SuggestionType.subcommand,
+      hidden: s.hidden,
+      pathy: false,
+    );
+  }).whereType<Suggestion>();
+  return filterSuggestionList(asSuggestions, strategy, partial);
 }
 
+/// Convert [FigOption]s directly to [Suggestion]s and filter by [strategy] / [partial].
+///
+/// Previously went FigOption → FigSuggestion → Suggestion (two object allocations
+/// per entry). Now converts in a single pass. Also correctly preserves option
+/// [FigOption.icon] and [FigOption.hidden] which the old intermediate FigSuggestion
+/// construction was silently dropping.
 Iterable<Suggestion> filterOptionSuggestions(
   Iterable<FigOption>? options,
   Set<String> usedOptions,
@@ -276,7 +335,6 @@ Iterable<Suggestion> filterOptionSuggestions(
   String? partial,
 ) {
   if (options == null) return const [];
-  final strat = normalizeFilterStrategy(strategy);
   final valid = options.where((o) {
     if (o.exclusiveOn != null) {
       if (o.exclusiveOn!.any((e) => usedOptions.contains(e))) return false;
@@ -284,19 +342,22 @@ Iterable<Suggestion> filterOptionSuggestions(
     return true;
   });
   final asSuggestions = valid.map((o) {
-    final desc = o.description is List
-        ? (o.description as List).join('\n')
-        : o.description as String?;
-    return FigSuggestion(
-      name: o.nameList,
+    final names = o.nameList;
+    if (names.isEmpty) return null;
+    final desc = _descriptionFromDynamic(o.description);
+    return Suggestion(
+      name: _primaryName(names),
+      allNames: names,
       description: desc,
+      icon: o.icon ?? iconForType(SuggestionType.option),
       priority: o.priority ?? 50,
       insertValue: o.insertValue,
       type: SuggestionType.option,
+      hidden: o.hidden,
+      pathy: false,
     );
-  });
-  return filterSuggestions(
-      asSuggestions, strat, partial, SuggestionType.option);
+  }).whereType<Suggestion>();
+  return filterSuggestionList(asSuggestions, strategy, partial);
 }
 
 Iterable<Suggestion> removeAccepted(
@@ -327,4 +388,41 @@ List<Suggestion> sortByPriority(Iterable<Suggestion> suggestions) {
   final out = List<Suggestion>.from(suggestions);
   out.sort((a, b) => b.priority.compareTo(a.priority));
   return out;
+}
+
+// ── Path escaping ─────────────────────────────────────────────────────────────
+
+String? _escapePath(String? value) => value?.replaceAll(' ', r'\ ');
+
+/// Escape spaces in path suggestions when the current token is NOT quoted.
+///
+/// Mirrors inshellisense `adjustPathSuggestions`: for every [Suggestion] that
+/// is [Suggestion.pathy], spaces in [Suggestion.insertValue] (and [Suggestion.name]
+/// when there is no insertValue) are replaced with `\ ` so the resulting shell
+/// command is valid without surrounding quotes.
+///
+/// No-op when [partialToken] is null or [CommandToken.isQuoted] is true —
+/// quoted tokens handle spaces on their own.
+Iterable<Suggestion> adjustPathSuggestions(
+  Iterable<Suggestion> suggestions,
+  CommandToken? partialToken,
+) {
+  if (partialToken == null || partialToken.isQuoted) return suggestions;
+  return suggestions.map((s) {
+    if (!s.pathy) return s;
+    final escapedInsert = _escapePath(s.insertValue);
+    final escapedName =
+        s.insertValue == null ? (_escapePath(s.name) ?? s.name) : s.name;
+    return Suggestion(
+      name: escapedName,
+      allNames: s.allNames,
+      description: s.description,
+      icon: s.icon,
+      priority: s.priority,
+      insertValue: escapedInsert,
+      type: s.type,
+      hidden: s.hidden,
+      pathy: s.pathy,
+    );
+  });
 }

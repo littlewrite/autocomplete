@@ -1,3 +1,7 @@
+## 0.2.0
+
+- fuzzy suggestion filter, and tests
+
 ## 0.1.5
 
 - performance improvements

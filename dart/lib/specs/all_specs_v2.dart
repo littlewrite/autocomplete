@@ -230,10 +230,6 @@ import 'package:autocomplete/specs/envchain.dart' deferred as spec_envchain;
 import 'package:autocomplete/specs/esbuild.dart' deferred as spec_esbuild;
 import 'package:autocomplete/specs/eslint.dart' deferred as spec_eslint;
 import 'package:autocomplete/specs/exa.dart' deferred as spec_exa;
-import 'package:autocomplete/specs/example/git_push.dart'
-    deferred as spec_example_git_push;
-import 'package:autocomplete/specs/example/trigger.dart'
-    deferred as spec_example_trigger;
 import 'package:autocomplete/specs/exec.dart' deferred as spec_exec;
 import 'package:autocomplete/specs/exercism.dart' deferred as spec_exercism;
 import 'package:autocomplete/specs/export.dart' deferred as spec_export;

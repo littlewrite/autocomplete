@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'adapter.dart';
+import 'alias.dart';
 import 'model.dart';
 import 'parser.dart';
 import 'registry.dart';
@@ -69,7 +70,8 @@ Future<Iterable<Suggestion>> runTemplateSuggestions(
       allNames: [t.name],
       icon: iconForType(t.type),
       priority: t.priority,
-      type: t.type));
+      type: t.type,
+      pathy: t.type == SuggestionType.file || t.type == SuggestionType.folder));
 }
 
 /// Build [ExecuteCommandFunction] for generator custom callbacks.
@@ -103,7 +105,10 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   final custom = gen.custom;
   if (custom != null) {
     if (custom is List && custom.isNotEmpty) {
-      return custom.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
+      // Generator-provided list: use priority 60 when unspecified (matches inshellisense).
+      return custom
+          .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
+          .whereType<Suggestion>();
     }
     if (custom is Function) {
       final tokens = allTokens.map((t) => t.token).toList();
@@ -119,7 +124,10 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         final result = custom(tokens, executeCommand, generatorContext);
         final raw = result is Future ? await result : result;
         final list = raw is List ? raw : <dynamic>[];
-        return list.map((s) => toSuggestionDynamic(s)).whereType<Suggestion>();
+        // Generator-provided list: use priority 60 when unspecified (matches inshellisense).
+        return list
+            .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
+            .whereType<Suggestion>();
       } catch (e, st) {
         logger?.call('[Fig generator] custom callback error', e, st);
         return const [];
@@ -159,7 +167,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     final rawScript = gen.script;
     List<String> scriptList;
     if (rawScript is List) {
-      scriptList = rawScript.cast<String>();
+      // Use toString() instead of cast<String>() to avoid lazy-cast RuntimeErrors
+      // when the spec returns a List<dynamic> rather than a List<String>.
+      scriptList = rawScript.map((e) => e.toString()).toList();
     } else if (rawScript is Function) {
       final tokens = allTokens.map((t) => t.token).toList();
       final generatorContext = FigGeneratorContext(
@@ -175,7 +185,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
       } catch (_) {
         result = rawScript(tokens);
       }
-      scriptList = (result is List) ? result.cast<String>() : <String>[];
+      scriptList = (result is List)
+          ? result.map((e) => e.toString()).toList()
+          : <String>[];
     } else {
       return const [];
     }
@@ -190,8 +202,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         final stdout = result.stdout;
         final tokens = allTokens.map((t) => t.token).toList();
         final figSuggestions = gen.postProcess!(stdout, tokens);
+        // Script-generated suggestions: use priority 60 when unspecified (matches inshellisense).
         return figSuggestions
-            .map((s) => toSuggestionDynamic(s))
+            .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
             .whereType<Suggestion>();
       } catch (e) {
         logger?.call('[Fig generator] script error', e);
@@ -217,33 +230,43 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
+  final strategy =
+      context.filterStrategyOverride ?? subcommand.filterStrategy;
   if (!argsFromSubcommand) {
     suggestions.addAll(filterSubcommandSuggestions(
-        subcommand.subcommands, subcommand.filterStrategy, partial));
+        subcommand.subcommands, strategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
         context.acceptedTokens
             .where((t) => t.isOption)
             .map((t) => t.token)
             .toSet(),
-        subcommand.filterStrategy,
+        strategy,
         partial));
   }
   final argList = subcommand.args ?? [];
   if (argList.isNotEmpty) {
     final activeArg = argList.first;
-    suggestions.addAll(
-        await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
+    final argStrategy =
+        context.filterStrategyOverride ?? activeArg.filterStrategy;
+    final templateSuggestions =
+        await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+    suggestions.addAll(filterSuggestionList(
+        templateSuggestions, argStrategy, partial));
     for (final gen in activeArg.generatorsList) {
-      suggestions.addAll(await runGeneratorSuggestions(
+      final generated = await runGeneratorSuggestions(
           gen, context.allTokens, context.cwd, context.adapter,
-          logger: logger));
+          logger: logger);
+      suggestions.addAll(
+          filterSuggestionList(generated, argStrategy, partial));
     }
     suggestions.addAll(filterSuggestions(
-        activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+        activeArg.suggestionsAsList, argStrategy, partial, null));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
+      removeAccepted(
+          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
+      partialToken)));
   return SuggestionBlob(suggestions: suggestions);
 }
 
@@ -262,29 +285,39 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
-  suggestions.addAll(
-      await runTemplateSuggestions(activeArg, context.cwd, context.adapter));
+  // 优先使用调用方的 override（如 FaTerm 全局 fuzzy），其次用 spec 配置。
+  final override = context.filterStrategyOverride;
+  final argStrategy = override ?? activeArg.filterStrategy;
+  final templateSuggestions =
+      await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+  suggestions.addAll(filterSuggestionList(
+      templateSuggestions, argStrategy, partial));
   for (final gen in activeArg.generatorsList) {
-    suggestions.addAll(await runGeneratorSuggestions(
+    final generated = await runGeneratorSuggestions(
         gen, context.allTokens, context.cwd, context.adapter,
-        logger: logger));
+        logger: logger);
+    suggestions.addAll(
+        filterSuggestionList(generated, argStrategy, partial));
   }
   suggestions.addAll(filterSuggestions(
-      activeArg.suggestionsAsList, activeArg.filterStrategy, partial, null));
+      activeArg.suggestionsAsList, argStrategy, partial, null));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
+    final subStrategy = override ?? subcommand.filterStrategy;
     suggestions.addAll(filterSubcommandSuggestions(
-        subcommand.subcommands, activeArg.filterStrategy, partial));
+        subcommand.subcommands, subStrategy, partial));
     suggestions.addAll(filterOptionSuggestions(
         allOptions,
         context.acceptedTokens
             .where((t) => t.isOption)
             .map((t) => t.token)
             .toSet(),
-        activeArg.filterStrategy,
+        subStrategy,
         partial));
   }
   suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(suggestions, context.acceptedTokens), partialToken)));
+      removeAccepted(
+          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
+      partialToken)));
   return SuggestionBlob(
       suggestions: suggestions,
       argumentDescription: activeArg.description ?? activeArg.name);
@@ -313,6 +346,156 @@ FigOption? getOption(CommandToken token, Iterable<FigOption> options) {
   return null;
 }
 
+/// Find the first subcommand whose name list contains [tokenName].
+FigSubcommand? _findSubcommand(FigSubcommand subcommand, String tokenName) {
+  if (subcommand.subcommands == null) return null;
+  for (final s in subcommand.subcommands!) {
+    if (s.nameList.contains(tokenName)) return s;
+  }
+  return null;
+}
+
+/// Resolve a subcommand's [FigSubcommand.loadSpec] to its full spec.
+///
+/// Mirrors JS inshellisense `genSubcommand`: when a matched subcommand carries a
+/// `loadSpec` string or [FigSubcommand] object, this loads/merges the extra data
+/// and returns an enriched copy (the original is not mutated).  If loading fails
+/// or the type is unsupported the original [sub] is returned unchanged.
+///
+/// Results for string-keyed specs are stored in [CompletionContext.resolvedSubcommandCache]
+/// so repeated traversals within the same getSuggestions call pay the cost only once.
+Future<FigSubcommand> _resolveSubcommandSpec(
+  FigSubcommand sub,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  final ls = sub.loadSpec;
+  if (ls == null) return sub;
+
+  // Fast path: already resolved this spec key in the current traversal.
+  if (ls is String) {
+    final cached = context.resolvedSubcommandCache[ls];
+    if (cached != null) {
+      return FigSubcommand(
+        name: sub.name,
+        description: cached.description ?? sub.description,
+        subcommands: cached.subcommands ?? sub.subcommands,
+        options: cached.options ?? sub.options,
+        args: cached.args ?? sub.args,
+        icon: sub.icon ?? cached.icon,
+        filterStrategy: sub.filterStrategy ?? cached.filterStrategy,
+      );
+    }
+  }
+
+  try {
+    FigSubcommand? loaded;
+    if (ls is String) {
+      // Ensure the named spec is registered (deferred import path).
+      await context.ensureSpecLoaded?.call(ls);
+      final spec = getSpec(ls);
+      if (spec != null) {
+        loaded = FigSubcommand(
+          name: spec.name,
+          description: spec.description,
+          subcommands: spec.subcommands,
+          options: spec.options,
+          args: spec.args,
+          icon: spec.icon,
+          filterStrategy: spec.filterStrategy,
+        );
+        // Store raw loaded data so subsequent resolutions of the same key reuse it.
+        context.resolvedSubcommandCache[ls] = loaded;
+      }
+    } else if (ls is FigSubcommand) {
+      loaded = ls;
+    }
+    // Function-typed loadSpec is not supported in static Dart specs; skip.
+    if (loaded == null) return sub;
+
+    // Loaded spec wins; fall back to original fields where loaded has nothing.
+    return FigSubcommand(
+      name: sub.name,
+      description: loaded.description ?? sub.description,
+      subcommands: loaded.subcommands ?? sub.subcommands,
+      options: loaded.options ?? sub.options,
+      args: loaded.args ?? sub.args,
+      icon: sub.icon ?? loaded.icon,
+      filterStrategy: sub.filterStrategy ?? loaded.filterStrategy,
+      // Clear loadSpec so this subcommand is not resolved again on the next call.
+    );
+  } catch (e, st) {
+    logger?.call('[Fig loadSpec] error resolving subcommand loadSpec', e, st);
+    return sub;
+  }
+}
+
+/// Attempt to resolve [activeToken] as a command alias via [parserDirectives.alias]
+/// defined on [subcommand.args].  Returns the expanded [CommandToken] list when
+/// expansion succeeds, or null when the token is not an alias or resolution fails.
+///
+/// Results (positive and negative) are stored in [context.aliasCache] keyed by
+/// "rootCmd|token" to avoid redundant shell invocations across calls.
+Future<List<CommandToken>?> _tryResolveAlias(
+  FigSubcommand subcommand,
+  CommandToken activeToken,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  final cache = context.aliasCache;
+  if (cache == null) return null;
+  final args = subcommand.args;
+  if (args == null || args.isEmpty) return null;
+
+  // Find the first arg that carries a parserDirectives.alias function.
+  Function? aliasResolver;
+  for (final arg in args) {
+    final pd = arg.parserDirectives;
+    if (pd is Map) {
+      final a = pd['alias'];
+      if (a is Function) {
+        aliasResolver = a;
+        break;
+      }
+    }
+  }
+  if (aliasResolver == null) return null;
+
+  // Use the root command name (first token) as part of the cache key.
+  final rootCmd =
+      context.allTokens.isNotEmpty ? context.allTokens.first.token : '';
+  final cacheKey = '$rootCmd|${activeToken.token}';
+
+  // Serve from cache (including negative entries stored as null).
+  if (cache.containsKey(cacheKey)) {
+    final cached = cache[cacheKey];
+    if (cached == null || cached.isEmpty) return null;
+    final tokens = parseCommand('$cached ', context.shell);
+    return tokens.isEmpty ? null : tokens;
+  }
+
+  try {
+    final executeCommand = _createExecuteCommand(context.cwd, context.adapter);
+    final raw = aliasResolver(activeToken.token, executeCommand);
+    final expanded =
+        ((raw is Future ? await raw : raw) as String? ?? '').trim();
+
+    // Cache result (null for empty = negative cache).
+    if (cache.length >= 8) cache.remove(cache.keys.first);
+    cache[cacheKey] = expanded.isEmpty ? null : expanded;
+
+    if (expanded.isEmpty) return null;
+    final tokens = parseCommand('$expanded ', context.shell);
+    return tokens.isEmpty ? null : tokens;
+  } catch (e, st) {
+    // Store negative cache entry so we don't retry on every keystroke.
+    if (cache.length >= 8) cache.remove(cache.keys.first);
+    cache[cacheKey] = null;
+    logger?.call('[parserDirectives.alias] failed to resolve alias', e, st);
+    return null;
+  }
+}
+
 /// Recursive: run subcommand matching.
 Future<SuggestionBlob?> runSubcommand(
   FigSubcommand subcommand,
@@ -335,21 +518,45 @@ Future<SuggestionBlob?> runSubcommand(
   final activeToken = context.currentToken;
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
-  final option = getOption(activeToken, allOptions);
-  if (option != null) {
-    return runOption(option, subcommand, context, logger: logger);
-  }
-  final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
-        (s) => s!.nameList.contains(activeToken.token),
-        orElse: () => null,
-      );
-  if (nextSub != null) {
-    if (subcommand.options != null) {
-      context.persistentOptions
-          .addAll(subcommand.options!.where((o) => o.isPersistent));
+  if (activeToken.isOption) {
+    final option = getOption(activeToken, allOptions);
+    if (option != null) {
+      return runOption(option, subcommand, context, logger: logger);
     }
+    // Unknown option token: stop traversal and return no suggestions,
+    // matching JS inshellisense behavior.
+    return null;
+  }
+  final nextSub = _findSubcommand(subcommand, activeToken.token);
+  if (nextSub != null) {
+    context.addPersistentOptionsDeduped(subcommand.options);
     context.advance();
-    return runSubcommand(nextSub, context, false, false, logger);
+    final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+    return runSubcommand(resolvedSub, context, false, false, logger);
+  }
+  // No direct subcommand match — try alias expansion (e.g. `git co` → `checkout`).
+  final expandedTokens =
+      await _tryResolveAlias(subcommand, activeToken, context, logger);
+  if (expandedTokens != null) {
+    // Splice expanded tokens in place of the alias token and retry traversal.
+    final newAllTokens = [
+      ...context.allTokens.sublist(0, context.currentIndex),
+      ...expandedTokens,
+      ...context.allTokens.sublist(context.currentIndex + 1),
+    ];
+    final newContext = CompletionContext(
+      allTokens: newAllTokens,
+      cwd: context.cwd,
+      shell: context.shell,
+      adapter: context.adapter,
+      currentIndex: context.currentIndex,
+      ensureSpecLoaded: context.ensureSpecLoaded,
+      filterStrategyOverride: context.filterStrategyOverride,
+      aliasCache: context.aliasCache,
+    );
+    newContext.acceptedTokens.addAll(context.acceptedTokens);
+    newContext.persistentOptions.addAll(context.persistentOptions);
+    return runSubcommand(subcommand, newContext, false, false, logger);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
@@ -388,23 +595,33 @@ Future<SuggestionBlob?> runArg(
     final option = getOption(activeToken, allOptions);
     if (option != null)
       return runOption(option, subcommand, context, logger: logger);
+    // Unknown option in all-optional-arg context: no suggestions.
+    return null;
   }
   if (activeArg.isVariadic) {
     context.advance();
     return runArg(args, subcommand, context, fromOption, true, logger: logger);
   }
+  // isCommand: the current token is itself a CLI command whose spec should be
+  // loaded and traversed. Mirrors JS inshellisense runArg isCommand branch
+  // (e.g. `sudo git commit` — sudo's arg has isCommand: true).
+  if (activeArg.isCommand == true) {
+    await context.ensureSpecLoaded?.call(activeToken.token);
+    final cmdTokens = context.allTokens.sublist(context.currentIndex);
+    final cmdSpec = loadSpec(cmdTokens);
+    if (cmdSpec == null) return null;
+    final cmdSub = getSubcommand(cmdSpec);
+    if (cmdSub == null) return null;
+    context.advance();
+    return runSubcommand(cmdSub, context, false, false, logger);
+  }
   if (activeArg.isOptional) {
-    final nextSub = subcommand.subcommands?.cast<FigSubcommand?>().firstWhere(
-          (s) => s!.nameList.contains(activeToken.token),
-          orElse: () => null,
-        );
+    final nextSub = _findSubcommand(subcommand, activeToken.token);
     if (nextSub != null) {
-      if (subcommand.options != null) {
-        context.persistentOptions
-            .addAll(subcommand.options!.where((o) => o.isPersistent));
-      }
+      context.addPersistentOptionsDeduped(subcommand.options);
       context.advance();
-      return runSubcommand(nextSub, context, false, false, logger);
+      final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+      return runSubcommand(resolvedSub, context, false, false, logger);
     }
   }
   context.advance();
@@ -435,6 +652,28 @@ class AutocompleteEngine {
   /// Key: specName|cwd
   final Map<String, FigSpec> _generateSpecCache = {};
 
+  /// Max entries in [_generateSpecCache]. Oldest entry (insertion order) is
+  /// evicted when the limit is reached, preventing unbounded growth when cwd
+  /// changes frequently.
+  static const int _generateSpecCacheMaxSize = 8;
+
+  void _putGenerateSpecCache(String key, FigSpec spec) {
+    if (_generateSpecCache.length >= _generateSpecCacheMaxSize) {
+      _generateSpecCache.remove(_generateSpecCache.keys.first);
+    }
+    _generateSpecCache[key] = spec;
+  }
+
+  /// Cache for parserDirectives.alias resolution results.
+  /// Key: "cmdName|aliasToken"; value: expanded command string, or null (negative cache).
+  /// Avoids repeated `git config --get alias.X` calls for the same alias token.
+  final Map<String, String?> _aliasResolveCache = {};
+
+  /// Shell-level alias cache: loaded once per shell type by running
+  /// `<shell> -i -c alias` via the adapter (mirrors TS alias.ts loadedAliases).
+  /// Key: Shell enum; value: alias-name → expanded CommandToken list.
+  final Map<Shell, Map<String, List<CommandToken>>> _shellAliasCache = {};
+
   /// EnsureSpecLoaded callback for this engine instance.
   EnsureSpecLoaded? _ensureSpecLoaded;
 
@@ -452,6 +691,28 @@ class AutocompleteEngine {
   /// Clear all internal caches.
   void clearCache() {
     _generateSpecCache.clear();
+    _aliasResolveCache.clear();
+    _shellAliasCache.clear();
+  }
+
+  /// Expand the root token of [tokens] via shell-level aliases (bash/zsh).
+  ///
+  /// Loads aliases lazily on first call per shell type.  Returns the expanded
+  /// token list when a match is found, otherwise null.
+  Future<List<CommandToken>?> _expandRootAlias(
+    List<CommandToken> tokens,
+    Shell shell,
+    String cwd,
+    CompleteAdapter adapter,
+    LogCallback? log,
+  ) async {
+    if (tokens.isEmpty || !tokens.first.complete) return null;
+    if (shell != Shell.bash && shell != Shell.zsh) return null;
+
+    if (!_shellAliasCache.containsKey(shell)) {
+      _shellAliasCache[shell] = await loadShellAliases(shell, adapter);
+    }
+    return aliasExpand(tokens, _shellAliasCache[shell]!);
   }
 
   /// Dispose the engine (alias for clearCache for now).
@@ -467,10 +728,11 @@ class AutocompleteEngine {
     Shell shell,
     CompleteAdapter adapter, {
     EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
-    final activeCmd = parseCommand(cmd, shell);
+    var activeCmd = parseCommand(cmd, shell);
 
     if (activeCmd.isEmpty) return null;
     final rootToken = activeCmd.first;
@@ -483,7 +745,20 @@ class AutocompleteEngine {
       await ensure(rootToken.token);
     }
     FigSpec? spec = loadSpec(activeCmd);
-    if (spec == null) return null;
+    if (spec == null) {
+      // Try shell-level alias expansion (e.g. `tran` → `traceroute`).
+      // Mirrors TS runtime.ts: `activeCmd = aliasExpand(activeCmd)` before loadSpec.
+      final expanded =
+          await _expandRootAlias(activeCmd, shell, cwd, adapter, log);
+      if (expanded != null) {
+        activeCmd = expanded;
+        // Ensure the expanded root spec is registered (deferred v2 import).
+        final newRoot = activeCmd.first;
+        if (ensure != null) await ensure(newRoot.token);
+        spec = loadSpec(activeCmd);
+      }
+      if (spec == null) return null;
+    }
 
     final resolvedCwd = await adapter.resolveCwd(cwd, shell);
 
@@ -500,7 +775,7 @@ class AutocompleteEngine {
           final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
           generated = await gen(tokens, executeCommand);
           if (generated != null) {
-            _generateSpecCache[cacheKey] = generated;
+            _putGenerateSpecCache(cacheKey, generated);
           }
         }
 
@@ -515,26 +790,179 @@ class AutocompleteEngine {
     final subcommand = getSubcommand(spec);
     if (subcommand == null) return null;
 
+    // Resolve cwd from the last typed token so that path-style arguments like
+    // `~/xh` or `./foo/bar` correctly scope template/generator suggestions to
+    // the intended directory (mirrors inshellisense runtime.ts resolveCwd call).
+    final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
+    final tokenCwdResult =
+        await _resolveTokenCwd(lastToken, resolvedCwd, adapter);
+    final effectiveCwd = tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
+    log?.call('[autocomplete] tokenCwd: '
+        'lastToken="${lastToken?.token}" '
+        'pathy=${tokenCwdResult.pathy} '
+        'complete=${tokenCwdResult.complete} '
+        'cwd="$effectiveCwd" '
+        'filterPartial="${tokenCwdResult.filterPartial}"');
+
+    // When pathy, replace the last token with a synthetic token whose `.token`
+    // field is the basename only (e.g. `"xh"` for `~/xh`, `""` for `~/`).
+    // The recommendation functions use `partialToken.token` as the filter prefix
+    // against directory listing results, so it must NOT include the path prefix.
+    List<CommandToken> effectiveTokens = activeCmd;
+    if (tokenCwdResult.pathy && activeCmd.isNotEmpty) {
+      final orig = activeCmd.last;
+      final basenameToken = CommandToken(
+        token: tokenCwdResult.filterPartial,
+        tokenLength: tokenCwdResult.basenameLength,
+        complete: orig.complete,
+        isOption: false,
+        isPath: true,
+        isPathComplete: tokenCwdResult.complete,
+        isQuoted: orig.isQuoted,
+      );
+      effectiveTokens = [
+        ...activeCmd.sublist(0, activeCmd.length - 1),
+        basenameToken,
+      ];
+    }
+
     final context = CompletionContext(
-      allTokens: activeCmd,
-      cwd: resolvedCwd,
+      allTokens: effectiveTokens,
+      cwd: effectiveCwd,
       shell: shell,
       adapter: adapter,
       currentIndex: 1,
+      ensureSpecLoaded: ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      aliasCache: _aliasResolveCache,
     );
 
     final result = await runSubcommand(subcommand, context, false, false, log);
     if (result == null) return null;
     if (result.suggestions.isEmpty && result.argumentDescription == null)
       return null;
-    final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
-    final charactersToDrop =
-        lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+
+    // Compute charactersToDrop:
+    //  - pathy + complete (token ends with `/`): drop 0 (cursor is right after the slash)
+    //  - pathy + incomplete: drop the basename length (partial folder name)
+    //  - not pathy: drop the full last token length (normal partial token)
+    final int charactersToDrop;
+    if (tokenCwdResult.pathy) {
+      charactersToDrop =
+          tokenCwdResult.complete ? 0 : tokenCwdResult.basenameLength;
+    } else {
+      charactersToDrop =
+          lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+    }
+
+    log?.call('[autocomplete] result: '
+        '${result.suggestions.length} suggestions, '
+        'charactersToDrop=$charactersToDrop');
     return SuggestionBlob(
         suggestions: result.suggestions,
         argumentDescription: result.argumentDescription,
         charactersToDrop: charactersToDrop);
   }
+}
+
+class _TokenCwdResult {
+  const _TokenCwdResult({
+    required this.cwd,
+    required this.pathy,
+    required this.complete,
+    required this.basenameLength,
+    required this.filterPartial,
+  });
+
+  final String cwd;
+  final bool pathy;
+  final bool complete;
+
+  /// Length of the basename portion of the original token (used for charactersToDrop).
+  final int basenameLength;
+
+  /// The basename portion of the token to use as the filter prefix when listing
+  /// directory contents.  Empty string when the token ends with `/` (show all).
+  final String filterPartial;
+}
+
+/// Resolve an effective cwd based on the last typed token (mirrors inshellisense utils.ts resolveCwd).
+///
+/// When the token contains a path separator the user is navigating into a
+/// sub-directory.  We expand `~` using the HOME env var, then:
+///
+/// * Token ends with `/` (complete path): use the full resolved path as cwd,
+///   `complete = true`, `charactersToDrop = 0`.
+/// * Token does NOT end with `/` (incomplete, e.g. partial folder name):
+///   use the parent directory as cwd so the caller can list candidates and
+///   filter by the basename; `complete = false`,
+///   `charactersToDrop = basename.length`.
+///
+/// Returns `pathy: false` when the token does not look like a path (no separator).
+Future<_TokenCwdResult> _resolveTokenCwd(
+  CommandToken? cmdToken,
+  String baseCwd,
+  CompleteAdapter adapter,
+) async {
+  const sep = '/';
+  _TokenCwdResult notPathy() => _TokenCwdResult(
+      cwd: baseCwd,
+      pathy: false,
+      complete: false,
+      basenameLength: 0,
+      filterPartial: '');
+
+  if (cmdToken == null) return notPathy();
+
+  // Unescape `\ ` → space so we resolve the real path correctly.
+  final token = cmdToken.token.replaceAll('\\ ', ' ');
+  if (!token.contains(sep)) return notPathy();
+
+  // Expand leading `~` to $HOME.
+  String expanded;
+  if (token == '~' || token.startsWith('~/')) {
+    final home = adapter.getEnv('HOME') ?? '';
+    expanded = home + token.substring(1);
+  } else {
+    expanded = token;
+  }
+
+  // Resolve relative paths against baseCwd.
+  final String resolvedPath;
+  if (expanded.startsWith('/')) {
+    resolvedPath = expanded;
+  } else {
+    final base =
+        baseCwd.endsWith('/') ? baseCwd.substring(0, baseCwd.length - 1) : baseCwd;
+    resolvedPath = '$base/$expanded';
+  }
+
+  final complete = token.endsWith(sep);
+
+  if (complete) {
+    // Token ends with `/`: list the directory contents with no filter prefix.
+    return _TokenCwdResult(
+        cwd: resolvedPath,
+        pathy: true,
+        complete: true,
+        basenameLength: 0,
+        filterPartial: '');
+  }
+
+  // Token is an incomplete path (no trailing `/`).
+  // Use the parent directory so templates list siblings; the basename is the
+  // filter prefix so only matching entries are shown.
+  final lastSlash = resolvedPath.lastIndexOf('/');
+  if (lastSlash <= 0) return notPathy();
+  final parentPath = resolvedPath.substring(0, lastSlash + 1);
+  final basename = resolvedPath.substring(lastSlash + 1);
+  return _TokenCwdResult(
+    cwd: parentPath,
+    pathy: true,
+    complete: false,
+    basenameLength: basename.length,
+    filterPartial: basename,
+  );
 }
 
 /// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].
@@ -553,16 +981,20 @@ final _defaultEngine = AutocompleteEngine();
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
 /// Uses a default global [AutocompleteEngine] instance.
+/// [filterStrategyOverride] when set (e.g. [FilterStrategy.fuzzy]) overrides spec-level filter for this call.
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
   Shell shell,
   CompleteAdapter adapter, {
   EnsureSpecLoaded? ensureSpecLoaded,
+  FilterStrategy? filterStrategyOverride,
   LogCallback? logger,
 }) {
   return _defaultEngine.getSuggestions(cmd, cwd, shell, adapter,
-      ensureSpecLoaded: ensureSpecLoaded, logger: logger);
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger);
 }
 
 /// Clear the default engine cache.

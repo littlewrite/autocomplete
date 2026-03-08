@@ -38,9 +38,6 @@ Shell _parseShell(String name) {
 }
 
 void main(List<String> args) async {
-  // 1. Register built-in specs so the engine knows about 'git', 'cd', etc.
-  registerBuiltinSpecs();
-
   String? cmd;
   var shell = Shell.bash;
 
@@ -62,15 +59,10 @@ void main(List<String> args) async {
     exit(1);
   }
 
+  registerBuiltinSpecs();
   final cwd = Directory.current.path;
 
-  // Create a dedicated engine instance
-  final engine = AutocompleteEngine();
-
-  print('Getting suggestions...');
-  // Use the engine instance and pass the command from arguments
-  final blob =
-      await engine.getSuggestions(cmd!, cwd, shell, LocalCompleteAdapter());
+  final blob = await getSuggestions(cmd, cwd, shell, LocalCompleteAdapter());
   if (blob == null) {
     print('(no spec or no suggestions)');
     exit(0);
