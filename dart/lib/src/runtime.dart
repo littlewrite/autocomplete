@@ -16,18 +16,10 @@ import 'context.dart';
 typedef LogCallback = void Function(String message,
     [Object? error, StackTrace? stackTrace]);
 
-void _printLogger(String message, [Object? error, StackTrace? stackTrace]) {
-  if (error != null) {
-    print('$message: $error');
-  } else {
-    print(message);
-  }
-  if (stackTrace != null) {
-    print(stackTrace);
-  }
-}
+const _acCacheLogTag = '[ac_cache]';
 
-LogCallback? _defaultLogger = _printLogger;
+// App-wide fallback if no per-call logger and no engine setLogger (null = silent).
+LogCallback? _defaultLogger;
 
 void setDefaultLogger(LogCallback? logger) {
   _defaultLogger = logger;
@@ -285,7 +277,7 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   var suggestions = <Suggestion>[];
-  // 优先使用调用方的 override（如 FaTerm 全局 fuzzy），其次用 spec 配置。
+  // Context override first, then arg spec.
   final override = context.filterStrategyOverride;
   final argStrategy = override ?? activeArg.filterStrategy;
   final templateSuggestions =
@@ -655,6 +647,14 @@ class _SuggestionCacheEntry {
   bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
 }
 
+String _normalizeSuggestionCacheCommand(String cmd) {
+  // Collapse trailing space runs; keep `cmd` vs `cmd ` distinct.
+  if (cmd.isEmpty) return cmd;
+  final trimmed = cmd.trimRight();
+  if (trimmed.length == cmd.length) return cmd;
+  return '$trimmed ';
+}
+
 /// Autocomplete engine that manages state and caching.
 class AutocompleteEngine {
   /// [suggestionCacheMaxSize]: max number of suggestion results to cache per
@@ -805,20 +805,23 @@ class AutocompleteEngine {
     Duration? timeout,
   }) {
     // Cache lookup: key is (cmd, cwd, shell).
-    final cacheKey = '$cmd|$cwd|${shell.name}';
+    final normalizedCmd = _normalizeSuggestionCacheCommand(cmd);
+    final cacheKey = '$normalizedCmd|$cwd|${shell.name}';
     final cached = _suggestionCache[cacheKey];
     if (cached != null && !cached.isExpired(_suggestionCacheTtl)) {
       // Promote to most-recently-used by reinserting at the end.
       _suggestionCache.remove(cacheKey);
       _suggestionCache[cacheKey] = cached;
+      // No implicit print; uses per-call, engine, or [setDefaultLogger] only.
       final log = logger ?? _logger ?? _defaultLogger;
-      log?.call('[autocomplete] cache hit cmd="$cmd" suggestions=${cached.blob.suggestions.length}');
+      log?.call(
+          '$_acCacheLogTag[hit] cmd="$normalizedCmd" suggestions=${cached.blob.suggestions.length}');
       return Future.value(cached.blob);
     }
 
     final myGen = _requestGen;
     final work = _doGetSuggestions(
-      cmd, cwd, shell, adapter, myGen,
+      normalizedCmd, cwd, shell, adapter, myGen,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: logger,
@@ -836,7 +839,8 @@ class AutocompleteEngine {
       if (result != null && _requestGen == myGen) {
         _putSuggestionCache(cacheKey, result);
         final log = logger ?? _logger ?? _defaultLogger;
-        log?.call('[autocomplete] cache write cmd="$cmd" suggestions=${result.suggestions.length} size=${_suggestionCache.length}/$_suggestionCacheMaxSize');
+        log?.call(
+            '$_acCacheLogTag[write] cmd="$normalizedCmd" suggestions=${result.suggestions.length} size=${_suggestionCache.length}/$_suggestionCacheMaxSize ttl=${_suggestionCacheTtl.inSeconds}s');
       }
       return result;
     });
