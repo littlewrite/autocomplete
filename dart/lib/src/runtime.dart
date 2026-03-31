@@ -646,8 +646,47 @@ SuggestionBlob runCommand(CommandToken token) {
       suggestions: suggestions, charactersToDrop: token.tokenLength);
 }
 
+/// A single entry in the suggestion result cache.
+class _SuggestionCacheEntry {
+  _SuggestionCacheEntry(this.blob) : createdAt = DateTime.now();
+  final SuggestionBlob blob;
+  final DateTime createdAt;
+
+  bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
+}
+
 /// Autocomplete engine that manages state and caching.
 class AutocompleteEngine {
+  /// [suggestionCacheMaxSize]: max number of suggestion results to cache per
+  /// session (LRU eviction).  Defaults to 5.
+  ///
+  /// [suggestionCacheTtl]: how long a cached result stays valid.  After this
+  /// duration the entry is considered stale and a fresh call is made.
+  /// Defaults to 30 seconds.  The cache is also fully cleared whenever
+  /// [clearCache] is called (e.g. after the user executes a command).
+  AutocompleteEngine({
+    int suggestionCacheMaxSize = 5,
+    Duration suggestionCacheTtl = const Duration(seconds: 30),
+  })  : _suggestionCacheMaxSize = suggestionCacheMaxSize,
+        _suggestionCacheTtl = suggestionCacheTtl;
+
+  /// Max entries in [_suggestionCache].
+  final int _suggestionCacheMaxSize;
+
+  /// TTL for suggestion cache entries.
+  final Duration _suggestionCacheTtl;
+
+  /// Suggestion result cache: key = "$cmd|$cwd|${shell.name}".
+  /// Uses insertion-order map so that the first entry is always the LRU victim.
+  final Map<String, _SuggestionCacheEntry> _suggestionCache = {};
+
+  void _putSuggestionCache(String key, SuggestionBlob blob) {
+    if (_suggestionCache.length >= _suggestionCacheMaxSize) {
+      _suggestionCache.remove(_suggestionCache.keys.first);
+    }
+    _suggestionCache[key] = _SuggestionCacheEntry(blob);
+  }
+
   /// Cache for generated specs (e.g. git help -a).
   /// Key: specName|cwd
   final Map<String, FigSpec> _generateSpecCache = {};
@@ -679,6 +718,22 @@ class AutocompleteEngine {
 
   LogCallback? _logger;
 
+  /// Generation counter used for request cancellation.
+  /// Each [cancelPending] call increments this; [_doGetSuggestions] compares
+  /// its snapshot against the current value at each IO checkpoint and returns
+  /// null when superseded.
+  int _requestGen = 0;
+
+  /// Cancel any in-progress [getSuggestions] call.
+  ///
+  /// The superseded call returns null at the next cancellation checkpoint
+  /// (after the most expensive IO awaits).  Does not abort underlying IO
+  /// (Dart futures are not cancellable), but results are discarded and the
+  /// caller unblocks immediately once the timeout fires.
+  void cancelPending() {
+    _requestGen++;
+  }
+
   /// Set the ensureSpecLoaded callback.
   void setEnsureSpecLoaded(EnsureSpecLoaded? f) {
     _ensureSpecLoaded = f;
@@ -688,8 +743,13 @@ class AutocompleteEngine {
     _logger = f;
   }
 
-  /// Clear all internal caches.
+  /// Clear all internal caches, including the suggestion result cache.
+  ///
+  /// Call this after the user executes a command so that the next keystroke
+  /// fetches fresh suggestions (file listings, branch names, etc.) rather than
+  /// serving a potentially stale cached result.
   void clearCache() {
+    _suggestionCache.clear();
     _generateSpecCache.clear();
     _aliasResolveCache.clear();
     _shellAliasCache.clear();
@@ -722,11 +782,77 @@ class AutocompleteEngine {
 
   /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
   /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
+  ///
+  /// Results are cached by (cmd, cwd, shell) for up to [suggestionCacheTtl]
+  /// (default 30 s) and at most [suggestionCacheMaxSize] entries (default 5,
+  /// LRU eviction).  Call [clearCache] after the user executes a command to
+  /// invalidate stale results (file listings, branch names, etc.).
+  ///
+  /// [timeout]: when provided the whole call is capped at that duration; on
+  /// timeout null is returned (caller can fall back to DB-only suggestions).
+  /// Recommended values: ~1500 ms for local, ~5000 ms for SSH.
+  ///
+  /// Call [cancelPending] before issuing a new request so that a superseded
+  /// in-flight call discards its results at the next IO checkpoint.
   Future<SuggestionBlob?> getSuggestions(
     String cmd,
     String cwd,
     Shell shell,
     CompleteAdapter adapter, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    Duration? timeout,
+  }) {
+    // Cache lookup: key is (cmd, cwd, shell).
+    final cacheKey = '$cmd|$cwd|${shell.name}';
+    final cached = _suggestionCache[cacheKey];
+    if (cached != null && !cached.isExpired(_suggestionCacheTtl)) {
+      // Promote to most-recently-used by reinserting at the end.
+      _suggestionCache.remove(cacheKey);
+      _suggestionCache[cacheKey] = cached;
+      final log = logger ?? _logger ?? _defaultLogger;
+      log?.call('[autocomplete] cache hit cmd="$cmd" suggestions=${cached.blob.suggestions.length}');
+      return Future.value(cached.blob);
+    }
+
+    final myGen = _requestGen;
+    final work = _doGetSuggestions(
+      cmd, cwd, shell, adapter, myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+    );
+
+    Future<SuggestionBlob?> wrappedWork;
+    if (timeout != null) {
+      wrappedWork = work.timeout(timeout, onTimeout: () => null);
+    } else {
+      wrappedWork = work;
+    }
+
+    return wrappedWork.then((result) {
+      // Only cache a valid result that wasn't superseded by a newer request.
+      if (result != null && _requestGen == myGen) {
+        _putSuggestionCache(cacheKey, result);
+        final log = logger ?? _logger ?? _defaultLogger;
+        log?.call('[autocomplete] cache write cmd="$cmd" suggestions=${result.suggestions.length} size=${_suggestionCache.length}/$_suggestionCacheMaxSize');
+      }
+      return result;
+    });
+  }
+
+  /// Internal implementation of [getSuggestions].
+  ///
+  /// [myGen] is a snapshot of [_requestGen] taken by the caller; whenever it
+  /// no longer matches the current counter the method returns null immediately,
+  /// indicating that a newer request has superseded this one.
+  Future<SuggestionBlob?> _doGetSuggestions(
+    String cmd,
+    String cwd,
+    Shell shell,
+    CompleteAdapter adapter,
+    int myGen, {
     EnsureSpecLoaded? ensureSpecLoaded,
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
@@ -760,7 +886,13 @@ class AutocompleteEngine {
       if (spec == null) return null;
     }
 
+    // Cancellation checkpoint: after spec loading (cheap) but before remote IO.
+    if (_requestGen != myGen) return null;
+
     final resolvedCwd = await adapter.resolveCwd(cwd, shell);
+
+    // Cancellation checkpoint: resolveCwd can be slow over SSH.
+    if (_requestGen != myGen) return null;
 
     // Resolve generateSpec with adapter-provided executeCommand (no dart:io Process.run).
     final gen = spec.generateSpec;
@@ -796,6 +928,10 @@ class AutocompleteEngine {
     final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
     final tokenCwdResult =
         await _resolveTokenCwd(lastToken, resolvedCwd, adapter);
+
+    // Cancellation checkpoint: _resolveTokenCwd may call listDirectory over SSH.
+    if (_requestGen != myGen) return null;
+
     final effectiveCwd = tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
     log?.call('[autocomplete] tokenCwd: '
         'lastToken="${lastToken?.token}" '
@@ -838,6 +974,10 @@ class AutocompleteEngine {
     );
 
     final result = await runSubcommand(subcommand, context, false, false, log);
+
+    // Cancellation checkpoint: runSubcommand is the main IO-heavy step.
+    if (_requestGen != myGen) return null;
+
     if (result == null) return null;
     if (result.suggestions.isEmpty && result.argumentDescription == null)
       return null;
@@ -982,6 +1122,7 @@ final _defaultEngine = AutocompleteEngine();
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
 /// Uses a default global [AutocompleteEngine] instance.
 /// [filterStrategyOverride] when set (e.g. [FilterStrategy.fuzzy]) overrides spec-level filter for this call.
+/// [timeout] caps the whole call; null on timeout (fall back to DB-only suggestions).
 Future<SuggestionBlob?> getSuggestions(
   String cmd,
   String cwd,
@@ -990,11 +1131,13 @@ Future<SuggestionBlob?> getSuggestions(
   EnsureSpecLoaded? ensureSpecLoaded,
   FilterStrategy? filterStrategyOverride,
   LogCallback? logger,
+  Duration? timeout,
 }) {
   return _defaultEngine.getSuggestions(cmd, cwd, shell, adapter,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
-      logger: logger);
+      logger: logger,
+      timeout: timeout);
 }
 
 /// Clear the default engine cache.
