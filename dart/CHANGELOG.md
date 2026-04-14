@@ -1,3 +1,7 @@
+## 0.3.0
+
+- feature fix, opt
+
 ## 0.2.0
 
 - fuzzy suggestion filter, and tests
