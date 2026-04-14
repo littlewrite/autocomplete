@@ -1,5 +1,6 @@
 import 'adapter.dart';
 import 'parser.dart';
+import 'runtime_node.dart';
 import 'shell.dart';
 import 'spec.dart';
 
@@ -27,10 +28,10 @@ class CompletionContext {
   final List<FigOption> persistentOptions = [];
 
   /// Cache for resolved loadSpec subcommands within this completion traversal.
-  /// Key: loadSpec string (e.g. "git"); value: the resolved [FigSubcommand] data.
+  /// Key: loadSpec string (e.g. "git"); value: the resolved runtime node data.
   /// Avoids repeated registry lookups and object allocations when the same
   /// subcommand is visited more than once within a single getSuggestions call.
-  final Map<String, FigSubcommand> resolvedSubcommandCache = {};
+  final Map<String, RuntimeCommandNode> resolvedSubcommandCache = {};
 
   /// Alias resolution cache shared from [AutocompleteEngine].
   /// Key: "cmdName|token"; value: expanded command string, or null (negative cache).
@@ -73,8 +74,7 @@ class CompletionContext {
       }
       return;
     }
-    final existingNames =
-        persistentOptions.expand((o) => o.nameList).toSet();
+    final existingNames = persistentOptions.expand((o) => o.nameList).toSet();
     for (final o in options) {
       if (!o.isPersistent) continue;
       if (o.nameList.every((n) => !existingNames.contains(n))) {

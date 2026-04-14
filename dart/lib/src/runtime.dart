@@ -7,6 +7,7 @@ import 'alias.dart';
 import 'model.dart';
 import 'parser.dart';
 import 'registry.dart';
+import 'runtime_node.dart';
 import 'spec.dart';
 import 'shell.dart';
 import 'suggestion.dart';
@@ -37,17 +38,183 @@ FigSubcommand? getSubcommand(FigSpec? spec) {
   if (spec == null) return null;
   return FigSubcommand(
     name: spec.name,
+    displayName: spec.displayName,
     description: spec.description,
     subcommands: spec.subcommands,
     options: spec.options,
     args: spec.args,
     icon: spec.icon,
     filterStrategy: normalizeFilterStrategy(spec.filterStrategy),
+    requiresSubcommand: spec.requiresSubcommand,
+    additionalSuggestions: spec.additionalSuggestions,
+    parserDirectives: spec.parserDirectives,
+    insertValue: spec.insertValue,
+    replaceValue: spec.replaceValue,
+    isDangerous: false,
+    deprecated: spec.deprecated,
+    hidden: spec.hidden,
   );
 }
 
 List<FigArg> getArgs(List<FigArg>? args) {
   return args ?? const [];
+}
+
+List<String> _optionArgSeparators(RuntimeCommandNode subcommand) {
+  final separators = <String>{'='};
+  final directives = subcommand.parserDirectives;
+  if (directives is ParserDirectives) {
+    separators.addAll(directives.optionArgSeparators ?? const <String>[]);
+  } else if (directives is Map) {
+    final raw = directives['optionArgSeparators'];
+    if (raw is List) {
+      separators.addAll(raw.whereType<String>());
+    }
+  }
+  return separators.where((s) => s.isNotEmpty).toList();
+}
+
+bool _optionsMustPrecedeArguments(RuntimeCommandNode subcommand) {
+  final directives = subcommand.parserDirectives;
+  if (directives is ParserDirectives) {
+    return directives.optionsMustPrecedeArguments == true;
+  }
+  if (directives is Map) {
+    return directives['optionsMustPrecedeArguments'] == true;
+  }
+  return false;
+}
+
+class _InlineOptionMatch {
+  const _InlineOptionMatch({
+    required this.option,
+    required this.optionToken,
+    required this.valueToken,
+  });
+
+  final FigOption option;
+  final CommandToken optionToken;
+  final CommandToken valueToken;
+}
+
+String? _optionRequiredSeparator(FigOption option) {
+  final separator = option.requiresSeparator;
+  if (separator is String && separator.isNotEmpty) return separator;
+  if (separator == true) return '=';
+  // ignore: deprecated_member_use_from_same_package
+  if (option.requiresEquals == true) return '=';
+  return null;
+}
+
+_InlineOptionMatch? _matchInlineOptionValue(
+  CommandToken token,
+  Iterable<FigOption> options,
+  RuntimeCommandNode subcommand,
+) {
+  if (!token.isOption) return null;
+
+  final separators = _optionArgSeparators(subcommand);
+  FigOption? bestOption;
+  String? bestSeparator;
+
+  for (final option in options) {
+    if (option.args == null || option.args!.isEmpty) continue;
+    final requiredSeparator = _optionRequiredSeparator(option);
+    final candidateSeparators =
+        requiredSeparator != null ? [requiredSeparator] : separators;
+    for (final name in option.nameList) {
+      for (final separator in candidateSeparators) {
+        final prefix = '$name$separator';
+        if (!token.token.startsWith(prefix)) continue;
+        if (bestOption == null ||
+            prefix.length >
+                '${bestOption.nameList.first}$bestSeparator'.length) {
+          bestOption = option;
+          bestSeparator = separator;
+        }
+      }
+    }
+  }
+
+  if (bestOption == null || bestSeparator == null) return null;
+
+  String matchedName = bestOption.nameList.first;
+  for (final name in bestOption.nameList) {
+    if (token.token.startsWith('$name$bestSeparator')) {
+      matchedName = name;
+      break;
+    }
+  }
+  final value =
+      token.token.substring(matchedName.length + bestSeparator.length);
+  return _InlineOptionMatch(
+    option: bestOption,
+    optionToken: CommandToken(
+      token: matchedName,
+      tokenLength: matchedName.length,
+      complete: true,
+      isOption: true,
+      isQuoted: token.isQuoted,
+    ),
+    valueToken: CommandToken(
+      token: value,
+      tokenLength: value.length,
+      complete: token.complete,
+      isOption: false,
+      isQuoted: token.isQuoted,
+    ),
+  );
+}
+
+CompletionContext? _expandInlineOptionContext(
+  RuntimeCommandNode subcommand,
+  CompletionContext context,
+) {
+  if (context.isAtEnd) return null;
+  final token = context.currentToken;
+  final options =
+      context.persistentOptions.followedBy(subcommand.options ?? []);
+  final match = _matchInlineOptionValue(token, options, subcommand);
+  if (match == null) return null;
+
+  final newTokens = [
+    ...context.allTokens.sublist(0, context.currentIndex),
+    match.optionToken,
+    match.valueToken,
+    ...context.allTokens.sublist(context.currentIndex + 1),
+  ];
+  final newContext = CompletionContext(
+    allTokens: newTokens,
+    cwd: context.cwd,
+    shell: context.shell,
+    adapter: context.adapter,
+    currentIndex: context.currentIndex,
+    ensureSpecLoaded: context.ensureSpecLoaded,
+    filterStrategyOverride: context.filterStrategyOverride,
+    aliasCache: context.aliasCache,
+  );
+  newContext.acceptedTokens.addAll(context.acceptedTokens);
+  newContext.persistentOptions.addAll(context.persistentOptions);
+  newContext.resolvedSubcommandCache.addAll(context.resolvedSubcommandCache);
+  return newContext;
+}
+
+List<FigSuggestion> _additionalSuggestionsAsList(List<dynamic>? suggestions) {
+  if (suggestions == null || suggestions.isEmpty) return const [];
+  final out = <FigSuggestion>[];
+  for (final item in suggestions) {
+    if (item is FigSuggestion) {
+      out.add(item);
+      continue;
+    }
+    if (item is String) {
+      out.add(FigSuggestion(name: item));
+      continue;
+    }
+    final converted = toFigSuggestion(item);
+    if (converted != null) out.add(converted);
+  }
+  return out;
 }
 
 /// Run templates for an arg and return suggestions.
@@ -75,6 +242,7 @@ ExecuteCommandFunction _createExecuteCommand(
       input.command,
       input.args,
       workingDirectory: workDir,
+      environment: input.env,
     );
     final result = input.timeout != null
         ? await runFuture.timeout(
@@ -90,6 +258,117 @@ ExecuteCommandFunction _createExecuteCommand(
   };
 }
 
+List<String> _tokenNames(List<CommandToken> tokens) {
+  return tokens.map((t) => t.token).toList();
+}
+
+FigGeneratorContext _createGeneratorContext(
+  List<CommandToken> allTokens,
+  String cwd,
+  CompleteAdapter adapter,
+) {
+  return FigGeneratorContext(
+    currentWorkingDirectory: cwd,
+    currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
+    sshPrefix: '',
+    searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
+    adapter: adapter,
+  );
+}
+
+ExecuteCommandInput? _executeCommandInputFromDynamic(dynamic rawScript) {
+  if (rawScript == null) return null;
+  if (rawScript is ExecuteCommandInput) return rawScript;
+  if (rawScript is List) {
+    final scriptList = rawScript.map((e) => e.toString()).toList();
+    if (scriptList.isEmpty) return null;
+    return ExecuteCommandInput(
+      command: scriptList.first,
+      args: scriptList.length > 1 ? scriptList.sublist(1) : const <String>[],
+    );
+  }
+  if (rawScript is! Map) return null;
+
+  final command = rawScript['command']?.toString();
+  if (command == null || command.isEmpty) return null;
+
+  final rawArgs = rawScript['args'];
+  final args = rawArgs is List
+      ? rawArgs.map((e) => e.toString()).toList()
+      : const <String>[];
+
+  final rawEnv = rawScript['env'];
+  Map<String, String?>? env;
+  if (rawEnv is Map) {
+    env = {
+      for (final entry in rawEnv.entries)
+        entry.key.toString():
+            entry.value == null ? null : entry.value.toString(),
+    };
+  }
+
+  final rawTimeout = rawScript['timeout'];
+  final timeout = rawTimeout is num
+      ? rawTimeout.toInt()
+      : rawTimeout is String
+          ? int.tryParse(rawTimeout)
+          : null;
+
+  return ExecuteCommandInput(
+    command: command,
+    args: args,
+    cwd: rawScript['cwd']?.toString(),
+    env: env,
+    timeout: timeout,
+  );
+}
+
+Future<ExecuteCommandInput?> _resolveGeneratorScript(
+  dynamic rawScript,
+  List<CommandToken> allTokens,
+  String cwd,
+  CompleteAdapter adapter,
+) async {
+  final staticInput = _executeCommandInputFromDynamic(rawScript);
+  if (staticInput != null) {
+    return staticInput;
+  }
+  if (rawScript is! Function) return null;
+
+  final tokens = _tokenNames(allTokens);
+  final generatorContext = _createGeneratorContext(allTokens, cwd, adapter);
+  dynamic result;
+  try {
+    result = rawScript(tokens, generatorContext);
+  } catch (_) {
+    result = rawScript(tokens);
+  }
+  final resolved = result is Future ? await result : result;
+  return _executeCommandInputFromDynamic(resolved);
+}
+
+Future<ProcessRunResult> _runGeneratorScript(
+  ExecuteCommandInput input,
+  FigGenerator generator,
+  String cwd,
+  CompleteAdapter adapter,
+) async {
+  final runFuture = adapter.runProcess(
+    input.command,
+    input.args,
+    workingDirectory: input.cwd ?? cwd,
+    environment: input.env,
+  );
+  final timeoutMs = input.timeout ?? generator.scriptTimeout;
+  if (timeoutMs == null) {
+    return runFuture;
+  }
+  return runFuture.timeout(
+    Duration(milliseconds: timeoutMs),
+    onTimeout: () => throw TimeoutException('generator script timed out'),
+  );
+}
+
 Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     List<CommandToken> allTokens, String cwd, CompleteAdapter adapter,
     {LogCallback? logger}) async {
@@ -103,15 +382,9 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
           .whereType<Suggestion>();
     }
     if (custom is Function) {
-      final tokens = allTokens.map((t) => t.token).toList();
+      final tokens = _tokenNames(allTokens);
       final executeCommand = _createExecuteCommand(cwd, adapter);
-      final generatorContext = FigGeneratorContext(
-        currentWorkingDirectory: cwd,
-        currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
-        sshPrefix: '',
-        searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
-        adapter: adapter,
-      );
+      final generatorContext = _createGeneratorContext(allTokens, cwd, adapter);
       try {
         final result = custom(tokens, executeCommand, generatorContext);
         final raw = result is Future ? await result : result;
@@ -128,6 +401,7 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   }
   if (gen.template != null) {
     final templates = await runTemplates(gen.template, cwd, adapter);
+    final generatorContext = _createGeneratorContext(allTokens, cwd, adapter);
     var figSuggestions = templates
         .map((t) => FigSuggestion(
             name: t.name,
@@ -138,11 +412,19 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
 
     List<FigSuggestion> filtered;
     if (gen.filterTemplateSuggestions != null) {
-      // dynamic call: (List<FigSuggestion>) -> List<FigSuggestion>
       try {
-        filtered = gen.filterTemplateSuggestions!(figSuggestions);
-      } catch (e) {
-        logger?.call('[Fig generator] filterTemplateSuggestions error', e);
+        dynamic filteredResult;
+        try {
+          filteredResult =
+              gen.filterTemplateSuggestions!(figSuggestions, generatorContext);
+        } catch (_) {
+          filteredResult = gen.filterTemplateSuggestions!(figSuggestions);
+        }
+        filtered = filteredResult is Iterable
+            ? filteredResult.whereType<FigSuggestion>().toList()
+            : figSuggestions;
+      } catch (e, st) {
+        logger?.call('[Fig generator] filterTemplateSuggestions error', e, st);
         filtered = figSuggestions;
       }
     } else {
@@ -156,43 +438,15 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   }
 
   if (gen.script != null && gen.postProcess != null) {
-    final rawScript = gen.script;
-    List<String> scriptList;
-    if (rawScript is List) {
-      // Use toString() instead of cast<String>() to avoid lazy-cast RuntimeErrors
-      // when the spec returns a List<dynamic> rather than a List<String>.
-      scriptList = rawScript.map((e) => e.toString()).toList();
-    } else if (rawScript is Function) {
-      final tokens = allTokens.map((t) => t.token).toList();
-      final generatorContext = FigGeneratorContext(
-        currentWorkingDirectory: cwd,
-        currentProcess: allTokens.isNotEmpty ? allTokens.first.token : '',
-        sshPrefix: '',
-        searchTerm: allTokens.isNotEmpty ? allTokens.last.token : '',
-        adapter: adapter,
-      );
-      dynamic result;
-      try {
-        result = rawScript(tokens, generatorContext);
-      } catch (_) {
-        result = rawScript(tokens);
-      }
-      scriptList = (result is List)
-          ? result.map((e) => e.toString()).toList()
-          : <String>[];
-    } else {
-      return const [];
-    }
+    final scriptInput =
+        await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
 
-    if (scriptList.isNotEmpty) {
+    if (scriptInput != null) {
       try {
-        final result = await adapter.runProcess(
-          scriptList.first,
-          scriptList.length > 1 ? scriptList.sublist(1) : [],
-          workingDirectory: cwd,
-        );
+        final result =
+            await _runGeneratorScript(scriptInput, gen, cwd, adapter);
         final stdout = result.stdout;
-        final tokens = allTokens.map((t) => t.token).toList();
+        final tokens = _tokenNames(allTokens);
         final figSuggestions = gen.postProcess!(stdout, tokens);
         // Script-generated suggestions: use priority 60 when unspecified (matches inshellisense).
         return figSuggestions
@@ -205,12 +459,93 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     }
   }
 
+  if (gen.script != null && gen.splitOn != null) {
+    final scriptInput =
+        await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
+
+    if (scriptInput != null) {
+      try {
+        final result =
+            await _runGeneratorScript(scriptInput, gen, cwd, adapter);
+        final stdout = result.stdout.trim();
+        if (stdout.isEmpty) return const [];
+        return stdout
+            .split(gen.splitOn!)
+            .map((name) => toSuggestionDynamic(
+                  {'name': name},
+                  defaultPriority: 60,
+                ))
+            .whereType<Suggestion>();
+      } catch (e) {
+        logger?.call('[Fig generator] script error', e);
+        return const [];
+      }
+    }
+  }
+
   return const [];
+}
+
+Future<List<Suggestion>> _collectArgSuggestions(
+  FigArg activeArg,
+  String partial,
+  CompletionContext context, {
+  LogCallback? logger,
+}) async {
+  final strategy = context.filterStrategyOverride ?? activeArg.filterStrategy;
+  final suggestions = <Suggestion>[];
+
+  final templateSuggestions =
+      await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+  suggestions
+      .addAll(filterSuggestionList(templateSuggestions, strategy, partial));
+
+  for (final gen in activeArg.generatorsList) {
+    final generated = await runGeneratorSuggestions(
+        gen, context.allTokens, context.cwd, context.adapter,
+        logger: logger);
+    suggestions.addAll(filterSuggestionList(generated, strategy, partial));
+  }
+
+  suggestions.addAll(
+      filterSuggestions(activeArg.suggestionsAsList, strategy, partial, null));
+  return suggestions;
+}
+
+List<Suggestion> _finalizeSuggestions(
+  Iterable<Suggestion> suggestions,
+  CommandToken? partialToken,
+  CompletionContext context,
+) {
+  return removeDuplicates(
+    sortByPriority(
+      removeHidden(
+        removeAccepted(
+          adjustPathSuggestions(suggestions, partialToken, context.shell),
+          context.acceptedTokens,
+        ),
+        partialToken,
+      ),
+    ),
+  );
+}
+
+void _addAdditionalSuggestions(
+  List<Suggestion> target,
+  RuntimeCommandNode subcommand,
+  String partial,
+  CompletionContext context,
+) {
+  final additional =
+      _additionalSuggestionsAsList(subcommand.additionalSuggestions);
+  if (additional.isEmpty) return;
+  final strategy = context.filterStrategyOverride ?? subcommand.filterStrategy;
+  target.addAll(filterSuggestions(additional, strategy, partial, null));
 }
 
 /// Subcommand-driven recommendation: show subcommands, options, and arg suggestions (templates/generators).
 Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CommandToken? partialToken,
   bool argsDepleted,
   bool argsFromSubcommand,
@@ -218,107 +553,82 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   LogCallback? logger,
 }) async {
   if (argsDepleted && argsFromSubcommand) return null;
-  final partial = partialToken?.token ?? '';
+  final partial =
+      partialToken != null && partialToken.isPath && partialToken.token == '~'
+          ? ''
+          : partialToken?.token ?? '';
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
+  final usedOptions = _collectUsedOptionCounts(context.acceptedTokens);
   var suggestions = <Suggestion>[];
-  final strategy =
-      context.filterStrategyOverride ?? subcommand.filterStrategy;
+  final strategy = context.filterStrategyOverride ?? subcommand.filterStrategy;
   if (!argsFromSubcommand) {
-    suggestions.addAll(filterSubcommandSuggestions(
-        subcommand.subcommands, strategy, partial));
-    suggestions.addAll(filterOptionSuggestions(
-        allOptions,
-        context.acceptedTokens
-            .where((t) => t.isOption)
-            .map((t) => t.token)
-            .toSet(),
-        strategy,
-        partial));
+    suggestions.addAll(
+        filterSubcommandSuggestions(subcommand.subcommands, strategy, partial));
+    suggestions.addAll(
+        filterOptionSuggestions(allOptions, usedOptions, strategy, partial));
+    _addAdditionalSuggestions(suggestions, subcommand, partial, context);
   }
+  final allowsArgSuggestions =
+      subcommand.requiresSubcommand != true || argsFromSubcommand;
   final argList = subcommand.args ?? [];
-  if (argList.isNotEmpty) {
+  if (allowsArgSuggestions && argList.isNotEmpty) {
     final activeArg = argList.first;
-    final argStrategy =
-        context.filterStrategyOverride ?? activeArg.filterStrategy;
-    final templateSuggestions =
-        await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
-    suggestions.addAll(filterSuggestionList(
-        templateSuggestions, argStrategy, partial));
-    for (final gen in activeArg.generatorsList) {
-      final generated = await runGeneratorSuggestions(
-          gen, context.allTokens, context.cwd, context.adapter,
-          logger: logger);
-      suggestions.addAll(
-          filterSuggestionList(generated, argStrategy, partial));
-    }
-    suggestions.addAll(filterSuggestions(
-        activeArg.suggestionsAsList, argStrategy, partial, null));
+    suggestions.addAll(await _collectArgSuggestions(activeArg, partial, context,
+        logger: logger));
   }
-  suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(
-          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
-      partialToken)));
-  return SuggestionBlob(suggestions: suggestions);
+  suggestions = _finalizeSuggestions(suggestions, partialToken, context);
+  return SuggestionBlob(
+    suggestions: suggestions,
+    charactersToDrop: partialToken?.tokenLength ?? 0,
+  );
 }
 
 /// Arg-driven recommendation: suggest for current argument position.
 Future<SuggestionBlob?> getArgDrivenRecommendation(
   List<FigArg> args,
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CommandToken? partialToken,
   bool variadicArgBound,
+  bool consumedPositionalArg,
   CompletionContext context, {
   LogCallback? logger,
 }) async {
   if (args.isEmpty) return null;
   final activeArg = args.first;
-  final partial = partialToken?.token ?? '';
+  final partial =
+      partialToken != null && partialToken.isPath && partialToken.token == '~'
+          ? ''
+          : partialToken?.token ?? '';
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
+  final usedOptions = _collectUsedOptionCounts(context.acceptedTokens);
   var suggestions = <Suggestion>[];
   // Context override first, then arg spec.
   final override = context.filterStrategyOverride;
-  final argStrategy = override ?? activeArg.filterStrategy;
-  final templateSuggestions =
-      await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
-  suggestions.addAll(filterSuggestionList(
-      templateSuggestions, argStrategy, partial));
-  for (final gen in activeArg.generatorsList) {
-    final generated = await runGeneratorSuggestions(
-        gen, context.allTokens, context.cwd, context.adapter,
-        logger: logger);
-    suggestions.addAll(
-        filterSuggestionList(generated, argStrategy, partial));
-  }
-  suggestions.addAll(filterSuggestions(
-      activeArg.suggestionsAsList, argStrategy, partial, null));
+  suggestions.addAll(await _collectArgSuggestions(activeArg, partial, context,
+      logger: logger));
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
     final subStrategy = override ?? subcommand.filterStrategy;
     suggestions.addAll(filterSubcommandSuggestions(
         subcommand.subcommands, subStrategy, partial));
-    suggestions.addAll(filterOptionSuggestions(
-        allOptions,
-        context.acceptedTokens
-            .where((t) => t.isOption)
-            .map((t) => t.token)
-            .toSet(),
-        subStrategy,
-        partial));
+    if (!(_optionsMustPrecedeArguments(subcommand) && consumedPositionalArg)) {
+      suggestions.addAll(filterOptionSuggestions(
+          allOptions, usedOptions, subStrategy, partial));
+    }
+    _addAdditionalSuggestions(suggestions, subcommand, partial, context);
   }
-  suggestions = removeDuplicates(sortByPriority(removeHidden(
-      removeAccepted(
-          adjustPathSuggestions(suggestions, partialToken), context.acceptedTokens),
-      partialToken)));
+  suggestions = _finalizeSuggestions(suggestions, partialToken, context);
   return SuggestionBlob(
       suggestions: suggestions,
-      argumentDescription: activeArg.description ?? activeArg.name);
+      argumentDescription: activeArg.description ?? activeArg.name,
+      charactersToDrop: partialToken?.tokenLength ?? 0);
 }
 
 /// Handle option: if option has args, runArg; else continue runSubcommand.
 Future<SuggestionBlob?> runOption(
   FigOption option,
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CompletionContext context, {
   LogCallback? logger,
 }) async {
@@ -339,7 +649,10 @@ FigOption? getOption(CommandToken token, Iterable<FigOption> options) {
 }
 
 /// Find the first subcommand whose name list contains [tokenName].
-FigSubcommand? _findSubcommand(FigSubcommand subcommand, String tokenName) {
+RuntimeCommandNode? _findSubcommand(
+  RuntimeCommandNode subcommand,
+  String tokenName,
+) {
   if (subcommand.subcommands == null) return null;
   for (final s in subcommand.subcommands!) {
     if (s.nameList.contains(tokenName)) return s;
@@ -347,6 +660,10 @@ FigSubcommand? _findSubcommand(FigSubcommand subcommand, String tokenName) {
   return null;
 }
 
+/// Build the minimal subcommand shape the runtime actually consumes.
+///
+/// This keeps loadSpec resolution aligned with TS semantics for behaviorally
+/// relevant fields without copying rarely used metadata into the hot path.
 /// Resolve a subcommand's [FigSubcommand.loadSpec] to its full spec.
 ///
 /// Mirrors JS inshellisense `genSubcommand`: when a matched subcommand carries a
@@ -356,8 +673,8 @@ FigSubcommand? _findSubcommand(FigSubcommand subcommand, String tokenName) {
 ///
 /// Results for string-keyed specs are stored in [CompletionContext.resolvedSubcommandCache]
 /// so repeated traversals within the same getSuggestions call pay the cost only once.
-Future<FigSubcommand> _resolveSubcommandSpec(
-  FigSubcommand sub,
+Future<RuntimeCommandNode> _resolveSubcommandSpec(
+  RuntimeCommandNode sub,
   CompletionContext context,
   LogCallback? logger,
 ) async {
@@ -368,54 +685,29 @@ Future<FigSubcommand> _resolveSubcommandSpec(
   if (ls is String) {
     final cached = context.resolvedSubcommandCache[ls];
     if (cached != null) {
-      return FigSubcommand(
-        name: sub.name,
-        description: cached.description ?? sub.description,
-        subcommands: cached.subcommands ?? sub.subcommands,
-        options: cached.options ?? sub.options,
-        args: cached.args ?? sub.args,
-        icon: sub.icon ?? cached.icon,
-        filterStrategy: sub.filterStrategy ?? cached.filterStrategy,
-      );
+      return mergeRuntimeCommandNode(sub, cached);
     }
   }
 
   try {
-    FigSubcommand? loaded;
+    RuntimeCommandNode? loaded;
     if (ls is String) {
       // Ensure the named spec is registered (deferred import path).
       await context.ensureSpecLoaded?.call(ls);
       final spec = getSpec(ls);
       if (spec != null) {
-        loaded = FigSubcommand(
-          name: spec.name,
-          description: spec.description,
-          subcommands: spec.subcommands,
-          options: spec.options,
-          args: spec.args,
-          icon: spec.icon,
-          filterStrategy: spec.filterStrategy,
-        );
+        loaded = runtimeNodeFromSpec(spec);
         // Store raw loaded data so subsequent resolutions of the same key reuse it.
         context.resolvedSubcommandCache[ls] = loaded;
       }
     } else if (ls is FigSubcommand) {
-      loaded = ls;
+      loaded = runtimeNodeFromSubcommand(ls);
     }
     // Function-typed loadSpec is not supported in static Dart specs; skip.
     if (loaded == null) return sub;
 
     // Loaded spec wins; fall back to original fields where loaded has nothing.
-    return FigSubcommand(
-      name: sub.name,
-      description: loaded.description ?? sub.description,
-      subcommands: loaded.subcommands ?? sub.subcommands,
-      options: loaded.options ?? sub.options,
-      args: loaded.args ?? sub.args,
-      icon: sub.icon ?? loaded.icon,
-      filterStrategy: sub.filterStrategy ?? loaded.filterStrategy,
-      // Clear loadSpec so this subcommand is not resolved again on the next call.
-    );
+    return mergeRuntimeCommandNode(sub, loaded);
   } catch (e, st) {
     logger?.call('[Fig loadSpec] error resolving subcommand loadSpec', e, st);
     return sub;
@@ -429,7 +721,7 @@ Future<FigSubcommand> _resolveSubcommandSpec(
 /// Results (positive and negative) are stored in [context.aliasCache] keyed by
 /// "rootCmd|token" to avoid redundant shell invocations across calls.
 Future<List<CommandToken>?> _tryResolveAlias(
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CommandToken activeToken,
   CompletionContext context,
   LogCallback? logger,
@@ -490,12 +782,18 @@ Future<List<CommandToken>?> _tryResolveAlias(
 
 /// Recursive: run subcommand matching.
 Future<SuggestionBlob?> runSubcommand(
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CompletionContext context, [
   bool argsDepleted = false,
   bool argsUsed = false,
   LogCallback? logger,
 ]) async {
+  final expandedContext = _expandInlineOptionContext(subcommand, context);
+  if (expandedContext != null) {
+    return runSubcommand(
+        subcommand, expandedContext, argsDepleted, argsUsed, logger);
+  }
+
   if (context.isAtEnd) {
     return getSubcommandDrivenRecommendation(
         subcommand, null, argsDepleted, argsUsed, context,
@@ -560,7 +858,7 @@ Future<SuggestionBlob?> runSubcommand(
 
 Future<SuggestionBlob?> runArg(
   List<FigArg> args,
-  FigSubcommand subcommand,
+  RuntimeCommandNode subcommand,
   CompletionContext context,
   bool fromOption,
   bool fromVariadic, {
@@ -571,19 +869,39 @@ Future<SuggestionBlob?> runArg(
   }
   if (context.isAtEnd) {
     return getArgDrivenRecommendation(
-        args, subcommand, null, fromVariadic, context,
+        args, subcommand, null, fromVariadic, false, context,
         logger: logger);
   }
   if (!context.currentToken.complete) {
     return getArgDrivenRecommendation(
-        args, subcommand, context.currentToken, fromVariadic, context,
+        args, subcommand, context.currentToken, fromVariadic, false, context,
+        logger: logger);
+  }
+  return _runArgTraversal(args, subcommand, context, fromOption, fromVariadic,
+      logger: logger);
+}
+
+Future<SuggestionBlob?> _runArgTraversal(
+  List<FigArg> args,
+  RuntimeCommandNode subcommand,
+  CompletionContext context,
+  bool fromOption,
+  bool fromVariadic, {
+  required LogCallback? logger,
+  bool consumedPositionalArg = false,
+}) async {
+  if (context.isAtEnd) {
+    return getArgDrivenRecommendation(
+        args, subcommand, null, fromVariadic, consumedPositionalArg, context,
         logger: logger);
   }
   final activeToken = context.currentToken;
   final activeArg = args.first;
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
-  if (args.every((a) => a.isOptional) && activeToken.isOption) {
+  if (args.every((a) => a.isOptional) &&
+      activeToken.isOption &&
+      !(_optionsMustPrecedeArguments(subcommand) && consumedPositionalArg)) {
     final option = getOption(activeToken, allOptions);
     if (option != null)
       return runOption(option, subcommand, context, logger: logger);
@@ -592,7 +910,8 @@ Future<SuggestionBlob?> runArg(
   }
   if (activeArg.isVariadic) {
     context.advance();
-    return runArg(args, subcommand, context, fromOption, true, logger: logger);
+    return _runArgTraversal(args, subcommand, context, fromOption, true,
+        logger: logger, consumedPositionalArg: true);
   }
   // isCommand: the current token is itself a CLI command whose spec should be
   // loaded and traversed. Mirrors JS inshellisense runArg isCommand branch
@@ -602,8 +921,7 @@ Future<SuggestionBlob?> runArg(
     final cmdTokens = context.allTokens.sublist(context.currentIndex);
     final cmdSpec = loadSpec(cmdTokens);
     if (cmdSpec == null) return null;
-    final cmdSub = getSubcommand(cmdSpec);
-    if (cmdSub == null) return null;
+    final cmdSub = runtimeNodeFromSpec(cmdSpec);
     context.advance();
     return runSubcommand(cmdSub, context, false, false, logger);
   }
@@ -612,30 +930,71 @@ Future<SuggestionBlob?> runArg(
     if (nextSub != null) {
       context.addPersistentOptionsDeduped(subcommand.options);
       context.advance();
-      final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+      final resolvedSub =
+          await _resolveSubcommandSpec(nextSub, context, logger);
       return runSubcommand(resolvedSub, context, false, false, logger);
     }
   }
+  if (subcommand.requiresSubcommand == true &&
+      (subcommand.subcommands?.isNotEmpty ?? false)) {
+    return null;
+  }
   context.advance();
-  return runArg(args.sublist(1), subcommand, context, fromOption, false,
-      logger: logger);
+  if (args.length == 1) {
+    return runSubcommand(subcommand, context, true, !fromOption, logger);
+  }
+  if (context.isAtEnd) {
+    return getArgDrivenRecommendation(
+        args.sublist(1), subcommand, null, false, true, context,
+        logger: logger);
+  }
+  if (!context.currentToken.complete) {
+    return getArgDrivenRecommendation(
+        args.sublist(1), subcommand, context.currentToken, false, true, context,
+        logger: logger);
+  }
+  return _runArgTraversal(
+      args.sublist(1), subcommand, context, fromOption, false,
+      logger: logger, consumedPositionalArg: true);
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
 /// Empty token triggers no suggestions; only the v2 bucket for the first character is used.
-SuggestionBlob runCommand(CommandToken token) {
+SuggestionBlob runCommand(CommandToken token,
+    {Iterable<String> aliases = const []}) {
   if (token.token.isEmpty) {
     return const SuggestionBlob(suggestions: [], charactersToDrop: 0);
   }
-  final names = getSpecNamesWithPrefix(token.token);
-  final suggestions = names.map((s) => Suggestion(
-      name: s,
-      allNames: [s],
-      icon: suggestionIconSubcommand,
-      priority: 40,
-      type: SuggestionType.subcommand));
+  final aliasList = aliases.where((a) => a.startsWith(token.token)).toList()
+    ..sort();
+  final names = getSpecNamesWithPrefix(token.token)..sort();
+  final suggestions = <Suggestion>[
+    ...aliasList.map((alias) => Suggestion(
+          name: alias,
+          allNames: [alias],
+          icon: suggestionIconShortcut,
+          priority: 100,
+          type: SuggestionType.shortcut,
+        )),
+    ...names.map((s) => Suggestion(
+          name: s,
+          allNames: [s],
+          icon: suggestionIconSubcommand,
+          priority: 40,
+          type: SuggestionType.subcommand,
+        )),
+  ];
   return SuggestionBlob(
       suggestions: suggestions, charactersToDrop: token.tokenLength);
+}
+
+Map<String, int> _collectUsedOptionCounts(List<CommandToken> acceptedTokens) {
+  final counts = <String, int>{};
+  for (final token in acceptedTokens) {
+    if (!token.isOption) continue;
+    counts.update(token.token, (value) => value + 1, ifAbsent: () => 1);
+  }
+  return counts;
 }
 
 /// A single entry in the suggestion result cache.
@@ -769,10 +1128,17 @@ class AutocompleteEngine {
     if (tokens.isEmpty || !tokens.first.complete) return null;
     if (shell != Shell.bash && shell != Shell.zsh) return null;
 
-    if (!_shellAliasCache.containsKey(shell)) {
-      _shellAliasCache[shell] = await loadShellAliases(shell, adapter);
-    }
+    await _ensureShellAliasesLoaded(shell, adapter);
     return aliasExpand(tokens, _shellAliasCache[shell]!);
+  }
+
+  Future<void> _ensureShellAliasesLoaded(
+    Shell shell,
+    CompleteAdapter adapter,
+  ) async {
+    if (shell != Shell.bash && shell != Shell.zsh) return;
+    if (_shellAliasCache.containsKey(shell)) return;
+    _shellAliasCache[shell] = await loadShellAliases(shell, adapter);
   }
 
   /// Dispose the engine (alias for clearCache for now).
@@ -821,7 +1187,11 @@ class AutocompleteEngine {
 
     final myGen = _requestGen;
     final work = _doGetSuggestions(
-      normalizedCmd, cwd, shell, adapter, myGen,
+      normalizedCmd,
+      cwd,
+      shell,
+      adapter,
+      myGen,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: logger,
@@ -866,7 +1236,11 @@ class AutocompleteEngine {
 
     if (activeCmd.isEmpty) return null;
     final rootToken = activeCmd.first;
-    if (!rootToken.complete) return runCommand(rootToken);
+    if (!rootToken.complete) {
+      await _ensureShellAliasesLoaded(shell, adapter);
+      return runCommand(rootToken,
+          aliases: _shellAliasCache[shell]?.keys ?? const []);
+    }
 
     final ensure =
         ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded;
@@ -902,7 +1276,8 @@ class AutocompleteEngine {
     final gen = spec.generateSpec;
     if (gen != null) {
       try {
-        final cacheKey = '${spec.name}|$resolvedCwd';
+        final cacheKey =
+            _buildGenerateSpecCacheKey(spec, activeCmd, resolvedCwd);
         FigSpec? generated;
         if (_generateSpecCache.containsKey(cacheKey)) {
           generated = _generateSpecCache[cacheKey];
@@ -923,20 +1298,20 @@ class AutocompleteEngine {
       }
     }
 
-    final subcommand = getSubcommand(spec);
-    if (subcommand == null) return null;
+    final subcommand = runtimeNodeFromSpec(spec!);
 
     // Resolve cwd from the last typed token so that path-style arguments like
     // `~/xh` or `./foo/bar` correctly scope template/generator suggestions to
     // the intended directory (mirrors inshellisense runtime.ts resolveCwd call).
     final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
     final tokenCwdResult =
-        await _resolveTokenCwd(lastToken, resolvedCwd, adapter);
+        await _resolveTokenCwd(lastToken, resolvedCwd, shell, adapter);
 
     // Cancellation checkpoint: _resolveTokenCwd may call listDirectory over SSH.
     if (_requestGen != myGen) return null;
 
-    final effectiveCwd = tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
+    final effectiveCwd =
+        tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
     log?.call('[autocomplete] tokenCwd: '
         'lastToken="${lastToken?.token}" '
         'pathy=${tokenCwdResult.pathy} '
@@ -972,7 +1347,8 @@ class AutocompleteEngine {
       shell: shell,
       adapter: adapter,
       currentIndex: 1,
-      ensureSpecLoaded: ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
+      ensureSpecLoaded:
+          ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       aliasCache: _aliasResolveCache,
     );
@@ -995,8 +1371,7 @@ class AutocompleteEngine {
       charactersToDrop =
           tokenCwdResult.complete ? 0 : tokenCwdResult.basenameLength;
     } else {
-      charactersToDrop =
-          lastToken?.complete == true ? 0 : (lastToken?.tokenLength ?? 0);
+      charactersToDrop = result.charactersToDrop;
     }
 
     log?.call('[autocomplete] result: '
@@ -1046,9 +1421,9 @@ class _TokenCwdResult {
 Future<_TokenCwdResult> _resolveTokenCwd(
   CommandToken? cmdToken,
   String baseCwd,
+  Shell shell,
   CompleteAdapter adapter,
 ) async {
-  const sep = '/';
   _TokenCwdResult notPathy() => _TokenCwdResult(
       cwd: baseCwd,
       pathy: false,
@@ -1056,15 +1431,28 @@ Future<_TokenCwdResult> _resolveTokenCwd(
       basenameLength: 0,
       filterPartial: '');
 
-  if (cmdToken == null) return notPathy();
+  if (cmdToken == null || cmdToken.complete) return notPathy();
+  final token = cmdToken.token;
+  final separators = shellPathSeparators(shell);
+  final hasPathSeparator =
+      separators.any((separator) => token.contains(separator));
+  final hasHomePrefix =
+      token == '~' || token.startsWith('~/') || token.startsWith(r'~\');
+  if (!hasPathSeparator && !hasHomePrefix) return notPathy();
 
-  // Unescape `\ ` → space so we resolve the real path correctly.
-  final token = cmdToken.token.replaceAll('\\ ', ' ');
-  if (!token.contains(sep)) return notPathy();
+  if (token == '~') {
+    return _TokenCwdResult(
+      cwd: adapter.getEnv('HOME') ?? baseCwd,
+      pathy: true,
+      complete: false,
+      basenameLength: 1,
+      filterPartial: '~',
+    );
+  }
 
   // Expand leading `~` to $HOME.
   String expanded;
-  if (token == '~' || token.startsWith('~/')) {
+  if (hasHomePrefix) {
     final home = adapter.getEnv('HOME') ?? '';
     expanded = home + token.substring(1);
   } else {
@@ -1073,15 +1461,17 @@ Future<_TokenCwdResult> _resolveTokenCwd(
 
   // Resolve relative paths against baseCwd.
   final String resolvedPath;
-  if (expanded.startsWith('/')) {
+  if (isAbsolutePathForShell(expanded, shell)) {
     resolvedPath = expanded;
   } else {
-    final base =
-        baseCwd.endsWith('/') ? baseCwd.substring(0, baseCwd.length - 1) : baseCwd;
-    resolvedPath = '$base/$expanded';
+    final separator = primaryPathSeparator(shell);
+    final base = endsWithPathSeparator(baseCwd, shell)
+        ? baseCwd.substring(0, baseCwd.length - 1)
+        : baseCwd;
+    resolvedPath = '$base$separator$expanded';
   }
 
-  final complete = token.endsWith(sep);
+  final complete = endsWithPathSeparator(token, shell);
 
   if (complete) {
     // Token ends with `/`: list the directory contents with no filter prefix.
@@ -1096,10 +1486,10 @@ Future<_TokenCwdResult> _resolveTokenCwd(
   // Token is an incomplete path (no trailing `/`).
   // Use the parent directory so templates list siblings; the basename is the
   // filter prefix so only matching entries are shown.
-  final lastSlash = resolvedPath.lastIndexOf('/');
-  if (lastSlash <= 0) return notPathy();
-  final parentPath = resolvedPath.substring(0, lastSlash + 1);
-  final basename = resolvedPath.substring(lastSlash + 1);
+  final lastSeparator = lastPathSeparatorIndex(resolvedPath, shell);
+  if (lastSeparator < 0) return notPathy();
+  final parentPath = resolvedPath.substring(0, lastSeparator + 1);
+  final basename = resolvedPath.substring(lastSeparator + 1);
   return _TokenCwdResult(
     cwd: parentPath,
     pathy: true,
@@ -1183,4 +1573,14 @@ FigSpec _mergeSpecs(FigSpec original, FigSpec generated) {
     generateSpec: original.generateSpec,
     loadSpec: generated.loadSpec ?? original.loadSpec,
   );
+}
+
+String _buildGenerateSpecCacheKey(
+  FigSpec spec,
+  List<CommandToken> tokens,
+  String cwd,
+) {
+  final tokenKey =
+      tokens.map((t) => '${t.token}:${t.complete ? 1 : 0}').join('\u0001');
+  return '${spec.name}|$cwd|$tokenKey';
 }

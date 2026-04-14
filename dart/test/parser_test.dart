@@ -82,20 +82,26 @@ void main() {
 
   // ── 5. --flag=value 分割 ──────────────────────────────────────────────────────
   group('--flag=value splitting', () {
-    test('--output=file splits into option token and =value token', () {
-      // The lexer stops the option token at '=', leaving '=file' as the next token.
-      // runtime.dart handles '=file' as the argument value for the option.
+    test('--output=file splits into option token and value token', () {
       final tokens = parse('cmd --output=file');
       expect(tokens.length, 3);
       expect(tokens[1].token, '--output');
       expect(tokens[1].isOption, isTrue);
-      expect(tokens[2].token, '=file');
+      expect(tokens[1].complete, isTrue);
+      expect(tokens[2].token, 'file');
       expect(tokens[2].isOption, isFalse);
     });
 
     test('value token after = is incomplete when at end', () {
       final tokens = parse('cmd --output=file');
       expect(tokens.last.complete, isFalse);
+    });
+
+    test('empty value after = creates an empty incomplete token', () {
+      final tokens = parse('cmd --output=');
+      expect(tokens.length, 3);
+      expect(tokens[2].token, '');
+      expect(tokens[2].complete, isFalse);
     });
   });
 
@@ -123,6 +129,12 @@ void main() {
       final tokens = parse("ls 'foo' ");
       expect(tokens[1].complete, isTrue);
     });
+
+    test('closed single quote keeps both quotes in tokenLength', () {
+      final tokens = parse("ls 'foo bar'");
+      expect(tokens[1].token, 'foo bar');
+      expect(tokens[1].tokenLength, "'foo bar'".length);
+    });
   });
 
   // ── 7. 双引号 ────────────────────────────────────────────────────────────────
@@ -143,6 +155,17 @@ void main() {
     test('closed double quote with trailing space is complete', () {
       final tokens = parse('ls "foo" ');
       expect(tokens[1].complete, isTrue);
+    });
+
+    test('unclosed double quote keeps the opening quote in tokenLength', () {
+      final tokens = parse('ls "fi');
+      expect(tokens[1].tokenLength, 3);
+    });
+
+    test('closed double quote keeps both quotes in tokenLength', () {
+      final tokens = parse('ls "foo bar"');
+      expect(tokens[1].token, 'foo bar');
+      expect(tokens[1].tokenLength, '"foo bar"'.length);
     });
   });
 
@@ -175,6 +198,19 @@ void main() {
       final tokens = parse(r'ls file\ name');
       expect(tokens[1].isQuoted, isFalse);
     });
+
+    test(r'escaped space preserves original token length for replacement', () {
+      final tokens = parse(r'ls file\ na');
+      expect(tokens[1].token, 'file na');
+      expect(tokens[1].tokenLength, r'file\ na'.length);
+    });
+
+    test(r'pwsh uses backtick-space as a single token', () {
+      final tokens = parseCommand(r'ls file` name', Shell.pwsh);
+      expect(tokens.length, 2);
+      expect(tokens[1].token, 'file name');
+      expect(tokens[1].tokenLength, r'file` name'.length);
+    });
   });
 
   // ── 10. 命令分隔符 ────────────────────────────────────────────────────────────
@@ -203,6 +239,38 @@ void main() {
       expect(tokens[0].token, 'cmd2');
       expect(tokens[1].token, 'arg');
     });
+
+    test('does not split on pipe inside quotes', () {
+      final tokens = parse('printf "a|b"');
+      expect(tokens.length, 2);
+      expect(tokens[0].token, 'printf');
+      expect(tokens[1].token, 'a|b');
+    });
+
+    test('does not split on semicolon inside quotes', () {
+      final tokens = parse("printf 'a;b'");
+      expect(tokens.length, 2);
+      expect(tokens[0].token, 'printf');
+      expect(tokens[1].token, 'a;b');
+    });
+
+    test('keeps pipes inside quoted curl arguments', () {
+      final tokens = parse(
+          'curl -H "Authorization: Bearer a|b" "https://api.example.com?q=a|b"');
+      expect(tokens.length, 4);
+      expect(tokens[0].token, 'curl');
+      expect(tokens[1].token, '-H');
+      expect(tokens[2].token, 'Authorization: Bearer a|b');
+      expect(tokens[3].token, 'https://api.example.com?q=a|b');
+    });
+
+    test('takes the last segment when curl pipes into jq', () {
+      final tokens = parse(
+          'curl -H "Authorization: Bearer a|b" "https://api.example.com?q=a|b" | jq \'.data | length\'');
+      expect(tokens.length, 2);
+      expect(tokens[0].token, 'jq');
+      expect(tokens[1].token, '.data | length');
+    });
   });
 
   // ── 11. 双反斜杠引号（Bug2 修复验证）────────────────────────────────────────
@@ -216,9 +284,21 @@ void main() {
       expect(tokens[1].isQuoted, isTrue);
     });
 
-    test(r'odd backslash before closing quote: quote is escaped (unclosed)', () {
+    test(r'odd backslash before closing quote: quote is escaped (unclosed)',
+        () {
       // Input: "foo\" — one backslash then " — the quote is escaped, string unclosed.
       final tokens = parse(r'cmd "foo\"');
+      expect(tokens[1].complete, isFalse);
+    });
+  });
+
+  group('quote-continued tokens', () {
+    test('treats quoted prefix plus suffix as one token', () {
+      final tokens = parse('cmd "foo"bar');
+      expect(tokens.length, 2);
+      expect(tokens[1].token, 'foobar');
+      expect(tokens[1].isQuoted, isTrue);
+      expect(tokens[1].tokenLength, '"foo"bar'.length);
       expect(tokens[1].complete, isFalse);
     });
   });

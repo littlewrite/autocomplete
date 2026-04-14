@@ -47,10 +47,12 @@ abstract class CompleteAdapter {
   });
 
   /// Run [executable] with [arguments] in [workingDirectory] (if provided).
+  /// [environment] allows generator callbacks to inject/override env vars.
   /// Returns stdout (and optionally stderr/exitCode) for generator postProcess.
   Future<ProcessRunResult> runProcess(
     String executable,
     List<String> arguments, {
     String? workingDirectory,
+    Map<String, String?>? environment,
   });
 }

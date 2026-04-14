@@ -20,13 +20,20 @@ class TemplateSuggestion {
 
 const int _defaultPriority = 55;
 
+String _templateNameForEntry(FileSystemEntry entry) {
+  if (!entry.isDirectory || entry.name.endsWith('/')) {
+    return entry.name;
+  }
+  return '${entry.name}/';
+}
+
 /// List files and folders in [cwd] as template suggestions.
-Future<List<TemplateSuggestion>> filepathsTemplate(String cwd,
-    CompleteAdapter adapter) async {
+Future<List<TemplateSuggestion>> filepathsTemplate(
+    String cwd, CompleteAdapter adapter) async {
   final entries = await adapter.listDirectory(cwd, foldersOnly: false);
   return entries
       .map((e) => TemplateSuggestion(
-            name: e.name,
+            name: _templateNameForEntry(e),
             priority: _defaultPriority,
             type: e.isDirectory ? SuggestionType.folder : SuggestionType.file,
           ))
@@ -34,12 +41,12 @@ Future<List<TemplateSuggestion>> filepathsTemplate(String cwd,
 }
 
 /// List only folders in [cwd].
-Future<List<TemplateSuggestion>> foldersTemplate(String cwd,
-    CompleteAdapter adapter) async {
+Future<List<TemplateSuggestion>> foldersTemplate(
+    String cwd, CompleteAdapter adapter) async {
   final entries = await adapter.listDirectory(cwd, foldersOnly: true);
   return entries
       .map((e) => TemplateSuggestion(
-            name: e.name,
+            name: _templateNameForEntry(e),
             priority: _defaultPriority,
             type: SuggestionType.folder,
           ))

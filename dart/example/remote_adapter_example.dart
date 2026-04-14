@@ -49,6 +49,7 @@ class RemoteCompleteAdapter implements CompleteAdapter {
     String executable,
     List<String> arguments, {
     String? workingDirectory,
+    Map<String, String?>? environment,
   }) async {
     // Stub: in production, send request to remote (e.g. HTTP POST /run).
     return const ProcessRunResult(stdout: '', stderr: '', exitCode: 0);

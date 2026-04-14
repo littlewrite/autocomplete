@@ -2,6 +2,7 @@
 
 import 'model.dart';
 import 'parser.dart' show CommandToken;
+import 'shell.dart';
 import 'spec.dart';
 
 const String suggestionIconFile = '📄';
@@ -188,7 +189,8 @@ Suggestion? toSuggestionDynamic(dynamic s, {int defaultPriority = 50}) {
       allNames: nameVal,
       description: description,
       icon: icon,
-      priority: _priorityFromDynamic(m['priority'], defaultPriority: defaultPriority),
+      priority:
+          _priorityFromDynamic(m['priority'], defaultPriority: defaultPriority),
       insertValue: m['insertValue']?.toString(),
       type: type,
       hidden: m['hidden'] == true,
@@ -213,7 +215,8 @@ Suggestion? toSuggestion(FigSuggestion s,
     insertValue: s.insertValue,
     type: resolvedType,
     hidden: s.hidden,
-    pathy: resolvedType == SuggestionType.file || resolvedType == SuggestionType.folder,
+    pathy: resolvedType == SuggestionType.file ||
+        resolvedType == SuggestionType.folder,
   );
 }
 
@@ -259,7 +262,8 @@ Iterable<Suggestion> filterSuggestionList(
   final strat = normalizeFilterStrategy(strategy);
   final lower = partial.toLowerCase();
 
-  final matcher = strat == FilterStrategy.fuzzy ? _matchesFuzzy : _matchesPrefix;
+  final matcher =
+      strat == FilterStrategy.fuzzy ? _matchesFuzzy : _matchesPrefix;
 
   return suggestions.map((s) {
     final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
@@ -296,30 +300,57 @@ Iterable<Suggestion> filterSuggestions(
   return filterSuggestionList(asSuggestions, strategy, partial);
 }
 
-/// Convert [FigSubcommand]s directly to [Suggestion]s and filter by [strategy] / [partial].
+/// Convert subcommand-like nodes directly to [Suggestion]s and filter by
+/// [strategy] / [partial].
 ///
-/// Previously went FigSubcommand → FigSuggestion → Suggestion (two object allocations
-/// per entry). Now converts in a single pass to reduce GC pressure when specs have
-/// many subcommands (e.g. git with 150+ subcommands).
+/// Accepts both public [FigSubcommand] objects and internal runtime command
+/// nodes. This keeps the suggestion layer decoupled from the runtime's
+/// traversal model while still avoiding intermediate [FigSuggestion] objects.
 Iterable<Suggestion> filterSubcommandSuggestions(
-    Iterable<FigSubcommand>? subcommands, dynamic strategy, String? partial) {
+    Iterable<Object>? subcommands, dynamic strategy, String? partial) {
   if (subcommands == null || subcommands.isEmpty) return const [];
   final asSuggestions = subcommands.map((s) {
-    final names = s.nameList;
+    final names = _subcommandNameList(s);
     if (names.isEmpty) return null;
-    final desc = _descriptionFromDynamic(s.description);
+    final desc = _descriptionFromDynamic(_subcommandDescription(s));
     return Suggestion(
       name: _primaryName(names),
       allNames: names,
       description: desc,
-      icon: s.icon ?? iconForType(SuggestionType.subcommand),
-      priority: s.priority ?? 50,
+      icon: _subcommandIcon(s) ?? iconForType(SuggestionType.subcommand),
+      priority: _subcommandPriority(s) ?? 50,
       type: SuggestionType.subcommand,
-      hidden: s.hidden,
+      hidden: _subcommandHidden(s),
       pathy: false,
     );
   }).whereType<Suggestion>();
   return filterSuggestionList(asSuggestions, strategy, partial);
+}
+
+List<String> _subcommandNameList(Object subcommand) {
+  final dynamic value = subcommand;
+  final raw = value.nameList;
+  return raw is List<String> ? raw : List<String>.from(raw as List);
+}
+
+dynamic _subcommandDescription(Object subcommand) {
+  final dynamic value = subcommand;
+  return value.description;
+}
+
+String? _subcommandIcon(Object subcommand) {
+  final dynamic value = subcommand;
+  return value.icon as String?;
+}
+
+int? _subcommandPriority(Object subcommand) {
+  final dynamic value = subcommand;
+  return value.priority as int?;
+}
+
+bool _subcommandHidden(Object subcommand) {
+  final dynamic value = subcommand;
+  return value.hidden == true;
 }
 
 /// Convert [FigOption]s directly to [Suggestion]s and filter by [strategy] / [partial].
@@ -330,34 +361,82 @@ Iterable<Suggestion> filterSubcommandSuggestions(
 /// construction was silently dropping.
 Iterable<Suggestion> filterOptionSuggestions(
   Iterable<FigOption>? options,
-  Set<String> usedOptions,
+  Map<String, int> usedOptions,
   dynamic strategy,
   String? partial,
 ) {
   if (options == null) return const [];
-  final valid = options.where((o) {
-    if (o.exclusiveOn != null) {
-      if (o.exclusiveOn!.any((e) => usedOptions.contains(e))) return false;
-    }
-    return true;
-  });
+  final usedOptionNames = usedOptions.keys.toSet();
+  final valid =
+      options.where((o) => _isOptionVisible(o, usedOptionNames, usedOptions));
   final asSuggestions = valid.map((o) {
     final names = o.nameList;
     if (names.isEmpty) return null;
     final desc = _descriptionFromDynamic(o.description);
+    final resolvedInsertValue =
+        o.insertValue ?? _defaultOptionInsertValue(o, names);
     return Suggestion(
       name: _primaryName(names),
       allNames: names,
       description: desc,
       icon: o.icon ?? iconForType(SuggestionType.option),
       priority: o.priority ?? 50,
-      insertValue: o.insertValue,
+      insertValue: resolvedInsertValue,
       type: SuggestionType.option,
       hidden: o.hidden,
       pathy: false,
     );
   }).whereType<Suggestion>();
   return filterSuggestionList(asSuggestions, strategy, partial);
+}
+
+bool _isOptionVisible(
+  FigOption option,
+  Set<String> usedOptionNames,
+  Map<String, int> usedOptionCounts,
+) {
+  if (option.dependsOn != null &&
+      option.dependsOn!.any((name) => !usedOptionNames.contains(name))) {
+    return false;
+  }
+
+  if (option.exclusiveOn != null &&
+      option.exclusiveOn!.any(usedOptionNames.contains)) {
+    return false;
+  }
+
+  final repeatLimit = _repeatLimit(option.isRepeatable);
+  if (repeatLimit != null) {
+    final usedCount = option.nameList
+        .fold<int>(0, (sum, name) => sum + (usedOptionCounts[name] ?? 0));
+    if (usedCount >= repeatLimit) return false;
+  }
+
+  return true;
+}
+
+int? _repeatLimit(dynamic isRepeatable) {
+  if (isRepeatable == true) return null;
+  if (isRepeatable is num) {
+    final limit = isRepeatable.toInt();
+    return limit <= 0 ? 1 : limit;
+  }
+  return 1;
+}
+
+String? _defaultOptionInsertValue(FigOption option, List<String> names) {
+  if (option.args == null || option.args!.isEmpty) return null;
+  final separator = _requiredOptionSeparator(option);
+  if (separator == null) return null;
+  return '${_primaryName(names)}$separator';
+}
+
+String? _requiredOptionSeparator(FigOption option) {
+  final separator = option.requiresSeparator;
+  if (separator is String) return separator;
+  // ignore: deprecated_member_use_from_same_package
+  if (separator == true || option.requiresEquals == true) return '=';
+  return null;
 }
 
 Iterable<Suggestion> removeAccepted(
@@ -392,27 +471,33 @@ List<Suggestion> sortByPriority(Iterable<Suggestion> suggestions) {
 
 // ── Path escaping ─────────────────────────────────────────────────────────────
 
-String? _escapePath(String? value) => value?.replaceAll(' ', r'\ ');
+String? _escapePath(String? value, Shell shell) =>
+    value == null ? null : escapeWhitespace(value, shell);
 
 /// Escape spaces in path suggestions when the current token is NOT quoted.
 ///
 /// Mirrors inshellisense `adjustPathSuggestions`: for every [Suggestion] that
 /// is [Suggestion.pathy], spaces in [Suggestion.insertValue] (and [Suggestion.name]
-/// when there is no insertValue) are replaced with `\ ` so the resulting shell
-/// command is valid without surrounding quotes.
+/// when there is no insertValue) are escaped for the active [shell] so the
+/// resulting command is valid without surrounding quotes.
 ///
 /// No-op when [partialToken] is null or [CommandToken.isQuoted] is true —
 /// quoted tokens handle spaces on their own.
 Iterable<Suggestion> adjustPathSuggestions(
   Iterable<Suggestion> suggestions,
   CommandToken? partialToken,
+  Shell shell,
 ) {
   if (partialToken == null || partialToken.isQuoted) return suggestions;
   return suggestions.map((s) {
     if (!s.pathy) return s;
-    final escapedInsert = _escapePath(s.insertValue);
-    final escapedName =
-        s.insertValue == null ? (_escapePath(s.name) ?? s.name) : s.name;
+    final isBareHomeToken = partialToken.isPath && partialToken.token == '~';
+    final rawInsert = s.insertValue ?? s.name;
+    final prefixedInsert = isBareHomeToken ? '~/$rawInsert' : rawInsert;
+    final escapedInsert = _escapePath(prefixedInsert, shell);
+    final escapedName = s.insertValue == null
+        ? (_escapePath(prefixedInsert, shell) ?? s.name)
+        : s.name;
     return Suggestion(
       name: escapedName,
       allNames: s.allNames,

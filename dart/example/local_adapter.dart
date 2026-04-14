@@ -9,7 +9,8 @@ import 'package:autocomplete/autocomplete.dart';
 /// Use on VM only (CLI, server). For web or remote, implement [CompleteAdapter] yourself.
 class LocalCompleteAdapter implements CompleteAdapter {
   @override
-  Map<String, String> getEnvs() => Map<String, String>.from(Platform.environment);
+  Map<String, String> getEnvs() =>
+      Map<String, String>.from(Platform.environment);
 
   @override
   String? getEnv(String envKey) => Platform.environment[envKey];
@@ -55,11 +56,24 @@ class LocalCompleteAdapter implements CompleteAdapter {
     String executable,
     List<String> arguments, {
     String? workingDirectory,
+    Map<String, String?>? environment,
   }) async {
+    final mergedEnvironment = Map<String, String>.from(Platform.environment);
+    if (environment != null) {
+      for (final entry in environment.entries) {
+        final value = entry.value;
+        if (value == null) {
+          mergedEnvironment.remove(entry.key);
+        } else {
+          mergedEnvironment[entry.key] = value;
+        }
+      }
+    }
     final result = await Process.run(
       executable,
       arguments,
       workingDirectory: workingDirectory,
+      environment: mergedEnvironment,
       runInShell: false,
     );
     return ProcessRunResult(
