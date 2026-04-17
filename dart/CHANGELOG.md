@@ -1,3 +1,8 @@
+## 0.3.1
+
+- cache opt
+- fuzzy ajust
+
 ## 0.3.0
 
 - feature fix, opt

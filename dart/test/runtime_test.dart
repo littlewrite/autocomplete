@@ -15,6 +15,18 @@ class ProcessInvocation {
   final Map<String, String?>? environment;
 }
 
+class DirectoryInvocation {
+  const DirectoryInvocation({
+    required this.path,
+    required this.foldersOnly,
+    required this.extensions,
+  });
+
+  final String path;
+  final bool foldersOnly;
+  final List<String>? extensions;
+}
+
 class FakeAdapter implements CompleteAdapter {
   FakeAdapter({
     Map<String, List<FileSystemEntry>>? directories,
@@ -31,6 +43,7 @@ class FakeAdapter implements CompleteAdapter {
   final Map<String, ProcessRunResult> _processResults;
   final Map<String, Duration> _processDelays;
   final List<ProcessInvocation> processInvocations = [];
+  final List<DirectoryInvocation> listDirectoryInvocations = [];
 
   @override
   String? getEnv(String envKey) => _envs[envKey];
@@ -44,8 +57,13 @@ class FakeAdapter implements CompleteAdapter {
     bool foldersOnly = false,
     List<String>? extensions,
   }) async {
-    final entries =
-        _directories[_normalizePath(path)] ?? const <FileSystemEntry>[];
+    final normalizedPath = _normalizePath(path);
+    listDirectoryInvocations.add(DirectoryInvocation(
+      path: normalizedPath,
+      foldersOnly: foldersOnly,
+      extensions: extensions == null ? null : List<String>.from(extensions),
+    ));
+    final entries = _directories[normalizedPath] ?? const <FileSystemEntry>[];
     return entries.where((entry) {
       if (foldersOnly && !entry.isDirectory) return false;
       if (extensions == null || extensions.isEmpty || entry.isDirectory) {
@@ -108,6 +126,10 @@ void main() {
   const generatorSplitOnCommand = 'ac_generator_split_on_test';
   const shellPathEscapingCommand = 'ac_shell_path_escaping_test';
   const pathResolutionCommand = 'ac_path_resolution_test';
+  const pathListingCacheCommand = 'ac_path_listing_cache_test';
+  const incrementalGeneratorCacheCommand =
+      'ac_incremental_generator_cache_test';
+  const tokenBoundaryCacheCommand = 'ac_token_boundary_cache_test';
   const quotedDropCommand = 'ac_quoted_drop_test';
   const templateFilterContextCommand = 'ac_template_filter_context_test';
   const variadicArgRegressionCommand = 'ac_variadic_arg_regression_test';
@@ -132,6 +154,9 @@ void main() {
     unregisterSpec(generatorSplitOnCommand);
     unregisterSpec(shellPathEscapingCommand);
     unregisterSpec(pathResolutionCommand);
+    unregisterSpec(pathListingCacheCommand);
+    unregisterSpec(incrementalGeneratorCacheCommand);
+    unregisterSpec(tokenBoundaryCacheCommand);
     unregisterSpec(quotedDropCommand);
     unregisterSpec(templateFilterContextCommand);
     unregisterSpec(variadicArgRegressionCommand);
@@ -300,6 +325,216 @@ void main() {
       expect(nestedRootDir, isNotNull);
       expect(nestedRootDir!.charactersToDrop, 2);
       expect(nestedRootDir.suggestions.map((s) => s.name), contains('local/'));
+    });
+
+    test('reuses cached directory listings while narrowing within one folder',
+        () async {
+      registerSpec(
+        pathListingCacheCommand,
+        () => FigSpec(
+          name: pathListingCacheCommand,
+          args: [
+            FigArg(template: 'folders'),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        directories: {
+          '/home/test': const [
+            FileSystemEntry(name: 'Downloads', isDirectory: true),
+            FileSystemEntry(name: 'Desktop', isDirectory: true),
+            FileSystemEntry(name: 'notes.txt', isDirectory: false),
+          ],
+          '/home/test/Downloads': const [
+            FileSystemEntry(name: 'Projects', isDirectory: true),
+          ],
+        },
+      );
+      final engine = AutocompleteEngine();
+
+      final home = await engine.getSuggestions(
+        '$pathListingCacheCommand ~',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(home, isNotNull);
+      expect(home!.suggestions.map((s) => s.name), contains('~/Downloads/'));
+
+      final narrowed = await engine.getSuggestions(
+        '$pathListingCacheCommand ~/Do',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(narrowed, isNotNull);
+      expect(narrowed!.suggestions.map((s) => s.name), contains('Downloads/'));
+
+      final broadened = await engine.getSuggestions(
+        '$pathListingCacheCommand ~/',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(broadened, isNotNull);
+      expect(broadened!.suggestions.map((s) => s.name), contains('Downloads/'));
+
+      expect(
+        adapter.listDirectoryInvocations.map((call) => call.path).toList(),
+        equals(['/home/test']),
+      );
+
+      final nested = await engine.getSuggestions(
+        '$pathListingCacheCommand ~/Downloads/',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(nested, isNotNull);
+      expect(nested!.suggestions.map((s) => s.name), contains('Projects/'));
+      expect(
+        adapter.listDirectoryInvocations.map((call) => call.path).toList(),
+        equals(['/home/test', '/home/test/Downloads']),
+      );
+    });
+
+    test('reuses generator suggestions while narrowing within one token',
+        () async {
+      registerSpec(
+        incrementalGeneratorCacheCommand,
+        () => FigSpec(
+          name: incrementalGeneratorCacheCommand,
+          args: [
+            FigArg(
+              suggestions: const ['feature_static'],
+              generators: const FigGenerator(
+                script: ['mock-branches'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'mock-branches': ProcessRunResult(
+            stdout: 'feat_alpha\nfeat_able\nmain\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine();
+
+      final first = await engine.getSuggestions(
+        '$incrementalGeneratorCacheCommand feat_',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(first, isNotNull);
+      expect(
+        first!.suggestions.map((s) => s.name),
+        containsAll(['feature_static', 'feat_alpha', 'feat_able']),
+      );
+      expect(
+        first.suggestions.take(2).map((s) => s.name).toList(),
+        equals(['feat_alpha', 'feat_able']),
+      );
+
+      final narrowed = await engine.getSuggestions(
+        '$incrementalGeneratorCacheCommand fe',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(narrowed, isNotNull);
+      expect(
+        narrowed!.suggestions.map((s) => s.name),
+        containsAll(['feature_static', 'feat_alpha', 'feat_able']),
+      );
+      expect(
+        narrowed.suggestions.take(2).map((s) => s.name).toList(),
+        equals(['feat_alpha', 'feat_able']),
+      );
+      expect(adapter.processInvocations.length, 1);
+
+      final narrowedAgain = await engine.getSuggestions(
+        '$incrementalGeneratorCacheCommand feat_ab',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(narrowedAgain, isNotNull);
+      expect(
+        narrowedAgain!.suggestions.map((s) => s.name).toList(),
+        equals(['feat_able']),
+      );
+      expect(adapter.processInvocations.length, 1);
+    });
+
+    test('invalidates candidate cache when moving to the next shell token',
+        () async {
+      registerSpec(
+        tokenBoundaryCacheCommand,
+        () => FigSpec(
+          name: tokenBoundaryCacheCommand,
+          args: [
+            FigArg(
+              generators: FigGenerator(
+                script: ['first-token-candidates'],
+                splitOn: '\n',
+              ),
+            ),
+            FigArg(
+              generators: FigGenerator(
+                script: ['second-token-candidates'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'first-token-candidates': ProcessRunResult(
+            stdout: 'feat_alpha\nfeat_able\n',
+          ),
+          'second-token-candidates': ProcessRunResult(
+            stdout: 'alpha\nbeta\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine();
+
+      final first = await engine.getSuggestions(
+        '$tokenBoundaryCacheCommand feat_',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(first, isNotNull);
+      expect(
+        first!.suggestions.map((s) => s.name),
+        containsAll(['feat_alpha', 'feat_able']),
+      );
+      expect(adapter.processInvocations.length, 1);
+      expect(adapter.processInvocations.first.executable,
+          'first-token-candidates');
+
+      final second = await engine.getSuggestions(
+        '$tokenBoundaryCacheCommand feat_alpha al',
+        '/work',
+        Shell.bash,
+        adapter,
+      );
+      expect(second, isNotNull);
+      expect(
+          second!.suggestions.map((s) => s.name).toList(), equals(['alpha']));
+      expect(adapter.processInvocations.length, 2);
+      expect(adapter.processInvocations.last.executable,
+          'second-token-candidates');
     });
 
     test('uses quoted tokenLength for charactersToDrop', () async {

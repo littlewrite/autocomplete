@@ -224,17 +224,28 @@ bool _matchesPrefix(String candidate, String patternLower) {
   return candidate.toLowerCase().startsWith(patternLower);
 }
 
-bool _matchesFuzzy(String candidate, String patternLower) {
-  if (patternLower.isEmpty) return true;
+enum _FuzzyMatchKind {
+  none,
+  contains,
+  subsequence,
+}
+
+_FuzzyMatchKind _matchesFuzzy(String candidate, String patternLower) {
+  if (patternLower.isEmpty) return _FuzzyMatchKind.contains;
   final lower = candidate.toLowerCase();
-  var j = 0;
+  if (lower.contains(patternLower)) return _FuzzyMatchKind.contains;
+
+  var patternIndex = 0;
   for (var i = 0; i < lower.length; i++) {
-    if (lower[i] == patternLower[j]) {
-      j++;
-      if (j >= patternLower.length) return true;
+    if (lower.codeUnitAt(i) != patternLower.codeUnitAt(patternIndex)) {
+      continue;
+    }
+    patternIndex++;
+    if (patternIndex >= patternLower.length) {
+      return _FuzzyMatchKind.subsequence;
     }
   }
-  return false;
+  return _FuzzyMatchKind.none;
 }
 
 String? _firstMatchingName(
@@ -246,6 +257,30 @@ String? _firstMatchingName(
     if (matcher(n, patternLower)) return n;
   }
   return null;
+}
+
+String? _copyMatchedSuggestionName(Suggestion suggestion, String matchedName) {
+  if (matchedName == suggestion.name) return null;
+  return matchedName;
+}
+
+Suggestion _copySuggestionWithMatchedName(
+  Suggestion suggestion,
+  String matchedName,
+) {
+  final copiedName = _copyMatchedSuggestionName(suggestion, matchedName);
+  if (copiedName == null) return suggestion;
+  return Suggestion(
+    name: copiedName,
+    allNames: suggestion.allNames,
+    description: suggestion.description,
+    icon: suggestion.icon,
+    priority: suggestion.priority,
+    insertValue: suggestion.insertValue,
+    type: suggestion.type,
+    hidden: suggestion.hidden,
+    pathy: suggestion.pathy,
+  );
 }
 
 /// Filter [Suggestion]s by [strategy] and [partial] prefix/fuzzy text.
@@ -262,8 +297,44 @@ Iterable<Suggestion> filterSuggestionList(
   final strat = normalizeFilterStrategy(strategy);
   final lower = partial.toLowerCase();
 
-  final matcher =
-      strat == FilterStrategy.fuzzy ? _matchesFuzzy : _matchesPrefix;
+  if (strat == FilterStrategy.fuzzy) {
+    final containsMatches = <Suggestion>[];
+    final subsequenceMatches = <Suggestion>[];
+
+    for (final suggestion in suggestions) {
+      final names = suggestion.allNames.isNotEmpty
+          ? suggestion.allNames
+          : [suggestion.name];
+      String? containsMatch;
+      String? subsequenceMatch;
+      for (final name in names) {
+        final matchKind = _matchesFuzzy(name, lower);
+        if (matchKind == _FuzzyMatchKind.contains) {
+          containsMatch = name;
+          break;
+        }
+        if (matchKind == _FuzzyMatchKind.subsequence &&
+            subsequenceMatch == null) {
+          subsequenceMatch = name;
+        }
+      }
+      if (containsMatch != null) {
+        containsMatches.add(
+          _copySuggestionWithMatchedName(suggestion, containsMatch),
+        );
+        continue;
+      }
+      if (subsequenceMatch != null) {
+        subsequenceMatches.add(
+          _copySuggestionWithMatchedName(suggestion, subsequenceMatch),
+        );
+      }
+    }
+
+    return containsMatches.followedBy(subsequenceMatches);
+  }
+
+  final matcher = _matchesPrefix;
 
   return suggestions.map((s) {
     final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
@@ -464,8 +535,17 @@ List<Suggestion> removeDuplicates(Iterable<Suggestion> suggestions) {
 }
 
 List<Suggestion> sortByPriority(Iterable<Suggestion> suggestions) {
-  final out = List<Suggestion>.from(suggestions);
-  out.sort((a, b) => b.priority.compareTo(a.priority));
+  final indexed = suggestions.toList(growable: false);
+  final order = <Suggestion, int>{};
+  for (var i = 0; i < indexed.length; i++) {
+    order[indexed[i]] = i;
+  }
+  final out = List<Suggestion>.from(indexed);
+  out.sort((a, b) {
+    final priorityComparison = b.priority.compareTo(a.priority);
+    if (priorityComparison != 0) return priorityComparison;
+    return order[a]!.compareTo(order[b]!);
+  });
   return out;
 }
 

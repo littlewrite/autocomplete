@@ -486,48 +486,107 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   return const [];
 }
 
-Future<List<Suggestion>> _collectArgSuggestions(
+class _ArgSuggestionComputation {
+  const _ArgSuggestionComputation({
+    this.staticSuggestions = const [],
+    this.dynamicSuggestions = const [],
+    this.dynamicFilterStrategy,
+  });
+
+  final List<Suggestion> staticSuggestions;
+  final List<Suggestion> dynamicSuggestions;
+  final FilterStrategy? dynamicFilterStrategy;
+}
+
+Future<_ArgSuggestionComputation> _collectArgSuggestions(
   FigArg activeArg,
   String partial,
   CompletionContext context, {
   LogCallback? logger,
+  bool includeDynamic = true,
 }) async {
   final strategy = context.filterStrategyOverride ?? activeArg.filterStrategy;
-  final suggestions = <Suggestion>[];
+  final staticSuggestions = <Suggestion>[];
+  final dynamicSuggestions = <Suggestion>[];
 
-  final templateSuggestions =
-      await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
-  suggestions
-      .addAll(filterSuggestionList(templateSuggestions, strategy, partial));
+  if (includeDynamic) {
+    final templateSuggestions =
+        await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
+    dynamicSuggestions
+        .addAll(filterSuggestionList(templateSuggestions, strategy, partial));
 
-  for (final gen in activeArg.generatorsList) {
-    final generated = await runGeneratorSuggestions(
-        gen, context.allTokens, context.cwd, context.adapter,
-        logger: logger);
-    suggestions.addAll(filterSuggestionList(generated, strategy, partial));
+    for (final gen in activeArg.generatorsList) {
+      final generated = await runGeneratorSuggestions(
+          gen, context.allTokens, context.cwd, context.adapter,
+          logger: logger);
+      dynamicSuggestions
+          .addAll(filterSuggestionList(generated, strategy, partial));
+    }
   }
 
-  suggestions.addAll(
+  staticSuggestions.addAll(
       filterSuggestions(activeArg.suggestionsAsList, strategy, partial, null));
-  return suggestions;
+  return _ArgSuggestionComputation(
+    staticSuggestions: staticSuggestions,
+    dynamicSuggestions: dynamicSuggestions,
+    dynamicFilterStrategy:
+        dynamicSuggestions.isEmpty ? null : normalizeFilterStrategy(strategy),
+  );
 }
 
-List<Suggestion> _finalizeSuggestions(
+List<Suggestion> _finalizeSuggestionsFromState(
   Iterable<Suggestion> suggestions,
   CommandToken? partialToken,
-  CompletionContext context,
+  List<CommandToken> acceptedTokens,
+  Shell shell,
 ) {
   return removeDuplicates(
     sortByPriority(
       removeHidden(
         removeAccepted(
-          adjustPathSuggestions(suggestions, partialToken, context.shell),
-          context.acceptedTokens,
+          adjustPathSuggestions(suggestions, partialToken, shell),
+          acceptedTokens,
         ),
         partialToken,
       ),
     ),
   );
+}
+
+class _SuggestionComputation {
+  const _SuggestionComputation({
+    this.staticSuggestions = const [],
+    this.dynamicSuggestions = const [],
+    required this.acceptedTokens,
+    this.partialToken,
+    this.argumentDescription,
+    this.charactersToDrop = 0,
+    this.dynamicFilterStrategy,
+  });
+
+  final List<Suggestion> staticSuggestions;
+  final List<Suggestion> dynamicSuggestions;
+  final List<CommandToken> acceptedTokens;
+  final CommandToken? partialToken;
+  final String? argumentDescription;
+  final int charactersToDrop;
+  final FilterStrategy? dynamicFilterStrategy;
+
+  Iterable<Suggestion> get suggestions =>
+      staticSuggestions.followedBy(dynamicSuggestions);
+
+  SuggestionBlob toBlob(Shell shell) {
+    return SuggestionBlob(
+      suggestions: _finalizeSuggestionsFromState(
+        suggestions,
+        partialToken,
+        acceptedTokens,
+        shell,
+      ),
+      argumentDescription: argumentDescription,
+      charactersToDrop: charactersToDrop,
+    );
+  }
 }
 
 void _addAdditionalSuggestions(
@@ -544,13 +603,14 @@ void _addAdditionalSuggestions(
 }
 
 /// Subcommand-driven recommendation: show subcommands, options, and arg suggestions (templates/generators).
-Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
+Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
   RuntimeCommandNode subcommand,
   CommandToken? partialToken,
   bool argsDepleted,
   bool argsFromSubcommand,
   CompletionContext context, {
   LogCallback? logger,
+  bool includeDynamic = true,
 }) async {
   if (argsDepleted && argsFromSubcommand) return null;
   final partial =
@@ -560,32 +620,45 @@ Future<SuggestionBlob?> getSubcommandDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   final usedOptions = _collectUsedOptionCounts(context.acceptedTokens);
-  var suggestions = <Suggestion>[];
+  final staticSuggestions = <Suggestion>[];
+  final dynamicSuggestions = <Suggestion>[];
   final strategy = context.filterStrategyOverride ?? subcommand.filterStrategy;
   if (!argsFromSubcommand) {
-    suggestions.addAll(
+    staticSuggestions.addAll(
         filterSubcommandSuggestions(subcommand.subcommands, strategy, partial));
-    suggestions.addAll(
+    staticSuggestions.addAll(
         filterOptionSuggestions(allOptions, usedOptions, strategy, partial));
-    _addAdditionalSuggestions(suggestions, subcommand, partial, context);
+    _addAdditionalSuggestions(staticSuggestions, subcommand, partial, context);
   }
   final allowsArgSuggestions =
       subcommand.requiresSubcommand != true || argsFromSubcommand;
   final argList = subcommand.args ?? [];
+  FilterStrategy? dynamicFilterStrategy;
   if (allowsArgSuggestions && argList.isNotEmpty) {
     final activeArg = argList.first;
-    suggestions.addAll(await _collectArgSuggestions(activeArg, partial, context,
-        logger: logger));
+    final argSuggestions = await _collectArgSuggestions(
+      activeArg,
+      partial,
+      context,
+      logger: logger,
+      includeDynamic: includeDynamic,
+    );
+    staticSuggestions.addAll(argSuggestions.staticSuggestions);
+    dynamicSuggestions.addAll(argSuggestions.dynamicSuggestions);
+    dynamicFilterStrategy = argSuggestions.dynamicFilterStrategy;
   }
-  suggestions = _finalizeSuggestions(suggestions, partialToken, context);
-  return SuggestionBlob(
-    suggestions: suggestions,
+  return _SuggestionComputation(
+    staticSuggestions: staticSuggestions,
+    dynamicSuggestions: dynamicSuggestions,
+    acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
+    partialToken: partialToken,
     charactersToDrop: partialToken?.tokenLength ?? 0,
+    dynamicFilterStrategy: dynamicFilterStrategy,
   );
 }
 
 /// Arg-driven recommendation: suggest for current argument position.
-Future<SuggestionBlob?> getArgDrivenRecommendation(
+Future<_SuggestionComputation?> getArgDrivenRecommendation(
   List<FigArg> args,
   RuntimeCommandNode subcommand,
   CommandToken? partialToken,
@@ -593,6 +666,7 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   bool consumedPositionalArg,
   CompletionContext context, {
   LogCallback? logger,
+  bool includeDynamic = true,
 }) async {
   if (args.isEmpty) return null;
   final activeArg = args.first;
@@ -603,42 +677,61 @@ Future<SuggestionBlob?> getArgDrivenRecommendation(
   final allOptions =
       context.persistentOptions.followedBy(subcommand.options ?? []);
   final usedOptions = _collectUsedOptionCounts(context.acceptedTokens);
-  var suggestions = <Suggestion>[];
-  // Context override first, then arg spec.
-  final override = context.filterStrategyOverride;
-  suggestions.addAll(await _collectArgSuggestions(activeArg, partial, context,
-      logger: logger));
+  final staticSuggestions = <Suggestion>[];
+  final dynamicSuggestions = <Suggestion>[];
+  final argSuggestions = await _collectArgSuggestions(
+    activeArg,
+    partial,
+    context,
+    logger: logger,
+    includeDynamic: includeDynamic,
+  );
+  staticSuggestions.addAll(argSuggestions.staticSuggestions);
+  dynamicSuggestions.addAll(argSuggestions.dynamicSuggestions);
   if (activeArg.isOptional || (activeArg.isVariadic && variadicArgBound)) {
-    final subStrategy = override ?? subcommand.filterStrategy;
-    suggestions.addAll(filterSubcommandSuggestions(
+    final subStrategy =
+        context.filterStrategyOverride ?? subcommand.filterStrategy;
+    staticSuggestions.addAll(filterSubcommandSuggestions(
         subcommand.subcommands, subStrategy, partial));
     if (!(_optionsMustPrecedeArguments(subcommand) && consumedPositionalArg)) {
-      suggestions.addAll(filterOptionSuggestions(
+      staticSuggestions.addAll(filterOptionSuggestions(
           allOptions, usedOptions, subStrategy, partial));
     }
-    _addAdditionalSuggestions(suggestions, subcommand, partial, context);
+    _addAdditionalSuggestions(staticSuggestions, subcommand, partial, context);
   }
-  suggestions = _finalizeSuggestions(suggestions, partialToken, context);
-  return SuggestionBlob(
-      suggestions: suggestions,
+  return _SuggestionComputation(
+      staticSuggestions: staticSuggestions,
+      dynamicSuggestions: dynamicSuggestions,
+      acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
+      partialToken: partialToken,
       argumentDescription: activeArg.description ?? activeArg.name,
-      charactersToDrop: partialToken?.tokenLength ?? 0);
+      charactersToDrop: partialToken?.tokenLength ?? 0,
+      dynamicFilterStrategy: argSuggestions.dynamicFilterStrategy);
 }
 
 /// Handle option: if option has args, runArg; else continue runSubcommand.
-Future<SuggestionBlob?> runOption(
+Future<_SuggestionComputation?> runOption(
   FigOption option,
   RuntimeCommandNode subcommand,
   CompletionContext context, {
   LogCallback? logger,
+  bool includeDynamic = true,
 }) async {
   // Consume the option token
   context.advance();
   if (option.args != null) {
     final args = getArgs(option.args);
-    return runArg(args, subcommand, context, true, false, logger: logger);
+    return runArg(args, subcommand, context, true, false,
+        logger: logger, includeDynamic: includeDynamic);
   }
-  return runSubcommand(subcommand, context, false, false, logger);
+  return runSubcommand(
+    subcommand,
+    context,
+    false,
+    false,
+    logger,
+    includeDynamic,
+  );
 }
 
 FigOption? getOption(CommandToken token, Iterable<FigOption> options) {
@@ -781,29 +874,30 @@ Future<List<CommandToken>?> _tryResolveAlias(
 }
 
 /// Recursive: run subcommand matching.
-Future<SuggestionBlob?> runSubcommand(
+Future<_SuggestionComputation?> runSubcommand(
   RuntimeCommandNode subcommand,
   CompletionContext context, [
   bool argsDepleted = false,
   bool argsUsed = false,
   LogCallback? logger,
+  bool includeDynamic = true,
 ]) async {
   final expandedContext = _expandInlineOptionContext(subcommand, context);
   if (expandedContext != null) {
-    return runSubcommand(
-        subcommand, expandedContext, argsDepleted, argsUsed, logger);
+    return runSubcommand(subcommand, expandedContext, argsDepleted, argsUsed,
+        logger, includeDynamic);
   }
 
   if (context.isAtEnd) {
     return getSubcommandDrivenRecommendation(
         subcommand, null, argsDepleted, argsUsed, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   final partialToken = context.currentToken;
   if (!partialToken.complete) {
     return getSubcommandDrivenRecommendation(
         subcommand, partialToken, argsDepleted, argsUsed, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   final activeToken = context.currentToken;
   final allOptions =
@@ -811,7 +905,8 @@ Future<SuggestionBlob?> runSubcommand(
   if (activeToken.isOption) {
     final option = getOption(activeToken, allOptions);
     if (option != null) {
-      return runOption(option, subcommand, context, logger: logger);
+      return runOption(option, subcommand, context,
+          logger: logger, includeDynamic: includeDynamic);
     }
     // Unknown option token: stop traversal and return no suggestions,
     // matching JS inshellisense behavior.
@@ -822,7 +917,14 @@ Future<SuggestionBlob?> runSubcommand(
     context.addPersistentOptionsDeduped(subcommand.options);
     context.advance();
     final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
-    return runSubcommand(resolvedSub, context, false, false, logger);
+    return runSubcommand(
+      resolvedSub,
+      context,
+      false,
+      false,
+      logger,
+      includeDynamic,
+    );
   }
   // No direct subcommand match — try alias expansion (e.g. `git co` → `checkout`).
   final expandedTokens =
@@ -846,42 +948,47 @@ Future<SuggestionBlob?> runSubcommand(
     );
     newContext.acceptedTokens.addAll(context.acceptedTokens);
     newContext.persistentOptions.addAll(context.persistentOptions);
-    return runSubcommand(subcommand, newContext, false, false, logger);
+    return runSubcommand(
+        subcommand, newContext, false, false, logger, includeDynamic);
   }
   final args = getArgs(subcommand.args);
   if (args.isNotEmpty) {
-    return runArg(args, subcommand, context, false, false, logger: logger);
+    return runArg(args, subcommand, context, false, false,
+        logger: logger, includeDynamic: includeDynamic);
   }
   context.advance();
-  return runSubcommand(subcommand, context, false, false, logger);
+  return runSubcommand(
+      subcommand, context, false, false, logger, includeDynamic);
 }
 
-Future<SuggestionBlob?> runArg(
+Future<_SuggestionComputation?> runArg(
   List<FigArg> args,
   RuntimeCommandNode subcommand,
   CompletionContext context,
   bool fromOption,
   bool fromVariadic, {
   LogCallback? logger,
+  bool includeDynamic = true,
 }) async {
   if (args.isEmpty) {
-    return runSubcommand(subcommand, context, true, !fromOption, logger);
+    return runSubcommand(
+        subcommand, context, true, !fromOption, logger, includeDynamic);
   }
   if (context.isAtEnd) {
     return getArgDrivenRecommendation(
         args, subcommand, null, fromVariadic, false, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   if (!context.currentToken.complete) {
     return getArgDrivenRecommendation(
         args, subcommand, context.currentToken, fromVariadic, false, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   return _runArgTraversal(args, subcommand, context, fromOption, fromVariadic,
-      logger: logger);
+      logger: logger, includeDynamic: includeDynamic);
 }
 
-Future<SuggestionBlob?> _runArgTraversal(
+Future<_SuggestionComputation?> _runArgTraversal(
   List<FigArg> args,
   RuntimeCommandNode subcommand,
   CompletionContext context,
@@ -889,11 +996,12 @@ Future<SuggestionBlob?> _runArgTraversal(
   bool fromVariadic, {
   required LogCallback? logger,
   bool consumedPositionalArg = false,
+  bool includeDynamic = true,
 }) async {
   if (context.isAtEnd) {
     return getArgDrivenRecommendation(
         args, subcommand, null, fromVariadic, consumedPositionalArg, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   final activeToken = context.currentToken;
   final activeArg = args.first;
@@ -904,14 +1012,17 @@ Future<SuggestionBlob?> _runArgTraversal(
       !(_optionsMustPrecedeArguments(subcommand) && consumedPositionalArg)) {
     final option = getOption(activeToken, allOptions);
     if (option != null)
-      return runOption(option, subcommand, context, logger: logger);
+      return runOption(option, subcommand, context,
+          logger: logger, includeDynamic: includeDynamic);
     // Unknown option in all-optional-arg context: no suggestions.
     return null;
   }
   if (activeArg.isVariadic) {
     context.advance();
     return _runArgTraversal(args, subcommand, context, fromOption, true,
-        logger: logger, consumedPositionalArg: true);
+        logger: logger,
+        consumedPositionalArg: true,
+        includeDynamic: includeDynamic);
   }
   // isCommand: the current token is itself a CLI command whose spec should be
   // loaded and traversed. Mirrors JS inshellisense runArg isCommand branch
@@ -923,7 +1034,7 @@ Future<SuggestionBlob?> _runArgTraversal(
     if (cmdSpec == null) return null;
     final cmdSub = runtimeNodeFromSpec(cmdSpec);
     context.advance();
-    return runSubcommand(cmdSub, context, false, false, logger);
+    return runSubcommand(cmdSub, context, false, false, logger, includeDynamic);
   }
   if (activeArg.isOptional) {
     final nextSub = _findSubcommand(subcommand, activeToken.token);
@@ -932,7 +1043,8 @@ Future<SuggestionBlob?> _runArgTraversal(
       context.advance();
       final resolvedSub =
           await _resolveSubcommandSpec(nextSub, context, logger);
-      return runSubcommand(resolvedSub, context, false, false, logger);
+      return runSubcommand(
+          resolvedSub, context, false, false, logger, includeDynamic);
     }
   }
   if (subcommand.requiresSubcommand == true &&
@@ -941,29 +1053,37 @@ Future<SuggestionBlob?> _runArgTraversal(
   }
   context.advance();
   if (args.length == 1) {
-    return runSubcommand(subcommand, context, true, !fromOption, logger);
+    return runSubcommand(
+        subcommand, context, true, !fromOption, logger, includeDynamic);
   }
   if (context.isAtEnd) {
     return getArgDrivenRecommendation(
         args.sublist(1), subcommand, null, false, true, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   if (!context.currentToken.complete) {
     return getArgDrivenRecommendation(
         args.sublist(1), subcommand, context.currentToken, false, true, context,
-        logger: logger);
+        logger: logger, includeDynamic: includeDynamic);
   }
   return _runArgTraversal(
       args.sublist(1), subcommand, context, fromOption, false,
-      logger: logger, consumedPositionalArg: true);
+      logger: logger,
+      consumedPositionalArg: true,
+      includeDynamic: includeDynamic);
 }
 
 /// Command-name completion when first token is incomplete (e.g. "gi" -> git).
 /// Empty token triggers no suggestions; only the v2 bucket for the first character is used.
-SuggestionBlob runCommand(CommandToken token,
+_SuggestionComputation runCommand(CommandToken token,
     {Iterable<String> aliases = const []}) {
   if (token.token.isEmpty) {
-    return const SuggestionBlob(suggestions: [], charactersToDrop: 0);
+    return const _SuggestionComputation(
+      staticSuggestions: [],
+      acceptedTokens: [],
+      charactersToDrop: 0,
+      dynamicFilterStrategy: null,
+    );
   }
   final aliasList = aliases.where((a) => a.startsWith(token.token)).toList()
     ..sort();
@@ -984,8 +1104,13 @@ SuggestionBlob runCommand(CommandToken token,
           type: SuggestionType.subcommand,
         )),
   ];
-  return SuggestionBlob(
-      suggestions: suggestions, charactersToDrop: token.tokenLength);
+  return _SuggestionComputation(
+    staticSuggestions: suggestions,
+    acceptedTokens: const [],
+    partialToken: token,
+    charactersToDrop: token.tokenLength,
+    dynamicFilterStrategy: null,
+  );
 }
 
 Map<String, int> _collectUsedOptionCounts(List<CommandToken> acceptedTokens) {
@@ -1004,6 +1129,47 @@ class _SuggestionCacheEntry {
   final DateTime createdAt;
 
   bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
+}
+
+class _IncrementalSuggestionCacheEntry {
+  _IncrementalSuggestionCacheEntry({
+    required this.normalizedCmd,
+    required this.rawTokens,
+    required this.effectiveCwd,
+    required this.shell,
+    required this.adapterIdentity,
+    required this.dynamicSuggestions,
+    required this.dynamicFilterStrategy,
+  }) : createdAt = DateTime.now();
+
+  final String normalizedCmd;
+  final List<CommandToken> rawTokens;
+  final String effectiveCwd;
+  final Shell shell;
+  final int adapterIdentity;
+  final List<Suggestion> dynamicSuggestions;
+  final FilterStrategy dynamicFilterStrategy;
+  final DateTime createdAt;
+
+  bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
+}
+
+class _IncrementalReuseResult {
+  const _IncrementalReuseResult(this.blob);
+
+  final SuggestionBlob? blob;
+}
+
+class _ComputedSuggestionState {
+  const _ComputedSuggestionState({
+    required this.computation,
+    required this.rawTokens,
+    required this.effectiveCwd,
+  });
+
+  final _SuggestionComputation computation;
+  final List<CommandToken> rawTokens;
+  final String effectiveCwd;
 }
 
 String _normalizeSuggestionCacheCommand(String cmd) {
@@ -1038,6 +1204,8 @@ class AutocompleteEngine {
   /// Suggestion result cache: key = "$cmd|$cwd|${shell.name}".
   /// Uses insertion-order map so that the first entry is always the LRU victim.
   final Map<String, _SuggestionCacheEntry> _suggestionCache = {};
+
+  _IncrementalSuggestionCacheEntry? _incrementalSuggestionCache;
 
   void _putSuggestionCache(String key, SuggestionBlob blob) {
     if (_suggestionCache.length >= _suggestionCacheMaxSize) {
@@ -1109,9 +1277,136 @@ class AutocompleteEngine {
   /// serving a potentially stale cached result.
   void clearCache() {
     _suggestionCache.clear();
+    _incrementalSuggestionCache = null;
     _generateSpecCache.clear();
     _aliasResolveCache.clear();
     _shellAliasCache.clear();
+  }
+
+  bool _sameTokenPrefix(CommandToken a, CommandToken b) {
+    return a.token == b.token &&
+        a.complete == b.complete &&
+        a.isOption == b.isOption &&
+        a.isQuoted == b.isQuoted;
+  }
+
+  bool _canReuseIncrementalSuggestionCache(
+    _IncrementalSuggestionCacheEntry entry,
+    List<CommandToken> currentTokens,
+  ) {
+    if (entry.rawTokens.length != currentTokens.length ||
+        currentTokens.isEmpty ||
+        entry.rawTokens.isEmpty) {
+      return false;
+    }
+    for (var i = 0; i < currentTokens.length - 1; i++) {
+      if (!_sameTokenPrefix(entry.rawTokens[i], currentTokens[i])) {
+        return false;
+      }
+    }
+    final previousLast = entry.rawTokens.last;
+    final currentLast = currentTokens.last;
+    if (previousLast.complete || currentLast.complete) return false;
+    if (previousLast.isOption != currentLast.isOption ||
+        previousLast.isQuoted != currentLast.isQuoted) {
+      return false;
+    }
+    if (currentLast.token.length < previousLast.token.length) return false;
+    return currentLast.token.startsWith(previousLast.token);
+  }
+
+  Future<_IncrementalReuseResult?> _tryReuseIncrementalSuggestionCache(
+    String normalizedCmd,
+    String cwd,
+    Shell shell,
+    CompleteAdapter adapter,
+    int myGen, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+  }) async {
+    final cached = _incrementalSuggestionCache;
+    if (cached == null ||
+        cached.shell != shell ||
+        cached.adapterIdentity != identityHashCode(adapter) ||
+        cached.normalizedCmd == normalizedCmd ||
+        cached.isExpired(_suggestionCacheTtl)) {
+      return null;
+    }
+
+    final currentTokens = parseCommand(normalizedCmd, shell);
+    if (!_canReuseIncrementalSuggestionCache(cached, currentTokens)) {
+      return null;
+    }
+
+    final state = await _computeSuggestionState(
+      normalizedCmd,
+      cwd,
+      shell,
+      adapter,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      includeDynamic: false,
+    );
+    if (state == null || state.effectiveCwd != cached.effectiveCwd) {
+      return null;
+    }
+
+    final partialToken = state.computation.partialToken;
+    final partial =
+        partialToken != null && partialToken.isPath && partialToken.token == '~'
+            ? ''
+            : partialToken?.token ?? '';
+    final narrowedDynamic = filterSuggestionList(
+      cached.dynamicSuggestions,
+      cached.dynamicFilterStrategy,
+      partial,
+    ).toList(growable: false);
+    final merged = _SuggestionComputation(
+      staticSuggestions:
+          List<Suggestion>.from(state.computation.staticSuggestions),
+      dynamicSuggestions: narrowedDynamic,
+      acceptedTokens: List<CommandToken>.from(state.computation.acceptedTokens),
+      partialToken: state.computation.partialToken,
+      argumentDescription: state.computation.argumentDescription,
+      charactersToDrop: state.computation.charactersToDrop,
+      dynamicFilterStrategy: cached.dynamicFilterStrategy,
+    );
+    final blob = merged.toBlob(shell);
+    logger?.call(
+        '$_acCacheLogTag[incremental-hit] from="${cached.normalizedCmd}" to="$normalizedCmd" dynamic=${narrowedDynamic.length} total=${blob.suggestions.length}');
+    return _IncrementalReuseResult(
+      blob.suggestions.isEmpty && blob.argumentDescription == null
+          ? null
+          : blob,
+    );
+  }
+
+  void _updateIncrementalSuggestionCache(
+    String normalizedCmd,
+    List<CommandToken> rawTokens,
+    String effectiveCwd,
+    Shell shell,
+    CompleteAdapter adapter,
+    _SuggestionComputation computation,
+  ) {
+    final dynamicFilterStrategy = computation.dynamicFilterStrategy;
+    if (dynamicFilterStrategy == null ||
+        computation.dynamicSuggestions.isEmpty) {
+      _incrementalSuggestionCache = null;
+      return;
+    }
+    _incrementalSuggestionCache = _IncrementalSuggestionCacheEntry(
+      normalizedCmd: normalizedCmd,
+      rawTokens: List<CommandToken>.from(rawTokens),
+      effectiveCwd: effectiveCwd,
+      shell: shell,
+      adapterIdentity: identityHashCode(adapter),
+      dynamicSuggestions: List<Suggestion>.from(computation.dynamicSuggestions),
+      dynamicFilterStrategy: dynamicFilterStrategy,
+    );
   }
 
   /// Expand the root token of [tokens] via shell-level aliases (bash/zsh).
@@ -1185,8 +1480,9 @@ class AutocompleteEngine {
       return Future.value(cached.blob);
     }
 
+    final log = logger ?? _logger ?? _defaultLogger;
     final myGen = _requestGen;
-    final work = _doGetSuggestions(
+    final incrementalReuse = _tryReuseIncrementalSuggestionCache(
       normalizedCmd,
       cwd,
       shell,
@@ -1194,8 +1490,22 @@ class AutocompleteEngine {
       myGen,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
-      logger: logger,
+      logger: log,
     );
+    final Future<SuggestionBlob?> work =
+        incrementalReuse.then<SuggestionBlob?>((reused) {
+      if (reused != null) return reused.blob;
+      return _doGetSuggestions(
+        normalizedCmd,
+        cwd,
+        shell,
+        adapter,
+        myGen,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: logger,
+      );
+    });
 
     Future<SuggestionBlob?> wrappedWork;
     if (timeout != null) {
@@ -1221,7 +1531,7 @@ class AutocompleteEngine {
   /// [myGen] is a snapshot of [_requestGen] taken by the caller; whenever it
   /// no longer matches the current counter the method returns null immediately,
   /// indicating that a newer request has superseded this one.
-  Future<SuggestionBlob?> _doGetSuggestions(
+  Future<_ComputedSuggestionState?> _computeSuggestionState(
     String cmd,
     String cwd,
     Shell shell,
@@ -1230,16 +1540,22 @@ class AutocompleteEngine {
     EnsureSpecLoaded? ensureSpecLoaded,
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
+    bool includeDynamic = true,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
-    var activeCmd = parseCommand(cmd, shell);
+    final rawCmdTokens = parseCommand(cmd, shell);
+    var activeCmd = List<CommandToken>.from(rawCmdTokens);
 
     if (activeCmd.isEmpty) return null;
     final rootToken = activeCmd.first;
     if (!rootToken.complete) {
       await _ensureShellAliasesLoaded(shell, adapter);
-      return runCommand(rootToken,
-          aliases: _shellAliasCache[shell]?.keys ?? const []);
+      return _ComputedSuggestionState(
+        computation: runCommand(rootToken,
+            aliases: _shellAliasCache[shell]?.keys ?? const []),
+        rawTokens: rawCmdTokens,
+        effectiveCwd: cwd,
+      );
     }
 
     final ensure =
@@ -1250,13 +1566,10 @@ class AutocompleteEngine {
     }
     FigSpec? spec = loadSpec(activeCmd);
     if (spec == null) {
-      // Try shell-level alias expansion (e.g. `tran` → `traceroute`).
-      // Mirrors TS runtime.ts: `activeCmd = aliasExpand(activeCmd)` before loadSpec.
       final expanded =
           await _expandRootAlias(activeCmd, shell, cwd, adapter, log);
       if (expanded != null) {
         activeCmd = expanded;
-        // Ensure the expanded root spec is registered (deferred v2 import).
         final newRoot = activeCmd.first;
         if (ensure != null) await ensure(newRoot.token);
         spec = loadSpec(activeCmd);
@@ -1264,15 +1577,12 @@ class AutocompleteEngine {
       if (spec == null) return null;
     }
 
-    // Cancellation checkpoint: after spec loading (cheap) but before remote IO.
     if (_requestGen != myGen) return null;
 
     final resolvedCwd = await adapter.resolveCwd(cwd, shell);
 
-    // Cancellation checkpoint: resolveCwd can be slow over SSH.
     if (_requestGen != myGen) return null;
 
-    // Resolve generateSpec with adapter-provided executeCommand (no dart:io Process.run).
     final gen = spec.generateSpec;
     if (gen != null) {
       try {
@@ -1299,15 +1609,10 @@ class AutocompleteEngine {
     }
 
     final subcommand = runtimeNodeFromSpec(spec!);
-
-    // Resolve cwd from the last typed token so that path-style arguments like
-    // `~/xh` or `./foo/bar` correctly scope template/generator suggestions to
-    // the intended directory (mirrors inshellisense runtime.ts resolveCwd call).
     final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
     final tokenCwdResult =
         await _resolveTokenCwd(lastToken, resolvedCwd, shell, adapter);
 
-    // Cancellation checkpoint: _resolveTokenCwd may call listDirectory over SSH.
     if (_requestGen != myGen) return null;
 
     final effectiveCwd =
@@ -1319,10 +1624,6 @@ class AutocompleteEngine {
         'cwd="$effectiveCwd" '
         'filterPartial="${tokenCwdResult.filterPartial}"');
 
-    // When pathy, replace the last token with a synthetic token whose `.token`
-    // field is the basename only (e.g. `"xh"` for `~/xh`, `""` for `~/`).
-    // The recommendation functions use `partialToken.token` as the filter prefix
-    // against directory listing results, so it must NOT include the path prefix.
     List<CommandToken> effectiveTokens = activeCmd;
     if (tokenCwdResult.pathy && activeCmd.isNotEmpty) {
       final orig = activeCmd.last;
@@ -1353,34 +1654,62 @@ class AutocompleteEngine {
       aliasCache: _aliasResolveCache,
     );
 
-    final result = await runSubcommand(subcommand, context, false, false, log);
+    final result = await runSubcommand(
+      subcommand,
+      context,
+      false,
+      false,
+      log,
+      includeDynamic,
+    );
 
-    // Cancellation checkpoint: runSubcommand is the main IO-heavy step.
-    if (_requestGen != myGen) return null;
+    if (_requestGen != myGen || result == null) return null;
 
-    if (result == null) return null;
-    if (result.suggestions.isEmpty && result.argumentDescription == null)
-      return null;
+    return _ComputedSuggestionState(
+      computation: result,
+      rawTokens: rawCmdTokens,
+      effectiveCwd: effectiveCwd,
+    );
+  }
 
-    // Compute charactersToDrop:
-    //  - pathy + complete (token ends with `/`): drop 0 (cursor is right after the slash)
-    //  - pathy + incomplete: drop the basename length (partial folder name)
-    //  - not pathy: drop the full last token length (normal partial token)
-    final int charactersToDrop;
-    if (tokenCwdResult.pathy) {
-      charactersToDrop =
-          tokenCwdResult.complete ? 0 : tokenCwdResult.basenameLength;
-    } else {
-      charactersToDrop = result.charactersToDrop;
-    }
+  Future<SuggestionBlob?> _doGetSuggestions(
+    String cmd,
+    String cwd,
+    Shell shell,
+    CompleteAdapter adapter,
+    int myGen, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+  }) async {
+    final log = logger ?? _logger ?? _defaultLogger;
+    final state = await _computeSuggestionState(
+      cmd,
+      cwd,
+      shell,
+      adapter,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+    );
+    if (state == null) return null;
+    final resultBlob = state.computation.toBlob(shell);
+    if (resultBlob.suggestions.isEmpty &&
+        resultBlob.argumentDescription == null) return null;
 
     log?.call('[autocomplete] result: '
-        '${result.suggestions.length} suggestions, '
-        'charactersToDrop=$charactersToDrop');
-    return SuggestionBlob(
-        suggestions: result.suggestions,
-        argumentDescription: result.argumentDescription,
-        charactersToDrop: charactersToDrop);
+        '${resultBlob.suggestions.length} suggestions, '
+        'charactersToDrop=${resultBlob.charactersToDrop}');
+    _updateIncrementalSuggestionCache(
+      cmd,
+      state.rawTokens,
+      state.effectiveCwd,
+      shell,
+      adapter,
+      state.computation,
+    );
+    return resultBlob;
   }
 }
 
