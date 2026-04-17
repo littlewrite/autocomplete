@@ -1,5 +1,6 @@
 // Fig-style autocomplete: specs + runtime (parse command, get suggestions).
-// Call getSuggestions(cmd, cwd, shell, adapter: myAdapter). [adapter] is required.
+// Call getSuggestions(cmd, cwd, shell, myAdapter) or create
+// AutocompleteEngine(adapter: myAdapter) and reuse engine.getSuggestions(cmd, cwd, shell).
 // For a local (dart:io) implementation, copy example/local_adapter.dart into your project.
 //
 // Default: specs v2 (deferred load) — only the requested command's spec is loaded. For eager

@@ -1,4 +1,5 @@
 import 'package:autocomplete/autocomplete.dart';
+import 'package:autocomplete/src/runtime_node.dart';
 import 'package:test/test.dart';
 
 class ProcessInvocation {
@@ -121,6 +122,10 @@ void main() {
   const nonPosixFlagsCommand = 'ac_non_posix_flags_test';
   const loadSpecSemanticsRootCommand = 'ac_load_spec_semantics_root_test';
   const loadSpecSemanticsSubCommand = 'ac_load_spec_semantics_sub_test';
+  const argLoadSpecRootCommand = 'ac_arg_load_spec_root_test';
+  const argLoadSpecChildCommand = 'ac_arg_load_spec_child_test';
+  const subcommandGenerateSpecCommand = 'ac_subcommand_generate_spec_test';
+  const variadicBreakOptionCommand = 'ac_variadic_break_option_test';
   const executeCommandEnvCommand = 'ac_execute_command_env_test';
   const generatorObjectScriptCommand = 'ac_generator_object_script_test';
   const generatorSplitOnCommand = 'ac_generator_split_on_test';
@@ -129,11 +134,16 @@ void main() {
   const pathListingCacheCommand = 'ac_path_listing_cache_test';
   const incrementalGeneratorCacheCommand =
       'ac_incremental_generator_cache_test';
+  const gitCheckoutBranchCacheCommand = 'ac_git_checkout_branch_cache_test';
   const tokenBoundaryCacheCommand = 'ac_token_boundary_cache_test';
   const quotedDropCommand = 'ac_quoted_drop_test';
   const templateFilterContextCommand = 'ac_template_filter_context_test';
   const variadicArgRegressionCommand = 'ac_variadic_arg_regression_test';
   const wideCharsCommand = 'ac_wide_chars_test';
+  const rebuiltPostProcessCacheCommand = 'ac_rebuilt_post_process_cache_test';
+  const customFunctionCacheCommand = 'ac_custom_function_cache_test';
+  const singlePassSubcommandGenerateSpecCommand =
+      'ac_single_pass_subcommand_generate_spec_test';
 
   tearDownAll(() {
     unregisterSpec(optionValueCommand);
@@ -149,6 +159,10 @@ void main() {
     unregisterSpec(nonPosixFlagsCommand);
     unregisterSpec(loadSpecSemanticsRootCommand);
     unregisterSpec(loadSpecSemanticsSubCommand);
+    unregisterSpec(argLoadSpecRootCommand);
+    unregisterSpec(argLoadSpecChildCommand);
+    unregisterSpec(subcommandGenerateSpecCommand);
+    unregisterSpec(variadicBreakOptionCommand);
     unregisterSpec(executeCommandEnvCommand);
     unregisterSpec(generatorObjectScriptCommand);
     unregisterSpec(generatorSplitOnCommand);
@@ -156,11 +170,15 @@ void main() {
     unregisterSpec(pathResolutionCommand);
     unregisterSpec(pathListingCacheCommand);
     unregisterSpec(incrementalGeneratorCacheCommand);
+    unregisterSpec(gitCheckoutBranchCacheCommand);
     unregisterSpec(tokenBoundaryCacheCommand);
     unregisterSpec(quotedDropCommand);
     unregisterSpec(templateFilterContextCommand);
     unregisterSpec(variadicArgRegressionCommand);
     unregisterSpec(wideCharsCommand);
+    unregisterSpec(rebuiltPostProcessCacheCommand);
+    unregisterSpec(customFunctionCacheCommand);
+    unregisterSpec(singlePassSubcommandGenerateSpecCommand);
   });
 
   group('runtime examples', () {
@@ -351,13 +369,12 @@ void main() {
           ],
         },
       );
-      final engine = AutocompleteEngine();
+      final engine = AutocompleteEngine(adapter: adapter);
 
       final home = await engine.getSuggestions(
         '$pathListingCacheCommand ~',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(home, isNotNull);
       expect(home!.suggestions.map((s) => s.name), contains('~/Downloads/'));
@@ -366,7 +383,6 @@ void main() {
         '$pathListingCacheCommand ~/Do',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(narrowed, isNotNull);
       expect(narrowed!.suggestions.map((s) => s.name), contains('Downloads/'));
@@ -375,7 +391,6 @@ void main() {
         '$pathListingCacheCommand ~/',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(broadened, isNotNull);
       expect(broadened!.suggestions.map((s) => s.name), contains('Downloads/'));
@@ -385,11 +400,22 @@ void main() {
         equals(['/home/test']),
       );
 
+      final widened = await engine.getSuggestions(
+        '$pathListingCacheCommand ~/D',
+        '/work',
+        Shell.bash,
+      );
+      expect(widened, isNotNull);
+      expect(widened!.suggestions.map((s) => s.name), contains('Downloads/'));
+      expect(
+        adapter.listDirectoryInvocations.map((call) => call.path).toList(),
+        equals(['/home/test']),
+      );
+
       final nested = await engine.getSuggestions(
         '$pathListingCacheCommand ~/Downloads/',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(nested, isNotNull);
       expect(nested!.suggestions.map((s) => s.name), contains('Projects/'));
@@ -424,13 +450,12 @@ void main() {
           ),
         },
       );
-      final engine = AutocompleteEngine();
+      final engine = AutocompleteEngine(adapter: adapter);
 
       final first = await engine.getSuggestions(
         '$incrementalGeneratorCacheCommand feat_',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(first, isNotNull);
       expect(
@@ -446,7 +471,6 @@ void main() {
         '$incrementalGeneratorCacheCommand fe',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(narrowed, isNotNull);
       expect(
@@ -463,7 +487,6 @@ void main() {
         '$incrementalGeneratorCacheCommand feat_ab',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(narrowedAgain, isNotNull);
       expect(
@@ -471,6 +494,226 @@ void main() {
         equals(['feat_able']),
       );
       expect(adapter.processInvocations.length, 1);
+    });
+
+    test('reuses rebuilt postProcess generators across narrowing', () async {
+      var generateSpecCalls = 0;
+      registerSpec(
+        rebuiltPostProcessCacheCommand,
+        () => FigSpec(
+          name: rebuiltPostProcessCacheCommand,
+          generateSpec: (tokens, executeCommand) async {
+            generateSpecCalls++;
+            return FigSpec(
+              name: rebuiltPostProcessCacheCommand,
+              subcommands: [
+                FigSubcommand(
+                  name: 'branch',
+                  args: [
+                    FigArg(
+                      generators: FigGenerator(
+                        script: const ['list-branches'],
+                        postProcess: (out, [tokens]) => out
+                            .split('\n')
+                            .where((line) => line.isNotEmpty)
+                            .map((line) => FigSuggestion(name: line))
+                            .toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'list-branches': ProcessRunResult(
+            stdout: 'alpha\nalpine\nbeta\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final first = await engine.getSuggestions(
+        '$rebuiltPostProcessCacheCommand branch al',
+        '/work',
+        Shell.bash,
+      );
+      expect(first, isNotNull);
+      expect(
+        first!.suggestions.map((s) => s.name),
+        containsAll(['alpha', 'alpine']),
+      );
+
+      final second = await engine.getSuggestions(
+        '$rebuiltPostProcessCacheCommand branch alpi',
+        '/work',
+        Shell.bash,
+      );
+      expect(second, isNotNull);
+      expect(second!.suggestions.map((s) => s.name).toList(), ['alpine']);
+      expect(adapter.processInvocations.length, 1);
+      expect(generateSpecCalls, 2);
+    });
+
+    test('reuses custom function generators across narrowing', () async {
+      var customCalls = 0;
+      registerSpec(
+        customFunctionCacheCommand,
+        () => FigSpec(
+          name: customFunctionCacheCommand,
+          args: [
+            FigArg(
+              generators: FigGenerator(
+                custom: (tokens, executeCommand, context) async {
+                  customCalls++;
+                  return const [
+                    FigSuggestion(name: 'alpha'),
+                    FigSuggestion(name: 'alpine'),
+                    FigSuggestion(name: 'beta'),
+                  ];
+                },
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter();
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final first = await engine.getSuggestions(
+        '$customFunctionCacheCommand al',
+        '/work',
+        Shell.bash,
+      );
+      expect(first, isNotNull);
+      expect(
+        first!.suggestions.map((s) => s.name),
+        containsAll(['alpha', 'alpine']),
+      );
+
+      final second = await engine.getSuggestions(
+        '$customFunctionCacheCommand alph',
+        '/work',
+        Shell.bash,
+      );
+      expect(second, isNotNull);
+      expect(second!.suggestions.map((s) => s.name).toList(), ['alpha']);
+      expect(customCalls, 1);
+    });
+
+    test('reuses git checkout branch suggestions while widening and narrowing',
+        () async {
+      registerSpec(
+        gitCheckoutBranchCacheCommand,
+        () => FigSpec(
+          name: gitCheckoutBranchCacheCommand,
+          subcommands: [
+            FigSubcommand(
+              name: 'checkout',
+              args: [
+                FigArg(
+                  generators: const FigGenerator(
+                    script: ['mock-git-branches'],
+                    splitOn: '\n',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'mock-git-branches': ProcessRunResult(
+            stdout: 'main\nmaster\nrelease\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final initial = await engine.getSuggestions(
+        '$gitCheckoutBranchCacheCommand checkout ma',
+        '/work',
+        Shell.bash,
+      );
+      expect(initial, isNotNull);
+      expect(initial!.suggestions.map((s) => s.name),
+          containsAll(['main', 'master']));
+
+      final widened = await engine.getSuggestions(
+        '$gitCheckoutBranchCacheCommand checkout m',
+        '/work',
+        Shell.bash,
+      );
+      expect(widened, isNotNull);
+      expect(widened!.suggestions.map((s) => s.name),
+          containsAll(['main', 'master']));
+      expect(adapter.processInvocations.length, 1);
+
+      final narrowed = await engine.getSuggestions(
+        '$gitCheckoutBranchCacheCommand checkout mas',
+        '/work',
+        Shell.bash,
+      );
+      expect(narrowed, isNotNull);
+      expect(narrowed!.suggestions.map((s) => s.name).toList(),
+          equals(['master']));
+      expect(adapter.processInvocations.length, 1);
+    });
+
+    test('clearCache forces the active dynamic source to reload', () async {
+      registerSpec(
+        gitCheckoutBranchCacheCommand,
+        () => FigSpec(
+          name: gitCheckoutBranchCacheCommand,
+          subcommands: [
+            FigSubcommand(
+              name: 'checkout',
+              args: [
+                FigArg(
+                  generators: const FigGenerator(
+                    script: ['mock-git-branches'],
+                    splitOn: '\n',
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'mock-git-branches': ProcessRunResult(
+            stdout: 'main\nmaster\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final first = await engine.getSuggestions(
+        '$gitCheckoutBranchCacheCommand checkout ma',
+        '/work',
+        Shell.bash,
+      );
+      expect(first, isNotNull);
+      expect(adapter.processInvocations.length, 1);
+
+      engine.clearCache();
+
+      final second = await engine.getSuggestions(
+        '$gitCheckoutBranchCacheCommand checkout ma',
+        '/work',
+        Shell.bash,
+      );
+      expect(second, isNotNull);
+      expect(adapter.processInvocations.length, 2);
     });
 
     test('invalidates candidate cache when moving to the next shell token',
@@ -506,13 +749,12 @@ void main() {
           ),
         },
       );
-      final engine = AutocompleteEngine();
+      final engine = AutocompleteEngine(adapter: adapter);
 
       final first = await engine.getSuggestions(
         '$tokenBoundaryCacheCommand feat_',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(first, isNotNull);
       expect(
@@ -527,7 +769,6 @@ void main() {
         '$tokenBoundaryCacheCommand feat_alpha al',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(second, isNotNull);
       expect(
@@ -658,14 +899,13 @@ void main() {
         ),
       );
 
-      final engine = AutocompleteEngine();
       final adapter = FakeAdapter();
+      final engine = AutocompleteEngine(adapter: adapter);
 
       final alpha = await engine.getSuggestions(
         '$dynamicCacheCommand --profile a ',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(alpha, isNotNull);
       expect(alpha!.suggestions.map((s) => s.name), contains('alpha'));
@@ -674,7 +914,6 @@ void main() {
         '$dynamicCacheCommand --profile b ',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(beta, isNotNull);
       expect(beta!.suggestions.map((s) => s.name), contains('beta'));
@@ -949,13 +1188,12 @@ void main() {
           ),
         },
       );
-      final engine = AutocompleteEngine();
+      final engine = AutocompleteEngine(adapter: adapter);
 
       final first = await engine.getSuggestions(
         'gc',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(first, isNotNull);
       expect(first!.suggestions.map((s) => s.name), contains('gco'));
@@ -965,7 +1203,6 @@ void main() {
         'gs',
         '/work',
         Shell.bash,
-        adapter,
       );
       expect(second, isNotNull);
       expect(second!.suggestions.map((s) => s.name), contains('gst'));
@@ -1138,6 +1375,8 @@ void main() {
         loadSpecSemanticsSubCommand,
         () => FigSpec(
           name: loadSpecSemanticsSubCommand,
+          icon: 'loaded-icon',
+          filterStrategy: FilterStrategy.fuzzy,
           requiresSubcommand: true,
           additionalSuggestions: [
             FigSuggestion(
@@ -1176,6 +1415,8 @@ void main() {
             FigSubcommand(
               name: 'foo',
               loadSpec: loadSpecSemanticsSubCommand,
+              icon: 'original-icon',
+              filterStrategy: FilterStrategy.prefix,
             ),
           ],
         ),
@@ -1216,6 +1457,179 @@ void main() {
       );
 
       expect(invalid, isNull);
+    });
+
+    test(
+        'mergeRuntimeCommandNode lets loaded runtime fields override originals',
+        () {
+      final original = RuntimeCommandNode(
+        name: 'foo',
+        icon: 'original-icon',
+        filterStrategy: FilterStrategy.prefix,
+      );
+      final loaded = RuntimeCommandNode(
+        name: 'loaded-name',
+        icon: 'loaded-icon',
+        filterStrategy: FilterStrategy.fuzzy,
+      );
+
+      final merged = mergeRuntimeCommandNode(original, loaded);
+
+      expect(merged.name, 'foo');
+      expect(merged.icon, 'loaded-icon');
+      expect(merged.filterStrategy, FilterStrategy.fuzzy);
+    });
+
+    test('arg loadSpec continues traversal inside the loaded spec', () async {
+      registerSpec(
+        argLoadSpecChildCommand,
+        () => FigSpec(
+          name: argLoadSpecChildCommand,
+          subcommands: [
+            FigSubcommand(name: 'deploy'),
+            FigSubcommand(name: 'describe'),
+          ],
+        ),
+      );
+
+      registerSpec(
+        argLoadSpecRootCommand,
+        () => FigSpec(
+          name: argLoadSpecRootCommand,
+          args: [
+            FigArg(name: 'tool', loadSpec: argLoadSpecChildCommand),
+          ],
+        ),
+      );
+
+      final result = await getSuggestions(
+        '$argLoadSpecRootCommand anything de',
+        '/work',
+        Shell.bash,
+        FakeAdapter(),
+      );
+
+      expect(result, isNotNull);
+      expect(result!.suggestions.map((s) => s.name), contains('deploy'));
+      expect(result.suggestions.map((s) => s.name), contains('describe'));
+    });
+
+    test('variadic args honor optionsCanBreakVariadicArg when parsing options',
+        () async {
+      registerSpec(
+        variadicBreakOptionCommand,
+        () => FigSpec(
+          name: variadicBreakOptionCommand,
+          options: [
+            FigOption(
+              name: '--mode',
+              args: [
+                FigArg(suggestions: ['fast', 'safe']),
+              ],
+            ),
+          ],
+          args: [
+            FigArg(
+              name: 'files',
+              isVariadic: true,
+              optionsCanBreakVariadicArg: true,
+            ),
+          ],
+        ),
+      );
+
+      final result = await getSuggestions(
+        '$variadicBreakOptionCommand foo --mode fa',
+        '/work',
+        Shell.bash,
+        FakeAdapter(),
+      );
+
+      expect(result, isNotNull);
+      expect(result!.suggestions.map((s) => s.name), contains('fast'));
+    });
+
+    test('subcommand generateSpec is materialized before nested traversal',
+        () async {
+      registerSpec(
+        subcommandGenerateSpecCommand,
+        () => FigSpec(
+          name: subcommandGenerateSpecCommand,
+          subcommands: [
+            FigSubcommand(
+              name: 'env',
+              generateSpec: (tokens, executeCommand) async => FigSubcommand(
+                name: 'env',
+                subcommands: [
+                  FigSubcommand(name: 'deploy'),
+                  FigSubcommand(name: 'destroy'),
+                ],
+                additionalSuggestions: ['generated-extra'],
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final result = await getSuggestions(
+        '$subcommandGenerateSpecCommand env de',
+        '/work',
+        Shell.bash,
+        FakeAdapter(),
+      );
+
+      expect(result, isNotNull);
+      expect(result!.suggestions.map((s) => s.name), contains('deploy'));
+      expect(result.suggestions.map((s) => s.name), contains('destroy'));
+    });
+
+    test('subcommand generateSpec runs once across static and dynamic passes',
+        () async {
+      var generateSpecCalls = 0;
+      registerSpec(
+        singlePassSubcommandGenerateSpecCommand,
+        () => FigSpec(
+          name: singlePassSubcommandGenerateSpecCommand,
+          subcommands: [
+            FigSubcommand(
+              name: 'env',
+              generateSpec: (tokens, executeCommand) async {
+                generateSpecCalls++;
+                return FigSubcommand(
+                  name: 'env',
+                  args: [
+                    FigArg(
+                      generators: const FigGenerator(
+                        script: ['list-envs'],
+                        splitOn: '\n',
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'list-envs': ProcessRunResult(stdout: 'dev\ndemo\n'),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final result = await engine.getSuggestions(
+        '$singlePassSubcommandGenerateSpecCommand env de',
+        '/work',
+        Shell.bash,
+      );
+
+      expect(result, isNotNull);
+      expect(
+          result!.suggestions.map((s) => s.name), containsAll(['dev', 'demo']));
+      expect(generateSpecCalls, 1);
+      expect(adapter.processInvocations.length, 1);
     });
   });
 }

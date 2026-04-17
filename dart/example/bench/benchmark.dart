@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:autocomplete/autocomplete.dart';
-import 'package:autocomplete/src/runtime.dart'; // Import runtime to access AutocompleteEngine
 import '../local_adapter.dart';
 
 // Helper to get memory usage (RSS in KB)
@@ -34,19 +33,18 @@ Future<void> runScenario(
       '\n=== Scenario: $mode (${commands.length} commands, $iterations iterations each) ===');
 
   AutocompleteEngine? engine;
-  Future<SuggestionBlob?> Function(String, String, Shell, CompleteAdapter)
-      completer;
+  Future<SuggestionBlob?> Function(String, String, Shell) completer;
 
   if (mode == 'functional') {
-    completer = getSuggestions;
+    completer = (cmd, cwd, shell) => getSuggestions(cmd, cwd, shell, adapter);
     clearDefaultCache();
   } else {
-    engine = AutocompleteEngine();
+    engine = AutocompleteEngine(adapter: adapter);
     completer = engine.getSuggestions;
   }
 
   // Warmup (first command only)
-  await completer(commands.first, cwd, shell, adapter);
+  await completer(commands.first, cwd, shell);
 
   // Force GC
   await Future.delayed(Duration(milliseconds: 100));
@@ -57,7 +55,7 @@ Future<void> runScenario(
   // Simulate user session: run different commands in sequence
   for (var i = 0; i < iterations; i++) {
     for (final cmd in commands) {
-      await completer(cmd, cwd, shell, adapter);
+      await completer(cmd, cwd, shell);
     }
   }
 

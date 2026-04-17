@@ -33,6 +33,11 @@ class CompletionContext {
   /// subcommand is visited more than once within a single getSuggestions call.
   final Map<String, RuntimeCommandNode> resolvedSubcommandCache = {};
 
+  /// Cache for fully materialized subcommands within the active request.
+  /// Shared across the static and dynamic passes so `generateSpec` is executed
+  /// at most once for the same traversal target in one `getSuggestions` call.
+  final Map<String, Future<RuntimeCommandNode>> materializedSubcommandCache;
+
   /// Alias resolution cache shared from [AutocompleteEngine].
   /// Key: "cmdName|token"; value: expanded command string, or null (negative cache).
   /// Null map means alias resolution is disabled for this context.
@@ -43,11 +48,12 @@ class CompletionContext {
     required this.cwd,
     required this.shell,
     required this.adapter,
+    Map<String, Future<RuntimeCommandNode>>? materializedSubcommandCache,
     this.ensureSpecLoaded,
     this.filterStrategyOverride,
     this.currentIndex = 0,
     this.aliasCache,
-  });
+  }) : materializedSubcommandCache = materializedSubcommandCache ?? {};
 
   bool get isAtEnd => currentIndex >= allTokens.length;
 

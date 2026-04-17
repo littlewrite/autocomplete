@@ -37,10 +37,10 @@ String getShellWhitespaceEscapePrefix(Shell shell) {
   switch (shell) {
     case Shell.bash:
     case Shell.zsh:
+    case Shell.fish:
     case Shell.xonsh:
     case Shell.nushell:
       return r'\';
-    case Shell.fish:
     case Shell.pwsh:
     case Shell.powershell:
       return '`';

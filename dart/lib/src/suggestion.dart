@@ -296,63 +296,53 @@ Iterable<Suggestion> filterSuggestionList(
   if (partial == null || partial.isEmpty) return suggestions;
   final strat = normalizeFilterStrategy(strategy);
   final lower = partial.toLowerCase();
+  final allowFuzzy = strat != FilterStrategy.prefix;
+  final prefixMatches = <Suggestion>[];
+  final containsMatches = <Suggestion>[];
+  final subsequenceMatches = <Suggestion>[];
 
-  if (strat == FilterStrategy.fuzzy) {
-    final containsMatches = <Suggestion>[];
-    final subsequenceMatches = <Suggestion>[];
+  for (final suggestion in suggestions) {
+    final names = suggestion.allNames.isNotEmpty
+        ? suggestion.allNames
+        : [suggestion.name];
+    final prefixMatch = _firstMatchingName(names, lower, _matchesPrefix);
+    if (prefixMatch != null) {
+      prefixMatches.add(
+        _copySuggestionWithMatchedName(suggestion, prefixMatch),
+      );
+      continue;
+    }
+    if (!allowFuzzy) continue;
 
-    for (final suggestion in suggestions) {
-      final names = suggestion.allNames.isNotEmpty
-          ? suggestion.allNames
-          : [suggestion.name];
-      String? containsMatch;
-      String? subsequenceMatch;
-      for (final name in names) {
-        final matchKind = _matchesFuzzy(name, lower);
-        if (matchKind == _FuzzyMatchKind.contains) {
-          containsMatch = name;
-          break;
-        }
-        if (matchKind == _FuzzyMatchKind.subsequence &&
-            subsequenceMatch == null) {
-          subsequenceMatch = name;
-        }
+    String? containsMatch;
+    String? subsequenceMatch;
+    for (final name in names) {
+      final matchKind = _matchesFuzzy(name, lower);
+      if (matchKind == _FuzzyMatchKind.contains) {
+        containsMatch = name;
+        break;
       }
-      if (containsMatch != null) {
-        containsMatches.add(
-          _copySuggestionWithMatchedName(suggestion, containsMatch),
-        );
-        continue;
-      }
-      if (subsequenceMatch != null) {
-        subsequenceMatches.add(
-          _copySuggestionWithMatchedName(suggestion, subsequenceMatch),
-        );
+      if (matchKind == _FuzzyMatchKind.subsequence &&
+          subsequenceMatch == null) {
+        subsequenceMatch = name;
       }
     }
-
-    return containsMatches.followedBy(subsequenceMatches);
+    if (containsMatch != null) {
+      containsMatches.add(
+        _copySuggestionWithMatchedName(suggestion, containsMatch),
+      );
+      continue;
+    }
+    if (subsequenceMatch != null) {
+      subsequenceMatches.add(
+        _copySuggestionWithMatchedName(suggestion, subsequenceMatch),
+      );
+    }
   }
 
-  final matcher = _matchesPrefix;
-
-  return suggestions.map((s) {
-    final names = s.allNames.isNotEmpty ? s.allNames : [s.name];
-    final matched = _firstMatchingName(names, lower, matcher);
-    if (matched == null) return null;
-    if (matched == s.name) return s;
-    return Suggestion(
-      name: matched,
-      allNames: s.allNames,
-      description: s.description,
-      icon: s.icon,
-      priority: s.priority,
-      insertValue: s.insertValue,
-      type: s.type,
-      hidden: s.hidden,
-      pathy: s.pathy,
-    );
-  }).whereType<Suggestion>();
+  return prefixMatches
+      .followedBy(containsMatches)
+      .followedBy(subsequenceMatches);
 }
 
 /// Convert [FigSuggestion]s to [Suggestion]s and filter by [strategy] / [partial].

@@ -1,7 +1,8 @@
-## 0.3.1
+## 0.4.0
 
-- cache opt
-- fuzzy ajust
+- bind `AutocompleteEngine` to a fixed adapter and simplify `engine.getSuggestions(cmd, cwd, shell)`
+- stabilize dynamic suggestions cache reuse for lazy-loaded specs, postProcess generators, and custom function generators
+- fuzzy filter opt
 
 ## 0.3.0
 

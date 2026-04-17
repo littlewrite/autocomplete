@@ -211,6 +211,21 @@ void main() {
       expect(tokens[1].token, 'file name');
       expect(tokens[1].tokenLength, r'file` name'.length);
     });
+
+    test(r'pwsh keeps escaped quotes inside double-quoted tokens', () {
+      final tokens = parseCommand(r'Write-Host "foo`"bar"', Shell.pwsh);
+      expect(tokens.length, 2);
+      expect(tokens[1].token, 'foo`"bar');
+      expect(tokens[1].isQuoted, isTrue);
+      expect(tokens[1].complete, isFalse);
+    });
+
+    test(r'fish uses backslash-space as a single token', () {
+      final tokens = parseCommand(r'echo file\ name', Shell.fish);
+      expect(tokens.length, 2);
+      expect(tokens[1].token, 'file name');
+      expect(tokens[1].tokenLength, r'file\ name'.length);
+    });
   });
 
   // ── 10. 命令分隔符 ────────────────────────────────────────────────────────────
@@ -270,6 +285,20 @@ void main() {
       expect(tokens.length, 2);
       expect(tokens[0].token, 'jq');
       expect(tokens[1].token, '.data | length');
+    });
+
+    test(r'pwsh does not split on escaped semicolons', () {
+      final tokens = parseCommand(r'Write-Host foo`;bar', Shell.pwsh);
+      expect(tokens.length, 2);
+      expect(tokens[0].token, 'Write-Host');
+      expect(tokens[1].token, 'foo`;bar');
+    });
+
+    test(r'fish does not split on escaped semicolons', () {
+      final tokens = parseCommand(r'echo foo\;bar', Shell.fish);
+      expect(tokens.length, 2);
+      expect(tokens[0].token, 'echo');
+      expect(tokens[1].token, r'foo\;bar');
     });
   });
 

@@ -9,6 +9,7 @@ typedef SpecLoader = FigSpec Function();
 const List<String> builtinSpecNames = ['cd', 'ls', 'git', 'tree'];
 
 final Map<String, SpecLoader> _registry = {};
+final Map<String, FigSpec> _loadedSpecs = {};
 
 /// LRU order for loaded specs (oldest first). Used to evict when over [maxLoadedSpecs].
 final List<String> _lruOrder = [];
@@ -32,6 +33,7 @@ void registerV2SpecNamesGetter(List<String> Function(String firstChar) getter) {
 /// Unregister the spec for [name] so it can be GC'd. Name may stay in v2 first-char lists for command-name completion.
 void unregisterSpec(String name) {
   _registry.remove(name);
+  _loadedSpecs.remove(name);
   _lruOrder.remove(name);
 }
 
@@ -47,6 +49,7 @@ void evictOldSpecsIfNeeded() {
 void registerSpec(String name, SpecLoader loader) {
   _lruOrder.remove(name);
   _lruOrder.add(name);
+  _loadedSpecs.remove(name);
   _registry[name] = loader;
 }
 
@@ -56,7 +59,11 @@ FigSpec? getSpec(String name) {
   if (loader == null) return null;
   _lruOrder.remove(name);
   _lruOrder.add(name);
-  return loader();
+  final loaded = _loadedSpecs[name];
+  if (loaded != null) return loaded;
+  final spec = loader();
+  _loadedSpecs[name] = spec;
+  return spec;
 }
 
 /// Command names that start with [prefix] (case-insensitive). Empty [prefix] returns [] (no suggestion).
@@ -76,10 +83,40 @@ List<String> getSpecNamesWithPrefix(String prefix) {
 
 /// All registered command names (excluding @scoped and reserved). When v2 is used, builds by calling the getter for each first char.
 List<String> getSpecNames() {
-  final fromRegistry = _registry.keys.where((k) => !k.startsWith('@') && k != '-');
+  final fromRegistry =
+      _registry.keys.where((k) => !k.startsWith('@') && k != '-');
   Set<String> fromV2 = {};
   if (_v2SpecNamesGetter != null) {
-    const firstChars = ['-', '@', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    const firstChars = [
+      '-',
+      '@',
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z'
+    ];
     for (final c in firstChars) {
       fromV2.addAll(_v2SpecNamesGetter!(c));
     }

@@ -1,6 +1,5 @@
-// Runtime: getSuggestions, loadSpec, runSubcommand/Arg/Option (reference: inshellisense runtime.ts).
-
 import 'dart:async';
+import 'dart:collection';
 
 import 'adapter.dart';
 import 'alias.dart';
@@ -188,6 +187,7 @@ CompletionContext? _expandInlineOptionContext(
     cwd: context.cwd,
     shell: context.shell,
     adapter: context.adapter,
+    materializedSubcommandCache: context.materializedSubcommandCache,
     currentIndex: context.currentIndex,
     ensureSpecLoaded: context.ensureSpecLoaded,
     filterStrategyOverride: context.filterStrategyOverride,
@@ -489,13 +489,307 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
 class _ArgSuggestionComputation {
   const _ArgSuggestionComputation({
     this.staticSuggestions = const [],
+    this.rawDynamicSuggestions = const [],
     this.dynamicSuggestions = const [],
+    this.dynamicSource,
     this.dynamicFilterStrategy,
   });
 
   final List<Suggestion> staticSuggestions;
+  final List<Suggestion> rawDynamicSuggestions;
   final List<Suggestion> dynamicSuggestions;
+  final _DynamicSuggestionSource? dynamicSource;
   final FilterStrategy? dynamicFilterStrategy;
+}
+
+class _DynamicSuggestionSource {
+  const _DynamicSuggestionSource({
+    required this.debugLabel,
+    required this.cacheKey,
+  });
+
+  final String debugLabel;
+  final _DynamicSuggestionSourceCacheKey? cacheKey;
+}
+
+class _CommandTokenCacheKey {
+  const _CommandTokenCacheKey({
+    required this.token,
+    required this.complete,
+    required this.isOption,
+    required this.isQuoted,
+    required this.isPath,
+  });
+
+  factory _CommandTokenCacheKey.fromToken(CommandToken token) {
+    return _CommandTokenCacheKey(
+      token: token.token,
+      complete: token.complete,
+      isOption: token.isOption,
+      isQuoted: token.isQuoted,
+      isPath: token.isPath,
+    );
+  }
+
+  final String token;
+  final bool complete;
+  final bool isOption;
+  final bool isQuoted;
+  final bool isPath;
+
+  @override
+  bool operator ==(Object other) {
+    return other is _CommandTokenCacheKey &&
+        other.token == token &&
+        other.complete == complete &&
+        other.isOption == isOption &&
+        other.isQuoted == isQuoted &&
+        other.isPath == isPath;
+  }
+
+  @override
+  int get hashCode => Object.hash(token, complete, isOption, isQuoted, isPath);
+}
+
+class _DynamicArgScopeCacheKey {
+  const _DynamicArgScopeCacheKey({
+    required this.name,
+    required this.templates,
+    required this.filterStrategy,
+    required this.isOptional,
+    required this.isVariadic,
+    required this.generatorKeys,
+  });
+
+  final String name;
+  final List<String> templates;
+  final FilterStrategy? filterStrategy;
+  final bool isOptional;
+  final bool isVariadic;
+  final List<String> generatorKeys;
+
+  @override
+  bool operator ==(Object other) {
+    return other is _DynamicArgScopeCacheKey &&
+        other.name == name &&
+        other.filterStrategy == filterStrategy &&
+        other.isOptional == isOptional &&
+        other.isVariadic == isVariadic &&
+        _listEquals(other.templates, templates) &&
+        _listEquals(other.generatorKeys, generatorKeys);
+  }
+
+  @override
+  int get hashCode => Object.hash(
+        name,
+        filterStrategy,
+        isOptional,
+        isVariadic,
+        Object.hashAll(templates),
+        Object.hashAll(generatorKeys),
+      );
+}
+
+class _DynamicSuggestionSourceCacheKey {
+  const _DynamicSuggestionSourceCacheKey({
+    required this.rootCommand,
+    required this.acceptedTokens,
+    required this.argScope,
+  });
+
+  final String rootCommand;
+  final List<_CommandTokenCacheKey> acceptedTokens;
+  final _DynamicArgScopeCacheKey argScope;
+
+  @override
+  bool operator ==(Object other) {
+    return other is _DynamicSuggestionSourceCacheKey &&
+        other.rootCommand == rootCommand &&
+        other.argScope == argScope &&
+        _listEquals(other.acceptedTokens, acceptedTokens);
+  }
+
+  @override
+  int get hashCode => Object.hash(
+        rootCommand,
+        Object.hashAll(acceptedTokens),
+        argScope,
+      );
+}
+
+String _describeCommandToken(CommandToken token) {
+  final flags = StringBuffer();
+  if (token.complete) flags.write('c');
+  if (token.isOption) flags.write('o');
+  if (token.isQuoted) flags.write('q');
+  if (token.isPath) flags.write('p');
+  return '${token.token}|$flags';
+}
+
+bool _listEquals<T>(List<T> left, List<T> right) {
+  if (identical(left, right)) return true;
+  if (left.length != right.length) return false;
+  for (var i = 0; i < left.length; i++) {
+    if (left[i] != right[i]) return false;
+  }
+  return true;
+}
+
+String? _tryDescribeStableDynamicValue(dynamic value) {
+  if (value == null) return 'null';
+  if (value is String) return 's:$value';
+  if (value is num || value is bool) return value.toString();
+  if (value is ExecuteCommandInput) {
+    final envDescriptor = value.env == null
+        ? 'null'
+        : _tryDescribeStableDynamicValue(SplayTreeMap<String, String?>.from(
+            value.env!,
+            (left, right) => left.compareTo(right),
+          ));
+    return 'exec:${value.command}|args=${_tryDescribeStableDynamicValue(value.args)}|cwd=${value.cwd ?? ''}|env=$envDescriptor|timeout=${value.timeout ?? ''}';
+  }
+  if (value is FigCache) {
+    return _tryDescribeStableDynamicValue(value.toJson());
+  }
+  if (value is FigSuggestion) {
+    return _tryDescribeStableDynamicValue(value.toJson());
+  }
+  if (value is List) {
+    final described = <String>[];
+    for (final item in value) {
+      final part = _tryDescribeStableDynamicValue(item);
+      if (part == null) return null;
+      described.add(part);
+    }
+    return '[${described.join(',')}]';
+  }
+  if (value is Map) {
+    final entries = <String>[];
+    final sortedEntries = value.entries.toList()
+      ..sort(
+          (left, right) => left.key.toString().compareTo(right.key.toString()));
+    for (final entry in sortedEntries) {
+      final key = entry.key.toString();
+      final part = _tryDescribeStableDynamicValue(entry.value);
+      if (part == null) return null;
+      entries.add('$key:$part');
+    }
+    return '{${entries.join(',')}}';
+  }
+  return null;
+}
+
+String? _generatorExplicitCacheKey(FigGenerator generator) {
+  final cache = generator.cache;
+  if (cache is FigCache) return cache.cacheKey;
+  if (cache is Map) {
+    final rawCacheKey = cache['cacheKey'];
+    if (rawCacheKey is String && rawCacheKey.isNotEmpty) return rawCacheKey;
+    if (rawCacheKey != null) return rawCacheKey.toString();
+  }
+  return null;
+}
+
+String? _tryBuildGeneratorCacheKey(FigGenerator generator) {
+  final explicitCacheKey = _generatorExplicitCacheKey(generator);
+  if (explicitCacheKey != null) return 'cacheKey:$explicitCacheKey';
+
+  String? describePart(String name, dynamic value) {
+    if (value == null) return null;
+    final described = _tryDescribeStableDynamicValue(value);
+    if (described == null) return null;
+    return '$name=$described';
+  }
+
+  final parts = <String>[];
+
+  final scriptPart = describePart('script', generator.script);
+  if (generator.script != null && scriptPart == null) return null;
+  if (scriptPart != null) parts.add(scriptPart);
+
+  final templatePart = describePart('template', generator.template);
+  if (generator.template != null && templatePart == null) return null;
+  if (templatePart != null) parts.add(templatePart);
+
+  final custom = generator.custom;
+  if (custom is Function) {
+    parts.add('customFn=1');
+  }
+  final customPart = custom is Function ? null : describePart('custom', custom);
+  if (custom != null && custom is! Function && customPart == null) return null;
+  if (customPart != null) parts.add(customPart);
+
+  parts.add(
+      'filterTemplate=${generator.filterTemplateSuggestions == null ? 0 : 1}');
+  parts.add('postProcess=${generator.postProcess == null ? 0 : 1}');
+  parts.add('splitOn=${generator.splitOn ?? ''}');
+  parts.add('timeout=${generator.scriptTimeout?.toString() ?? ''}');
+  return parts.join('|');
+}
+
+_DynamicSuggestionSource? _buildDynamicSuggestionSource(
+  FigArg activeArg,
+  CompletionContext context,
+) {
+  final templateList = activeArg.templateList;
+  final generators = activeArg.generatorsList;
+  if (templateList.isEmpty && generators.isEmpty) return null;
+
+  final rootCommand =
+      context.allTokens.isNotEmpty ? context.allTokens.first.token : '';
+  final acceptedTokens = context.acceptedTokens
+      .map(_CommandTokenCacheKey.fromToken)
+      .toList(growable: false);
+  final generatorKeys = <String>[];
+  var cacheable = true;
+  for (final generator in generators) {
+    final key = _tryBuildGeneratorCacheKey(generator);
+    if (key == null) {
+      cacheable = false;
+      break;
+    }
+    generatorKeys.add(key);
+  }
+
+  final argScope = _DynamicArgScopeCacheKey(
+    name: activeArg.name ?? '',
+    templates: List<String>.from(templateList),
+    filterStrategy: normalizeFilterStrategy(activeArg.filterStrategy),
+    isOptional: activeArg.isOptional,
+    isVariadic: activeArg.isVariadic,
+    generatorKeys: generatorKeys,
+  );
+  final debugLabel = [
+    'root=$rootCommand',
+    'accepted=${context.acceptedTokens.map(_describeCommandToken).join('\u0001')}',
+    'arg=${activeArg.name ?? ''}',
+    'templates=${templateList.join('\u0002')}',
+    'generators=${cacheable ? generatorKeys.join('\u0002') : 'uncacheable'}',
+  ].join('|');
+
+  return _DynamicSuggestionSource(
+    debugLabel: debugLabel,
+    cacheKey: cacheable
+        ? _DynamicSuggestionSourceCacheKey(
+            rootCommand: rootCommand,
+            acceptedTokens: acceptedTokens,
+            argScope: argScope,
+          )
+        : null,
+  );
+}
+
+String _normalizeEffectiveCwd(String cwd, Shell shell) {
+  var normalized = cwd;
+  while (normalized.length > 1 && endsWithPathSeparator(normalized, shell)) {
+    if (isWindowsShell(shell) &&
+        normalized.length == 3 &&
+        normalized.codeUnitAt(1) == 58) {
+      break;
+    }
+    normalized = normalized.substring(0, normalized.length - 1);
+  }
+  return normalized;
 }
 
 Future<_ArgSuggestionComputation> _collectArgSuggestions(
@@ -507,30 +801,34 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
 }) async {
   final strategy = context.filterStrategyOverride ?? activeArg.filterStrategy;
   final staticSuggestions = <Suggestion>[];
+  final rawDynamicSuggestions = <Suggestion>[];
   final dynamicSuggestions = <Suggestion>[];
+  final dynamicSource = _buildDynamicSuggestionSource(activeArg, context);
 
   if (includeDynamic) {
     final templateSuggestions =
         await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
-    dynamicSuggestions
-        .addAll(filterSuggestionList(templateSuggestions, strategy, partial));
+    rawDynamicSuggestions.addAll(templateSuggestions);
 
     for (final gen in activeArg.generatorsList) {
       final generated = await runGeneratorSuggestions(
           gen, context.allTokens, context.cwd, context.adapter,
           logger: logger);
-      dynamicSuggestions
-          .addAll(filterSuggestionList(generated, strategy, partial));
+      rawDynamicSuggestions.addAll(generated);
     }
+
+    dynamicSuggestions
+        .addAll(filterSuggestionList(rawDynamicSuggestions, strategy, partial));
   }
 
   staticSuggestions.addAll(
       filterSuggestions(activeArg.suggestionsAsList, strategy, partial, null));
   return _ArgSuggestionComputation(
     staticSuggestions: staticSuggestions,
+    rawDynamicSuggestions: rawDynamicSuggestions,
     dynamicSuggestions: dynamicSuggestions,
-    dynamicFilterStrategy:
-        dynamicSuggestions.isEmpty ? null : normalizeFilterStrategy(strategy),
+    dynamicSource: dynamicSource,
+    dynamicFilterStrategy: normalizeFilterStrategy(strategy),
   );
 }
 
@@ -556,20 +854,24 @@ List<Suggestion> _finalizeSuggestionsFromState(
 class _SuggestionComputation {
   const _SuggestionComputation({
     this.staticSuggestions = const [],
+    this.rawDynamicSuggestions = const [],
     this.dynamicSuggestions = const [],
     required this.acceptedTokens,
     this.partialToken,
     this.argumentDescription,
     this.charactersToDrop = 0,
+    this.dynamicSource,
     this.dynamicFilterStrategy,
   });
 
   final List<Suggestion> staticSuggestions;
+  final List<Suggestion> rawDynamicSuggestions;
   final List<Suggestion> dynamicSuggestions;
   final List<CommandToken> acceptedTokens;
   final CommandToken? partialToken;
   final String? argumentDescription;
   final int charactersToDrop;
+  final _DynamicSuggestionSource? dynamicSource;
   final FilterStrategy? dynamicFilterStrategy;
 
   Iterable<Suggestion> get suggestions =>
@@ -633,6 +935,8 @@ Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
   final allowsArgSuggestions =
       subcommand.requiresSubcommand != true || argsFromSubcommand;
   final argList = subcommand.args ?? [];
+  List<Suggestion> rawDynamicSuggestions = const [];
+  _DynamicSuggestionSource? dynamicSource;
   FilterStrategy? dynamicFilterStrategy;
   if (allowsArgSuggestions && argList.isNotEmpty) {
     final activeArg = argList.first;
@@ -644,15 +948,19 @@ Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
       includeDynamic: includeDynamic,
     );
     staticSuggestions.addAll(argSuggestions.staticSuggestions);
+    rawDynamicSuggestions = argSuggestions.rawDynamicSuggestions;
     dynamicSuggestions.addAll(argSuggestions.dynamicSuggestions);
+    dynamicSource = argSuggestions.dynamicSource;
     dynamicFilterStrategy = argSuggestions.dynamicFilterStrategy;
   }
   return _SuggestionComputation(
     staticSuggestions: staticSuggestions,
+    rawDynamicSuggestions: rawDynamicSuggestions,
     dynamicSuggestions: dynamicSuggestions,
     acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
     partialToken: partialToken,
     charactersToDrop: partialToken?.tokenLength ?? 0,
+    dynamicSource: dynamicSource,
     dynamicFilterStrategy: dynamicFilterStrategy,
   );
 }
@@ -701,11 +1009,13 @@ Future<_SuggestionComputation?> getArgDrivenRecommendation(
   }
   return _SuggestionComputation(
       staticSuggestions: staticSuggestions,
+      rawDynamicSuggestions: argSuggestions.rawDynamicSuggestions,
       dynamicSuggestions: dynamicSuggestions,
       acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
       partialToken: partialToken,
       argumentDescription: activeArg.description ?? activeArg.name,
       charactersToDrop: partialToken?.tokenLength ?? 0,
+      dynamicSource: argSuggestions.dynamicSource,
       dynamicFilterStrategy: argSuggestions.dynamicFilterStrategy);
 }
 
@@ -783,21 +1093,13 @@ Future<RuntimeCommandNode> _resolveSubcommandSpec(
   }
 
   try {
-    RuntimeCommandNode? loaded;
-    if (ls is String) {
-      // Ensure the named spec is registered (deferred import path).
-      await context.ensureSpecLoaded?.call(ls);
-      final spec = getSpec(ls);
-      if (spec != null) {
-        loaded = runtimeNodeFromSpec(spec);
-        // Store raw loaded data so subsequent resolutions of the same key reuse it.
-        context.resolvedSubcommandCache[ls] = loaded;
-      }
-    } else if (ls is FigSubcommand) {
-      loaded = runtimeNodeFromSubcommand(ls);
-    }
-    // Function-typed loadSpec is not supported in static Dart specs; skip.
+    final loaded =
+        await _resolveRuntimeNodeFromLoadSpec(ls, context, logger: logger);
     if (loaded == null) return sub;
+    if (ls is String) {
+      // Store raw loaded data so subsequent resolutions of the same key reuse it.
+      context.resolvedSubcommandCache[ls] = loaded;
+    }
 
     // Loaded spec wins; fall back to original fields where loaded has nothing.
     return mergeRuntimeCommandNode(sub, loaded);
@@ -805,6 +1107,86 @@ Future<RuntimeCommandNode> _resolveSubcommandSpec(
     logger?.call('[Fig loadSpec] error resolving subcommand loadSpec', e, st);
     return sub;
   }
+}
+
+Future<RuntimeCommandNode?> _resolveRuntimeNodeFromLoadSpec(
+  dynamic loadSpec,
+  CompletionContext context, {
+  LogCallback? logger,
+}) async {
+  if (loadSpec == null) return null;
+  if (loadSpec is String) {
+    await context.ensureSpecLoaded?.call(loadSpec);
+    final spec = getSpec(loadSpec);
+    return spec == null ? null : runtimeNodeFromSpec(spec);
+  }
+  if (loadSpec is FigSpec) {
+    return runtimeNodeFromSpec(loadSpec);
+  }
+  if (loadSpec is FigSubcommand) {
+    return runtimeNodeFromSubcommand(loadSpec);
+  }
+  logger?.call(
+      '[Fig loadSpec] unsupported loadSpec type: ${loadSpec.runtimeType}');
+  return null;
+}
+
+Future<RuntimeCommandNode> _materializeSubcommand(
+  RuntimeCommandNode subcommand,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  final cacheKey = [
+    context.cwd,
+    context.acceptedTokens.map(_describeCommandToken).join('\u0001'),
+    subcommand.nameList.join('\u0002'),
+  ].join('|');
+  final cached = context.materializedSubcommandCache[cacheKey];
+  if (cached != null) return cached;
+
+  final future = () async {
+    var resolved = await _resolveSubcommandSpec(subcommand, context, logger);
+    final generateSpec = resolved.generateSpec;
+    if (generateSpec == null) return resolved;
+
+    try {
+      final executeCommand =
+          _createExecuteCommand(context.cwd, context.adapter);
+      final tokens =
+          context.allTokens.map((t) => t.token).toList(growable: false);
+      final generated = await generateSpec(tokens, executeCommand);
+      if (generated == null) return resolved;
+      resolved = mergeGeneratedRuntimeCommandNode(
+        resolved,
+        runtimeNodeFromSubcommand(generated),
+      );
+    } catch (e, st) {
+      logger?.call('[Fig subcommand.generateSpec] error', e, st);
+    }
+    return resolved;
+  }();
+
+  context.materializedSubcommandCache[cacheKey] = future;
+  return future;
+}
+
+Future<RuntimeCommandNode?> _resolveArgRuntimeNode(
+  FigArg arg,
+  CommandToken activeToken,
+  CompletionContext context,
+  LogCallback? logger,
+) async {
+  if (arg.isCommand == true) {
+    await context.ensureSpecLoaded?.call(activeToken.token);
+    final cmdTokens = context.allTokens.sublist(context.currentIndex);
+    final cmdSpec = loadSpec(cmdTokens);
+    return cmdSpec == null ? null : runtimeNodeFromSpec(cmdSpec);
+  }
+  if (arg.loadSpec != null) {
+    return _resolveRuntimeNodeFromLoadSpec(arg.loadSpec, context,
+        logger: logger);
+  }
+  return null;
 }
 
 /// Attempt to resolve [activeToken] as a command alias via [parserDirectives.alias]
@@ -841,7 +1223,8 @@ Future<List<CommandToken>?> _tryResolveAlias(
   // Use the root command name (first token) as part of the cache key.
   final rootCmd =
       context.allTokens.isNotEmpty ? context.allTokens.first.token : '';
-  final cacheKey = '$rootCmd|${activeToken.token}';
+  final cacheKey =
+      '${context.shell.name}|${context.cwd}|$rootCmd|${activeToken.token}';
 
   // Serve from cache (including negative entries stored as null).
   if (cache.containsKey(cacheKey)) {
@@ -916,7 +1299,7 @@ Future<_SuggestionComputation?> runSubcommand(
   if (nextSub != null) {
     context.addPersistentOptionsDeduped(subcommand.options);
     context.advance();
-    final resolvedSub = await _resolveSubcommandSpec(nextSub, context, logger);
+    final resolvedSub = await _materializeSubcommand(nextSub, context, logger);
     return runSubcommand(
       resolvedSub,
       context,
@@ -941,6 +1324,7 @@ Future<_SuggestionComputation?> runSubcommand(
       cwd: context.cwd,
       shell: context.shell,
       adapter: context.adapter,
+      materializedSubcommandCache: context.materializedSubcommandCache,
       currentIndex: context.currentIndex,
       ensureSpecLoaded: context.ensureSpecLoaded,
       filterStrategyOverride: context.filterStrategyOverride,
@@ -1017,6 +1401,16 @@ Future<_SuggestionComputation?> _runArgTraversal(
     // Unknown option in all-optional-arg context: no suggestions.
     return null;
   }
+  if (activeArg.isVariadic &&
+      activeToken.isOption &&
+      activeArg.optionsCanBreakVariadicArg != false &&
+      !(_optionsMustPrecedeArguments(subcommand) && consumedPositionalArg)) {
+    final option = getOption(activeToken, allOptions);
+    if (option != null) {
+      return runOption(option, subcommand, context,
+          logger: logger, includeDynamic: includeDynamic);
+    }
+  }
   if (activeArg.isVariadic) {
     context.advance();
     return _runArgTraversal(args, subcommand, context, fromOption, true,
@@ -1024,17 +1418,13 @@ Future<_SuggestionComputation?> _runArgTraversal(
         consumedPositionalArg: true,
         includeDynamic: includeDynamic);
   }
-  // isCommand: the current token is itself a CLI command whose spec should be
-  // loaded and traversed. Mirrors JS inshellisense runArg isCommand branch
-  // (e.g. `sudo git commit` — sudo's arg has isCommand: true).
-  if (activeArg.isCommand == true) {
-    await context.ensureSpecLoaded?.call(activeToken.token);
-    final cmdTokens = context.allTokens.sublist(context.currentIndex);
-    final cmdSpec = loadSpec(cmdTokens);
-    if (cmdSpec == null) return null;
-    final cmdSub = runtimeNodeFromSpec(cmdSpec);
+  final argNode =
+      await _resolveArgRuntimeNode(activeArg, activeToken, context, logger);
+  if (argNode != null) {
     context.advance();
-    return runSubcommand(cmdSub, context, false, false, logger, includeDynamic);
+    final materialized = await _materializeSubcommand(argNode, context, logger);
+    return runSubcommand(
+        materialized, context, false, false, logger, includeDynamic);
   }
   if (activeArg.isOptional) {
     final nextSub = _findSubcommand(subcommand, activeToken.token);
@@ -1042,7 +1432,7 @@ Future<_SuggestionComputation?> _runArgTraversal(
       context.addPersistentOptionsDeduped(subcommand.options);
       context.advance();
       final resolvedSub =
-          await _resolveSubcommandSpec(nextSub, context, logger);
+          await _materializeSubcommand(nextSub, context, logger);
       return runSubcommand(
           resolvedSub, context, false, false, logger, includeDynamic);
     }
@@ -1082,6 +1472,7 @@ _SuggestionComputation runCommand(CommandToken token,
       staticSuggestions: [],
       acceptedTokens: [],
       charactersToDrop: 0,
+      dynamicSource: null,
       dynamicFilterStrategy: null,
     );
   }
@@ -1109,6 +1500,7 @@ _SuggestionComputation runCommand(CommandToken token,
     acceptedTokens: const [],
     partialToken: token,
     charactersToDrop: token.tokenLength,
+    dynamicSource: null,
     dynamicFilterStrategy: null,
   );
 }
@@ -1122,53 +1514,27 @@ Map<String, int> _collectUsedOptionCounts(List<CommandToken> acceptedTokens) {
   return counts;
 }
 
-/// A single entry in the suggestion result cache.
-class _SuggestionCacheEntry {
-  _SuggestionCacheEntry(this.blob) : createdAt = DateTime.now();
-  final SuggestionBlob blob;
-  final DateTime createdAt;
-
-  bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
-}
-
-class _IncrementalSuggestionCacheEntry {
-  _IncrementalSuggestionCacheEntry({
-    required this.normalizedCmd,
-    required this.rawTokens,
-    required this.effectiveCwd,
+class _ActiveDynamicSuggestionCache {
+  const _ActiveDynamicSuggestionCache({
     required this.shell,
-    required this.adapterIdentity,
-    required this.dynamicSuggestions,
-    required this.dynamicFilterStrategy,
-  }) : createdAt = DateTime.now();
+    required this.effectiveCwd,
+    required this.sourceKey,
+    required this.rawSuggestions,
+  });
 
-  final String normalizedCmd;
-  final List<CommandToken> rawTokens;
-  final String effectiveCwd;
   final Shell shell;
-  final int adapterIdentity;
-  final List<Suggestion> dynamicSuggestions;
-  final FilterStrategy dynamicFilterStrategy;
-  final DateTime createdAt;
-
-  bool isExpired(Duration ttl) => DateTime.now().difference(createdAt) > ttl;
-}
-
-class _IncrementalReuseResult {
-  const _IncrementalReuseResult(this.blob);
-
-  final SuggestionBlob? blob;
+  final String effectiveCwd;
+  final _DynamicSuggestionSourceCacheKey sourceKey;
+  final List<Suggestion> rawSuggestions;
 }
 
 class _ComputedSuggestionState {
   const _ComputedSuggestionState({
     required this.computation,
-    required this.rawTokens,
     required this.effectiveCwd,
   });
 
   final _SuggestionComputation computation;
-  final List<CommandToken> rawTokens;
   final String effectiveCwd;
 }
 
@@ -1182,40 +1548,14 @@ String _normalizeSuggestionCacheCommand(String cmd) {
 
 /// Autocomplete engine that manages state and caching.
 class AutocompleteEngine {
-  /// [suggestionCacheMaxSize]: max number of suggestion results to cache per
-  /// session (LRU eviction).  Defaults to 5.
-  ///
-  /// [suggestionCacheTtl]: how long a cached result stays valid.  After this
-  /// duration the entry is considered stale and a fresh call is made.
-  /// Defaults to 30 seconds.  The cache is also fully cleared whenever
-  /// [clearCache] is called (e.g. after the user executes a command).
-  AutocompleteEngine({
-    int suggestionCacheMaxSize = 5,
-    Duration suggestionCacheTtl = const Duration(seconds: 30),
-  })  : _suggestionCacheMaxSize = suggestionCacheMaxSize,
-        _suggestionCacheTtl = suggestionCacheTtl;
+  AutocompleteEngine({required CompleteAdapter adapter}) : _adapter = adapter;
 
-  /// Max entries in [_suggestionCache].
-  final int _suggestionCacheMaxSize;
+  final CompleteAdapter _adapter;
 
-  /// TTL for suggestion cache entries.
-  final Duration _suggestionCacheTtl;
-
-  /// Suggestion result cache: key = "$cmd|$cwd|${shell.name}".
-  /// Uses insertion-order map so that the first entry is always the LRU victim.
-  final Map<String, _SuggestionCacheEntry> _suggestionCache = {};
-
-  _IncrementalSuggestionCacheEntry? _incrementalSuggestionCache;
-
-  void _putSuggestionCache(String key, SuggestionBlob blob) {
-    if (_suggestionCache.length >= _suggestionCacheMaxSize) {
-      _suggestionCache.remove(_suggestionCache.keys.first);
-    }
-    _suggestionCache[key] = _SuggestionCacheEntry(blob);
-  }
+  _ActiveDynamicSuggestionCache? _activeDynamicSuggestionCache;
 
   /// Cache for generated specs (e.g. git help -a).
-  /// Key: specName|cwd
+  /// Key: specName|cwd|tokens
   final Map<String, FigSpec> _generateSpecCache = {};
 
   /// Max entries in [_generateSpecCache]. Oldest entry (insertion order) is
@@ -1231,13 +1571,13 @@ class AutocompleteEngine {
   }
 
   /// Cache for parserDirectives.alias resolution results.
-  /// Key: "cmdName|aliasToken"; value: expanded command string, or null (negative cache).
+  /// Key: "shell|cwd|cmdName|aliasToken"; value: expanded command string,
+  /// or null (negative cache).
   /// Avoids repeated `git config --get alias.X` calls for the same alias token.
   final Map<String, String?> _aliasResolveCache = {};
 
   /// Shell-level alias cache: loaded once per shell type by running
   /// `<shell> -i -c alias` via the adapter (mirrors TS alias.ts loadedAliases).
-  /// Key: Shell enum; value: alias-name → expanded CommandToken list.
   final Map<Shell, Map<String, List<CommandToken>>> _shellAliasCache = {};
 
   /// EnsureSpecLoaded callback for this engine instance.
@@ -1273,139 +1613,67 @@ class AutocompleteEngine {
   /// Clear all internal caches, including the suggestion result cache.
   ///
   /// Call this after the user executes a command so that the next keystroke
-  /// fetches fresh suggestions (file listings, branch names, etc.) rather than
-  /// serving a potentially stale cached result.
+  /// fetches fresh dynamic suggestions (file listings, branch names, etc.).
   void clearCache() {
-    _suggestionCache.clear();
-    _incrementalSuggestionCache = null;
+    _activeDynamicSuggestionCache = null;
     _generateSpecCache.clear();
     _aliasResolveCache.clear();
     _shellAliasCache.clear();
   }
 
-  bool _sameTokenPrefix(CommandToken a, CommandToken b) {
-    return a.token == b.token &&
-        a.complete == b.complete &&
-        a.isOption == b.isOption &&
-        a.isQuoted == b.isQuoted;
-  }
-
-  bool _canReuseIncrementalSuggestionCache(
-    _IncrementalSuggestionCacheEntry entry,
-    List<CommandToken> currentTokens,
-  ) {
-    if (entry.rawTokens.length != currentTokens.length ||
-        currentTokens.isEmpty ||
-        entry.rawTokens.isEmpty) {
-      return false;
-    }
-    for (var i = 0; i < currentTokens.length - 1; i++) {
-      if (!_sameTokenPrefix(entry.rawTokens[i], currentTokens[i])) {
-        return false;
-      }
-    }
-    final previousLast = entry.rawTokens.last;
-    final currentLast = currentTokens.last;
-    if (previousLast.complete || currentLast.complete) return false;
-    if (previousLast.isOption != currentLast.isOption ||
-        previousLast.isQuoted != currentLast.isQuoted) {
-      return false;
-    }
-    if (currentLast.token.length < previousLast.token.length) return false;
-    return currentLast.token.startsWith(previousLast.token);
-  }
-
-  Future<_IncrementalReuseResult?> _tryReuseIncrementalSuggestionCache(
-    String normalizedCmd,
-    String cwd,
+  bool _canReuseActiveDynamicCache(
+    _ActiveDynamicSuggestionCache cached,
+    _ComputedSuggestionState state,
     Shell shell,
-    CompleteAdapter adapter,
-    int myGen, {
-    EnsureSpecLoaded? ensureSpecLoaded,
-    FilterStrategy? filterStrategyOverride,
-    LogCallback? logger,
-  }) async {
-    final cached = _incrementalSuggestionCache;
-    if (cached == null ||
-        cached.shell != shell ||
-        cached.adapterIdentity != identityHashCode(adapter) ||
-        cached.normalizedCmd == normalizedCmd ||
-        cached.isExpired(_suggestionCacheTtl)) {
-      return null;
-    }
+  ) {
+    final source = state.computation.dynamicSource;
+    if (source?.cacheKey == null) return false;
+    return cached.shell == shell &&
+        cached.effectiveCwd == state.effectiveCwd &&
+        cached.sourceKey == source!.cacheKey;
+  }
 
-    final currentTokens = parseCommand(normalizedCmd, shell);
-    if (!_canReuseIncrementalSuggestionCache(cached, currentTokens)) {
-      return null;
-    }
-
-    final state = await _computeSuggestionState(
-      normalizedCmd,
-      cwd,
-      shell,
-      adapter,
-      myGen,
-      ensureSpecLoaded: ensureSpecLoaded,
-      filterStrategyOverride: filterStrategyOverride,
-      logger: logger,
-      includeDynamic: false,
-    );
-    if (state == null || state.effectiveCwd != cached.effectiveCwd) {
-      return null;
-    }
-
-    final partialToken = state.computation.partialToken;
+  _SuggestionComputation _mergeDynamicSuggestions(
+    _SuggestionComputation computation,
+    List<Suggestion> rawDynamicSuggestions,
+  ) {
+    final partialToken = computation.partialToken;
     final partial =
         partialToken != null && partialToken.isPath && partialToken.token == '~'
             ? ''
             : partialToken?.token ?? '';
-    final narrowedDynamic = filterSuggestionList(
-      cached.dynamicSuggestions,
-      cached.dynamicFilterStrategy,
-      partial,
-    ).toList(growable: false);
-    final merged = _SuggestionComputation(
-      staticSuggestions:
-          List<Suggestion>.from(state.computation.staticSuggestions),
-      dynamicSuggestions: narrowedDynamic,
-      acceptedTokens: List<CommandToken>.from(state.computation.acceptedTokens),
-      partialToken: state.computation.partialToken,
-      argumentDescription: state.computation.argumentDescription,
-      charactersToDrop: state.computation.charactersToDrop,
-      dynamicFilterStrategy: cached.dynamicFilterStrategy,
-    );
-    final blob = merged.toBlob(shell);
-    logger?.call(
-        '$_acCacheLogTag[incremental-hit] from="${cached.normalizedCmd}" to="$normalizedCmd" dynamic=${narrowedDynamic.length} total=${blob.suggestions.length}');
-    return _IncrementalReuseResult(
-      blob.suggestions.isEmpty && blob.argumentDescription == null
-          ? null
-          : blob,
+    return _SuggestionComputation(
+      staticSuggestions: List<Suggestion>.from(computation.staticSuggestions),
+      rawDynamicSuggestions: List<Suggestion>.from(rawDynamicSuggestions),
+      dynamicSuggestions: filterSuggestionList(
+        rawDynamicSuggestions,
+        computation.dynamicFilterStrategy,
+        partial,
+      ).toList(growable: false),
+      acceptedTokens: List<CommandToken>.from(computation.acceptedTokens),
+      partialToken: computation.partialToken,
+      argumentDescription: computation.argumentDescription,
+      charactersToDrop: computation.charactersToDrop,
+      dynamicSource: computation.dynamicSource,
+      dynamicFilterStrategy: computation.dynamicFilterStrategy,
     );
   }
 
-  void _updateIncrementalSuggestionCache(
-    String normalizedCmd,
-    List<CommandToken> rawTokens,
-    String effectiveCwd,
+  void _updateActiveDynamicSuggestionCache(
     Shell shell,
-    CompleteAdapter adapter,
-    _SuggestionComputation computation,
+    _ComputedSuggestionState state,
   ) {
-    final dynamicFilterStrategy = computation.dynamicFilterStrategy;
-    if (dynamicFilterStrategy == null ||
-        computation.dynamicSuggestions.isEmpty) {
-      _incrementalSuggestionCache = null;
+    final source = state.computation.dynamicSource;
+    if (source?.cacheKey == null) {
+      _activeDynamicSuggestionCache = null;
       return;
     }
-    _incrementalSuggestionCache = _IncrementalSuggestionCacheEntry(
-      normalizedCmd: normalizedCmd,
-      rawTokens: List<CommandToken>.from(rawTokens),
-      effectiveCwd: effectiveCwd,
+    _activeDynamicSuggestionCache = _ActiveDynamicSuggestionCache(
       shell: shell,
-      adapterIdentity: identityHashCode(adapter),
-      dynamicSuggestions: List<Suggestion>.from(computation.dynamicSuggestions),
-      dynamicFilterStrategy: dynamicFilterStrategy,
+      effectiveCwd: state.effectiveCwd,
+      sourceKey: source!.cacheKey!,
+      rawSuggestions:
+          List<Suggestion>.from(state.computation.rawDynamicSuggestions),
     );
   }
 
@@ -1416,24 +1684,19 @@ class AutocompleteEngine {
   Future<List<CommandToken>?> _expandRootAlias(
     List<CommandToken> tokens,
     Shell shell,
-    String cwd,
-    CompleteAdapter adapter,
     LogCallback? log,
   ) async {
     if (tokens.isEmpty || !tokens.first.complete) return null;
     if (shell != Shell.bash && shell != Shell.zsh) return null;
 
-    await _ensureShellAliasesLoaded(shell, adapter);
+    await _ensureShellAliasesLoaded(shell);
     return aliasExpand(tokens, _shellAliasCache[shell]!);
   }
 
-  Future<void> _ensureShellAliasesLoaded(
-    Shell shell,
-    CompleteAdapter adapter,
-  ) async {
+  Future<void> _ensureShellAliasesLoaded(Shell shell) async {
     if (shell != Shell.bash && shell != Shell.zsh) return;
     if (_shellAliasCache.containsKey(shell)) return;
-    _shellAliasCache[shell] = await loadShellAliases(shell, adapter);
+    _shellAliasCache[shell] = await loadShellAliases(shell, _adapter);
   }
 
   /// Dispose the engine (alias for clearCache for now).
@@ -1442,12 +1705,11 @@ class AutocompleteEngine {
   }
 
   /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
-  /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
   ///
-  /// Results are cached by (cmd, cwd, shell) for up to [suggestionCacheTtl]
-  /// (default 30 s) and at most [suggestionCacheMaxSize] entries (default 5,
-  /// LRU eviction).  Call [clearCache] after the user executes a command to
-  /// invalidate stale results (file listings, branch names, etc.).
+  /// Dynamic suggestions keep a single active cache slot for the current
+  /// dynamic source. Call [clearCache] after the user executes a command to
+  /// invalidate file listings, branch names, and other environment-sensitive
+  /// results.
   ///
   /// [timeout]: when provided the whole call is capped at that duration; on
   /// timeout null is returned (caller can fall back to DB-only suggestions).
@@ -1458,54 +1720,24 @@ class AutocompleteEngine {
   Future<SuggestionBlob?> getSuggestions(
     String cmd,
     String cwd,
-    Shell shell,
-    CompleteAdapter adapter, {
+    Shell shell, {
     EnsureSpecLoaded? ensureSpecLoaded,
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
     Duration? timeout,
   }) {
-    // Cache lookup: key is (cmd, cwd, shell).
     final normalizedCmd = _normalizeSuggestionCacheCommand(cmd);
-    final cacheKey = '$normalizedCmd|$cwd|${shell.name}';
-    final cached = _suggestionCache[cacheKey];
-    if (cached != null && !cached.isExpired(_suggestionCacheTtl)) {
-      // Promote to most-recently-used by reinserting at the end.
-      _suggestionCache.remove(cacheKey);
-      _suggestionCache[cacheKey] = cached;
-      // No implicit print; uses per-call, engine, or [setDefaultLogger] only.
-      final log = logger ?? _logger ?? _defaultLogger;
-      log?.call(
-          '$_acCacheLogTag[hit] cmd="$normalizedCmd" suggestions=${cached.blob.suggestions.length}');
-      return Future.value(cached.blob);
-    }
-
     final log = logger ?? _logger ?? _defaultLogger;
     final myGen = _requestGen;
-    final incrementalReuse = _tryReuseIncrementalSuggestionCache(
+    final Future<SuggestionBlob?> work = _doGetSuggestions(
       normalizedCmd,
       cwd,
       shell,
-      adapter,
       myGen,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: log,
     );
-    final Future<SuggestionBlob?> work =
-        incrementalReuse.then<SuggestionBlob?>((reused) {
-      if (reused != null) return reused.blob;
-      return _doGetSuggestions(
-        normalizedCmd,
-        cwd,
-        shell,
-        adapter,
-        myGen,
-        ensureSpecLoaded: ensureSpecLoaded,
-        filterStrategyOverride: filterStrategyOverride,
-        logger: logger,
-      );
-    });
 
     Future<SuggestionBlob?> wrappedWork;
     if (timeout != null) {
@@ -1514,16 +1746,7 @@ class AutocompleteEngine {
       wrappedWork = work;
     }
 
-    return wrappedWork.then((result) {
-      // Only cache a valid result that wasn't superseded by a newer request.
-      if (result != null && _requestGen == myGen) {
-        _putSuggestionCache(cacheKey, result);
-        final log = logger ?? _logger ?? _defaultLogger;
-        log?.call(
-            '$_acCacheLogTag[write] cmd="$normalizedCmd" suggestions=${result.suggestions.length} size=${_suggestionCache.length}/$_suggestionCacheMaxSize ttl=${_suggestionCacheTtl.inSeconds}s');
-      }
-      return result;
-    });
+    return wrappedWork;
   }
 
   /// Internal implementation of [getSuggestions].
@@ -1535,12 +1758,13 @@ class AutocompleteEngine {
     String cmd,
     String cwd,
     Shell shell,
-    CompleteAdapter adapter,
     int myGen, {
     EnsureSpecLoaded? ensureSpecLoaded,
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
     bool includeDynamic = true,
+    required Map<String, Future<RuntimeCommandNode>>
+        materializedSubcommandCache,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
     final rawCmdTokens = parseCommand(cmd, shell);
@@ -1549,11 +1773,11 @@ class AutocompleteEngine {
     if (activeCmd.isEmpty) return null;
     final rootToken = activeCmd.first;
     if (!rootToken.complete) {
-      await _ensureShellAliasesLoaded(shell, adapter);
+      await _ensureShellAliasesLoaded(shell);
+      final shellAliasCache = _shellAliasCache[shell];
       return _ComputedSuggestionState(
-        computation: runCommand(rootToken,
-            aliases: _shellAliasCache[shell]?.keys ?? const []),
-        rawTokens: rawCmdTokens,
+        computation:
+            runCommand(rootToken, aliases: shellAliasCache?.keys ?? const []),
         effectiveCwd: cwd,
       );
     }
@@ -1566,8 +1790,7 @@ class AutocompleteEngine {
     }
     FigSpec? spec = loadSpec(activeCmd);
     if (spec == null) {
-      final expanded =
-          await _expandRootAlias(activeCmd, shell, cwd, adapter, log);
+      final expanded = await _expandRootAlias(activeCmd, shell, log);
       if (expanded != null) {
         activeCmd = expanded;
         final newRoot = activeCmd.first;
@@ -1579,7 +1802,7 @@ class AutocompleteEngine {
 
     if (_requestGen != myGen) return null;
 
-    final resolvedCwd = await adapter.resolveCwd(cwd, shell);
+    final resolvedCwd = await _adapter.resolveCwd(cwd, shell);
 
     if (_requestGen != myGen) return null;
 
@@ -1593,7 +1816,7 @@ class AutocompleteEngine {
           generated = _generateSpecCache[cacheKey];
         } else {
           final tokens = activeCmd.map((t) => t.token).toList();
-          final executeCommand = _createExecuteCommand(resolvedCwd, adapter);
+          final executeCommand = _createExecuteCommand(resolvedCwd, _adapter);
           generated = await gen(tokens, executeCommand);
           if (generated != null) {
             _putGenerateSpecCache(cacheKey, generated);
@@ -1611,12 +1834,13 @@ class AutocompleteEngine {
     final subcommand = runtimeNodeFromSpec(spec!);
     final lastToken = activeCmd.isNotEmpty ? activeCmd.last : null;
     final tokenCwdResult =
-        await _resolveTokenCwd(lastToken, resolvedCwd, shell, adapter);
+        await _resolveTokenCwd(lastToken, resolvedCwd, shell, _adapter);
 
     if (_requestGen != myGen) return null;
 
-    final effectiveCwd =
+    final rawEffectiveCwd =
         tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
+    final effectiveCwd = _normalizeEffectiveCwd(rawEffectiveCwd, shell);
     log?.call('[autocomplete] tokenCwd: '
         'lastToken="${lastToken?.token}" '
         'pathy=${tokenCwdResult.pathy} '
@@ -1644,9 +1868,10 @@ class AutocompleteEngine {
 
     final context = CompletionContext(
       allTokens: effectiveTokens,
-      cwd: effectiveCwd,
+      cwd: rawEffectiveCwd,
       shell: shell,
-      adapter: adapter,
+      adapter: _adapter,
+      materializedSubcommandCache: materializedSubcommandCache,
       currentIndex: 1,
       ensureSpecLoaded:
           ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
@@ -1667,7 +1892,6 @@ class AutocompleteEngine {
 
     return _ComputedSuggestionState(
       computation: result,
-      rawTokens: rawCmdTokens,
       effectiveCwd: effectiveCwd,
     );
   }
@@ -1676,24 +1900,72 @@ class AutocompleteEngine {
     String cmd,
     String cwd,
     Shell shell,
-    CompleteAdapter adapter,
     int myGen, {
     EnsureSpecLoaded? ensureSpecLoaded,
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
-    final state = await _computeSuggestionState(
+    final materializedSubcommandCache = <String, Future<RuntimeCommandNode>>{};
+    final staticState = await _computeSuggestionState(
       cmd,
       cwd,
       shell,
-      adapter,
       myGen,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: logger,
+      includeDynamic: false,
+      materializedSubcommandCache: materializedSubcommandCache,
     );
-    if (state == null) return null;
+    if (staticState == null) {
+      _activeDynamicSuggestionCache = null;
+      return null;
+    }
+
+    final dynamicSource = staticState.computation.dynamicSource;
+    if (dynamicSource == null) {
+      _activeDynamicSuggestionCache = null;
+      final resultBlob = staticState.computation.toBlob(shell);
+      if (resultBlob.suggestions.isEmpty &&
+          resultBlob.argumentDescription == null) return null;
+      log?.call('[autocomplete] result: '
+          '${resultBlob.suggestions.length} suggestions, '
+          'charactersToDrop=${resultBlob.charactersToDrop}');
+      return resultBlob;
+    }
+
+    final cached = _activeDynamicSuggestionCache;
+    if (cached != null &&
+        _canReuseActiveDynamicCache(cached, staticState, shell)) {
+      final merged = _mergeDynamicSuggestions(
+        staticState.computation,
+        cached.rawSuggestions,
+      );
+      final blob = merged.toBlob(shell);
+      log?.call(
+          '$_acCacheLogTag[dynamic-hit] source="${dynamicSource.debugLabel}" dynamic=${merged.dynamicSuggestions.length} total=${blob.suggestions.length}');
+      if (blob.suggestions.isEmpty && blob.argumentDescription == null) {
+        return null;
+      }
+      return blob;
+    }
+
+    final state = await _computeSuggestionState(
+      cmd,
+      cwd,
+      shell,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      materializedSubcommandCache: materializedSubcommandCache,
+    );
+    if (state == null) {
+      _activeDynamicSuggestionCache = null;
+      return null;
+    }
+    _updateActiveDynamicSuggestionCache(shell, state);
     final resultBlob = state.computation.toBlob(shell);
     if (resultBlob.suggestions.isEmpty &&
         resultBlob.argumentDescription == null) return null;
@@ -1701,14 +1973,6 @@ class AutocompleteEngine {
     log?.call('[autocomplete] result: '
         '${resultBlob.suggestions.length} suggestions, '
         'charactersToDrop=${resultBlob.charactersToDrop}');
-    _updateIncrementalSuggestionCache(
-      cmd,
-      state.rawTokens,
-      state.effectiveCwd,
-      shell,
-      adapter,
-      state.computation,
-    );
     return resultBlob;
   }
 }
@@ -1838,12 +2102,12 @@ void setDefaultEnsureSpecLoaded(EnsureSpecLoaded? f) {
   _defaultEnsureSpecLoaded = f;
 }
 
-// Global default engine for backward compatibility.
-final _defaultEngine = AutocompleteEngine();
+// Global default engines for backward compatibility, partitioned by adapter.
+final _defaultEngines = HashMap<CompleteAdapter, AutocompleteEngine>.identity();
 
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
-/// Uses a default global [AutocompleteEngine] instance.
+/// Uses a default global [AutocompleteEngine] instance per adapter.
 /// [filterStrategyOverride] when set (e.g. [FilterStrategy.fuzzy]) overrides spec-level filter for this call.
 /// [timeout] caps the whole call; null on timeout (fall back to DB-only suggestions).
 Future<SuggestionBlob?> getSuggestions(
@@ -1856,16 +2120,27 @@ Future<SuggestionBlob?> getSuggestions(
   LogCallback? logger,
   Duration? timeout,
 }) {
-  return _defaultEngine.getSuggestions(cmd, cwd, shell, adapter,
-      ensureSpecLoaded: ensureSpecLoaded,
-      filterStrategyOverride: filterStrategyOverride,
-      logger: logger,
-      timeout: timeout);
+  final engine = _defaultEngines.putIfAbsent(
+    adapter,
+    () => AutocompleteEngine(adapter: adapter),
+  );
+  return engine.getSuggestions(
+    cmd,
+    cwd,
+    shell,
+    ensureSpecLoaded: ensureSpecLoaded,
+    filterStrategyOverride: filterStrategyOverride,
+    logger: logger,
+    timeout: timeout,
+  );
 }
 
 /// Clear the default engine cache.
 void clearDefaultCache() {
-  _defaultEngine.clearCache();
+  for (final engine in _defaultEngines.values) {
+    engine.clearCache();
+  }
+  _defaultEngines.clear();
 }
 
 FigSpec _mergeSpecs(FigSpec original, FigSpec generated) {

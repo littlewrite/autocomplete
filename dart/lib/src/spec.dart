@@ -271,6 +271,10 @@ class FigGenerator {
 
   /// Script command (e.g. ['git', 'branch']). TS also allows Function or ExecuteCommandInput.
   final dynamic script;
+
+  /// Preserved for Fig compatibility.
+  /// The Dart runtime currently executes [script] directly and ignores
+  /// [scriptPath].
   final String? scriptPath;
 
   /// Template(s): "filepaths" | "folders" | "history" | "help" or list.
@@ -284,12 +288,19 @@ class FigGenerator {
       postProcess;
 
   /// FigCache or inline map (strategy, ttl, cacheByDirectory, cacheKey).
+  /// Preserved for API compatibility; generator-level caching is not yet
+  /// executed by the Dart runtime.
   final dynamic cache;
 
-  /// String or function in TS; use string for JSON specs.
+  /// String or function in TS.
+  /// Preserved for API compatibility; the Dart runtime currently filters
+  /// against the active token and does not execute generator-level
+  /// [getQueryTerm].
   final dynamic getQueryTerm;
 
-  /// String, or { on: "change"|"threshold"|"match", length?, string? }. Function not serialized.
+  /// String, or { on: "change"|"threshold"|"match", length?, string? }.
+  /// Preserved for API compatibility; generator-level triggers are not yet
+  /// executed by the Dart runtime.
   final dynamic trigger;
   final String? splitOn;
 
@@ -370,19 +381,24 @@ class FigArg {
   /// Whether options can interrupt variadic args (default true in TS).
   final bool? optionsCanBreakVariadicArg;
 
-  /// Arg is a command; load its spec (syntactic sugar for loadSpec).
+  /// Arg is a command; load the current token's registered spec and continue
+  /// traversal inside it.
   final bool? isCommand;
 
-  /// Arg is a script; load spec from cwd .fig/autocomplete/build.
+  /// Preserved for Fig schema compatibility.
+  /// The Dart runtime does not currently implement `isScript`.
   final bool? isScript;
 
-  /// Prefix for module spec path (deprecated in TS; use loadSpec).
+  /// Preserved for Fig schema compatibility.
+  /// The Dart runtime does not currently implement `isModule`.
   final String? isModule;
 
   /// Debounce keystrokes before running generators.
   final bool? debounce;
 
-  /// Load spec: string, Subcommand, or function (dynamic for TS compat).
+  /// Load spec and continue traversal inside it.
+  /// The Dart runtime supports string, [FigSpec], and [FigSubcommand] values.
+  /// Function-typed `loadSpec` remains unsupported.
   final dynamic loadSpec;
 
   /// e.g. { alias: string | function }. Dynamic for TS compat.
@@ -575,13 +591,15 @@ class FigSubcommand {
   /// Dynamically generate a subcommand at runtime (see [FigGenerateSubcommandCallback]). Not serialized to JSON.
   final FigGenerateSubcommandCallback? generateSpec;
 
-  /// Function or string in TS.
+  /// Preserved for Fig schema compatibility; the Dart runtime does not yet use
+  /// `generateSpecCacheKey`.
   final dynamic generateSpecCacheKey;
 
   /// { flagsArePosixNoncompliant?, optionsMustPrecedeArguments?, optionArgSeparators? }
   final dynamic parserDirectives;
 
-  /// Whether to cache loadSpec/generateSpec result.
+  /// Preserved for Fig schema compatibility; the Dart runtime does not yet use
+  /// this field to control subcommand-level caching.
   final bool? cache;
   final String? insertValue;
   final String? replaceValue;

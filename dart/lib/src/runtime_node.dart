@@ -20,6 +20,7 @@ class RuntimeCommandNode {
     this.requiresSubcommand,
     this.additionalSuggestions,
     this.parserDirectives,
+    this.generateSpec,
     this.hidden = false,
   });
 
@@ -35,6 +36,7 @@ class RuntimeCommandNode {
   final bool? requiresSubcommand;
   final List<dynamic>? additionalSuggestions;
   final dynamic parserDirectives;
+  final FigGenerateSubcommandCallback? generateSpec;
   final bool hidden;
 
   List<String> get nameList {
@@ -57,6 +59,7 @@ RuntimeCommandNode runtimeNodeFromSpec(FigSpec spec) {
     requiresSubcommand: spec.requiresSubcommand,
     additionalSuggestions: spec.additionalSuggestions,
     parserDirectives: spec.parserDirectives,
+    generateSpec: null,
     hidden: spec.hidden,
   );
 }
@@ -75,6 +78,7 @@ RuntimeCommandNode runtimeNodeFromSubcommand(FigSubcommand subcommand) {
     requiresSubcommand: subcommand.requiresSubcommand,
     additionalSuggestions: subcommand.additionalSuggestions,
     parserDirectives: subcommand.parserDirectives,
+    generateSpec: subcommand.generateSpec,
     hidden: subcommand.hidden,
   );
 }
@@ -89,16 +93,43 @@ RuntimeCommandNode mergeRuntimeCommandNode(
     subcommands: loaded.subcommands ?? original.subcommands,
     options: loaded.options ?? original.options,
     args: loaded.args ?? original.args,
-    icon: original.icon ?? loaded.icon,
+    icon: loaded.icon ?? original.icon,
     loadSpec: null,
-    filterStrategy: original.filterStrategy ?? loaded.filterStrategy,
+    filterStrategy: loaded.filterStrategy ?? original.filterStrategy,
     priority: loaded.priority ?? original.priority,
     requiresSubcommand:
         loaded.requiresSubcommand ?? original.requiresSubcommand,
     additionalSuggestions:
         loaded.additionalSuggestions ?? original.additionalSuggestions,
     parserDirectives: loaded.parserDirectives ?? original.parserDirectives,
+    generateSpec: loaded.generateSpec ?? original.generateSpec,
     hidden: original.hidden || loaded.hidden,
+  );
+}
+
+RuntimeCommandNode mergeGeneratedRuntimeCommandNode(
+  RuntimeCommandNode original,
+  RuntimeCommandNode generated,
+) {
+  return RuntimeCommandNode(
+    name: original.name,
+    description: generated.description ?? original.description,
+    subcommands: [...?original.subcommands, ...?generated.subcommands],
+    options: [...?original.options, ...?generated.options],
+    args: [...?original.args, ...?generated.args],
+    icon: generated.icon ?? original.icon,
+    loadSpec: generated.loadSpec ?? original.loadSpec,
+    filterStrategy: generated.filterStrategy ?? original.filterStrategy,
+    priority: generated.priority ?? original.priority,
+    requiresSubcommand:
+        generated.requiresSubcommand ?? original.requiresSubcommand,
+    additionalSuggestions: [
+      ...?original.additionalSuggestions,
+      ...?generated.additionalSuggestions,
+    ],
+    parserDirectives: generated.parserDirectives ?? original.parserDirectives,
+    generateSpec: original.generateSpec,
+    hidden: generated.hidden || original.hidden,
   );
 }
 

@@ -103,11 +103,12 @@ bool _isWideRune(int rune) {
 }
 
 /// Returns true when the character at [idx] in [s] is preceded by an odd number
-/// of consecutive backslashes (i.e. the character is escape-quoted).
-bool _isEscapedAt(String s, int idx) {
+/// of consecutive shell escape characters (i.e. the character is escape-quoted).
+bool _isEscapedAt(String s, int idx, Shell shell) {
+  final escapeChar = getShellWhitespaceEscapeChar(shell);
   var count = 0;
   var j = idx - 1;
-  while (j >= 0 && s[j] == '\\') {
+  while (j >= 0 && s[j] == escapeChar) {
     count++;
     j--;
   }
@@ -128,7 +129,7 @@ String _extractLastCommandSegment(String command, Shell shell) {
   for (var i = 0; i < command.length; i++) {
     final c = command[i];
 
-    if (_isQuoteChar(c, shell) && !_isEscapedAt(command, i)) {
+    if (_isQuoteChar(c, shell) && !_isEscapedAt(command, i, shell)) {
       if (activeQuote == null) {
         activeQuote = c;
       } else if (activeQuote == c) {
@@ -137,7 +138,7 @@ String _extractLastCommandSegment(String command, Shell shell) {
       continue;
     }
 
-    if (activeQuote != null || _isEscapedAt(command, i)) continue;
+    if (activeQuote != null || _isEscapedAt(command, i, shell)) continue;
 
     if (c == ';') {
       lastStart = i + 1;
@@ -191,7 +192,6 @@ List<CommandToken> _sanitizeTokens(List<_LexToken> tokens, Shell shell) {
 /// Lex [command] into tokens before quote-unwrapping / whitespace unescaping.
 List<_LexToken> _lex(String command, Shell shell) {
   final tokens = <_LexToken>[];
-  final escapeChar = getShellWhitespaceEscapeChar(shell);
   final spaceRegex = RegExp(r'\s');
   var readingQuotedString = false;
   var readingQuoteContinuedString = false;
@@ -224,7 +224,7 @@ List<_LexToken> _lex(String command, Shell shell) {
 
     if (readingQuotedString &&
         char == readingQuoteChar &&
-        !_isEscapedAt(command, i) &&
+        !_isEscapedAt(command, i, shell) &&
         !spaceRegex.hasMatch(i + 1 < command.length ? command[i + 1] : ' ')) {
       readingQuotedString = false;
       readingQuoteContinuedString = true;
@@ -233,7 +233,7 @@ List<_LexToken> _lex(String command, Shell shell) {
 
     if (readingQuotedString &&
         char == readingQuoteChar &&
-        !_isEscapedAt(command, i)) {
+        !_isEscapedAt(command, i, shell)) {
       readingQuotedString = false;
       final raw = command.substring(readingIdx + 1, i);
       tokens.add(_LexToken(
@@ -248,7 +248,7 @@ List<_LexToken> _lex(String command, Shell shell) {
 
     if (readingQuoteContinuedString &&
         spaceRegex.hasMatch(char) &&
-        !(i > 0 && command[i - 1] == escapeChar)) {
+        !_isEscapedAt(command, i, shell)) {
       readingQuoteContinuedString = false;
       final raw = command.substring(readingIdx, i);
       tokens.add(_LexToken(
@@ -264,7 +264,7 @@ List<_LexToken> _lex(String command, Shell shell) {
 
     if ((readingFlag &&
             spaceRegex.hasMatch(char) &&
-            !(i > 0 && command[i - 1] == escapeChar)) ||
+            !_isEscapedAt(command, i, shell)) ||
         (readingFlag && char == '=')) {
       readingFlag = false;
       final raw = command.substring(readingIdx, i);
@@ -287,7 +287,7 @@ List<_LexToken> _lex(String command, Shell shell) {
 
     if (readingCmd &&
         spaceRegex.hasMatch(char) &&
-        !(i > 0 && command[i - 1] == escapeChar)) {
+        !_isEscapedAt(command, i, shell)) {
       readingCmd = false;
       final raw = command.substring(readingIdx, i);
       tokens.add(_LexToken(

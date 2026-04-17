@@ -63,14 +63,14 @@ void main(List<String> args) async {
   }
 
   final cwd = Directory.current.path;
+  final adapter = LocalCompleteAdapter();
 
   // Create a dedicated engine instance
-  final engine = AutocompleteEngine();
+  final engine = AutocompleteEngine(adapter: adapter);
 
   print('Getting suggestions...');
   // Use the engine instance and pass the command from arguments
-  final blob =
-      await engine.getSuggestions(cmd!, cwd, shell, LocalCompleteAdapter());
+  final blob = await engine.getSuggestions(cmd, cwd, shell);
   if (blob == null) {
     print('(no spec or no suggestions)');
     exit(0);

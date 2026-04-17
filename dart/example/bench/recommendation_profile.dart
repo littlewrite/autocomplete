@@ -96,6 +96,7 @@ class ProfilingAdapter implements CompleteAdapter {
   Future<ProcessRunResult> runProcess(
     String executable,
     List<String> arguments, {
+    Map<String, String?>? environment,
     String? workingDirectory,
   }) async {
     final sw = Stopwatch()..start();
@@ -103,6 +104,7 @@ class ProfilingAdapter implements CompleteAdapter {
       return await _inner.runProcess(
         executable,
         arguments,
+        environment: environment,
         workingDirectory: workingDirectory,
       );
     } finally {
@@ -138,8 +140,8 @@ Future<_CallResult> _timedSuggestion({
     input,
     cwd,
     shell,
-    adapter,
-    logger: verboseRuntime ? null : (String _, [Object? __, StackTrace? ___]) {},
+    logger:
+        verboseRuntime ? null : (String _, [Object? __, StackTrace? ___]) {},
   );
   sw.stop();
   return _CallResult(
@@ -169,7 +171,7 @@ Future<void> _runColdAndWarmScenario({
   print('\n=== Scenario: $name ===');
   print('Flow: ${commandFlow.join(' -> ')}');
 
-  final coldEngine = AutocompleteEngine();
+  final coldEngine = AutocompleteEngine(adapter: adapter);
   clearDefaultCache();
   adapter.clearStats();
 
@@ -190,7 +192,7 @@ Future<void> _runColdAndWarmScenario({
   print('Adapter breakdown (cold run):');
   adapter.printStats();
 
-  final warmEngine = AutocompleteEngine();
+  final warmEngine = AutocompleteEngine(adapter: adapter);
   clearDefaultCache();
   adapter.clearStats();
 
