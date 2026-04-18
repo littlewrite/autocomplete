@@ -200,6 +200,8 @@ import 'find.dart';
 import 'firebase.dart';
 import 'firefox.dart';
 import 'flutter.dart';
+import 'fly.dart';
+import 'flyctl.dart';
 import 'fmt.dart';
 import 'fold.dart';
 import 'for.dart';
@@ -645,7 +647,8 @@ void registerAllSpecs() {
   registerSpec(cliSpec.name, () => cliSpec);
   registerSpec(figPublishSpecSpec.name, () => figPublishSpecSpec);
   registerSpec(presetSpec.name, () => presetSpec);
-  registerSpec(withfigAutocompleteToolsSpec.name, () => withfigAutocompleteToolsSpec);
+  registerSpec(
+      withfigAutocompleteToolsSpec.name, () => withfigAutocompleteToolsSpec);
   registerSpec(wordpressCreateBlockSpec.name, () => wordpressCreateBlockSpec);
   registerSpec(actSpec.name, () => actSpec);
   registerSpec(adbSpec.name, () => adbSpec);
@@ -796,7 +799,8 @@ void registerAllSpecs() {
   registerSpec(migrateSpec.name, () => migrateSpec);
   registerSpec(msbuildSpec.name, () => msbuildSpec);
   registerSpec(packSpec.name, () => packSpec);
-  registerSpec(dotnet_dotnet_publish.publishSpec.name, () => dotnet_dotnet_publish.publishSpec);
+  registerSpec(dotnet_dotnet_publish.publishSpec.name,
+      () => dotnet_dotnet_publish.publishSpec);
   registerSpec(restoreSpec.name, () => restoreSpec);
   registerSpec(storeSpec.name, () => storeSpec);
   registerSpec(dotslashSpec.name, () => dotslashSpec);
@@ -838,6 +842,8 @@ void registerAllSpecs() {
   registerSpec(firebaseSpec.name, () => firebaseSpec);
   registerSpec(firefoxSpec.name, () => firefoxSpec);
   registerSpec(flutterSpec.name, () => flutterSpec);
+  registerSpec(flySpec.name, () => flySpec);
+  registerSpec(flyctlSpec.name, () => flyctlSpec);
   registerSpec(fmtSpec.name, () => fmtSpec);
   registerSpec(foldSpec.name, () => foldSpec);
   registerSpec(forSpec.name, () => forSpec);
@@ -896,8 +902,10 @@ void registerAllSpecs() {
   registerSpec(ideaSpec.name, () => ideaSpec);
   registerSpec(iexSpec.name, () => iexSpec);
   registerSpec(ifSpec.name, () => ifSpec);
-  registerSpec(infracost_0_10_0.infracostSpec.name, () => infracost_0_10_0.infracostSpec);
-  registerSpec(infracost_0_9_0.infracostSpec.name, () => infracost_0_9_0.infracostSpec);
+  registerSpec(infracost_0_10_0.infracostSpec.name,
+      () => infracost_0_10_0.infracostSpec);
+  registerSpec(
+      infracost_0_9_0.infracostSpec.name, () => infracost_0_9_0.infracostSpec);
   registerSpec(installSpec.name, () => installSpec);
   registerSpec(jSpec.name, () => jSpec);
   registerSpec(javaSpec.name, () => javaSpec);
@@ -1154,8 +1162,10 @@ void registerAllSpecs() {
   registerSpec(svnSpec.name, () => svnSpec);
   registerSpec(svokitSpec.name, () => svokitSpec);
   registerSpec(sw_versSpec.name, () => sw_versSpec);
-  registerSpec(swagger_typescript_api.swaggerTypescriptApiSpec.name, () => swagger_typescript_api.swaggerTypescriptApiSpec);
-  registerSpec(swagger_typescript_api_1.swaggerTypescriptApiSpec.name, () => swagger_typescript_api_1.swaggerTypescriptApiSpec);
+  registerSpec(swagger_typescript_api.swaggerTypescriptApiSpec.name,
+      () => swagger_typescript_api.swaggerTypescriptApiSpec);
+  registerSpec(swagger_typescript_api_1.swaggerTypescriptApiSpec.name,
+      () => swagger_typescript_api_1.swaggerTypescriptApiSpec);
   registerSpec(swcSpec.name, () => swcSpec);
   registerSpec(swiftSpec.name, () => swiftSpec);
   registerSpec(symfonySpec.name, () => symfonySpec);
@@ -1168,9 +1178,11 @@ void registerAllSpecs() {
   registerSpec(taploSpec.name, () => taploSpec);
   registerSpec(tarSpec.name, () => tarSpec);
   registerSpec(taskSpec.name, () => taskSpec);
-  registerSpec(task_taskwarrior.taskwarriorSpec.name, () => task_taskwarrior.taskwarriorSpec);
+  registerSpec(task_taskwarrior.taskwarriorSpec.name,
+      () => task_taskwarrior.taskwarriorSpec);
   registerSpec(goTaskSpec.name, () => goTaskSpec);
-  registerSpec(task_taskwarrior_1.taskwarriorSpec.name, () => task_taskwarrior_1.taskwarriorSpec);
+  registerSpec(task_taskwarrior_1.taskwarriorSpec.name,
+      () => task_taskwarrior_1.taskwarriorSpec);
   registerSpec(tbSpec.name, () => tbSpec);
   registerSpec(tccutilSpec.name, () => tccutilSpec);
   registerSpec(teeSpec.name, () => teeSpec);

@@ -1,12 +1,6 @@
-// Auto-generated from rustrover.ts
-// Generated at: 2026-02-12
-
+// AI-generated from TypeScript source: rustrover.ts
 import 'package:autocomplete/src/spec.dart';
+import 'idea.dart';
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// import { generateInteliJCompletionSpec } from "./idea";
-// 
-// const completionSpec = generateInteliJCompletionSpec("rustrover", "RustRover");
-// export default completionSpec;
-// 
+final FigSpec rustroverSpec =
+    generateInteliJCompletionSpec('rustrover', 'RustRover');

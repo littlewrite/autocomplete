@@ -1,5 +1,5 @@
 const completionSpec: Fig.Spec = {
-  name: "cli",
+  name: "@capgo/cli",
   description: "Manage packages and bundle versions in Capgo Cloud",
   subcommands: [
     {

@@ -88,6 +88,46 @@ class ExecuteCommandOutput {
 typedef ExecuteCommandFunction = Future<ExecuteCommandOutput> Function(
     ExecuteCommandInput input);
 
+typedef FigVersionedSpecLoader = Future<FigSpec> Function();
+
+/// Returns the installed CLI version using the adapter-backed executeCommand.
+///
+/// The runtime builds [executeCommand] from [CompleteAdapter.runProcess], so
+/// version detection stays compatible with non-`dart:io` environments such as
+/// web or remote adapters.
+typedef FigGetVersionCommand = Future<String?> Function(
+  ExecuteCommandFunction executeCommand,
+);
+
+class FigVersionedSpecEntry {
+  const FigVersionedSpecEntry({
+    required this.version,
+    required this.load,
+  });
+
+  final String version;
+  final FigVersionedSpecLoader load;
+}
+
+/// Runtime-only metadata for root specs that select one of several deferred
+/// spec variants based on an installed command version.
+class FigVersionedSpecDefinition {
+  const FigVersionedSpecDefinition({
+    required this.cacheKey,
+    required this.versionFiles,
+    required this.getVersionCommand,
+  });
+
+  /// Engine-local cache key used to store the detected command version.
+  final String cacheKey;
+
+  /// Sorted version entries available for this command.
+  final List<FigVersionedSpecEntry> versionFiles;
+
+  /// Resolves the installed command version on first use per engine.
+  final FigGetVersionCommand getVersionCommand;
+}
+
 /// Callback to dynamically generate a *root* spec at runtime. Aligns with Fig generateSpec on Spec.
 /// The runtime passes [executeCommand] built from [CompleteAdapter] (no dart:io Process).
 /// Returns [FigSpec] or null (e.g. pnpm when generation fails).
@@ -667,6 +707,8 @@ class FigSpec {
     this.requiresSubcommand,
     this.additionalSuggestions,
     this.generateSpec,
+    this.generateSpecCacheKey,
+    this.versionedSpec,
     this.loadSpec,
   }) : args = _normalizeArgs(args);
 
@@ -700,6 +742,15 @@ class FigSpec {
   /// Dynamically generate a root spec at runtime (see [FigGenerateSpecCallback]). Runtime calls with adapter-provided executeCommand.
   final FigGenerateSpecCallback? generateSpec;
 
+  /// Optional stable cache key for root-level [generateSpec].
+  ///
+  /// When set to a string, the runtime can reuse generated specs across token
+  /// changes for the same command, such as version-detected specs.
+  final dynamic generateSpecCacheKey;
+
+  /// Runtime-only metadata for engine-scoped version selection.
+  final FigVersionedSpecDefinition? versionedSpec;
+
   final dynamic loadSpec;
 
   Map<String, dynamic> toJson() => {
@@ -731,6 +782,8 @@ class FigSpec {
           'additionalSuggestions': additionalSuggestions!
               .map((e) => e is FigSuggestion ? e.toJson() : e)
               .toList(),
+        if (generateSpecCacheKey != null && generateSpecCacheKey is String)
+          'generateSpecCacheKey': generateSpecCacheKey,
       };
 }
 

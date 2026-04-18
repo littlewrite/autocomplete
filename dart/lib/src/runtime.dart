@@ -12,6 +12,7 @@ import 'shell.dart';
 import 'suggestion.dart';
 import 'template.dart';
 import 'context.dart';
+import 'versioned_spec.dart';
 
 typedef LogCallback = void Function(String message,
     [Object? error, StackTrace? stackTrace]);
@@ -1576,6 +1577,12 @@ class AutocompleteEngine {
   /// Avoids repeated `git config --get alias.X` calls for the same alias token.
   final Map<String, String?> _aliasResolveCache = {};
 
+  /// Engine-local cache of detected command versions for versioned root specs.
+  ///
+  /// The cache survives [clearCache] so a reused engine does not re-run
+  /// `cmd --version` after transient suggestion caches are invalidated.
+  final Map<String, String> _versionedSpecVersionCache = {};
+
   /// Shell-level alias cache: loaded once per shell type by running
   /// `<shell> -i -c alias` via the adapter (mirrors TS alias.ts loadedAliases).
   final Map<Shell, Map<String, List<CommandToken>>> _shellAliasCache = {};
@@ -1614,6 +1621,7 @@ class AutocompleteEngine {
   ///
   /// Call this after the user executes a command so that the next keystroke
   /// fetches fresh dynamic suggestions (file listings, branch names, etc.).
+  /// Versioned command detections remain cached for the engine lifetime.
   void clearCache() {
     _activeDynamicSuggestionCache = null;
     _generateSpecCache.clear();
@@ -1702,6 +1710,36 @@ class AutocompleteEngine {
   /// Dispose the engine (alias for clearCache for now).
   void dispose() {
     clearCache();
+    _versionedSpecVersionCache.clear();
+  }
+
+  Future<FigSpec?> _resolveVersionedGeneratedSpec(
+    FigVersionedSpecDefinition versionedSpec,
+    ExecuteCommandFunction executeCommand,
+    LogCallback? log,
+  ) async {
+    final cacheKey = versionedSpec.cacheKey;
+    String detectedVersion;
+    if (_versionedSpecVersionCache.containsKey(cacheKey)) {
+      detectedVersion = _versionedSpecVersionCache[cacheKey]!;
+      log?.call('[Fig versionedSpec] version cache hit: '
+          '$cacheKey -> ${detectedVersion.isEmpty ? '<latest>' : detectedVersion}');
+    } else {
+      log?.call('[Fig versionedSpec] version cache miss: $cacheKey');
+      try {
+        detectedVersion =
+            (await versionedSpec.getVersionCommand(executeCommand)) ?? '';
+      } catch (e, st) {
+        log?.call('[Fig versionedSpec] version detection error', e, st);
+        detectedVersion = '';
+      }
+      _versionedSpecVersionCache[cacheKey] = detectedVersion;
+    }
+
+    final selected =
+        pickVersionedSpecEntry(versionedSpec.versionFiles, detectedVersion);
+    if (selected == null) return null;
+    return selected.load();
   }
 
   /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
@@ -1807,17 +1845,28 @@ class AutocompleteEngine {
     if (_requestGen != myGen) return null;
 
     final gen = spec.generateSpec;
-    if (gen != null) {
+    final versionedSpec = spec.versionedSpec;
+    if (gen != null || versionedSpec != null) {
       try {
         final cacheKey =
             _buildGenerateSpecCacheKey(spec, activeCmd, resolvedCwd);
         FigSpec? generated;
         if (_generateSpecCache.containsKey(cacheKey)) {
+          log?.call('[Fig generateSpec] cache hit: $cacheKey');
           generated = _generateSpecCache[cacheKey];
         } else {
-          final tokens = activeCmd.map((t) => t.token).toList();
+          log?.call('[Fig generateSpec] cache miss: $cacheKey');
           final executeCommand = _createExecuteCommand(resolvedCwd, _adapter);
-          generated = await gen(tokens, executeCommand);
+          if (versionedSpec != null) {
+            generated = await _resolveVersionedGeneratedSpec(
+              versionedSpec,
+              executeCommand,
+              log,
+            );
+          } else if (gen != null) {
+            final tokens = activeCmd.map((t) => t.token).toList();
+            generated = await gen(tokens, executeCommand);
+          }
           if (generated != null) {
             _putGenerateSpecCache(cacheKey, generated);
           }
@@ -2184,6 +2233,10 @@ String _buildGenerateSpecCacheKey(
   List<CommandToken> tokens,
   String cwd,
 ) {
+  final stableKey = spec.generateSpecCacheKey;
+  if (stableKey is String && stableKey.isNotEmpty) {
+    return '${spec.name}|$cwd|$stableKey';
+  }
   final tokenKey =
       tokens.map((t) => '${t.token}:${t.complete ? 1 : 0}').join('\u0001');
   return '${spec.name}|$cwd|$tokenKey';

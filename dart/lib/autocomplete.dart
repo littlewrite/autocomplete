@@ -20,6 +20,7 @@ export 'src/spec.dart';
 export 'specs/all_specs_v2.dart';
 export 'src/suggestion.dart';
 export 'src/template.dart';
+export 'src/versioned_spec.dart';
 
 /// Register built-in specs (v2: deferred load). Call once when using the library.
 /// Specs are loaded on demand when getSuggestions is called for a command.

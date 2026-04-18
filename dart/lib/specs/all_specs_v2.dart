@@ -9,10 +9,7 @@ import 'package:autocomplete/specs/-.dart' deferred as spec_p_;
 import 'package:autocomplete/specs/@capgo/cli.dart' deferred as spec_capgo_cli;
 import 'package:autocomplete/specs/@fig/publish-spec.dart'
     deferred as spec_fig_publish_spec;
-import 'package:autocomplete/specs/@preset/cli.dart'
-    deferred as spec_preset_cli;
-import 'package:autocomplete/specs/@usermn/sdc/0.0.0.dart'
-    deferred as spec_usermn_sdc_0_0_0;
+import 'package:autocomplete/specs/preset.dart' deferred as spec_preset;
 import 'package:autocomplete/specs/@usermn/sdc/sdc.dart'
     deferred as spec_usermn_sdc_sdc;
 import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart'
@@ -247,6 +244,8 @@ import 'package:autocomplete/specs/find.dart' deferred as spec_find;
 import 'package:autocomplete/specs/firebase.dart' deferred as spec_firebase;
 import 'package:autocomplete/specs/firefox.dart' deferred as spec_firefox;
 import 'package:autocomplete/specs/flutter.dart' deferred as spec_flutter;
+import 'package:autocomplete/specs/fly.dart' deferred as spec_fly;
+import 'package:autocomplete/specs/flyctl.dart' deferred as spec_flyctl;
 import 'package:autocomplete/specs/fmt.dart' deferred as spec_fmt;
 import 'package:autocomplete/specs/fold.dart' deferred as spec_fold;
 import 'package:autocomplete/specs/for.dart' deferred as spec_for;
@@ -287,10 +286,6 @@ import 'package:autocomplete/specs/head.dart' deferred as spec_head;
 import 'package:autocomplete/specs/helm.dart' deferred as spec_helm;
 import 'package:autocomplete/specs/helmfile.dart' deferred as spec_helmfile;
 import 'package:autocomplete/specs/herd.dart' deferred as spec_herd;
-import 'package:autocomplete/specs/heroku/8.0.0.dart'
-    deferred as spec_heroku_8_0_0;
-import 'package:autocomplete/specs/heroku/8.6.0.dart'
-    deferred as spec_heroku_8_6_0;
 import 'package:autocomplete/specs/heroku/index.dart'
     deferred as spec_heroku_index;
 import 'package:autocomplete/specs/hexo.dart' deferred as spec_hexo;
@@ -299,6 +294,7 @@ import 'package:autocomplete/specs/hop.dart' deferred as spec_hop;
 import 'package:autocomplete/specs/hostname.dart' deferred as spec_hostname;
 import 'package:autocomplete/specs/htop.dart' deferred as spec_htop;
 import 'package:autocomplete/specs/http.dart' deferred as spec_http;
+import 'package:autocomplete/specs/https.dart' deferred as spec_https;
 import 'package:autocomplete/specs/httpy.dart' deferred as spec_httpy;
 import 'package:autocomplete/specs/hub.dart' deferred as spec_hub;
 import 'package:autocomplete/specs/hugo.dart' deferred as spec_hugo;
@@ -310,10 +306,6 @@ import 'package:autocomplete/specs/id.dart' deferred as spec_id;
 import 'package:autocomplete/specs/idea.dart' deferred as spec_idea;
 import 'package:autocomplete/specs/iex.dart' deferred as spec_iex;
 import 'package:autocomplete/specs/if.dart' deferred as spec_if;
-import 'package:autocomplete/specs/infracost/0.10.0.dart'
-    deferred as spec_infracost_0_10_0;
-import 'package:autocomplete/specs/infracost/0.9.0.dart'
-    deferred as spec_infracost_0_9_0;
 import 'package:autocomplete/specs/infracost/index.dart'
     deferred as spec_infracost_index;
 import 'package:autocomplete/specs/install.dart' deferred as spec_install;
@@ -522,6 +514,7 @@ import 'package:autocomplete/specs/ruby.dart' deferred as spec_ruby;
 import 'package:autocomplete/specs/ruff.dart' deferred as spec_ruff;
 import 'package:autocomplete/specs/rushx.dart' deferred as spec_rushx;
 import 'package:autocomplete/specs/rustc.dart' deferred as spec_rustc;
+import 'package:autocomplete/specs/rustrover.dart' deferred as spec_rustrover;
 import 'package:autocomplete/specs/rvm.dart' deferred as spec_rvm;
 import 'package:autocomplete/specs/sake.dart' deferred as spec_sake;
 import 'package:autocomplete/specs/sam.dart' deferred as spec_sam;
@@ -542,10 +535,6 @@ import 'package:autocomplete/specs/shasum.dart' deferred as spec_shasum;
 import 'package:autocomplete/specs/shell-config.dart'
     deferred as spec_shell_config;
 import 'package:autocomplete/specs/shelve.dart' deferred as spec_shelve;
-import 'package:autocomplete/specs/shopify/2.0.0.dart'
-    deferred as spec_shopify_2_0_0;
-import 'package:autocomplete/specs/shopify/3.0.0.dart'
-    deferred as spec_shopify_3_0_0;
 import 'package:autocomplete/specs/shopify/index.dart'
     deferred as spec_shopify_index;
 import 'package:autocomplete/specs/shortcuts.dart' deferred as spec_shortcuts;
@@ -731,6 +720,7 @@ import 'package:autocomplete/specs/zoxide.dart' deferred as spec_zoxide;
 /// Command names by first character (lowercase). One const list per char; lookup via [getV2SpecNamesForFirstChar].
 const List<String> v2SpecNamesFirstChar_minus = ['-'];
 const List<String> v2SpecNamesFirstChar_at = [
+  '@capgo/cli',
   '@commercelayer/cli',
   '@fig/publish-spec',
   '@forge/cli',
@@ -823,7 +813,6 @@ const List<String> v2SpecNamesFirstChar_c = [
   'clang++',
   'clean',
   'clear',
-  'cli',
   'cliff-jumper',
   'clilol',
   'clojure',
@@ -932,6 +921,8 @@ const List<String> v2SpecNamesFirstChar_f = [
   'firebase',
   'firefox',
   'flutter',
+  'fly',
+  'flyctl',
   'fmt',
   'fold',
   'for',
@@ -985,6 +976,7 @@ const List<String> v2SpecNamesFirstChar_h = [
   'htop',
   'http',
   'http.server',
+  'https',
   'httpy',
   'hub',
   'hugo',
@@ -1216,6 +1208,7 @@ const List<String> v2SpecNamesFirstChar_r = [
   'ruff',
   'rushx',
   'rustc',
+  'rustrover',
   'rvm'
 ];
 const List<String> v2SpecNamesFirstChar_s = [
@@ -1878,7 +1871,7 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_clear.loadLibrary();
       registerSpec(spec_clear.clearSpec.name, () => spec_clear.clearSpec);
       break;
-    case 'cli':
+    case '@capgo/cli':
       await spec_capgo_cli.loadLibrary();
       registerSpec(spec_capgo_cli.cliSpec.name, () => spec_capgo_cli.cliSpec);
       break;
@@ -2334,6 +2327,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(
           spec_flutter.flutterSpec.name, () => spec_flutter.flutterSpec);
       break;
+    case 'fly':
+      await spec_fly.loadLibrary();
+      registerSpec(spec_fly.flySpec.name, () => spec_fly.flySpec);
+      break;
+    case 'flyctl':
+      await spec_flyctl.loadLibrary();
+      registerSpec(spec_flyctl.flyctlSpec.name, () => spec_flyctl.flyctlSpec);
+      break;
     case 'fmt':
       await spec_fmt.loadLibrary();
       registerSpec(spec_fmt.fmtSpec.name, () => spec_fmt.fmtSpec);
@@ -2511,12 +2512,6 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_herd.herdSpec.name, () => spec_herd.herdSpec);
       break;
     case 'heroku':
-      await spec_heroku_8_0_0.loadLibrary();
-      registerSpec(spec_heroku_8_0_0.herokuSpec.name,
-          () => spec_heroku_8_0_0.herokuSpec);
-      await spec_heroku_8_6_0.loadLibrary();
-      registerSpec(spec_heroku_8_6_0.herokuSpec.name,
-          () => spec_heroku_8_6_0.herokuSpec);
       await spec_heroku_index.loadLibrary();
       registerSpec(spec_heroku_index.completionSpec.name,
           () => spec_heroku_index.completionSpec);
@@ -2545,6 +2540,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'http':
       await spec_http.loadLibrary();
       registerSpec(spec_http.httpSpec.name, () => spec_http.httpSpec);
+      break;
+    case 'https':
+      await spec_https.loadLibrary();
+      registerSpec(spec_https.httpsSpec.name, () => spec_https.httpsSpec);
       break;
     case 'http.server':
       await spec_python_http_server.loadLibrary();
@@ -3317,9 +3316,8 @@ Future<void> ensureSpecLoadedV2(String command) async {
           spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
       break;
     case 'preset':
-      await spec_preset_cli.loadLibrary();
-      registerSpec(
-          spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
+      await spec_preset.loadLibrary();
+      registerSpec(spec_preset.presetSpec.name, () => spec_preset.presetSpec);
       break;
     case 'prettier':
       await spec_prettier.loadLibrary();
@@ -3473,6 +3471,11 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_rustc.loadLibrary();
       registerSpec(spec_rustc.rustcSpec.name, () => spec_rustc.rustcSpec);
       break;
+    case 'rustrover':
+      await spec_rustrover.loadLibrary();
+      registerSpec(spec_rustrover.rustroverSpec.name,
+          () => spec_rustrover.rustroverSpec);
+      break;
     case 'rvm':
       await spec_rvm.loadLibrary();
       registerSpec(spec_rvm.rvmSpec.name, () => spec_rvm.rvmSpec);
@@ -3507,9 +3510,6 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_screen.screenSpec.name, () => spec_screen.screenSpec);
       break;
     case 'sdc':
-      await spec_usermn_sdc_0_0_0.loadLibrary();
-      registerSpec(spec_usermn_sdc_0_0_0.usermnSds0Spec.name,
-          () => spec_usermn_sdc_0_0_0.usermnSds0Spec);
       await spec_usermn_sdc_sdc.loadLibrary();
       registerSpec(spec_usermn_sdc_sdc.usermnSdcSpec.name,
           () => spec_usermn_sdc_sdc.usermnSdcSpec);
@@ -3558,12 +3558,6 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_shelve.shelveSpec.name, () => spec_shelve.shelveSpec);
       break;
     case 'shopify':
-      await spec_shopify_2_0_0.loadLibrary();
-      registerSpec(spec_shopify_2_0_0.shopifySpec.name,
-          () => spec_shopify_2_0_0.shopifySpec);
-      await spec_shopify_3_0_0.loadLibrary();
-      registerSpec(spec_shopify_3_0_0.shopifySpec.name,
-          () => spec_shopify_3_0_0.shopifySpec);
       await spec_shopify_index.loadLibrary();
       registerSpec(spec_shopify_index.completionSpec.name,
           () => spec_shopify_index.completionSpec);

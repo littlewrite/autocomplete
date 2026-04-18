@@ -1,9 +1,6 @@
-// Auto-generated from preset.ts
-// Generated at: 2026-02-12
+// AI-generated from TypeScript source: preset.ts
 
 import 'package:autocomplete/src/spec.dart';
+import '@preset/cli.dart' as preset_cli;
 
-// TODO: Manual conversion needed
-// Original TypeScript code preserved as comments:
-// export { default } from "./@preset/cli";
-// 
+final FigSpec presetSpec = preset_cli.presetSpec;

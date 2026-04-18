@@ -1,30 +1,48 @@
 // AI-generated from TypeScript source: task.ts
 import 'package:autocomplete/src/spec.dart';
-import 'task_go_task.dart';
-import 'task_taskwarrior.dart';
+import 'task/go_task.dart' as go_task;
+import 'task/taskwarrior.dart';
+
+FigSpec _taskRootFrom(FigSpec spec) => FigSpec(
+      name: 'task',
+      displayName: spec.displayName,
+      description: spec.description,
+      subcommands: spec.subcommands,
+      options: spec.options,
+      args: spec.args,
+      icon: spec.icon,
+      filterStrategy: spec.filterStrategy,
+      hidden: spec.hidden,
+      insertValue: spec.insertValue,
+      replaceValue: spec.replaceValue,
+      priority: spec.priority,
+      deprecated: spec.deprecated,
+      parserDirectives: spec.parserDirectives,
+      requiresSubcommand: spec.requiresSubcommand,
+      additionalSuggestions: spec.additionalSuggestions,
+      loadSpec: spec.loadSpec,
+    );
 
 final FigSpec taskSpec = FigSpec(
   name: 'task',
-  description: 'Task runner',
-  // The original TS spec uses generateSpec to dynamically switch between go-task and taskwarrior.
-  // We prioritize go-task here as the default.
-  // If the runtime supports generateSpec, logic similar to the following could be implemented:
-  /*
-  generateSpec: (dynamic context, dynamic executeShellCommand) async {
+  // loadSpec doesn't work for root commands; detect which `task` implementation is installed.
+  generateSpec: (
+    List<String> tokens,
+    ExecuteCommandFunction executeShellCommand,
+  ) async {
     try {
-      final output = await executeShellCommand('task', ['--version']);
-      if (output.contains('Go Task')) {
-        return goTaskSpec;
+      final output = await executeShellCommand(
+        const ExecuteCommandInput(
+          command: 'task',
+          args: ['--version'],
+        ),
+      );
+      if (output.stdout.contains('Task')) {
+        return _taskRootFrom(go_task.completionSpec);
       }
-      return taskwarriorSpec;
-    } catch (e) {
-      return taskwarriorSpec;
-    }
+    } catch (_) {}
+
+    return _taskRootFrom(taskwarriorSpec);
   },
-  */
-  // For now, we statically link to go-task properties, effectively making 'task' an alias for 'go-task'.
-  icon: goTaskSpec.icon,
-  args: goTaskSpec.args,
-  options: goTaskSpec.options,
-  subcommands: goTaskSpec.subcommands,
+  generateSpecCacheKey: 'version-detect',
 );

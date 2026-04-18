@@ -4,9 +4,9 @@
 
 import 'package:autocomplete/src/spec.dart';
 
-/// Completion spec for `cli` CLI
+/// Completion spec for `@capgo/cli` CLI
 final FigSpec cliSpec = FigSpec(
-  name: 'cli',
+  name: '@capgo/cli',
   description: 'Manage packages and bundle versions in Capgo Cloud',
   subcommands: [
 

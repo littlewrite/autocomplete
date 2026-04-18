@@ -1,8 +1,9 @@
 // AI-generated from TypeScript source: index.ts
 
 import 'package:autocomplete/src/spec.dart';
-import '8.0.0.dart' as v8_0_0;
-import '8.6.0.dart' as v8_6_0;
+import 'package:autocomplete/src/versioned_spec.dart';
+import '8.0.0.dart' deferred as v8_0_0;
+import '8.6.0.dart' deferred as v8_6_0;
 
 final _versionRegex = RegExp(r'heroku\/([0-9]+\.[0-9]+\.[0-9]+)');
 
@@ -21,29 +22,21 @@ Future<String> getVersionCommand(
   }
 }
 
-final completionSpec = FigSpec(
-  name: "heroku",
-  generateSpec:
-      (List<String> tokens, ExecuteCommandFunction executeShellCommand,
-          [FigGeneratorContext? context]) async {
-    try {
-      final version = await getVersionCommand(executeShellCommand);
+Future<FigSpec> _loadV800() async {
+  await v8_0_0.loadLibrary();
+  return v8_0_0.herokuSpec;
+}
 
-      final parts = version.split('.');
-      if (parts.length >= 2) {
-        final major = int.tryParse(parts[0]) ?? 0;
-        final minor = int.tryParse(parts[1]) ?? 0;
-        // If version is >= 8.6.0, use v8_6_0 spec
-        if (major > 8 || (major == 8 && minor >= 6)) {
-          return v8_6_0.herokuSpec;
-        }
-      }
+Future<FigSpec> _loadV860() async {
+  await v8_6_0.loadLibrary();
+  return v8_6_0.herokuSpec;
+}
 
-      // Default to 8.0.0 for older versions or parse failures
-      return v8_0_0.herokuSpec;
-    } catch (_) {
-      // Command not found or execution failed: use latest spec
-      return v8_6_0.herokuSpec;
-    }
-  },
+final completionSpec = createVersionedSpec(
+  specName: 'heroku',
+  versionFiles: const [
+    FigVersionedSpecEntry(version: '8.0.0', load: _loadV800),
+    FigVersionedSpecEntry(version: '8.6.0', load: _loadV860),
+  ],
+  getVersionCommand: getVersionCommand,
 );
