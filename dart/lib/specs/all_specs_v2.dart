@@ -9,9 +9,10 @@ import 'package:autocomplete/specs/-.dart' deferred as spec_p_;
 import 'package:autocomplete/specs/@capgo/cli.dart' deferred as spec_capgo_cli;
 import 'package:autocomplete/specs/@fig/publish-spec.dart'
     deferred as spec_fig_publish_spec;
-import 'package:autocomplete/specs/preset.dart' deferred as spec_preset;
-import 'package:autocomplete/specs/@usermn/sdc/sdc.dart'
-    deferred as spec_usermn_sdc_sdc;
+import 'package:autocomplete/specs/@preset/cli.dart'
+    deferred as spec_preset_cli;
+import 'package:autocomplete/specs/@usermn/sdc/0.0.0.dart'
+    deferred as spec_usermn_sdc_0_0_0;
 import 'package:autocomplete/specs/@withfig/autocomplete-tools.dart'
     deferred as spec_withfig_autocomplete_tools;
 import 'package:autocomplete/specs/@wordpress/create-block.dart'
@@ -99,6 +100,7 @@ import 'package:autocomplete/specs/circleci.dart' deferred as spec_circleci;
 import 'package:autocomplete/specs/cl.dart' deferred as spec_cl;
 import 'package:autocomplete/specs/clang++.dart' deferred as spec_clang__;
 import 'package:autocomplete/specs/clang.dart' deferred as spec_clang;
+import 'package:autocomplete/specs/claude.dart' deferred as spec_claude;
 import 'package:autocomplete/specs/clear.dart' deferred as spec_clear;
 import 'package:autocomplete/specs/cliff-jumper.dart'
     deferred as spec_cliff_jumper;
@@ -112,6 +114,7 @@ import 'package:autocomplete/specs/code-insiders.dart'
     deferred as spec_code_insiders;
 import 'package:autocomplete/specs/code.dart' deferred as spec_code;
 import 'package:autocomplete/specs/codesign.dart' deferred as spec_codesign;
+import 'package:autocomplete/specs/codex.dart' deferred as spec_codex;
 import 'package:autocomplete/specs/command.dart' deferred as spec_command;
 import 'package:autocomplete/specs/commercelayer.dart'
     deferred as spec_commercelayer;
@@ -261,6 +264,7 @@ import 'package:autocomplete/specs/gatsby.dart' deferred as spec_gatsby;
 import 'package:autocomplete/specs/gcc.dart' deferred as spec_gcc;
 import 'package:autocomplete/specs/gcloud.dart' deferred as spec_gcloud;
 import 'package:autocomplete/specs/gem.dart' deferred as spec_gem;
+import 'package:autocomplete/specs/gemini.dart' deferred as spec_gemini;
 import 'package:autocomplete/specs/ghq.dart' deferred as spec_ghq;
 import 'package:autocomplete/specs/git-quick-stats.dart'
     deferred as spec_git_quick_stats;
@@ -286,8 +290,10 @@ import 'package:autocomplete/specs/head.dart' deferred as spec_head;
 import 'package:autocomplete/specs/helm.dart' deferred as spec_helm;
 import 'package:autocomplete/specs/helmfile.dart' deferred as spec_helmfile;
 import 'package:autocomplete/specs/herd.dart' deferred as spec_herd;
-import 'package:autocomplete/specs/heroku/index.dart'
-    deferred as spec_heroku_index;
+import 'package:autocomplete/specs/heroku/8.0.0.dart'
+    deferred as spec_heroku_8_0_0;
+import 'package:autocomplete/specs/heroku/8.6.0.dart'
+    deferred as spec_heroku_8_6_0;
 import 'package:autocomplete/specs/hexo.dart' deferred as spec_hexo;
 import 'package:autocomplete/specs/homey.dart' deferred as spec_homey;
 import 'package:autocomplete/specs/hop.dart' deferred as spec_hop;
@@ -306,8 +312,10 @@ import 'package:autocomplete/specs/id.dart' deferred as spec_id;
 import 'package:autocomplete/specs/idea.dart' deferred as spec_idea;
 import 'package:autocomplete/specs/iex.dart' deferred as spec_iex;
 import 'package:autocomplete/specs/if.dart' deferred as spec_if;
-import 'package:autocomplete/specs/infracost/index.dart'
-    deferred as spec_infracost_index;
+import 'package:autocomplete/specs/infracost/0.10.0.dart'
+    deferred as spec_infracost_0_10_0;
+import 'package:autocomplete/specs/infracost/0.9.0.dart'
+    deferred as spec_infracost_0_9_0;
 import 'package:autocomplete/specs/install.dart' deferred as spec_install;
 import 'package:autocomplete/specs/j.dart' deferred as spec_j;
 import 'package:autocomplete/specs/java.dart' deferred as spec_java;
@@ -494,6 +502,7 @@ import 'package:autocomplete/specs/python/http.server.dart'
 import 'package:autocomplete/specs/qodana.dart' deferred as spec_qodana;
 import 'package:autocomplete/specs/quasar.dart' deferred as spec_quasar;
 import 'package:autocomplete/specs/quickmail.dart' deferred as spec_quickmail;
+import 'package:autocomplete/specs/qwen.dart' deferred as spec_qwen;
 import 'package:autocomplete/specs/railway.dart' deferred as spec_railway;
 import 'package:autocomplete/specs/rake.dart' deferred as spec_rake;
 import 'package:autocomplete/specs/rbenv.dart' deferred as spec_rbenv;
@@ -514,7 +523,6 @@ import 'package:autocomplete/specs/ruby.dart' deferred as spec_ruby;
 import 'package:autocomplete/specs/ruff.dart' deferred as spec_ruff;
 import 'package:autocomplete/specs/rushx.dart' deferred as spec_rushx;
 import 'package:autocomplete/specs/rustc.dart' deferred as spec_rustc;
-import 'package:autocomplete/specs/rustrover.dart' deferred as spec_rustrover;
 import 'package:autocomplete/specs/rvm.dart' deferred as spec_rvm;
 import 'package:autocomplete/specs/sake.dart' deferred as spec_sake;
 import 'package:autocomplete/specs/sam.dart' deferred as spec_sam;
@@ -535,8 +543,10 @@ import 'package:autocomplete/specs/shasum.dart' deferred as spec_shasum;
 import 'package:autocomplete/specs/shell-config.dart'
     deferred as spec_shell_config;
 import 'package:autocomplete/specs/shelve.dart' deferred as spec_shelve;
-import 'package:autocomplete/specs/shopify/index.dart'
-    deferred as spec_shopify_index;
+import 'package:autocomplete/specs/shopify/2.0.0.dart'
+    deferred as spec_shopify_2_0_0;
+import 'package:autocomplete/specs/shopify/3.0.0.dart'
+    deferred as spec_shopify_3_0_0;
 import 'package:autocomplete/specs/shortcuts.dart' deferred as spec_shortcuts;
 import 'package:autocomplete/specs/shred.dart' deferred as spec_shred;
 import 'package:autocomplete/specs/sidekiq.dart' deferred as spec_sidekiq;
@@ -811,8 +821,10 @@ const List<String> v2SpecNamesFirstChar_c = [
   'cl',
   'clang',
   'clang++',
+  'claude',
   'clean',
   'clear',
+  'cli',
   'cliff-jumper',
   'clilol',
   'clojure',
@@ -822,6 +834,7 @@ const List<String> v2SpecNamesFirstChar_c = [
   'code',
   'code-insiders',
   'codesign',
+  'codex',
   'command',
   'composer',
   'conda',
@@ -939,6 +952,7 @@ const List<String> v2SpecNamesFirstChar_g = [
   'gcc',
   'gcloud',
   'gem',
+  'gemini',
   'ghq',
   'git',
   'git-quick-stats',
@@ -1185,7 +1199,12 @@ const List<String> v2SpecNamesFirstChar_p = [
   'pyenv',
   'pytest'
 ];
-const List<String> v2SpecNamesFirstChar_q = ['qodana', 'quasar', 'quickmail'];
+const List<String> v2SpecNamesFirstChar_q = [
+  'qodana',
+  'quasar',
+  'quickmail',
+  'qwen'
+];
 const List<String> v2SpecNamesFirstChar_r = [
   'Rscript',
   'railway',
@@ -1208,7 +1227,6 @@ const List<String> v2SpecNamesFirstChar_r = [
   'ruff',
   'rushx',
   'rustc',
-  'rustrover',
   'rvm'
 ];
 const List<String> v2SpecNamesFirstChar_s = [
@@ -1490,6 +1508,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case '-':
       await spec_p_.loadLibrary();
       registerSpec(spec_p_.specSpec.name, () => spec_p_.specSpec);
+      break;
+    case '@capgo/cli':
+      await spec_capgo_cli.loadLibrary();
+      registerSpec(spec_capgo_cli.cliSpec.name, () => spec_capgo_cli.cliSpec);
       break;
     case '@commercelayer/cli':
       await spec_commercelayer.loadLibrary();
@@ -1862,6 +1884,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(
           spec_clang__.clangppSpec.name, () => spec_clang__.clangppSpec);
       break;
+    case 'claude':
+      await spec_claude.loadLibrary();
+      registerSpec(spec_claude.claudeSpec.name, () => spec_claude.claudeSpec);
+      break;
     case 'clean':
       await spec_dotnet_dotnet_clean.loadLibrary();
       registerSpec(spec_dotnet_dotnet_clean.cleanSpec.name,
@@ -1870,10 +1896,6 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'clear':
       await spec_clear.loadLibrary();
       registerSpec(spec_clear.clearSpec.name, () => spec_clear.clearSpec);
-      break;
-    case '@capgo/cli':
-      await spec_capgo_cli.loadLibrary();
-      registerSpec(spec_capgo_cli.cliSpec.name, () => spec_capgo_cli.cliSpec);
       break;
     case 'cliff-jumper':
       await spec_cliff_jumper.loadLibrary();
@@ -1915,6 +1937,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_codesign.loadLibrary();
       registerSpec(
           spec_codesign.codesignSpec.name, () => spec_codesign.codesignSpec);
+      break;
+    case 'codex':
+      await spec_codex.loadLibrary();
+      registerSpec(spec_codex.codexSpec.name, () => spec_codex.codexSpec);
       break;
     case 'command':
       await spec_command.loadLibrary();
@@ -2394,6 +2420,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_gem.loadLibrary();
       registerSpec(spec_gem.gemSpec.name, () => spec_gem.gemSpec);
       break;
+    case 'gemini':
+      await spec_gemini.loadLibrary();
+      registerSpec(spec_gemini.geminiSpec.name, () => spec_gemini.geminiSpec);
+      break;
     case 'ghq':
       await spec_ghq.loadLibrary();
       registerSpec(spec_ghq.ghqSpec.name, () => spec_ghq.ghqSpec);
@@ -2512,9 +2542,12 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_herd.herdSpec.name, () => spec_herd.herdSpec);
       break;
     case 'heroku':
-      await spec_heroku_index.loadLibrary();
-      registerSpec(spec_heroku_index.completionSpec.name,
-          () => spec_heroku_index.completionSpec);
+      await spec_heroku_8_0_0.loadLibrary();
+      registerSpec(spec_heroku_8_0_0.herokuSpec.name,
+          () => spec_heroku_8_0_0.herokuSpec);
+      await spec_heroku_8_6_0.loadLibrary();
+      registerSpec(spec_heroku_8_6_0.herokuSpec.name,
+          () => spec_heroku_8_6_0.herokuSpec);
       break;
     case 'hexo':
       await spec_hexo.loadLibrary();
@@ -2541,14 +2574,14 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_http.loadLibrary();
       registerSpec(spec_http.httpSpec.name, () => spec_http.httpSpec);
       break;
-    case 'https':
-      await spec_https.loadLibrary();
-      registerSpec(spec_https.httpsSpec.name, () => spec_https.httpsSpec);
-      break;
     case 'http.server':
       await spec_python_http_server.loadLibrary();
       registerSpec(spec_python_http_server.httpServerSpec.name,
           () => spec_python_http_server.httpServerSpec);
+      break;
+    case 'https':
+      await spec_https.loadLibrary();
+      registerSpec(spec_https.httpsSpec.name, () => spec_https.httpsSpec);
       break;
     case 'httpy':
       await spec_httpy.loadLibrary();
@@ -2596,9 +2629,12 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_appwrite.indexSpec.name, () => spec_appwrite.indexSpec);
       break;
     case 'infracost':
-      await spec_infracost_index.loadLibrary();
-      registerSpec(spec_infracost_index.completionSpec.name,
-          () => spec_infracost_index.completionSpec);
+      await spec_infracost_0_10_0.loadLibrary();
+      registerSpec(spec_infracost_0_10_0.infracostSpec.name,
+          () => spec_infracost_0_10_0.infracostSpec);
+      await spec_infracost_0_9_0.loadLibrary();
+      registerSpec(spec_infracost_0_9_0.infracostSpec.name,
+          () => spec_infracost_0_9_0.infracostSpec);
       break;
     case 'install':
       await spec_install.loadLibrary();
@@ -3316,8 +3352,9 @@ Future<void> ensureSpecLoadedV2(String command) async {
           spec_premake.premakeSpec.name, () => spec_premake.premakeSpec);
       break;
     case 'preset':
-      await spec_preset.loadLibrary();
-      registerSpec(spec_preset.presetSpec.name, () => spec_preset.presetSpec);
+      await spec_preset_cli.loadLibrary();
+      registerSpec(
+          spec_preset_cli.presetSpec.name, () => spec_preset_cli.presetSpec);
       break;
     case 'prettier':
       await spec_prettier.loadLibrary();
@@ -3385,6 +3422,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_quickmail.loadLibrary();
       registerSpec(spec_quickmail.quickmailSpec.name,
           () => spec_quickmail.quickmailSpec);
+      break;
+    case 'qwen':
+      await spec_qwen.loadLibrary();
+      registerSpec(spec_qwen.qwenSpec.name, () => spec_qwen.qwenSpec);
       break;
     case 'railway':
       await spec_railway.loadLibrary();
@@ -3471,11 +3512,6 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_rustc.loadLibrary();
       registerSpec(spec_rustc.rustcSpec.name, () => spec_rustc.rustcSpec);
       break;
-    case 'rustrover':
-      await spec_rustrover.loadLibrary();
-      registerSpec(spec_rustrover.rustroverSpec.name,
-          () => spec_rustrover.rustroverSpec);
-      break;
     case 'rvm':
       await spec_rvm.loadLibrary();
       registerSpec(spec_rvm.rvmSpec.name, () => spec_rvm.rvmSpec);
@@ -3510,9 +3546,9 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_screen.screenSpec.name, () => spec_screen.screenSpec);
       break;
     case 'sdc':
-      await spec_usermn_sdc_sdc.loadLibrary();
-      registerSpec(spec_usermn_sdc_sdc.usermnSdcSpec.name,
-          () => spec_usermn_sdc_sdc.usermnSdcSpec);
+      await spec_usermn_sdc_0_0_0.loadLibrary();
+      registerSpec(spec_usermn_sdc_0_0_0.usermnSds0Spec.name,
+          () => spec_usermn_sdc_0_0_0.usermnSds0Spec);
       break;
     case 'sed':
       await spec_sed.loadLibrary();
@@ -3558,9 +3594,12 @@ Future<void> ensureSpecLoadedV2(String command) async {
       registerSpec(spec_shelve.shelveSpec.name, () => spec_shelve.shelveSpec);
       break;
     case 'shopify':
-      await spec_shopify_index.loadLibrary();
-      registerSpec(spec_shopify_index.completionSpec.name,
-          () => spec_shopify_index.completionSpec);
+      await spec_shopify_2_0_0.loadLibrary();
+      registerSpec(spec_shopify_2_0_0.shopifySpec.name,
+          () => spec_shopify_2_0_0.shopifySpec);
+      await spec_shopify_3_0_0.loadLibrary();
+      registerSpec(spec_shopify_3_0_0.shopifySpec.name,
+          () => spec_shopify_3_0_0.shopifySpec);
       break;
     case 'shortcuts':
       await spec_shortcuts.loadLibrary();
