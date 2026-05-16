@@ -3,6 +3,7 @@ import 'parser.dart';
 import 'runtime_node.dart';
 import 'shell.dart';
 import 'spec.dart';
+import 'model.dart';
 
 /// Context object to avoid passing many parameters and creating intermediate lists during completion traversal.
 class CompletionContext {
@@ -38,6 +39,11 @@ class CompletionContext {
   /// at most once for the same traversal target in one `getSuggestions` call.
   final Map<String, Future<RuntimeCommandNode>> materializedSubcommandCache;
 
+  /// Callback fired when a single async source (template, generator) produces
+  /// intermediate results during streaming mode. The [SuggestionBlob] carries
+  /// only this source's output — no dedup, no sort, no final filtering.
+  final void Function(SuggestionBlob blob)? onSourcePartial;
+
   /// Alias resolution cache shared from [AutocompleteEngine].
   /// Key: "cmdName|token"; value: expanded command string, or null (negative cache).
   /// Null map means alias resolution is disabled for this context.
@@ -53,6 +59,7 @@ class CompletionContext {
     this.filterStrategyOverride,
     this.currentIndex = 0,
     this.aliasCache,
+    this.onSourcePartial,
   }) : materializedSubcommandCache = materializedSubcommandCache ?? {};
 
   bool get isAtEnd => currentIndex >= allTokens.length;

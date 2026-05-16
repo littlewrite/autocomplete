@@ -144,6 +144,9 @@ void main() {
   const customFunctionCacheCommand = 'ac_custom_function_cache_test';
   const singlePassSubcommandGenerateSpecCommand =
       'ac_single_pass_subcommand_generate_spec_test';
+  const requestStreamingCommand = 'ac_request_streaming_test';
+  const requestCancellationCommand = 'ac_request_cancellation_test';
+  const requestTimeoutCommand = 'ac_request_timeout_test';
 
   tearDownAll(() {
     unregisterSpec(optionValueCommand);
@@ -179,6 +182,9 @@ void main() {
     unregisterSpec(rebuiltPostProcessCacheCommand);
     unregisterSpec(customFunctionCacheCommand);
     unregisterSpec(singlePassSubcommandGenerateSpecCommand);
+    unregisterSpec(requestStreamingCommand);
+    unregisterSpec(requestCancellationCommand);
+    unregisterSpec(requestTimeoutCommand);
   });
 
   group('runtime examples', () {
@@ -604,6 +610,134 @@ void main() {
       expect(second, isNotNull);
       expect(second!.suggestions.map((s) => s.name).toList(), ['alpha']);
       expect(customCalls, 1);
+    });
+
+    test('requestSuggestions emits static then final events', () async {
+      registerSpec(
+        requestStreamingCommand,
+        () => FigSpec(
+          name: requestStreamingCommand,
+          args: [
+            FigArg(
+              suggestions: const ['alpha-static'],
+              generators: const FigGenerator(
+                script: ['list-request-streaming'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'list-request-streaming': ProcessRunResult(
+            stdout: 'alpha\nalpine\nbeta\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+      final handle = engine.requestSuggestions(
+        '$requestStreamingCommand al',
+        '/work',
+        Shell.bash,
+        mode: SuggestionRequestMode.staticThenFinal,
+      );
+
+      final events = await handle.stream.toList();
+      final result = await handle.done;
+
+      expect(
+        events.map((event) => event.kind).toList(),
+        equals([
+          SuggestionEventKind.staticPartial,
+          SuggestionEventKind.sourcePartial,
+          SuggestionEventKind.finalResult,
+        ]),
+      );
+      expect(events[0].blob, isNotNull);
+      expect(
+        events[0].blob!.suggestions.map((s) => s.name).toList(),
+        equals(['alpha-static']),
+      );
+      expect(events[1].kind, SuggestionEventKind.sourcePartial);
+      expect(events[1].blob, isNotNull);
+      expect(
+        events[1].blob!.suggestions.map((s) => s.name),
+        containsAll(['alpha', 'alpine', 'beta']),
+      );
+      expect(events[2].blob, isNotNull);
+      expect(
+        events[2].blob!.suggestions.map((s) => s.name),
+        containsAll(['alpha-static', 'alpha', 'alpine']),
+      );
+      expect(events[0].elapsed, isNotNull);
+      expect(events[2].elapsed, isNotNull);
+      expect(result, isNotNull);
+      expect(
+        result!.suggestions.map((s) => s.name),
+        containsAll(['alpha-static', 'alpha', 'alpine']),
+      );
+    });
+
+    test('requestSuggestions keeps cached dynamic results in the final frame',
+        () async {
+      registerSpec(
+        requestStreamingCommand,
+        () => FigSpec(
+          name: requestStreamingCommand,
+          args: [
+            FigArg(
+              suggestions: const ['alpha-static'],
+              generators: const FigGenerator(
+                script: ['list-request-streaming'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'list-request-streaming': ProcessRunResult(
+            stdout: 'alpha\nalpine\nbeta\n',
+          ),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+
+      final primed = await engine.getSuggestions(
+        '$requestStreamingCommand al',
+        '/work',
+        Shell.bash,
+      );
+      expect(primed, isNotNull);
+      expect(adapter.processInvocations.length, 1);
+
+      final handle = engine.requestSuggestions(
+        '$requestStreamingCommand alp',
+        '/work',
+        Shell.bash,
+        mode: SuggestionRequestMode.staticThenFinal,
+      );
+      final events = await handle.stream.toList();
+      final result = await handle.done;
+
+      expect(
+        events.map((event) => event.kind).toList(),
+        equals([
+          SuggestionEventKind.staticPartial,
+          SuggestionEventKind.finalResult,
+        ]),
+      );
+      expect(events.last.fromCache, isTrue);
+      expect(adapter.processInvocations.length, 1);
+      expect(result, isNotNull);
+      expect(
+        result!.suggestions.map((s) => s.name),
+        containsAll(['alpha-static', 'alpha', 'alpine']),
+      );
     });
 
     test('reuses git checkout branch suggestions while widening and narrowing',
@@ -1547,6 +1681,106 @@ void main() {
 
       expect(result, isNotNull);
       expect(result!.suggestions.map((s) => s.name), contains('fast'));
+    });
+
+    test('requestSuggestions cancel emits cancelled and resolves done to null',
+        () async {
+      registerSpec(
+        requestCancellationCommand,
+        () => FigSpec(
+          name: requestCancellationCommand,
+          args: [
+            FigArg(
+              suggestions: const ['slow-static'],
+              generators: const FigGenerator(
+                script: ['slow-request-cancel'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'slow-request-cancel': ProcessRunResult(stdout: 'slow-alpha\n'),
+        },
+        processDelays: const {
+          'slow-request-cancel': Duration(milliseconds: 200),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+      final handle = engine.requestSuggestions(
+        '$requestCancellationCommand sl',
+        '/work',
+        Shell.bash,
+        mode: SuggestionRequestMode.staticThenFinal,
+      );
+      final eventsFuture = handle.stream.toList();
+
+      await Future<void>.delayed(Duration.zero);
+      handle.cancel();
+
+      final result = await handle.done;
+      final events = await eventsFuture;
+
+      expect(result, isNull);
+      expect(
+        events.map((event) => event.kind).toList(),
+        equals([
+          SuggestionEventKind.staticPartial,
+          SuggestionEventKind.cancelled,
+        ]),
+      );
+    });
+
+    test('requestSuggestions timeout emits timeout and resolves done to null',
+        () async {
+      registerSpec(
+        requestTimeoutCommand,
+        () => FigSpec(
+          name: requestTimeoutCommand,
+          args: [
+            FigArg(
+              suggestions: const ['slow-static'],
+              generators: const FigGenerator(
+                script: ['slow-request-timeout'],
+                splitOn: '\n',
+              ),
+            ),
+          ],
+        ),
+      );
+
+      final adapter = FakeAdapter(
+        processResults: const {
+          'slow-request-timeout': ProcessRunResult(stdout: 'slow-alpha\n'),
+        },
+        processDelays: const {
+          'slow-request-timeout': Duration(milliseconds: 200),
+        },
+      );
+      final engine = AutocompleteEngine(adapter: adapter);
+      final handle = engine.requestSuggestions(
+        '$requestTimeoutCommand sl',
+        '/work',
+        Shell.bash,
+        mode: SuggestionRequestMode.staticThenFinal,
+        timeout: const Duration(milliseconds: 20),
+      );
+
+      final events = await handle.stream.toList();
+      final result = await handle.done;
+
+      expect(result, isNull);
+      expect(
+        events.map((event) => event.kind).toList(),
+        equals([
+          SuggestionEventKind.staticPartial,
+          SuggestionEventKind.timeout,
+        ]),
+      );
+      expect(events.last.elapsed, isNotNull);
     });
 
     test('subcommand generateSpec is materialized before nested traversal',

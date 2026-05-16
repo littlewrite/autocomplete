@@ -1,6 +1,6 @@
 name: autocomplete
 description: Fig-style CLI completion specs and runtime (parse command, load spec, get suggestions). Pure Dart
-version: 0.4.0
+version: 0.5.0
 repository: https://github.com/littlewrite/autocomplete
 issue_tracker: https://github.com/littlewrite/autocomplete/issues
 topics:

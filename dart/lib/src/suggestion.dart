@@ -1,5 +1,7 @@
 // Suggestion building: merge, filter, path handling (reference: inshellisense suggestion.ts).
 
+import 'dart:collection' show UnmodifiableListView;
+
 import 'model.dart';
 import 'parser.dart' show CommandToken;
 import 'shell.dart';
@@ -537,6 +539,142 @@ List<Suggestion> sortByPriority(Iterable<Suggestion> suggestions) {
     return order[a]!.compareTo(order[b]!);
   });
   return out;
+}
+
+/// Accumulates and sorts suggestions from a streaming request.
+///
+/// Designed for consumers that display partial results between
+/// [SuggestionEventKind.staticPartial] / [sourcePartial] events and the final
+/// [finalResult].  Usage:
+///
+/// ```dart
+/// final acc = AccumulatedSuggestions();
+/// await for (final event in handle.stream) {
+///   if (event.blob != null) {
+///     acc.add(event.blob!);                      // merge + dedup + sort
+///     ui.render(acc.suggestions);                // current-best view
+///   }
+///   if (event.kind == SuggestionEventKind.finalResult) {
+///     ui.render(event.blob!.suggestions);        // authoritative final
+///   }
+/// }
+/// ```
+///
+/// Selection state follows by [Suggestion.name] so that incremental updates
+/// don't jump the highlight.  Before the user presses direction keys the
+/// selection is inactive ([selectedIndex] is -1), so incremental data arrival
+/// produces no visible selection drift.
+class AccumulatedSuggestions {
+  final List<Suggestion> _items = [];
+  final Set<String> _seen = {};
+  int _selectedIndex = -1;
+  String? _selectedName;
+  bool _selectionActive = false;
+
+  /// Merge [blob] items into the accumulated list (dedup + stable sort).
+  void add(SuggestionBlob blob) {
+    for (final s in blob.suggestions) {
+      if (_seen.add(s.name)) _items.add(s);
+    }
+    _resort();
+    _restoreSelection();
+  }
+
+  /// Replace the entire list with [blob] items.
+  ///
+  /// Meant for the [SuggestionEventKind.finalResult] event — the blob
+  /// carries the authoritative fully-processed list.
+  void replace(SuggestionBlob blob) {
+    _items
+      ..clear()
+      ..addAll(blob.suggestions);
+    _seen
+      ..clear()
+      ..addAll(blob.suggestions.map((s) => s.name));
+    _restoreSelection();
+  }
+
+  /// Clear all accumulated state.  Typing a new command should call this.
+  void clear() {
+    _items.clear();
+    _seen.clear();
+    _selectedIndex = -1;
+    _selectedName = null;
+    _selectionActive = false;
+  }
+
+  // ── Selection tracking (name-based) ────────────────────────────────────
+
+  /// Move the selection highlight to the next item.
+  void selectNext() {
+    if (_items.isEmpty) return;
+    if (!_selectionActive) {
+      _selectionActive = true;
+      _selectedIndex = 0;
+    } else {
+      _selectedIndex = (_selectedIndex + 1).clamp(0, _items.length - 1);
+    }
+    _selectedName = _items[_selectedIndex].name;
+  }
+
+  /// Move the selection highlight to the previous item.
+  void selectPrevious() {
+    if (_items.isEmpty) return;
+    if (!_selectionActive) {
+      _selectionActive = true;
+      _selectedIndex = 0;
+    } else {
+      _selectedIndex = (_selectedIndex - 1).clamp(0, _items.length - 1);
+    }
+    _selectedName = _items[_selectedIndex].name;
+  }
+
+  /// The currently-highlighted item, or `null` when selection is inactive.
+  Suggestion? get selectedSuggestion =>
+      _selectedIndex >= 0 ? _items[_selectedIndex] : null;
+
+  // ── Sort ───────────────────────────────────────────────────────────────
+
+  /// Stable sort by [Suggestion.priority] descending.
+  void _resort() {
+    final order = <Suggestion, int>{};
+    for (var i = 0; i < _items.length; i++) {
+      order[_items[i]] = i;
+    }
+    _items.sort((a, b) {
+      final c = b.priority.compareTo(a.priority);
+      return c != 0 ? c : order[a]!.compareTo(order[b]!);
+    });
+  }
+
+  /// Re-find [selectedName] in the current list after a mutation.
+  void _restoreSelection() {
+    if (!_selectionActive) {
+      _selectedIndex = -1;
+      return;
+    }
+    if (_selectedName == null) {
+      _selectedIndex = _items.isNotEmpty ? 0 : -1;
+      return;
+    }
+    _selectedIndex =
+        _items.indexWhere((s) => s.name == _selectedName).clamp(-1, _items.length - 1);
+    if (_selectedIndex >= 0) _selectedName = _items[_selectedIndex].name;
+  }
+
+  // ── Read ───────────────────────────────────────────────────────────────
+
+  /// Current best list of suggestions (accumulated, deduped, sorted).
+  List<Suggestion> get suggestions => UnmodifiableListView(_items);
+
+  /// Number of accumulated suggestions.
+  int get length => _items.length;
+
+  /// Index of the currently selected item, or -1.
+  int get selectedIndex => _selectedIndex;
+
+  /// Whether the user has activated selection via [selectNext]/[selectPrevious].
+  bool get hasSelection => _selectionActive && _selectedIndex >= 0;
 }
 
 // ── Path escaping ─────────────────────────────────────────────────────────────
