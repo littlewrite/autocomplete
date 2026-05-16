@@ -193,6 +193,7 @@ CompletionContext? _expandInlineOptionContext(
     ensureSpecLoaded: context.ensureSpecLoaded,
     filterStrategyOverride: context.filterStrategyOverride,
     aliasCache: context.aliasCache,
+    onSourcePartial: context.onSourcePartial,
   );
   newContext.acceptedTokens.addAll(context.acceptedTokens);
   newContext.persistentOptions.addAll(context.persistentOptions);
@@ -807,19 +808,42 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
   final dynamicSource = _buildDynamicSuggestionSource(activeArg, context);
 
   if (includeDynamic) {
-    final templateSuggestions =
-        await runTemplateSuggestions(activeArg, context.cwd, context.adapter);
-    rawDynamicSuggestions.addAll(templateSuggestions);
+    // Start all async sources in parallel.
+    final futures = <Future<Iterable<Suggestion>>>[
+      runTemplateSuggestions(activeArg, context.cwd, context.adapter),
+      for (final gen in activeArg.generatorsList)
+        runGeneratorSuggestions(
+            gen, context.allTokens, context.cwd, context.adapter,
+            logger: logger),
+    ];
 
-    for (final gen in activeArg.generatorsList) {
-      final generated = await runGeneratorSuggestions(
-          gen, context.allTokens, context.cwd, context.adapter,
-          logger: logger);
-      rawDynamicSuggestions.addAll(generated);
+    // Collect results; emit per-source partial for streaming mode.
+    // Use indexed slots so final merge order matches spec declaration order,
+    // not async completion order (which would make ordering nondeterministic).
+    final allResults = List<Iterable<Suggestion>?>.filled(futures.length, null);
+    final pending = <Future<void>>[];
+    for (var i = 0; i < futures.length; i++) {
+      final idx = i;
+      pending.add(futures[idx].then((r) {
+        allResults[idx] = r;
+        if (r.isNotEmpty) {
+          context.onSourcePartial?.call(
+            SuggestionBlob(suggestions: r.map(_bumpDynamicPriority).toList()),
+          );
+        }
+      }).catchError((e, st) {
+        logger?.call('[autocomplete] dynamic source error', e, st);
+      }));
+    }
+    await Future.wait(pending);
+
+    for (final r in allResults) {
+      if (r != null) rawDynamicSuggestions.addAll(r);
     }
 
     dynamicSuggestions
-        .addAll(filterSuggestionList(rawDynamicSuggestions, strategy, partial));
+        .addAll(filterSuggestionList(rawDynamicSuggestions, strategy, partial)
+            .map(_bumpDynamicPriority));
   }
 
   staticSuggestions.addAll(
@@ -830,6 +854,29 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
     dynamicSuggestions: dynamicSuggestions,
     dynamicSource: dynamicSource,
     dynamicFilterStrategy: normalizeFilterStrategy(strategy),
+  );
+}
+
+/// If a [Suggestion] still carries the default priority (50), bump it so dynamic
+/// suggestions sort before static ones in the merged result.
+///
+/// Dynamic suggestions come from templates/generators, static from spec-defined
+/// options.  Bumping by +5 means dynamic items naturally rank first under
+/// [sortByPriority] while specs that explicitly set a higher priority are
+/// unaffected.  Within the dynamic group the original filter order (prefix →
+/// contains → subsequence) is preserved as the sort tiebreaker.
+Suggestion _bumpDynamicPriority(Suggestion s) {
+  if (s.priority > 50) return s;
+  return Suggestion(
+    name: s.name,
+    allNames: s.allNames,
+    description: s.description,
+    icon: s.icon,
+    priority: 55,
+    insertValue: s.insertValue,
+    type: s.type,
+    hidden: s.hidden,
+    pathy: s.pathy,
   );
 }
 
@@ -1330,6 +1377,7 @@ Future<_SuggestionComputation?> runSubcommand(
       ensureSpecLoaded: context.ensureSpecLoaded,
       filterStrategyOverride: context.filterStrategyOverride,
       aliasCache: context.aliasCache,
+      onSourcePartial: context.onSourcePartial,
     );
     newContext.acceptedTokens.addAll(context.acceptedTokens);
     newContext.persistentOptions.addAll(context.persistentOptions);
@@ -1547,11 +1595,274 @@ String _normalizeSuggestionCacheCommand(String cmd) {
   return '$trimmed ';
 }
 
+bool _hasSuggestionContent(SuggestionBlob blob) {
+  return blob.suggestions.isNotEmpty || blob.argumentDescription != null;
+}
+
+/// Delivery mode for [SuggestionRequestHandle] events.
+enum SuggestionRequestMode {
+  /// Compute the full result and emit only the final event.
+  finalOnly,
+
+  /// Emit static suggestions first, then emit the final merged result.
+  staticThenFinal,
+}
+
+/// Event type emitted by [SuggestionRequestHandle.stream].
+enum SuggestionEventKind {
+  /// The first frame containing only static suggestions.
+  staticPartial,
+
+  /// Intermediate frame containing partial results from a single async source
+  /// (template, generator script, etc.). Multiple [sourcePartial] events may
+  /// precede the terminal [finalResult].
+  sourcePartial,
+
+  /// The terminal frame containing the merged final result.
+  finalResult,
+
+  /// The request was logically cancelled before completion.
+  cancelled,
+
+  /// The request exceeded the configured timeout.
+  timeout,
+
+  /// The request failed with an unexpected runtime error.
+  error,
+}
+
+/// Event emitted for a suggestion request lifecycle.
+class SuggestionEvent {
+  const SuggestionEvent({
+    required this.kind,
+    this.blob,
+    this.error,
+    this.stackTrace,
+    this.fromCache = false,
+    this.elapsed,
+  });
+
+  /// Lifecycle status for this event.
+  final SuggestionEventKind kind;
+
+  /// Suggestions carried by `staticPartial` or `finalResult`.
+  final SuggestionBlob? blob;
+
+  /// Error object carried by `error`.
+  final Object? error;
+
+  /// Stack trace carried by `error`.
+  final StackTrace? stackTrace;
+
+  /// Whether the final dynamic portion reused the in-memory cache.
+  final bool fromCache;
+
+  /// Time elapsed since the request started.
+  final Duration? elapsed;
+}
+
+/// Handle for a single in-flight suggestion request.
+abstract class SuggestionRequestHandle {
+  /// Emits request lifecycle events until the request settles.
+  Stream<SuggestionEvent> get stream;
+
+  /// Completes with the final result, or `null` on timeout/cancel/no-result.
+  Future<SuggestionBlob?> get done;
+
+  /// Logically cancels this request. Results after this point are discarded.
+  void cancel();
+
+  /// Best-effort hard abort hook.
+  ///
+  /// Current runtime only guarantees logical cancellation. Future adapter
+  /// upgrades may attach transport/process interruption here.
+  Future<void> abort();
+}
+
+class _SuggestionRequestState {
+  _SuggestionRequestState(this.requestGeneration);
+
+  final int requestGeneration;
+  bool isCancelled = false;
+}
+
+class _FinalSuggestionResult {
+  const _FinalSuggestionResult({
+    required this.blob,
+    required this.fromCache,
+  });
+
+  final SuggestionBlob? blob;
+  final bool fromCache;
+}
+
+class _SuggestionRequestHandleImpl implements SuggestionRequestHandle {
+  _SuggestionRequestHandleImpl({
+    required AutocompleteEngine engine,
+    required LogCallback? logger,
+    required _SuggestionRequestState requestState,
+    Duration Function()? elapsedProvider,
+    Duration? timeout,
+  })  : _engine = engine,
+        _logger = logger,
+        _requestState = requestState,
+        _elapsedProvider = elapsedProvider {
+    if (timeout != null) {
+      _timeoutTimer = Timer(timeout, _onTimeout);
+    }
+  }
+
+  final AutocompleteEngine _engine;
+  final LogCallback? _logger;
+  final _SuggestionRequestState _requestState;
+  final Duration Function()? _elapsedProvider;
+  final StreamController<SuggestionEvent> _controller =
+      StreamController<SuggestionEvent>();
+  final Completer<SuggestionBlob?> _doneCompleter =
+      Completer<SuggestionBlob?>();
+  Timer? _timeoutTimer;
+  bool _settled = false;
+
+  @override
+  Stream<SuggestionEvent> get stream => _controller.stream;
+
+  @override
+  Future<SuggestionBlob?> get done => _doneCompleter.future;
+
+  bool get isSettled => _settled;
+  bool get isCancelled => _requestState.isCancelled;
+  int get requestGeneration => _requestState.requestGeneration;
+
+  @override
+  void cancel() {
+    _settleCancelled();
+  }
+
+  @override
+  Future<void> abort() async {
+    _settleCancelled();
+  }
+
+  void cancelFromEngine() {
+    _settleCancelled();
+  }
+
+  void emitStatic(SuggestionBlob blob, {required Duration elapsed}) {
+    if (_settled) return;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.staticPartial,
+        blob: blob,
+        elapsed: elapsed,
+      ),
+    );
+  }
+
+  void emitSource(SuggestionBlob blob) {
+    if (_settled) return;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.sourcePartial,
+        blob: blob,
+        elapsed: _elapsedProvider?.call(),
+      ),
+    );
+  }
+
+  void completeFinal(
+    SuggestionBlob? blob, {
+    required Duration elapsed,
+    bool fromCache = false,
+  }) {
+    if (_settled) return;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.finalResult,
+        blob: blob,
+        fromCache: fromCache,
+        elapsed: elapsed,
+      ),
+    );
+    _settleDone(blob);
+  }
+
+  void completeError(
+    Object error,
+    StackTrace stackTrace, {
+    required Duration elapsed,
+  }) {
+    if (_settled) return;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.error,
+        error: error,
+        stackTrace: stackTrace,
+        elapsed: elapsed,
+      ),
+    );
+    _settleError(error, stackTrace);
+  }
+
+  void _onTimeout() {
+    if (_settled) return;
+    _requestState.isCancelled = true;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.timeout,
+        elapsed: _elapsedProvider?.call(),
+      ),
+    );
+    _settleDone(null);
+  }
+
+  void _settleCancelled() {
+    if (_settled) return;
+    _requestState.isCancelled = true;
+    _controller.add(
+      SuggestionEvent(
+        kind: SuggestionEventKind.cancelled,
+        elapsed: _elapsedProvider?.call(),
+      ),
+    );
+    _settleDone(null);
+  }
+
+  void _settleDone(SuggestionBlob? blob) {
+    if (_settled) return;
+    _settled = true;
+    _timeoutTimer?.cancel();
+    if (!_doneCompleter.isCompleted) {
+      _doneCompleter.complete(blob);
+    }
+    unawaited(_closeStream());
+    _engine._unregisterRequestHandle(this);
+  }
+
+  void _settleError(Object error, StackTrace stackTrace) {
+    if (_settled) return;
+    _settled = true;
+    _timeoutTimer?.cancel();
+    if (!_doneCompleter.isCompleted) {
+      _doneCompleter.completeError(error, stackTrace);
+    }
+    unawaited(_closeStream());
+    _engine._unregisterRequestHandle(this);
+    _logger?.call('[autocomplete] suggestion request error', error, stackTrace);
+  }
+
+  Future<void> _closeStream() async {
+    if (!_controller.isClosed) {
+      await _controller.close();
+    }
+  }
+}
+
 /// Autocomplete engine that manages state and caching.
 class AutocompleteEngine {
   AutocompleteEngine({required CompleteAdapter adapter}) : _adapter = adapter;
 
   final CompleteAdapter _adapter;
+  final Set<_SuggestionRequestHandleImpl> _activeRequestHandles = {};
 
   _ActiveDynamicSuggestionCache? _activeDynamicSuggestionCache;
 
@@ -1598,6 +1909,18 @@ class AutocompleteEngine {
   /// null when superseded.
   int _requestGen = 0;
 
+  bool _isRequestCancelled(_SuggestionRequestHandleImpl handle) {
+    return handle.isCancelled || _requestGen != handle.requestGeneration;
+  }
+
+  void _registerRequestHandle(_SuggestionRequestHandleImpl handle) {
+    _activeRequestHandles.add(handle);
+  }
+
+  void _unregisterRequestHandle(_SuggestionRequestHandleImpl handle) {
+    _activeRequestHandles.remove(handle);
+  }
+
   /// Cancel any in-progress [getSuggestions] call.
   ///
   /// The superseded call returns null at the next cancellation checkpoint
@@ -1606,6 +1929,11 @@ class AutocompleteEngine {
   /// caller unblocks immediately once the timeout fires.
   void cancelPending() {
     _requestGen++;
+    for (final handle in List<_SuggestionRequestHandleImpl>.from(
+      _activeRequestHandles,
+    )) {
+      handle.cancelFromEngine();
+    }
   }
 
   /// Set the ensureSpecLoaded callback.
@@ -1657,7 +1985,7 @@ class AutocompleteEngine {
         rawDynamicSuggestions,
         computation.dynamicFilterStrategy,
         partial,
-      ).toList(growable: false),
+      ).map(_bumpDynamicPriority).toList(growable: false),
       acceptedTokens: List<CommandToken>.from(computation.acceptedTokens),
       partialToken: computation.partialToken,
       argumentDescription: computation.argumentDescription,
@@ -1709,6 +2037,7 @@ class AutocompleteEngine {
 
   /// Dispose the engine (alias for clearCache for now).
   void dispose() {
+    cancelPending();
     clearCache();
     _versionedSpecVersionCache.clear();
   }
@@ -1787,6 +2116,150 @@ class AutocompleteEngine {
     return wrappedWork;
   }
 
+  /// Start a suggestion request and return a handle for streaming/cancellation.
+  SuggestionRequestHandle requestSuggestions(
+    String cmd,
+    String cwd,
+    Shell shell, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    Duration? timeout,
+    SuggestionRequestMode mode = SuggestionRequestMode.finalOnly,
+  }) {
+    final normalizedCmd = _normalizeSuggestionCacheCommand(cmd);
+    final log = logger ?? _logger ?? _defaultLogger;
+    final stopwatch = Stopwatch()..start();
+    final handle = _SuggestionRequestHandleImpl(
+      engine: this,
+      logger: log,
+      requestState: _SuggestionRequestState(_requestGen),
+      elapsedProvider: () => stopwatch.elapsed,
+      timeout: timeout,
+    );
+    _registerRequestHandle(handle);
+    unawaited(
+      _runSuggestionRequest(
+        handle,
+        normalizedCmd,
+        cwd,
+        shell,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: log,
+        mode: mode,
+        stopwatch: stopwatch,
+      ),
+    );
+    return handle;
+  }
+
+  /// Convenience wrapper for the common "static first, final later" UI flow.
+  Stream<SuggestionEvent> streamSuggestions(
+    String cmd,
+    String cwd,
+    Shell shell, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    Duration? timeout,
+  }) {
+    return requestSuggestions(
+      cmd,
+      cwd,
+      shell,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      timeout: timeout,
+      mode: SuggestionRequestMode.staticThenFinal,
+    ).stream;
+  }
+
+  Future<void> _runSuggestionRequest(
+    _SuggestionRequestHandleImpl handle,
+    String cmd,
+    String cwd,
+    Shell shell, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    required SuggestionRequestMode mode,
+    required Stopwatch stopwatch,
+  }) async {
+    final log = logger ?? _logger ?? _defaultLogger;
+    final materializedSubcommandCache = <String, Future<RuntimeCommandNode>>{};
+
+    try {
+      // 两段式事件流的关键约束：
+      // 先复用现有静态阶段，必要时再进入动态阶段，避免为了流式而重写整条 runtime。
+      final staticState = await _computeStaticSuggestionState(
+        cmd,
+        cwd,
+        shell,
+        handle.requestGeneration,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: logger,
+        isCancelled: () => _isRequestCancelled(handle),
+        materializedSubcommandCache: materializedSubcommandCache,
+      );
+      if (handle.isSettled) return;
+      if (staticState == null) {
+        _activeDynamicSuggestionCache = null;
+        handle.completeFinal(null, elapsed: stopwatch.elapsed);
+        return;
+      }
+
+      final staticBlob = _toSuggestionBlob(staticState.computation, shell);
+      final hasDynamicStage = staticState.computation.dynamicSource != null;
+      if (mode == SuggestionRequestMode.staticThenFinal &&
+          hasDynamicStage &&
+          staticBlob != null) {
+        handle.emitStatic(staticBlob, elapsed: stopwatch.elapsed);
+      }
+
+      if (handle.isSettled) return;
+
+      final onSourcePartial = mode == SuggestionRequestMode.staticThenFinal
+          ? (SuggestionBlob blob) => handle.emitSource(blob)
+          : null;
+      final result = await _computeFinalSuggestionBlob(
+        cmd,
+        cwd,
+        shell,
+        handle.requestGeneration,
+        staticState,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: logger,
+        isCancelled: () => _isRequestCancelled(handle),
+        onSourcePartial: onSourcePartial,
+        materializedSubcommandCache: materializedSubcommandCache,
+      );
+      if (handle.isSettled) return;
+
+      final resultBlob = result.blob;
+      if (resultBlob != null) {
+        log?.call('[autocomplete] result: '
+            '${resultBlob.suggestions.length} suggestions, '
+            'charactersToDrop=${resultBlob.charactersToDrop}');
+      }
+      handle.completeFinal(
+        resultBlob,
+        elapsed: stopwatch.elapsed,
+        fromCache: result.fromCache,
+      );
+    } catch (error, stackTrace) {
+      if (handle.isSettled) return;
+      handle.completeError(
+        error,
+        stackTrace,
+        elapsed: stopwatch.elapsed,
+      );
+    }
+  }
+
   /// Internal implementation of [getSuggestions].
   ///
   /// [myGen] is a snapshot of [_requestGen] taken by the caller; whenever it
@@ -1801,6 +2274,8 @@ class AutocompleteEngine {
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
     bool includeDynamic = true,
+    bool Function()? isCancelled,
+    void Function(SuggestionBlob blob)? onSourcePartial,
     required Map<String, Future<RuntimeCommandNode>>
         materializedSubcommandCache,
   }) async {
@@ -1838,11 +2313,11 @@ class AutocompleteEngine {
       if (spec == null) return null;
     }
 
-    if (_requestGen != myGen) return null;
+    if ((isCancelled?.call() ?? false) || _requestGen != myGen) return null;
 
     final resolvedCwd = await _adapter.resolveCwd(cwd, shell);
 
-    if (_requestGen != myGen) return null;
+    if ((isCancelled?.call() ?? false) || _requestGen != myGen) return null;
 
     final gen = spec.generateSpec;
     final versionedSpec = spec.versionedSpec;
@@ -1885,7 +2360,7 @@ class AutocompleteEngine {
     final tokenCwdResult =
         await _resolveTokenCwd(lastToken, resolvedCwd, shell, _adapter);
 
-    if (_requestGen != myGen) return null;
+    if ((isCancelled?.call() ?? false) || _requestGen != myGen) return null;
 
     final rawEffectiveCwd =
         tokenCwdResult.pathy ? tokenCwdResult.cwd : resolvedCwd;
@@ -1926,6 +2401,7 @@ class AutocompleteEngine {
           ensureSpecLoaded ?? _ensureSpecLoaded ?? _defaultEnsureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       aliasCache: _aliasResolveCache,
+      onSourcePartial: onSourcePartial,
     );
 
     final result = await runSubcommand(
@@ -1937,11 +2413,136 @@ class AutocompleteEngine {
       includeDynamic,
     );
 
-    if (_requestGen != myGen || result == null) return null;
+    if ((isCancelled?.call() ?? false) ||
+        _requestGen != myGen ||
+        result == null) {
+      return null;
+    }
 
     return _ComputedSuggestionState(
       computation: result,
       effectiveCwd: effectiveCwd,
+    );
+  }
+
+  Future<_ComputedSuggestionState?> _computeStaticSuggestionState(
+    String cmd,
+    String cwd,
+    Shell shell,
+    int myGen, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    bool Function()? isCancelled,
+    required Map<String, Future<RuntimeCommandNode>>
+        materializedSubcommandCache,
+  }) {
+    return _computeSuggestionState(
+      cmd,
+      cwd,
+      shell,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      includeDynamic: false,
+      isCancelled: isCancelled,
+      materializedSubcommandCache: materializedSubcommandCache,
+    );
+  }
+
+  Future<_ComputedSuggestionState?> _computeFinalSuggestionState(
+    String cmd,
+    String cwd,
+    Shell shell,
+    int myGen, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    bool Function()? isCancelled,
+    void Function(SuggestionBlob blob)? onSourcePartial,
+    required Map<String, Future<RuntimeCommandNode>>
+        materializedSubcommandCache,
+  }) {
+    return _computeSuggestionState(
+      cmd,
+      cwd,
+      shell,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      isCancelled: isCancelled,
+      onSourcePartial: onSourcePartial,
+      materializedSubcommandCache: materializedSubcommandCache,
+    );
+  }
+
+  SuggestionBlob? _toSuggestionBlob(
+      _SuggestionComputation computation, Shell shell) {
+    final blob = computation.toBlob(shell);
+    if (!_hasSuggestionContent(blob)) return null;
+    return blob;
+  }
+
+  Future<_FinalSuggestionResult> _computeFinalSuggestionBlob(
+    String cmd,
+    String cwd,
+    Shell shell,
+    int myGen,
+    _ComputedSuggestionState staticState, {
+    EnsureSpecLoaded? ensureSpecLoaded,
+    FilterStrategy? filterStrategyOverride,
+    LogCallback? logger,
+    bool Function()? isCancelled,
+    void Function(SuggestionBlob blob)? onSourcePartial,
+    required Map<String, Future<RuntimeCommandNode>>
+        materializedSubcommandCache,
+  }) async {
+    final log = logger ?? _logger ?? _defaultLogger;
+    final dynamicSource = staticState.computation.dynamicSource;
+    if (dynamicSource == null) {
+      _activeDynamicSuggestionCache = null;
+      return _FinalSuggestionResult(
+        blob: _toSuggestionBlob(staticState.computation, shell),
+        fromCache: false,
+      );
+    }
+
+    final cached = _activeDynamicSuggestionCache;
+    if (cached != null &&
+        _canReuseActiveDynamicCache(cached, staticState, shell)) {
+      // 动态缓存命中依然属于“最终帧”，不并入第一帧，保持事件语义稳定。
+      final merged = _mergeDynamicSuggestions(
+        staticState.computation,
+        cached.rawSuggestions,
+      );
+      final blob = _toSuggestionBlob(merged, shell);
+      log?.call(
+          '$_acCacheLogTag[dynamic-hit] source="${dynamicSource.debugLabel}" dynamic=${merged.dynamicSuggestions.length} total=${blob?.suggestions.length ?? 0}');
+      return _FinalSuggestionResult(blob: blob, fromCache: true);
+    }
+
+    final state = await _computeFinalSuggestionState(
+      cmd,
+      cwd,
+      shell,
+      myGen,
+      ensureSpecLoaded: ensureSpecLoaded,
+      filterStrategyOverride: filterStrategyOverride,
+      logger: logger,
+      isCancelled: isCancelled,
+      onSourcePartial: onSourcePartial,
+      materializedSubcommandCache: materializedSubcommandCache,
+    );
+    if (state == null) {
+      _activeDynamicSuggestionCache = null;
+      return const _FinalSuggestionResult(blob: null, fromCache: false);
+    }
+    _updateActiveDynamicSuggestionCache(shell, state);
+    return _FinalSuggestionResult(
+      blob: _toSuggestionBlob(state.computation, shell),
+      fromCache: false,
     );
   }
 
@@ -1956,7 +2557,7 @@ class AutocompleteEngine {
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
     final materializedSubcommandCache = <String, Future<RuntimeCommandNode>>{};
-    final staticState = await _computeSuggestionState(
+    final staticState = await _computeStaticSuggestionState(
       cmd,
       cwd,
       shell,
@@ -1964,7 +2565,6 @@ class AutocompleteEngine {
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: logger,
-      includeDynamic: false,
       materializedSubcommandCache: materializedSubcommandCache,
     );
     if (staticState == null) {
@@ -1972,52 +2572,19 @@ class AutocompleteEngine {
       return null;
     }
 
-    final dynamicSource = staticState.computation.dynamicSource;
-    if (dynamicSource == null) {
-      _activeDynamicSuggestionCache = null;
-      final resultBlob = staticState.computation.toBlob(shell);
-      if (resultBlob.suggestions.isEmpty &&
-          resultBlob.argumentDescription == null) return null;
-      log?.call('[autocomplete] result: '
-          '${resultBlob.suggestions.length} suggestions, '
-          'charactersToDrop=${resultBlob.charactersToDrop}');
-      return resultBlob;
-    }
-
-    final cached = _activeDynamicSuggestionCache;
-    if (cached != null &&
-        _canReuseActiveDynamicCache(cached, staticState, shell)) {
-      final merged = _mergeDynamicSuggestions(
-        staticState.computation,
-        cached.rawSuggestions,
-      );
-      final blob = merged.toBlob(shell);
-      log?.call(
-          '$_acCacheLogTag[dynamic-hit] source="${dynamicSource.debugLabel}" dynamic=${merged.dynamicSuggestions.length} total=${blob.suggestions.length}');
-      if (blob.suggestions.isEmpty && blob.argumentDescription == null) {
-        return null;
-      }
-      return blob;
-    }
-
-    final state = await _computeSuggestionState(
+    final result = await _computeFinalSuggestionBlob(
       cmd,
       cwd,
       shell,
       myGen,
+      staticState,
       ensureSpecLoaded: ensureSpecLoaded,
       filterStrategyOverride: filterStrategyOverride,
       logger: logger,
       materializedSubcommandCache: materializedSubcommandCache,
     );
-    if (state == null) {
-      _activeDynamicSuggestionCache = null;
-      return null;
-    }
-    _updateActiveDynamicSuggestionCache(shell, state);
-    final resultBlob = state.computation.toBlob(shell);
-    if (resultBlob.suggestions.isEmpty &&
-        resultBlob.argumentDescription == null) return null;
+    final resultBlob = result.blob;
+    if (resultBlob == null) return null;
 
     log?.call('[autocomplete] result: '
         '${resultBlob.suggestions.length} suggestions, '
@@ -2154,6 +2721,13 @@ void setDefaultEnsureSpecLoaded(EnsureSpecLoaded? f) {
 // Global default engines for backward compatibility, partitioned by adapter.
 final _defaultEngines = HashMap<CompleteAdapter, AutocompleteEngine>.identity();
 
+AutocompleteEngine _defaultEngineFor(CompleteAdapter adapter) {
+  return _defaultEngines.putIfAbsent(
+    adapter,
+    () => AutocompleteEngine(adapter: adapter),
+  );
+}
+
 /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
 /// [adapter] is required (e.g. copy example/local_adapter.dart for a local dart:io implementation).
 /// Uses a default global [AutocompleteEngine] instance per adapter.
@@ -2169,11 +2743,56 @@ Future<SuggestionBlob?> getSuggestions(
   LogCallback? logger,
   Duration? timeout,
 }) {
-  final engine = _defaultEngines.putIfAbsent(
-    adapter,
-    () => AutocompleteEngine(adapter: adapter),
-  );
+  final engine = _defaultEngineFor(adapter);
   return engine.getSuggestions(
+    cmd,
+    cwd,
+    shell,
+    ensureSpecLoaded: ensureSpecLoaded,
+    filterStrategyOverride: filterStrategyOverride,
+    logger: logger,
+    timeout: timeout,
+  );
+}
+
+/// Request suggestions with a handle that exposes event stream + cancellation.
+SuggestionRequestHandle requestSuggestions(
+  String cmd,
+  String cwd,
+  Shell shell,
+  CompleteAdapter adapter, {
+  EnsureSpecLoaded? ensureSpecLoaded,
+  FilterStrategy? filterStrategyOverride,
+  LogCallback? logger,
+  Duration? timeout,
+  SuggestionRequestMode mode = SuggestionRequestMode.finalOnly,
+}) {
+  final engine = _defaultEngineFor(adapter);
+  return engine.requestSuggestions(
+    cmd,
+    cwd,
+    shell,
+    ensureSpecLoaded: ensureSpecLoaded,
+    filterStrategyOverride: filterStrategyOverride,
+    logger: logger,
+    timeout: timeout,
+    mode: mode,
+  );
+}
+
+/// Convenience wrapper that emits static suggestions first, then the final frame.
+Stream<SuggestionEvent> streamSuggestions(
+  String cmd,
+  String cwd,
+  Shell shell,
+  CompleteAdapter adapter, {
+  EnsureSpecLoaded? ensureSpecLoaded,
+  FilterStrategy? filterStrategyOverride,
+  LogCallback? logger,
+  Duration? timeout,
+}) {
+  final engine = _defaultEngineFor(adapter);
+  return engine.streamSuggestions(
     cmd,
     cwd,
     shell,

@@ -1,3 +1,8 @@
+## 0.5.0
+
+- add `requestSuggestions` / `streamSuggestions` with streamed suggestion events and request cancellation
+- add `example/stream_suggest_v2.dart`
+
 ## 0.4.0
 
 - bind `AutocompleteEngine` to a fixed adapter and simplify `engine.getSuggestions(cmd, cwd, shell)`
