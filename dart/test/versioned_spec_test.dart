@@ -244,7 +244,7 @@ void main() {
       expect(loads, 2);
     });
 
-    test('clearCache keeps detected version for the same engine', () async {
+    test('clearDynamicSuggestion keeps generated spec + version cache', () async {
       var loads = 0;
 
       registerSpec(
@@ -280,7 +280,7 @@ void main() {
         '/work',
         Shell.bash,
       );
-      engine.clearCache();
+      engine.clearDynamicSuggestion();
       final second = await engine.getSuggestions(
         '$command ',
         '/work',
@@ -291,7 +291,9 @@ void main() {
       expect(second, isNotNull);
       expect(second!.suggestions.map((s) => s.name), contains('--flag'));
       expect(adapter.processInvocations, hasLength(1));
-      expect(loads, 2);
+      // Generated spec (from versioned spec load) is preserved across
+      // clearDynamicSuggestion — only per-request dynamic results are cleared.
+      expect(loads, 1);
     });
 
     test('new engine re-detects the version', () async {

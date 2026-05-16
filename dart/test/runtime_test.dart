@@ -801,7 +801,7 @@ void main() {
       expect(adapter.processInvocations.length, 1);
     });
 
-    test('clearCache forces the active dynamic source to reload', () async {
+    test('clearDynamicSuggestion forces the active dynamic source to reload', () async {
       registerSpec(
         gitCheckoutBranchCacheCommand,
         () => FigSpec(
@@ -839,7 +839,7 @@ void main() {
       expect(first, isNotNull);
       expect(adapter.processInvocations.length, 1);
 
-      engine.clearCache();
+      engine.clearDynamicSuggestion();
 
       final second = await engine.getSuggestions(
         '$gitCheckoutBranchCacheCommand checkout ma',

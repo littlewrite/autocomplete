@@ -1577,14 +1577,30 @@ class _ActiveDynamicSuggestionCache {
   final List<Suggestion> rawSuggestions;
 }
 
+class _DeferredGenerateSpec {
+  const _DeferredGenerateSpec({
+    required this.spec,
+    required this.activeCmd,
+    required this.resolvedCwd,
+  });
+
+  final FigSpec spec;
+  final List<CommandToken> activeCmd;
+  final String resolvedCwd;
+}
+
 class _ComputedSuggestionState {
   const _ComputedSuggestionState({
     required this.computation,
     required this.effectiveCwd,
+    this.deferredGen,
   });
 
   final _SuggestionComputation computation;
   final String effectiveCwd;
+
+  /// Non-null when generateSpec was deferred (skipGenerateSpec was true).
+  final _DeferredGenerateSpec? deferredGen;
 }
 
 String _normalizeSuggestionCacheCommand(String cmd) {
@@ -1890,7 +1906,7 @@ class AutocompleteEngine {
 
   /// Engine-local cache of detected command versions for versioned root specs.
   ///
-  /// The cache survives [clearCache] so a reused engine does not re-run
+  /// The cache survives [clearDynamicSuggestion] so a reused engine does not re-run
   /// `cmd --version` after transient suggestion caches are invalidated.
   final Map<String, String> _versionedSpecVersionCache = {};
 
@@ -1945,12 +1961,29 @@ class AutocompleteEngine {
     _logger = f;
   }
 
-  /// Clear all internal caches, including the suggestion result cache.
+  /// Clear dynamic suggestion caches (per-request tensor).
   ///
   /// Call this after the user executes a command so that the next keystroke
   /// fetches fresh dynamic suggestions (file listings, branch names, etc.).
+  ///
+  /// The following caches are preserved across calls because their data is
+  /// stable and expensive to regenerate (especially over SSH):
+  /// - [_generateSpecCache]: generated command specs (e.g. git subcommands from
+  ///   `git help -a`).  These do not change when the user runs a command.
+  /// - [_aliasResolveCache]: alias resolution results (e.g. git config alias).
+  /// - [_shellAliasCache]: shell alias output, loaded once per shell type.
+  ///
+  /// Use [clearAllCaches] when full cache invalidation is genuinely needed.
   /// Versioned command detections remain cached for the engine lifetime.
-  void clearCache() {
+  void clearDynamicSuggestion() {
+    _activeDynamicSuggestionCache = null;
+  }
+
+  /// Clear all caches including generated specs and alias resolutions.
+  ///
+  /// Only use this when the environment has fundamentally changed
+  /// (e.g. different host, new shell session, or git was updated remotely).
+  void clearAllCaches() {
     _activeDynamicSuggestionCache = null;
     _generateSpecCache.clear();
     _aliasResolveCache.clear();
@@ -2035,10 +2068,10 @@ class AutocompleteEngine {
     _shellAliasCache[shell] = await loadShellAliases(shell, _adapter);
   }
 
-  /// Dispose the engine (alias for clearCache for now).
+  /// Dispose the engine and all caches.
   void dispose() {
     cancelPending();
-    clearCache();
+    clearAllCaches();
     _versionedSpecVersionCache.clear();
   }
 
@@ -2074,7 +2107,7 @@ class AutocompleteEngine {
   /// Main entry: get suggestions for [cmd] in [cwd] for [shell].
   ///
   /// Dynamic suggestions keep a single active cache slot for the current
-  /// dynamic source. Call [clearCache] after the user executes a command to
+  /// dynamic source. Call [clearDynamicSuggestion] after the user executes a command to
   /// invalidate file listings, branch names, and other environment-sensitive
   /// results.
   ///
@@ -2191,9 +2224,12 @@ class AutocompleteEngine {
     final materializedSubcommandCache = <String, Future<RuntimeCommandNode>>{};
 
     try {
-      // 两段式事件流的关键约束：
-      // 先复用现有静态阶段，必要时再进入动态阶段，避免为了流式而重写整条 runtime。
-      final staticState = await _computeStaticSuggestionState(
+      // First static pass — defer generateSpec so we can emit staticPartial
+      // immediately without waiting for network round-trips (git help -a over
+      // SSH takes seconds). A second pass runs once the spec arrives.
+      final skipGen =
+          mode == SuggestionRequestMode.staticThenFinal;
+      var staticState = await _computeStaticSuggestionState(
         cmd,
         cwd,
         shell,
@@ -2202,6 +2238,7 @@ class AutocompleteEngine {
         filterStrategyOverride: filterStrategyOverride,
         logger: logger,
         isCancelled: () => _isRequestCancelled(handle),
+        skipGenerateSpec: skipGen,
         materializedSubcommandCache: materializedSubcommandCache,
       );
       if (handle.isSettled) return;
@@ -2211,12 +2248,73 @@ class AutocompleteEngine {
         return;
       }
 
-      final staticBlob = _toSuggestionBlob(staticState.computation, shell);
-      final hasDynamicStage = staticState.computation.dynamicSource != null;
+      var staticBlob = _toSuggestionBlob(staticState.computation, shell);
+      var hasDynamicStage = staticState.computation.dynamicSource != null;
       if (mode == SuggestionRequestMode.staticThenFinal &&
           hasDynamicStage &&
           staticBlob != null) {
         handle.emitStatic(staticBlob, elapsed: stopwatch.elapsed);
+      }
+
+      // Run deferred generateSpec and emit an updated staticPartial when
+      // the generated subcommands / options arrive.
+      if (staticState.deferredGen != null && !handle.isSettled) {
+        final dg = staticState.deferredGen!;
+        try {
+          final cacheKey =
+              _buildGenerateSpecCacheKey(dg.spec, dg.activeCmd, dg.resolvedCwd);
+          if (!_generateSpecCache.containsKey(cacheKey)) {
+            final executeCommand =
+                _createExecuteCommand(dg.resolvedCwd, _adapter);
+            final versionedSpec = dg.spec.versionedSpec;
+            final gen = dg.spec.generateSpec;
+            log?.call('[Fig generateSpec] deferred miss: $cacheKey');
+            FigSpec? generated;
+            if (versionedSpec != null) {
+              generated = await _resolveVersionedGeneratedSpec(
+                versionedSpec,
+                executeCommand,
+                log,
+              );
+            } else if (gen != null) {
+              final tokens = dg.activeCmd.map((t) => t.token).toList();
+              generated = await gen(tokens, executeCommand);
+            }
+            if (generated != null) {
+              _putGenerateSpecCache(cacheKey, generated);
+            }
+          }
+        } catch (e, st) {
+          log?.call('[Fig generateSpec] deferred error', e, st);
+        }
+
+        if (handle.isSettled) return;
+
+        // Second static pass — generateSpec is now in cache (hit).
+        staticState = await _computeStaticSuggestionState(
+          cmd,
+          cwd,
+          shell,
+          handle.requestGeneration,
+          ensureSpecLoaded: ensureSpecLoaded,
+          filterStrategyOverride: filterStrategyOverride,
+          logger: logger,
+          isCancelled: () => _isRequestCancelled(handle),
+          materializedSubcommandCache: materializedSubcommandCache,
+        );
+        if (handle.isSettled) return;
+        if (staticState == null) {
+          _activeDynamicSuggestionCache = null;
+          handle.completeFinal(null, elapsed: stopwatch.elapsed);
+          return;
+        }
+
+        staticBlob = _toSuggestionBlob(staticState.computation, shell);
+        hasDynamicStage = staticState.computation.dynamicSource != null;
+        if (mode == SuggestionRequestMode.staticThenFinal &&
+            staticBlob != null) {
+          handle.emitStatic(staticBlob, elapsed: stopwatch.elapsed);
+        }
       }
 
       if (handle.isSettled) return;
@@ -2276,6 +2374,7 @@ class AutocompleteEngine {
     bool includeDynamic = true,
     bool Function()? isCancelled,
     void Function(SuggestionBlob blob)? onSourcePartial,
+    bool skipGenerateSpec = false,
     required Map<String, Future<RuntimeCommandNode>>
         materializedSubcommandCache,
   }) async {
@@ -2319,9 +2418,16 @@ class AutocompleteEngine {
 
     if ((isCancelled?.call() ?? false) || _requestGen != myGen) return null;
 
+    _DeferredGenerateSpec? deferredGen;
     final gen = spec.generateSpec;
     final versionedSpec = spec.versionedSpec;
-    if (gen != null || versionedSpec != null) {
+    if (skipGenerateSpec && (gen != null || versionedSpec != null)) {
+      deferredGen = _DeferredGenerateSpec(
+        spec: spec,
+        activeCmd: activeCmd,
+        resolvedCwd: resolvedCwd,
+      );
+    } else if (!skipGenerateSpec && (gen != null || versionedSpec != null)) {
       try {
         final cacheKey =
             _buildGenerateSpecCacheKey(spec, activeCmd, resolvedCwd);
@@ -2422,6 +2528,7 @@ class AutocompleteEngine {
     return _ComputedSuggestionState(
       computation: result,
       effectiveCwd: effectiveCwd,
+      deferredGen: deferredGen,
     );
   }
 
@@ -2434,6 +2541,7 @@ class AutocompleteEngine {
     FilterStrategy? filterStrategyOverride,
     LogCallback? logger,
     bool Function()? isCancelled,
+    bool skipGenerateSpec = false,
     required Map<String, Future<RuntimeCommandNode>>
         materializedSubcommandCache,
   }) {
@@ -2447,6 +2555,7 @@ class AutocompleteEngine {
       logger: logger,
       includeDynamic: false,
       isCancelled: isCancelled,
+      skipGenerateSpec: skipGenerateSpec,
       materializedSubcommandCache: materializedSubcommandCache,
     );
   }
@@ -2803,10 +2912,10 @@ Stream<SuggestionEvent> streamSuggestions(
   );
 }
 
-/// Clear the default engine cache.
+/// Clear all default engine caches (full reset).
 void clearDefaultCache() {
   for (final engine in _defaultEngines.values) {
-    engine.clearCache();
+    engine.clearAllCaches();
   }
   _defaultEngines.clear();
 }
