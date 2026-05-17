@@ -1,7 +1,15 @@
-## 0.5.0
+## 1.0.0
 
-- add `requestSuggestions` / `streamSuggestions` with streamed suggestion events and request cancellation
-- add `example/stream_suggest_v2.dart`
+- Add the v2 streaming suggestions API with `requestSuggestions` / `streamSuggestions`, cancellation, and richer request events.
+- Add `SuggestionRequestMode.staticThenFinal` for fast static results followed by dynamic updates.
+- Improve responsiveness by deferring `generateSpec` during the first static pass.
+- Add the `stream_suggest_v2.dart` example, runtime tests, and benchmark coverage.
+- Add built-in specs for `claude`, `codex`, `gemini`, and `qwen`.
+
+### Breaking Changes
+
+- Rename `clearCache()` to `clearDynamicSuggestion()`.
+- Add `clearAllCaches()` for callers that want the previous full-reset behavior.
 
 ## 0.4.0
 

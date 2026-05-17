@@ -25,9 +25,18 @@ void main() async {
   // 1. Register built-in completion specs (cd, ls, git, tree, etc.)
   registerBuiltinSpecs();
 
-  // 2. Get completion suggestions
+  // 2. Provide your own adapter implementation.
+  // See example/local_adapter.dart for a local dart:io version.
+  final adapter = MyCompleteAdapter();
+
+  // 3. Get completion suggestions
   // Arguments: input command string, current working directory, Shell type
-  final blob = await getSuggestions('git sta', Directory.current.path, Shell.bash);
+  final blob = await getSuggestions(
+    'git sta',
+    Directory.current.path,
+    Shell.bash,
+    adapter,
+  );
 
   // blob.suggestions is a list containing suggestion items (Suggestion)
   // e.g.: [Suggestion(name: 'status', ...)]
@@ -39,27 +48,81 @@ void main() async {
 }
 ```
 
+### Streamed suggestions
+
+Keep the simple `getSuggestions(...)` usage above for one-shot completion.
+If you want incremental updates for terminal-style UIs, use `requestSuggestions(...)`:
+
+```dart
+import 'dart:io';
+
+import 'package:autocomplete/autocomplete.dart';
+
+void main() async {
+  registerBuiltinSpecs();
+  final adapter = MyCompleteAdapter();
+
+  final engine = AutocompleteEngine(
+    adapter: adapter,
+  );
+
+  final handle = engine.requestSuggestions(
+    'git co ',
+    Directory.current.path,
+    Shell.zsh,
+    timeout: const Duration(milliseconds: 1500),
+    mode: SuggestionRequestMode.staticThenFinal,
+  );
+
+  await for (final event in handle.stream) {
+    print('event: ${event.kind}');
+    if (event.blob != null) {
+      for (final suggestion in event.blob!.suggestions.take(5)) {
+        print('  ${suggestion.name}');
+      }
+    }
+  }
+
+  final result = await handle.done;
+  print('final suggestions: ${result?.suggestions.length ?? 0}');
+  engine.dispose();
+}
+```
+
+See [example/local_adapter.dart](example/local_adapter.dart) for a local `dart:io` adapter, and [example/stream_suggest_v2.dart](example/stream_suggest_v2.dart) for a fuller example with live terminal rendering and event logging.
+
 ## Layout
 
 - `lib/src/`: Core logic, including spec models, generators, registry, parser, runtime, templates, and suggestion objects.
 - `lib/specs/`: Completion spec files, where each command corresponds to a Dart file (e.g., `cd.dart`, `ls.dart`).
-  - **`all_specs.dart`**: Imports all specs and exposes the `registerAllSpecs()` method (since Dart does not support dynamic imports, all specs need to be registered here).
+  - **`all_specs_v2.dart`**: The default v2 deferred-loading registry used by `registerBuiltinSpecs()`.
+  - **`all_specs.dart`**: Eagerly imports all specs and can be used when you want everything loaded up front.
 - `assets/icons/`: Icons/Logos referenced by specs.
   - TypeScript sources usually use URLs or Data URIs; here we store them as files so Flutter apps can bundle and use them. See `assets/icons/README.md`.
-- `example/example.dart`: Example code calling `getSuggestions`.
+- `example/run_suggest_v2.dart`: Recommended one-shot completion example for 1.0.0.
+- `example/stream_suggest_v2.dart`: Recommended streamed / incremental completion example for 1.0.0.
+- `example/example.dart`: Minimal compatibility example.
 
 ## Run Example
 
 Run from the `dart/` directory:
 
 ```bash
-dart run example/example.dart "git sta"
+dart run example/run_suggest_v2.dart "git sta"
 ```
 
 Or specify a Shell:
 
 ```bash
-dart run example/example.dart "cd " --shell zsh
+dart run example/run_suggest_v2.dart "cd " --shell zsh
+```
+
+For the v2 stream / incremental mode:
+
+```bash
+dart run example/stream_suggest_v2.dart "git ch"
+dart run example/stream_suggest_v2.dart "cd " --shell zsh
+dart run example/stream_suggest_v2.dart "git co " --live
 ```
 
 ## Contributing
@@ -78,16 +141,16 @@ Most current Dart Spec files (located in `lib/specs/`) are **batch converted** f
 If you see a `tools/` directory in the repository (or related scripts in the root), they are typically used for:
 
 - **Batch Conversion**: Converting upstream TS Specs to Dart code.
-- **List Generation**: Scanning and generating index files like `all_specs.dart`.
+- **List Generation**: Scanning and generating index files like `all_specs_v2.dart`.
 - **Validation**: Checking the syntax and structural correctness of Spec files.
   Detailed usage instructions can be found in the comments at the top of each script file.
 
 ### 3. Adding a new spec
 
 1. Add a `<command>.dart` file under `lib/specs/` defining a `FigSpec` (e.g., `const FigSpec myCommandSpec = ...`).
-2. In **`lib/specs/all_specs.dart`**:
+2. In **`lib/specs/all_specs_v2.dart`**:
    - Add `import '<command>.dart';`
-   - Add `registerSpec('<command>', () => <command>Spec);` inside the `registerAllSpecs()` method.
+   - Add the registration entry for `<command>` so it can be loaded by the default v2 registry.
 
 ## Acknowledgements
 

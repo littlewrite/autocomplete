@@ -18,9 +18,18 @@ void main() async {
   // 1. 注册内置的补全规范 (cd, ls, git, tree 等)
   registerBuiltinSpecs();
 
-  // 2. 获取补全建议
+  // 2. 提供你自己的 adapter 实现
+  // 本地 dart:io 版本可参考 example/local_adapter.dart
+  final adapter = MyCompleteAdapter();
+
+  // 3. 获取补全建议
   // 参数: 输入的命令字符串, 当前工作目录, Shell 类型
-  final blob = await getSuggestions('git sta', Directory.current.path, Shell.bash);
+  final blob = await getSuggestions(
+    'git sta',
+    Directory.current.path,
+    Shell.bash,
+    adapter,
+  );
 
   // blob.suggestions 是一个列表，包含建议项 (Suggestion)
   // 例如: [Suggestion(name: 'status', ...)]
@@ -32,27 +41,81 @@ void main() async {
 }
 ```
 
+### 流式返回示例
+
+上面的 `getSuggestions(...)` 适合一次性获取结果。
+如果你的终端 UI 需要“先返回静态建议，再增量补充动态结果”，可以使用 `requestSuggestions(...)`：
+
+```dart
+import 'dart:io';
+
+import 'package:autocomplete/autocomplete.dart';
+
+void main() async {
+  registerBuiltinSpecs();
+  final adapter = MyCompleteAdapter();
+
+  final engine = AutocompleteEngine(
+    adapter: adapter,
+  );
+
+  final handle = engine.requestSuggestions(
+    'git co ',
+    Directory.current.path,
+    Shell.zsh,
+    timeout: const Duration(milliseconds: 1500),
+    mode: SuggestionRequestMode.staticThenFinal,
+  );
+
+  await for (final event in handle.stream) {
+    print('event: ${event.kind}');
+    if (event.blob != null) {
+      for (final suggestion in event.blob!.suggestions.take(5)) {
+        print('  ${suggestion.name}');
+      }
+    }
+  }
+
+  final result = await handle.done;
+  print('final suggestions: ${result?.suggestions.length ?? 0}');
+  engine.dispose();
+}
+```
+
+本地 `dart:io` adapter 可参考 [example/local_adapter.dart](example/local_adapter.dart)，更完整的事件输出和终端实时渲染示例可参考 [example/stream_suggest_v2.dart](example/stream_suggest_v2.dart)。
+
 ## 项目结构 (Layout)
 
 - `lib/src/`: 核心逻辑，包括规范模型、生成器、注册表、解析器、运行时、模板和建议对象。
 - `lib/specs/`: 补全规范文件，每个命令对应一个 Dart 文件（例如 `cd.dart`, `ls.dart`）。
-  - **`all_specs.dart`**: 导入所有规范并暴露 `registerAllSpecs()` 方法（由于 Dart 不支持动态导入，所有规范都需要在这里注册）。
+  - **`all_specs_v2.dart`**: `registerBuiltinSpecs()` 默认使用的 v2 延迟加载注册表。
+  - **`all_specs.dart`**: 一次性导入全部 spec，适合需要预先全量加载的场景。
 - `assets/icons/`: 规范引用的图标/Logo。
   - TypeScript 源通常使用 URL 或 Data URI，这里我们将它们存储为文件，以便 Flutter 应用可以打包使用。详见 `assets/icons/README.md`。
-- `example/example.dart`: 调用 `getSuggestions` 的示例代码。
+- `example/run_suggest_v2.dart`: 1.0.0 推荐的一次性补全示例。
+- `example/stream_suggest_v2.dart`: 1.0.0 推荐的流式 / 增量补全示例。
+- `example/example.dart`: 保留的最小兼容示例。
 
 ## 运行示例 (Run Example)
 
 在 `dart/` 目录下运行：
 
 ```bash
-dart run example/example.dart "git sta"
+dart run example/run_suggest_v2.dart "git sta"
 ```
 
 或者指定 Shell：
 
 ```bash
-dart run example/example.dart "cd " --shell zsh
+dart run example/run_suggest_v2.dart "cd " --shell zsh
+```
+
+如果要体验 v2 的流式返回模式，可以运行：
+
+```bash
+dart run example/stream_suggest_v2.dart "git ch"
+dart run example/stream_suggest_v2.dart "cd " --shell zsh
+dart run example/stream_suggest_v2.dart "git co " --live
 ```
 
 ## 如何参与贡献 (Contributing)
@@ -71,7 +134,7 @@ dart run example/example.dart "cd " --shell zsh
 如果你在仓库中看到 `tools/` 目录（或根目录下的相关脚本），它们通常用于：
 
 - **批量转换**: 将上游的 TS Spec 转换为 Dart 代码。
-- **列表生成**: 扫描并生成 `all_specs.dart` 等索引文件。
+- **列表生成**: 扫描并生成 `all_specs_v2.dart` 等索引文件。
 - **校验**: 检查 Spec 文件的语法和结构正确性。
   详细的使用说明请参考各脚本文件头部的注释。
 
@@ -80,7 +143,7 @@ dart run example/example.dart "cd " --shell zsh
 1. 在 `lib/specs/` 下添加 `<command>.dart` 文件，定义一个 `FigSpec` (例如 `const FigSpec myCommandSpec = ...`)。
 2. 在 **`lib/specs/all_specs_v2.dart`** 中：
    - 添加 `import '<command>.dart';`
-   - 在 `registerAllSpecs()` 方法中添加 `registerSpec('<command>', () => <command>Spec);`。
+   - 添加对应的注册项，让默认的 v2 延迟加载注册表可以按命令名加载它。
 
 ## 致谢 (Acknowledgements)
 
