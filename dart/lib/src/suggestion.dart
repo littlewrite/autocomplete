@@ -700,8 +700,13 @@ Iterable<Suggestion> adjustPathSuggestions(
   return suggestions.map((s) {
     if (!s.pathy) return s;
     final isBareHomeToken = partialToken.isPath && partialToken.token == '~';
+    final pathSeparator = primaryPathSeparator(shell);
     final rawInsert = s.insertValue ?? s.name;
-    final prefixedInsert = isBareHomeToken ? '~/$rawInsert' : rawInsert;
+    final normalizedInsert = s.type == SuggestionType.folder
+        ? _normalizeFolderSeparator(rawInsert, pathSeparator)
+        : rawInsert;
+    final prefixedInsert =
+        isBareHomeToken ? '~$pathSeparator$normalizedInsert' : normalizedInsert;
     final escapedInsert = _escapePath(prefixedInsert, shell);
     final escapedName = s.insertValue == null
         ? (_escapePath(prefixedInsert, shell) ?? s.name)
@@ -718,4 +723,12 @@ Iterable<Suggestion> adjustPathSuggestions(
       pathy: s.pathy,
     );
   });
+}
+
+String _normalizeFolderSeparator(String value, String separator) {
+  if (value.isEmpty) return value;
+  if (value.endsWith('/') || value.endsWith(r'\')) {
+    return '${value.substring(0, value.length - 1)}$separator';
+  }
+  return value;
 }

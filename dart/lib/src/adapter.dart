@@ -66,7 +66,11 @@ abstract class CompletePathAdapter {
   /// Converts a shell path to the backing filesystem path.
   String resolvePath(String path, Shell shell);
 
-  /// Path separators accepted by the backing filesystem for this [shell].
+  /// Path separators recognized in completion input for this [shell].
+  ///
+  /// This describes shell-token syntax, not every separator accepted by the
+  /// backing filesystem. For example, Git Bash running on Windows uses `/`
+  /// even though dart:io also accepts `\`.
   List<String> pathSeparators(Shell shell);
 
   /// Whether [path] is absolute in the backing filesystem for this [shell].
