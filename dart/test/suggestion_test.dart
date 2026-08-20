@@ -59,11 +59,13 @@ void main() {
       expect(result.first.name, 'example');
     });
 
-    test('rejects non-prefix', () {
+    test('prefix strategy rejects non-prefix', () {
       final suggestions = [
         Suggestion(name: 'example', allNames: ['example'])
       ];
-      final result = filterSuggestionList(suggestions, null, 'em').toList();
+      final result =
+          filterSuggestionList(suggestions, FilterStrategy.prefix, 'em')
+              .toList();
       expect(result, isEmpty);
     });
   });

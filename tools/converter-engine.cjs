@@ -22,6 +22,8 @@ const ARG_ALLOWED_KEYS = new Set([
   "isDangerous",
   "filterStrategy",
   "defaultValue",
+  "isCommand",
+  "suggestCommands",
 ]);
 const FIG_SUGGESTION_ALLOWED_KEYS = new Set([
   "name",
@@ -908,7 +910,16 @@ class TsToDartConverter {
         depth--;
         depthBrace--;
         // 仅当关闭的是「当前解析的顶层对象」时 push（depthBrace 与 depthBracket 都回 0）；否则 value 会吃掉 "}"（如 args: [ { template: ["x"] } ]）
-        if (depthBrace === 0 && depthBracket === 0 && !isKey) {
+        // convertObject strips its outer braces before calling this parser.
+        // A nested value such as `args: { name: "user" }` can therefore
+        // return to depth zero here, but it is not the end of the object
+        // being parsed. Preserve that closing brace for the value instead.
+        if (
+          depthBrace === 0 &&
+          depthBracket === 0 &&
+          !isKey &&
+          !currentValue.trim().startsWith("{")
+        ) {
           const ck = this.cleanKey(currentKey);
           if (
             ck &&

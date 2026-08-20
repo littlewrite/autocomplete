@@ -1,6 +1,6 @@
 const completionSpec: Fig.Spec = {
   name: "su",
-  description: "",
+  description: "Run a shell or command as another user",
   options: [
     {
       name: "-f",
@@ -17,6 +17,35 @@ const completionSpec: Fig.Spec = {
       name: "-m",
       description:
         "Leave the environment unmodified.  The invoked shell is your login shell, and no directory changes are made.  As a security precaution, if the target user's shell is a non-standard shell (as defined by getusershell(3)) and the caller's real uid is non-zero, su will fail",
+    },
+    {
+      name: ["-c", "--command"],
+      description: "Pass command to the target shell",
+      args: { name: "command" },
+    },
+    {
+      name: ["-s", "--shell"],
+      description: "Run the specified shell instead of the target user's shell",
+      args: { name: "shell", template: "filepaths" },
+    },
+    {
+      name: ["-g", "--group"],
+      description: "Use the specified primary group",
+      args: { name: "group" },
+    },
+    {
+      name: ["-G", "--supp-group"],
+      description: "Specify a supplementary group",
+      args: { name: "group" },
+    },
+    {
+      name: ["-p", "--preserve-environment"],
+      description: "Preserve the complete environment (Linux util-linux)",
+    },
+    {
+      name: ["-w", "--whitelist-environment"],
+      description: "Preserve the specified environment variables",
+      args: { name: "environment" },
     },
   ],
   args: [

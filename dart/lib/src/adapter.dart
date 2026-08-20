@@ -56,3 +56,19 @@ abstract class CompleteAdapter {
     Map<String, String?>? environment,
   });
 }
+
+/// Optional path semantics for an adapter whose filesystem syntax differs from
+/// the active shell, for example Git Bash on Windows.
+///
+/// The runtime owns token parsing and directory-completion flow. The adapter
+/// owns filesystem-specific syntax and conversion rules.
+abstract class CompletePathAdapter {
+  /// Converts a shell path to the backing filesystem path.
+  String resolvePath(String path, Shell shell);
+
+  /// Path separators accepted by the backing filesystem for this [shell].
+  List<String> pathSeparators(Shell shell);
+
+  /// Whether [path] is absolute in the backing filesystem for this [shell].
+  bool isAbsolutePath(String path, Shell shell);
+}

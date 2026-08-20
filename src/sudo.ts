@@ -28,6 +28,7 @@ const completionSpec: Fig.Spec = {
     name: "command",
     description: "Command to run with elevated permissions",
     isCommand: true,
+    suggestCommands: true,
   },
 };
 

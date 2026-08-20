@@ -108,7 +108,30 @@ class FakeAdapter implements CompleteAdapter {
   }
 }
 
+class WindowsGitBashAdapter extends FakeAdapter implements CompletePathAdapter {
+  WindowsGitBashAdapter({super.directories});
+
+  @override
+  String resolvePath(String path, Shell shell) {
+    final match = RegExp(r'^/([A-Za-z])(?:/(.*))?$').firstMatch(path);
+    if (match == null) return path;
+    final drive = match.group(1)!.toUpperCase();
+    final rest = match.group(2);
+    return rest == null || rest.isEmpty ? '$drive:/' : '$drive:/$rest';
+  }
+
+  @override
+  List<String> pathSeparators(Shell shell) => const [r'\', '/'];
+
+  @override
+  bool isAbsolutePath(String path, Shell shell) =>
+      path.startsWith('/') || RegExp(r'^[A-Za-z]:[\\/]').hasMatch(path);
+}
+
 void main() {
+  const commandForwarderCommand = 'ac_command_forwarder_test';
+  const plainCommandArgCommand = 'ac_plain_command_arg_test';
+  const nestedCommandOnlyCommand = 'ac_nested_command_only_test';
   const optionValueCommand = 'ac_option_value_test';
   const escapedSpaceCommand = 'ac_escaped_space_test';
   const optionDependencyCommand = 'ac_option_dependency_test';
@@ -124,6 +147,69 @@ void main() {
   const loadSpecSemanticsSubCommand = 'ac_load_spec_semantics_sub_test';
   const argLoadSpecRootCommand = 'ac_arg_load_spec_root_test';
   const argLoadSpecChildCommand = 'ac_arg_load_spec_child_test';
+
+  test('suggests registered commands when explicitly enabled', () async {
+    registerSpec(
+      commandForwarderCommand,
+      () => FigSpec(
+        name: commandForwarderCommand,
+        args: [
+          FigArg(name: 'executable', isCommand: true, suggestCommands: true)
+        ],
+      ),
+    );
+    registerSpec('git', () => FigSpec(name: 'git'));
+
+    final result = await getSuggestions(
+      'ac_command_forwarder_test gi',
+      '/work',
+      Shell.bash,
+      FakeAdapter(),
+    );
+
+    expect(result?.suggestions.map((suggestion) => suggestion.name),
+        contains('git'));
+  });
+
+  test('does not infer command forwarding from an argument name', () async {
+    registerSpec(
+      plainCommandArgCommand,
+      () => FigSpec(
+        name: plainCommandArgCommand,
+        args: [FigArg(name: 'command')],
+      ),
+    );
+
+    final result = await getSuggestions(
+      'ac_plain_command_arg_test gi',
+      '/work',
+      Shell.bash,
+      FakeAdapter(),
+    );
+
+    expect(result?.suggestions.map((suggestion) => suggestion.name),
+        isNot(contains('git')));
+  });
+
+  test('does not suggest registry names for isCommand alone', () async {
+    registerSpec(
+      nestedCommandOnlyCommand,
+      () => FigSpec(
+        name: nestedCommandOnlyCommand,
+        args: [FigArg(name: 'executable', isCommand: true)],
+      ),
+    );
+
+    final result = await getSuggestions(
+      'ac_nested_command_only_test gi',
+      '/work',
+      Shell.bash,
+      FakeAdapter(),
+    );
+
+    expect(result?.suggestions.map((suggestion) => suggestion.name),
+        isNot(contains('git')));
+  });
   const subcommandGenerateSpecCommand = 'ac_subcommand_generate_spec_test';
   const variadicBreakOptionCommand = 'ac_variadic_break_option_test';
   const executeCommandEnvCommand = 'ac_execute_command_env_test';
@@ -149,6 +235,9 @@ void main() {
   const requestTimeoutCommand = 'ac_request_timeout_test';
 
   tearDownAll(() {
+    unregisterSpec(commandForwarderCommand);
+    unregisterSpec(plainCommandArgCommand);
+    unregisterSpec(nestedCommandOnlyCommand);
     unregisterSpec(optionValueCommand);
     unregisterSpec(escapedSpaceCommand);
     unregisterSpec(optionDependencyCommand);
@@ -281,6 +370,61 @@ void main() {
       expect(result, isNotNull);
       expect(result!.charactersToDrop, 2);
       expect(result.suggestions.map((s) => s.name), contains('file` name.txt'));
+    });
+
+    test('delegates Git Bash drive paths to the path adapter', () async {
+      registerSpec(
+        shellPathEscapingCommand,
+        () => FigSpec(
+          name: shellPathEscapingCommand,
+          args: [FigArg(template: 'filepaths')],
+        ),
+      );
+      final adapter = WindowsGitBashAdapter(
+        directories: {
+          'D:': const [
+            FileSystemEntry(name: 'workspace', isDirectory: true),
+            FileSystemEntry(name: 'docs', isDirectory: true),
+          ],
+          'D:\\': const [
+            FileSystemEntry(name: 'windows-root', isDirectory: true),
+          ],
+        },
+      );
+
+      final result = await getSuggestions(
+        '$shellPathEscapingCommand /d/',
+        'D:/work',
+        Shell.bash,
+        adapter,
+      );
+
+      expect(result?.suggestions.map((suggestion) => suggestion.name),
+          contains('workspace/'));
+      expect(adapter.listDirectoryInvocations.single.path, 'D:');
+
+      final incompleteDrivePath = await getSuggestions(
+        '$shellPathEscapingCommand /d',
+        'D:/work',
+        Shell.bash,
+        adapter,
+      );
+
+      expect(incompleteDrivePath?.charactersToDrop, 1);
+      expect(incompleteDrivePath?.suggestions.map((s) => s.name),
+          contains('docs/'));
+
+      final driveLetterResult = await getSuggestions(
+        '$shellPathEscapingCommand D:\\',
+        'D:/work',
+        Shell.bash,
+        adapter,
+      );
+
+      expect(
+          driveLetterResult?.suggestions.map((suggestion) => suggestion.name),
+          contains('windows-root/'));
+      expect(adapter.listDirectoryInvocations.last.path, 'D:\\');
     });
 
     test('resolves home and root-relative path completions', () async {
@@ -801,7 +945,8 @@ void main() {
       expect(adapter.processInvocations.length, 1);
     });
 
-    test('clearDynamicSuggestion forces the active dynamic source to reload', () async {
+    test('clearDynamicSuggestion forces the active dynamic source to reload',
+        () async {
       registerSpec(
         gitCheckoutBranchCacheCommand,
         () => FigSpec(

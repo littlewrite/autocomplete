@@ -143,6 +143,7 @@ import 'dirname.dart';
 import 'ditto.dart';
 import 'do-release-upgrade.dart';
 import 'do.dart';
+import 'doas.dart';
 import 'docker-compose.dart';
 import 'docker.dart';
 import 'doctl.dart';
@@ -155,7 +156,7 @@ import 'dotnet/dotnet-build-server.dart';
 import 'dotnet/dotnet-build.dart';
 import 'dotnet/dotnet-clean.dart';
 import 'dotnet/dotnet-format.dart';
-import 'dotnet/dotnet-help.dart';
+import 'dotnet/dotnet-help.dart' as dotnet_dotnet_help;
 import 'dotnet/dotnet-list.dart';
 import 'dotnet/dotnet-migrate.dart';
 import 'dotnet/dotnet-msbuild.dart';
@@ -363,6 +364,7 @@ import 'nmap.dart';
 import 'nocorrect.dart';
 import 'node.dart';
 import 'noglob.dart';
+import 'nohup.dart';
 import 'northflank.dart';
 import 'np.dart';
 import 'npm.dart';
@@ -602,6 +604,7 @@ import 'vue.dart';
 import 'w.dart';
 import 'wasm-bindgen.dart';
 import 'wasm-pack.dart';
+import 'watch.dart';
 import 'watchman.dart';
 import 'wc.dart';
 import 'wd.dart';
@@ -791,6 +794,7 @@ void registerAllSpecs() {
   registerSpec(dittoSpec.name, () => dittoSpec);
   registerSpec(doReleaseUpgradeSpec.name, () => doReleaseUpgradeSpec);
   registerSpec(doSpec.name, () => doSpec);
+  registerSpec(doasSpec.name, () => doasSpec);
   registerSpec(dockerComposeSpec.name, () => dockerComposeSpec);
   registerSpec(dockerSpec.name, () => dockerSpec);
   registerSpec(doctlSpec.name, () => doctlSpec);
@@ -803,7 +807,8 @@ void registerAllSpecs() {
   registerSpec(buildSpec.name, () => buildSpec);
   registerSpec(cleanSpec.name, () => cleanSpec);
   registerSpec(formatSpec.name, () => formatSpec);
-  registerSpec(helpSpec.name, () => helpSpec);
+  registerSpec(dotnet_dotnet_help.helpSpec.name,
+      () => dotnet_dotnet_help.helpSpec);
   registerSpec(listSpec.name, () => listSpec);
   registerSpec(migrateSpec.name, () => migrateSpec);
   registerSpec(msbuildSpec.name, () => msbuildSpec);
@@ -1014,6 +1019,7 @@ void registerAllSpecs() {
   registerSpec(nocorrectSpec.name, () => nocorrectSpec);
   registerSpec(nodeSpec.name, () => nodeSpec);
   registerSpec(noglobSpec.name, () => noglobSpec);
+  registerSpec(nohupSpec.name, () => nohupSpec);
   registerSpec(northflankSpec.name, () => northflankSpec);
   registerSpec(npSpec.name, () => npSpec);
   registerSpec(npmSpec.name, () => npmSpec);
@@ -1192,11 +1198,9 @@ void registerAllSpecs() {
   registerSpec(taploSpec.name, () => taploSpec);
   registerSpec(tarSpec.name, () => tarSpec);
   registerSpec(taskSpec.name, () => taskSpec);
-  registerSpec(task_taskwarrior.taskwarriorSpec.name,
-      () => task_taskwarrior.taskwarriorSpec);
+  registerSpec(task_taskwarrior.taskwarriorSpec.name, () => task_taskwarrior.taskwarriorSpec);
   registerSpec(goTaskSpec.name, () => goTaskSpec);
-  registerSpec(task_taskwarrior_1.taskwarriorSpec.name,
-      () => task_taskwarrior_1.taskwarriorSpec);
+  registerSpec(task_taskwarrior_1.taskwarriorSpec.name, () => task_taskwarrior_1.taskwarriorSpec);
   registerSpec(tbSpec.name, () => tbSpec);
   registerSpec(tccutilSpec.name, () => tccutilSpec);
   registerSpec(teeSpec.name, () => teeSpec);
@@ -1257,6 +1261,7 @@ void registerAllSpecs() {
   registerSpec(wSpec.name, () => wSpec);
   registerSpec(wasmBindgenSpec.name, () => wasmBindgenSpec);
   registerSpec(wasmPackSpec.name, () => wasmPackSpec);
+  registerSpec(watchSpec.name, () => watchSpec);
   registerSpec(watchmanSpec.name, () => watchmanSpec);
   registerSpec(wcSpec.name, () => wcSpec);
   registerSpec(wdSpec.name, () => wdSpec);

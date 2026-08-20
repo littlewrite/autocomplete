@@ -172,6 +172,7 @@ import 'package:autocomplete/specs/ditto.dart' deferred as spec_ditto;
 import 'package:autocomplete/specs/do-release-upgrade.dart'
     deferred as spec_do_release_upgrade;
 import 'package:autocomplete/specs/do.dart' deferred as spec_do;
+import 'package:autocomplete/specs/doas.dart' deferred as spec_doas;
 import 'package:autocomplete/specs/docker-compose.dart'
     deferred as spec_docker_compose;
 import 'package:autocomplete/specs/docker.dart' deferred as spec_docker;
@@ -419,6 +420,7 @@ import 'package:autocomplete/specs/nmap.dart' deferred as spec_nmap;
 import 'package:autocomplete/specs/nocorrect.dart' deferred as spec_nocorrect;
 import 'package:autocomplete/specs/node.dart' deferred as spec_node;
 import 'package:autocomplete/specs/noglob.dart' deferred as spec_noglob;
+import 'package:autocomplete/specs/nohup.dart' deferred as spec_nohup;
 import 'package:autocomplete/specs/northflank.dart' deferred as spec_northflank;
 import 'package:autocomplete/specs/np.dart' deferred as spec_np;
 import 'package:autocomplete/specs/npm.dart' deferred as spec_npm;
@@ -680,6 +682,7 @@ import 'package:autocomplete/specs/w.dart' deferred as spec_w;
 import 'package:autocomplete/specs/wasm-bindgen.dart'
     deferred as spec_wasm_bindgen;
 import 'package:autocomplete/specs/wasm-pack.dart' deferred as spec_wasm_pack;
+import 'package:autocomplete/specs/watch.dart' deferred as spec_watch;
 import 'package:autocomplete/specs/watchman.dart' deferred as spec_watchman;
 import 'package:autocomplete/specs/wc.dart' deferred as spec_wc;
 import 'package:autocomplete/specs/wd.dart' deferred as spec_wd;
@@ -881,6 +884,7 @@ const List<String> v2SpecNamesFirstChar_d = [
   'ditto',
   'do',
   'do-release-upgrade',
+  'doas',
   'docker',
   'docker-compose',
   'doctl',
@@ -1120,6 +1124,7 @@ const List<String> v2SpecNamesFirstChar_n = [
   'nocorrect',
   'node',
   'noglob',
+  'nohup',
   'northflank',
   'np',
   'npm',
@@ -1376,6 +1381,7 @@ const List<String> v2SpecNamesFirstChar_w = [
   'w',
   'wasm-bindgen',
   'wasm-pack',
+  'watch',
   'watchman',
   'wc',
   'wd',
@@ -2133,6 +2139,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'do':
       await spec_do.loadLibrary();
       registerSpec(spec_do.doSpec.name, () => spec_do.doSpec);
+      break;
+    case 'doas':
+      await spec_doas.loadLibrary();
+      registerSpec(spec_doas.doasSpec.name, () => spec_doas.doasSpec);
       break;
     case 'do-release-upgrade':
       await spec_do_release_upgrade.loadLibrary();
@@ -3087,6 +3097,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
     case 'noglob':
       await spec_noglob.loadLibrary();
       registerSpec(spec_noglob.noglobSpec.name, () => spec_noglob.noglobSpec);
+      break;
+    case 'nohup':
+      await spec_nohup.loadLibrary();
+      registerSpec(spec_nohup.nohupSpec.name, () => spec_nohup.nohupSpec);
       break;
     case 'northflank':
       await spec_northflank.loadLibrary();
@@ -4115,6 +4129,10 @@ Future<void> ensureSpecLoadedV2(String command) async {
       await spec_wasm_pack.loadLibrary();
       registerSpec(
           spec_wasm_pack.wasmPackSpec.name, () => spec_wasm_pack.wasmPackSpec);
+      break;
+    case 'watch':
+      await spec_watch.loadLibrary();
+      registerSpec(spec_watch.watchSpec.name, () => spec_watch.watchSpec);
       break;
     case 'watchman':
       await spec_watchman.loadLibrary();

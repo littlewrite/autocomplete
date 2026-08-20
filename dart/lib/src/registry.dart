@@ -24,10 +24,16 @@ void setMaxLoadedSpecs(int n) {
 
 /// When using deferred specs (e.g. all_specs_v2), a getter returns the list for a given first char (switch over const lists).
 List<String> Function(String firstChar)? _v2SpecNamesGetter;
+List<String>? _allSpecNamesCache;
+
+void _invalidateSpecNamesCache() {
+  _allSpecNamesCache = null;
+}
 
 /// Register the v2 spec-names getter (e.g. [getV2SpecNamesForFirstChar]). Used by [getSpecNamesWithPrefix].
 void registerV2SpecNamesGetter(List<String> Function(String firstChar) getter) {
   _v2SpecNamesGetter = getter;
+  _invalidateSpecNamesCache();
 }
 
 /// Unregister the spec for [name] so it can be GC'd. Name may stay in v2 first-char lists for command-name completion.
@@ -35,6 +41,7 @@ void unregisterSpec(String name) {
   _registry.remove(name);
   _loadedSpecs.remove(name);
   _lruOrder.remove(name);
+  _invalidateSpecNamesCache();
 }
 
 /// If we're at or over [maxLoadedSpecs], unregister the least recently used spec(s). Call before loading a new spec (e.g. in runtime getSuggestions).
@@ -51,6 +58,7 @@ void registerSpec(String name, SpecLoader loader) {
   _lruOrder.add(name);
   _loadedSpecs.remove(name);
   _registry[name] = loader;
+  _invalidateSpecNamesCache();
 }
 
 /// Get spec for command [name], or null if not registered. Updates LRU order.
@@ -83,6 +91,9 @@ List<String> getSpecNamesWithPrefix(String prefix) {
 
 /// All registered command names (excluding @scoped and reserved). When v2 is used, builds by calling the getter for each first char.
 List<String> getSpecNames() {
+  final cached = _allSpecNamesCache;
+  if (cached != null) return cached;
+
   final fromRegistry =
       _registry.keys.where((k) => !k.startsWith('@') && k != '-');
   Set<String> fromV2 = {};
@@ -121,7 +132,9 @@ List<String> getSpecNames() {
       fromV2.addAll(_v2SpecNamesGetter!(c));
     }
   }
-  return <String>{...fromRegistry, ...fromV2}.toList()..sort();
+  final names = <String>{...fromRegistry, ...fromV2}.toList()..sort();
+  _allSpecNamesCache = names;
+  return names;
 }
 
 /// Check if we have a spec for [name].

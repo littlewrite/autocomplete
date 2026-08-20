@@ -387,6 +387,7 @@ class FigArg {
     this.suggestCurrentToken,
     this.optionsCanBreakVariadicArg,
     this.isCommand,
+    this.suggestCommands,
     this.isScript,
     this.isModule,
     this.debounce,
@@ -424,6 +425,10 @@ class FigArg {
   /// Arg is a command; load the current token's registered spec and continue
   /// traversal inside it.
   final bool? isCommand;
+
+  /// Suggest registered command names for this argument. This is separate
+  /// from [isCommand], which only controls nested spec traversal.
+  final bool? suggestCommands;
 
   /// Preserved for Fig schema compatibility.
   /// The Dart runtime does not currently implement `isScript`.
@@ -485,6 +490,7 @@ class FigArg {
         if (optionsCanBreakVariadicArg != null)
           'optionsCanBreakVariadicArg': optionsCanBreakVariadicArg,
         if (isCommand == true) 'isCommand': true,
+        if (suggestCommands == true) 'suggestCommands': true,
         if (isScript == true) 'isScript': true,
         if (isModule != null) 'isModule': isModule,
         if (debounce == true) 'debounce': true,

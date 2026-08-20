@@ -23,6 +23,10 @@ const PROJECT_ROOT = path.resolve(__dirname, "..");
 const SPECS_DIR = path.join(PROJECT_ROOT, "dart", "lib", "specs");
 const ALL_SPECS_FILE = "all_specs.dart";
 const OUTPUT_PATH = path.join(SPECS_DIR, ALL_SPECS_FILE);
+// Keep nested specs with commonly reused generic variables namespaced even
+// when no current sibling happens to collide. This keeps generated imports
+// stable as the registry grows (for example dotnet's `helpSpec`).
+const FORCE_PREFIX_PATHS = new Set(["dotnet/dotnet-help.dart"]);
 
 // 匹配: final FigSpec xxxSpec = 或 const CompletionSpec xxxSpec =
 // 忽略以 _ 开头的私有变量
@@ -147,7 +151,7 @@ function assignPrefixes(entries) {
   }
   const usedPrefixes = new Set();
   for (const [, list] of byVar) {
-    if (list.length === 1) {
+    if (list.length === 1 && !FORCE_PREFIX_PATHS.has(list[0].importPath)) {
       list[0].prefix = null;
       continue;
     }

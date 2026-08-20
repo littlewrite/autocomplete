@@ -841,13 +841,17 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
       if (r != null) rawDynamicSuggestions.addAll(r);
     }
 
-    dynamicSuggestions
-        .addAll(filterSuggestionList(rawDynamicSuggestions, strategy, partial)
+    dynamicSuggestions.addAll(
+        filterSuggestionList(rawDynamicSuggestions, strategy, partial)
             .map(_bumpDynamicPriority));
   }
 
   staticSuggestions.addAll(
       filterSuggestions(activeArg.suggestionsAsList, strategy, partial, null));
+
+  if (activeArg.suggestCommands == true) {
+    staticSuggestions.addAll(_suggestCommandNames(partial, strategy));
+  }
   return _ArgSuggestionComputation(
     staticSuggestions: staticSuggestions,
     rawDynamicSuggestions: rawDynamicSuggestions,
@@ -855,6 +859,27 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
     dynamicSource: dynamicSource,
     dynamicFilterStrategy: normalizeFilterStrategy(strategy),
   );
+}
+
+/// Suggestions for an argument declared as a nested command in its spec.
+///
+/// Prefix-only specs can query one lazy-spec bucket. Fuzzy matching needs the
+/// complete index to preserve the filtering contract.
+Iterable<Suggestion> _suggestCommandNames(String partial, dynamic strategy) {
+  final filterStrategy = normalizeFilterStrategy(strategy);
+  final names = filterStrategy == FilterStrategy.prefix && partial.isNotEmpty
+      ? getSpecNamesWithPrefix(partial)
+      : getSpecNames();
+  final suggestions = names.map(
+    (name) => Suggestion(
+      name: name,
+      allNames: [name],
+      icon: suggestionIconSubcommand,
+      priority: 40,
+      type: SuggestionType.subcommand,
+    ),
+  );
+  return filterSuggestionList(suggestions, filterStrategy, partial);
 }
 
 /// If a [Suggestion] still carries the default priority (50), bump it so dynamic
@@ -2751,11 +2776,16 @@ Future<_TokenCwdResult> _resolveTokenCwd(
 
   if (cmdToken == null || cmdToken.complete) return notPathy();
   final token = cmdToken.token;
-  final separators = shellPathSeparators(shell);
+  final CompletePathAdapter? pathAdapter =
+      adapter is CompletePathAdapter ? adapter as CompletePathAdapter : null;
+  final separators = <String>{
+    ...shellPathSeparators(shell),
+    ...?pathAdapter?.pathSeparators(shell),
+  }.toList(growable: false);
   final hasPathSeparator =
       separators.any((separator) => token.contains(separator));
-  final hasHomePrefix =
-      token == '~' || token.startsWith('~/') || token.startsWith(r'~\');
+  final hasHomePrefix = token == '~' ||
+      separators.any((separator) => token.startsWith('~$separator'));
   if (!hasPathSeparator && !hasHomePrefix) return notPathy();
 
   if (token == '~') {
@@ -2779,22 +2809,26 @@ Future<_TokenCwdResult> _resolveTokenCwd(
 
   // Resolve relative paths against baseCwd.
   final String resolvedPath;
-  if (isAbsolutePathForShell(expanded, shell)) {
+  if (pathAdapter?.isAbsolutePath(expanded, shell) ??
+      isAbsolutePathForShell(expanded, shell)) {
     resolvedPath = expanded;
   } else {
     final separator = primaryPathSeparator(shell);
-    final base = endsWithPathSeparator(baseCwd, shell)
+    final base = _endsWithPathSeparator(baseCwd, separators)
         ? baseCwd.substring(0, baseCwd.length - 1)
         : baseCwd;
     resolvedPath = '$base$separator$expanded';
   }
 
-  final complete = endsWithPathSeparator(token, shell);
+  final complete = _endsWithPathSeparator(token, separators);
+
+  final adapterPath =
+      pathAdapter?.resolvePath(resolvedPath, shell) ?? resolvedPath;
 
   if (complete) {
     // Token ends with `/`: list the directory contents with no filter prefix.
     return _TokenCwdResult(
-        cwd: resolvedPath,
+        cwd: adapterPath,
         pathy: true,
         complete: true,
         basenameLength: 0,
@@ -2804,10 +2838,11 @@ Future<_TokenCwdResult> _resolveTokenCwd(
   // Token is an incomplete path (no trailing `/`).
   // Use the parent directory so templates list siblings; the basename is the
   // filter prefix so only matching entries are shown.
-  final lastSeparator = lastPathSeparatorIndex(resolvedPath, shell);
-  if (lastSeparator < 0) return notPathy();
-  final parentPath = resolvedPath.substring(0, lastSeparator + 1);
-  final basename = resolvedPath.substring(lastSeparator + 1);
+  final adapterSeparator = _lastPathSeparatorIndex(adapterPath, separators);
+  final tokenSeparator = _lastPathSeparatorIndex(token, separators);
+  if (adapterSeparator < 0 || tokenSeparator < 0) return notPathy();
+  final parentPath = adapterPath.substring(0, adapterSeparator + 1);
+  final basename = token.substring(tokenSeparator + 1);
   return _TokenCwdResult(
     cwd: parentPath,
     pathy: true,
@@ -2815,6 +2850,18 @@ Future<_TokenCwdResult> _resolveTokenCwd(
     basenameLength: basename.length,
     filterPartial: basename,
   );
+}
+
+bool _endsWithPathSeparator(String path, List<String> separators) =>
+    separators.any(path.endsWith);
+
+int _lastPathSeparatorIndex(String path, List<String> separators) {
+  var best = -1;
+  for (final separator in separators) {
+    final index = path.lastIndexOf(separator);
+    if (index > best) best = index;
+  }
+  return best;
 }
 
 /// Optional callback to load a spec on demand (e.g. deferred import v2). When set, called with the command name before [loadSpec].
