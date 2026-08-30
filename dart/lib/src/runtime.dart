@@ -493,6 +493,8 @@ class _ArgSuggestionComputation {
     this.staticSuggestions = const [],
     this.rawDynamicSuggestions = const [],
     this.dynamicSuggestions = const [],
+    this.dynamicQuery,
+    this.dynamicCharactersToDrop,
     this.dynamicSource,
     this.dynamicFilterStrategy,
   });
@@ -500,6 +502,8 @@ class _ArgSuggestionComputation {
   final List<Suggestion> staticSuggestions;
   final List<Suggestion> rawDynamicSuggestions;
   final List<Suggestion> dynamicSuggestions;
+  final String? dynamicQuery;
+  final int? dynamicCharactersToDrop;
   final _DynamicSuggestionSource? dynamicSource;
   final FilterStrategy? dynamicFilterStrategy;
 }
@@ -597,17 +601,20 @@ class _DynamicSuggestionSourceCacheKey {
     required this.rootCommand,
     required this.acceptedTokens,
     required this.argScope,
+    this.queryScope,
   });
 
   final String rootCommand;
   final List<_CommandTokenCacheKey> acceptedTokens;
   final _DynamicArgScopeCacheKey argScope;
+  final String? queryScope;
 
   @override
   bool operator ==(Object other) {
     return other is _DynamicSuggestionSourceCacheKey &&
         other.rootCommand == rootCommand &&
         other.argScope == argScope &&
+        other.queryScope == queryScope &&
         _listEquals(other.acceptedTokens, acceptedTokens);
   }
 
@@ -616,6 +623,7 @@ class _DynamicSuggestionSourceCacheKey {
         rootCommand,
         Object.hashAll(acceptedTokens),
         argScope,
+        queryScope,
       );
 }
 
@@ -739,6 +747,8 @@ _DynamicSuggestionSource? _buildDynamicSuggestionSource(
 
   final rootCommand =
       context.allTokens.isNotEmpty ? context.allTokens.first.token : '';
+  final activeToken = context.isAtEnd ? '' : context.currentToken.token;
+  final queryScope = _generatorQueryScope(activeArg, activeToken);
   final acceptedTokens = context.acceptedTokens
       .map(_CommandTokenCacheKey.fromToken)
       .toList(growable: false);
@@ -765,6 +775,7 @@ _DynamicSuggestionSource? _buildDynamicSuggestionSource(
     'root=$rootCommand',
     'accepted=${context.acceptedTokens.map(_describeCommandToken).join('\u0001')}',
     'arg=${activeArg.name ?? ''}',
+    'queryScope=${queryScope ?? ''}',
     'templates=${templateList.join('\u0002')}',
     'generators=${cacheable ? generatorKeys.join('\u0002') : 'uncacheable'}',
   ].join('|');
@@ -776,9 +787,32 @@ _DynamicSuggestionSource? _buildDynamicSuggestionSource(
             rootCommand: rootCommand,
             acceptedTokens: acceptedTokens,
             argScope: argScope,
+            queryScope: queryScope,
           )
         : null,
   );
+}
+
+/// A string `getQueryTerm` filters the text after its last delimiter. The
+/// preceding text remains in the shell buffer when a suggestion is inserted.
+String _generatorQueryTerm(FigArg activeArg, String partial) {
+  for (final generator in activeArg.generatorsList) {
+    final delimiter = generator.getQueryTerm;
+    if (delimiter is! String || delimiter.isEmpty) continue;
+    final index = partial.lastIndexOf(delimiter);
+    if (index >= 0) return partial.substring(index + delimiter.length);
+  }
+  return partial;
+}
+
+String? _generatorQueryScope(FigArg activeArg, String partial) {
+  for (final generator in activeArg.generatorsList) {
+    final delimiter = generator.getQueryTerm;
+    if (delimiter is! String || delimiter.isEmpty) continue;
+    final index = partial.lastIndexOf(delimiter);
+    return index < 0 ? '' : partial.substring(0, index + delimiter.length);
+  }
+  return null;
 }
 
 String _normalizeEffectiveCwd(String cwd, Shell shell) {
@@ -802,6 +836,7 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
   bool includeDynamic = true,
 }) async {
   final strategy = context.filterStrategyOverride ?? activeArg.filterStrategy;
+  final dynamicQuery = _generatorQueryTerm(activeArg, partial);
   final staticSuggestions = <Suggestion>[];
   final rawDynamicSuggestions = <Suggestion>[];
   final dynamicSuggestions = <Suggestion>[];
@@ -842,7 +877,7 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
     }
 
     dynamicSuggestions.addAll(
-        filterSuggestionList(rawDynamicSuggestions, strategy, partial)
+        filterSuggestionList(rawDynamicSuggestions, strategy, dynamicQuery)
             .map(_bumpDynamicPriority));
   }
 
@@ -856,6 +891,9 @@ Future<_ArgSuggestionComputation> _collectArgSuggestions(
     staticSuggestions: staticSuggestions,
     rawDynamicSuggestions: rawDynamicSuggestions,
     dynamicSuggestions: dynamicSuggestions,
+    dynamicQuery: dynamicQuery,
+    dynamicCharactersToDrop:
+        dynamicQuery == partial ? null : dynamicQuery.length,
     dynamicSource: dynamicSource,
     dynamicFilterStrategy: normalizeFilterStrategy(strategy),
   );
@@ -933,6 +971,7 @@ class _SuggestionComputation {
     this.partialToken,
     this.argumentDescription,
     this.charactersToDrop = 0,
+    this.dynamicQuery,
     this.dynamicSource,
     this.dynamicFilterStrategy,
   });
@@ -944,6 +983,7 @@ class _SuggestionComputation {
   final CommandToken? partialToken;
   final String? argumentDescription;
   final int charactersToDrop;
+  final String? dynamicQuery;
   final _DynamicSuggestionSource? dynamicSource;
   final FilterStrategy? dynamicFilterStrategy;
 
@@ -1011,6 +1051,8 @@ Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
   List<Suggestion> rawDynamicSuggestions = const [];
   _DynamicSuggestionSource? dynamicSource;
   FilterStrategy? dynamicFilterStrategy;
+  String? dynamicQuery;
+  int? dynamicCharactersToDrop;
   if (allowsArgSuggestions && argList.isNotEmpty) {
     final activeArg = argList.first;
     final argSuggestions = await _collectArgSuggestions(
@@ -1025,6 +1067,8 @@ Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
     dynamicSuggestions.addAll(argSuggestions.dynamicSuggestions);
     dynamicSource = argSuggestions.dynamicSource;
     dynamicFilterStrategy = argSuggestions.dynamicFilterStrategy;
+    dynamicQuery = argSuggestions.dynamicQuery;
+    dynamicCharactersToDrop = argSuggestions.dynamicCharactersToDrop;
   }
   return _SuggestionComputation(
     staticSuggestions: staticSuggestions,
@@ -1032,7 +1076,8 @@ Future<_SuggestionComputation?> getSubcommandDrivenRecommendation(
     dynamicSuggestions: dynamicSuggestions,
     acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
     partialToken: partialToken,
-    charactersToDrop: partialToken?.tokenLength ?? 0,
+    charactersToDrop: dynamicCharactersToDrop ?? partialToken?.tokenLength ?? 0,
+    dynamicQuery: dynamicQuery,
     dynamicSource: dynamicSource,
     dynamicFilterStrategy: dynamicFilterStrategy,
   );
@@ -1087,7 +1132,10 @@ Future<_SuggestionComputation?> getArgDrivenRecommendation(
       acceptedTokens: List<CommandToken>.from(context.acceptedTokens),
       partialToken: partialToken,
       argumentDescription: activeArg.description ?? activeArg.name,
-      charactersToDrop: partialToken?.tokenLength ?? 0,
+      charactersToDrop: argSuggestions.dynamicCharactersToDrop ??
+          partialToken?.tokenLength ??
+          0,
+      dynamicQuery: argSuggestions.dynamicQuery,
       dynamicSource: argSuggestions.dynamicSource,
       dynamicFilterStrategy: argSuggestions.dynamicFilterStrategy);
 }
@@ -2032,10 +2080,12 @@ class AutocompleteEngine {
     List<Suggestion> rawDynamicSuggestions,
   ) {
     final partialToken = computation.partialToken;
-    final partial =
-        partialToken != null && partialToken.isPath && partialToken.token == '~'
+    final partial = computation.dynamicQuery ??
+        (partialToken != null &&
+                partialToken.isPath &&
+                partialToken.token == '~'
             ? ''
-            : partialToken?.token ?? '';
+            : partialToken?.token ?? '');
     return _SuggestionComputation(
       staticSuggestions: List<Suggestion>.from(computation.staticSuggestions),
       rawDynamicSuggestions: List<Suggestion>.from(rawDynamicSuggestions),
@@ -2048,6 +2098,7 @@ class AutocompleteEngine {
       partialToken: computation.partialToken,
       argumentDescription: computation.argumentDescription,
       charactersToDrop: computation.charactersToDrop,
+      dynamicQuery: computation.dynamicQuery,
       dynamicSource: computation.dynamicSource,
       dynamicFilterStrategy: computation.dynamicFilterStrategy,
     );
@@ -2252,8 +2303,7 @@ class AutocompleteEngine {
       // First static pass — defer generateSpec so we can emit staticPartial
       // immediately without waiting for network round-trips (git help -a over
       // SSH takes seconds). A second pass runs once the spec arrives.
-      final skipGen =
-          mode == SuggestionRequestMode.staticThenFinal;
+      final skipGen = mode == SuggestionRequestMode.staticThenFinal;
       var staticState = await _computeStaticSuggestionState(
         cmd,
         cwd,

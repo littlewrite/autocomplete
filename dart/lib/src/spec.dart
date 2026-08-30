@@ -317,7 +317,7 @@ class FigGenerator {
   /// [scriptPath].
   final String? scriptPath;
 
-  /// Template(s): "filepaths" | "folders" | "history" | "help" or list.
+  /// Template(s): a built-in name, a declarative descriptor, or a list of both.
   final dynamic template;
 
   /// Filter template output (function in TS; not serialized to JSON).
@@ -338,9 +338,9 @@ class FigGenerator {
   /// [getQueryTerm].
   final dynamic getQueryTerm;
 
-  /// String, or { on: "change"|"threshold"|"match", length?, string? }.
-  /// Preserved for API compatibility; generator-level triggers are not yet
-  /// executed by the Dart runtime.
+  /// A string, a declarative trigger object, or a callback resolved from a JSON
+  /// handler reference. The runtime preserves this value; its existing query
+  /// scope cache determines when a generator is rerun.
   final dynamic trigger;
   final String? splitOn;
 
@@ -401,8 +401,7 @@ class FigArg {
 
   /// Normalized list (TS SingleOrArray<Generator>). Pass single [FigGenerator] or [List<FigGenerator>] to constructor.
   final List<FigGenerator>? generators;
-  final dynamic
-      template; // String or List<String>: "filepaths", "folders", "history", "help"
+  final dynamic template; // Name, descriptor map, or list of either.
   /// String or FigSuggestion per item (TS (string|Suggestion)[]).
   final List<dynamic>? suggestions;
   final bool isOptional;
