@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:autocomplete:completion-spec:schema:1",
+  "title": "JSON-driven completion spec",
+  "type": "object",
+  "required": ["schemaVersion", "name"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "displayName": { "type": "string" },
+    "description": { "$ref": "#/$defs/text" },
+    "icon": { "type": "string" },
+    "hidden": { "type": "boolean" },
+    "priority": { "type": "integer" },
+    "insertValue": { "type": "string" },
+    "replaceValue": { "type": "string" },
+    "filterStrategy": { "enum": ["default", "prefix", "fuzzy"] },
+    "requiresSubcommand": { "type": "boolean" },
+    "subcommands": { "type": "array", "items": { "$ref": "#/$defs/subcommand" } },
+    "options": { "type": "array", "items": { "$ref": "#/$defs/option" } },
+    "args": { "oneOf": [{ "$ref": "#/$defs/arg" }, { "type": "array", "items": { "$ref": "#/$defs/arg" } }] },
+    "additionalSuggestions": { "type": "array", "items": { "$ref": "#/$defs/suggestionOrName" } },
+    "loadSpec": { "type": "string", "minLength": 1 },
+    "generateSpec": { "$ref": "#/$defs/handler" },
+    "generateSpecCacheKey": { "type": "string" },
+    "versionedSpec": { "$ref": "#/$defs/versionedSpec" },
+    "parserDirectives": { "type": "object" }
+  },
+  "$defs": {
+    "text": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+    "name": { "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }] },
+    "handler": {
+      "type": "object",
+      "required": ["handler"],
+      "properties": {
+        "handler": { "type": "string", "pattern": "^[a-z0-9]+(?:[._-][a-z0-9]+)+$" },
+        "version": { "type": "integer", "minimum": 1 },
+        "config": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "versionedSpec": {
+      "type": "object",
+      "required": ["cacheKey", "getVersion", "versions"],
+      "properties": {
+        "cacheKey": { "type": "string", "minLength": 1 },
+        "getVersion": { "$ref": "#/$defs/handler" },
+        "versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["version", "loadSpec"],
+            "properties": {
+              "version": { "type": "string", "minLength": 1 },
+              "loadSpec": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "suggestionOrName": {
+      "oneOf": [
+        { "type": "string" },
+        { "$ref": "#/$defs/suggestion" },
+        {
+          "type": "array",
+          "prefixItems": [{ "type": "string" }, { "type": "string" }],
+          "items": false
+        }
+      ]
+    },
+    "suggestion": {
+      "type": "object",
+      "properties": {
+        "name": { "$ref": "#/$defs/name" },
+        "displayName": { "type": "string" },
+        "description": { "$ref": "#/$defs/text" },
+        "icon": { "type": "string" },
+        "priority": { "type": "integer" },
+        "insertValue": { "type": "string" },
+        "replaceValue": { "type": "string" },
+        "type": { "type": "string" },
+        "hidden": { "type": "boolean" },
+        "isDangerous": { "type": "boolean" },
+        "deprecated": {},
+        "previewComponent": { "type": "string" },
+        "loadSpec": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "script": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+        "scriptPath": { "type": "string" },
+        "template": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+        "custom": { "$ref": "#/$defs/handler" },
+        "postProcess": { "$ref": "#/$defs/handler" },
+        "cache": { "type": "object" },
+        "getQueryTerm": { "type": "string" },
+        "trigger": { "oneOf": [{ "type": "string" }, { "type": "object" }] },
+        "splitOn": { "type": "string" },
+        "scriptTimeout": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "arg": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "$ref": "#/$defs/text" },
+        "generators": {
+          "oneOf": [
+            { "type": "array", "items": { "$ref": "#/$defs/generator" } },
+            { "$ref": "#/$defs/generator" },
+            { "$ref": "#/$defs/handler" }
+          ]
+        },
+        "template": { "oneOf": [{ "type": "string" }, { "type": "array", "items": { "type": "string" } }] },
+        "suggestions": {
+          "oneOf": [
+            { "type": "array", "items": { "$ref": "#/$defs/suggestionOrName" } },
+            { "$ref": "#/$defs/handler" }
+          ]
+        },
+        "isOptional": { "type": "boolean" },
+        "isVariadic": { "type": "boolean" },
+        "isDangerous": { "type": "boolean" },
+        "filterStrategy": { "enum": ["default", "prefix", "fuzzy"] },
+        "default": { "type": "string" },
+        "suggestCurrentToken": { "type": "boolean" },
+        "optionsCanBreakVariadicArg": { "type": "boolean" },
+        "isCommand": { "type": "boolean" },
+        "suggestCommands": { "type": "boolean" },
+        "loadSpec": { "type": "string" },
+        "parserDirectives": { "type": "object" }
+      },
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "$ref": "#/$defs/name" },
+        "displayName": { "type": "string" },
+        "description": { "$ref": "#/$defs/text" },
+        "args": { "oneOf": [{ "$ref": "#/$defs/arg" }, { "type": "array", "items": { "$ref": "#/$defs/arg" } }] },
+        "isRepeatable": { "oneOf": [{ "type": "boolean" }, { "type": "integer", "minimum": 1 }] },
+        "isPersistent": { "type": "boolean" },
+        "isDangerous": { "type": "boolean" },
+        "isRequired": { "type": "boolean" },
+        "requiresEquals": { "type": "boolean" },
+        "requiresSeparator": { "oneOf": [{ "type": "boolean" }, { "type": "string" }] },
+        "dependsOn": { "type": "array", "items": { "type": "string" } },
+        "exclusiveOn": { "type": "array", "items": { "type": "string" } },
+        "insertValue": { "type": "string" },
+        "replaceValue": { "type": "string" },
+        "icon": { "type": "string" },
+        "priority": { "type": "integer" },
+        "deprecated": {},
+        "hidden": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "subcommand": {
+      "allOf": [{ "$ref": "#/$defs/suggestion" }, {
+        "type": "object",
+        "properties": {
+          "subcommands": { "type": "array", "items": { "$ref": "#/$defs/subcommand" } },
+          "options": { "type": "array", "items": { "$ref": "#/$defs/option" } },
+          "args": { "oneOf": [{ "$ref": "#/$defs/arg" }, { "type": "array", "items": { "$ref": "#/$defs/arg" } }] },
+          "filterStrategy": { "enum": ["default", "prefix", "fuzzy"] },
+          "requiresSubcommand": { "type": "boolean" },
+          "additionalSuggestions": { "type": "array", "items": { "$ref": "#/$defs/suggestionOrName" } },
+          "loadSpec": { "type": "string" },
+          "generateSpec": { "$ref": "#/$defs/handler" },
+          "generateSpecCacheKey": { "type": "string" },
+          "parserDirectives": { "type": "object" },
+          "cache": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }]
+    }
+  }
+}

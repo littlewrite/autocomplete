@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "composer",
+  "description": "Composer Command",
+  "generateSpec": {
+    "handler": "manual.src_composer.spec.generatespec",
+    "version": 1
+  }
+}

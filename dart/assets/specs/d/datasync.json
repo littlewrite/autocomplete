@@ -1,0 +1,848 @@
+{
+  "schemaVersion": 1,
+  "name": "datasync",
+  "description": "DataSync DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly, easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services. This API interface reference includes documentation for using DataSync programmatically. For complete information, see the  DataSync User Guide",
+  "subcommands": [
+    {
+      "name": "add-storage-system",
+      "description": "Creates an Amazon Web Services resource for an on-premises storage system that you want DataSync Discovery to collect information about",
+      "options": [
+        {
+          "name": "--server-configuration",
+          "description": "Specifies the server name and network port required to connect with the management interface of your on-premises storage system",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--system-type",
+          "description": "Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.  DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--agent-arns",
+          "description": "Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises storage system's management interface. You can only specify one ARN",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cloud-watch-log-group-arn",
+          "description": "Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your on-premises storage system",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--name",
+          "description": "Specifies a familiar name for your on-premises storage system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--client-token",
+          "description": "Specifies a client token to make sure requests with this API operation are idempotent. If you don't specify a client token, DataSync generates one for you automatically",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--credentials",
+          "description": "Specifies the user name and password for accessing your on-premises storage system's management interface",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "cancel-task-execution",
+      "description": "Stops an DataSync task execution that's in progress. The transfer of some files are abruptly interrupted. File contents that're transferred to the destination might be incomplete or inconsistent with the source files. However, if you start a new task execution using the same task and allow it to finish, file content on the destination will be complete and consistent. This applies to other unexpected failures that interrupt a task execution. In all of these cases, DataSync successfully completes the transfer when you start the next task execution",
+      "options": [
+        {
+          "name": "--task-execution-arn",
+          "description": "The Amazon Resource Name (ARN) of the task execution to stop",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-agent",
+      "description": "Activates an DataSync agent that you deploy in your storage environment. The activation process associates the agent with your Amazon Web Services account. If you haven't deployed an agent yet, see Do I need a DataSync agent?",
+      "options": [
+        {
+          "name": "--activation-key",
+          "description": "Specifies your DataSync agent's activation key. If you don't have an activation key, see Activating your agent",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--agent-name",
+          "description": "Specifies a name for your agent. We recommend specifying a name that you can remember",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least one tag for your agent",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--vpc-endpoint-id",
+          "description": "Specifies the ID of the VPC service endpoint that you're using. For example, a VPC endpoint ID looks like vpce-01234d5aff67890e1.  The VPC service endpoint you use must include the DataSync service name (for example, com.amazonaws.us-east-2.datasync)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--subnet-arns",
+          "description": "Specifies the ARN of the subnet where your VPC service endpoint is located. You can only specify one ARN",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--security-group-arns",
+          "description": "Specifies the Amazon Resource Name (ARN) of the security group that allows traffic between your agent and VPC service endpoint. You can only specify one ARN",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-azure-blob",
+      "description": "Creates a transfer location for a Microsoft Azure Blob Storage container. DataSync can use this location as a transfer source or destination. Before you begin, make sure you know how DataSync accesses Azure Blob Storage and works with access tiers and blob types. You also need a DataSync agent that can connect to your container",
+      "options": [
+        {
+          "name": "--container-url",
+          "description": "Specifies the URL of the Azure Blob Storage container involved in your transfer",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--authentication-type",
+          "description": "Specifies the authentication method DataSync uses to access your Azure Blob Storage. DataSync can access blob storage using a shared access signature (SAS)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--sas-configuration",
+          "description": "Specifies the SAS configuration that allows DataSync to access your Azure Blob Storage",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--blob-type",
+          "description": "Specifies the type of blob that you want your objects or files to be when transferring them into Azure Blob Storage. Currently, DataSync only supports moving data into Azure Blob Storage as block blobs. For more information on blob types, see the Azure Blob Storage documentation",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--access-tier",
+          "description": "Specifies the access tier that you want your objects or files transferred into. This only applies when using the location as a transfer destination. For more information, see Access tiers",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--subdirectory",
+          "description": "Specifies path segments if you want to limit your transfer to a virtual directory in your container (for example, /my/images)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--agent-arns",
+          "description": "Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect with your Azure Blob Storage container. You can specify more than one agent. For more information, see Using multiple agents for your transfer",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your transfer location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-efs",
+      "description": "Creates a transfer location for an Amazon EFS file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses Amazon EFS file systems",
+      "options": [
+        {
+          "name": "--subdirectory",
+          "description": "Specifies a mount path for your Amazon EFS file system. This is where DataSync reads or writes data (depending on if this is a source or destination location) on your file system. By default, DataSync uses the root directory (or access point if you provide one by using AccessPointArn). You can also include subdirectories using forward slashes (for example, /path/to/folder)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--efs-filesystem-arn",
+          "description": "Specifies the ARN for your Amazon EFS file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--ec2-config",
+          "description": "Specifies the subnet and security groups DataSync uses to connect to one of your Amazon EFS file system's mount targets",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies the key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--access-point-arn",
+          "description": "Specifies the Amazon Resource Name (ARN) of the access point that DataSync uses to mount your Amazon EFS file system. For more information, see Accessing restricted file systems",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--file-system-access-role-arn",
+          "description": "Specifies an Identity and Access Management (IAM) role that allows DataSync to access your Amazon EFS file system. For information on creating this role, see Creating a DataSync IAM role for file system access",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--in-transit-encryption",
+          "description": "Specifies whether you want DataSync to use Transport Layer Security (TLS) 1.2 encryption when it transfers data to or from your Amazon EFS file system. If you specify an access point using AccessPointArn or an IAM role using FileSystemAccessRoleArn, you must set this parameter to TLS1_2",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-fsx-lustre",
+      "description": "Creates a transfer location for an Amazon FSx for Lustre file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for Lustre file systems",
+      "options": [
+        {
+          "name": "--fsx-filesystem-arn",
+          "description": "The Amazon Resource Name (ARN) for the FSx for Lustre file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--security-group-arns",
+          "description": "The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--subdirectory",
+          "description": "A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-fsx-ontap",
+      "description": "Creates a transfer location for an Amazon FSx for NetApp ONTAP file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for ONTAP file systems",
+      "options": [
+        {
+          "name": "--protocol",
+          "description": "Specifies the data transfer protocol that DataSync uses to access your Amazon FSx file system",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--security-group-arns",
+          "description": "Specifies the Amazon EC2 security groups that provide access to your file system's preferred subnet. The security groups must allow outbound traffic on the following ports (depending on the protocol you use):    Network File System (NFS): TCP ports 111, 635, and 2049    Server Message Block (SMB): TCP port 445   Your file system's security groups must also allow inbound traffic on the same ports",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--storage-virtual-machine-arn",
+          "description": "Specifies the ARN of the storage virtual machine (SVM) in your file system where you want to copy data to or from",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--subdirectory",
+          "description": "Specifies a path to the file share in the SVM where you'll copy your data. You can specify a junction path (also known as a mount point), qtree path (for NFS file shares), or share name (for SMB file shares). For example, your mount path might be /vol1, /vol1/tree1, or /share1.  Don't specify a junction path in the SVM's root volume. For more information, see Managing FSx for ONTAP storage virtual machines in the Amazon FSx for NetApp ONTAP User Guide",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-fsx-open-zfs",
+      "description": "Creates a transfer location for an Amazon FSx for OpenZFS file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for OpenZFS file systems.  Request parameters related to SMB aren't supported with the CreateLocationFsxOpenZfs operation",
+      "options": [
+        {
+          "name": "--fsx-filesystem-arn",
+          "description": "The Amazon Resource Name (ARN) of the FSx for OpenZFS file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--protocol",
+          "description": "The type of protocol that DataSync uses to access your file system",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--security-group-arns",
+          "description": "The ARNs of the security groups that are used to configure the FSx for OpenZFS file system",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--subdirectory",
+          "description": "A subdirectory in the location's path that must begin with /fsx. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-fsx-windows",
+      "description": "Creates a transfer location for an Amazon FSx for Windows File Server file system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses FSx for Windows File Server file systems",
+      "options": [
+        {
+          "name": "--subdirectory",
+          "description": "Specifies a mount path for your file system using forward slashes. This is where DataSync reads or writes data (depending on if this is a source or destination location)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--fsx-filesystem-arn",
+          "description": "Specifies the Amazon Resource Name (ARN) for the FSx for Windows File Server file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--security-group-arns",
+          "description": "Specifies the ARNs of the Amazon EC2 security groups that provide access to your file system's preferred subnet. The security groups that you specify must be able to communicate with your file system's security groups. For information about configuring security groups for file system access, see the  Amazon FSx for Windows File Server User Guide .  If you choose a security group that doesn't allow connections from within itself, do one of the following:   Configure the security group to allow it to communicate within itself.   Choose a different security group that can communicate with the mount target's security group",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--user",
+          "description": "Specifies the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system. For information about choosing a user with the right level of access for your transfer, see required permissions for FSx for Windows File Server locations",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--domain",
+          "description": "Specifies the name of the Microsoft Active Directory domain that the FSx for Windows File Server file system belongs to. If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that DataSync connects to the right file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--password",
+          "description": "Specifies the password of the user with the permissions to mount and access the files, folders, and file metadata in your FSx for Windows File Server file system",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-hdfs",
+      "description": "Creates a transfer location for a Hadoop Distributed File System (HDFS). DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses HDFS clusters",
+      "options": [
+        {
+          "name": "--subdirectory",
+          "description": "A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to /",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--name-nodes",
+          "description": "The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--block-size",
+          "description": "The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB)",
+          "args": {
+            "name": "integer"
+          }
+        },
+        {
+          "name": "--replication-factor",
+          "description": "The number of DataNodes to replicate the data to when writing to the HDFS cluster. By default, data is replicated to three DataNodes",
+          "args": {
+            "name": "integer"
+          }
+        },
+        {
+          "name": "--kms-key-provider-uri",
+          "description": "The URI of the HDFS cluster's Key Management Server (KMS)",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--qop-configuration",
+          "description": "The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer protection settings configured on the Hadoop Distributed File System (HDFS) cluster. If QopConfiguration isn't specified, RpcProtection and DataTransferProtection default to PRIVACY. If you set RpcProtection or DataTransferProtection, the other parameter assumes the same value",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--authentication-type",
+          "description": "The type of authentication used to determine the identity of the user",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--simple-user",
+          "description": "The user name used to identify the client on the host operating system.   If SIMPLE is specified for AuthenticationType, this parameter is required",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--kerberos-principal",
+          "description": "The Kerberos principal with access to the files and folders on the HDFS cluster.   If KERBEROS is specified for AuthenticationType, this parameter is required",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--kerberos-keytab",
+          "description": "The Kerberos key table (keytab) that contains mappings between the defined Kerberos principal and the encrypted keys. You can load the keytab from a file by providing the file's address. If you're using the CLI, it performs base64 encoding for you. Otherwise, provide the base64-encoded text.   If KERBEROS is specified for AuthenticationType, this parameter is required",
+          "args": {
+            "name": "blob"
+          }
+        },
+        {
+          "name": "--kerberos-krb5-conf",
+          "description": "The krb5.conf file that contains the Kerberos configuration information. You can load the krb5.conf file by providing the file's address. If you're using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded text.   If KERBEROS is specified for AuthenticationType, this parameter is required",
+          "args": {
+            "name": "blob"
+          }
+        },
+        {
+          "name": "--agent-arns",
+          "description": "The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS cluster",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "The key-value pair that represents the tag that you want to add to the location. The value can be an empty string. We recommend using tags to name your resources",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-nfs",
+      "description": "Creates a transfer location for a Network File System (NFS) file server. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand how DataSync accesses NFS file servers.  If you're copying data to or from an Snowcone device, you can also use CreateLocationNfs to create your transfer location. For more information, see Configuring transfers with Snowcone",
+      "options": [
+        {
+          "name": "--subdirectory",
+          "description": "Specifies the export path in your NFS file server that you want DataSync to mount. This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on configuring an export for DataSync, see Accessing NFS file servers",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--server-hostname",
+          "description": "Specifies the Domain Name System (DNS) name or IP version 4 address of the NFS file server that your DataSync agent connects to",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--on-prem-config",
+          "description": "Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to your NFS file server. You can specify more than one agent. For more information, see Using multiple DataSync agents",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--mount-options",
+          "description": "Specifies the options that DataSync can use to mount your NFS file server",
+          "args": {
+            "name": "structure"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create-location-object-storage",
+      "description": "Creates a transfer location for an object storage system. DataSync can use this location as a source or destination for transferring data. Before you begin, make sure that you understand the prerequisites for DataSync to work with object storage systems",
+      "options": [
+        {
+          "name": "--server-hostname",
+          "description": "Specifies the domain name or IP address of the object storage server. A DataSync agent uses this hostname to mount the object storage server in a network",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--server-port",
+          "description": "Specifies the port that your object storage server accepts inbound network traffic on (for example, port 443)",
+          "args": {
+            "name": "integer"
+          }
+        },
+        {
+          "name": "--server-protocol",
+          "description": "Specifies the protocol that your object storage server uses to communicate",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--subdirectory",
+          "description": "Specifies the object prefix for your object storage server. If this is a source location, DataSync only copies objects with this prefix. If this is a destination location, DataSync writes all objects with this prefix",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--bucket-name",
+          "description": "Specifies the name of the object storage bucket involved in the transfer",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--access-key",
+          "description": "Specifies the access key (for example, a user name) if credentials are required to authenticate with the object storage server",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--secret-key",
+          "description": "Specifies the secret key (for example, a password) if credentials are required to authenticate with the object storage server",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--agent-arns",
+          "description": "Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect with your object storage system",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--tags",
+          "description": "Specifies the key-value pair that represents a tag that you want to add to the resource. Tags can help you manage, filter, and search for your resources. We recommend creating a name tag for your location",
+          "args": {
+            "name": "list"
+          }
+        },
+        {
+          "name": "--server-certificate",
+          "description": "Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a private or self-signed certificate authority (CA). You must specify a single .pem file with a full certificate chain (for example, file:///home/user/.ssh/object_storage_certificates.pem). The certificate chain might include:   The object storage system's certificate   All intermediate certificates (if there are any)   The root certificate of the signing CA   You can concatenate your certificates into a .pem file (which can be up to 32768 bytes before base64 encoding). The following example cat command creates an object_storage_certificates.pem file that includes three certificates:  cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem > object_storage_certificates.pem  To use this parameter, configure ServerProtocol to HTTPS",
+          "args": {
+            "name": "blob"
+          }
+        },
+        {
+          "name": "--cli-input-json",
+          "description": "Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": "--generate-cli-skeleton",
+          "description": "Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command",
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "input",
+              "output"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "drush",
+  "description": "Drush is a command line shell and Unix scripting interface for Drupal",
+  "generateSpec": {
+    "handler": "manual.src_drush.spec.generatespec",
+    "version": 1
+  }
+}

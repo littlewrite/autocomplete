@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "name": "g++",
+  "description": "The default C++ compiler for most linux distributions",
+  "options": [
+    {
+      "name": "-std",
+      "description": "Language standard to compile for",
+      "args": {
+        "name": "value",
+        "suggestions": []
+      },
+      "requiresSeparator": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "kubens",
+  "description": "Switch between Kubernetes-namespaces",
+  "additionalSuggestions": [
+    {
+      "name": "-",
+      "priority": 85,
+      "description": "Switch to previous namespace within the current context",
+      "icon": "fig://icon?type=asterisk"
+    }
+  ],
+  "parserDirectives": {
+    "flagsArePosixNoncompliant": true
+  },
+  "options": [
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Show help for kubens"
+    },
+    {
+      "name": [
+        "--current",
+        "-c"
+      ],
+      "description": "Show current namespace"
+    }
+  ],
+  "args": {
+    "name": "namespace",
+    "generators": [
+      {
+        "script": [
+          "bash",
+          "-c",
+          "kubens | grep -v $(kubens -c)"
+        ],
+        "postProcess": {
+          "handler": "manual.src_kubens.spec.args.generators_0_.postprocess",
+          "version": 1
+        }
+      },
+      {
+        "script": [
+          "kubens",
+          "-c"
+        ],
+        "postProcess": {
+          "handler": "manual.src_kubens.spec.args.generators_1_.postprocess",
+          "version": 1
+        }
+      }
+    ],
+    "isOptional": true
+  }
+}

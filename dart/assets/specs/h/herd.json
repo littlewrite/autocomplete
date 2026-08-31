@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "name": "herd",
+  "description": "Herd is a blazing fast, native Laravel and PHP development environment for macOS. It provides everything that you need to get started with Laravel development",
+  "subcommands": [
+    {
+      "name": "completion",
+      "description": "Dump the shell completion script",
+      "args": {
+        "name": "shell",
+        "description": "The shell type (e.g. \"bash\"), the value of the \"$SHELL\" env var will be used if this is not given",
+        "suggestions": [
+          "bash",
+          "fish",
+          "powershell",
+          "zsh"
+        ],
+        "isOptional": true
+      }
+    },
+    {
+      "name": "composer",
+      "description": "Proxy Composer commands with isolated site's PHP executable",
+      "loadSpec": "composer"
+    },
+    {
+      "name": "coverage",
+      "description": "Proxy PHP commands with isolated sith Xdebug code coverage enabled"
+    },
+    {
+      "name": "debug",
+      "description": "Proxy PHP commands with isolated site's PHP executable and debug.ini loaded",
+      "loadSpec": "php"
+    },
+    {
+      "name": "directory-listing",
+      "description": "Determine directory-listing behavior. Default is off, which means a 404 will display",
+      "args": {
+        "name": "status",
+        "description": "On or off. (default=off) will show a 404 page; [on] will display a listing if project folder exists but requested URI not found",
+        "suggestions": [
+          "on",
+          "off"
+        ],
+        "isOptional": true
+      }
+    },
+    {
+      "name": "edit",
+      "description": "Open the site in your favorite IDE"
+    },
+    {
+      "name": "fetch-share-url",
+      "description": "Get the URL to the current share tunnel for Expose",
+      "args": {
+        "name": "domain",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "forget",
+      "description": "Remove the current working (or specified) directory from Herd's list of paths",
+      "args": {
+        "name": "path",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "help",
+      "description": "Display help for a command",
+      "args": {
+        "name": "command_name",
+        "description": "The command name [default: \"help\"]",
+        "isOptional": true,
+        "generators": {
+          "script": [
+            "herd",
+            "list",
+            "--raw"
+          ],
+          "postProcess": {
+            "handler": "manual.src_herd.spec.subcommands_8_.args.generators.postprocess",
+            "version": 1
+          }
+        },
+        "filterStrategy": "fuzzy"
+      }
+    },
+    {
+      "name": "init",
+      "description": "Start the services defined in the Herd manifest file, and apply the configuration"
+    },
+    {
+      "name": "isolate",
+      "description": "Change the version of PHP used by Herd to serve the current working directory",
+      "args": {
+        "name": "phpVersion",
+        "description": "The PHP version you want to use; e.g 8.1"
+      }
+    },
+    {
+      "name": "isolate-node",
+      "description": "Change the version of Node used by the CLI for the current working directory",
+      "args": {
+        "name": "nodeVersion",
+        "description": "The Node version you want to use; e.g 21"
+      }
+    },
+    {
+      "name": "isolated",
+      "description": "List all sites using isolated versions of PHP"
+    },
+    {
+      "name": "isolated-node",
+      "description": "List all sites using isolated versions of Nodes"
+    },
+    {
+      "name": "link",
+      "description": "Link the current working directory to Herd",
+      "args": {
+        "name": "name",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "links",
+      "description": "Display all of the registered Herd links"
+    },
+    {
+      "name": "list",
+      "description": "List commands",
+      "args": {
+        "name": "namespace",
+        "description": "The namespace name",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "log",
+      "description": "Tail log file",
+      "args": {
+        "name": "key"
+      }
+    },
+    {
+      "name": "logs",
+      "description": "Show the log viewer UI for the given site"
+    },
+    {
+      "name": "loopback",
+      "description": "Get or set the loopback address used for Herd sites",
+      "args": {
+        "name": "loopback",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "open",
+      "description": "Open the site for the current (or specified) directory in your browser",
+      "args": {
+        "name": "domain",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "park",
+      "description": "Register the current working (or specified) directory with Herd",
+      "args": {
+        "name": "path",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "parked",
+      "description": "Display all the current sites within parked paths"
+    },
+    {
+      "name": "paths",
+      "description": "Get all of the paths registered with Herd"
+    },
+    {
+      "name": "php",
+      "description": "Proxy PHP commands with isolated site's PHP executable",
+      "args": {
+        "name": "command",
+        "loadSpec": "php"
+      }
+    },
+    {
+      "name": "proxies",
+      "description": "Display all of the proxy sites"
+    },
+    {
+      "name": "proxy",
+      "description": "Create an Nginx proxy site for the specified host. Useful for Reverb, Docker, etc",
+      "args": [
+        {
+          "name": "domain"
+        },
+        {
+          "name": "host"
+        }
+      ]
+    },
+    {
+      "name": "restart",
+      "description": "Restart the Herd services",
+      "args": {
+        "name": "service",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "secure",
+      "description": "Secure the given domain with a trusted TLS certificate",
+      "args": {
+        "name": "domain",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "secured",
+      "description": "Secure the given domain with a trusted TLS certificate"
+    },
+    {
+      "name": "share",
+      "description": "Share the current site via an Expose tunnel"
+    },
+    {
+      "name": "site-information",
+      "description": "Display information about the specified site",
+      "args": {
+        "name": "path",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "start",
+      "description": "Start the Herd services",
+      "args": {
+        "name": "service",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "stop",
+      "description": "Stop the Herd services",
+      "args": {
+        "name": "service",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "tinker",
+      "description": "Run tinker/Tinkerwell"
+    },
+    {
+      "name": "tld",
+      "description": "[domain] Get or set the TLD used for Herd sites",
+      "args": {
+        "name": "tld",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "unisolate",
+      "description": "Stop customizing the version of PHP used by Herd to serve the current working directory"
+    },
+    {
+      "name": "unisolate-node",
+      "description": "Stop customizing the version of Node used the CLI for the current working directory"
+    },
+    {
+      "name": "unlink",
+      "description": "Remove the specified Herd link",
+      "args": {
+        "name": "name",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "unproxy",
+      "description": "Delete an Nginx proxy config",
+      "args": {
+        "name": "domain",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "unsecure",
+      "description": "Stop serving the given domain over HTTPS and remove the trusted TLS certificate",
+      "args": {
+        "name": "domain",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "use",
+      "description": "Change the version of PHP used by Herd",
+      "args": {
+        "name": "phpVersion",
+        "description": "The PHP version you want to use; e.g. 8.3",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "which",
+      "description": "Display which Herd driver serves the current working directory"
+    },
+    {
+      "name": "which-php",
+      "description": "Get the PHP executable path for a given site",
+      "args": {
+        "name": "site",
+        "description": "The site to get the PHP executable path for",
+        "isOptional": true
+      }
+    },
+    {
+      "name": "init:fresh",
+      "description": "Initialize a Herd manifest file"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "name": "bunx",
+  "args": {
+    "name": "command",
+    "isCommand": true,
+    "generators": {
+      "script": [
+        "bash",
+        "-c",
+        "until [[ -d node_modules/ ]] || [[ $PWD = '/' ]]; do cd ..; done; ls -1 node_modules/.bin/`"
+      ],
+      "postProcess": {
+        "handler": "manual.src_bunx.spec.args.generators.postprocess",
+        "version": 1
+      }
+    },
+    "description": "The command to run",
+    "suggestions": []
+  }
+}

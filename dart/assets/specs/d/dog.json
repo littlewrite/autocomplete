@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "name": "dog",
+  "description": "A command-line DNS client",
+  "subcommands": [
+    {
+      "name": "A",
+      "description": "Query Domain A Record"
+    },
+    {
+      "name": "MX",
+      "description": "Query Domain MX Record"
+    },
+    {
+      "name": "CNAME",
+      "description": "Query Domain CNAME Record"
+    },
+    {
+      "name": "TXT",
+      "description": "Query Domain TXT Record"
+    },
+    {
+      "name": "NS",
+      "description": "Query NS Record"
+    },
+    {
+      "name": "SOA",
+      "description": "Query SOA Record"
+    },
+    {
+      "name": "TTL",
+      "description": "Query TTL Record"
+    },
+    {
+      "name": "ANY +noall +answer",
+      "description": "Query ALL DNS Records"
+    },
+    {
+      "name": "+nocomments +noquestion +noauthority +noadditional +nostats",
+      "description": "Query only answer section"
+    }
+  ]
+}

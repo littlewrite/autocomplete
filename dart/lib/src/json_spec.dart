@@ -23,6 +23,22 @@ typedef JsonCustomHandler = Future<List<FigSuggestion>> Function(
 /// The arguments are the newly typed and previously typed token respectively.
 typedef JsonTriggerHandler = bool Function(String newToken, String oldToken);
 
+/// Produces the command to run for a dynamic JSON `script` generator.
+///
+/// The callback receives the currently typed [List<String>] tokens and returns
+/// a safe command representation: a token list (command plus arguments) or an
+/// [ExecuteCommandInput]-shaped map. The runtime converts either through the
+/// same adapter path as a static script, preserving `splitOn`, timeout, cwd,
+/// and environment semantics.
+typedef JsonScriptHandler = FutureOr<dynamic> Function(List<String> tokens);
+
+/// Filters the suggestions produced by a template generator, mirroring Fig's
+/// `filterTemplateSuggestions` contract.
+typedef JsonFilterTemplateSuggestionsHandler = List<FigSuggestion> Function(
+  List<FigSuggestion> suggestions, [
+  FigGeneratorContext? context,
+]);
+
 typedef JsonGenerateSpecHandler = Future<FigSpec?> Function(
   List<String> tokens,
   ExecuteCommandFunction executeCommand,
@@ -47,6 +63,32 @@ typedef JsonVersionHandler = Future<String?> Function(
 /// Resolves one deferred version document named by a JSON `loadSpec` link.
 typedef JsonVersionedSpecReader = Future<FigSpec> Function(String loadSpec);
 
+/// Produces a subcommand's `options` list for a JSON whole-`options` handler
+/// reference (`options: {handler}`). The five shipped handlers build static
+/// lists, so callers resolve them synchronously at parse time.
+typedef JsonOptionsHandler = FutureOr<List<FigOption>> Function(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+);
+
+/// Produces a subcommand's `subcommands` list for a JSON whole-`subcommands`
+/// handler reference (`subcommands: {handler}`).
+typedef JsonSubcommandsHandler = FutureOr<List<FigSubcommand>> Function(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+);
+
+/// Produces the spec for a JSON `args.loadSpec` handler reference
+/// (`loadSpec: {handler}`). The one shipped example is token-dependent, so it
+/// is deferred and invoked by the runtime when the argument is completed.
+typedef JsonLoadSpecHandler = FutureOr<FigSpec?> Function(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+);
+
 /// How JSON loading behaves when a referenced Dart handler has not been
 /// ported yet. [returnEmpty] keeps static completion available while recording
 /// the missing reference for migration work.
@@ -69,10 +111,16 @@ class JsonHandlerRegistry {
   final Map<String, JsonPostProcessHandler> _postProcessors = {};
   final Map<String, JsonCustomHandler> _custom = {};
   final Map<String, JsonTriggerHandler> _triggers = {};
+  final Map<String, JsonScriptHandler> _scripts = {};
+  final Map<String, JsonFilterTemplateSuggestionsHandler>
+      _filterTemplateSuggestions = {};
   final Map<String, JsonGenerateSpecHandler> _generateSpec = {};
   final Map<String, JsonGenerateSubcommandHandler> _generateSubcommand = {};
   final Map<String, JsonAliasHandler> _aliases = {};
   final Map<String, JsonVersionHandler> _versions = {};
+  final Map<String, JsonOptionsHandler> _options = {};
+  final Map<String, JsonSubcommandsHandler> _subcommands = {};
+  final Map<String, JsonLoadSpecHandler> _loadSpecs = {};
   final List<UnresolvedJsonHandler> _unresolvedHandlers = [];
 
   List<UnresolvedJsonHandler> get unresolvedHandlers =>
@@ -88,6 +136,15 @@ class JsonHandlerRegistry {
 
   void registerTrigger(String id, JsonTriggerHandler handler) {
     _triggers[id] = handler;
+  }
+
+  void registerScript(String id, JsonScriptHandler handler) {
+    _scripts[id] = handler;
+  }
+
+  void registerFilterTemplateSuggestions(
+      String id, JsonFilterTemplateSuggestionsHandler handler) {
+    _filterTemplateSuggestions[id] = handler;
   }
 
   void registerGenerateSpec(String id, JsonGenerateSpecHandler handler) {
@@ -107,14 +164,48 @@ class JsonHandlerRegistry {
     _versions[id] = handler;
   }
 
+  void registerOptions(String id, JsonOptionsHandler handler) {
+    _options[id] = handler;
+  }
+
+  void registerSubcommands(String id, JsonSubcommandsHandler handler) {
+    _subcommands[id] = handler;
+  }
+
+  void registerLoadSpec(String id, JsonLoadSpecHandler handler) {
+    _loadSpecs[id] = handler;
+  }
+
   JsonPostProcessHandler? postProcess(String id) => _postProcessors[id];
   JsonCustomHandler? custom(String id) => _custom[id];
   JsonTriggerHandler? trigger(String id) => _triggers[id];
+  JsonScriptHandler? script(String id) => _scripts[id];
+  JsonFilterTemplateSuggestionsHandler? filterTemplateSuggestions(String id) =>
+      _filterTemplateSuggestions[id];
   JsonGenerateSpecHandler? generateSpec(String id) => _generateSpec[id];
   JsonGenerateSubcommandHandler? generateSubcommand(String id) =>
       _generateSubcommand[id];
   JsonAliasHandler? alias(String id) => _aliases[id];
   JsonVersionHandler? version(String id) => _versions[id];
+  JsonOptionsHandler? options(String id) => _options[id];
+  JsonSubcommandsHandler? subcommands(String id) => _subcommands[id];
+  JsonLoadSpecHandler? loadSpec(String id) => _loadSpecs[id];
+
+  /// Every handler ID registered across all categories (for tooling/tests).
+  Set<String> allRegisteredIds() => <String>{
+        ..._postProcessors.keys,
+        ..._custom.keys,
+        ..._triggers.keys,
+        ..._scripts.keys,
+        ..._filterTemplateSuggestions.keys,
+        ..._generateSpec.keys,
+        ..._generateSubcommand.keys,
+        ..._aliases.keys,
+        ..._versions.keys,
+        ..._options.keys,
+        ..._subcommands.keys,
+        ..._loadSpecs.keys,
+      };
 
   void reportUnresolved(String id, String path) {
     if (_unresolvedHandlers.any((item) => item.id == id && item.path == path)) {
@@ -147,6 +238,25 @@ class JsonHandlerRegistry {
     reportUnresolved(id, path);
     return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
         ? _emptyTrigger
+        : null;
+  }
+
+  JsonScriptHandler? resolveScript(String id, String path) {
+    final handler = script(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptyScript
+        : null;
+  }
+
+  JsonFilterTemplateSuggestionsHandler? resolveFilterTemplateSuggestions(
+      String id, String path) {
+    final handler = filterTemplateSuggestions(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptyFilterTemplateSuggestions
         : null;
   }
 
@@ -186,6 +296,33 @@ class JsonHandlerRegistry {
         ? _emptyVersion
         : null;
   }
+
+  JsonOptionsHandler? resolveOptions(String id, String path) {
+    final handler = options(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptyOptions
+        : null;
+  }
+
+  JsonSubcommandsHandler? resolveSubcommands(String id, String path) {
+    final handler = subcommands(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptySubcommands
+        : null;
+  }
+
+  JsonLoadSpecHandler? resolveLoadSpec(String id, String path) {
+    final handler = loadSpec(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptyLoadSpec
+        : null;
+  }
 }
 
 Future<List<FigSuggestion>> _emptyCustom(
@@ -199,6 +336,12 @@ List<FigSuggestion> _emptyPostProcess(String output, [List<String>? tokens]) =>
     const <FigSuggestion>[];
 
 bool _emptyTrigger(String newToken, String oldToken) => true;
+
+Future<dynamic> _emptyScript(List<String> tokens) async => null;
+
+List<FigSuggestion> _emptyFilterTemplateSuggestions(
+        List<FigSuggestion> suggestions, [FigGeneratorContext? context]) =>
+    suggestions;
 
 Future<FigSpec?> _emptyGenerateSpec(
   List<String> tokens,
@@ -219,6 +362,27 @@ Future<String?> _emptyAlias(
     null;
 
 Future<String?> _emptyVersion(ExecuteCommandFunction executeCommand) async =>
+    null;
+
+List<FigOption> _emptyOptions(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+) =>
+    const <FigOption>[];
+
+List<FigSubcommand> _emptySubcommands(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+) =>
+    const <FigSubcommand>[];
+
+Future<FigSpec?> _emptyLoadSpec(
+  List<String> tokens,
+  ExecuteCommandFunction? executeCommand,
+  FigGeneratorContext? context,
+) async =>
     null;
 
 class JsonSpecFormatException implements FormatException {
@@ -341,6 +505,224 @@ bool _isHandlerReference(dynamic value) =>
 bool _usesEmptyFallback(JsonHandlerRegistry? handlers) =>
     handlers?.missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty;
 
+/// Resolves a JSON whole-`subcommands` handler ref (`subcommands: {handler}`)
+/// to a ready-made `List<FigSubcommand>` by invoking the registered handler at
+/// parse time. Shipped structural handlers build static lists synchronously;
+/// a Future result (never expected for these) falls back to empty.
+List<FigSubcommand>? _resolveSubcommandList(
+  dynamic value,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  if (!_isHandlerReference(value)) return null;
+  final id = _handlerId(value, path)!;
+  final handler = handlers?.resolveSubcommands(id, path);
+  if (handler == null) {
+    throw JsonSpecFormatException('Unknown subcommands handler at $path: $id');
+  }
+  final result = handler(const [], null, null);
+  if (result is Future) return const <FigSubcommand>[];
+  return result;
+}
+
+/// Resolves a JSON whole-`options` handler ref (`options: {handler}`) to a
+/// ready-made `List<FigOption>` by invoking the registered handler at parse
+/// time.
+List<FigOption>? _resolveOptionList(
+  dynamic value,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  if (!_isHandlerReference(value)) return null;
+  final id = _handlerId(value, path)!;
+  final handler = handlers?.resolveOptions(id, path);
+  if (handler == null) {
+    throw JsonSpecFormatException('Unknown options handler at $path: $id');
+  }
+  final result = handler(const [], null, null);
+  if (result is Future) return const <FigOption>[];
+  return result;
+}
+
+/// Parses a `subcommands` JSON array, splicing registered per-item handler refs
+/// (`subcommands[i]: {handler}`) into the list. Per-item refs mirror a TS array
+/// spread (e.g. `...plusCommands.map(...)`); the handler returns the list of
+/// subcommands to insert at that position. Whole-slot refs must already have
+/// been resolved by the caller.
+List<FigSubcommand> _subcommandItems(
+  List<dynamic> values,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  final result = <FigSubcommand>[];
+  for (var i = 0; i < values.length; i++) {
+    final item = values[i];
+    final itemPath = '$path[$i]';
+    if (_isHandlerReference(item)) {
+      final id = _handlerId(item, itemPath)!;
+      final handler = handlers?.resolveSubcommands(id, itemPath);
+      if (handler == null) {
+        if (_usesEmptyFallback(handlers)) continue;
+        throw JsonSpecFormatException(
+            'Unknown subcommands handler at $itemPath: $id');
+      }
+      final out = handler(const [], null, null);
+      if (out is Future) continue;
+      result.addAll(out);
+    } else {
+      result.add(_subcommand(_object(item, itemPath), itemPath, handlers));
+    }
+  }
+  return result;
+}
+
+/// Parses an `options` JSON array, splicing registered per-item handler refs
+/// (`options[i]: {handler}`) into the list, mirroring a TS array spread.
+List<FigOption> _optionItems(
+  List<dynamic> values,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  final result = <FigOption>[];
+  for (var i = 0; i < values.length; i++) {
+    final item = values[i];
+    final itemPath = '$path[$i]';
+    if (_isHandlerReference(item)) {
+      final id = _handlerId(item, itemPath)!;
+      final handler = handlers?.resolveOptions(id, itemPath);
+      if (handler == null) {
+        if (_usesEmptyFallback(handlers)) continue;
+        throw JsonSpecFormatException(
+            'Unknown options handler at $itemPath: $id');
+      }
+      final out = handler(const [], null, null);
+      if (out is Future) continue;
+      result.addAll(out);
+    } else {
+      result.add(_option(_object(item, itemPath), itemPath, handlers));
+    }
+  }
+  return result;
+}
+
+/// Parses a `suggestions` JSON array. Per-item handler refs (`suggestions[i]:
+/// {handler}`) cannot be spliced at parse time — suggestion handlers are
+/// async — so they are tolerated as inert (a null-named suggestion, dropped by
+/// the runtime) exactly like a plain unknown suggestion object.
+List<dynamic> _suggestionItems(
+  List<dynamic> values,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return values
+      .asMap()
+      .entries
+      .map((entry) =>
+          _suggestionValue(entry.value, '$path[${entry.key}]'))
+      .toList();
+}
+
+/// Resolves a JSON `loadSpec` handler ref to a deferred callback that the
+/// runtime invokes with the typed argument token. Non-ref values pass through.
+///
+/// Unlike whole-`options`/`subcommands` refs (which replace the entire slot and
+/// must resolve at parse time), `loadSpec` refs are per-arg runtime behavior
+/// with an `isCommand` fallback, so an unregistered handler degrades to `null`
+/// (fall through) rather than failing the whole spec parse.
+dynamic _resolveLoadSpecRef(
+  dynamic value,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  if (!_isHandlerReference(value)) return value;
+  final id = _handlerId(value, path)!;
+  return _deferredLoadSpecHandler(id, path, handlers);
+}
+
+JsonLoadSpecHandler _deferredLoadSpecHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (tokens, executeCommand, context) {
+    final handler = handlers?.resolveLoadSpec(id, path);
+    if (handler == null) return null;
+    return handler(tokens, executeCommand, context);
+  };
+}
+
+JsonCustomHandler _deferredCustomHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (tokens, executeCommand, context) async {
+    final handler = handlers?.resolveCustom(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException('Unknown custom handler at $path: $id');
+    }
+    return handler(tokens, executeCommand, context);
+  };
+}
+
+JsonPostProcessHandler _deferredPostProcessHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (output, [tokens]) {
+    final handler = handlers?.resolvePostProcess(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException(
+          'Unknown postProcess handler at $path: $id');
+    }
+    return handler(output, tokens);
+  };
+}
+
+JsonTriggerHandler _deferredTriggerHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (newToken, oldToken) {
+    final handler = handlers?.resolveTrigger(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException('Unknown trigger handler at $path: $id');
+    }
+    return handler(newToken, oldToken);
+  };
+}
+
+JsonScriptHandler _deferredScriptHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (tokens) async {
+    final handler = handlers?.resolveScript(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException('Unknown script handler at $path: $id');
+    }
+    return handler(tokens);
+  };
+}
+
+JsonFilterTemplateSuggestionsHandler _deferredFilterTemplateSuggestionsHandler(
+  String id,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  return (suggestions, [context]) {
+    final handler = handlers?.resolveFilterTemplateSuggestions(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException(
+          'Unknown filterTemplateSuggestions handler at $path: $id');
+    }
+    return handler(suggestions, context);
+  };
+}
+
 /// Dynamic values must appear only in fields with a typed runtime callback.
 /// The exporter retains every unsupported function as a handler reference. In
 /// migration mode, remove those values before normal parsing and keep an audit
@@ -357,10 +739,15 @@ dynamic _sanitizeUnsupportedHandlerReferences(
       'custom',
       'postProcess',
       'trigger',
+      'script',
+      'filterTemplateSuggestions',
       'generateSpec',
       'getVersion',
       'generators',
       'suggestions',
+      'loadSpec',
+      'options',
+      'subcommands',
     };
     if (supportedFields.contains(field)) return value;
     final id = _handlerId(value, path)!;
@@ -368,6 +755,12 @@ dynamic _sanitizeUnsupportedHandlerReferences(
     return _OmittedJsonValue.instance;
   }
   if (value is List) {
+    // A whole-`options`/`subcommands` slot is a handler ref that directly
+    // replaces the field's value; per-item refs (`options[i]`/`subcommands[i]`)
+    // are single entries the parser does not wire, so they stay omitted under
+    // migration mode. Do not propagate those two fields into list items.
+    final childField =
+        (field == 'options' || field == 'subcommands') ? null : field;
     return value
         .asMap()
         .entries
@@ -375,7 +768,7 @@ dynamic _sanitizeUnsupportedHandlerReferences(
               entry.value,
               '$path[${entry.key}]',
               handlers,
-              field: field,
+              field: childField,
             ))
         .where((item) => item is! _OmittedJsonValue)
         .toList();
@@ -463,11 +856,7 @@ FigGenerator _generator(
 ) {
   if (_isHandlerReference(map)) {
     final id = _handlerId(map, path)!;
-    final custom = handlers?.resolveCustom(id, path);
-    if (custom == null) {
-      throw JsonSpecFormatException('Unknown generator handler at $path: $id');
-    }
-    return FigGenerator(custom: custom);
+    return FigGenerator(custom: _deferredCustomHandler(id, path, handlers));
   }
   final customId = _handlerId(map['custom'], '$path.custom');
   final postProcessId = _handlerId(map['postProcess'], '$path.postProcess');
@@ -478,28 +867,39 @@ FigGenerator _generator(
       : null;
   final custom = customId == null
       ? null
-      : handlers?.resolveCustom(customId, '$path.custom');
+      : _deferredCustomHandler(customId, '$path.custom', handlers);
   final postProcess = postProcessId == null
       ? null
-      : handlers?.resolvePostProcess(postProcessId, '$path.postProcess');
+      : _deferredPostProcessHandler(
+          postProcessId, '$path.postProcess', handlers);
   final trigger = triggerId == null
       ? map['trigger']
-      : handlers?.resolveTrigger(triggerId, '$path.trigger');
-  if (customId != null && custom == null) {
-    throw JsonSpecFormatException('Unknown custom handler at $path: $customId');
-  }
-  if (postProcessId != null && postProcess == null) {
+      : _deferredTriggerHandler(triggerId, '$path.trigger', handlers);
+  // A filterTemplateSuggestions handler reference selects a host-language
+  // callback that post-filters the template suggestion list.
+  final filterId = _isHandlerReference(map['filterTemplateSuggestions'])
+      ? _handlerId(map['filterTemplateSuggestions'],
+          '$path.filterTemplateSuggestions')
+      : null;
+  final filterTemplateSuggestions = filterId == null
+      ? map['filterTemplateSuggestions']
+      : _deferredFilterTemplateSuggestionsHandler(
+          filterId, '$path.filterTemplateSuggestions', handlers);
+  // A script may be static (string/array), a declarative command object, or a
+  // handler reference selecting a host-language command producer.
+  final scriptId = _isHandlerReference(map['script'])
+      ? _handlerId(map['script'], '$path.script')
+      : null;
+  final script = scriptId == null
+      ? map['script']
+      : _deferredScriptHandler(scriptId, '$path.script', handlers);
+  if (script != null &&
+      script is! String &&
+      script is! List &&
+      script is! Map &&
+      script is! Function) {
     throw JsonSpecFormatException(
-        'Unknown postProcess handler at $path: $postProcessId');
-  }
-  if (triggerId != null && trigger == null) {
-    throw JsonSpecFormatException(
-        'Unknown trigger handler at $path: $triggerId');
-  }
-  final script = map['script'];
-  if (script != null && script is! String && script is! List) {
-    throw JsonSpecFormatException(
-        'Expected script string or array at $path.script');
+        'Expected script string, array, object, or handler at $path.script');
   }
   final template = map['template'];
   if (template != null &&
@@ -530,6 +930,7 @@ FigGenerator _generator(
         : template,
     postProcess: postProcess,
     custom: custom,
+    filterTemplateSuggestions: filterTemplateSuggestions,
     cache: map['cache'],
     getQueryTerm: map['getQueryTerm'],
     trigger: trigger,
@@ -615,11 +1016,8 @@ FigArg _arg(
       : null;
   final suggestionGenerator = suggestionHandlerId == null
       ? null
-      : handlers?.resolveCustom(suggestionHandlerId, '$path.suggestions');
-  if (suggestionHandlerId != null && suggestionGenerator == null) {
-    throw JsonSpecFormatException(
-        'Unknown suggestions handler at $path: $suggestionHandlerId');
-  }
+      : _deferredCustomHandler(
+          suggestionHandlerId, '$path.suggestions', handlers);
   return FigArg(
     name: map['name'] == null ? null : _string(map['name'], '$path.name'),
     description: map['description'] == null
@@ -638,12 +1036,10 @@ FigArg _arg(
         ? null
         : suggestionHandlerId != null
             ? null
-            : _list(suggestions, '$path.suggestions')
-                .asMap()
-                .entries
-                .map((entry) => _suggestionValue(
-                    entry.value, '$path.suggestions[${entry.key}]'))
-                .toList(),
+            : _suggestionItems(
+                _list(suggestions, '$path.suggestions'),
+                '$path.suggestions',
+                handlers),
     isOptional: map['isOptional'] == null
         ? false
         : _bool(map['isOptional'], '$path.isOptional'),
@@ -670,7 +1066,7 @@ FigArg _arg(
     suggestCommands: map['suggestCommands'] == null
         ? null
         : _bool(map['suggestCommands'], '$path.suggestCommands'),
-    loadSpec: map['loadSpec'],
+    loadSpec: _resolveLoadSpecRef(map['loadSpec'], '$path.loadSpec', handlers),
     parserDirectives: _argParserDirectives(
         map['parserDirectives'], '$path.parserDirectives', handlers),
     getQueryTerm: map['getQueryTerm'],
@@ -750,27 +1146,19 @@ FigSubcommand _subcommand(
         : _description(map['description'], '$path.description'),
     subcommands: subcommands == null
         ? null
-        : _list(subcommands, '$path.subcommands')
-            .asMap()
-            .entries
-            .map((entry) => _subcommand(
-                _object(entry.value, '$path.subcommands[${entry.key}]'),
-                '$path.subcommands[${entry.key}]',
-                handlers))
-            .toList(),
+        : _resolveSubcommandList(subcommands, '$path.subcommands', handlers) ??
+            _subcommandItems(
+                _list(subcommands, '$path.subcommands'),
+                '$path.subcommands',
+                handlers),
     options: options == null
         ? null
-        : _list(options, '$path.options')
-            .asMap()
-            .entries
-            .map((entry) => _option(
-                _object(entry.value, '$path.options[${entry.key}]'),
-                '$path.options[${entry.key}]',
-                handlers))
-            .toList(),
+        : _resolveOptionList(options, '$path.options', handlers) ??
+            _optionItems(_list(options, '$path.options'), '$path.options',
+                handlers),
     args: _args(map['args'], '$path.args', handlers),
     icon: map['icon'] == null ? null : _string(map['icon'], '$path.icon'),
-    loadSpec: map['loadSpec'],
+    loadSpec: _resolveLoadSpecRef(map['loadSpec'], '$path.loadSpec', handlers),
     filterStrategy: _filter(map['filterStrategy'], '$path.filterStrategy'),
     priority: map['priority'] == null
         ? null
@@ -888,24 +1276,13 @@ FigSpec _figSpecFromJson(
         : _description(map['description'], 'description'),
     subcommands: subcommands == null
         ? null
-        : _list(subcommands, 'subcommands')
-            .asMap()
-            .entries
-            .map((entry) => _subcommand(
-                _object(entry.value, 'subcommands[${entry.key}]'),
-                'subcommands[${entry.key}]',
-                handlers))
-            .toList(),
+        : _resolveSubcommandList(subcommands, 'subcommands', handlers) ??
+            _subcommandItems(
+                _list(subcommands, 'subcommands'), 'subcommands', handlers),
     options: options == null
         ? null
-        : _list(options, 'options')
-            .asMap()
-            .entries
-            .map((entry) => _option(
-                _object(entry.value, 'options[${entry.key}]'),
-                'options[${entry.key}]',
-                handlers))
-            .toList(),
+        : _resolveOptionList(options, 'options', handlers) ??
+            _optionItems(_list(options, 'options'), 'options', handlers),
     args: _args(map['args'], 'args', handlers),
     icon: map['icon'] == null ? null : _string(map['icon'], 'icon'),
     filterStrategy: _filter(map['filterStrategy'], 'filterStrategy'),
@@ -935,7 +1312,7 @@ FigSpec _figSpecFromJson(
       handlers,
       versionedSpecReader,
     ),
-    loadSpec: map['loadSpec'],
+    loadSpec: _resolveLoadSpecRef(map['loadSpec'], 'loadSpec', handlers),
   );
 }
 
@@ -959,13 +1336,24 @@ FigSpec figSpecFromJsonString(
 }
 
 class JsonSpecStore {
-  JsonSpecStore({required this.reader, this.handlers, this.fallback});
+  JsonSpecStore({
+    required this.reader,
+    this.handlers,
+    this.fallback,
+    this.lazyHandlerRegistrar,
+  });
 
   final JsonAssetReader reader;
   final JsonHandlerRegistry? handlers;
 
   /// Optional legacy/deferred loader used when a command is not in JSON yet.
   final EnsureSpecLoaded? fallback;
+
+  /// Optional hook that registers a command's dynamic handlers on demand, just
+  /// before that command's JSON spec is parsed. Lets an app loadLibrary() the
+  /// deferred handler library for a command only when it is actually used.
+  final FutureOr<void> Function(String command, JsonHandlerRegistry handlers)?
+      lazyHandlerRegistrar;
   final Map<String, Map<String, dynamic>> _entries = {};
   final Map<String, String> _aliases = {};
   final Map<String, Future<FigSpec>> _versionDocuments = {};
@@ -1062,6 +1450,13 @@ class JsonSpecStore {
     String indexName,
     Map<String, dynamic> entry,
   ) async {
+    // Register this command's dynamic handlers on demand, before parsing its
+    // JSON, so a deferred handler library is loadLibrary()ed only when the
+    // command is actually used.
+    final handlers = this.handlers;
+    if (handlers != null && lazyHandlerRegistrar != null) {
+      await lazyHandlerRegistrar!(indexName, handlers);
+    }
     final source = await reader(entry['file'] as String);
     final spec = figSpecFromJsonString(
       source,

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "please",
+  "description": "Statamic Please command",
+  "generateSpec": {
+    "handler": "manual.src_php_please.spec.generatespec",
+    "version": 1
+  }
+}

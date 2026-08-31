@@ -1,0 +1,7028 @@
+{
+  "schemaVersion": 1,
+  "commands": {
+    "-": {
+      "file": "-/-.json"
+    },
+    "@capgo/cli": {
+      "file": "_/_capgo/cli.json"
+    },
+    "@commercelayer/cli": {
+      "file": "_/_commercelayer/cli.json"
+    },
+    "@fig/publish-spec": {
+      "file": "_/_fig/publish-spec.json"
+    },
+    "@forge/cli": {
+      "file": "_/_forge/cli.json"
+    },
+    "@withfig/autocomplete-tools": {
+      "file": "_/_withfig/autocomplete-tools.json"
+    },
+    "@wordpress/create-block": {
+      "file": "_/_wordpress/create-block.json"
+    },
+    "0.0.0": {
+      "file": "0/0.0.0.json"
+    },
+    "0.10.0": {
+      "file": "0/0.10.0.json"
+    },
+    "0.9.0": {
+      "file": "0/0.9.0.json"
+    },
+    "3.0.0": {
+      "file": "3/3.0.0.json"
+    },
+    "access-context-manager": {
+      "file": "a/access-context-manager.json"
+    },
+    "accessanalyzer": {
+      "file": "a/accessanalyzer.json"
+    },
+    "account": {
+      "file": "a/account.json"
+    },
+    "acm": {
+      "file": "a/acm.json"
+    },
+    "acm-pca": {
+      "file": "a/acm-pca.json"
+    },
+    "acr": {
+      "file": "a/acr.json"
+    },
+    "act": {
+      "file": "a/act.json"
+    },
+    "active-directory": {
+      "file": "a/active-directory.json"
+    },
+    "ad": {
+      "file": "a/ad.json"
+    },
+    "adb": {
+      "file": "a/adb.json"
+    },
+    "add": {
+      "file": "a/add.json"
+    },
+    "adp": {
+      "file": "a/adp.json"
+    },
+    "adr": {
+      "file": "a/adr.json"
+    },
+    "advisor": {
+      "file": "a/advisor.json"
+    },
+    "afd": {
+      "file": "a/afd.json"
+    },
+    "afplay": {
+      "file": "a/afplay.json"
+    },
+    "aftman": {
+      "file": "a/aftman.json"
+    },
+    "ag": {
+      "file": "a/ag.json"
+    },
+    "agrippa": {
+      "file": "a/agrippa.json"
+    },
+    "ai-examples": {
+      "file": "a/ai-examples.json"
+    },
+    "ai-platform": {
+      "file": "a/ai-platform.json"
+    },
+    "airflow": {
+      "file": "a/airflow.json"
+    },
+    "aks": {
+      "file": "a/aks.json"
+    },
+    "alerts-management": {
+      "file": "a/alerts-management.json"
+    },
+    "alexaforbusiness": {
+      "file": "a/alexaforbusiness.json"
+    },
+    "alias": {
+      "file": "a/alias.json"
+    },
+    "aliases": {
+      "file": "a/aliases.json"
+    },
+    "amlfs": {
+      "file": "a/amlfs.json"
+    },
+    "amp": {
+      "file": "a/amp.json"
+    },
+    "amplify": {
+      "file": "a/amplify.json"
+    },
+    "amplifybackend": {
+      "file": "a/amplifybackend.json"
+    },
+    "amplifyuibuilder": {
+      "file": "a/amplifyuibuilder.json"
+    },
+    "ampx": {
+      "file": "a/ampx.json"
+    },
+    "ams": {
+      "file": "a/ams.json"
+    },
+    "ansible": {
+      "file": "a/ansible.json"
+    },
+    "ansible-config": {
+      "file": "a/ansible-config.json"
+    },
+    "ansible-doc": {
+      "file": "a/ansible-doc.json"
+    },
+    "ansible-galaxy": {
+      "file": "a/ansible-galaxy.json"
+    },
+    "ansible-lint": {
+      "file": "a/ansible-lint.json"
+    },
+    "ansible-playbook": {
+      "file": "a/ansible-playbook.json"
+    },
+    "ant": {
+      "file": "a/ant.json"
+    },
+    "anthos": {
+      "file": "a/anthos.json"
+    },
+    "apigateway": {
+      "file": "a/apigateway.json"
+    },
+    "apigatewaymanagementapi": {
+      "file": "a/apigatewaymanagementapi.json"
+    },
+    "apigatewayv2": {
+      "file": "a/apigatewayv2.json"
+    },
+    "apigee": {
+      "file": "a/apigee.json"
+    },
+    "apim": {
+      "file": "a/apim.json"
+    },
+    "app": {
+      "file": "a/app.json"
+    },
+    "appconfig": {
+      "file": "a/appconfig.json"
+    },
+    "appconfigdata": {
+      "file": "a/appconfigdata.json"
+    },
+    "appfabric": {
+      "file": "a/appfabric.json"
+    },
+    "appflow": {
+      "file": "a/appflow.json"
+    },
+    "appintegrations": {
+      "file": "a/appintegrations.json"
+    },
+    "application-autoscaling": {
+      "file": "a/application-autoscaling.json"
+    },
+    "application-insights": {
+      "file": "a/application-insights.json"
+    },
+    "application-signals": {
+      "file": "a/application-signals.json"
+    },
+    "applicationcostprofiler": {
+      "file": "a/applicationcostprofiler.json"
+    },
+    "appmesh": {
+      "file": "a/appmesh.json"
+    },
+    "apprunner": {
+      "file": "a/apprunner.json"
+    },
+    "appservice": {
+      "file": "a/appservice.json"
+    },
+    "appstream": {
+      "file": "a/appstream.json"
+    },
+    "appsync": {
+      "file": "a/appsync.json"
+    },
+    "apptest": {
+      "file": "a/apptest.json"
+    },
+    "apt": {
+      "file": "a/apt.json"
+    },
+    "arc-zonal-shift": {
+      "file": "a/arc-zonal-shift.json"
+    },
+    "arcappliance": {
+      "file": "a/arcappliance.json"
+    },
+    "arcdata": {
+      "file": "a/arcdata.json"
+    },
+    "arch": {
+      "file": "a/arch.json"
+    },
+    "arduino-cli": {
+      "file": "a/arduino-cli.json"
+    },
+    "argo": {
+      "file": "a/argo.json"
+    },
+    "aro": {
+      "file": "a/aro.json"
+    },
+    "artifact": {
+      "file": "a/artifact.json"
+    },
+    "artifacts": {
+      "file": "a/artifacts.json"
+    },
+    "artisan": {
+      "file": "a/artisan.json"
+    },
+    "asar": {
+      "file": "a/asar.json"
+    },
+    "asciinema": {
+      "file": "a/asciinema.json"
+    },
+    "asdf": {
+      "file": "a/asdf.json"
+    },
+    "asr": {
+      "file": "a/asr.json"
+    },
+    "asset": {
+      "file": "a/asset.json"
+    },
+    "assimp": {
+      "file": "a/assimp.json"
+    },
+    "astro": {
+      "file": "a/astro.json"
+    },
+    "athena": {
+      "file": "a/athena.json"
+    },
+    "atlas": {
+      "file": "a/atlas.json"
+    },
+    "attestation": {
+      "file": "a/attestation.json"
+    },
+    "atuin": {
+      "file": "a/atuin.json"
+    },
+    "auditmanager": {
+      "file": "a/auditmanager.json"
+    },
+    "auth": {
+      "file": "a/auth.json"
+    },
+    "authchanger": {
+      "file": "a/authchanger.json"
+    },
+    "autocannon": {
+      "file": "a/autocannon.json"
+    },
+    "autojump": {
+      "file": "a/autojump.json"
+    },
+    "automanage": {
+      "file": "a/automanage.json"
+    },
+    "automation": {
+      "file": "a/automation.json"
+    },
+    "autoscaling": {
+      "file": "a/autoscaling.json"
+    },
+    "autoscaling-plans": {
+      "file": "a/autoscaling-plans.json"
+    },
+    "aws": {
+      "file": "a/aws.json"
+    },
+    "aws-vault": {
+      "file": "a/aws-vault.json"
+    },
+    "awsume": {
+      "file": "a/awsume.json"
+    },
+    "az": {
+      "file": "a/az.json"
+    },
+    "az/2.53.0": {
+      "file": "a/az/2.53.0.json",
+      "aliasOf": "az"
+    },
+    "azurestackhci": {
+      "file": "a/azurestackhci.json"
+    },
+    "b2bi": {
+      "file": "b/b2bi.json"
+    },
+    "babel": {
+      "file": "b/babel.json"
+    },
+    "backup": {
+      "file": "b/backup.json"
+    },
+    "backup-gateway": {
+      "file": "b/backup-gateway.json"
+    },
+    "backupstorage": {
+      "file": "b/backupstorage.json"
+    },
+    "banner": {
+      "file": "b/banner.json"
+    },
+    "baremetalinstance": {
+      "file": "b/baremetalinstance.json"
+    },
+    "barnard59": {
+      "file": "b/barnard59.json"
+    },
+    "base32": {
+      "file": "b/base32.json"
+    },
+    "base64": {
+      "file": "b/base64.json"
+    },
+    "basename": {
+      "file": "b/basename.json"
+    },
+    "basenc": {
+      "file": "b/basenc.json"
+    },
+    "bat": {
+      "file": "b/bat.json"
+    },
+    "batch": {
+      "file": "b/batch.json"
+    },
+    "batchai": {
+      "file": "b/batchai.json"
+    },
+    "bazel": {
+      "file": "b/bazel.json"
+    },
+    "bc": {
+      "file": "b/bc.json"
+    },
+    "bcd": {
+      "file": "b/bcd.json"
+    },
+    "bcm-data-exports": {
+      "file": "b/bcm-data-exports.json"
+    },
+    "bcm-pricing-calculator": {
+      "file": "b/bcm-pricing-calculator.json"
+    },
+    "bedrock": {
+      "file": "b/bedrock.json"
+    },
+    "bedrock-agent": {
+      "file": "b/bedrock-agent.json"
+    },
+    "bedrock-agent-runtime": {
+      "file": "b/bedrock-agent-runtime.json"
+    },
+    "bedrock-data-automation": {
+      "file": "b/bedrock-data-automation.json"
+    },
+    "bedrock-data-automation-runtime": {
+      "file": "b/bedrock-data-automation-runtime.json"
+    },
+    "bedrock-runtime": {
+      "file": "b/bedrock-runtime.json"
+    },
+    "bicep": {
+      "file": "b/bicep.json"
+    },
+    "bigtable": {
+      "file": "b/bigtable.json"
+    },
+    "billing": {
+      "file": "b/billing.json"
+    },
+    "billing-benefits": {
+      "file": "b/billing-benefits.json"
+    },
+    "billingconductor": {
+      "file": "b/billingconductor.json"
+    },
+    "bin-console": {
+      "file": "b/bin-console.json"
+    },
+    "bit": {
+      "file": "b/bit.json"
+    },
+    "black": {
+      "file": "b/black.json"
+    },
+    "blitz": {
+      "file": "b/blitz.json"
+    },
+    "blockchain": {
+      "file": "b/blockchain.json"
+    },
+    "blueprint": {
+      "file": "b/blueprint.json"
+    },
+    "boards": {
+      "file": "b/boards.json"
+    },
+    "bosh": {
+      "file": "b/bosh.json"
+    },
+    "bot": {
+      "file": "b/bot.json"
+    },
+    "braket": {
+      "file": "b/braket.json"
+    },
+    "brew": {
+      "file": "b/brew.json"
+    },
+    "broot": {
+      "file": "b/broot.json"
+    },
+    "browser-sync": {
+      "file": "b/browser-sync.json"
+    },
+    "btop": {
+      "file": "b/btop.json"
+    },
+    "budgets": {
+      "file": "b/budgets.json"
+    },
+    "build": {
+      "file": "b/build.json"
+    },
+    "build-server": {
+      "file": "b/build-server.json"
+    },
+    "build-storybook": {
+      "file": "b/build-storybook.json"
+    },
+    "builds": {
+      "file": "b/builds.json"
+    },
+    "bun": {
+      "file": "b/bun.json"
+    },
+    "bundle": {
+      "file": "b/bundle.json"
+    },
+    "bunx": {
+      "file": "b/bunx.json"
+    },
+    "bw": {
+      "file": "b/bw.json"
+    },
+    "bwdc": {
+      "file": "b/bwdc.json"
+    },
+    "bws": {
+      "file": "b/bws.json"
+    },
+    "c++": {
+      "file": "c/c_.json"
+    },
+    "cache": {
+      "file": "c/cache.json"
+    },
+    "caffeinate": {
+      "file": "c/caffeinate.json"
+    },
+    "cal": {
+      "file": "c/cal.json"
+    },
+    "cap": {
+      "file": "c/cap.json"
+    },
+    "capacitor": {
+      "file": "c/capacitor.json"
+    },
+    "capacity": {
+      "file": "c/capacity.json"
+    },
+    "cargo": {
+      "file": "c/cargo.json"
+    },
+    "cat": {
+      "file": "c/cat.json"
+    },
+    "cci": {
+      "file": "c/cci.json"
+    },
+    "cd": {
+      "file": "c/cd.json"
+    },
+    "cdk": {
+      "file": "c/cdk.json"
+    },
+    "cdk8s": {
+      "file": "c/cdk8s.json"
+    },
+    "cdn": {
+      "file": "c/cdn.json"
+    },
+    "ce": {
+      "file": "c/ce.json"
+    },
+    "cf": {
+      "file": "c/cf.json"
+    },
+    "change-analysis": {
+      "file": "c/change-analysis.json"
+    },
+    "charm": {
+      "file": "c/charm.json"
+    },
+    "chatbot": {
+      "file": "c/chatbot.json"
+    },
+    "cheat-sheet": {
+      "file": "c/cheat-sheet.json"
+    },
+    "checkov": {
+      "file": "c/checkov.json"
+    },
+    "chezmoi": {
+      "file": "c/chezmoi.json"
+    },
+    "chime": {
+      "file": "c/chime.json"
+    },
+    "chime-sdk-identity": {
+      "file": "c/chime-sdk-identity.json"
+    },
+    "chime-sdk-media-pipelines": {
+      "file": "c/chime-sdk-media-pipelines.json"
+    },
+    "chime-sdk-meetings": {
+      "file": "c/chime-sdk-meetings.json"
+    },
+    "chime-sdk-messaging": {
+      "file": "c/chime-sdk-messaging.json"
+    },
+    "chime-sdk-voice": {
+      "file": "c/chime-sdk-voice.json"
+    },
+    "chmod": {
+      "file": "c/chmod.json"
+    },
+    "chown": {
+      "file": "c/chown.json"
+    },
+    "chsh": {
+      "file": "c/chsh.json"
+    },
+    "cicada": {
+      "file": "c/cicada.json"
+    },
+    "circleci": {
+      "file": "c/circleci.json"
+    },
+    "clang": {
+      "file": "c/clang.json"
+    },
+    "clang++": {
+      "file": "c/clang_.json"
+    },
+    "clean": {
+      "file": "c/clean.json"
+    },
+    "cleanrooms": {
+      "file": "c/cleanrooms.json"
+    },
+    "cleanroomsml": {
+      "file": "c/cleanroomsml.json"
+    },
+    "clear": {
+      "file": "c/clear.json"
+    },
+    "cli-translator": {
+      "file": "c/cli-translator.json"
+    },
+    "cliff-jumper": {
+      "file": "c/cliff-jumper.json"
+    },
+    "clilol": {
+      "file": "c/clilol.json"
+    },
+    "clojure": {
+      "file": "c/clojure.json"
+    },
+    "cloud": {
+      "file": "c/cloud.json"
+    },
+    "cloud-service": {
+      "file": "c/cloud-service.json"
+    },
+    "cloud-shell": {
+      "file": "c/cloud-shell.json"
+    },
+    "cloud9": {
+      "file": "c/cloud9.json"
+    },
+    "cloudcontrol": {
+      "file": "c/cloudcontrol.json"
+    },
+    "clouddirectory": {
+      "file": "c/clouddirectory.json"
+    },
+    "cloudflared": {
+      "file": "c/cloudflared.json"
+    },
+    "cloudformation": {
+      "file": "c/cloudformation.json"
+    },
+    "cloudfront": {
+      "file": "c/cloudfront.json"
+    },
+    "cloudfront-keyvaluestore": {
+      "file": "c/cloudfront-keyvaluestore.json"
+    },
+    "cloudhsm": {
+      "file": "c/cloudhsm.json"
+    },
+    "cloudhsmv2": {
+      "file": "c/cloudhsmv2.json"
+    },
+    "cloudsearch": {
+      "file": "c/cloudsearch.json"
+    },
+    "cloudsearchdomain": {
+      "file": "c/cloudsearchdomain.json"
+    },
+    "cloudtrail": {
+      "file": "c/cloudtrail.json"
+    },
+    "cloudtrail-data": {
+      "file": "c/cloudtrail-data.json"
+    },
+    "cloudwatch": {
+      "file": "c/cloudwatch.json"
+    },
+    "cmake": {
+      "file": "c/cmake.json"
+    },
+    "coda": {
+      "file": "c/coda.json"
+    },
+    "code": {
+      "file": "c/code.json"
+    },
+    "code-insiders": {
+      "file": "c/code-insiders.json"
+    },
+    "codeartifact": {
+      "file": "c/codeartifact.json"
+    },
+    "codebuild": {
+      "file": "c/codebuild.json"
+    },
+    "codecatalyst": {
+      "file": "c/codecatalyst.json"
+    },
+    "codecommit": {
+      "file": "c/codecommit.json"
+    },
+    "codeconnections": {
+      "file": "c/codeconnections.json"
+    },
+    "codeguru-reviewer": {
+      "file": "c/codeguru-reviewer.json"
+    },
+    "codeguru-security": {
+      "file": "c/codeguru-security.json"
+    },
+    "codeguruprofiler": {
+      "file": "c/codeguruprofiler.json"
+    },
+    "codepipeline": {
+      "file": "c/codepipeline.json"
+    },
+    "codesign": {
+      "file": "c/codesign.json"
+    },
+    "codestar": {
+      "file": "c/codestar.json"
+    },
+    "codestar-connections": {
+      "file": "c/codestar-connections.json"
+    },
+    "codestar-notifications": {
+      "file": "c/codestar-notifications.json"
+    },
+    "cognitiveservices": {
+      "file": "c/cognitiveservices.json"
+    },
+    "cognito-identity": {
+      "file": "c/cognito-identity.json"
+    },
+    "cognito-idp": {
+      "file": "c/cognito-idp.json"
+    },
+    "cognito-sync": {
+      "file": "c/cognito-sync.json"
+    },
+    "command": {
+      "file": "c/command.json"
+    },
+    "command-change": {
+      "file": "c/command-change.json"
+    },
+    "communication": {
+      "file": "c/communication.json"
+    },
+    "components": {
+      "file": "c/components.json"
+    },
+    "composer": {
+      "file": "c/composer.json"
+    },
+    "comprehend": {
+      "file": "c/comprehend.json"
+    },
+    "comprehendmedical": {
+      "file": "c/comprehendmedical.json"
+    },
+    "compute-optimizer": {
+      "file": "c/compute-optimizer.json"
+    },
+    "conda": {
+      "file": "c/conda.json"
+    },
+    "confcom": {
+      "file": "c/confcom.json"
+    },
+    "confidentialledger": {
+      "file": "c/confidentialledger.json"
+    },
+    "config": {
+      "file": "c/config.json"
+    },
+    "configservice": {
+      "file": "c/configservice.json"
+    },
+    "configure": {
+      "file": "c/configure.json"
+    },
+    "confluent": {
+      "file": "c/confluent.json"
+    },
+    "connect": {
+      "file": "c/connect.json"
+    },
+    "connect-contact-lens": {
+      "file": "c/connect-contact-lens.json"
+    },
+    "connectcampaigns": {
+      "file": "c/connectcampaigns.json"
+    },
+    "connectcampaignsv2": {
+      "file": "c/connectcampaignsv2.json"
+    },
+    "connectcases": {
+      "file": "c/connectcases.json"
+    },
+    "connectedk8s": {
+      "file": "c/connectedk8s.json"
+    },
+    "connectedmachine": {
+      "file": "c/connectedmachine.json"
+    },
+    "connectedvmware": {
+      "file": "c/connectedvmware.json"
+    },
+    "connection": {
+      "file": "c/connection.json"
+    },
+    "connectparticipant": {
+      "file": "c/connectparticipant.json"
+    },
+    "consumption": {
+      "file": "c/consumption.json"
+    },
+    "container": {
+      "file": "c/container.json"
+    },
+    "containerapp": {
+      "file": "c/containerapp.json"
+    },
+    "controlcatalog": {
+      "file": "c/controlcatalog.json"
+    },
+    "controltower": {
+      "file": "c/controltower.json"
+    },
+    "copilot": {
+      "file": "c/copilot.json"
+    },
+    "copyfile": {
+      "file": "c/copyfile.json"
+    },
+    "copypath": {
+      "file": "c/copypath.json"
+    },
+    "cordova": {
+      "file": "c/cordova.json"
+    },
+    "cosign": {
+      "file": "c/cosign.json"
+    },
+    "cosmosdb": {
+      "file": "c/cosmosdb.json"
+    },
+    "cost-optimization-hub": {
+      "file": "c/cost-optimization-hub.json"
+    },
+    "costmanagement": {
+      "file": "c/costmanagement.json"
+    },
+    "cot": {
+      "file": "c/cot.json"
+    },
+    "cp": {
+      "file": "c/cp.json"
+    },
+    "create-completion-spec": {
+      "file": "c/create-completion-spec.json"
+    },
+    "create-next-app": {
+      "file": "c/create-next-app.json"
+    },
+    "create-nx-workspace": {
+      "file": "c/create-nx-workspace.json"
+    },
+    "create-react-app": {
+      "file": "c/create-react-app.json"
+    },
+    "create-react-native-app": {
+      "file": "c/create-react-native-app.json"
+    },
+    "create-redwood-app": {
+      "file": "c/create-redwood-app.json"
+    },
+    "create-remix": {
+      "file": "c/create-remix.json"
+    },
+    "create-t3-app": {
+      "file": "c/create-t3-app.json"
+    },
+    "create-video": {
+      "file": "c/create-video.json"
+    },
+    "create-vite": {
+      "file": "c/create-vite.json"
+    },
+    "create-web3-frontend": {
+      "file": "c/create-web3-frontend.json"
+    },
+    "croc": {
+      "file": "c/croc.json"
+    },
+    "crontab": {
+      "file": "c/crontab.json"
+    },
+    "csdx": {
+      "file": "c/csdx.json"
+    },
+    "csvmware": {
+      "file": "c/csvmware.json"
+    },
+    "cur": {
+      "file": "c/cur.json"
+    },
+    "curl": {
+      "file": "c/curl.json"
+    },
+    "custom-providers": {
+      "file": "c/custom-providers.json"
+    },
+    "customer-profiles": {
+      "file": "c/customer-profiles.json"
+    },
+    "customlocation": {
+      "file": "c/customlocation.json"
+    },
+    "cut": {
+      "file": "c/cut.json"
+    },
+    "cw": {
+      "file": "c/cw.json"
+    },
+    "dapr": {
+      "file": "d/dapr.json"
+    },
+    "dart": {
+      "file": "d/dart.json"
+    },
+    "data-catalog": {
+      "file": "d/data-catalog.json"
+    },
+    "databox": {
+      "file": "d/databox.json"
+    },
+    "databoxedge": {
+      "file": "d/databoxedge.json"
+    },
+    "databrew": {
+      "file": "d/databrew.json"
+    },
+    "databricks": {
+      "file": "d/databricks.json"
+    },
+    "datadog": {
+      "file": "d/datadog.json"
+    },
+    "dataexchange": {
+      "file": "d/dataexchange.json"
+    },
+    "datafactory": {
+      "file": "d/datafactory.json"
+    },
+    "dataflow": {
+      "file": "d/dataflow.json"
+    },
+    "datamigration": {
+      "file": "d/datamigration.json"
+    },
+    "datapipeline": {
+      "file": "d/datapipeline.json"
+    },
+    "dataproc": {
+      "file": "d/dataproc.json"
+    },
+    "dataprotection": {
+      "file": "d/dataprotection.json"
+    },
+    "datashare": {
+      "file": "d/datashare.json"
+    },
+    "datastore": {
+      "file": "d/datastore.json"
+    },
+    "datasync": {
+      "file": "d/datasync.json"
+    },
+    "datazone": {
+      "file": "d/datazone.json"
+    },
+    "date": {
+      "file": "d/date.json"
+    },
+    "dateseq": {
+      "file": "d/dateseq.json"
+    },
+    "datree": {
+      "file": "d/datree.json"
+    },
+    "dax": {
+      "file": "d/dax.json"
+    },
+    "dbt": {
+      "file": "d/dbt.json"
+    },
+    "dcli": {
+      "file": "d/dcli.json"
+    },
+    "dd": {
+      "file": "d/dd.json"
+    },
+    "ddev": {
+      "file": "d/ddev.json"
+    },
+    "ddosify": {
+      "file": "d/ddosify.json"
+    },
+    "deadline": {
+      "file": "d/deadline.json"
+    },
+    "debug": {
+      "file": "d/debug.json"
+    },
+    "dedicated-hsm": {
+      "file": "d/dedicated-hsm.json"
+    },
+    "defaultbrowser": {
+      "file": "d/defaultbrowser.json"
+    },
+    "defaults": {
+      "file": "d/defaults.json"
+    },
+    "degit": {
+      "file": "d/degit.json"
+    },
+    "demo": {
+      "file": "d/demo.json"
+    },
+    "deno": {
+      "file": "d/deno.json"
+    },
+    "deploy": {
+      "file": "d/deploy.json"
+    },
+    "deployctl": {
+      "file": "d/deployctl.json"
+    },
+    "deployment": {
+      "file": "d/deployment.json"
+    },
+    "deployment-manager": {
+      "file": "d/deployment-manager.json"
+    },
+    "deployment-scripts": {
+      "file": "d/deployment-scripts.json"
+    },
+    "desktopvirtualization": {
+      "file": "d/desktopvirtualization.json"
+    },
+    "deta": {
+      "file": "d/deta.json"
+    },
+    "detective": {
+      "file": "d/detective.json"
+    },
+    "devcenter": {
+      "file": "d/devcenter.json"
+    },
+    "devicefarm": {
+      "file": "d/devicefarm.json"
+    },
+    "devops": {
+      "file": "d/devops.json"
+    },
+    "devops-guru": {
+      "file": "d/devops-guru.json"
+    },
+    "df": {
+      "file": "d/df.json"
+    },
+    "diff": {
+      "file": "d/diff.json"
+    },
+    "dig": {
+      "file": "d/dig.json"
+    },
+    "directconnect": {
+      "file": "d/directconnect.json"
+    },
+    "direnv": {
+      "file": "d/direnv.json"
+    },
+    "dirname": {
+      "file": "d/dirname.json"
+    },
+    "discovery": {
+      "file": "d/discovery.json"
+    },
+    "disk": {
+      "file": "d/disk.json"
+    },
+    "disk-access": {
+      "file": "d/disk-access.json"
+    },
+    "disk-encryption-set": {
+      "file": "d/disk-encryption-set.json"
+    },
+    "disk-pool": {
+      "file": "d/disk-pool.json"
+    },
+    "ditto": {
+      "file": "d/ditto.json"
+    },
+    "django-admin": {
+      "file": "d/django-admin.json"
+    },
+    "dla": {
+      "file": "d/dla.json"
+    },
+    "dlm": {
+      "file": "d/dlm.json"
+    },
+    "dls": {
+      "file": "d/dls.json"
+    },
+    "dms": {
+      "file": "d/dms.json"
+    },
+    "dnc": {
+      "file": "d/dnc.json"
+    },
+    "dns": {
+      "file": "d/dns.json"
+    },
+    "dns-resolver": {
+      "file": "d/dns-resolver.json"
+    },
+    "do": {
+      "file": "d/do.json"
+    },
+    "do-release-upgrade": {
+      "file": "d/do-release-upgrade.json"
+    },
+    "doas": {
+      "file": "d/doas.json"
+    },
+    "docdb": {
+      "file": "d/docdb.json"
+    },
+    "docdb-elastic": {
+      "file": "d/docdb-elastic.json"
+    },
+    "docker": {
+      "file": "d/docker.json"
+    },
+    "docker-compose": {
+      "file": "d/docker-compose.json"
+    },
+    "doctl": {
+      "file": "d/doctl.json"
+    },
+    "dog": {
+      "file": "d/dog.json"
+    },
+    "doggo": {
+      "file": "d/doggo.json"
+    },
+    "domains": {
+      "file": "d/domains.json"
+    },
+    "doppler": {
+      "file": "d/doppler.json"
+    },
+    "dos2unix": {
+      "file": "d/dos2unix.json"
+    },
+    "dotenv": {
+      "file": "d/dotenv.json"
+    },
+    "dotenv-vault": {
+      "file": "d/dotenv-vault.json"
+    },
+    "dotnet": {
+      "file": "d/dotnet.json"
+    },
+    "dotslash": {
+      "file": "d/dotslash.json"
+    },
+    "dpkg": {
+      "file": "d/dpkg.json"
+    },
+    "dprint": {
+      "file": "d/dprint.json"
+    },
+    "drs": {
+      "file": "d/drs.json"
+    },
+    "drush": {
+      "file": "d/drush.json"
+    },
+    "ds": {
+      "file": "d/ds.json"
+    },
+    "ds-data": {
+      "file": "d/ds-data.json"
+    },
+    "dscacheutil": {
+      "file": "d/dscacheutil.json"
+    },
+    "dscl": {
+      "file": "d/dscl.json"
+    },
+    "dsql": {
+      "file": "d/dsql.json"
+    },
+    "dt": {
+      "file": "d/dt.json"
+    },
+    "dtm": {
+      "file": "d/dtm.json"
+    },
+    "du": {
+      "file": "d/du.json"
+    },
+    "dust": {
+      "file": "d/dust.json"
+    },
+    "dynamodb": {
+      "file": "d/dynamodb.json"
+    },
+    "dynamodbstreams": {
+      "file": "d/dynamodbstreams.json"
+    },
+    "dynatrace": {
+      "file": "d/dynatrace.json"
+    },
+    "eas": {
+      "file": "e/eas.json"
+    },
+    "eb": {
+      "file": "e/eb.json"
+    },
+    "ebs": {
+      "file": "e/ebs.json"
+    },
+    "ec2": {
+      "file": "e/ec2.json"
+    },
+    "ec2-instance-connect": {
+      "file": "e/ec2-instance-connect.json"
+    },
+    "echo": {
+      "file": "e/echo.json"
+    },
+    "ecr": {
+      "file": "e/ecr.json"
+    },
+    "ecr-public": {
+      "file": "e/ecr-public.json"
+    },
+    "ecs": {
+      "file": "e/ecs.json"
+    },
+    "edgeorder": {
+      "file": "e/edgeorder.json"
+    },
+    "efs": {
+      "file": "e/efs.json"
+    },
+    "eks": {
+      "file": "e/eks.json"
+    },
+    "eks-auth": {
+      "file": "e/eks-auth.json"
+    },
+    "elastic": {
+      "file": "e/elastic.json"
+    },
+    "elastic-inference": {
+      "file": "e/elastic-inference.json"
+    },
+    "elastic-san": {
+      "file": "e/elastic-san.json"
+    },
+    "elasticache": {
+      "file": "e/elasticache.json"
+    },
+    "elasticbeanstalk": {
+      "file": "e/elasticbeanstalk.json"
+    },
+    "elastictranscoder": {
+      "file": "e/elastictranscoder.json"
+    },
+    "elb": {
+      "file": "e/elb.json"
+    },
+    "elbv2": {
+      "file": "e/elbv2.json"
+    },
+    "electron": {
+      "file": "e/electron.json"
+    },
+    "eleventy": {
+      "file": "e/eleventy.json"
+    },
+    "elif": {
+      "file": "e/elif.json"
+    },
+    "elixir": {
+      "file": "e/elixir.json"
+    },
+    "elm": {
+      "file": "e/elm.json"
+    },
+    "elm-format": {
+      "file": "e/elm-format.json"
+    },
+    "elm-json": {
+      "file": "e/elm-json.json"
+    },
+    "elm-review": {
+      "file": "e/elm-review.json"
+    },
+    "else": {
+      "file": "e/else.json"
+    },
+    "emacs": {
+      "file": "e/emacs.json"
+    },
+    "emr": {
+      "file": "e/emr.json"
+    },
+    "emr-containers": {
+      "file": "e/emr-containers.json"
+    },
+    "emr-serverless": {
+      "file": "e/emr-serverless.json"
+    },
+    "enapter": {
+      "file": "e/enapter.json"
+    },
+    "encore": {
+      "file": "e/encore.json"
+    },
+    "endpoints": {
+      "file": "e/endpoints.json"
+    },
+    "entityresolution": {
+      "file": "e/entityresolution.json"
+    },
+    "env": {
+      "file": "e/env.json"
+    },
+    "envchain": {
+      "file": "e/envchain.json"
+    },
+    "es": {
+      "file": "e/es.json"
+    },
+    "esbuild": {
+      "file": "e/esbuild.json"
+    },
+    "eslint": {
+      "file": "e/eslint.json"
+    },
+    "eventgrid": {
+      "file": "e/eventgrid.json"
+    },
+    "eventhubs": {
+      "file": "e/eventhubs.json"
+    },
+    "events": {
+      "file": "e/events.json"
+    },
+    "evidently": {
+      "file": "e/evidently.json"
+    },
+    "exa": {
+      "file": "e/exa.json"
+    },
+    "exec": {
+      "file": "e/exec.json"
+    },
+    "exercism": {
+      "file": "e/exercism.json"
+    },
+    "expo": {
+      "file": "e/expo.json"
+    },
+    "expo-cli": {
+      "file": "e/expo-cli.json"
+    },
+    "export": {
+      "file": "e/export.json"
+    },
+    "expressots": {
+      "file": "e/expressots.json"
+    },
+    "extension": {
+      "file": "e/extension.json"
+    },
+    "eza": {
+      "file": "e/eza.json"
+    },
+    "fastlane": {
+      "file": "f/fastlane.json"
+    },
+    "fastly": {
+      "file": "f/fastly.json"
+    },
+    "fd": {
+      "file": "f/fd.json"
+    },
+    "fdisk": {
+      "file": "f/fdisk.json"
+    },
+    "feature": {
+      "file": "f/feature.json"
+    },
+    "feedback": {
+      "file": "f/feedback.json"
+    },
+    "ffmpeg": {
+      "file": "f/ffmpeg.json"
+    },
+    "fig": {
+      "file": "f/fig.json"
+    },
+    "fig/1.0.0": {
+      "file": "f/fig/1.0.0.json",
+      "aliasOf": "fig"
+    },
+    "fig/2.0.0": {
+      "file": "f/fig/2.0.0.json",
+      "aliasOf": "fig"
+    },
+    "figterm": {
+      "file": "f/figterm.json"
+    },
+    "file": {
+      "file": "f/file.json"
+    },
+    "filestore": {
+      "file": "f/filestore.json"
+    },
+    "fin": {
+      "file": "f/fin.json"
+    },
+    "find": {
+      "file": "f/find.json"
+    },
+    "finspace": {
+      "file": "f/finspace.json"
+    },
+    "finspace-data": {
+      "file": "f/finspace-data.json"
+    },
+    "firebase": {
+      "file": "f/firebase.json"
+    },
+    "firefox": {
+      "file": "f/firefox.json"
+    },
+    "firehose": {
+      "file": "f/firehose.json"
+    },
+    "firestore": {
+      "file": "f/firestore.json"
+    },
+    "fis": {
+      "file": "f/fis.json"
+    },
+    "fisher": {
+      "file": "f/fisher.json"
+    },
+    "fleet": {
+      "file": "f/fleet.json"
+    },
+    "fluid-relay": {
+      "file": "f/fluid-relay.json"
+    },
+    "flyctl": {
+      "file": "f/flyctl.json"
+    },
+    "fms": {
+      "file": "f/fms.json"
+    },
+    "fmt": {
+      "file": "f/fmt.json"
+    },
+    "fnm": {
+      "file": "f/fnm.json"
+    },
+    "fold": {
+      "file": "f/fold.json"
+    },
+    "footprint": {
+      "file": "f/footprint.json"
+    },
+    "for": {
+      "file": "f/for.json"
+    },
+    "forc": {
+      "file": "f/forc.json"
+    },
+    "forecast": {
+      "file": "f/forecast.json"
+    },
+    "forecastquery": {
+      "file": "f/forecastquery.json"
+    },
+    "format": {
+      "file": "f/format.json"
+    },
+    "frauddetector": {
+      "file": "f/frauddetector.json"
+    },
+    "freetier": {
+      "file": "f/freetier.json"
+    },
+    "fsx": {
+      "file": "f/fsx.json"
+    },
+    "functionapp": {
+      "file": "f/functionapp.json"
+    },
+    "functions": {
+      "file": "f/functions.json"
+    },
+    "fvm": {
+      "file": "f/fvm.json"
+    },
+    "fzf": {
+      "file": "f/fzf.json"
+    },
+    "fzf-tmux": {
+      "file": "f/fzf-tmux.json"
+    },
+    "g++": {
+      "file": "g/g_.json"
+    },
+    "game": {
+      "file": "g/game.json"
+    },
+    "gamelift": {
+      "file": "g/gamelift.json"
+    },
+    "ganache-cli": {
+      "file": "g/ganache-cli.json"
+    },
+    "gatsby": {
+      "file": "g/gatsby.json"
+    },
+    "gcc": {
+      "file": "g/gcc.json"
+    },
+    "gcloud": {
+      "file": "g/gcloud.json"
+    },
+    "gem": {
+      "file": "g/gem.json"
+    },
+    "geo-maps": {
+      "file": "g/geo-maps.json"
+    },
+    "geo-places": {
+      "file": "g/geo-places.json"
+    },
+    "geo-routes": {
+      "file": "g/geo-routes.json"
+    },
+    "gh": {
+      "file": "g/gh.json"
+    },
+    "ghq": {
+      "file": "g/ghq.json"
+    },
+    "gibo": {
+      "file": "g/gibo.json"
+    },
+    "git": {
+      "file": "g/git.json"
+    },
+    "git_push_example": {
+      "file": "g/git_push_example.json"
+    },
+    "git-cliff": {
+      "file": "g/git-cliff.json"
+    },
+    "git-flow": {
+      "file": "g/git-flow.json"
+    },
+    "git-profile": {
+      "file": "g/git-profile.json"
+    },
+    "git-quick-stats": {
+      "file": "g/git-quick-stats.json"
+    },
+    "github": {
+      "file": "g/github.json"
+    },
+    "glacier": {
+      "file": "g/glacier.json"
+    },
+    "globalaccelerator": {
+      "file": "g/globalaccelerator.json"
+    },
+    "glow": {
+      "file": "g/glow.json"
+    },
+    "gltfjsx": {
+      "file": "g/gltfjsx.json"
+    },
+    "glue": {
+      "file": "g/glue.json"
+    },
+    "go": {
+      "file": "g/go.json"
+    },
+    "go-task": {
+      "file": "g/go-task.json"
+    },
+    "goctl": {
+      "file": "g/goctl.json"
+    },
+    "googler": {
+      "file": "g/googler.json"
+    },
+    "goreleaser": {
+      "file": "g/goreleaser.json"
+    },
+    "goto": {
+      "file": "g/goto.json"
+    },
+    "gource": {
+      "file": "g/gource.json"
+    },
+    "gpg": {
+      "file": "g/gpg.json"
+    },
+    "gradle": {
+      "file": "g/gradle.json"
+    },
+    "grafana": {
+      "file": "g/grafana.json"
+    },
+    "graph": {
+      "file": "g/graph.json"
+    },
+    "graph-services": {
+      "file": "g/graph-services.json"
+    },
+    "graphcdn": {
+      "file": "g/graphcdn.json"
+    },
+    "greengrass": {
+      "file": "g/greengrass.json"
+    },
+    "greengrassv2": {
+      "file": "g/greengrassv2.json"
+    },
+    "grep": {
+      "file": "g/grep.json"
+    },
+    "grex": {
+      "file": "g/grex.json"
+    },
+    "gron": {
+      "file": "g/gron.json"
+    },
+    "groundstation": {
+      "file": "g/groundstation.json"
+    },
+    "group": {
+      "file": "g/group.json"
+    },
+    "gt": {
+      "file": "g/gt.json"
+    },
+    "guardduty": {
+      "file": "g/guardduty.json"
+    },
+    "guestconfig": {
+      "file": "g/guestconfig.json"
+    },
+    "gum": {
+      "file": "g/gum.json"
+    },
+    "hack": {
+      "file": "h/hack.json"
+    },
+    "hanainstance": {
+      "file": "h/hanainstance.json"
+    },
+    "hardhat": {
+      "file": "h/hardhat.json"
+    },
+    "hasura": {
+      "file": "h/hasura.json"
+    },
+    "hb-service": {
+      "file": "h/hb-service.json"
+    },
+    "hdinsight": {
+      "file": "h/hdinsight.json"
+    },
+    "head": {
+      "file": "h/head.json"
+    },
+    "health": {
+      "file": "h/health.json"
+    },
+    "healthbot": {
+      "file": "h/healthbot.json"
+    },
+    "healthcare": {
+      "file": "h/healthcare.json"
+    },
+    "healthcareapis": {
+      "file": "h/healthcareapis.json"
+    },
+    "healthlake": {
+      "file": "h/healthlake.json"
+    },
+    "helm": {
+      "file": "h/helm.json"
+    },
+    "helmfile": {
+      "file": "h/helmfile.json"
+    },
+    "help": {
+      "file": "h/help.json"
+    },
+    "herd": {
+      "file": "h/herd.json"
+    },
+    "heroku": {
+      "file": "h/heroku.json"
+    },
+    "heroku/8.0.0": {
+      "file": "h/heroku/8.0.0.json",
+      "aliasOf": "heroku"
+    },
+    "heroku/8.6.0": {
+      "file": "h/heroku/8.6.0.json",
+      "aliasOf": "heroku"
+    },
+    "hexo": {
+      "file": "h/hexo.json"
+    },
+    "history": {
+      "file": "h/history.json"
+    },
+    "homey": {
+      "file": "h/homey.json"
+    },
+    "honeycode": {
+      "file": "h/honeycode.json"
+    },
+    "hop": {
+      "file": "h/hop.json"
+    },
+    "hostname": {
+      "file": "h/hostname.json"
+    },
+    "hpc-cache": {
+      "file": "h/hpc-cache.json"
+    },
+    "htop": {
+      "file": "h/htop.json"
+    },
+    "http": {
+      "file": "h/http.json"
+    },
+    "http.server": {
+      "file": "h/http.server.json"
+    },
+    "httpy": {
+      "file": "h/httpy.json"
+    },
+    "hugo": {
+      "file": "h/hugo.json"
+    },
+    "hx": {
+      "file": "h/hx.json"
+    },
+    "hybridaks": {
+      "file": "h/hybridaks.json"
+    },
+    "hyper": {
+      "file": "h/hyper.json"
+    },
+    "hyperfine": {
+      "file": "h/hyperfine.json"
+    },
+    "iam": {
+      "file": "i/iam.json"
+    },
+    "iap": {
+      "file": "i/iap.json"
+    },
+    "ibus": {
+      "file": "i/ibus.json"
+    },
+    "iconv": {
+      "file": "i/iconv.json"
+    },
+    "id": {
+      "file": "i/id.json"
+    },
+    "identity": {
+      "file": "i/identity.json"
+    },
+    "identitystore": {
+      "file": "i/identitystore.json"
+    },
+    "iex": {
+      "file": "i/iex.json"
+    },
+    "if": {
+      "file": "i/if.json"
+    },
+    "ignite-cli": {
+      "file": "i/ignite-cli.json"
+    },
+    "image": {
+      "file": "i/image.json"
+    },
+    "imagebuilder": {
+      "file": "i/imagebuilder.json"
+    },
+    "import-export": {
+      "file": "i/import-export.json"
+    },
+    "importexport": {
+      "file": "i/importexport.json"
+    },
+    "index": {
+      "file": "i/index.json"
+    },
+    "info": {
+      "file": "i/info.json"
+    },
+    "init": {
+      "file": "i/init.json"
+    },
+    "inspector": {
+      "file": "i/inspector.json"
+    },
+    "inspector-scan": {
+      "file": "i/inspector-scan.json"
+    },
+    "inspector2": {
+      "file": "i/inspector2.json"
+    },
+    "install": {
+      "file": "i/install.json"
+    },
+    "interactive": {
+      "file": "i/interactive.json"
+    },
+    "internet-analyzer": {
+      "file": "i/internet-analyzer.json"
+    },
+    "internetmonitor": {
+      "file": "i/internetmonitor.json"
+    },
+    "invoicing": {
+      "file": "i/invoicing.json"
+    },
+    "iot": {
+      "file": "i/iot.json"
+    },
+    "iot-data": {
+      "file": "i/iot-data.json"
+    },
+    "iot-jobs-data": {
+      "file": "i/iot-jobs-data.json"
+    },
+    "iot1click-devices": {
+      "file": "i/iot1click-devices.json"
+    },
+    "iot1click-projects": {
+      "file": "i/iot1click-projects.json"
+    },
+    "iotanalytics": {
+      "file": "i/iotanalytics.json"
+    },
+    "iotdeviceadvisor": {
+      "file": "i/iotdeviceadvisor.json"
+    },
+    "iotevents": {
+      "file": "i/iotevents.json"
+    },
+    "iotevents-data": {
+      "file": "i/iotevents-data.json"
+    },
+    "iotfleethub": {
+      "file": "i/iotfleethub.json"
+    },
+    "iotfleetwise": {
+      "file": "i/iotfleetwise.json"
+    },
+    "iotsecuretunneling": {
+      "file": "i/iotsecuretunneling.json"
+    },
+    "iotsitewise": {
+      "file": "i/iotsitewise.json"
+    },
+    "iotthingsgraph": {
+      "file": "i/iotthingsgraph.json"
+    },
+    "iottwinmaker": {
+      "file": "i/iottwinmaker.json"
+    },
+    "iotwireless": {
+      "file": "i/iotwireless.json"
+    },
+    "ipatool": {
+      "file": "i/ipatool.json"
+    },
+    "ivs": {
+      "file": "i/ivs.json"
+    },
+    "ivs-realtime": {
+      "file": "i/ivs-realtime.json"
+    },
+    "ivschat": {
+      "file": "i/ivschat.json"
+    },
+    "j": {
+      "file": "j/j.json"
+    },
+    "java": {
+      "file": "j/java.json"
+    },
+    "jenv": {
+      "file": "j/jenv.json"
+    },
+    "jest": {
+      "file": "j/jest.json"
+    },
+    "jmeter": {
+      "file": "j/jmeter.json"
+    },
+    "join": {
+      "file": "j/join.json"
+    },
+    "jq": {
+      "file": "j/jq.json"
+    },
+    "julia": {
+      "file": "j/julia.json"
+    },
+    "jupyter": {
+      "file": "j/jupyter.json"
+    },
+    "just": {
+      "file": "j/just.json"
+    },
+    "k3d": {
+      "file": "k/k3d.json"
+    },
+    "k6": {
+      "file": "k/k6.json"
+    },
+    "k8s-configuration": {
+      "file": "k/k8s-configuration.json"
+    },
+    "k8s-extension": {
+      "file": "k/k8s-extension.json"
+    },
+    "k8sconfiguration": {
+      "file": "k/k8sconfiguration.json"
+    },
+    "k9s": {
+      "file": "k/k9s.json"
+    },
+    "kafka": {
+      "file": "k/kafka.json"
+    },
+    "kafkaconnect": {
+      "file": "k/kafkaconnect.json"
+    },
+    "kafkactl": {
+      "file": "k/kafkactl.json"
+    },
+    "kamal": {
+      "file": "k/kamal.json"
+    },
+    "kdoctor": {
+      "file": "k/kdoctor.json"
+    },
+    "kendra": {
+      "file": "k/kendra.json"
+    },
+    "kendra-ranking": {
+      "file": "k/kendra-ranking.json"
+    },
+    "keyspaces": {
+      "file": "k/keyspaces.json"
+    },
+    "keytool": {
+      "file": "k/keytool.json"
+    },
+    "keyvault": {
+      "file": "k/keyvault.json"
+    },
+    "kill": {
+      "file": "k/kill.json"
+    },
+    "killall": {
+      "file": "k/killall.json"
+    },
+    "kind": {
+      "file": "k/kind.json"
+    },
+    "kinesis": {
+      "file": "k/kinesis.json"
+    },
+    "kinesis-video-archived-media": {
+      "file": "k/kinesis-video-archived-media.json"
+    },
+    "kinesis-video-media": {
+      "file": "k/kinesis-video-media.json"
+    },
+    "kinesis-video-signaling": {
+      "file": "k/kinesis-video-signaling.json"
+    },
+    "kinesis-video-webrtc-storage": {
+      "file": "k/kinesis-video-webrtc-storage.json"
+    },
+    "kinesisanalytics": {
+      "file": "k/kinesisanalytics.json"
+    },
+    "kinesisanalyticsv2": {
+      "file": "k/kinesisanalyticsv2.json"
+    },
+    "kinesisvideo": {
+      "file": "k/kinesisvideo.json"
+    },
+    "kitty": {
+      "file": "k/kitty.json"
+    },
+    "klist": {
+      "file": "k/klist.json"
+    },
+    "kms": {
+      "file": "k/kms.json"
+    },
+    "knex": {
+      "file": "k/knex.json"
+    },
+    "kool": {
+      "file": "k/kool.json"
+    },
+    "kotlinc": {
+      "file": "k/kotlinc.json"
+    },
+    "kubectl": {
+      "file": "k/kubectl.json"
+    },
+    "kubectx": {
+      "file": "k/kubectx.json"
+    },
+    "kubens": {
+      "file": "k/kubens.json"
+    },
+    "kusto": {
+      "file": "k/kusto.json"
+    },
+    "lab": {
+      "file": "l/lab.json"
+    },
+    "lakeformation": {
+      "file": "l/lakeformation.json"
+    },
+    "lambda": {
+      "file": "l/lambda.json"
+    },
+    "laravel": {
+      "file": "l/laravel.json"
+    },
+    "launch-wizard": {
+      "file": "l/launch-wizard.json"
+    },
+    "launchctl": {
+      "file": "l/launchctl.json"
+    },
+    "ldd": {
+      "file": "l/ldd.json"
+    },
+    "leaf": {
+      "file": "l/leaf.json"
+    },
+    "lerna": {
+      "file": "l/lerna.json"
+    },
+    "less": {
+      "file": "l/less.json"
+    },
+    "lex-models": {
+      "file": "l/lex-models.json"
+    },
+    "lex-runtime": {
+      "file": "l/lex-runtime.json"
+    },
+    "lexv2-models": {
+      "file": "l/lexv2-models.json"
+    },
+    "lexv2-runtime": {
+      "file": "l/lexv2-runtime.json"
+    },
+    "license-manager": {
+      "file": "l/license-manager.json"
+    },
+    "license-manager-linux-subscriptions": {
+      "file": "l/license-manager-linux-subscriptions.json"
+    },
+    "license-manager-user-subscriptions": {
+      "file": "l/license-manager-user-subscriptions.json"
+    },
+    "lightsail": {
+      "file": "l/lightsail.json"
+    },
+    "lima": {
+      "file": "l/lima.json"
+    },
+    "limactl": {
+      "file": "l/limactl.json"
+    },
+    "list": {
+      "file": "l/list.json"
+    },
+    "ln": {
+      "file": "l/ln.json"
+    },
+    "load": {
+      "file": "l/load.json"
+    },
+    "location": {
+      "file": "l/location.json"
+    },
+    "lock": {
+      "file": "l/lock.json"
+    },
+    "locust": {
+      "file": "l/locust.json"
+    },
+    "logging": {
+      "file": "l/logging.json"
+    },
+    "logic": {
+      "file": "l/logic.json"
+    },
+    "logicapp": {
+      "file": "l/logicapp.json"
+    },
+    "login": {
+      "file": "l/login.json"
+    },
+    "logout": {
+      "file": "l/logout.json"
+    },
+    "logs": {
+      "file": "l/logs.json"
+    },
+    "logz": {
+      "file": "l/logz.json"
+    },
+    "lookoutequipment": {
+      "file": "l/lookoutequipment.json"
+    },
+    "lookoutmetrics": {
+      "file": "l/lookoutmetrics.json"
+    },
+    "lookoutvision": {
+      "file": "l/lookoutvision.json"
+    },
+    "lp": {
+      "file": "l/lp.json"
+    },
+    "lpass": {
+      "file": "l/lpass.json"
+    },
+    "ls": {
+      "file": "l/ls.json"
+    },
+    "lsblk": {
+      "file": "l/lsblk.json"
+    },
+    "lsd": {
+      "file": "l/lsd.json"
+    },
+    "lsof": {
+      "file": "l/lsof.json"
+    },
+    "luz": {
+      "file": "l/luz.json"
+    },
+    "lvim": {
+      "file": "l/lvim.json"
+    },
+    "m": {
+      "file": "m/m.json"
+    },
+    "m2": {
+      "file": "m/m2.json"
+    },
+    "machinelearning": {
+      "file": "m/machinelearning.json"
+    },
+    "macie": {
+      "file": "m/macie.json"
+    },
+    "macie2": {
+      "file": "m/macie2.json"
+    },
+    "mackup": {
+      "file": "m/mackup.json"
+    },
+    "magento": {
+      "file": "m/magento.json"
+    },
+    "maigret": {
+      "file": "m/maigret.json"
+    },
+    "mailmanager": {
+      "file": "m/mailmanager.json"
+    },
+    "mailsy": {
+      "file": "m/mailsy.json"
+    },
+    "main": {
+      "file": "m/main.json"
+    },
+    "maintenance": {
+      "file": "m/maintenance.json"
+    },
+    "make": {
+      "file": "m/make.json"
+    },
+    "mamba": {
+      "file": "m/mamba.json"
+    },
+    "man": {
+      "file": "m/man.json"
+    },
+    "managed-cassandra": {
+      "file": "m/managed-cassandra.json"
+    },
+    "managedapp": {
+      "file": "m/managedapp.json"
+    },
+    "managedblockchain": {
+      "file": "m/managedblockchain.json"
+    },
+    "managedblockchain-query": {
+      "file": "m/managedblockchain-query.json"
+    },
+    "managedservices": {
+      "file": "m/managedservices.json"
+    },
+    "managementpartner": {
+      "file": "m/managementpartner.json"
+    },
+    "maps": {
+      "file": "m/maps.json"
+    },
+    "mariadb": {
+      "file": "m/mariadb.json"
+    },
+    "marketplace-agreement": {
+      "file": "m/marketplace-agreement.json"
+    },
+    "marketplace-catalog": {
+      "file": "m/marketplace-catalog.json"
+    },
+    "marketplace-deployment": {
+      "file": "m/marketplace-deployment.json"
+    },
+    "marketplace-entitlement": {
+      "file": "m/marketplace-entitlement.json"
+    },
+    "marketplace-reporting": {
+      "file": "m/marketplace-reporting.json"
+    },
+    "marketplacecommerceanalytics": {
+      "file": "m/marketplacecommerceanalytics.json"
+    },
+    "mas": {
+      "file": "m/mas.json"
+    },
+    "mask": {
+      "file": "m/mask.json"
+    },
+    "mdfind": {
+      "file": "m/mdfind.json"
+    },
+    "mdls": {
+      "file": "m/mdls.json"
+    },
+    "mediaconnect": {
+      "file": "m/mediaconnect.json"
+    },
+    "mediaconvert": {
+      "file": "m/mediaconvert.json"
+    },
+    "medialive": {
+      "file": "m/medialive.json"
+    },
+    "mediapackage": {
+      "file": "m/mediapackage.json"
+    },
+    "mediapackage-vod": {
+      "file": "m/mediapackage-vod.json"
+    },
+    "mediapackagev2": {
+      "file": "m/mediapackagev2.json"
+    },
+    "mediastore": {
+      "file": "m/mediastore.json"
+    },
+    "mediastore-data": {
+      "file": "m/mediastore-data.json"
+    },
+    "mediatailor": {
+      "file": "m/mediatailor.json"
+    },
+    "medical-imaging": {
+      "file": "m/medical-imaging.json"
+    },
+    "memorydb": {
+      "file": "m/memorydb.json"
+    },
+    "meroxa": {
+      "file": "m/meroxa.json"
+    },
+    "mesh": {
+      "file": "m/mesh.json"
+    },
+    "meta": {
+      "file": "m/meta.json"
+    },
+    "meteor": {
+      "file": "m/meteor.json"
+    },
+    "meteringmarketplace": {
+      "file": "m/meteringmarketplace.json"
+    },
+    "mgh": {
+      "file": "m/mgh.json"
+    },
+    "mgn": {
+      "file": "m/mgn.json"
+    },
+    "mgnl": {
+      "file": "m/mgnl.json"
+    },
+    "micro": {
+      "file": "m/micro.json"
+    },
+    "migrate": {
+      "file": "m/migrate.json"
+    },
+    "migration-hub-refactor-spaces": {
+      "file": "m/migration-hub-refactor-spaces.json"
+    },
+    "migrationhub-config": {
+      "file": "m/migrationhub-config.json"
+    },
+    "migrationhuborchestrator": {
+      "file": "m/migrationhuborchestrator.json"
+    },
+    "migrationhubstrategy": {
+      "file": "m/migrationhubstrategy.json"
+    },
+    "mikro-orm": {
+      "file": "m/mikro-orm.json"
+    },
+    "minectl": {
+      "file": "m/minectl.json"
+    },
+    "minikube": {
+      "file": "m/minikube.json"
+    },
+    "mix": {
+      "file": "m/mix.json"
+    },
+    "mkdir": {
+      "file": "m/mkdir.json"
+    },
+    "mkdocs": {
+      "file": "m/mkdocs.json"
+    },
+    "mkfifo": {
+      "file": "m/mkfifo.json"
+    },
+    "mkinitcpio": {
+      "file": "m/mkinitcpio.json"
+    },
+    "mknod": {
+      "file": "m/mknod.json"
+    },
+    "ml": {
+      "file": "m/ml.json"
+    },
+    "ml-engine": {
+      "file": "m/ml-engine.json"
+    },
+    "mob": {
+      "file": "m/mob.json"
+    },
+    "mobile": {
+      "file": "m/mobile.json"
+    },
+    "mobile-network": {
+      "file": "m/mobile-network.json"
+    },
+    "molecule": {
+      "file": "m/molecule.json"
+    },
+    "mongocli": {
+      "file": "m/mongocli.json"
+    },
+    "mongoimport": {
+      "file": "m/mongoimport.json"
+    },
+    "mongosh": {
+      "file": "m/mongosh.json"
+    },
+    "monitor": {
+      "file": "m/monitor.json"
+    },
+    "monitoring": {
+      "file": "m/monitoring.json"
+    },
+    "more": {
+      "file": "m/more.json"
+    },
+    "mosh": {
+      "file": "m/mosh.json"
+    },
+    "mount": {
+      "file": "m/mount.json"
+    },
+    "mq": {
+      "file": "m/mq.json"
+    },
+    "msbuild": {
+      "file": "m/msbuild.json"
+    },
+    "mturk": {
+      "file": "m/mturk.json"
+    },
+    "multipass": {
+      "file": "m/multipass.json"
+    },
+    "mv": {
+      "file": "m/mv.json"
+    },
+    "mvn": {
+      "file": "m/mvn.json"
+    },
+    "mwaa": {
+      "file": "m/mwaa.json"
+    },
+    "mypy": {
+      "file": "m/mypy.json"
+    },
+    "mysql": {
+      "file": "m/mysql.json"
+    },
+    "n": {
+      "file": "n/n.json"
+    },
+    "nano": {
+      "file": "n/nano.json"
+    },
+    "nc": {
+      "file": "n/nc.json"
+    },
+    "ncal": {
+      "file": "n/ncal.json"
+    },
+    "ncu": {
+      "file": "n/ncu.json"
+    },
+    "neofetch": {
+      "file": "n/neofetch.json"
+    },
+    "neptune": {
+      "file": "n/neptune.json"
+    },
+    "neptune-graph": {
+      "file": "n/neptune-graph.json"
+    },
+    "neptunedata": {
+      "file": "n/neptunedata.json"
+    },
+    "nest": {
+      "file": "n/nest.json"
+    },
+    "netappfiles": {
+      "file": "n/netappfiles.json"
+    },
+    "netlify": {
+      "file": "n/netlify.json"
+    },
+    "network-firewall": {
+      "file": "n/network-firewall.json"
+    },
+    "network-function": {
+      "file": "n/network-function.json"
+    },
+    "network-management": {
+      "file": "n/network-management.json"
+    },
+    "networkcloud": {
+      "file": "n/networkcloud.json"
+    },
+    "networkfabric": {
+      "file": "n/networkfabric.json"
+    },
+    "networkflowmonitor": {
+      "file": "n/networkflowmonitor.json"
+    },
+    "networkmanager": {
+      "file": "n/networkmanager.json"
+    },
+    "networkmonitor": {
+      "file": "n/networkmonitor.json"
+    },
+    "networkQuality": {
+      "file": "n/networkQuality.json"
+    },
+    "networksetup": {
+      "file": "n/networksetup.json"
+    },
+    "new": {
+      "file": "n/new.json"
+    },
+    "new-relic": {
+      "file": "n/new-relic.json"
+    },
+    "newman": {
+      "file": "n/newman.json"
+    },
+    "next": {
+      "file": "n/next.json"
+    },
+    "nextflow": {
+      "file": "n/nextflow.json"
+    },
+    "ng": {
+      "file": "n/ng.json"
+    },
+    "nginx": {
+      "file": "n/nginx.json"
+    },
+    "ngrok": {
+      "file": "n/ngrok.json"
+    },
+    "nhost": {
+      "file": "n/nhost.json"
+    },
+    "ni": {
+      "file": "n/ni.json"
+    },
+    "nimble": {
+      "file": "n/nimble.json"
+    },
+    "nl": {
+      "file": "n/nl.json"
+    },
+    "nmap": {
+      "file": "n/nmap.json"
+    },
+    "nocorrect": {
+      "file": "n/nocorrect.json"
+    },
+    "node": {
+      "file": "n/node.json"
+    },
+    "noglob": {
+      "file": "n/noglob.json"
+    },
+    "nohup": {
+      "file": "n/nohup.json"
+    },
+    "northflank": {
+      "file": "n/northflank.json"
+    },
+    "notification-hub": {
+      "file": "n/notification-hub.json"
+    },
+    "notifications": {
+      "file": "n/notifications.json"
+    },
+    "notificationscontacts": {
+      "file": "n/notificationscontacts.json"
+    },
+    "np": {
+      "file": "n/np.json"
+    },
+    "npm": {
+      "file": "n/npm.json"
+    },
+    "npx": {
+      "file": "n/npx.json"
+    },
+    "nr": {
+      "file": "n/nr.json"
+    },
+    "nrm": {
+      "file": "n/nrm.json"
+    },
+    "ns": {
+      "file": "n/ns.json"
+    },
+    "nu": {
+      "file": "n/nu.json"
+    },
+    "nuget": {
+      "file": "n/nuget.json"
+    },
+    "nuxi": {
+      "file": "n/nuxi.json"
+    },
+    "nuxt": {
+      "file": "n/nuxt.json"
+    },
+    "nvim": {
+      "file": "n/nvim.json"
+    },
+    "nvm": {
+      "file": "n/nvm.json"
+    },
+    "nx": {
+      "file": "n/nx.json"
+    },
+    "nylas": {
+      "file": "n/nylas.json"
+    },
+    "oam": {
+      "file": "o/oam.json"
+    },
+    "observabilityadmin": {
+      "file": "o/observabilityadmin.json"
+    },
+    "oci": {
+      "file": "o/oci.json"
+    },
+    "od": {
+      "file": "o/od.json"
+    },
+    "offazure": {
+      "file": "o/offazure.json"
+    },
+    "oh-my-posh": {
+      "file": "o/oh-my-posh.json"
+    },
+    "okta": {
+      "file": "o/okta.json"
+    },
+    "okteto": {
+      "file": "o/okteto.json"
+    },
+    "ollama": {
+      "file": "o/ollama.json"
+    },
+    "omics": {
+      "file": "o/omics.json"
+    },
+    "omz": {
+      "file": "o/omz.json"
+    },
+    "onboardbase": {
+      "file": "o/onboardbase.json"
+    },
+    "op": {
+      "file": "o/op.json"
+    },
+    "opa": {
+      "file": "o/opa.json"
+    },
+    "open": {
+      "file": "o/open.json"
+    },
+    "opensearch": {
+      "file": "o/opensearch.json"
+    },
+    "opensearchserverless": {
+      "file": "o/opensearchserverless.json"
+    },
+    "opsworks": {
+      "file": "o/opsworks.json"
+    },
+    "opsworks-cm": {
+      "file": "o/opsworks-cm.json"
+    },
+    "opsworkscm": {
+      "file": "o/opsworkscm.json"
+    },
+    "orbital": {
+      "file": "o/orbital.json"
+    },
+    "organizations": {
+      "file": "o/organizations.json"
+    },
+    "osascript": {
+      "file": "o/osascript.json"
+    },
+    "osis": {
+      "file": "o/osis.json"
+    },
+    "osqueryi": {
+      "file": "o/osqueryi.json"
+    },
+    "outposts": {
+      "file": "o/outposts.json"
+    },
+    "oxlint": {
+      "file": "o/oxlint.json"
+    },
+    "pac": {
+      "file": "p/pac.json"
+    },
+    "pack": {
+      "file": "p/pack.json"
+    },
+    "pageres": {
+      "file": "p/pageres.json"
+    },
+    "palera1n": {
+      "file": "p/palera1n.json"
+    },
+    "palo-alto": {
+      "file": "p/palo-alto.json"
+    },
+    "pandoc": {
+      "file": "p/pandoc.json"
+    },
+    "panorama": {
+      "file": "p/panorama.json"
+    },
+    "paper": {
+      "file": "p/paper.json"
+    },
+    "partnercenter": {
+      "file": "p/partnercenter.json"
+    },
+    "partnercentral-selling": {
+      "file": "p/partnercentral-selling.json"
+    },
+    "pass": {
+      "file": "p/pass.json"
+    },
+    "passwd": {
+      "file": "p/passwd.json"
+    },
+    "paste": {
+      "file": "p/paste.json"
+    },
+    "pathchk": {
+      "file": "p/pathchk.json"
+    },
+    "payment-cryptography": {
+      "file": "p/payment-cryptography.json"
+    },
+    "payment-cryptography-data": {
+      "file": "p/payment-cryptography-data.json"
+    },
+    "pca-connector-ad": {
+      "file": "p/pca-connector-ad.json"
+    },
+    "pca-connector-scep": {
+      "file": "p/pca-connector-scep.json"
+    },
+    "pcs": {
+      "file": "p/pcs.json"
+    },
+    "pdfunite": {
+      "file": "p/pdfunite.json"
+    },
+    "peering": {
+      "file": "p/peering.json"
+    },
+    "personalize": {
+      "file": "p/personalize.json"
+    },
+    "personalize-events": {
+      "file": "p/personalize-events.json"
+    },
+    "personalize-runtime": {
+      "file": "p/personalize-runtime.json"
+    },
+    "pg_dump": {
+      "file": "p/pg_dump.json"
+    },
+    "pgcli": {
+      "file": "p/pgcli.json"
+    },
+    "php": {
+      "file": "p/php.json"
+    },
+    "phpunit": {
+      "file": "p/phpunit.json"
+    },
+    "phpunit-watcher": {
+      "file": "p/phpunit-watcher.json"
+    },
+    "pi": {
+      "file": "p/pi.json"
+    },
+    "pijul": {
+      "file": "p/pijul.json"
+    },
+    "ping": {
+      "file": "p/ping.json"
+    },
+    "pinpoint": {
+      "file": "p/pinpoint.json"
+    },
+    "pinpoint-email": {
+      "file": "p/pinpoint-email.json"
+    },
+    "pinpoint-sms-voice": {
+      "file": "p/pinpoint-sms-voice.json"
+    },
+    "pinpoint-sms-voice-v2": {
+      "file": "p/pinpoint-sms-voice-v2.json"
+    },
+    "pip": {
+      "file": "p/pip.json"
+    },
+    "pip3": {
+      "file": "p/pip3.json"
+    },
+    "pipelines": {
+      "file": "p/pipelines.json"
+    },
+    "pipenv": {
+      "file": "p/pipenv.json"
+    },
+    "pipes": {
+      "file": "p/pipes.json"
+    },
+    "pipx": {
+      "file": "p/pipx.json"
+    },
+    "pkg-config": {
+      "file": "p/pkg-config.json"
+    },
+    "pkgutil": {
+      "file": "p/pkgutil.json"
+    },
+    "pkill": {
+      "file": "p/pkill.json"
+    },
+    "planter": {
+      "file": "p/planter.json"
+    },
+    "playwright": {
+      "file": "p/playwright.json"
+    },
+    "please": {
+      "file": "p/please.json"
+    },
+    "plutil": {
+      "file": "p/plutil.json"
+    },
+    "pm2": {
+      "file": "p/pm2.json"
+    },
+    "pmset": {
+      "file": "p/pmset.json"
+    },
+    "pnpm": {
+      "file": "p/pnpm.json"
+    },
+    "pnpx": {
+      "file": "p/pnpx.json"
+    },
+    "pocketbase": {
+      "file": "p/pocketbase.json"
+    },
+    "pod": {
+      "file": "p/pod.json"
+    },
+    "podman": {
+      "file": "p/podman.json"
+    },
+    "poetry": {
+      "file": "p/poetry.json"
+    },
+    "policy": {
+      "file": "p/policy.json"
+    },
+    "policy-troubleshoot": {
+      "file": "p/policy-troubleshoot.json"
+    },
+    "polly": {
+      "file": "p/polly.json"
+    },
+    "portal": {
+      "file": "p/portal.json"
+    },
+    "postgres": {
+      "file": "p/postgres.json"
+    },
+    "powerbi": {
+      "file": "p/powerbi.json"
+    },
+    "ppg": {
+      "file": "p/ppg.json"
+    },
+    "pre-commit": {
+      "file": "p/pre-commit.json"
+    },
+    "premake": {
+      "file": "p/premake.json"
+    },
+    "preset": {
+      "file": "p/preset.json"
+    },
+    "prettier": {
+      "file": "p/prettier.json"
+    },
+    "pricing": {
+      "file": "p/pricing.json"
+    },
+    "prisma": {
+      "file": "p/prisma.json"
+    },
+    "private-link": {
+      "file": "p/private-link.json"
+    },
+    "privatenetworks": {
+      "file": "p/privatenetworks.json"
+    },
+    "pro": {
+      "file": "p/pro.json"
+    },
+    "progressline": {
+      "file": "p/progressline.json"
+    },
+    "projects": {
+      "file": "p/projects.json"
+    },
+    "projj": {
+      "file": "p/projj.json"
+    },
+    "proton": {
+      "file": "p/proton.json"
+    },
+    "provider": {
+      "file": "p/provider.json"
+    },
+    "providerhub": {
+      "file": "p/providerhub.json"
+    },
+    "pry": {
+      "file": "p/pry.json"
+    },
+    "ps": {
+      "file": "p/ps.json"
+    },
+    "pscale": {
+      "file": "p/pscale.json"
+    },
+    "psql": {
+      "file": "p/psql.json"
+    },
+    "publish": {
+      "file": "p/publish.json"
+    },
+    "pubsub": {
+      "file": "p/pubsub.json"
+    },
+    "pulumi": {
+      "file": "p/pulumi.json"
+    },
+    "purview": {
+      "file": "p/purview.json"
+    },
+    "pushd": {
+      "file": "p/pushd.json"
+    },
+    "pwd": {
+      "file": "p/pwd.json"
+    },
+    "pyenv": {
+      "file": "p/pyenv.json"
+    },
+    "pytest": {
+      "file": "p/pytest.json"
+    },
+    "python": {
+      "file": "p/python.json"
+    },
+    "python3": {
+      "file": "p/python3.json"
+    },
+    "q": {
+      "file": "q/q.json"
+    },
+    "qapps": {
+      "file": "q/qapps.json"
+    },
+    "qbusiness": {
+      "file": "q/qbusiness.json"
+    },
+    "qconnect": {
+      "file": "q/qconnect.json"
+    },
+    "qldb": {
+      "file": "q/qldb.json"
+    },
+    "qldb-session": {
+      "file": "q/qldb-session.json"
+    },
+    "qodana": {
+      "file": "q/qodana.json"
+    },
+    "quantum": {
+      "file": "q/quantum.json"
+    },
+    "quasar": {
+      "file": "q/quasar.json"
+    },
+    "quickmail": {
+      "file": "q/quickmail.json"
+    },
+    "quicksight": {
+      "file": "q/quicksight.json"
+    },
+    "qumulo": {
+      "file": "q/qumulo.json"
+    },
+    "quota": {
+      "file": "q/quota.json"
+    },
+    "R": {
+      "file": "r/R.json"
+    },
+    "rails": {
+      "file": "r/rails.json"
+    },
+    "railway": {
+      "file": "r/railway.json"
+    },
+    "rake": {
+      "file": "r/rake.json"
+    },
+    "ram": {
+      "file": "r/ram.json"
+    },
+    "rancher": {
+      "file": "r/rancher.json"
+    },
+    "rbenv": {
+      "file": "r/rbenv.json"
+    },
+    "rbin": {
+      "file": "r/rbin.json"
+    },
+    "rclone": {
+      "file": "r/rclone.json"
+    },
+    "rds": {
+      "file": "r/rds.json"
+    },
+    "rds-data": {
+      "file": "r/rds-data.json"
+    },
+    "react-native": {
+      "file": "r/react-native.json"
+    },
+    "readlink": {
+      "file": "r/readlink.json"
+    },
+    "recommender": {
+      "file": "r/recommender.json"
+    },
+    "redis": {
+      "file": "r/redis.json"
+    },
+    "redisenterprise": {
+      "file": "r/redisenterprise.json"
+    },
+    "redshift": {
+      "file": "r/redshift.json"
+    },
+    "redshift-data": {
+      "file": "r/redshift-data.json"
+    },
+    "redshift-serverless": {
+      "file": "r/redshift-serverless.json"
+    },
+    "redwood": {
+      "file": "r/redwood.json"
+    },
+    "rekognition": {
+      "file": "r/rekognition.json"
+    },
+    "relay": {
+      "file": "r/relay.json"
+    },
+    "remix": {
+      "file": "r/remix.json"
+    },
+    "remote-rendering-account": {
+      "file": "r/remote-rendering-account.json"
+    },
+    "remotion": {
+      "file": "r/remotion.json"
+    },
+    "remove": {
+      "file": "r/remove.json"
+    },
+    "repeat": {
+      "file": "r/repeat.json"
+    },
+    "repos": {
+      "file": "r/repos.json"
+    },
+    "repostspace": {
+      "file": "r/repostspace.json"
+    },
+    "reservations": {
+      "file": "r/reservations.json"
+    },
+    "resiliencehub": {
+      "file": "r/resiliencehub.json"
+    },
+    "resource": {
+      "file": "r/resource.json"
+    },
+    "resource-explorer-2": {
+      "file": "r/resource-explorer-2.json"
+    },
+    "resource-groups": {
+      "file": "r/resource-groups.json"
+    },
+    "resource-manager": {
+      "file": "r/resource-manager.json"
+    },
+    "resource-mover": {
+      "file": "r/resource-mover.json"
+    },
+    "resourcegroupstaggingapi": {
+      "file": "r/resourcegroupstaggingapi.json"
+    },
+    "resourcemanagement": {
+      "file": "r/resourcemanagement.json"
+    },
+    "rest": {
+      "file": "r/rest.json"
+    },
+    "restore": {
+      "file": "r/restore.json"
+    },
+    "restore-point": {
+      "file": "r/restore-point.json"
+    },
+    "rg": {
+      "file": "r/rg.json"
+    },
+    "rich": {
+      "file": "r/rich.json"
+    },
+    "rm": {
+      "file": "r/rm.json"
+    },
+    "rmdir": {
+      "file": "r/rmdir.json"
+    },
+    "robomaker": {
+      "file": "r/robomaker.json"
+    },
+    "robot": {
+      "file": "r/robot.json"
+    },
+    "rojo": {
+      "file": "r/rojo.json"
+    },
+    "role": {
+      "file": "r/role.json"
+    },
+    "rolesanywhere": {
+      "file": "r/rolesanywhere.json"
+    },
+    "rollup": {
+      "file": "r/rollup.json"
+    },
+    "rome": {
+      "file": "r/rome.json"
+    },
+    "route53": {
+      "file": "r/route53.json"
+    },
+    "route53-recovery-cluster": {
+      "file": "r/route53-recovery-cluster.json"
+    },
+    "route53-recovery-control-config": {
+      "file": "r/route53-recovery-control-config.json"
+    },
+    "route53-recovery-readiness": {
+      "file": "r/route53-recovery-readiness.json"
+    },
+    "route53domains": {
+      "file": "r/route53domains.json"
+    },
+    "route53profiles": {
+      "file": "r/route53profiles.json"
+    },
+    "route53resolver": {
+      "file": "r/route53resolver.json"
+    },
+    "Rscript": {
+      "file": "r/Rscript.json"
+    },
+    "rsync": {
+      "file": "r/rsync.json"
+    },
+    "rubocop": {
+      "file": "r/rubocop.json"
+    },
+    "ruby": {
+      "file": "r/ruby.json"
+    },
+    "ruff": {
+      "file": "r/ruff.json"
+    },
+    "rugby": {
+      "file": "r/rugby.json"
+    },
+    "rum": {
+      "file": "r/rum.json"
+    },
+    "run": {
+      "file": "r/run.json"
+    },
+    "runtime.sagemaker": {
+      "file": "r/runtime.sagemaker.json"
+    },
+    "rush": {
+      "file": "r/rush.json"
+    },
+    "rushx": {
+      "file": "r/rushx.json"
+    },
+    "rustc": {
+      "file": "r/rustc.json"
+    },
+    "rustup": {
+      "file": "r/rustup.json"
+    },
+    "rvm": {
+      "file": "r/rvm.json"
+    },
+    "s3": {
+      "file": "s/s3.json"
+    },
+    "s3api": {
+      "file": "s/s3api.json"
+    },
+    "s3control": {
+      "file": "s/s3control.json"
+    },
+    "s3outposts": {
+      "file": "s/s3outposts.json"
+    },
+    "s3tables": {
+      "file": "s/s3tables.json"
+    },
+    "sagemaker": {
+      "file": "s/sagemaker.json"
+    },
+    "sagemaker-a2i-runtime": {
+      "file": "s/sagemaker-a2i-runtime.json"
+    },
+    "sagemaker-edge": {
+      "file": "s/sagemaker-edge.json"
+    },
+    "sagemaker-featurestore-runtime": {
+      "file": "s/sagemaker-featurestore-runtime.json"
+    },
+    "sagemaker-geospatial": {
+      "file": "s/sagemaker-geospatial.json"
+    },
+    "sagemaker-metrics": {
+      "file": "s/sagemaker-metrics.json"
+    },
+    "sagemaker-runtime": {
+      "file": "s/sagemaker-runtime.json"
+    },
+    "sake": {
+      "file": "s/sake.json"
+    },
+    "sam": {
+      "file": "s/sam.json"
+    },
+    "sanity": {
+      "file": "s/sanity.json"
+    },
+    "sapmonitor": {
+      "file": "s/sapmonitor.json"
+    },
+    "sapphire": {
+      "file": "s/sapphire.json"
+    },
+    "savingsplans": {
+      "file": "s/savingsplans.json"
+    },
+    "scarb": {
+      "file": "s/scarb.json"
+    },
+    "scc": {
+      "file": "s/scc.json"
+    },
+    "scenario": {
+      "file": "s/scenario.json"
+    },
+    "scheduler": {
+      "file": "s/scheduler.json"
+    },
+    "schemas": {
+      "file": "s/schemas.json"
+    },
+    "scp": {
+      "file": "s/scp.json"
+    },
+    "screen": {
+      "file": "s/screen.json"
+    },
+    "scvmm": {
+      "file": "s/scvmm.json"
+    },
+    "sdb": {
+      "file": "s/sdb.json"
+    },
+    "search": {
+      "file": "s/search.json"
+    },
+    "secrets": {
+      "file": "s/secrets.json"
+    },
+    "secretsmanager": {
+      "file": "s/secretsmanager.json"
+    },
+    "security": {
+      "file": "s/security.json"
+    },
+    "security-ir": {
+      "file": "s/security-ir.json"
+    },
+    "securityhub": {
+      "file": "s/securityhub.json"
+    },
+    "securitylake": {
+      "file": "s/securitylake.json"
+    },
+    "sed": {
+      "file": "s/sed.json"
+    },
+    "self-help": {
+      "file": "s/self-help.json"
+    },
+    "self-test": {
+      "file": "s/self-test.json"
+    },
+    "sentinel": {
+      "file": "s/sentinel.json"
+    },
+    "seq": {
+      "file": "s/seq.json"
+    },
+    "sequelize": {
+      "file": "s/sequelize.json"
+    },
+    "serial-console": {
+      "file": "s/serial-console.json"
+    },
+    "serve": {
+      "file": "s/serve.json"
+    },
+    "serverless": {
+      "file": "s/serverless.json"
+    },
+    "serverlessrepo": {
+      "file": "s/serverlessrepo.json"
+    },
+    "service-quotas": {
+      "file": "s/service-quotas.json"
+    },
+    "servicebus": {
+      "file": "s/servicebus.json"
+    },
+    "servicecatalog": {
+      "file": "s/servicecatalog.json"
+    },
+    "servicecatalog-appregistry": {
+      "file": "s/servicecatalog-appregistry.json"
+    },
+    "servicediscovery": {
+      "file": "s/servicediscovery.json"
+    },
+    "services": {
+      "file": "s/services.json"
+    },
+    "ses": {
+      "file": "s/ses.json"
+    },
+    "sesv2": {
+      "file": "s/sesv2.json"
+    },
+    "sf": {
+      "file": "s/sf.json"
+    },
+    "sfdx": {
+      "file": "s/sfdx.json"
+    },
+    "sftp": {
+      "file": "s/sftp.json"
+    },
+    "sha1sum": {
+      "file": "s/sha1sum.json"
+    },
+    "shadcn-ui": {
+      "file": "s/shadcn-ui.json"
+    },
+    "shasum": {
+      "file": "s/shasum.json"
+    },
+    "shelve": {
+      "file": "s/shelve.json"
+    },
+    "shield": {
+      "file": "s/shield.json"
+    },
+    "shortcuts": {
+      "file": "s/shortcuts.json"
+    },
+    "shred": {
+      "file": "s/shred.json"
+    },
+    "sidekiq": {
+      "file": "s/sidekiq.json"
+    },
+    "sig": {
+      "file": "s/sig.json"
+    },
+    "signalr": {
+      "file": "s/signalr.json"
+    },
+    "signer": {
+      "file": "s/signer.json"
+    },
+    "simctl": {
+      "file": "s/simctl.json"
+    },
+    "simspaceweaver": {
+      "file": "s/simspaceweaver.json"
+    },
+    "sips": {
+      "file": "s/sips.json"
+    },
+    "site-recovery": {
+      "file": "s/site-recovery.json"
+    },
+    "sl": {
+      "file": "s/sl.json"
+    },
+    "sln": {
+      "file": "s/sln.json"
+    },
+    "sls": {
+      "file": "s/sls.json"
+    },
+    "sms": {
+      "file": "s/sms.json"
+    },
+    "sms-voice": {
+      "file": "s/sms-voice.json"
+    },
+    "snaplet": {
+      "file": "s/snaplet.json"
+    },
+    "snapshot": {
+      "file": "s/snapshot.json"
+    },
+    "snow-device-management": {
+      "file": "s/snow-device-management.json"
+    },
+    "snowball": {
+      "file": "s/snowball.json"
+    },
+    "sns": {
+      "file": "s/sns.json"
+    },
+    "socialmessaging": {
+      "file": "s/socialmessaging.json"
+    },
+    "softwareupdate": {
+      "file": "s/softwareupdate.json"
+    },
+    "sort": {
+      "file": "s/sort.json"
+    },
+    "source": {
+      "file": "s/source.json"
+    },
+    "space": {
+      "file": "s/space.json"
+    },
+    "spanner": {
+      "file": "s/spanner.json"
+    },
+    "spatial-anchors-account": {
+      "file": "s/spatial-anchors-account.json"
+    },
+    "speedtest": {
+      "file": "s/speedtest.json"
+    },
+    "speedtest-cli": {
+      "file": "s/speedtest-cli.json"
+    },
+    "sphere": {
+      "file": "s/sphere.json"
+    },
+    "splash-cli": {
+      "file": "s/splash-cli.json"
+    },
+    "split": {
+      "file": "s/split.json"
+    },
+    "spotify": {
+      "file": "s/spotify.json"
+    },
+    "spring": {
+      "file": "s/spring.json"
+    },
+    "spring-cloud": {
+      "file": "s/spring-cloud.json"
+    },
+    "sql": {
+      "file": "s/sql.json"
+    },
+    "sqlfluff": {
+      "file": "s/sqlfluff.json"
+    },
+    "sqlite3": {
+      "file": "s/sqlite3.json"
+    },
+    "sqlmesh": {
+      "file": "s/sqlmesh.json"
+    },
+    "sqs": {
+      "file": "s/sqs.json"
+    },
+    "src": {
+      "file": "s/src.json"
+    },
+    "ssh": {
+      "file": "s/ssh.json"
+    },
+    "ssh-keygen": {
+      "file": "s/ssh-keygen.json"
+    },
+    "sshkey": {
+      "file": "s/sshkey.json"
+    },
+    "ssm": {
+      "file": "s/ssm.json"
+    },
+    "ssm-contacts": {
+      "file": "s/ssm-contacts.json"
+    },
+    "ssm-incidents": {
+      "file": "s/ssm-incidents.json"
+    },
+    "ssm-quicksetup": {
+      "file": "s/ssm-quicksetup.json"
+    },
+    "ssm-sap": {
+      "file": "s/ssm-sap.json"
+    },
+    "sso": {
+      "file": "s/sso.json"
+    },
+    "sso-admin": {
+      "file": "s/sso-admin.json"
+    },
+    "sso-oidc": {
+      "file": "s/sso-oidc.json"
+    },
+    "st2": {
+      "file": "s/st2.json"
+    },
+    "stack": {
+      "file": "s/stack.json"
+    },
+    "stack-hci": {
+      "file": "s/stack-hci.json"
+    },
+    "starkli": {
+      "file": "s/starkli.json"
+    },
+    "start-storybook": {
+      "file": "s/start-storybook.json"
+    },
+    "stat": {
+      "file": "s/stat.json"
+    },
+    "staticwebapp": {
+      "file": "s/staticwebapp.json"
+    },
+    "steadybit": {
+      "file": "s/steadybit.json"
+    },
+    "stencil": {
+      "file": "s/stencil.json"
+    },
+    "stepfunctions": {
+      "file": "s/stepfunctions.json"
+    },
+    "StepZen": {
+      "file": "s/StepZen.json"
+    },
+    "storage": {
+      "file": "s/storage.json"
+    },
+    "storage-mover": {
+      "file": "s/storage-mover.json"
+    },
+    "storagegateway": {
+      "file": "s/storagegateway.json"
+    },
+    "storagesync": {
+      "file": "s/storagesync.json"
+    },
+    "store": {
+      "file": "s/store.json"
+    },
+    "stow": {
+      "file": "s/stow.json"
+    },
+    "stream-analytics": {
+      "file": "s/stream-analytics.json"
+    },
+    "streamlit": {
+      "file": "s/streamlit.json"
+    },
+    "stripe": {
+      "file": "s/stripe.json"
+    },
+    "sts": {
+      "file": "s/sts.json"
+    },
+    "su": {
+      "file": "s/su.json"
+    },
+    "subl": {
+      "file": "s/subl.json"
+    },
+    "sudo": {
+      "file": "s/sudo.json"
+    },
+    "suitecloud": {
+      "file": "s/suitecloud.json"
+    },
+    "supabase": {
+      "file": "s/supabase.json"
+    },
+    "supplychain": {
+      "file": "s/supplychain.json"
+    },
+    "support": {
+      "file": "s/support.json"
+    },
+    "support-app": {
+      "file": "s/support-app.json"
+    },
+    "surreal": {
+      "file": "s/surreal.json"
+    },
+    "survey": {
+      "file": "s/survey.json"
+    },
+    "svn": {
+      "file": "s/svn.json"
+    },
+    "svokit": {
+      "file": "s/svokit.json"
+    },
+    "svtplay-dl": {
+      "file": "s/svtplay-dl.json"
+    },
+    "sw_vers": {
+      "file": "s/sw_vers.json"
+    },
+    "swagger-typescript-api": {
+      "file": "s/swagger-typescript-api.json"
+    },
+    "swc": {
+      "file": "s/swc.json"
+    },
+    "swf": {
+      "file": "s/swf.json"
+    },
+    "swift": {
+      "file": "s/swift.json"
+    },
+    "symfony": {
+      "file": "s/symfony.json"
+    },
+    "synapse": {
+      "file": "s/synapse.json"
+    },
+    "synthetics": {
+      "file": "s/synthetics.json"
+    },
+    "sysctl": {
+      "file": "s/sysctl.json"
+    },
+    "systemctl": {
+      "file": "s/systemctl.json"
+    },
+    "tac": {
+      "file": "t/tac.json"
+    },
+    "tag": {
+      "file": "t/tag.json"
+    },
+    "tail": {
+      "file": "t/tail.json"
+    },
+    "tailcall": {
+      "file": "t/tailcall.json"
+    },
+    "tailscale": {
+      "file": "t/tailscale.json"
+    },
+    "tailwindcss": {
+      "file": "t/tailwindcss.json"
+    },
+    "tangram": {
+      "file": "t/tangram.json"
+    },
+    "taplo": {
+      "file": "t/taplo.json"
+    },
+    "tar": {
+      "file": "t/tar.json"
+    },
+    "task": {
+      "file": "t/task.json"
+    },
+    "tasks": {
+      "file": "t/tasks.json"
+    },
+    "taskwarrior": {
+      "file": "t/taskwarrior.json"
+    },
+    "taxsettings": {
+      "file": "t/taxsettings.json"
+    },
+    "tb": {
+      "file": "t/tb.json"
+    },
+    "tccutil": {
+      "file": "t/tccutil.json"
+    },
+    "tee": {
+      "file": "t/tee.json"
+    },
+    "term": {
+      "file": "t/term.json"
+    },
+    "terraform": {
+      "file": "t/terraform.json"
+    },
+    "terragrunt": {
+      "file": "t/terragrunt.json"
+    },
+    "test": {
+      "file": "t/test.json"
+    },
+    "textract": {
+      "file": "t/textract.json"
+    },
+    "tfenv": {
+      "file": "t/tfenv.json"
+    },
+    "tfsec": {
+      "file": "t/tfsec.json"
+    },
+    "then": {
+      "file": "t/then.json"
+    },
+    "time": {
+      "file": "t/time.json"
+    },
+    "timestream-influxdb": {
+      "file": "t/timestream-influxdb.json"
+    },
+    "timestream-query": {
+      "file": "t/timestream-query.json"
+    },
+    "timestream-write": {
+      "file": "t/timestream-write.json"
+    },
+    "tkn": {
+      "file": "t/tkn.json"
+    },
+    "tldr": {
+      "file": "t/tldr.json"
+    },
+    "tmutil": {
+      "file": "t/tmutil.json"
+    },
+    "tmux": {
+      "file": "t/tmux.json"
+    },
+    "tmuxinator": {
+      "file": "t/tmuxinator.json"
+    },
+    "tnb": {
+      "file": "t/tnb.json"
+    },
+    "tokei": {
+      "file": "t/tokei.json"
+    },
+    "tool": {
+      "file": "t/tool.json"
+    },
+    "top": {
+      "file": "t/top.json"
+    },
+    "topic": {
+      "file": "t/topic.json"
+    },
+    "touch": {
+      "file": "t/touch.json"
+    },
+    "tr": {
+      "file": "t/tr.json"
+    },
+    "traceroute": {
+      "file": "t/traceroute.json"
+    },
+    "transcribe": {
+      "file": "t/transcribe.json"
+    },
+    "transfer": {
+      "file": "t/transfer.json"
+    },
+    "translate": {
+      "file": "t/translate.json"
+    },
+    "trap": {
+      "file": "t/trap.json"
+    },
+    "trash": {
+      "file": "t/trash.json"
+    },
+    "tree": {
+      "file": "t/tree.json"
+    },
+    "trex": {
+      "file": "t/trex.json"
+    },
+    "trigger_example": {
+      "file": "t/trigger_example.json"
+    },
+    "trivy": {
+      "file": "t/trivy.json"
+    },
+    "truffle": {
+      "file": "t/truffle.json"
+    },
+    "truncate": {
+      "file": "t/truncate.json"
+    },
+    "trunk": {
+      "file": "t/trunk.json"
+    },
+    "trustedadvisor": {
+      "file": "t/trustedadvisor.json"
+    },
+    "ts": {
+      "file": "t/ts.json"
+    },
+    "ts-node": {
+      "file": "t/ts-node.json"
+    },
+    "tsc": {
+      "file": "t/tsc.json"
+    },
+    "tsh": {
+      "file": "t/tsh.json"
+    },
+    "tsi": {
+      "file": "t/tsi.json"
+    },
+    "tsuru": {
+      "file": "t/tsuru.json"
+    },
+    "tsx": {
+      "file": "t/tsx.json"
+    },
+    "tuist": {
+      "file": "t/tuist.json"
+    },
+    "turbo": {
+      "file": "t/turbo.json"
+    },
+    "twiggy": {
+      "file": "t/twiggy.json"
+    },
+    "twilio": {
+      "file": "t/twilio.json"
+    },
+    "typeorm": {
+      "file": "t/typeorm.json"
+    },
+    "typos": {
+      "file": "t/typos.json"
+    },
+    "typst": {
+      "file": "t/typst.json"
+    },
+    "ua": {
+      "file": "u/ua.json"
+    },
+    "ubuntu-advantage": {
+      "file": "u/ubuntu-advantage.json"
+    },
+    "uname": {
+      "file": "u/uname.json"
+    },
+    "uniq": {
+      "file": "u/uniq.json"
+    },
+    "unix2dos": {
+      "file": "u/unix2dos.json"
+    },
+    "unset": {
+      "file": "u/unset.json"
+    },
+    "until": {
+      "file": "u/until.json"
+    },
+    "unzip": {
+      "file": "u/unzip.json"
+    },
+    "upgrade": {
+      "file": "u/upgrade.json"
+    },
+    "uv": {
+      "file": "u/uv.json"
+    },
+    "v": {
+      "file": "v/v.json"
+    },
+    "vale": {
+      "file": "v/vale.json"
+    },
+    "valet": {
+      "file": "v/valet.json"
+    },
+    "vapor": {
+      "file": "v/vapor.json"
+    },
+    "vault": {
+      "file": "v/vault.json"
+    },
+    "vela": {
+      "file": "v/vela.json"
+    },
+    "vercel": {
+      "file": "v/vercel.json"
+    },
+    "verifiedpermissions": {
+      "file": "v/verifiedpermissions.json"
+    },
+    "version": {
+      "file": "v/version.json"
+    },
+    "vi": {
+      "file": "v/vi.json"
+    },
+    "vim": {
+      "file": "v/vim.json"
+    },
+    "vimr": {
+      "file": "v/vimr.json"
+    },
+    "visudo": {
+      "file": "v/visudo.json"
+    },
+    "vite": {
+      "file": "v/vite.json"
+    },
+    "vm": {
+      "file": "v/vm.json"
+    },
+    "vmss": {
+      "file": "v/vmss.json"
+    },
+    "vmware": {
+      "file": "v/vmware.json"
+    },
+    "voice-id": {
+      "file": "v/voice-id.json"
+    },
+    "volta": {
+      "file": "v/volta.json"
+    },
+    "vpc-lattice": {
+      "file": "v/vpc-lattice.json"
+    },
+    "vr": {
+      "file": "v/vr.json"
+    },
+    "vsce": {
+      "file": "v/vsce.json"
+    },
+    "vtex": {
+      "file": "v/vtex.json"
+    },
+    "vue": {
+      "file": "v/vue.json"
+    },
+    "vultr-cli": {
+      "file": "v/vultr-cli.json"
+    },
+    "w": {
+      "file": "w/w.json"
+    },
+    "waf": {
+      "file": "w/waf.json"
+    },
+    "waf-regional": {
+      "file": "w/waf-regional.json"
+    },
+    "wafv2": {
+      "file": "w/wafv2.json"
+    },
+    "wasm-bindgen": {
+      "file": "w/wasm-bindgen.json"
+    },
+    "wasm-pack": {
+      "file": "w/wasm-pack.json"
+    },
+    "watch": {
+      "file": "w/watch.json"
+    },
+    "watchman": {
+      "file": "w/watchman.json"
+    },
+    "watson": {
+      "file": "w/watson.json"
+    },
+    "wc": {
+      "file": "w/wc.json"
+    },
+    "wd": {
+      "file": "w/wd.json"
+    },
+    "webapp": {
+      "file": "w/webapp.json"
+    },
+    "webpack": {
+      "file": "w/webpack.json"
+    },
+    "webpubsub": {
+      "file": "w/webpubsub.json"
+    },
+    "wellarchitected": {
+      "file": "w/wellarchitected.json"
+    },
+    "wezterm": {
+      "file": "w/wezterm.json"
+    },
+    "wget": {
+      "file": "w/wget.json"
+    },
+    "whence": {
+      "file": "w/whence.json"
+    },
+    "where": {
+      "file": "w/where.json"
+    },
+    "whereis": {
+      "file": "w/whereis.json"
+    },
+    "which": {
+      "file": "w/which.json"
+    },
+    "while": {
+      "file": "w/while.json"
+    },
+    "who": {
+      "file": "w/who.json"
+    },
+    "whois": {
+      "file": "w/whois.json"
+    },
+    "wifi-password": {
+      "file": "w/wifi-password.json"
+    },
+    "wing": {
+      "file": "w/wing.json"
+    },
+    "wisdom": {
+      "file": "w/wisdom.json"
+    },
+    "workdocs": {
+      "file": "w/workdocs.json"
+    },
+    "worklink": {
+      "file": "w/worklink.json"
+    },
+    "workloads": {
+      "file": "w/workloads.json"
+    },
+    "workmail": {
+      "file": "w/workmail.json"
+    },
+    "workmailmessageflow": {
+      "file": "w/workmailmessageflow.json"
+    },
+    "workspaces": {
+      "file": "w/workspaces.json"
+    },
+    "workspaces-thin-client": {
+      "file": "w/workspaces-thin-client.json"
+    },
+    "workspaces-web": {
+      "file": "w/workspaces-web.json"
+    },
+    "wp": {
+      "file": "w/wp.json"
+    },
+    "wrangler": {
+      "file": "w/wrangler.json"
+    },
+    "wrk": {
+      "file": "w/wrk.json"
+    },
+    "wscat": {
+      "file": "w/wscat.json"
+    },
+    "xargs": {
+      "file": "x/xargs.json"
+    },
+    "xc": {
+      "file": "x/xc.json"
+    },
+    "xcode-select": {
+      "file": "x/xcode-select.json"
+    },
+    "xcodebuild": {
+      "file": "x/xcodebuild.json"
+    },
+    "xcodeproj": {
+      "file": "x/xcodeproj.json"
+    },
+    "xcodes": {
+      "file": "x/xcodes.json"
+    },
+    "xcrun": {
+      "file": "x/xcrun.json"
+    },
+    "xdg-mime": {
+      "file": "x/xdg-mime.json"
+    },
+    "xdg-open": {
+      "file": "x/xdg-open.json"
+    },
+    "xed": {
+      "file": "x/xed.json"
+    },
+    "xray": {
+      "file": "x/xray.json"
+    },
+    "xxd": {
+      "file": "x/xxd.json"
+    },
+    "yalc": {
+      "file": "y/yalc.json"
+    },
+    "yank": {
+      "file": "y/yank.json"
+    },
+    "yarn": {
+      "file": "y/yarn.json"
+    },
+    "ykman": {
+      "file": "y/ykman.json"
+    },
+    "yo": {
+      "file": "y/yo.json"
+    },
+    "yomo": {
+      "file": "y/yomo.json"
+    },
+    "youtube-dl": {
+      "file": "y/youtube-dl.json"
+    },
+    "z": {
+      "file": "z/z.json"
+    },
+    "zapier-platform-cli": {
+      "file": "z/zapier-platform-cli.json"
+    },
+    "zed": {
+      "file": "z/zed.json"
+    },
+    "zellij": {
+      "file": "z/zellij.json"
+    },
+    "zig": {
+      "file": "z/zig.json"
+    },
+    "zip": {
+      "file": "z/zip.json"
+    },
+    "zipcloak": {
+      "file": "z/zipcloak.json"
+    },
+    "zoxide": {
+      "file": "z/zoxide.json"
+    },
+    "aws/accessanalyzer": {
+      "file": "a/accessanalyzer.json",
+      "aliasOf": "accessanalyzer"
+    },
+    "aws/account": {
+      "file": "a/account.json",
+      "aliasOf": "account"
+    },
+    "aws/acm": {
+      "file": "a/acm.json",
+      "aliasOf": "acm"
+    },
+    "aws/acm-pca": {
+      "file": "a/acm-pca.json",
+      "aliasOf": "acm-pca"
+    },
+    "aws/amp": {
+      "file": "a/amp.json",
+      "aliasOf": "amp"
+    },
+    "aws/amplify": {
+      "file": "a/aws/amplify.json",
+      "aliasOf": "amplify"
+    },
+    "aws/amplifybackend": {
+      "file": "a/amplifybackend.json",
+      "aliasOf": "amplifybackend"
+    },
+    "aws/amplifyuibuilder": {
+      "file": "a/amplifyuibuilder.json",
+      "aliasOf": "amplifyuibuilder"
+    },
+    "aws/apigateway": {
+      "file": "a/apigateway.json",
+      "aliasOf": "apigateway"
+    },
+    "aws/apigatewaymanagementapi": {
+      "file": "a/apigatewaymanagementapi.json",
+      "aliasOf": "apigatewaymanagementapi"
+    },
+    "aws/apigatewayv2": {
+      "file": "a/apigatewayv2.json",
+      "aliasOf": "apigatewayv2"
+    },
+    "aws/appconfig": {
+      "file": "a/appconfig.json",
+      "aliasOf": "appconfig"
+    },
+    "aws/appconfigdata": {
+      "file": "a/appconfigdata.json",
+      "aliasOf": "appconfigdata"
+    },
+    "aws/appfabric": {
+      "file": "a/appfabric.json",
+      "aliasOf": "appfabric"
+    },
+    "aws/appflow": {
+      "file": "a/appflow.json",
+      "aliasOf": "appflow"
+    },
+    "aws/appintegrations": {
+      "file": "a/appintegrations.json",
+      "aliasOf": "appintegrations"
+    },
+    "aws/application-autoscaling": {
+      "file": "a/application-autoscaling.json",
+      "aliasOf": "application-autoscaling"
+    },
+    "aws/application-insights": {
+      "file": "a/application-insights.json",
+      "aliasOf": "application-insights"
+    },
+    "aws/application-signals": {
+      "file": "a/application-signals.json",
+      "aliasOf": "application-signals"
+    },
+    "aws/applicationcostprofiler": {
+      "file": "a/applicationcostprofiler.json",
+      "aliasOf": "applicationcostprofiler"
+    },
+    "aws/appmesh": {
+      "file": "a/appmesh.json",
+      "aliasOf": "appmesh"
+    },
+    "aws/apprunner": {
+      "file": "a/apprunner.json",
+      "aliasOf": "apprunner"
+    },
+    "aws/appstream": {
+      "file": "a/appstream.json",
+      "aliasOf": "appstream"
+    },
+    "aws/appsync": {
+      "file": "a/appsync.json",
+      "aliasOf": "appsync"
+    },
+    "aws/apptest": {
+      "file": "a/apptest.json",
+      "aliasOf": "apptest"
+    },
+    "aws/arc-zonal-shift": {
+      "file": "a/arc-zonal-shift.json",
+      "aliasOf": "arc-zonal-shift"
+    },
+    "aws/artifact": {
+      "file": "a/artifact.json",
+      "aliasOf": "artifact"
+    },
+    "aws/athena": {
+      "file": "a/athena.json",
+      "aliasOf": "athena"
+    },
+    "aws/auditmanager": {
+      "file": "a/auditmanager.json",
+      "aliasOf": "auditmanager"
+    },
+    "aws/autoscaling": {
+      "file": "a/autoscaling.json",
+      "aliasOf": "autoscaling"
+    },
+    "aws/autoscaling-plans": {
+      "file": "a/autoscaling-plans.json",
+      "aliasOf": "autoscaling-plans"
+    },
+    "aws/b2bi": {
+      "file": "b/b2bi.json",
+      "aliasOf": "b2bi"
+    },
+    "aws/backup": {
+      "file": "b/backup.json",
+      "aliasOf": "backup"
+    },
+    "aws/backup-gateway": {
+      "file": "b/backup-gateway.json",
+      "aliasOf": "backup-gateway"
+    },
+    "aws/batch": {
+      "file": "b/batch.json",
+      "aliasOf": "batch"
+    },
+    "aws/bcm-data-exports": {
+      "file": "b/bcm-data-exports.json",
+      "aliasOf": "bcm-data-exports"
+    },
+    "aws/bcm-pricing-calculator": {
+      "file": "b/bcm-pricing-calculator.json",
+      "aliasOf": "bcm-pricing-calculator"
+    },
+    "aws/bedrock": {
+      "file": "b/bedrock.json",
+      "aliasOf": "bedrock"
+    },
+    "aws/bedrock-agent": {
+      "file": "b/bedrock-agent.json",
+      "aliasOf": "bedrock-agent"
+    },
+    "aws/bedrock-agent-runtime": {
+      "file": "b/bedrock-agent-runtime.json",
+      "aliasOf": "bedrock-agent-runtime"
+    },
+    "aws/bedrock-data-automation": {
+      "file": "b/bedrock-data-automation.json",
+      "aliasOf": "bedrock-data-automation"
+    },
+    "aws/bedrock-data-automation-runtime": {
+      "file": "b/bedrock-data-automation-runtime.json",
+      "aliasOf": "bedrock-data-automation-runtime"
+    },
+    "aws/bedrock-runtime": {
+      "file": "b/bedrock-runtime.json",
+      "aliasOf": "bedrock-runtime"
+    },
+    "aws/billing": {
+      "file": "b/billing.json",
+      "aliasOf": "billing"
+    },
+    "aws/billingconductor": {
+      "file": "b/billingconductor.json",
+      "aliasOf": "billingconductor"
+    },
+    "aws/braket": {
+      "file": "b/braket.json",
+      "aliasOf": "braket"
+    },
+    "aws/budgets": {
+      "file": "b/budgets.json",
+      "aliasOf": "budgets"
+    },
+    "aws/ce": {
+      "file": "c/ce.json",
+      "aliasOf": "ce"
+    },
+    "aws/chatbot": {
+      "file": "c/chatbot.json",
+      "aliasOf": "chatbot"
+    },
+    "aws/chime": {
+      "file": "c/chime.json",
+      "aliasOf": "chime"
+    },
+    "aws/chime-sdk-identity": {
+      "file": "c/chime-sdk-identity.json",
+      "aliasOf": "chime-sdk-identity"
+    },
+    "aws/chime-sdk-media-pipelines": {
+      "file": "c/chime-sdk-media-pipelines.json",
+      "aliasOf": "chime-sdk-media-pipelines"
+    },
+    "aws/chime-sdk-meetings": {
+      "file": "c/chime-sdk-meetings.json",
+      "aliasOf": "chime-sdk-meetings"
+    },
+    "aws/chime-sdk-messaging": {
+      "file": "c/chime-sdk-messaging.json",
+      "aliasOf": "chime-sdk-messaging"
+    },
+    "aws/chime-sdk-voice": {
+      "file": "c/chime-sdk-voice.json",
+      "aliasOf": "chime-sdk-voice"
+    },
+    "aws/cleanrooms": {
+      "file": "c/cleanrooms.json",
+      "aliasOf": "cleanrooms"
+    },
+    "aws/cleanroomsml": {
+      "file": "c/cleanroomsml.json",
+      "aliasOf": "cleanroomsml"
+    },
+    "aws/cloud9": {
+      "file": "c/cloud9.json",
+      "aliasOf": "cloud9"
+    },
+    "aws/cloudcontrol": {
+      "file": "c/cloudcontrol.json",
+      "aliasOf": "cloudcontrol"
+    },
+    "aws/clouddirectory": {
+      "file": "c/clouddirectory.json",
+      "aliasOf": "clouddirectory"
+    },
+    "aws/cloudformation": {
+      "file": "c/cloudformation.json",
+      "aliasOf": "cloudformation"
+    },
+    "aws/cloudfront": {
+      "file": "c/cloudfront.json",
+      "aliasOf": "cloudfront"
+    },
+    "aws/cloudfront-keyvaluestore": {
+      "file": "c/cloudfront-keyvaluestore.json",
+      "aliasOf": "cloudfront-keyvaluestore"
+    },
+    "aws/cloudhsm": {
+      "file": "c/cloudhsm.json",
+      "aliasOf": "cloudhsm"
+    },
+    "aws/cloudhsmv2": {
+      "file": "c/cloudhsmv2.json",
+      "aliasOf": "cloudhsmv2"
+    },
+    "aws/cloudsearch": {
+      "file": "c/cloudsearch.json",
+      "aliasOf": "cloudsearch"
+    },
+    "aws/cloudsearchdomain": {
+      "file": "c/cloudsearchdomain.json",
+      "aliasOf": "cloudsearchdomain"
+    },
+    "aws/cloudtrail": {
+      "file": "c/cloudtrail.json",
+      "aliasOf": "cloudtrail"
+    },
+    "aws/cloudtrail-data": {
+      "file": "c/cloudtrail-data.json",
+      "aliasOf": "cloudtrail-data"
+    },
+    "aws/cloudwatch": {
+      "file": "c/cloudwatch.json",
+      "aliasOf": "cloudwatch"
+    },
+    "aws/codeartifact": {
+      "file": "c/codeartifact.json",
+      "aliasOf": "codeartifact"
+    },
+    "aws/codebuild": {
+      "file": "c/codebuild.json",
+      "aliasOf": "codebuild"
+    },
+    "aws/codecatalyst": {
+      "file": "c/codecatalyst.json",
+      "aliasOf": "codecatalyst"
+    },
+    "aws/codecommit": {
+      "file": "c/codecommit.json",
+      "aliasOf": "codecommit"
+    },
+    "aws/codeconnections": {
+      "file": "c/codeconnections.json",
+      "aliasOf": "codeconnections"
+    },
+    "aws/codeguru-reviewer": {
+      "file": "c/codeguru-reviewer.json",
+      "aliasOf": "codeguru-reviewer"
+    },
+    "aws/codeguru-security": {
+      "file": "c/codeguru-security.json",
+      "aliasOf": "codeguru-security"
+    },
+    "aws/codeguruprofiler": {
+      "file": "c/codeguruprofiler.json",
+      "aliasOf": "codeguruprofiler"
+    },
+    "aws/codepipeline": {
+      "file": "c/codepipeline.json",
+      "aliasOf": "codepipeline"
+    },
+    "aws/codestar-connections": {
+      "file": "c/codestar-connections.json",
+      "aliasOf": "codestar-connections"
+    },
+    "aws/codestar-notifications": {
+      "file": "c/codestar-notifications.json",
+      "aliasOf": "codestar-notifications"
+    },
+    "aws/cognito-identity": {
+      "file": "c/cognito-identity.json",
+      "aliasOf": "cognito-identity"
+    },
+    "aws/cognito-idp": {
+      "file": "c/cognito-idp.json",
+      "aliasOf": "cognito-idp"
+    },
+    "aws/cognito-sync": {
+      "file": "c/cognito-sync.json",
+      "aliasOf": "cognito-sync"
+    },
+    "aws/comprehend": {
+      "file": "c/comprehend.json",
+      "aliasOf": "comprehend"
+    },
+    "aws/comprehendmedical": {
+      "file": "c/comprehendmedical.json",
+      "aliasOf": "comprehendmedical"
+    },
+    "aws/compute-optimizer": {
+      "file": "c/compute-optimizer.json",
+      "aliasOf": "compute-optimizer"
+    },
+    "aws/configservice": {
+      "file": "c/configservice.json",
+      "aliasOf": "configservice"
+    },
+    "aws/configure": {
+      "file": "c/configure.json",
+      "aliasOf": "configure"
+    },
+    "aws/connect": {
+      "file": "c/connect.json",
+      "aliasOf": "connect"
+    },
+    "aws/connect-contact-lens": {
+      "file": "c/connect-contact-lens.json",
+      "aliasOf": "connect-contact-lens"
+    },
+    "aws/connectcampaigns": {
+      "file": "c/connectcampaigns.json",
+      "aliasOf": "connectcampaigns"
+    },
+    "aws/connectcampaignsv2": {
+      "file": "c/connectcampaignsv2.json",
+      "aliasOf": "connectcampaignsv2"
+    },
+    "aws/connectcases": {
+      "file": "c/connectcases.json",
+      "aliasOf": "connectcases"
+    },
+    "aws/connectparticipant": {
+      "file": "c/connectparticipant.json",
+      "aliasOf": "connectparticipant"
+    },
+    "aws/controlcatalog": {
+      "file": "c/controlcatalog.json",
+      "aliasOf": "controlcatalog"
+    },
+    "aws/controltower": {
+      "file": "c/controltower.json",
+      "aliasOf": "controltower"
+    },
+    "aws/cost-optimization-hub": {
+      "file": "c/cost-optimization-hub.json",
+      "aliasOf": "cost-optimization-hub"
+    },
+    "aws/cur": {
+      "file": "c/cur.json",
+      "aliasOf": "cur"
+    },
+    "aws/customer-profiles": {
+      "file": "c/customer-profiles.json",
+      "aliasOf": "customer-profiles"
+    },
+    "aws/databrew": {
+      "file": "d/databrew.json",
+      "aliasOf": "databrew"
+    },
+    "aws/dataexchange": {
+      "file": "d/dataexchange.json",
+      "aliasOf": "dataexchange"
+    },
+    "aws/datapipeline": {
+      "file": "d/datapipeline.json",
+      "aliasOf": "datapipeline"
+    },
+    "aws/datasync": {
+      "file": "d/datasync.json",
+      "aliasOf": "datasync"
+    },
+    "aws/datazone": {
+      "file": "d/datazone.json",
+      "aliasOf": "datazone"
+    },
+    "aws/dax": {
+      "file": "d/dax.json",
+      "aliasOf": "dax"
+    },
+    "aws/deadline": {
+      "file": "d/deadline.json",
+      "aliasOf": "deadline"
+    },
+    "aws/deploy": {
+      "file": "d/deploy.json",
+      "aliasOf": "deploy"
+    },
+    "aws/detective": {
+      "file": "d/detective.json",
+      "aliasOf": "detective"
+    },
+    "aws/devicefarm": {
+      "file": "d/devicefarm.json",
+      "aliasOf": "devicefarm"
+    },
+    "aws/devops-guru": {
+      "file": "d/devops-guru.json",
+      "aliasOf": "devops-guru"
+    },
+    "aws/directconnect": {
+      "file": "d/directconnect.json",
+      "aliasOf": "directconnect"
+    },
+    "aws/discovery": {
+      "file": "d/discovery.json",
+      "aliasOf": "discovery"
+    },
+    "aws/dlm": {
+      "file": "d/dlm.json",
+      "aliasOf": "dlm"
+    },
+    "aws/dms": {
+      "file": "d/dms.json",
+      "aliasOf": "dms"
+    },
+    "aws/docdb": {
+      "file": "d/docdb.json",
+      "aliasOf": "docdb"
+    },
+    "aws/docdb-elastic": {
+      "file": "d/docdb-elastic.json",
+      "aliasOf": "docdb-elastic"
+    },
+    "aws/drs": {
+      "file": "d/drs.json",
+      "aliasOf": "drs"
+    },
+    "aws/ds": {
+      "file": "d/ds.json",
+      "aliasOf": "ds"
+    },
+    "aws/ds-data": {
+      "file": "d/ds-data.json",
+      "aliasOf": "ds-data"
+    },
+    "aws/dsql": {
+      "file": "d/dsql.json",
+      "aliasOf": "dsql"
+    },
+    "aws/dynamodb": {
+      "file": "d/dynamodb.json",
+      "aliasOf": "dynamodb"
+    },
+    "aws/dynamodbstreams": {
+      "file": "d/dynamodbstreams.json",
+      "aliasOf": "dynamodbstreams"
+    },
+    "aws/ebs": {
+      "file": "e/ebs.json",
+      "aliasOf": "ebs"
+    },
+    "aws/ec2": {
+      "file": "e/ec2.json",
+      "aliasOf": "ec2"
+    },
+    "aws/ec2-instance-connect": {
+      "file": "e/ec2-instance-connect.json",
+      "aliasOf": "ec2-instance-connect"
+    },
+    "aws/ecr": {
+      "file": "e/ecr.json",
+      "aliasOf": "ecr"
+    },
+    "aws/ecr-public": {
+      "file": "e/ecr-public.json",
+      "aliasOf": "ecr-public"
+    },
+    "aws/ecs": {
+      "file": "e/ecs.json",
+      "aliasOf": "ecs"
+    },
+    "aws/efs": {
+      "file": "e/efs.json",
+      "aliasOf": "efs"
+    },
+    "aws/eks": {
+      "file": "e/eks.json",
+      "aliasOf": "eks"
+    },
+    "aws/eks-auth": {
+      "file": "e/eks-auth.json",
+      "aliasOf": "eks-auth"
+    },
+    "aws/elastic-inference": {
+      "file": "e/elastic-inference.json",
+      "aliasOf": "elastic-inference"
+    },
+    "aws/elasticache": {
+      "file": "e/elasticache.json",
+      "aliasOf": "elasticache"
+    },
+    "aws/elasticbeanstalk": {
+      "file": "e/elasticbeanstalk.json",
+      "aliasOf": "elasticbeanstalk"
+    },
+    "aws/elastictranscoder": {
+      "file": "e/elastictranscoder.json",
+      "aliasOf": "elastictranscoder"
+    },
+    "aws/elb": {
+      "file": "e/elb.json",
+      "aliasOf": "elb"
+    },
+    "aws/elbv2": {
+      "file": "e/elbv2.json",
+      "aliasOf": "elbv2"
+    },
+    "aws/emr": {
+      "file": "e/emr.json",
+      "aliasOf": "emr"
+    },
+    "aws/emr-containers": {
+      "file": "e/emr-containers.json",
+      "aliasOf": "emr-containers"
+    },
+    "aws/emr-serverless": {
+      "file": "e/emr-serverless.json",
+      "aliasOf": "emr-serverless"
+    },
+    "aws/entityresolution": {
+      "file": "e/entityresolution.json",
+      "aliasOf": "entityresolution"
+    },
+    "aws/es": {
+      "file": "e/es.json",
+      "aliasOf": "es"
+    },
+    "aws/events": {
+      "file": "e/events.json",
+      "aliasOf": "events"
+    },
+    "aws/evidently": {
+      "file": "e/evidently.json",
+      "aliasOf": "evidently"
+    },
+    "aws/finspace": {
+      "file": "f/finspace.json",
+      "aliasOf": "finspace"
+    },
+    "aws/finspace-data": {
+      "file": "f/finspace-data.json",
+      "aliasOf": "finspace-data"
+    },
+    "aws/firehose": {
+      "file": "f/firehose.json",
+      "aliasOf": "firehose"
+    },
+    "aws/fis": {
+      "file": "f/fis.json",
+      "aliasOf": "fis"
+    },
+    "aws/fms": {
+      "file": "f/fms.json",
+      "aliasOf": "fms"
+    },
+    "aws/forecast": {
+      "file": "f/forecast.json",
+      "aliasOf": "forecast"
+    },
+    "aws/forecastquery": {
+      "file": "f/forecastquery.json",
+      "aliasOf": "forecastquery"
+    },
+    "aws/frauddetector": {
+      "file": "f/frauddetector.json",
+      "aliasOf": "frauddetector"
+    },
+    "aws/freetier": {
+      "file": "f/freetier.json",
+      "aliasOf": "freetier"
+    },
+    "aws/fsx": {
+      "file": "f/fsx.json",
+      "aliasOf": "fsx"
+    },
+    "aws/gamelift": {
+      "file": "g/gamelift.json",
+      "aliasOf": "gamelift"
+    },
+    "aws/geo-maps": {
+      "file": "g/geo-maps.json",
+      "aliasOf": "geo-maps"
+    },
+    "aws/geo-places": {
+      "file": "g/geo-places.json",
+      "aliasOf": "geo-places"
+    },
+    "aws/geo-routes": {
+      "file": "g/geo-routes.json",
+      "aliasOf": "geo-routes"
+    },
+    "aws/glacier": {
+      "file": "g/glacier.json",
+      "aliasOf": "glacier"
+    },
+    "aws/globalaccelerator": {
+      "file": "g/globalaccelerator.json",
+      "aliasOf": "globalaccelerator"
+    },
+    "aws/glue": {
+      "file": "g/glue.json",
+      "aliasOf": "glue"
+    },
+    "aws/grafana": {
+      "file": "g/grafana.json",
+      "aliasOf": "grafana"
+    },
+    "aws/greengrass": {
+      "file": "g/greengrass.json",
+      "aliasOf": "greengrass"
+    },
+    "aws/greengrassv2": {
+      "file": "g/greengrassv2.json",
+      "aliasOf": "greengrassv2"
+    },
+    "aws/groundstation": {
+      "file": "g/groundstation.json",
+      "aliasOf": "groundstation"
+    },
+    "aws/guardduty": {
+      "file": "g/guardduty.json",
+      "aliasOf": "guardduty"
+    },
+    "aws/health": {
+      "file": "h/health.json",
+      "aliasOf": "health"
+    },
+    "aws/healthlake": {
+      "file": "h/healthlake.json",
+      "aliasOf": "healthlake"
+    },
+    "aws/history": {
+      "file": "h/history.json",
+      "aliasOf": "history"
+    },
+    "aws/iam": {
+      "file": "i/iam.json",
+      "aliasOf": "iam"
+    },
+    "aws/identitystore": {
+      "file": "i/identitystore.json",
+      "aliasOf": "identitystore"
+    },
+    "aws/imagebuilder": {
+      "file": "i/imagebuilder.json",
+      "aliasOf": "imagebuilder"
+    },
+    "aws/importexport": {
+      "file": "i/importexport.json",
+      "aliasOf": "importexport"
+    },
+    "aws/inspector": {
+      "file": "i/inspector.json",
+      "aliasOf": "inspector"
+    },
+    "aws/inspector-scan": {
+      "file": "i/inspector-scan.json",
+      "aliasOf": "inspector-scan"
+    },
+    "aws/inspector2": {
+      "file": "i/inspector2.json",
+      "aliasOf": "inspector2"
+    },
+    "aws/internetmonitor": {
+      "file": "i/internetmonitor.json",
+      "aliasOf": "internetmonitor"
+    },
+    "aws/invoicing": {
+      "file": "i/invoicing.json",
+      "aliasOf": "invoicing"
+    },
+    "aws/iot": {
+      "file": "i/iot.json",
+      "aliasOf": "iot"
+    },
+    "aws/iot-data": {
+      "file": "i/iot-data.json",
+      "aliasOf": "iot-data"
+    },
+    "aws/iot-jobs-data": {
+      "file": "i/iot-jobs-data.json",
+      "aliasOf": "iot-jobs-data"
+    },
+    "aws/iot1click-devices": {
+      "file": "i/iot1click-devices.json",
+      "aliasOf": "iot1click-devices"
+    },
+    "aws/iot1click-projects": {
+      "file": "i/iot1click-projects.json",
+      "aliasOf": "iot1click-projects"
+    },
+    "aws/iotanalytics": {
+      "file": "i/iotanalytics.json",
+      "aliasOf": "iotanalytics"
+    },
+    "aws/iotdeviceadvisor": {
+      "file": "i/iotdeviceadvisor.json",
+      "aliasOf": "iotdeviceadvisor"
+    },
+    "aws/iotevents": {
+      "file": "i/iotevents.json",
+      "aliasOf": "iotevents"
+    },
+    "aws/iotevents-data": {
+      "file": "i/iotevents-data.json",
+      "aliasOf": "iotevents-data"
+    },
+    "aws/iotfleethub": {
+      "file": "i/iotfleethub.json",
+      "aliasOf": "iotfleethub"
+    },
+    "aws/iotfleetwise": {
+      "file": "i/iotfleetwise.json",
+      "aliasOf": "iotfleetwise"
+    },
+    "aws/iotsecuretunneling": {
+      "file": "i/iotsecuretunneling.json",
+      "aliasOf": "iotsecuretunneling"
+    },
+    "aws/iotsitewise": {
+      "file": "i/iotsitewise.json",
+      "aliasOf": "iotsitewise"
+    },
+    "aws/iotthingsgraph": {
+      "file": "i/iotthingsgraph.json",
+      "aliasOf": "iotthingsgraph"
+    },
+    "aws/iottwinmaker": {
+      "file": "i/iottwinmaker.json",
+      "aliasOf": "iottwinmaker"
+    },
+    "aws/iotwireless": {
+      "file": "i/iotwireless.json",
+      "aliasOf": "iotwireless"
+    },
+    "aws/ivs": {
+      "file": "i/ivs.json",
+      "aliasOf": "ivs"
+    },
+    "aws/ivs-realtime": {
+      "file": "i/ivs-realtime.json",
+      "aliasOf": "ivs-realtime"
+    },
+    "aws/ivschat": {
+      "file": "i/ivschat.json",
+      "aliasOf": "ivschat"
+    },
+    "aws/kafka": {
+      "file": "k/kafka.json",
+      "aliasOf": "kafka"
+    },
+    "aws/kafkaconnect": {
+      "file": "k/kafkaconnect.json",
+      "aliasOf": "kafkaconnect"
+    },
+    "aws/kendra": {
+      "file": "k/kendra.json",
+      "aliasOf": "kendra"
+    },
+    "aws/kendra-ranking": {
+      "file": "k/kendra-ranking.json",
+      "aliasOf": "kendra-ranking"
+    },
+    "aws/keyspaces": {
+      "file": "k/keyspaces.json",
+      "aliasOf": "keyspaces"
+    },
+    "aws/kinesis": {
+      "file": "k/kinesis.json",
+      "aliasOf": "kinesis"
+    },
+    "aws/kinesis-video-archived-media": {
+      "file": "k/kinesis-video-archived-media.json",
+      "aliasOf": "kinesis-video-archived-media"
+    },
+    "aws/kinesis-video-media": {
+      "file": "k/kinesis-video-media.json",
+      "aliasOf": "kinesis-video-media"
+    },
+    "aws/kinesis-video-signaling": {
+      "file": "k/kinesis-video-signaling.json",
+      "aliasOf": "kinesis-video-signaling"
+    },
+    "aws/kinesis-video-webrtc-storage": {
+      "file": "k/kinesis-video-webrtc-storage.json",
+      "aliasOf": "kinesis-video-webrtc-storage"
+    },
+    "aws/kinesisanalytics": {
+      "file": "k/kinesisanalytics.json",
+      "aliasOf": "kinesisanalytics"
+    },
+    "aws/kinesisanalyticsv2": {
+      "file": "k/kinesisanalyticsv2.json",
+      "aliasOf": "kinesisanalyticsv2"
+    },
+    "aws/kinesisvideo": {
+      "file": "k/kinesisvideo.json",
+      "aliasOf": "kinesisvideo"
+    },
+    "aws/kms": {
+      "file": "k/kms.json",
+      "aliasOf": "kms"
+    },
+    "aws/lakeformation": {
+      "file": "l/lakeformation.json",
+      "aliasOf": "lakeformation"
+    },
+    "aws/lambda": {
+      "file": "l/lambda.json",
+      "aliasOf": "lambda"
+    },
+    "aws/launch-wizard": {
+      "file": "l/launch-wizard.json",
+      "aliasOf": "launch-wizard"
+    },
+    "aws/lex-models": {
+      "file": "l/lex-models.json",
+      "aliasOf": "lex-models"
+    },
+    "aws/lex-runtime": {
+      "file": "l/lex-runtime.json",
+      "aliasOf": "lex-runtime"
+    },
+    "aws/lexv2-models": {
+      "file": "l/lexv2-models.json",
+      "aliasOf": "lexv2-models"
+    },
+    "aws/lexv2-runtime": {
+      "file": "l/lexv2-runtime.json",
+      "aliasOf": "lexv2-runtime"
+    },
+    "aws/license-manager": {
+      "file": "l/license-manager.json",
+      "aliasOf": "license-manager"
+    },
+    "aws/license-manager-linux-subscriptions": {
+      "file": "l/license-manager-linux-subscriptions.json",
+      "aliasOf": "license-manager-linux-subscriptions"
+    },
+    "aws/license-manager-user-subscriptions": {
+      "file": "l/license-manager-user-subscriptions.json",
+      "aliasOf": "license-manager-user-subscriptions"
+    },
+    "aws/lightsail": {
+      "file": "l/lightsail.json",
+      "aliasOf": "lightsail"
+    },
+    "aws/location": {
+      "file": "l/location.json",
+      "aliasOf": "location"
+    },
+    "aws/logs": {
+      "file": "l/logs.json",
+      "aliasOf": "logs"
+    },
+    "aws/lookoutequipment": {
+      "file": "l/lookoutequipment.json",
+      "aliasOf": "lookoutequipment"
+    },
+    "aws/lookoutmetrics": {
+      "file": "l/lookoutmetrics.json",
+      "aliasOf": "lookoutmetrics"
+    },
+    "aws/lookoutvision": {
+      "file": "l/lookoutvision.json",
+      "aliasOf": "lookoutvision"
+    },
+    "aws/m2": {
+      "file": "m/m2.json",
+      "aliasOf": "m2"
+    },
+    "aws/machinelearning": {
+      "file": "m/machinelearning.json",
+      "aliasOf": "machinelearning"
+    },
+    "aws/macie2": {
+      "file": "m/macie2.json",
+      "aliasOf": "macie2"
+    },
+    "aws/mailmanager": {
+      "file": "m/mailmanager.json",
+      "aliasOf": "mailmanager"
+    },
+    "aws/managedblockchain": {
+      "file": "m/managedblockchain.json",
+      "aliasOf": "managedblockchain"
+    },
+    "aws/managedblockchain-query": {
+      "file": "m/managedblockchain-query.json",
+      "aliasOf": "managedblockchain-query"
+    },
+    "aws/marketplace-agreement": {
+      "file": "m/marketplace-agreement.json",
+      "aliasOf": "marketplace-agreement"
+    },
+    "aws/marketplace-catalog": {
+      "file": "m/marketplace-catalog.json",
+      "aliasOf": "marketplace-catalog"
+    },
+    "aws/marketplace-deployment": {
+      "file": "m/marketplace-deployment.json",
+      "aliasOf": "marketplace-deployment"
+    },
+    "aws/marketplace-entitlement": {
+      "file": "m/marketplace-entitlement.json",
+      "aliasOf": "marketplace-entitlement"
+    },
+    "aws/marketplace-reporting": {
+      "file": "m/marketplace-reporting.json",
+      "aliasOf": "marketplace-reporting"
+    },
+    "aws/marketplacecommerceanalytics": {
+      "file": "m/marketplacecommerceanalytics.json",
+      "aliasOf": "marketplacecommerceanalytics"
+    },
+    "aws/mediaconnect": {
+      "file": "m/mediaconnect.json",
+      "aliasOf": "mediaconnect"
+    },
+    "aws/mediaconvert": {
+      "file": "m/mediaconvert.json",
+      "aliasOf": "mediaconvert"
+    },
+    "aws/medialive": {
+      "file": "m/medialive.json",
+      "aliasOf": "medialive"
+    },
+    "aws/mediapackage": {
+      "file": "m/mediapackage.json",
+      "aliasOf": "mediapackage"
+    },
+    "aws/mediapackage-vod": {
+      "file": "m/mediapackage-vod.json",
+      "aliasOf": "mediapackage-vod"
+    },
+    "aws/mediapackagev2": {
+      "file": "m/mediapackagev2.json",
+      "aliasOf": "mediapackagev2"
+    },
+    "aws/mediastore": {
+      "file": "m/mediastore.json",
+      "aliasOf": "mediastore"
+    },
+    "aws/mediastore-data": {
+      "file": "m/mediastore-data.json",
+      "aliasOf": "mediastore-data"
+    },
+    "aws/mediatailor": {
+      "file": "m/mediatailor.json",
+      "aliasOf": "mediatailor"
+    },
+    "aws/medical-imaging": {
+      "file": "m/medical-imaging.json",
+      "aliasOf": "medical-imaging"
+    },
+    "aws/memorydb": {
+      "file": "m/memorydb.json",
+      "aliasOf": "memorydb"
+    },
+    "aws/meteringmarketplace": {
+      "file": "m/meteringmarketplace.json",
+      "aliasOf": "meteringmarketplace"
+    },
+    "aws/mgh": {
+      "file": "m/mgh.json",
+      "aliasOf": "mgh"
+    },
+    "aws/mgn": {
+      "file": "m/mgn.json",
+      "aliasOf": "mgn"
+    },
+    "aws/migration-hub-refactor-spaces": {
+      "file": "m/migration-hub-refactor-spaces.json",
+      "aliasOf": "migration-hub-refactor-spaces"
+    },
+    "aws/migrationhub-config": {
+      "file": "m/migrationhub-config.json",
+      "aliasOf": "migrationhub-config"
+    },
+    "aws/migrationhuborchestrator": {
+      "file": "m/migrationhuborchestrator.json",
+      "aliasOf": "migrationhuborchestrator"
+    },
+    "aws/migrationhubstrategy": {
+      "file": "m/migrationhubstrategy.json",
+      "aliasOf": "migrationhubstrategy"
+    },
+    "aws/mq": {
+      "file": "m/mq.json",
+      "aliasOf": "mq"
+    },
+    "aws/mturk": {
+      "file": "m/mturk.json",
+      "aliasOf": "mturk"
+    },
+    "aws/mwaa": {
+      "file": "m/mwaa.json",
+      "aliasOf": "mwaa"
+    },
+    "aws/neptune": {
+      "file": "n/neptune.json",
+      "aliasOf": "neptune"
+    },
+    "aws/neptune-graph": {
+      "file": "n/neptune-graph.json",
+      "aliasOf": "neptune-graph"
+    },
+    "aws/neptunedata": {
+      "file": "n/neptunedata.json",
+      "aliasOf": "neptunedata"
+    },
+    "aws/network-firewall": {
+      "file": "n/network-firewall.json",
+      "aliasOf": "network-firewall"
+    },
+    "aws/networkflowmonitor": {
+      "file": "n/networkflowmonitor.json",
+      "aliasOf": "networkflowmonitor"
+    },
+    "aws/networkmanager": {
+      "file": "n/networkmanager.json",
+      "aliasOf": "networkmanager"
+    },
+    "aws/networkmonitor": {
+      "file": "n/networkmonitor.json",
+      "aliasOf": "networkmonitor"
+    },
+    "aws/notifications": {
+      "file": "n/notifications.json",
+      "aliasOf": "notifications"
+    },
+    "aws/notificationscontacts": {
+      "file": "n/notificationscontacts.json",
+      "aliasOf": "notificationscontacts"
+    },
+    "aws/oam": {
+      "file": "o/oam.json",
+      "aliasOf": "oam"
+    },
+    "aws/observabilityadmin": {
+      "file": "o/observabilityadmin.json",
+      "aliasOf": "observabilityadmin"
+    },
+    "aws/omics": {
+      "file": "o/omics.json",
+      "aliasOf": "omics"
+    },
+    "aws/opensearch": {
+      "file": "o/opensearch.json",
+      "aliasOf": "opensearch"
+    },
+    "aws/opensearchserverless": {
+      "file": "o/opensearchserverless.json",
+      "aliasOf": "opensearchserverless"
+    },
+    "aws/opsworks": {
+      "file": "o/opsworks.json",
+      "aliasOf": "opsworks"
+    },
+    "aws/opsworks-cm": {
+      "file": "o/opsworks-cm.json",
+      "aliasOf": "opsworks-cm"
+    },
+    "aws/opsworkscm": {
+      "file": "o/opsworkscm.json",
+      "aliasOf": "opsworkscm"
+    },
+    "aws/organizations": {
+      "file": "o/organizations.json",
+      "aliasOf": "organizations"
+    },
+    "aws/osis": {
+      "file": "o/osis.json",
+      "aliasOf": "osis"
+    },
+    "aws/outposts": {
+      "file": "o/outposts.json",
+      "aliasOf": "outposts"
+    },
+    "aws/panorama": {
+      "file": "p/panorama.json",
+      "aliasOf": "panorama"
+    },
+    "aws/partnercentral-selling": {
+      "file": "p/partnercentral-selling.json",
+      "aliasOf": "partnercentral-selling"
+    },
+    "aws/payment-cryptography": {
+      "file": "p/payment-cryptography.json",
+      "aliasOf": "payment-cryptography"
+    },
+    "aws/payment-cryptography-data": {
+      "file": "p/payment-cryptography-data.json",
+      "aliasOf": "payment-cryptography-data"
+    },
+    "aws/pca-connector-ad": {
+      "file": "p/pca-connector-ad.json",
+      "aliasOf": "pca-connector-ad"
+    },
+    "aws/pca-connector-scep": {
+      "file": "p/pca-connector-scep.json",
+      "aliasOf": "pca-connector-scep"
+    },
+    "aws/pcs": {
+      "file": "p/pcs.json",
+      "aliasOf": "pcs"
+    },
+    "aws/personalize": {
+      "file": "p/personalize.json",
+      "aliasOf": "personalize"
+    },
+    "aws/personalize-events": {
+      "file": "p/personalize-events.json",
+      "aliasOf": "personalize-events"
+    },
+    "aws/personalize-runtime": {
+      "file": "p/personalize-runtime.json",
+      "aliasOf": "personalize-runtime"
+    },
+    "aws/pi": {
+      "file": "p/pi.json",
+      "aliasOf": "pi"
+    },
+    "aws/pinpoint": {
+      "file": "p/pinpoint.json",
+      "aliasOf": "pinpoint"
+    },
+    "aws/pinpoint-email": {
+      "file": "p/pinpoint-email.json",
+      "aliasOf": "pinpoint-email"
+    },
+    "aws/pinpoint-sms-voice": {
+      "file": "p/pinpoint-sms-voice.json",
+      "aliasOf": "pinpoint-sms-voice"
+    },
+    "aws/pinpoint-sms-voice-v2": {
+      "file": "p/pinpoint-sms-voice-v2.json",
+      "aliasOf": "pinpoint-sms-voice-v2"
+    },
+    "aws/pipes": {
+      "file": "p/pipes.json",
+      "aliasOf": "pipes"
+    },
+    "aws/polly": {
+      "file": "p/polly.json",
+      "aliasOf": "polly"
+    },
+    "aws/pricing": {
+      "file": "p/pricing.json",
+      "aliasOf": "pricing"
+    },
+    "aws/privatenetworks": {
+      "file": "p/privatenetworks.json",
+      "aliasOf": "privatenetworks"
+    },
+    "aws/proton": {
+      "file": "p/proton.json",
+      "aliasOf": "proton"
+    },
+    "aws/qapps": {
+      "file": "q/qapps.json",
+      "aliasOf": "qapps"
+    },
+    "aws/qbusiness": {
+      "file": "q/qbusiness.json",
+      "aliasOf": "qbusiness"
+    },
+    "aws/qconnect": {
+      "file": "q/qconnect.json",
+      "aliasOf": "qconnect"
+    },
+    "aws/qldb": {
+      "file": "q/qldb.json",
+      "aliasOf": "qldb"
+    },
+    "aws/qldb-session": {
+      "file": "q/qldb-session.json",
+      "aliasOf": "qldb-session"
+    },
+    "aws/quicksight": {
+      "file": "q/quicksight.json",
+      "aliasOf": "quicksight"
+    },
+    "aws/ram": {
+      "file": "r/ram.json",
+      "aliasOf": "ram"
+    },
+    "aws/rbin": {
+      "file": "r/rbin.json",
+      "aliasOf": "rbin"
+    },
+    "aws/rds": {
+      "file": "r/rds.json",
+      "aliasOf": "rds"
+    },
+    "aws/rds-data": {
+      "file": "r/rds-data.json",
+      "aliasOf": "rds-data"
+    },
+    "aws/redshift": {
+      "file": "r/redshift.json",
+      "aliasOf": "redshift"
+    },
+    "aws/redshift-data": {
+      "file": "r/redshift-data.json",
+      "aliasOf": "redshift-data"
+    },
+    "aws/redshift-serverless": {
+      "file": "r/redshift-serverless.json",
+      "aliasOf": "redshift-serverless"
+    },
+    "aws/rekognition": {
+      "file": "r/rekognition.json",
+      "aliasOf": "rekognition"
+    },
+    "aws/repostspace": {
+      "file": "r/repostspace.json",
+      "aliasOf": "repostspace"
+    },
+    "aws/resiliencehub": {
+      "file": "r/resiliencehub.json",
+      "aliasOf": "resiliencehub"
+    },
+    "aws/resource-explorer-2": {
+      "file": "r/resource-explorer-2.json",
+      "aliasOf": "resource-explorer-2"
+    },
+    "aws/resource-groups": {
+      "file": "r/resource-groups.json",
+      "aliasOf": "resource-groups"
+    },
+    "aws/resourcegroupstaggingapi": {
+      "file": "r/resourcegroupstaggingapi.json",
+      "aliasOf": "resourcegroupstaggingapi"
+    },
+    "aws/robomaker": {
+      "file": "r/robomaker.json",
+      "aliasOf": "robomaker"
+    },
+    "aws/rolesanywhere": {
+      "file": "r/rolesanywhere.json",
+      "aliasOf": "rolesanywhere"
+    },
+    "aws/route53": {
+      "file": "r/route53.json",
+      "aliasOf": "route53"
+    },
+    "aws/route53-recovery-cluster": {
+      "file": "r/route53-recovery-cluster.json",
+      "aliasOf": "route53-recovery-cluster"
+    },
+    "aws/route53-recovery-control-config": {
+      "file": "r/route53-recovery-control-config.json",
+      "aliasOf": "route53-recovery-control-config"
+    },
+    "aws/route53-recovery-readiness": {
+      "file": "r/route53-recovery-readiness.json",
+      "aliasOf": "route53-recovery-readiness"
+    },
+    "aws/route53domains": {
+      "file": "r/route53domains.json",
+      "aliasOf": "route53domains"
+    },
+    "aws/route53profiles": {
+      "file": "r/route53profiles.json",
+      "aliasOf": "route53profiles"
+    },
+    "aws/route53resolver": {
+      "file": "r/route53resolver.json",
+      "aliasOf": "route53resolver"
+    },
+    "aws/rum": {
+      "file": "r/rum.json",
+      "aliasOf": "rum"
+    },
+    "aws/runtime.sagemaker": {
+      "file": "r/runtime.sagemaker.json",
+      "aliasOf": "runtime.sagemaker"
+    },
+    "aws/s3": {
+      "file": "s/s3.json",
+      "aliasOf": "s3"
+    },
+    "aws/s3api": {
+      "file": "s/s3api.json",
+      "aliasOf": "s3api"
+    },
+    "aws/s3control": {
+      "file": "s/s3control.json",
+      "aliasOf": "s3control"
+    },
+    "aws/s3outposts": {
+      "file": "s/s3outposts.json",
+      "aliasOf": "s3outposts"
+    },
+    "aws/s3tables": {
+      "file": "s/s3tables.json",
+      "aliasOf": "s3tables"
+    },
+    "aws/sagemaker": {
+      "file": "s/sagemaker.json",
+      "aliasOf": "sagemaker"
+    },
+    "aws/sagemaker-a2i-runtime": {
+      "file": "s/sagemaker-a2i-runtime.json",
+      "aliasOf": "sagemaker-a2i-runtime"
+    },
+    "aws/sagemaker-edge": {
+      "file": "s/sagemaker-edge.json",
+      "aliasOf": "sagemaker-edge"
+    },
+    "aws/sagemaker-featurestore-runtime": {
+      "file": "s/sagemaker-featurestore-runtime.json",
+      "aliasOf": "sagemaker-featurestore-runtime"
+    },
+    "aws/sagemaker-geospatial": {
+      "file": "s/sagemaker-geospatial.json",
+      "aliasOf": "sagemaker-geospatial"
+    },
+    "aws/sagemaker-metrics": {
+      "file": "s/sagemaker-metrics.json",
+      "aliasOf": "sagemaker-metrics"
+    },
+    "aws/sagemaker-runtime": {
+      "file": "s/sagemaker-runtime.json",
+      "aliasOf": "sagemaker-runtime"
+    },
+    "aws/savingsplans": {
+      "file": "s/savingsplans.json",
+      "aliasOf": "savingsplans"
+    },
+    "aws/scheduler": {
+      "file": "s/scheduler.json",
+      "aliasOf": "scheduler"
+    },
+    "aws/schemas": {
+      "file": "s/schemas.json",
+      "aliasOf": "schemas"
+    },
+    "aws/sdb": {
+      "file": "s/sdb.json",
+      "aliasOf": "sdb"
+    },
+    "aws/secretsmanager": {
+      "file": "s/secretsmanager.json",
+      "aliasOf": "secretsmanager"
+    },
+    "aws/security-ir": {
+      "file": "s/security-ir.json",
+      "aliasOf": "security-ir"
+    },
+    "aws/securityhub": {
+      "file": "s/securityhub.json",
+      "aliasOf": "securityhub"
+    },
+    "aws/securitylake": {
+      "file": "s/securitylake.json",
+      "aliasOf": "securitylake"
+    },
+    "aws/serverlessrepo": {
+      "file": "s/serverlessrepo.json",
+      "aliasOf": "serverlessrepo"
+    },
+    "aws/service-quotas": {
+      "file": "s/service-quotas.json",
+      "aliasOf": "service-quotas"
+    },
+    "aws/servicecatalog": {
+      "file": "s/servicecatalog.json",
+      "aliasOf": "servicecatalog"
+    },
+    "aws/servicecatalog-appregistry": {
+      "file": "s/servicecatalog-appregistry.json",
+      "aliasOf": "servicecatalog-appregistry"
+    },
+    "aws/servicediscovery": {
+      "file": "s/servicediscovery.json",
+      "aliasOf": "servicediscovery"
+    },
+    "aws/ses": {
+      "file": "s/ses.json",
+      "aliasOf": "ses"
+    },
+    "aws/sesv2": {
+      "file": "s/sesv2.json",
+      "aliasOf": "sesv2"
+    },
+    "aws/shield": {
+      "file": "s/shield.json",
+      "aliasOf": "shield"
+    },
+    "aws/signer": {
+      "file": "s/signer.json",
+      "aliasOf": "signer"
+    },
+    "aws/simspaceweaver": {
+      "file": "s/simspaceweaver.json",
+      "aliasOf": "simspaceweaver"
+    },
+    "aws/sms": {
+      "file": "s/sms.json",
+      "aliasOf": "sms"
+    },
+    "aws/sms-voice": {
+      "file": "s/sms-voice.json",
+      "aliasOf": "sms-voice"
+    },
+    "aws/snow-device-management": {
+      "file": "s/snow-device-management.json",
+      "aliasOf": "snow-device-management"
+    },
+    "aws/snowball": {
+      "file": "s/snowball.json",
+      "aliasOf": "snowball"
+    },
+    "aws/sns": {
+      "file": "s/sns.json",
+      "aliasOf": "sns"
+    },
+    "aws/socialmessaging": {
+      "file": "s/socialmessaging.json",
+      "aliasOf": "socialmessaging"
+    },
+    "aws/sqs": {
+      "file": "s/sqs.json",
+      "aliasOf": "sqs"
+    },
+    "aws/ssm": {
+      "file": "s/ssm.json",
+      "aliasOf": "ssm"
+    },
+    "aws/ssm-contacts": {
+      "file": "s/ssm-contacts.json",
+      "aliasOf": "ssm-contacts"
+    },
+    "aws/ssm-incidents": {
+      "file": "s/ssm-incidents.json",
+      "aliasOf": "ssm-incidents"
+    },
+    "aws/ssm-quicksetup": {
+      "file": "s/ssm-quicksetup.json",
+      "aliasOf": "ssm-quicksetup"
+    },
+    "aws/ssm-sap": {
+      "file": "s/ssm-sap.json",
+      "aliasOf": "ssm-sap"
+    },
+    "aws/sso": {
+      "file": "s/sso.json",
+      "aliasOf": "sso"
+    },
+    "aws/sso-admin": {
+      "file": "s/sso-admin.json",
+      "aliasOf": "sso-admin"
+    },
+    "aws/sso-oidc": {
+      "file": "s/sso-oidc.json",
+      "aliasOf": "sso-oidc"
+    },
+    "aws/stepfunctions": {
+      "file": "s/stepfunctions.json",
+      "aliasOf": "stepfunctions"
+    },
+    "aws/storagegateway": {
+      "file": "s/storagegateway.json",
+      "aliasOf": "storagegateway"
+    },
+    "aws/sts": {
+      "file": "s/sts.json",
+      "aliasOf": "sts"
+    },
+    "aws/supplychain": {
+      "file": "s/supplychain.json",
+      "aliasOf": "supplychain"
+    },
+    "aws/support": {
+      "file": "s/support.json",
+      "aliasOf": "support"
+    },
+    "aws/support-app": {
+      "file": "s/support-app.json",
+      "aliasOf": "support-app"
+    },
+    "aws/swf": {
+      "file": "s/swf.json",
+      "aliasOf": "swf"
+    },
+    "aws/synthetics": {
+      "file": "s/synthetics.json",
+      "aliasOf": "synthetics"
+    },
+    "aws/taxsettings": {
+      "file": "t/taxsettings.json",
+      "aliasOf": "taxsettings"
+    },
+    "aws/textract": {
+      "file": "t/textract.json",
+      "aliasOf": "textract"
+    },
+    "aws/timestream-influxdb": {
+      "file": "t/timestream-influxdb.json",
+      "aliasOf": "timestream-influxdb"
+    },
+    "aws/timestream-query": {
+      "file": "t/timestream-query.json",
+      "aliasOf": "timestream-query"
+    },
+    "aws/timestream-write": {
+      "file": "t/timestream-write.json",
+      "aliasOf": "timestream-write"
+    },
+    "aws/tnb": {
+      "file": "t/tnb.json",
+      "aliasOf": "tnb"
+    },
+    "aws/transcribe": {
+      "file": "t/transcribe.json",
+      "aliasOf": "transcribe"
+    },
+    "aws/transfer": {
+      "file": "t/transfer.json",
+      "aliasOf": "transfer"
+    },
+    "aws/translate": {
+      "file": "t/translate.json",
+      "aliasOf": "translate"
+    },
+    "aws/trustedadvisor": {
+      "file": "t/trustedadvisor.json",
+      "aliasOf": "trustedadvisor"
+    },
+    "aws/wellarchitected": {
+      "file": "w/wellarchitected.json",
+      "aliasOf": "wellarchitected"
+    },
+    "aws/wisdom": {
+      "file": "w/wisdom.json",
+      "aliasOf": "wisdom"
+    },
+    "aws/workdocs": {
+      "file": "w/workdocs.json",
+      "aliasOf": "workdocs"
+    },
+    "aws/workmail": {
+      "file": "w/workmail.json",
+      "aliasOf": "workmail"
+    },
+    "aws/workmailmessageflow": {
+      "file": "w/workmailmessageflow.json",
+      "aliasOf": "workmailmessageflow"
+    },
+    "aws/workspaces": {
+      "file": "w/workspaces.json",
+      "aliasOf": "workspaces"
+    },
+    "aws/workspaces-thin-client": {
+      "file": "w/workspaces-thin-client.json",
+      "aliasOf": "workspaces-thin-client"
+    },
+    "aws/workspaces-web": {
+      "file": "w/workspaces-web.json",
+      "aliasOf": "workspaces-web"
+    },
+    "aws/xray": {
+      "file": "x/xray.json",
+      "aliasOf": "xray"
+    },
+    "az/2.53.0/account": {
+      "file": "a/az/2.53.0/account.json",
+      "aliasOf": "account"
+    },
+    "az/2.53.0/acr": {
+      "file": "a/acr.json",
+      "aliasOf": "acr"
+    },
+    "az/2.53.0/ad": {
+      "file": "a/ad.json",
+      "aliasOf": "ad"
+    },
+    "az/2.53.0/adp": {
+      "file": "a/adp.json",
+      "aliasOf": "adp"
+    },
+    "az/2.53.0/advisor": {
+      "file": "a/advisor.json",
+      "aliasOf": "advisor"
+    },
+    "az/2.53.0/afd": {
+      "file": "a/afd.json",
+      "aliasOf": "afd"
+    },
+    "az/2.53.0/ai-examples": {
+      "file": "a/ai-examples.json",
+      "aliasOf": "ai-examples"
+    },
+    "az/2.53.0/aks": {
+      "file": "a/aks.json",
+      "aliasOf": "aks"
+    },
+    "az/2.53.0/alerts-management": {
+      "file": "a/alerts-management.json",
+      "aliasOf": "alerts-management"
+    },
+    "az/2.53.0/alias": {
+      "file": "a/alias.json",
+      "aliasOf": "alias"
+    },
+    "az/2.53.0/amlfs": {
+      "file": "a/amlfs.json",
+      "aliasOf": "amlfs"
+    },
+    "az/2.53.0/ams": {
+      "file": "a/ams.json",
+      "aliasOf": "ams"
+    },
+    "az/2.53.0/apim": {
+      "file": "a/apim.json",
+      "aliasOf": "apim"
+    },
+    "az/2.53.0/appconfig": {
+      "file": "a/az/2.53.0/appconfig.json",
+      "aliasOf": "appconfig"
+    },
+    "az/2.53.0/appservice": {
+      "file": "a/appservice.json",
+      "aliasOf": "appservice"
+    },
+    "az/2.53.0/arcappliance": {
+      "file": "a/arcappliance.json",
+      "aliasOf": "arcappliance"
+    },
+    "az/2.53.0/arcdata": {
+      "file": "a/arcdata.json",
+      "aliasOf": "arcdata"
+    },
+    "az/2.53.0/aro": {
+      "file": "a/aro.json",
+      "aliasOf": "aro"
+    },
+    "az/2.53.0/artifacts": {
+      "file": "a/artifacts.json",
+      "aliasOf": "artifacts"
+    },
+    "az/2.53.0/attestation": {
+      "file": "a/attestation.json",
+      "aliasOf": "attestation"
+    },
+    "az/2.53.0/automanage": {
+      "file": "a/automanage.json",
+      "aliasOf": "automanage"
+    },
+    "az/2.53.0/automation": {
+      "file": "a/automation.json",
+      "aliasOf": "automation"
+    },
+    "az/2.53.0/azurestackhci": {
+      "file": "a/azurestackhci.json",
+      "aliasOf": "azurestackhci"
+    },
+    "az/2.53.0/backup": {
+      "file": "a/az/2.53.0/backup.json",
+      "aliasOf": "backup"
+    },
+    "az/2.53.0/baremetalinstance": {
+      "file": "b/baremetalinstance.json",
+      "aliasOf": "baremetalinstance"
+    },
+    "az/2.53.0/batch": {
+      "file": "a/az/2.53.0/batch.json",
+      "aliasOf": "batch"
+    },
+    "az/2.53.0/batchai": {
+      "file": "b/batchai.json",
+      "aliasOf": "batchai"
+    },
+    "az/2.53.0/bicep": {
+      "file": "b/bicep.json",
+      "aliasOf": "bicep"
+    },
+    "az/2.53.0/billing": {
+      "file": "a/az/2.53.0/billing.json",
+      "aliasOf": "billing"
+    },
+    "az/2.53.0/billing-benefits": {
+      "file": "b/billing-benefits.json",
+      "aliasOf": "billing-benefits"
+    },
+    "az/2.53.0/blockchain": {
+      "file": "b/blockchain.json",
+      "aliasOf": "blockchain"
+    },
+    "az/2.53.0/blueprint": {
+      "file": "b/blueprint.json",
+      "aliasOf": "blueprint"
+    },
+    "az/2.53.0/boards": {
+      "file": "b/boards.json",
+      "aliasOf": "boards"
+    },
+    "az/2.53.0/bot": {
+      "file": "b/bot.json",
+      "aliasOf": "bot"
+    },
+    "az/2.53.0/cache": {
+      "file": "c/cache.json",
+      "aliasOf": "cache"
+    },
+    "az/2.53.0/capacity": {
+      "file": "c/capacity.json",
+      "aliasOf": "capacity"
+    },
+    "az/2.53.0/cdn": {
+      "file": "c/cdn.json",
+      "aliasOf": "cdn"
+    },
+    "az/2.53.0/change-analysis": {
+      "file": "c/change-analysis.json",
+      "aliasOf": "change-analysis"
+    },
+    "az/2.53.0/cli-translator": {
+      "file": "c/cli-translator.json",
+      "aliasOf": "cli-translator"
+    },
+    "az/2.53.0/cloud": {
+      "file": "c/cloud.json",
+      "aliasOf": "cloud"
+    },
+    "az/2.53.0/cloud-service": {
+      "file": "c/cloud-service.json",
+      "aliasOf": "cloud-service"
+    },
+    "az/2.53.0/cognitiveservices": {
+      "file": "c/cognitiveservices.json",
+      "aliasOf": "cognitiveservices"
+    },
+    "az/2.53.0/command-change": {
+      "file": "c/command-change.json",
+      "aliasOf": "command-change"
+    },
+    "az/2.53.0/communication": {
+      "file": "c/communication.json",
+      "aliasOf": "communication"
+    },
+    "az/2.53.0/confcom": {
+      "file": "c/confcom.json",
+      "aliasOf": "confcom"
+    },
+    "az/2.53.0/confidentialledger": {
+      "file": "c/confidentialledger.json",
+      "aliasOf": "confidentialledger"
+    },
+    "az/2.53.0/config": {
+      "file": "c/config.json",
+      "aliasOf": "config"
+    },
+    "az/2.53.0/configure": {
+      "file": "a/az/2.53.0/configure.json",
+      "aliasOf": "configure"
+    },
+    "az/2.53.0/confluent": {
+      "file": "c/confluent.json",
+      "aliasOf": "confluent"
+    },
+    "az/2.53.0/connectedk8s": {
+      "file": "c/connectedk8s.json",
+      "aliasOf": "connectedk8s"
+    },
+    "az/2.53.0/connectedmachine": {
+      "file": "c/connectedmachine.json",
+      "aliasOf": "connectedmachine"
+    },
+    "az/2.53.0/connectedvmware": {
+      "file": "c/connectedvmware.json",
+      "aliasOf": "connectedvmware"
+    },
+    "az/2.53.0/connection": {
+      "file": "c/connection.json",
+      "aliasOf": "connection"
+    },
+    "az/2.53.0/consumption": {
+      "file": "c/consumption.json",
+      "aliasOf": "consumption"
+    },
+    "az/2.53.0/container": {
+      "file": "c/container.json",
+      "aliasOf": "container"
+    },
+    "az/2.53.0/containerapp": {
+      "file": "c/containerapp.json",
+      "aliasOf": "containerapp"
+    },
+    "az/2.53.0/cosmosdb": {
+      "file": "c/cosmosdb.json",
+      "aliasOf": "cosmosdb"
+    },
+    "az/2.53.0/costmanagement": {
+      "file": "c/costmanagement.json",
+      "aliasOf": "costmanagement"
+    },
+    "az/2.53.0/csvmware": {
+      "file": "c/csvmware.json",
+      "aliasOf": "csvmware"
+    },
+    "az/2.53.0/custom-providers": {
+      "file": "c/custom-providers.json",
+      "aliasOf": "custom-providers"
+    },
+    "az/2.53.0/customlocation": {
+      "file": "c/customlocation.json",
+      "aliasOf": "customlocation"
+    },
+    "az/2.53.0/databox": {
+      "file": "d/databox.json",
+      "aliasOf": "databox"
+    },
+    "az/2.53.0/databoxedge": {
+      "file": "d/databoxedge.json",
+      "aliasOf": "databoxedge"
+    },
+    "az/2.53.0/databricks": {
+      "file": "d/databricks.json",
+      "aliasOf": "databricks"
+    },
+    "az/2.53.0/datadog": {
+      "file": "d/datadog.json",
+      "aliasOf": "datadog"
+    },
+    "az/2.53.0/datafactory": {
+      "file": "d/datafactory.json",
+      "aliasOf": "datafactory"
+    },
+    "az/2.53.0/datamigration": {
+      "file": "d/datamigration.json",
+      "aliasOf": "datamigration"
+    },
+    "az/2.53.0/dataprotection": {
+      "file": "d/dataprotection.json",
+      "aliasOf": "dataprotection"
+    },
+    "az/2.53.0/datashare": {
+      "file": "d/datashare.json",
+      "aliasOf": "datashare"
+    },
+    "az/2.53.0/dedicated-hsm": {
+      "file": "d/dedicated-hsm.json",
+      "aliasOf": "dedicated-hsm"
+    },
+    "az/2.53.0/demo": {
+      "file": "d/demo.json",
+      "aliasOf": "demo"
+    },
+    "az/2.53.0/deployment": {
+      "file": "d/deployment.json",
+      "aliasOf": "deployment"
+    },
+    "az/2.53.0/deployment-scripts": {
+      "file": "d/deployment-scripts.json",
+      "aliasOf": "deployment-scripts"
+    },
+    "az/2.53.0/desktopvirtualization": {
+      "file": "d/desktopvirtualization.json",
+      "aliasOf": "desktopvirtualization"
+    },
+    "az/2.53.0/devcenter": {
+      "file": "d/devcenter.json",
+      "aliasOf": "devcenter"
+    },
+    "az/2.53.0/devops": {
+      "file": "d/devops.json",
+      "aliasOf": "devops"
+    },
+    "az/2.53.0/disk": {
+      "file": "d/disk.json",
+      "aliasOf": "disk"
+    },
+    "az/2.53.0/disk-access": {
+      "file": "d/disk-access.json",
+      "aliasOf": "disk-access"
+    },
+    "az/2.53.0/disk-encryption-set": {
+      "file": "d/disk-encryption-set.json",
+      "aliasOf": "disk-encryption-set"
+    },
+    "az/2.53.0/disk-pool": {
+      "file": "d/disk-pool.json",
+      "aliasOf": "disk-pool"
+    },
+    "az/2.53.0/dla": {
+      "file": "d/dla.json",
+      "aliasOf": "dla"
+    },
+    "az/2.53.0/dls": {
+      "file": "d/dls.json",
+      "aliasOf": "dls"
+    },
+    "az/2.53.0/dms": {
+      "file": "a/az/2.53.0/dms.json",
+      "aliasOf": "dms"
+    },
+    "az/2.53.0/dnc": {
+      "file": "d/dnc.json",
+      "aliasOf": "dnc"
+    },
+    "az/2.53.0/dns-resolver": {
+      "file": "d/dns-resolver.json",
+      "aliasOf": "dns-resolver"
+    },
+    "az/2.53.0/dt": {
+      "file": "d/dt.json",
+      "aliasOf": "dt"
+    },
+    "az/2.53.0/dynatrace": {
+      "file": "d/dynatrace.json",
+      "aliasOf": "dynatrace"
+    },
+    "az/2.53.0/edgeorder": {
+      "file": "e/edgeorder.json",
+      "aliasOf": "edgeorder"
+    },
+    "az/2.53.0/elastic": {
+      "file": "e/elastic.json",
+      "aliasOf": "elastic"
+    },
+    "az/2.53.0/elastic-san": {
+      "file": "e/elastic-san.json",
+      "aliasOf": "elastic-san"
+    },
+    "az/2.53.0/eventgrid": {
+      "file": "e/eventgrid.json",
+      "aliasOf": "eventgrid"
+    },
+    "az/2.53.0/eventhubs": {
+      "file": "e/eventhubs.json",
+      "aliasOf": "eventhubs"
+    },
+    "az/2.53.0/extension": {
+      "file": "e/extension.json",
+      "aliasOf": "extension"
+    },
+    "az/2.53.0/feature": {
+      "file": "f/feature.json",
+      "aliasOf": "feature"
+    },
+    "az/2.53.0/feedback": {
+      "file": "f/feedback.json",
+      "aliasOf": "feedback"
+    },
+    "az/2.53.0/find": {
+      "file": "f/find.json",
+      "aliasOf": "find"
+    },
+    "az/2.53.0/fleet": {
+      "file": "f/fleet.json",
+      "aliasOf": "fleet"
+    },
+    "az/2.53.0/fluid-relay": {
+      "file": "f/fluid-relay.json",
+      "aliasOf": "fluid-relay"
+    },
+    "az/2.53.0/footprint": {
+      "file": "f/footprint.json",
+      "aliasOf": "footprint"
+    },
+    "az/2.53.0/functionapp": {
+      "file": "f/functionapp.json",
+      "aliasOf": "functionapp"
+    },
+    "az/2.53.0/fzf": {
+      "file": "f/fzf.json",
+      "aliasOf": "fzf"
+    },
+    "az/2.53.0/grafana": {
+      "file": "a/az/2.53.0/grafana.json",
+      "aliasOf": "grafana"
+    },
+    "az/2.53.0/graph": {
+      "file": "g/graph.json",
+      "aliasOf": "graph"
+    },
+    "az/2.53.0/graph-services": {
+      "file": "g/graph-services.json",
+      "aliasOf": "graph-services"
+    },
+    "az/2.53.0/group": {
+      "file": "g/group.json",
+      "aliasOf": "group"
+    },
+    "az/2.53.0/guestconfig": {
+      "file": "g/guestconfig.json",
+      "aliasOf": "guestconfig"
+    },
+    "az/2.53.0/hack": {
+      "file": "h/hack.json",
+      "aliasOf": "hack"
+    },
+    "az/2.53.0/hanainstance": {
+      "file": "h/hanainstance.json",
+      "aliasOf": "hanainstance"
+    },
+    "az/2.53.0/hdinsight": {
+      "file": "h/hdinsight.json",
+      "aliasOf": "hdinsight"
+    },
+    "az/2.53.0/healthbot": {
+      "file": "h/healthbot.json",
+      "aliasOf": "healthbot"
+    },
+    "az/2.53.0/healthcareapis": {
+      "file": "h/healthcareapis.json",
+      "aliasOf": "healthcareapis"
+    },
+    "az/2.53.0/hpc-cache": {
+      "file": "h/hpc-cache.json",
+      "aliasOf": "hpc-cache"
+    },
+    "az/2.53.0/hybridaks": {
+      "file": "h/hybridaks.json",
+      "aliasOf": "hybridaks"
+    },
+    "az/2.53.0/identity": {
+      "file": "i/identity.json",
+      "aliasOf": "identity"
+    },
+    "az/2.53.0/image": {
+      "file": "i/image.json",
+      "aliasOf": "image"
+    },
+    "az/2.53.0/import-export": {
+      "file": "i/import-export.json",
+      "aliasOf": "import-export"
+    },
+    "az/2.53.0/init": {
+      "file": "i/init.json",
+      "aliasOf": "init"
+    },
+    "az/2.53.0/interactive": {
+      "file": "i/interactive.json",
+      "aliasOf": "interactive"
+    },
+    "az/2.53.0/internet-analyzer": {
+      "file": "i/internet-analyzer.json",
+      "aliasOf": "internet-analyzer"
+    },
+    "az/2.53.0/iot": {
+      "file": "a/az/2.53.0/iot.json",
+      "aliasOf": "iot"
+    },
+    "az/2.53.0/k8s-configuration": {
+      "file": "k/k8s-configuration.json",
+      "aliasOf": "k8s-configuration"
+    },
+    "az/2.53.0/k8s-extension": {
+      "file": "k/k8s-extension.json",
+      "aliasOf": "k8s-extension"
+    },
+    "az/2.53.0/k8sconfiguration": {
+      "file": "k/k8sconfiguration.json",
+      "aliasOf": "k8sconfiguration"
+    },
+    "az/2.53.0/keyvault": {
+      "file": "k/keyvault.json",
+      "aliasOf": "keyvault"
+    },
+    "az/2.53.0/kusto": {
+      "file": "k/kusto.json",
+      "aliasOf": "kusto"
+    },
+    "az/2.53.0/lab": {
+      "file": "l/lab.json",
+      "aliasOf": "lab"
+    },
+    "az/2.53.0/load": {
+      "file": "l/load.json",
+      "aliasOf": "load"
+    },
+    "az/2.53.0/lock": {
+      "file": "l/lock.json",
+      "aliasOf": "lock"
+    },
+    "az/2.53.0/logic": {
+      "file": "l/logic.json",
+      "aliasOf": "logic"
+    },
+    "az/2.53.0/logicapp": {
+      "file": "l/logicapp.json",
+      "aliasOf": "logicapp"
+    },
+    "az/2.53.0/login": {
+      "file": "l/login.json",
+      "aliasOf": "login"
+    },
+    "az/2.53.0/logout": {
+      "file": "l/logout.json",
+      "aliasOf": "logout"
+    },
+    "az/2.53.0/logz": {
+      "file": "l/logz.json",
+      "aliasOf": "logz"
+    },
+    "az/2.53.0/maintenance": {
+      "file": "m/maintenance.json",
+      "aliasOf": "maintenance"
+    },
+    "az/2.53.0/managed-cassandra": {
+      "file": "m/managed-cassandra.json",
+      "aliasOf": "managed-cassandra"
+    },
+    "az/2.53.0/managedapp": {
+      "file": "m/managedapp.json",
+      "aliasOf": "managedapp"
+    },
+    "az/2.53.0/managedservices": {
+      "file": "m/managedservices.json",
+      "aliasOf": "managedservices"
+    },
+    "az/2.53.0/managementpartner": {
+      "file": "m/managementpartner.json",
+      "aliasOf": "managementpartner"
+    },
+    "az/2.53.0/maps": {
+      "file": "m/maps.json",
+      "aliasOf": "maps"
+    },
+    "az/2.53.0/mariadb": {
+      "file": "m/mariadb.json",
+      "aliasOf": "mariadb"
+    },
+    "az/2.53.0/mesh": {
+      "file": "m/mesh.json",
+      "aliasOf": "mesh"
+    },
+    "az/2.53.0/ml": {
+      "file": "m/ml.json",
+      "aliasOf": "ml"
+    },
+    "az/2.53.0/mobile-network": {
+      "file": "m/mobile-network.json",
+      "aliasOf": "mobile-network"
+    },
+    "az/2.53.0/monitor": {
+      "file": "m/monitor.json",
+      "aliasOf": "monitor"
+    },
+    "az/2.53.0/mysql": {
+      "file": "m/mysql.json",
+      "aliasOf": "mysql"
+    },
+    "az/2.53.0/netappfiles": {
+      "file": "n/netappfiles.json",
+      "aliasOf": "netappfiles"
+    },
+    "az/2.53.0/network-function": {
+      "file": "n/network-function.json",
+      "aliasOf": "network-function"
+    },
+    "az/2.53.0/networkcloud": {
+      "file": "n/networkcloud.json",
+      "aliasOf": "networkcloud"
+    },
+    "az/2.53.0/networkfabric": {
+      "file": "n/networkfabric.json",
+      "aliasOf": "networkfabric"
+    },
+    "az/2.53.0/new-relic": {
+      "file": "n/new-relic.json",
+      "aliasOf": "new-relic"
+    },
+    "az/2.53.0/next": {
+      "file": "n/next.json",
+      "aliasOf": "next"
+    },
+    "az/2.53.0/nginx": {
+      "file": "n/nginx.json",
+      "aliasOf": "nginx"
+    },
+    "az/2.53.0/notification-hub": {
+      "file": "n/notification-hub.json",
+      "aliasOf": "notification-hub"
+    },
+    "az/2.53.0/offazure": {
+      "file": "o/offazure.json",
+      "aliasOf": "offazure"
+    },
+    "az/2.53.0/orbital": {
+      "file": "o/orbital.json",
+      "aliasOf": "orbital"
+    },
+    "az/2.53.0/palo-alto": {
+      "file": "p/palo-alto.json",
+      "aliasOf": "palo-alto"
+    },
+    "az/2.53.0/partnercenter": {
+      "file": "p/partnercenter.json",
+      "aliasOf": "partnercenter"
+    },
+    "az/2.53.0/peering": {
+      "file": "p/peering.json",
+      "aliasOf": "peering"
+    },
+    "az/2.53.0/pipelines": {
+      "file": "p/pipelines.json",
+      "aliasOf": "pipelines"
+    },
+    "az/2.53.0/policy": {
+      "file": "p/policy.json",
+      "aliasOf": "policy"
+    },
+    "az/2.53.0/portal": {
+      "file": "p/portal.json",
+      "aliasOf": "portal"
+    },
+    "az/2.53.0/postgres": {
+      "file": "p/postgres.json",
+      "aliasOf": "postgres"
+    },
+    "az/2.53.0/powerbi": {
+      "file": "p/powerbi.json",
+      "aliasOf": "powerbi"
+    },
+    "az/2.53.0/ppg": {
+      "file": "p/ppg.json",
+      "aliasOf": "ppg"
+    },
+    "az/2.53.0/private-link": {
+      "file": "p/private-link.json",
+      "aliasOf": "private-link"
+    },
+    "az/2.53.0/provider": {
+      "file": "p/provider.json",
+      "aliasOf": "provider"
+    },
+    "az/2.53.0/providerhub": {
+      "file": "p/providerhub.json",
+      "aliasOf": "providerhub"
+    },
+    "az/2.53.0/purview": {
+      "file": "p/purview.json",
+      "aliasOf": "purview"
+    },
+    "az/2.53.0/quantum": {
+      "file": "q/quantum.json",
+      "aliasOf": "quantum"
+    },
+    "az/2.53.0/qumulo": {
+      "file": "q/qumulo.json",
+      "aliasOf": "qumulo"
+    },
+    "az/2.53.0/quota": {
+      "file": "q/quota.json",
+      "aliasOf": "quota"
+    },
+    "az/2.53.0/redis": {
+      "file": "r/redis.json",
+      "aliasOf": "redis"
+    },
+    "az/2.53.0/redisenterprise": {
+      "file": "r/redisenterprise.json",
+      "aliasOf": "redisenterprise"
+    },
+    "az/2.53.0/relay": {
+      "file": "r/relay.json",
+      "aliasOf": "relay"
+    },
+    "az/2.53.0/remote-rendering-account": {
+      "file": "r/remote-rendering-account.json",
+      "aliasOf": "remote-rendering-account"
+    },
+    "az/2.53.0/repos": {
+      "file": "r/repos.json",
+      "aliasOf": "repos"
+    },
+    "az/2.53.0/reservations": {
+      "file": "r/reservations.json",
+      "aliasOf": "reservations"
+    },
+    "az/2.53.0/resource": {
+      "file": "r/resource.json",
+      "aliasOf": "resource"
+    },
+    "az/2.53.0/resource-mover": {
+      "file": "r/resource-mover.json",
+      "aliasOf": "resource-mover"
+    },
+    "az/2.53.0/resourcemanagement": {
+      "file": "r/resourcemanagement.json",
+      "aliasOf": "resourcemanagement"
+    },
+    "az/2.53.0/rest": {
+      "file": "r/rest.json",
+      "aliasOf": "rest"
+    },
+    "az/2.53.0/restore-point": {
+      "file": "r/restore-point.json",
+      "aliasOf": "restore-point"
+    },
+    "az/2.53.0/role": {
+      "file": "r/role.json",
+      "aliasOf": "role"
+    },
+    "az/2.53.0/sapmonitor": {
+      "file": "s/sapmonitor.json",
+      "aliasOf": "sapmonitor"
+    },
+    "az/2.53.0/scenario": {
+      "file": "s/scenario.json",
+      "aliasOf": "scenario"
+    },
+    "az/2.53.0/scvmm": {
+      "file": "s/scvmm.json",
+      "aliasOf": "scvmm"
+    },
+    "az/2.53.0/search": {
+      "file": "s/search.json",
+      "aliasOf": "search"
+    },
+    "az/2.53.0/security": {
+      "file": "s/security.json",
+      "aliasOf": "security"
+    },
+    "az/2.53.0/self-help": {
+      "file": "s/self-help.json",
+      "aliasOf": "self-help"
+    },
+    "az/2.53.0/self-test": {
+      "file": "s/self-test.json",
+      "aliasOf": "self-test"
+    },
+    "az/2.53.0/sentinel": {
+      "file": "s/sentinel.json",
+      "aliasOf": "sentinel"
+    },
+    "az/2.53.0/serial-console": {
+      "file": "s/serial-console.json",
+      "aliasOf": "serial-console"
+    },
+    "az/2.53.0/servicebus": {
+      "file": "s/servicebus.json",
+      "aliasOf": "servicebus"
+    },
+    "az/2.53.0/sf": {
+      "file": "s/sf.json",
+      "aliasOf": "sf"
+    },
+    "az/2.53.0/sig": {
+      "file": "s/sig.json",
+      "aliasOf": "sig"
+    },
+    "az/2.53.0/signalr": {
+      "file": "s/signalr.json",
+      "aliasOf": "signalr"
+    },
+    "az/2.53.0/site-recovery": {
+      "file": "s/site-recovery.json",
+      "aliasOf": "site-recovery"
+    },
+    "az/2.53.0/snapshot": {
+      "file": "s/snapshot.json",
+      "aliasOf": "snapshot"
+    },
+    "az/2.53.0/spatial-anchors-account": {
+      "file": "s/spatial-anchors-account.json",
+      "aliasOf": "spatial-anchors-account"
+    },
+    "az/2.53.0/sphere": {
+      "file": "s/sphere.json",
+      "aliasOf": "sphere"
+    },
+    "az/2.53.0/spring": {
+      "file": "s/spring.json",
+      "aliasOf": "spring"
+    },
+    "az/2.53.0/spring-cloud": {
+      "file": "s/spring-cloud.json",
+      "aliasOf": "spring-cloud"
+    },
+    "az/2.53.0/sql": {
+      "file": "s/sql.json",
+      "aliasOf": "sql"
+    },
+    "az/2.53.0/ssh": {
+      "file": "s/ssh.json",
+      "aliasOf": "ssh"
+    },
+    "az/2.53.0/sshkey": {
+      "file": "s/sshkey.json",
+      "aliasOf": "sshkey"
+    },
+    "az/2.53.0/stack": {
+      "file": "s/stack.json",
+      "aliasOf": "stack"
+    },
+    "az/2.53.0/stack-hci": {
+      "file": "s/stack-hci.json",
+      "aliasOf": "stack-hci"
+    },
+    "az/2.53.0/staticwebapp": {
+      "file": "s/staticwebapp.json",
+      "aliasOf": "staticwebapp"
+    },
+    "az/2.53.0/storage": {
+      "file": "s/storage.json",
+      "aliasOf": "storage"
+    },
+    "az/2.53.0/storage-mover": {
+      "file": "s/storage-mover.json",
+      "aliasOf": "storage-mover"
+    },
+    "az/2.53.0/storagesync": {
+      "file": "s/storagesync.json",
+      "aliasOf": "storagesync"
+    },
+    "az/2.53.0/stream-analytics": {
+      "file": "s/stream-analytics.json",
+      "aliasOf": "stream-analytics"
+    },
+    "az/2.53.0/support": {
+      "file": "a/az/2.53.0/support.json",
+      "aliasOf": "support"
+    },
+    "az/2.53.0/survey": {
+      "file": "s/survey.json",
+      "aliasOf": "survey"
+    },
+    "az/2.53.0/synapse": {
+      "file": "s/synapse.json",
+      "aliasOf": "synapse"
+    },
+    "az/2.53.0/tag": {
+      "file": "t/tag.json",
+      "aliasOf": "tag"
+    },
+    "az/2.53.0/term": {
+      "file": "t/term.json",
+      "aliasOf": "term"
+    },
+    "az/2.53.0/ts": {
+      "file": "t/ts.json",
+      "aliasOf": "ts"
+    },
+    "az/2.53.0/tsi": {
+      "file": "t/tsi.json",
+      "aliasOf": "tsi"
+    },
+    "az/2.53.0/upgrade": {
+      "file": "u/upgrade.json",
+      "aliasOf": "upgrade"
+    },
+    "az/2.53.0/version": {
+      "file": "v/version.json",
+      "aliasOf": "version"
+    },
+    "az/2.53.0/vm": {
+      "file": "v/vm.json",
+      "aliasOf": "vm"
+    },
+    "az/2.53.0/vmss": {
+      "file": "v/vmss.json",
+      "aliasOf": "vmss"
+    },
+    "az/2.53.0/vmware": {
+      "file": "v/vmware.json",
+      "aliasOf": "vmware"
+    },
+    "az/2.53.0/webapp": {
+      "file": "w/webapp.json",
+      "aliasOf": "webapp"
+    },
+    "az/2.53.0/webpubsub": {
+      "file": "w/webpubsub.json",
+      "aliasOf": "webpubsub"
+    },
+    "az/2.53.0/workloads": {
+      "file": "w/workloads.json",
+      "aliasOf": "workloads"
+    },
+    "gcloud/access-context-manager": {
+      "file": "a/access-context-manager.json",
+      "aliasOf": "access-context-manager"
+    },
+    "gcloud/active-directory": {
+      "file": "a/active-directory.json",
+      "aliasOf": "active-directory"
+    },
+    "gcloud/ai-platform": {
+      "file": "a/ai-platform.json",
+      "aliasOf": "ai-platform"
+    },
+    "gcloud/anthos": {
+      "file": "a/anthos.json",
+      "aliasOf": "anthos"
+    },
+    "gcloud/apigee": {
+      "file": "a/apigee.json",
+      "aliasOf": "apigee"
+    },
+    "gcloud/app": {
+      "file": "a/app.json",
+      "aliasOf": "app"
+    },
+    "gcloud/artifacts": {
+      "file": "g/gcloud/artifacts.json",
+      "aliasOf": "artifacts"
+    },
+    "gcloud/asset": {
+      "file": "a/asset.json",
+      "aliasOf": "asset"
+    },
+    "gcloud/auth": {
+      "file": "a/auth.json",
+      "aliasOf": "auth"
+    },
+    "gcloud/bigtable": {
+      "file": "b/bigtable.json",
+      "aliasOf": "bigtable"
+    },
+    "gcloud/builds": {
+      "file": "b/builds.json",
+      "aliasOf": "builds"
+    },
+    "gcloud/cheat-sheet": {
+      "file": "c/cheat-sheet.json",
+      "aliasOf": "cheat-sheet"
+    },
+    "gcloud/cloud-shell": {
+      "file": "c/cloud-shell.json",
+      "aliasOf": "cloud-shell"
+    },
+    "gcloud/components": {
+      "file": "c/components.json",
+      "aliasOf": "components"
+    },
+    "gcloud/composer": {
+      "file": "g/gcloud/composer.json",
+      "aliasOf": "composer"
+    },
+    "gcloud/config": {
+      "file": "g/gcloud/config.json",
+      "aliasOf": "config"
+    },
+    "gcloud/container": {
+      "file": "g/gcloud/container.json",
+      "aliasOf": "container"
+    },
+    "gcloud/data-catalog": {
+      "file": "d/data-catalog.json",
+      "aliasOf": "data-catalog"
+    },
+    "gcloud/dataflow": {
+      "file": "d/dataflow.json",
+      "aliasOf": "dataflow"
+    },
+    "gcloud/dataproc": {
+      "file": "d/dataproc.json",
+      "aliasOf": "dataproc"
+    },
+    "gcloud/datastore": {
+      "file": "d/datastore.json",
+      "aliasOf": "datastore"
+    },
+    "gcloud/debug": {
+      "file": "d/debug.json",
+      "aliasOf": "debug"
+    },
+    "gcloud/deployment-manager": {
+      "file": "d/deployment-manager.json",
+      "aliasOf": "deployment-manager"
+    },
+    "gcloud/dns": {
+      "file": "d/dns.json",
+      "aliasOf": "dns"
+    },
+    "gcloud/docker": {
+      "file": "g/gcloud/docker.json",
+      "aliasOf": "docker"
+    },
+    "gcloud/domains": {
+      "file": "d/domains.json",
+      "aliasOf": "domains"
+    },
+    "gcloud/endpoints": {
+      "file": "e/endpoints.json",
+      "aliasOf": "endpoints"
+    },
+    "gcloud/feedback": {
+      "file": "g/gcloud/feedback.json",
+      "aliasOf": "feedback"
+    },
+    "gcloud/filestore": {
+      "file": "f/filestore.json",
+      "aliasOf": "filestore"
+    },
+    "gcloud/firebase": {
+      "file": "g/gcloud/firebase.json",
+      "aliasOf": "firebase"
+    },
+    "gcloud/firestore": {
+      "file": "f/firestore.json",
+      "aliasOf": "firestore"
+    },
+    "gcloud/functions": {
+      "file": "f/functions.json",
+      "aliasOf": "functions"
+    },
+    "gcloud/game": {
+      "file": "g/game.json",
+      "aliasOf": "game"
+    },
+    "gcloud/healthcare": {
+      "file": "h/healthcare.json",
+      "aliasOf": "healthcare"
+    },
+    "gcloud/help": {
+      "file": "g/gcloud/help.json",
+      "aliasOf": "help"
+    },
+    "gcloud/iam": {
+      "file": "g/gcloud/iam.json",
+      "aliasOf": "iam"
+    },
+    "gcloud/iap": {
+      "file": "i/iap.json",
+      "aliasOf": "iap"
+    },
+    "gcloud/identity": {
+      "file": "g/gcloud/identity.json",
+      "aliasOf": "identity"
+    },
+    "gcloud/info": {
+      "file": "i/info.json",
+      "aliasOf": "info"
+    },
+    "gcloud/init": {
+      "file": "g/gcloud/init.json",
+      "aliasOf": "init"
+    },
+    "gcloud/iot": {
+      "file": "g/gcloud/iot.json",
+      "aliasOf": "iot"
+    },
+    "gcloud/kms": {
+      "file": "g/gcloud/kms.json",
+      "aliasOf": "kms"
+    },
+    "gcloud/logging": {
+      "file": "l/logging.json",
+      "aliasOf": "logging"
+    },
+    "gcloud/meta": {
+      "file": "m/meta.json",
+      "aliasOf": "meta"
+    },
+    "gcloud/ml": {
+      "file": "g/gcloud/ml.json",
+      "aliasOf": "ml"
+    },
+    "gcloud/ml-engine": {
+      "file": "m/ml-engine.json",
+      "aliasOf": "ml-engine"
+    },
+    "gcloud/monitoring": {
+      "file": "m/monitoring.json",
+      "aliasOf": "monitoring"
+    },
+    "gcloud/network-management": {
+      "file": "n/network-management.json",
+      "aliasOf": "network-management"
+    },
+    "gcloud/organizations": {
+      "file": "g/gcloud/organizations.json",
+      "aliasOf": "organizations"
+    },
+    "gcloud/policy-troubleshoot": {
+      "file": "p/policy-troubleshoot.json",
+      "aliasOf": "policy-troubleshoot"
+    },
+    "gcloud/projects": {
+      "file": "p/projects.json",
+      "aliasOf": "projects"
+    },
+    "gcloud/pubsub": {
+      "file": "p/pubsub.json",
+      "aliasOf": "pubsub"
+    },
+    "gcloud/recommender": {
+      "file": "r/recommender.json",
+      "aliasOf": "recommender"
+    },
+    "gcloud/redis": {
+      "file": "g/gcloud/redis.json",
+      "aliasOf": "redis"
+    },
+    "gcloud/resource-manager": {
+      "file": "r/resource-manager.json",
+      "aliasOf": "resource-manager"
+    },
+    "gcloud/run": {
+      "file": "g/gcloud/run.json",
+      "aliasOf": "run"
+    },
+    "gcloud/scc": {
+      "file": "s/scc.json",
+      "aliasOf": "scc"
+    },
+    "gcloud/scheduler": {
+      "file": "g/gcloud/scheduler.json",
+      "aliasOf": "scheduler"
+    },
+    "gcloud/secrets": {
+      "file": "s/secrets.json",
+      "aliasOf": "secrets"
+    },
+    "gcloud/services": {
+      "file": "s/services.json",
+      "aliasOf": "services"
+    },
+    "gcloud/source": {
+      "file": "s/source.json",
+      "aliasOf": "source"
+    },
+    "gcloud/spanner": {
+      "file": "s/spanner.json",
+      "aliasOf": "spanner"
+    },
+    "gcloud/sql": {
+      "file": "g/gcloud/sql.json",
+      "aliasOf": "sql"
+    },
+    "gcloud/survey": {
+      "file": "g/gcloud/survey.json",
+      "aliasOf": "survey"
+    },
+    "gcloud/tasks": {
+      "file": "t/tasks.json",
+      "aliasOf": "tasks"
+    },
+    "gcloud/topic": {
+      "file": "t/topic.json",
+      "aliasOf": "topic"
+    },
+    "gcloud/version": {
+      "file": "g/gcloud/version.json",
+      "aliasOf": "version"
+    }
+  }
+}

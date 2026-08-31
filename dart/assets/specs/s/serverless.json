@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "name": "serverless",
+  "description": "Zero-friction serverless development",
+  "options": [
+    {
+      "name": "--help",
+      "description": "Show help"
+    }
+  ],
+  "subcommands": [
+    {
+      "name": "deploy",
+      "description": "Deploy a Serverless service",
+      "subcommands": [
+        {
+          "name": "function",
+          "options": [
+            {
+              "name": "--force",
+              "description": "Forces a deployment to take place"
+            },
+            {
+              "name": [
+                "--update-config",
+                "-u"
+              ],
+              "description": "Updates function configuration, e.g. Timeout or Memory Size without deploying code",
+              "args": {
+                "name": "config"
+              }
+            }
+          ]
+        },
+        {
+          "name": "list",
+          "subcommands": [
+            {
+              "name": "functions",
+              "options": []
+            }
+          ],
+          "options": []
+        }
+      ],
+      "options": [
+        {
+          "name": "--force",
+          "description": "Forces a deployment to take place"
+        },
+        {
+          "name": "--aws-s3-accelerate",
+          "description": "Enables S3 Transfer Acceleration making uploading artifacts much faster"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "description": "Display information about the service",
+      "options": []
+    },
+    {
+      "name": "invoke",
+      "description": "Invoke a deployed function",
+      "options": [
+        {}
+      ],
+      "subcommands": [
+        {
+          "name": "local",
+          "options": [
+            {}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "logs",
+      "description": "Output the logs of a deployed function"
+    },
+    {
+      "name": "metrics",
+      "description": "Show metrics for a specific function"
+    },
+    {
+      "name": "remove",
+      "description": "Remove Serverless service and all resources"
+    },
+    {
+      "name": "rollback",
+      "description": "Rollback the Serverless service to a specific deployment"
+    },
+    {
+      "name": "studio",
+      "description": "Develop a Serverless application in the cloud"
+    },
+    {
+      "name": "test",
+      "description": "Run HTTP tests"
+    },
+    {
+      "name": "package",
+      "description": "Package a Serverless service"
+    },
+    {
+      "name": "plugin",
+      "description": "Handle plugins"
+    },
+    {
+      "name": "print",
+      "description": "Print your compiled and resolved config file"
+    },
+    {
+      "name": "create",
+      "description": "Create new Serverless service"
+    },
+    {
+      "name": "dashboard",
+      "description": "Open the Serverless dashboard"
+    },
+    {
+      "name": "generate-event",
+      "description": "Generate event"
+    },
+    {
+      "name": "install",
+      "description": "Install a Serverless service from GitHub or a plugin from the Serverless registry"
+    },
+    {
+      "name": "login",
+      "description": "Login or sign up for Serverless"
+    },
+    {
+      "name": "logout",
+      "description": "Logout from Serverless"
+    },
+    {
+      "name": "output",
+      "description": "Get/list value of dashboard deployment profile parameter"
+    },
+    {
+      "name": "param",
+      "description": "Get/list value of dashboard service output"
+    },
+    {
+      "name": "slstats",
+      "description": "Enable or disable stats"
+    }
+  ],
+  "generateSpec": {
+    "handler": "manual.src_serverless.spec.generatespec",
+    "version": 1
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "name": "rvm",
+  "description": "Ruby version manager",
+  "options": [
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Show help for rvm",
+      "isPersistent": true
+    }
+  ],
+  "subcommands": [
+    {
+      "name": "use",
+      "description": "Setup current shell to use a specific ruby version",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "reset",
+      "description": "Remove default and current settings, exit the shell",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "description": "Show information about the current ruby environment",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "description": "List currently installed version",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "reload",
+      "description": "Reload RVM source itself (useful after changing RVM source)",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "implode",
+      "description": "Remove all ruby installations it manages",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "get",
+      "description": "Upgrades RVM to the stable or git head branches",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "do",
+      "description": "Runs a named ruby file against specified and/or all rubies",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "install",
+      "description": "Install one or many ruby versions",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "upgrade",
+      "description": "Install new ruby, copy gemsets, make gems pristine, remove old rubies",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "reinstall",
+      "description": "Remove ruby, install it, make gems pristine",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "uninstall",
+      "description": "Uninstall one or many ruby versions, leaves their sources",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "remove",
+      "description": "Remove one or many ruby versions, including their sources",
+      "subcommands": [
+        {
+          "name": "rbx",
+          "description": "Rubinius"
+        },
+        {
+          "name": "jruby",
+          "description": "JRuby"
+        },
+        {
+          "name": "ruby",
+          "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+        },
+        {
+          "name": "ree",
+          "description": "Ruby Enterprise Edition"
+        },
+        {
+          "name": "system",
+          "description": "Use the system ruby (eg. pre-RVM state)"
+        },
+        {
+          "name": "default",
+          "description": "Use RVM set default ruby and system if it hasn't been set"
+        }
+      ]
+    },
+    {
+      "name": "rbx",
+      "description": "Rubinius"
+    },
+    {
+      "name": "jruby",
+      "description": "JRuby"
+    },
+    {
+      "name": "ruby",
+      "description": "MRI/YARV Ruby (The Standard), defaults to 1.8.6"
+    },
+    {
+      "name": "ree",
+      "description": "Ruby Enterprise Edition"
+    },
+    {
+      "name": "system",
+      "description": "Use the system ruby (eg. pre-RVM state)"
+    },
+    {
+      "name": "default",
+      "description": "Use RVM set default ruby and system if it hasn't been set"
+    }
+  ]
+}

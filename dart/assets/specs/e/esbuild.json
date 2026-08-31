@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "name": "esbuild",
+  "description": "An extremely fast JavaScript bundler",
+  "parserDirectives": {
+    "optionArgSeparators": [
+      "=",
+      ":"
+    ]
+  },
+  "args": {
+    "name": "entry points",
+    "isVariadic": true,
+    "template": "filepaths"
+  },
+  "options": {
+    "handler": "manual.src_esbuild.spec.options",
+    "version": 1
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "name": "uv",
+  "description": "An extremely fast Python package manager",
+  "options": [
+    {
+      "name": [
+        "-q",
+        "--quiet"
+      ],
+      "description": "Do not print any output",
+      "isPersistent": true
+    },
+    {
+      "name": [
+        "-v",
+        "--verbose"
+      ],
+      "description": "Use verbose output",
+      "isPersistent": true
+    },
+    {
+      "name": "--color",
+      "description": "Control colors in output",
+      "args": {
+        "name": "COLOR_CHOICE",
+        "suggestions": [
+          "auto",
+          "always",
+          "never"
+        ]
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--native-tls",
+      "description": "Whether to load TLS certificates from the platform's native certificate store",
+      "args": {
+        "name": "BOOL"
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--offline",
+      "description": "Disable network access",
+      "isPersistent": true
+    },
+    {
+      "name": "--allow-insecure-host",
+      "description": "Allow insecure connections to a host",
+      "args": {
+        "name": "ALLOW_INSECURE_HOST"
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--no-progress",
+      "description": "Hide all progress outputs",
+      "isPersistent": true
+    },
+    {
+      "name": "--directory",
+      "description": "Change to the given directory prior to running the command",
+      "args": {
+        "name": "DIRECTORY"
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--project",
+      "description": "Run the command within the given project directory",
+      "args": {
+        "name": "PROJECT"
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--config-file",
+      "description": "The path to a `uv.toml` file to use for configuration",
+      "args": {
+        "name": "CONFIG_FILE"
+      },
+      "isPersistent": true
+    },
+    {
+      "name": "--no-config",
+      "description": "Avoid discovering configuration files (`pyproject.toml`, `uv.toml`)",
+      "isPersistent": true
+    },
+    {
+      "name": [
+        "-h",
+        "--help"
+      ],
+      "description": "Display the concise help for this command",
+      "isPersistent": true
+    },
+    {
+      "name": [
+        "-V",
+        "--version"
+      ],
+      "description": "Display the uv version",
+      "isPersistent": true
+    }
+  ]
+}

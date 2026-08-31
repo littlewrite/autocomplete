@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "z",
+  "description": "Smarter cd command, inspired by z and autojump",
+  "args": {
+    "name": "directory",
+    "filterStrategy": "fuzzy",
+    "suggestCurrentToken": true,
+    "generators": {
+      "custom": {
+        "handler": "manual.src_z.spec.args.generators.custom",
+        "version": 1
+      },
+      "trigger": {
+        "on": "change"
+      }
+    }
+  }
+}

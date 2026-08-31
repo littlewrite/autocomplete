@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "name": "watch",
+  "description": "Execute a program periodically and show its output",
+  "options": [
+    {
+      "name": [
+        "-b",
+        "--beep"
+      ],
+      "description": "Beep if the command exits non-zero"
+    },
+    {
+      "name": [
+        "-c",
+        "--color"
+      ],
+      "description": "Interpret ANSI color and style sequences"
+    },
+    {
+      "name": [
+        "-d",
+        "--differences"
+      ],
+      "description": "Highlight changes between updates",
+      "args": {
+        "name": "permanent",
+        "isOptional": true
+      }
+    },
+    {
+      "name": [
+        "-e",
+        "--errexit"
+      ],
+      "description": "Exit if the command has an error"
+    },
+    {
+      "name": [
+        "-g",
+        "--chgexit"
+      ],
+      "description": "Exit when the output changes"
+    },
+    {
+      "name": [
+        "-n",
+        "--interval"
+      ],
+      "description": "Seconds to wait between updates",
+      "args": {
+        "name": "seconds"
+      }
+    },
+    {
+      "name": [
+        "-p",
+        "--precise"
+      ],
+      "description": "Attempt precise periodic timing"
+    },
+    {
+      "name": [
+        "-t",
+        "--no-title"
+      ],
+      "description": "Turn off the header"
+    },
+    {
+      "name": [
+        "-w",
+        "--no-wrap"
+      ],
+      "description": "Turn off line wrapping"
+    },
+    {
+      "name": [
+        "-x",
+        "--exec"
+      ],
+      "description": "Pass the command to exec instead of sh -c"
+    }
+  ],
+  "args": [
+    {
+      "name": "command",
+      "isCommand": true,
+      "isVariadic": true
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "name": "shortcuts",
+  "description": "Command-line utility for running shortcuts",
+  "subcommands": [
+    {
+      "name": "run",
+      "description": "Run a shortcut",
+      "icon": "▶️",
+      "args": {
+        "name": "shortcut-name",
+        "description": "The name of the shortcut to run"
+      },
+      "options": [
+        {
+          "name": [
+            "-i",
+            "--input-path"
+          ],
+          "args": {
+            "name": "input-path",
+            "template": "filepaths"
+          },
+          "description": "The input to provide to the shortcut"
+        },
+        {
+          "name": [
+            "-o",
+            "--output-path"
+          ],
+          "args": {
+            "name": "output-path",
+            "template": "filepaths"
+          },
+          "description": "Where to write the shortcut output, if applicable"
+        },
+        {
+          "name": "--output-type",
+          "args": {
+            "name": "output-type",
+            "suggestions": [
+              {
+                "name": "public.json",
+                "description": "JavaScript Object Notation (JSON)"
+              },
+              {
+                "name": "public.plain-text",
+                "description": "Plain text"
+              },
+              {
+                "name": "public.html",
+                "description": "HTML"
+              },
+              {
+                "name": "public.xml",
+                "description": "XML"
+              },
+              {
+                "name": "com.adobe.pdf",
+                "description": "Adobe PDF"
+              },
+              {
+                "name": "public.vcard",
+                "description": "VCard"
+              }
+            ]
+          },
+          "description": "What type to output data in, in Universal Type Identifier format"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "description": "List your shortcuts",
+      "icon": "📂",
+      "options": [
+        {
+          "name": [
+            "--folder-name",
+            "-f"
+          ],
+          "description": "The name of the folder to list",
+          "args": {
+            "name": "folder-name",
+            "generators": {
+              "script": [
+                "shortcuts",
+                "list",
+                "--folders"
+              ],
+              "postProcess": {
+                "handler": "manual.src_shortcuts.spec.subcommands_0_1_.options_0_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--folders",
+          "description": "List folders instead of shortcuts",
+          "icon": "📂"
+        }
+      ]
+    },
+    {
+      "name": "view",
+      "description": "View a shortcut in Shortcuts",
+      "icon": "🔍",
+      "args": {
+        "name": "shortcut-name",
+        "description": "The name of the shortcut to view"
+      }
+    },
+    {
+      "name": "sign",
+      "description": "Sign a shortcut file",
+      "icon": "🔏",
+      "options": [
+        {
+          "name": [
+            "--input",
+            "-i"
+          ],
+          "description": "The shortcut file to sign",
+          "args": {
+            "name": "input",
+            "generators": {
+              "template": {
+                "name": "filepaths",
+                "extensions": [
+                  "shortcut"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": [
+            "--output",
+            "-o"
+          ],
+          "description": "Output path for the signed shortcut file",
+          "args": {
+            "name": "output",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": [
+            "--mode",
+            "-m"
+          ],
+          "description": "The signing mode. (default: people-who-know-me)",
+          "args": {
+            "name": "mode",
+            "suggestions": [
+              "people-who-know-me",
+              "anyone"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "description": "Show help information",
+      "subcommands": {
+        "handler": "manual.src_shortcuts.spec.subcommands_1_.subcommands",
+        "version": 1
+      }
+    }
+  ]
+}

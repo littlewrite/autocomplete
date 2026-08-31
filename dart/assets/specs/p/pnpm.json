@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "name": "pnpm",
+  "description": "Fast, disk space efficient package manager",
+  "args": {
+    "name": "Scripts",
+    "filterStrategy": "fuzzy",
+    "generators": {
+      "handler": "manual.src_pnpm.generator.npmscriptsgenerator",
+      "version": 1
+    },
+    "isVariadic": true
+  },
+  "filterStrategy": "fuzzy",
+  "generateSpec": {
+    "handler": "manual.src_pnpm.spec.generatespec",
+    "version": 1
+  },
+  "options": [
+    {
+      "name": [
+        "-C",
+        "--dir"
+      ],
+      "args": {
+        "name": "path",
+        "template": "folders"
+      },
+      "isPersistent": true,
+      "description": "Run as if pnpm was started in <path> instead of the current working directory"
+    },
+    {
+      "name": [
+        "-w",
+        "--workspace-root"
+      ],
+      "args": {
+        "name": "workspace"
+      },
+      "isPersistent": true,
+      "description": "Run as if pnpm was started in the root of the <workspace> instead of the current working directory"
+    },
+    {
+      "name": [
+        "-h",
+        "--help"
+      ],
+      "isPersistent": true,
+      "description": "Output usage information"
+    },
+    {
+      "name": [
+        "-v",
+        "--version"
+      ],
+      "description": "Show pnpm's version"
+    }
+  ]
+}

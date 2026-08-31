@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "for",
+  "description": "Perform a set of commands multiple times",
+  "args": [
+    {
+      "name": "var"
+    },
+    {
+      "suggestions": [
+        "in"
+      ]
+    },
+    {
+      "name": "values",
+      "isVariadic": true
+    }
+  ]
+}

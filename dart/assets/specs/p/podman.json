@@ -1,0 +1,1161 @@
+{
+  "schemaVersion": 1,
+  "name": "podman",
+  "description": "Manage containers, pods, and images with Podman",
+  "subcommands": [
+    {
+      "name": "events",
+      "description": "Show podman system events",
+      "options": [
+        {
+          "args": {
+            "name": "filter"
+          },
+          "description": "Filter output based on conditions provided",
+          "name": [
+            "-f",
+            "--filter"
+          ]
+        },
+        {
+          "args": {
+            "name": "string"
+          },
+          "description": "Format the output using the given Go template",
+          "name": "--format"
+        },
+        {
+          "args": {
+            "name": "string"
+          },
+          "description": "Show all events created since timestamp",
+          "name": "--since"
+        },
+        {
+          "args": {
+            "name": "string"
+          },
+          "description": "Stream events until this timestamp",
+          "name": "--until"
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "description": "Display podman system information",
+      "options": [
+        {
+          "args": {
+            "name": "string"
+          },
+          "description": "Format the output using the given Go template",
+          "name": [
+            "-f",
+            "--format"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "inspect",
+      "description": "Display the configuration of object denoted by ID",
+      "args": {
+        "name": "Name or ID",
+        "generators": [
+          {
+            "script": [
+              "podman",
+              "ps",
+              "-a",
+              "--format",
+              "{{ json . }}"
+            ],
+            "postProcess": {
+              "handler": "manual.src_podman.spec.subcommands_13_.args.generators_0_.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": [
+              "podman",
+              "images",
+              "-a",
+              "--format",
+              "{{ json . }}"
+            ],
+            "postProcess": {
+              "handler": "manual.src_podman.spec.subcommands_13_.args.generators_1_.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": [
+              "docker",
+              "volume",
+              "ls",
+              "--format",
+              "{{ json . }}"
+            ],
+            "postProcess": {
+              "handler": "manual.src_podman.spec.subcommands_13_.args.generators_2_.postprocess",
+              "version": 1
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format the output using the given Go template",
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "name": [
+            "-s",
+            "--size"
+          ],
+          "description": "Display total file sizes if the type is container"
+        },
+        {
+          "name": "--type",
+          "description": "Return JSON for specified type",
+          "args": {
+            "name": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "description": "Log in to a container registry",
+      "args": {
+        "name": "server"
+      },
+      "options": [
+        {
+          "description": "Password",
+          "name": [
+            "-p",
+            "--password"
+          ],
+          "args": {
+            "name": "string"
+          }
+        },
+        {
+          "description": "Take the password from stdin",
+          "name": "--password-stdin"
+        },
+        {
+          "description": "Username",
+          "name": [
+            "-u",
+            "--username"
+          ],
+          "args": {
+            "name": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "logout",
+      "description": "Log out of a container registry",
+      "args": {
+        "name": "server"
+      }
+    },
+    {
+      "name": "search",
+      "description": "Search registry for image",
+      "args": {
+        "name": "TERM",
+        "description": "Search term"
+      },
+      "options": [
+        {
+          "args": {
+            "name": "filter"
+          },
+          "description": "Filter output based on conditions provided",
+          "name": [
+            "-f",
+            "--filter"
+          ]
+        },
+        {
+          "args": {
+            "name": "string"
+          },
+          "description": "Pretty-print search using a Go template",
+          "name": "--format"
+        },
+        {
+          "args": {
+            "name": "int"
+          },
+          "description": "Max number of search results (default 25)",
+          "name": "--limit"
+        },
+        {
+          "description": "Don't truncate output",
+          "name": "--no-trunc"
+        }
+      ]
+    },
+    {
+      "name": "version",
+      "description": "Display the Podman version information",
+      "options": [
+        {
+          "description": "Format the output. Values: [pretty | json]. (Default: pretty)",
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "args": {
+            "name": "string",
+            "suggestions": [
+              "pretty",
+              "json"
+            ]
+          }
+        },
+        {
+          "description": "Kubernetes config file",
+          "name": "--kubeconfig",
+          "args": {
+            "name": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "description": "Manage containers",
+      "subcommands": [
+        {
+          "name": "inspect",
+          "description": "Return low-level information on Docker objects",
+          "args": {
+            "name": "container",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.runningdockercontainers",
+              "version": 1
+            }
+          },
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-s",
+                "--size"
+              ],
+              "description": "Display total file sizes if the type is container"
+            }
+          ]
+        },
+        {
+          "name": "ls"
+        },
+        {
+          "name": "prune",
+          "description": "Remove all stopped containers",
+          "options": [
+            {
+              "name": "--filter",
+              "description": "Provide filter values (e.g. 'until=<timestamp>')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Do not prompt for confirmation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "image",
+      "description": "Manage images",
+      "subcommands": [
+        {
+          "name": "inspect",
+          "description": "Display detailed information on one or more images",
+          "args": {
+            "name": "image",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.alllocalimages",
+              "version": 1
+            },
+            "isVariadic": true
+          },
+          "options": [
+            {
+              "name": "-f",
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ls"
+        },
+        {
+          "name": "prune",
+          "description": "Remove unused images",
+          "options": [
+            {
+              "name": [
+                "-a",
+                "--all"
+              ],
+              "description": "Remove all unused images, not just dangling ones"
+            },
+            {
+              "name": "--filter",
+              "description": "Provide filter values (e.g. 'until=<timestamp>')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Do not prompt for confirmation"
+            }
+          ]
+        },
+        {
+          "name": "rm"
+        }
+      ]
+    },
+    {
+      "name": "network",
+      "description": "Manage networks",
+      "subcommands": [
+        {
+          "name": "connect",
+          "description": "Connect a container to a network",
+          "args": [
+            {
+              "name": "NETWORK",
+              "generators": {
+                "handler": "manual.src_podman.generator.dockergenerators.listdockernetworks",
+                "version": 1
+              }
+            },
+            {
+              "name": "container",
+              "generators": {
+                "handler": "manual.src_podman.generator.dockergenerators.runningdockercontainers",
+                "version": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "name": "--alias",
+              "description": "Add network-scoped alias for the container",
+              "args": {
+                "name": "strings"
+              }
+            },
+            {
+              "name": "--driver-opt",
+              "description": "Driver options for the network",
+              "args": {
+                "name": "strings"
+              }
+            },
+            {
+              "name": "--ip",
+              "description": "IPv4 address (e.g., 172.30.100.104)",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--ip6",
+              "description": "IPv6 address (e.g., 2001:db8::33)",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--link",
+              "description": "Add link to another container",
+              "args": {
+                "name": "list"
+              }
+            },
+            {
+              "name": "--link-local-ip",
+              "description": "Add a link-local address for the container",
+              "args": {
+                "name": "strings"
+              }
+            }
+          ]
+        },
+        {
+          "name": "create",
+          "description": "Create a network",
+          "args": {
+            "name": "NETWORK"
+          },
+          "options": [
+            {
+              "name": "--attachable",
+              "description": "Enable manual container attachment"
+            },
+            {
+              "name": "--aux-address",
+              "description": "Auxiliary IPv4 or IPv6 addresses used by Network driver (default map[])",
+              "args": {
+                "name": "map"
+              }
+            },
+            {
+              "name": "--config-from",
+              "description": "The network from which to copy the configuration",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--config-only",
+              "description": "Create a configuration only network"
+            },
+            {
+              "name": [
+                "-d",
+                "--driver"
+              ],
+              "description": "Driver to manage the Network (default \"bridge\")",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--gateway",
+              "description": "IPv4 or IPv6 Gateway for the master subnet",
+              "args": {
+                "name": "strings"
+              }
+            },
+            {
+              "name": "--ingress",
+              "description": "Create swarm routing-mesh network"
+            },
+            {
+              "name": "--internal",
+              "description": "Restrict external access to the network"
+            },
+            {
+              "name": "--ip-range",
+              "description": "Allocate container ip from a sub-range",
+              "args": {
+                "name": "strings"
+              }
+            },
+            {
+              "name": "--ipam-driver",
+              "description": "IP Address Management Driver (default \"default\")",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--ipam-opt",
+              "description": "Set IPAM driver specific options (default map[])",
+              "args": {
+                "name": "map"
+              }
+            },
+            {
+              "name": "--ipv6",
+              "description": "Enable IPv6 networking"
+            },
+            {
+              "name": "--label",
+              "description": "Set metadata on a network",
+              "args": {
+                "name": "list"
+              }
+            },
+            {
+              "name": [
+                "-o",
+                "--opt"
+              ],
+              "description": "Set driver specific options (default map[])",
+              "args": {
+                "name": "map"
+              }
+            },
+            {
+              "name": "--scope",
+              "description": "Control the network's scope",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--subnet",
+              "description": "Subnet in CIDR format that represents a network segment",
+              "args": {
+                "name": "strings"
+              }
+            }
+          ]
+        },
+        {
+          "name": "disconnect",
+          "description": "Disconnect a container from a network",
+          "args": [
+            {
+              "name": "NETWORK",
+              "generators": {
+                "handler": "manual.src_podman.generator.dockergenerators.listdockernetworks",
+                "version": 1
+              }
+            },
+            {
+              "name": "container",
+              "generators": {
+                "handler": "manual.src_podman.generator.dockergenerators.runningdockercontainers",
+                "version": 1
+              }
+            }
+          ],
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Force the container to disconnect from a network"
+            }
+          ]
+        },
+        {
+          "name": "inspect",
+          "description": "Display detailed information on one or more networks",
+          "args": {
+            "name": "NETWORK",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockernetworks",
+              "version": 1
+            },
+            "isVariadic": true
+          },
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-v",
+                "--verbose"
+              ],
+              "description": "Verbose output for diagnostics"
+            }
+          ]
+        },
+        {
+          "name": "ls",
+          "description": "List networks",
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--filter"
+              ],
+              "description": "Provide filter values (e.g. 'driver=bridge')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": "--format",
+              "description": "Pretty-print networks using a Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--no-trunc",
+              "description": "Do not truncate the output"
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Only display network IDs"
+            }
+          ]
+        },
+        {
+          "name": "prune",
+          "description": "Remove all unused networks",
+          "options": [
+            {
+              "name": "--filter",
+              "description": "Provide filter values (e.g. 'until=<timestamp>')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Do not prompt for confirmation"
+            }
+          ]
+        },
+        {
+          "name": "rm",
+          "description": "Remove one or more networks",
+          "args": {
+            "name": "NETWORK",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockernetworks",
+              "version": 1
+            },
+            "isVariadic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "secret",
+      "description": "Manage secrets",
+      "subcommands": [
+        {
+          "name": "create",
+          "description": "Create a secret from a file or STDIN as content",
+          "args": [
+            {
+              "name": "SECRET NAME"
+            },
+            {
+              "name": "SECRET",
+              "template": "filepaths"
+            }
+          ],
+          "options": [
+            {
+              "name": [
+                "-d",
+                "--driver"
+              ],
+              "description": "Secret driver",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-l",
+                "--label"
+              ],
+              "description": "Secret labels",
+              "args": {
+                "name": "list"
+              }
+            },
+            {
+              "name": "--template-driver",
+              "description": "Template driver",
+              "args": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "inspect",
+          "description": "Display detailed information on one or more secrets",
+          "args": {
+            "name": "SECRET",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockersecrets",
+              "version": 1
+            },
+            "isVariadic": true
+          },
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--pretty",
+              "description": "Print the information in a human friendly format"
+            }
+          ]
+        },
+        {
+          "name": "ls",
+          "description": "List secrets",
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--filter"
+              ],
+              "description": "Filter output based on conditions provided",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": "--format",
+              "description": "Pretty-print secrets using a Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Only display IDs"
+            }
+          ]
+        },
+        {
+          "name": "rm",
+          "description": "Remove one or more secrets",
+          "args": {
+            "name": "SECRET",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockersecrets",
+              "version": 1
+            },
+            "isVariadic": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "system",
+      "description": "Manage podman",
+      "subcommands": [
+        {
+          "name": "prune",
+          "description": "Remove unused data",
+          "options": [
+            {
+              "name": [
+                "-a",
+                "--all"
+              ],
+              "description": "Remove all unused images not just dangling ones"
+            },
+            {
+              "name": "--filter",
+              "description": "Provide filter values (e.g. 'label=<key>=<value')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Do not prompt for confirmation"
+            },
+            {
+              "name": "--volumes",
+              "description": "Prune volumes"
+            }
+          ]
+        },
+        {
+          "name": "df",
+          "description": "Show podman disk usage",
+          "options": [
+            {
+              "name": "--format",
+              "description": "Pretty-print images using a Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-v",
+                "--verbose"
+              ],
+              "description": "Show detailed information on space usage"
+            }
+          ]
+        },
+        {
+          "name": "events",
+          "description": "Get real time events from the server",
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--filter"
+              ],
+              "description": "Filter output based on conditions provided",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": "--format",
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--since",
+              "description": "Show all events created since timestamp",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--until",
+              "description": "Stream events until this timestamp",
+              "args": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "info",
+          "description": "Display podman system information",
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "volume",
+      "description": "Manage volumes",
+      "subcommands": [
+        {
+          "name": "create",
+          "description": "Create a volume",
+          "args": {
+            "name": "VOLUME"
+          },
+          "options": [
+            {
+              "name": [
+                "-d",
+                "--driver"
+              ],
+              "description": "Specify volume driver name (default \"local\")",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": "--label",
+              "description": "Set metadata for a volume",
+              "args": {
+                "name": "list"
+              }
+            },
+            {
+              "name": [
+                "-o",
+                "--opt"
+              ],
+              "description": "Set driver specific options (default map[])",
+              "args": {
+                "name": "map"
+              }
+            }
+          ]
+        },
+        {
+          "name": "inspect",
+          "description": "Display detailed information on one or more volumes",
+          "args": {
+            "name": "VOLUME",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockervolumes",
+              "version": 1
+            },
+            "isVariadic": true
+          },
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format the output using the given Go template",
+              "args": {
+                "name": "string"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ls",
+          "description": "List volumes",
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--filter"
+              ],
+              "description": "Provide filter values (e.g. 'dangling=true')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": "--format",
+              "description": "Pretty-print volumes using a Go template",
+              "args": {
+                "name": "string"
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Only display volume names"
+            }
+          ]
+        },
+        {
+          "name": "prune",
+          "description": "Remove all unused local volumes",
+          "options": [
+            {
+              "name": "--filter",
+              "description": "Provide filter values (e.g. 'label=<label>')",
+              "args": {
+                "name": "filter"
+              }
+            },
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Do not prompt for confirmation"
+            }
+          ]
+        },
+        {
+          "name": "rm",
+          "description": "Remove one or more volumes",
+          "args": {
+            "name": "VOLUME",
+            "generators": {
+              "handler": "manual.src_podman.generator.dockergenerators.listdockervolumes",
+              "version": 1
+            },
+            "isVariadic": true
+          },
+          "options": [
+            {
+              "name": [
+                "-f",
+                "--force"
+              ],
+              "description": "Force the removal of one or more volumes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "compose",
+      "description": "Run compose workloads via an external provider such as docker-compose or podman-compose",
+      "loadSpec": "docker-compose"
+    },
+    {
+      "name": "generate",
+      "description": "Generate structured data based on containers, pods or volumes"
+    },
+    {
+      "name": "healthcheck",
+      "description": "Manage health checks on containers"
+    },
+    {
+      "name": "help",
+      "description": "Help about any command"
+    },
+    {
+      "name": "init",
+      "description": "Initialize one or more containers"
+    },
+    {
+      "name": "kube",
+      "description": "Play containers, pods or volumes from a structured file"
+    },
+    {
+      "name": "machine",
+      "description": "Manage a virtual machine",
+      "subcommands": [
+        {
+          "name": "info",
+          "description": "Display machine host info"
+        },
+        {
+          "name": "init",
+          "description": "Initialize a virtual machine"
+        },
+        {
+          "name": "inspect",
+          "description": "Inspect an existing machine"
+        },
+        {
+          "name": "list",
+          "description": "List machines"
+        },
+        {
+          "name": "os",
+          "description": "Manage a Podman virtual machine's OS"
+        },
+        {
+          "name": "rm",
+          "description": "Remove an existing machine"
+        },
+        {
+          "name": "set",
+          "description": "Set a virtual machine setting"
+        },
+        {
+          "name": "ssh",
+          "description": "SSH into an existing machine"
+        },
+        {
+          "name": "start",
+          "description": "Start an existing machine"
+        },
+        {
+          "name": "stop",
+          "description": "Stop an existing machine"
+        }
+      ]
+    },
+    {
+      "name": "manifest",
+      "description": "Manipulate manifest lists and image indexes"
+    },
+    {
+      "name": "pod",
+      "description": "Manage pods"
+    },
+    {
+      "name": "untag",
+      "description": "Remove a name from a local image"
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "--connection",
+        "-c"
+      ],
+      "description": "Connection to use for remote Podman service"
+    },
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Help for podman"
+    },
+    {
+      "name": "--identity",
+      "description": "Path to SSH identity file, (CONTAINER_SSHKEY)"
+    },
+    {
+      "name": "--log-level",
+      "description": "Log messages above specified level (trace, debug, info, warn, warning, error, fatal, panic) (default 'warn')"
+    },
+    {
+      "name": "--out",
+      "description": "Send output (stdout) from podman to a file"
+    },
+    {
+      "name": "--ssh",
+      "description": "Define the ssh mode (default 'golang')"
+    },
+    {
+      "name": "--storage-opt",
+      "description": "Used to pass an option to the storage driver"
+    },
+    {
+      "name": "--url",
+      "description": "URL to access Podman service (CONTAINER_HOST)"
+    },
+    {
+      "name": [
+        "--version",
+        "-v"
+      ],
+      "description": "Version for podman"
+    }
+  ]
+}

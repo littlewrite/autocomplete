@@ -1,0 +1,5770 @@
+{
+  "schemaVersion": 1,
+  "name": "tsh",
+  "description": "TSH: Teleport Authentication Gateway Client",
+  "subcommands": [
+    {
+      "name": "version",
+      "description": "Print the version"
+    },
+    {
+      "name": "ssh",
+      "description": "Run shell or execute a command on a remote SSH node",
+      "args": {
+        "name": "user@hostname",
+        "description": "Address of remote machine to log into",
+        "generators": {
+          "script": [
+            "tsh",
+            "ls",
+            "--format=json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_tsh.spec.subcommands_1_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "aws",
+      "description": "Access AWS API",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "apps",
+      "description": "View and control proxied applications",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ],
+      "subcommands": [
+        {
+          "name": "ls",
+          "description": "List available applications",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ],
+          "description": "Retrieve short-lived certificate for an app"
+        },
+        {
+          "name": "logout",
+          "description": "Remove app certificate",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "config",
+          "description": "Print app connection information",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "proxy",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ],
+      "description": "Run local TLS proxy allowing connecting to Teleport in single-port mode",
+      "subcommands": [
+        {
+          "name": "ssh",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ],
+          "description": "Start local TLS proxy for ssh connections when using Teleport in single-port mode"
+        },
+        {
+          "name": "db",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ],
+          "description": "Start local TLS proxy for database connections when using Teleport in single-port mode"
+        }
+      ]
+    },
+    {
+      "name": "db",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ],
+      "description": "View and control proxied databases",
+      "subcommands": [
+        {
+          "name": "ls",
+          "description": "List all available databases",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "Retrieve credentials for a database",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "description": "Remove database credentials",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "env",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ],
+          "description": "Print environment variables for the configured database"
+        },
+        {
+          "name": "config",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ],
+          "description": "Print database connection information. Useful when configuring GUI clients"
+        },
+        {
+          "name": "connect",
+          "description": "Connect   Connect to a database",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "join",
+      "description": "Join the active SSH session",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "play",
+      "description": "Replay the recorded SSH session",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "scp",
+      "description": "Secure file copy",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "ls",
+      "description": "List remote SSH nodes",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "clusters",
+      "description": "List available Teleport clusters",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "description": "Log in to a cluster and retrieve the session certificate",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "logout",
+      "description": "Delete a cluster certificate",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "description": "Display the list of proxy servers and retrieved certificates",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "env",
+      "description": "Print commands to set Teleport session environment variables",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "request",
+      "description": "Manage access requests",
+      "subcommands": [
+        {
+          "name": "ls",
+          "description": "List access requests",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "show",
+          "description": "Show request details",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "new",
+          "description": "Create a new access request",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "review",
+          "description": "Review an access request",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "kube",
+      "description": "Manage available kubernetes clusters",
+      "subcommands": [
+        {
+          "name": "ls",
+          "description": "Get a list of kubernetes clusters",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "login",
+          "description": "Login to a kubernetes cluster",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "sessions",
+          "description": "Get a list of active kubernetes sessions",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "exec",
+          "description": "Execute a command in a kubernetes pod",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "join",
+          "description": "Join an active Kubernetes session",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "mfa",
+      "description": "Manage multi-factor authentication (MFA) devices",
+      "subcommands": [
+        {
+          "name": "ls",
+          "description": "Get a list of registered MFA devices",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "add",
+          "description": "Add a new MFA device",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        },
+        {
+          "name": "rm",
+          "description": "Remove a MFA device",
+          "options": [
+            {
+              "name": [
+                "-l",
+                "--login"
+              ],
+              "description": "Remote host login"
+            },
+            {
+              "name": "--proxy",
+              "description": "SSH proxy address",
+              "args": {
+                "name": "Teleport proxy address",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "clusters",
+                    "--format=json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--user",
+              "description": "SSH proxy user",
+              "args": {
+                "name": "user",
+                "generators": {
+                  "script": [
+                    "tsh",
+                    "status",
+                    "--format",
+                    "json"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                    "version": 1
+                  }
+                }
+              }
+            },
+            {
+              "name": "--ttl",
+              "description": "Minutes to live for a SSH session",
+              "args": {
+                "name": "time"
+              }
+            },
+            {
+              "name": [
+                "-i",
+                "--identity"
+              ],
+              "description": "Identity file",
+              "args": {
+                "name": "file",
+                "template": "filepaths"
+              }
+            },
+            {
+              "name": "--cert-format",
+              "description": "SSH certificate format",
+              "args": {}
+            },
+            {
+              "name": "--insecure",
+              "description": "Do not verify server's certificate and host name. Use only in test environments"
+            },
+            {
+              "name": "--auth",
+              "description": "Specify the name of authentication connector to use",
+              "args": {}
+            },
+            {
+              "name": "--skip-version-check",
+              "description": "Skip version checking between server and client"
+            },
+            {
+              "name": [
+                "-d",
+                "--debug"
+              ],
+              "description": "Verbose logging to stdout"
+            },
+            {
+              "name": [
+                "-k",
+                "--add-keys-to-agent"
+              ],
+              "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+            },
+            {
+              "name": "--enable-escape-sequences",
+              "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+            },
+            {
+              "name": "--bind-addr",
+              "description": "Override host:port used when opening a browser for cluster logins"
+            },
+            {
+              "name": [
+                "-J",
+                "--jumphost"
+              ],
+              "description": "SSH jumphost"
+            },
+            {
+              "name": [
+                "-f",
+                "--format"
+              ],
+              "description": "Format output",
+              "args": {
+                "name": "format",
+                "suggestions": [
+                  "text",
+                  "json",
+                  "yaml"
+                ]
+              }
+            },
+            {
+              "name": [
+                "-q",
+                "--quiet"
+              ],
+              "description": "Quiet mode"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    },
+    {
+      "name": "config",
+      "description": "Print OpenSSH configuration details",
+      "options": [
+        {
+          "name": [
+            "-l",
+            "--login"
+          ],
+          "description": "Remote host login"
+        },
+        {
+          "name": "--proxy",
+          "description": "SSH proxy address",
+          "args": {
+            "name": "Teleport proxy address",
+            "generators": {
+              "script": [
+                "tsh",
+                "clusters",
+                "--format=json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--user",
+          "description": "SSH proxy user",
+          "args": {
+            "name": "user",
+            "generators": {
+              "script": [
+                "tsh",
+                "status",
+                "--format",
+                "json"
+              ],
+              "postProcess": {
+                "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+                "version": 1
+              }
+            }
+          }
+        },
+        {
+          "name": "--ttl",
+          "description": "Minutes to live for a SSH session",
+          "args": {
+            "name": "time"
+          }
+        },
+        {
+          "name": [
+            "-i",
+            "--identity"
+          ],
+          "description": "Identity file",
+          "args": {
+            "name": "file",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--cert-format",
+          "description": "SSH certificate format",
+          "args": {}
+        },
+        {
+          "name": "--insecure",
+          "description": "Do not verify server's certificate and host name. Use only in test environments"
+        },
+        {
+          "name": "--auth",
+          "description": "Specify the name of authentication connector to use",
+          "args": {}
+        },
+        {
+          "name": "--skip-version-check",
+          "description": "Skip version checking between server and client"
+        },
+        {
+          "name": [
+            "-d",
+            "--debug"
+          ],
+          "description": "Verbose logging to stdout"
+        },
+        {
+          "name": [
+            "-k",
+            "--add-keys-to-agent"
+          ],
+          "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+        },
+        {
+          "name": "--enable-escape-sequences",
+          "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+        },
+        {
+          "name": "--bind-addr",
+          "description": "Override host:port used when opening a browser for cluster logins"
+        },
+        {
+          "name": [
+            "-J",
+            "--jumphost"
+          ],
+          "description": "SSH jumphost"
+        },
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format output",
+          "args": {
+            "name": "format",
+            "suggestions": [
+              "text",
+              "json",
+              "yaml"
+            ]
+          }
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Quiet mode"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "-l",
+        "--login"
+      ],
+      "description": "Remote host login"
+    },
+    {
+      "name": "--proxy",
+      "description": "SSH proxy address",
+      "args": {
+        "name": "Teleport proxy address",
+        "generators": {
+          "script": [
+            "tsh",
+            "clusters",
+            "--format=json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_tsh.definition.globaloptions_1_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "--user",
+      "description": "SSH proxy user",
+      "args": {
+        "name": "user",
+        "generators": {
+          "script": [
+            "tsh",
+            "status",
+            "--format",
+            "json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_tsh.definition.globaloptions_2_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "--ttl",
+      "description": "Minutes to live for a SSH session",
+      "args": {
+        "name": "time"
+      }
+    },
+    {
+      "name": [
+        "-i",
+        "--identity"
+      ],
+      "description": "Identity file",
+      "args": {
+        "name": "file",
+        "template": "filepaths"
+      }
+    },
+    {
+      "name": "--cert-format",
+      "description": "SSH certificate format",
+      "args": {}
+    },
+    {
+      "name": "--insecure",
+      "description": "Do not verify server's certificate and host name. Use only in test environments"
+    },
+    {
+      "name": "--auth",
+      "description": "Specify the name of authentication connector to use",
+      "args": {}
+    },
+    {
+      "name": "--skip-version-check",
+      "description": "Skip version checking between server and client"
+    },
+    {
+      "name": [
+        "-d",
+        "--debug"
+      ],
+      "description": "Verbose logging to stdout"
+    },
+    {
+      "name": [
+        "-k",
+        "--add-keys-to-agent"
+      ],
+      "description": "Controls how keys are handled. Valid values are [auto no yes only]"
+    },
+    {
+      "name": "--enable-escape-sequences",
+      "description": "Enable support for SSH escape sequences. Type '~?' during an SSH session to list supported sequences. Default is enabled"
+    },
+    {
+      "name": "--bind-addr",
+      "description": "Override host:port used when opening a browser for cluster logins"
+    },
+    {
+      "name": [
+        "-J",
+        "--jumphost"
+      ],
+      "description": "SSH jumphost"
+    }
+  ]
+}

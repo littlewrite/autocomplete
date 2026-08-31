@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "name": "az",
+  "versionedSpec": {
+    "cacheKey": "az",
+    "getVersion": {
+      "handler": "manual.src_az.index.getversioncommand",
+      "version": 1
+    },
+    "versions": [
+      {
+        "version": "2.53.0",
+        "loadSpec": "az/2.53.0"
+      }
+    ]
+  }
+}

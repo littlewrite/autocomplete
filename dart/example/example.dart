@@ -84,7 +84,6 @@ Future<void> main(List<String> args) async {
         ? MissingJsonHandlerPolicy.reject
         : MissingJsonHandlerPolicy.returnEmpty,
   );
-  registerMigratedJsonHandlers(handlers);
   await registerJsonSpecs(
     reader: (relativePath) {
       reads.add(relativePath);

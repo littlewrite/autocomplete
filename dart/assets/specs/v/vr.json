@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "name": "vr",
+  "description": "The npm-style script runner for Deno",
+  "subcommands": [
+    {
+      "name": "run",
+      "description": "Run a script",
+      "args": {
+        "name": "script",
+        "generators": {
+          "cache": {
+            "strategy": "stale-while-revalidate"
+          },
+          "script": {
+            "command": "vr",
+            "args": [],
+            "env": {
+              "NO_COLOR": "1"
+            }
+          },
+          "postProcess": {
+            "handler": "manual.src_vr.definition.scriptgenerator.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "export",
+      "description": "Export one or more scripts as standalone executable files",
+      "args": {
+        "name": "script",
+        "isVariadic": true,
+        "generators": {
+          "cache": {
+            "strategy": "stale-while-revalidate"
+          },
+          "script": {
+            "command": "vr",
+            "args": [],
+            "env": {
+              "NO_COLOR": "1"
+            }
+          },
+          "postProcess": {
+            "handler": "manual.src_vr.definition.scriptgenerator.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "upgrade",
+      "description": "Upgrade Velociraptor to the latest version or to a specific one",
+      "args": {
+        "name": "version",
+        "isOptional": true
+      },
+      "options": [
+        {
+          "name": [
+            "-o",
+            "--out-dir"
+          ],
+          "description": "The folder where the scripts will be exported",
+          "args": {
+            "name": "dir"
+          }
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Show help for Velociraptor",
+      "isPersistent": true
+    },
+    {
+      "name": [
+        "-V",
+        "--version"
+      ],
+      "description": "Show the version number for Velociraptor"
+    }
+  ],
+  "args": {
+    "name": "script",
+    "generators": {
+      "cache": {
+        "strategy": "stale-while-revalidate"
+      },
+      "script": {
+        "command": "vr",
+        "args": [],
+        "env": {
+          "NO_COLOR": "1"
+        }
+      },
+      "postProcess": {
+        "handler": "manual.src_vr.definition.scriptgenerator.postprocess",
+        "version": 1
+      }
+    }
+  }
+}

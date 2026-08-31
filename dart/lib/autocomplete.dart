@@ -7,20 +7,14 @@
 // intentionally has no compile-time import of the generated command catalog.
 
 import 'src/json_spec.dart';
+import 'src/spec_handlers/handler_index.dart' as handler_index;
 import 'src/runtime.dart' show EnsureSpecLoaded;
-import 'src/spec_handlers/aws.dart';
-import 'src/spec_handlers/az.dart';
-import 'src/spec_handlers/chown.dart';
-import 'src/spec_handlers/echo.dart';
-import 'src/spec_handlers/fig.dart';
-import 'src/spec_handlers/git.dart';
-import 'src/spec_handlers/heroku.dart';
-import 'src/spec_handlers/npm.dart';
 
 export 'src/adapter.dart';
 export 'src/generators.dart';
 export 'src/model.dart';
 export 'src/json_spec.dart';
+export 'src/spec_handlers/handler_index.dart' show registerCommandHandlers;
 export 'src/parser.dart';
 export 'src/registry.dart';
 export 'src/runtime.dart';
@@ -47,32 +41,46 @@ void registerBuiltinSpecs() {
 /// The caller supplies the platform-specific asset reader (filesystem,
 /// Flutter asset bundle, HTTP, etc.). Supply [fallback] only when the host
 /// application provides its own legacy loader.
+///
+/// When [handlers] is provided, a command's dynamic handlers are registered
+/// **on demand** — right when that command's JSON spec is first loaded (its
+/// deferred handler library is `loadLibrary()`ed at that moment). This keeps
+/// the load-on-use discipline for both data (JSON) and code (handlers), the
+/// same contract the old v2 `ensureSpecLoadedV2` had.
+///
+/// Pass `eagerHandlers: true` only if you want every handler registered up
+/// front (for example a tool that dumps the full registered-ID set without
+/// loading specs); in that case the registration is awaited internally.
 Future<JsonSpecStore> registerJsonSpecs({
   required JsonAssetReader reader,
   JsonHandlerRegistry? handlers,
   EnsureSpecLoaded? fallback,
+  bool eagerHandlers = false,
 }) async {
   final store = JsonSpecStore(
     reader: reader,
     handlers: handlers,
     fallback: fallback,
+    lazyHandlerRegistrar: !eagerHandlers && handlers != null
+        ? (command, registry) =>
+            handler_index.registerCommandHandlers(registry, command)
+        : null,
   );
+  if (eagerHandlers && handlers != null) {
+    await registerMigratedJsonHandlers(handlers);
+  }
   await store.register();
   return store;
 }
 
 /// Register the reviewed host-language handlers referenced by shipped JSON.
 ///
-/// This is intentionally opt-in: static-only callers can register JSON specs
-/// without calling it, while applications that need dynamic suggestions and
-/// version detection use the same public library entry point.
-void registerMigratedJsonHandlers(JsonHandlerRegistry registry) {
-  registerAwsHandlers(registry);
-  registerAzHandlers(registry);
-  registerChownHandlers(registry);
-  registerEchoHandlers(registry);
-  registerFigHandlers(registry);
-  registerGitHandlers(registry);
-  registerHerokuHandlers(registry);
-  registerNpmHandlers(registry);
+/// Normally you don't call this yourself: [registerJsonSpecs] registers each
+/// command's handlers lazily on use. Call this directly only when you need the
+/// full handler set without a spec store (for example the dump tool), or with
+/// `eagerHandlers: true` to have [registerJsonSpecs] do it for you. It is
+/// `Future<void>` — always await.
+Future<void> registerMigratedJsonHandlers(JsonHandlerRegistry registry) async {
+  // Deferred: loadLibrary() each command's handler library, then register.
+  await handler_index.registerMigratedJsonHandlers(registry);
 }

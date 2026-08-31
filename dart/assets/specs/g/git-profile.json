@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "name": "git-profile",
+  "description": "Switch profiles",
+  "subcommands": [
+    {
+      "name": "use",
+      "description": "Use a profile",
+      "args": {
+        "name": "profile",
+        "description": "Profile you want to apply in this repository",
+        "generators": {
+          "script": [
+            "git-profile",
+            "list"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git-profile.spec.subcommands_0_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Help for git-profile script"
+    },
+    {
+      "name": [
+        "--config",
+        "-c"
+      ],
+      "description": "Config file (default \"~/.gitprofile\")"
+    }
+  ]
+}

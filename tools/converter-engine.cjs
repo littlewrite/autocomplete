@@ -299,58 +299,114 @@ class TsToDartConverter {
    * 从 code 的 startIndex（指向 [ 的位置）起，按括号平衡提取到匹配的 ]，返回 [...] 的完整字符串
    */
   extractBalancedBracketArray(code, startIndex) {
-    if (code[startIndex] !== "[") return null;
-    let depth = 0;
-    let inString = false;
-    let stringChar = "";
-    for (let i = startIndex; i < code.length; i++) {
-      const c = code[i];
-      const prev = i > 0 ? code[i - 1] : "";
-      if (!inString) {
-        if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
-          inString = true;
-          stringChar = c;
-        } else if (c === "[") depth++;
-        else if (c === "]") {
-          depth--;
-          if (depth === 0) return code.slice(startIndex, i + 1);
-        }
-      } else if (c === stringChar && prev !== "\\") inString = false;
-    }
-    return null;
+    return this.extractBalancedDelimited(code, startIndex, "[");
   }
 
   /**
    * 从 code 的 startIndex（指向 { 的位置）起，按括号平衡提取到匹配的 }，返回 { ... } 的完整字符串（含首尾花括号）
-   * 模板字符串内的 ${ } 也会参与深度计数，以便正确匹配外层对象的 }
+   * 模板字符串文本中的括号不参与计数；`${...}` 表达式中的括号会被正确跟踪。
    */
   extractBalancedBraceObject(code, startIndex) {
-    if (code[startIndex] !== "{") return null;
-    let depth = 0;
-    let inString = false;
-    let stringChar = "";
-    for (let i = startIndex; i < code.length; i++) {
+    return this.extractBalancedDelimited(code, startIndex, "{");
+  }
+
+  /**
+   * 提取由括号包围的 JavaScript 片段。
+   * 模板字符串的文本部分完全不参与括号计数；`${...}` 表达式重新进入
+   * 代码状态，并使用 marker 识别表达式末尾的 `}`。这比用一个 inString
+   * 标志同时处理普通字符串和模板字符串可靠得多。
+   */
+  extractBalancedDelimited(code, startIndex, opening) {
+    const closingByOpening = { "{": "}", "[": "]", "(": ")" };
+    const closing = closingByOpening[opening];
+    if (!closing || code[startIndex] !== opening) return null;
+
+    // Start with an empty stack and let the loop consume `opening` exactly
+    // once. Initialising it with `opening` would double-count the first brace.
+    const stack = [];
+    let state = "code";
+    let i = startIndex;
+
+    while (i < code.length) {
       const c = code[i];
-      const prev = i > 0 ? code[i - 1] : "";
       const next = i + 1 < code.length ? code[i + 1] : "";
-      if (!inString) {
-        if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
-          inString = true;
-          stringChar = c;
-        } else if (c === "{") depth++;
-        else if (c === "}") {
-          depth--;
-          if (depth === 0) return code.slice(startIndex, i + 1);
+
+      if (state === "template") {
+        if (c === "\\") {
+          i += 2;
+          continue;
         }
-      } else {
-        if (c === stringChar && prev !== "\\") {
-          inString = false;
-        } else if (stringChar === "`" && c === "{" && next === "$") {
-          depth++;
-        } else if (stringChar === "`" && c === "}") {
-          depth--;
+        if (c === "`") {
+          state = "code";
+          i++;
+          continue;
         }
+        if (c === "$" && next === "{") {
+          stack.push("templateExpr");
+          stack.push("{");
+          state = "code";
+          i += 2;
+          continue;
+        }
+        i++;
+        continue;
       }
+
+      // Comments are code-level tokens, but braces in them must be ignored.
+      if (c === "/" && next === "/") {
+        i += 2;
+        while (i < code.length && code[i] !== "\n") i++;
+        continue;
+      }
+      if (c === "/" && next === "*") {
+        i += 2;
+        while (i + 1 < code.length && !(code[i] === "*" && code[i + 1] === "/")) i++;
+        i = Math.min(code.length, i + 2);
+        continue;
+      }
+
+      if (c === "'" || c === '"') {
+        const quote = c;
+        i++;
+        while (i < code.length) {
+          if (code[i] === "\\") {
+            i += 2;
+          } else if (code[i] === quote) {
+            i++;
+            break;
+          } else {
+            i++;
+          }
+        }
+        continue;
+      }
+      if (c === "`") {
+        state = "template";
+        i++;
+        continue;
+      }
+
+      if (c === "{" || c === "[" || c === "(") {
+        stack.push(c);
+        i++;
+        continue;
+      }
+      if (c === "}" || c === "]" || c === ")") {
+        const expected = closingByOpening[stack[stack.length - 1]];
+        if (expected !== c) {
+          // A malformed source fragment should not make us silently return a
+          // truncated object. Keep scanning and let the caller report failure.
+          i++;
+          continue;
+        }
+        stack.pop();
+        if (stack[stack.length - 1] === "templateExpr" && c === "}") {
+          stack.pop();
+          state = "template";
+        }
+        if (stack.length === 0) return code.slice(startIndex, i + 1);
+      }
+      i++;
     }
     return null;
   }
@@ -497,33 +553,10 @@ class TsToDartConverter {
 
   /**
    * 从 code 的 startIndex（指向 { 的位置）起，用括号平衡提取完整对象，返回 { ... } 字符串
-   * 模板字符串内的 ${ } 参与深度计数（与 extractBalancedBraceObject 一致）
+   * 模板字符串文本中的括号不参与计数，`${...}` 表达式中的括号会被跟踪。
    */
   extractSpecObjectFromPosition(code, startIndex) {
-    if (code[startIndex] !== "{") return null;
-    let depth = 0;
-    let inString = false;
-    let stringChar = "";
-    for (let i = startIndex; i < code.length; i++) {
-      const c = code[i];
-      const prev = i > 0 ? code[i - 1] : "";
-      const next = i + 1 < code.length ? code[i + 1] : "";
-      if (!inString) {
-        if ((c === '"' || c === "'" || c === "`") && prev !== "\\") {
-          inString = true;
-          stringChar = c;
-        } else if (c === "{") depth++;
-        else if (c === "}") {
-          depth--;
-          if (depth === 0) return code.slice(startIndex, i + 1);
-        }
-      } else {
-        if (c === stringChar && prev !== "\\") inString = false;
-        else if (stringChar === "`" && c === "{" && next === "$") depth++;
-        else if (stringChar === "`" && c === "}") depth--;
-      }
-    }
-    return null;
+    return this.extractBalancedDelimited(code, startIndex, "{");
   }
 
   /**
@@ -822,11 +855,13 @@ class TsToDartConverter {
    */
   parseProperties(objStr) {
     const properties = [];
+    const hasOuterBraces = objStr.trim().startsWith("{");
     let currentKey = "";
     let currentValue = "";
     let depth = 0;
     let depthBrace = 0; // 仅 { } 的深度，用于区分「在对象内」与「在数组内」
     let depthBracket = 0;
+    let depthParen = 0;
     let inString = false;
     let stringChar = "";
     let inLineComment = false;
@@ -906,6 +941,10 @@ class TsToDartConverter {
       } else if (char === "[") {
         depth++;
         depthBracket++;
+      } else if (char === "(") {
+        depthParen++;
+      } else if (char === ")") {
+        depthParen--;
       } else if (char === "}") {
         depth--;
         depthBrace--;
@@ -915,6 +954,7 @@ class TsToDartConverter {
         // return to depth zero here, but it is not the end of the object
         // being parsed. Preserve that closing brace for the value instead.
         if (
+          hasOuterBraces &&
           depthBrace === 0 &&
           depthBracket === 0 &&
           !isKey &&
@@ -938,6 +978,16 @@ class TsToDartConverter {
         depthBracket--;
       }
 
+      // Method shorthand (`postProcess(out) {...}`) has no `:` separating the
+      // key from its body. When an identifier key is followed by `(`, treat the
+      // parenthesized parameters and their block as the value.
+      if (char === "(" && isKey && /^[a-zA-Z_$][a-zA-Z0-9_]*$/.test(currentKey.trim())) {
+        isKey = false;
+        currentKey = currentKey.trim();
+        currentValue += char;
+        continue;
+      }
+
       // 处理键值分隔符（任意深度；否则嵌套对象如 parserDirectives: { a: true } 的 key 会带冒号）
       if (char === ":" && isKey) {
         isKey = false;
@@ -948,9 +998,10 @@ class TsToDartConverter {
       // 属性分隔符：在顶层或在「仅一层对象内且不在数组内」且当前 value 不是对象/数组（否则会截断 args: { name: "config", ... }）
       const valTrim = currentValue.trim();
       const atObjectLevel =
-        depth === 0 ||
+        (depth === 0 && depthParen === 0) ||
         (depthBrace === 1 &&
           depthBracket === 0 &&
+          depthParen === 0 &&
           !valTrim.startsWith("{") &&
           !valTrim.startsWith("["));
       if (char === "," && atObjectLevel) {

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "name": "kubectx",
+  "description": "Switch between Kubernetes-contexts",
+  "additionalSuggestions": [
+    {
+      "name": "-",
+      "priority": 85,
+      "description": "Switch to previous context",
+      "icon": "fig://icon?type=asterisk"
+    }
+  ],
+  "parserDirectives": {
+    "flagsArePosixNoncompliant": true
+  },
+  "options": [
+    {
+      "name": [
+        "--help",
+        "-h"
+      ],
+      "description": "Show help for kubectx"
+    },
+    {
+      "name": [
+        "--current",
+        "-c"
+      ],
+      "description": "Show current context"
+    },
+    {
+      "name": [
+        "--unset",
+        "-u"
+      ],
+      "description": "Unset the current context"
+    },
+    {
+      "name": "-d",
+      "description": "Delete context",
+      "isDangerous": true,
+      "args": {
+        "name": "context",
+        "isVariadic": true,
+        "generators": {
+          "script": [
+            "kubectx"
+          ],
+          "postProcess": {
+            "handler": "manual.src_kubectx.spec.options_3_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    }
+  ],
+  "args": {
+    "name": "context",
+    "generators": [
+      {
+        "script": [
+          "bash",
+          "-c",
+          "kubectx | grep -v $(kubectx -c)"
+        ],
+        "postProcess": {
+          "handler": "manual.src_kubectx.spec.args.generators_0_.postprocess",
+          "version": 1
+        }
+      },
+      {
+        "script": [
+          "kubectx",
+          "-c"
+        ],
+        "postProcess": {
+          "handler": "manual.src_kubectx.spec.args.generators_1_.postprocess",
+          "version": 1
+        }
+      }
+    ],
+    "isOptional": true
+  }
+}

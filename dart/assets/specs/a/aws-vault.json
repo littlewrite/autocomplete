@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "aws-vault",
+  "description": "A vault for securely storing and accessing AWS credentials in development environments",
+  "options": [
+    {
+      "name": "--help",
+      "description": "Show context-sensitive help (also try --help-long and --help-man)"
+    },
+    {
+      "name": "--version",
+      "description": "Show application version"
+    },
+    {
+      "name": "--debug",
+      "description": "Show debugging output"
+    }
+  ]
+}

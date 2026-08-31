@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "name": "limactl",
+  "description": "Control the Lima(Linux virtual machines)",
+  "subcommands": [
+    {
+      "name": "completion",
+      "description": "Generate the autocompletion script for the specified shell",
+      "subcommands": {
+        "handler": "manual.src_limactl.spec.subcommands_0_.subcommands",
+        "version": 1
+      },
+      "options": []
+    },
+    {
+      "name": [
+        "copy",
+        "cp"
+      ],
+      "description": "Copy files between host and guest",
+      "args": [
+        {
+          "name": "SOURCE",
+          "isVariadic": true,
+          "generators": [
+            {
+              "template": "filepaths"
+            }
+          ]
+        },
+        {
+          "name": "TARGET",
+          "generators": [
+            {
+              "template": "filepaths"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "name": [
+            "-r",
+            "--recursive"
+          ],
+          "description": "Copy directories recursively"
+        }
+      ]
+    },
+    {
+      "name": [
+        "delete",
+        "remove",
+        "rm"
+      ],
+      "description": "Delete an instance of Lima",
+      "args": {
+        "name": "INSTANCE",
+        "isVariadic": true,
+        "generators": {
+          "handler": "manual.src_limactl.spec.subcommands_2_.args.generators",
+          "version": 1
+        }
+      },
+      "options": [
+        {
+          "name": [
+            "-f",
+            "--force"
+          ],
+          "description": "Forcibly kill the processes",
+          "isDangerous": true
+        }
+      ]
+    },
+    {
+      "name": "info",
+      "description": "Show diagnostic information",
+      "options": []
+    },
+    {
+      "name": [
+        "list",
+        "ls"
+      ],
+      "description": "List instances of Lima",
+      "options": [
+        {
+          "name": "--json",
+          "description": "JSONify output"
+        },
+        {
+          "name": [
+            "-q",
+            "--quiet"
+          ],
+          "description": "Only show names"
+        }
+      ]
+    },
+    {
+      "name": "prune",
+      "description": "Prune garbage objects",
+      "isDangerous": true,
+      "options": []
+    },
+    {
+      "name": "shell",
+      "description": "Lima command is provided as an alias for limactl shell $LIMA_INSTANCE. $LIMA_INSTANCE defaults to \"default\"",
+      "args": [
+        {
+          "name": "INSTANCE",
+          "generators": {
+            "handler": "manual.src_limactl.spec.subcommands_6_.args_0_.generators",
+            "version": 1
+          }
+        },
+        {
+          "name": "COMMAND",
+          "isVariadic": true,
+          "isOptional": true,
+          "isCommand": true
+        }
+      ],
+      "options": [
+        {
+          "name": "--workdir",
+          "description": "Working directory",
+          "args": {
+            "name": "string"
+          }
+        }
+      ]
+    },
+    {
+      "name": "show-ssh",
+      "description": "Show the ssh command line",
+      "args": {
+        "name": "INSTANCE",
+        "generators": {
+          "handler": "manual.src_limactl.spec.subcommands_7_.args.generators",
+          "version": 1
+        }
+      },
+      "options": [
+        {
+          "name": [
+            "-f",
+            "--format"
+          ],
+          "description": "Format: cmd, args, options, config (default \"cmd\")",
+          "args": {
+            "name": "string",
+            "defaultValue": "cmd",
+            "suggestions": [
+              {
+                "name": "cmd",
+                "description": "Full ssh command line"
+              },
+              {
+                "name": "args",
+                "description": "Similar to the cmd format but omits \"ssh\" and the destination address"
+              },
+              {
+                "name": "options",
+                "description": "Ssh option key value pairs"
+              },
+              {
+                "name": "config",
+                "description": "~/.ssh/config format"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "start",
+      "description": "Start an instance of Lima. If the instance does not exist, open an editor for creating new one, with name \"default\"",
+      "args": {
+        "name": "NAME|FILE.yaml|URL",
+        "generators": []
+      },
+      "options": [
+        {
+          "name": "--tty",
+          "description": "Enable TUI interactions such as opening an editor, defaults to true when stdout is a terminal (default true)"
+        }
+      ]
+    },
+    {
+      "name": "stop",
+      "description": "Stop an instance",
+      "isDangerous": true,
+      "args": {
+        "name": "INSTANCE",
+        "generators": {
+          "handler": "manual.src_limactl.spec.subcommands_9_.args.generators",
+          "version": 1
+        }
+      },
+      "options": [
+        {
+          "name": [
+            "-f",
+            "--force"
+          ],
+          "description": "Force stop the instance",
+          "isDangerous": true
+        }
+      ]
+    },
+    {
+      "name": "sudoers",
+      "description": "Generate /etc/sudoers.d/lima file for enabling vmnet.framework support. See /usr/local/share/doc/lima/docs/network.md for the usage",
+      "args": {
+        "name": "SUDORSFILE",
+        "isOptional": true,
+        "template": "filepaths"
+      },
+      "options": [
+        {
+          "name": "--check",
+          "description": "Check that the sudoers file is up-to-date with \"~/.lima/_config/networks.yaml\""
+        }
+      ]
+    },
+    {
+      "name": "validate",
+      "description": "Validate YAML files",
+      "args": {
+        "name": "FILE.yaml",
+        "isVariadic": true,
+        "generators": {
+          "handler": "manual.src_limactl.generator.yamlfilepathsgenerator",
+          "version": 1
+        }
+      },
+      "options": []
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "-v",
+        "--version"
+      ],
+      "description": "Version for limactl"
+    }
+  ]
+}

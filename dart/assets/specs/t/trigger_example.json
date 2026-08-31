@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "trigger_example",
+  "description": "",
+  "subcommands": [
+    {
+      "name": "test"
+    }
+  ]
+}

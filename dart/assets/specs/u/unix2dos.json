@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "name": "unix2dos",
+  "description": "Unix to DOS text file format convertor"
+}

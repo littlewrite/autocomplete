@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "name": "heroku",
+  "versionedSpec": {
+    "cacheKey": "heroku",
+    "getVersion": {
+      "handler": "manual.src_heroku.index.getversioncommand",
+      "version": 1
+    },
+    "versions": [
+      {
+        "version": "8.0.0",
+        "loadSpec": "heroku/8.0.0"
+      },
+      {
+        "version": "8.6.0",
+        "loadSpec": "heroku/8.6.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "name": "twilio",
+  "description": "Manage your Twilio resources from your terminal",
+  "options": [
+    {
+      "name": [
+        "-h",
+        "--help"
+      ],
+      "description": "Show a help message",
+      "isPersistent": true
+    }
+  ]
+}

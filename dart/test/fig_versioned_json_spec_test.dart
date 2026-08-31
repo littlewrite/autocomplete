@@ -46,11 +46,11 @@ Map<String, String> _files() => {
         'commands': {
           'fig': {'file': 'f/fig.json'},
           'fig/1.0.0': {
-            'file': 'f/fig--1.0.0.json',
+            'file': 'f/fig/1.0.0.json',
             'aliasOf': 'fig',
           },
           'fig/2.0.0': {
-            'file': 'f/fig--2.0.0.json',
+            'file': 'f/fig/2.0.0.json',
             'aliasOf': 'fig',
           },
         },
@@ -70,14 +70,14 @@ Map<String, String> _files() => {
           ],
         },
       }),
-      'f/fig--1.0.0.json': jsonEncode({
+      'f/fig/1.0.0.json': jsonEncode({
         'schemaVersion': 1,
         'name': 'fig',
         'subcommands': [
           {'name': 'legacy'},
         ],
       }),
-      'f/fig--2.0.0.json': jsonEncode({
+      'f/fig/2.0.0.json': jsonEncode({
         'schemaVersion': 1,
         'name': 'fig',
         'subcommands': [
@@ -91,7 +91,7 @@ void main() {
       () async {
     final reads = <String>[];
     final handlers = JsonHandlerRegistry();
-    registerMigratedJsonHandlers(handlers);
+    await registerMigratedJsonHandlers(handlers);
     final files = _files();
     await registerJsonSpecs(
       reader: (path) async {
@@ -109,6 +109,6 @@ void main() {
     expect(first!.suggestions.map((item) => item.name), contains('legacy'));
     expect(second!.suggestions.map((item) => item.name), contains('legacy'));
     expect(adapter.versionCalls, 1);
-    expect(reads, ['index.json', 'f/fig.json', 'f/fig--1.0.0.json']);
+    expect(reads, ['index.json', 'f/fig.json', 'f/fig/1.0.0.json']);
   });
 }

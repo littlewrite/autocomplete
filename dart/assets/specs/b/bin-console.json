@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "bin-console",
+  "description": "Symfony bin/console command",
+  "generateSpec": {
+    "handler": "manual.src_php_bin-console.spec.generatespec",
+    "version": 1
+  }
+}

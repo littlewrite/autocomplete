@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "name": "kill",
+  "description": "Terminate or signal a process",
+  "args": {
+    "name": "pid",
+    "isVariadic": true,
+    "generators": {
+      "script": [
+        "bash",
+        "-c",
+        "ps axo pid,comm | sed 1d"
+      ],
+      "postProcess": {
+        "handler": "manual.src_kill.spec.args.generators.postprocess",
+        "version": 1
+      }
+    }
+  },
+  "options": [
+    {
+      "name": "-s",
+      "description": "A symbolic signal name specifying the signal to be sent",
+      "args": {
+        "name": "signal_name",
+        "generators": {
+          "script": [
+            "env",
+            "kill",
+            "-l"
+          ],
+          "postProcess": {
+            "handler": "manual.src_kill.spec.options_0_.args.generators.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "-l",
+      "description": "If no operand is given, list the signal names; otherwise, write the signal name corresponding to exit_status",
+      "args": {
+        "name": "exit_status",
+        "isOptional": true
+      }
+    }
+  ]
+}

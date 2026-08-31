@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "name": "fig",
+  "versionedSpec": {
+    "cacheKey": "fig",
+    "getVersion": {
+      "handler": "manual.src_fig.index.getversioncommand",
+      "version": 1
+    },
+    "versions": [
+      {
+        "version": "1.0.0",
+        "loadSpec": "fig/1.0.0"
+      },
+      {
+        "version": "2.0.0",
+        "loadSpec": "fig/2.0.0"
+      }
+    ]
+  }
+}

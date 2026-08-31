@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "name": "defaultbrowser",
+  "description": "Change your default browser from the CLI",
+  "args": {
+    "isOptional": true,
+    "generators": {
+      "script": [
+        "defaultbrowser"
+      ],
+      "postProcess": {
+        "handler": "manual.src_defaultbrowser.spec.args.generators.postprocess",
+        "version": 1
+      }
+    }
+  }
+}

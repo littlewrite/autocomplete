@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "name": "doas",
+  "description": "Execute a command as another user",
+  "options": [
+    {
+      "name": "-a",
+      "description": "Use the specified authentication style",
+      "args": {
+        "name": "auth_style"
+      }
+    },
+    {
+      "name": "-C",
+      "description": "Check the configuration file and exit"
+    },
+    {
+      "name": "-L",
+      "description": "Clear the persisted authentication"
+    },
+    {
+      "name": "-n",
+      "description": "Non-interactive mode; fail instead of prompting"
+    },
+    {
+      "name": "-s",
+      "description": "Execute the shell specified by the target user"
+    },
+    {
+      "name": "-u",
+      "description": "Run the command as the specified user",
+      "args": {
+        "name": "user"
+      }
+    },
+    {
+      "name": "--",
+      "description": "End of options"
+    }
+  ],
+  "args": [
+    {
+      "name": "command",
+      "isCommand": true,
+      "suggestCommands": true,
+      "isVariadic": true
+    }
+  ]
+}

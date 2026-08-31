@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "clang++",
+  "description": "Clang LLVM compiler for C++",
+  "options": [
+    {
+      "name": "-std",
+      "description": "Language standard to compile for",
+      "args": {
+        "name": "value",
+        "suggestions": [
+          {
+            "name": "cuda",
+            "description": "NVIDIA CUDA(tm)"
+          },
+          {
+            "name": "hip",
+            "description": "HIP"
+          }
+        ]
+      },
+      "requiresSeparator": true
+    }
+  ]
+}

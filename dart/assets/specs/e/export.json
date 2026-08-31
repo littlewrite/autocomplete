@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "export",
+  "description": "Export variables",
+  "hidden": true,
+  "args": {
+    "isVariadic": true
+  }
+}

@@ -15,7 +15,6 @@ Future<void> main(List<String> args) async {
 
   final root = Directory(args.single).absolute.path;
   final handlers = JsonHandlerRegistry();
-  registerMigratedJsonHandlers(handlers);
   final store = await registerJsonSpecs(
     reader: (relativePath) => File(
             '$root${Platform.pathSeparator}${relativePath.replaceAll('/', Platform.pathSeparator)}')

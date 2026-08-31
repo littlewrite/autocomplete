@@ -96,7 +96,7 @@ void main() {
     };
     final reads = <String>[];
     final handlers = JsonHandlerRegistry();
-    registerMigratedJsonHandlers(handlers);
+    await registerMigratedJsonHandlers(handlers);
     await registerJsonSpecs(
       reader: (path) async {
         reads.add(path);

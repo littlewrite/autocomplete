@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "name": "ncu",
+  "description": "Upgrade your npm package.json dependencies to the latest versions, ignoring specified versions",
+  "parserDirectives": {
+    "flagsArePosixNoncompliant": true
+  },
+  "args": {
+    "name": "filter",
+    "description": "A list or regex of package names to check (all others will be ignored)",
+    "isOptional": true,
+    "isVariadic": true
+  },
+  "options": []
+}

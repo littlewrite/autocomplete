@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "dotslash",
+  "args": {
+    "template": [
+      "filepaths",
+      "folders"
+    ]
+  }
+}

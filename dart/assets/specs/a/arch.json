@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "name": "arch",
+  "description": "Print architecture type or run select architecture",
+  "parserDirectives": {
+    "flagsArePosixNoncompliant": true,
+    "optionsMustPrecedeArguments": true
+  },
+  "options": [
+    {
+      "name": "-32",
+      "description": "Add the native 32-bit architecture to the list of architectures"
+    },
+    {
+      "name": "-64",
+      "description": "Add the native 64-bit architecture to the list of architectures"
+    },
+    {
+      "name": "-arch",
+      "isRepeatable": true,
+      "exclusiveOn": {
+        "handler": "manual.src_arch.spec.options_2_.exclusiveon",
+        "version": 1
+      },
+      "args": {
+        "name": "arch_name",
+        "suggestions": {
+          "handler": "manual.src_arch.spec.options_2_.args.suggestions",
+          "version": 1
+        }
+      }
+    },
+    {
+      "name": "-c",
+      "description": "Clear the environment that will be passed to the command"
+    },
+    {
+      "name": "-d",
+      "description": "Delete the named environment variable from the command's environment",
+      "isRepeatable": true,
+      "args": {
+        "name": "envname"
+      }
+    },
+    {
+      "name": "-e",
+      "description": "Assign the given value to the variable in the command's environment",
+      "isRepeatable": true,
+      "args": {
+        "name": "envname=value"
+      }
+    },
+    {
+      "name": "-h",
+      "description": "Print a help message and exit"
+    }
+  ],
+  "args": {
+    "name": "program",
+    "template": "filepaths",
+    "isCommand": true,
+    "isVariadic": true
+  }
+}

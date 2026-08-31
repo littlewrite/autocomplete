@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "name": "self-test",
+  "description": "Runs a self-test of the CLI"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "name": "sequelize",
+  "description": "The Sequelize Command Line Interface",
+  "subcommands": {
+    "handler": "manual.src_sequelize.spec.subcommands",
+    "version": 1
+  },
+  "options": [
+    {
+      "name": "--help",
+      "description": "Show help"
+    },
+    {
+      "name": "--version",
+      "description": "Show version number"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "kamal",
+  "description": "Deploy web apps anywhere",
+  "generateSpec": {
+    "handler": "manual.src_kamal.spec.generatespec",
+    "version": 1
+  }
+}

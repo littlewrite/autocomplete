@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "name": "mask",
+  "generateSpec": {
+    "handler": "manual.src_mask.spec.generatespec",
+    "version": 1
+  }
+}

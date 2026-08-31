@@ -233,18 +233,23 @@ void main() {
     );
   });
 
-  test('strict mode rejects an unknown dynamic suggestions handler', () {
-    expect(
-      () => figSpecFromJson(
-        {
-          'schemaVersion': 1,
-          'name': 'demo',
-          'args': {
-            'suggestions': {'handler': 'test.missing.suggestions'}
-          }
-        },
-        handlers: JsonHandlerRegistry(),
-      ),
+  test('strict mode rejects an unknown dynamic suggestions handler on use',
+      () async {
+    final spec = figSpecFromJson(
+      {
+        'schemaVersion': 1,
+        'name': 'demo',
+        'args': {
+          'suggestions': {'handler': 'test.missing.suggestions'}
+        }
+      },
+      handlers: JsonHandlerRegistry(),
+    );
+
+    final custom =
+        spec.args!.single.generators!.single.custom! as JsonCustomHandler;
+    await expectLater(
+      custom(const [], null, null),
       throwsA(isA<JsonSpecFormatException>()),
     );
   });
@@ -279,23 +284,31 @@ void main() {
         containsAll(['test.missing.suggestions', 'test.missing.alias']));
   });
 
-  test('git JSON loads with empty fallbacks for unported handlers', () async {
+  test('git JSON resolves every handler ref after the commit-m generator lands',
+      () async {
     final handlers = JsonHandlerRegistry(
       missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
     );
-    registerMigratedJsonHandlers(handlers);
+    await registerMigratedJsonHandlers(handlers);
     final source = await File('assets/specs/g/git.json').readAsString();
     final spec = figSpecFromJsonString(source, handlers: handlers);
 
     expect(spec.name, 'git');
     expect(spec.subcommands!.map((item) => item.name), contains('branch'));
-    expect(
-      handlers.unresolvedHandlers.map((item) => item.id),
-      containsAll([
-        'manual.src_git.spec.subcommands_2_.options_0_.args.generators',
-        'manual.src_git.spec.subcommands_3_.args_0_.suggestions',
-      ]),
+    expect(handlers.unresolvedHandlers, isEmpty);
+
+    // The `commit -m` ai() generator is now ported: invoking it without an
+    // executeCommand returns no suggestions and reports nothing unresolved.
+    final commitMessageGenerator =
+        spec.subcommands![2].options![0].args!.single.generators!.single;
+    final suggestions = await (commitMessageGenerator.custom!
+        as JsonCustomHandler)(
+      const [],
+      null,
+      null,
     );
+    expect(suggestions, isEmpty);
+    expect(handlers.unresolvedHandlers, isEmpty);
   });
 
   test('preserves declarative template descriptors in generator arrays',
@@ -322,6 +335,53 @@ void main() {
     final template = spec.args!.single.generators!.single.template;
     final suggestions = await runTemplates(template, '/', _TemplateAdapter());
     expect(suggestions.map((item) => item.name), ['config.json', 'docs/']);
+  });
+
+  test('lazy handler registration loads only the used command handlers',
+      () async {
+    final handlers = JsonHandlerRegistry();
+    final store = await registerJsonSpecs(
+      reader: (relativePath) =>
+          File('assets/specs/$relativePath').readAsString(),
+      handlers: handlers,
+    );
+
+    // Nothing registered before any command's spec is loaded.
+    expect(handlers.allRegisteredIds(), isEmpty);
+
+    // Loading the git spec registers git handlers and loads nothing else.
+    await store.ensureLoaded('git');
+    final ids = handlers.allRegisteredIds();
+    expect(ids.any((id) => id.contains('src_git')), isTrue,
+        reason: 'git handlers should be registered lazily');
+    expect(ids.any((id) => id.contains('src_bun')), isFalse,
+        reason: 'unused command handlers must not be registered');
+
+    // Loading a second command adds only its handlers.
+    await store.ensureLoaded('apt');
+    expect(handlers.allRegisteredIds().any((id) => id.contains('src_apt')),
+        isTrue);
+  });
+
+  test('namespaced loadSpec resolves to the distinct namespace doc', () async {
+    // aws/amplify (AWS Amplify service) and amplify (Amplify CLI) are two
+    // different specs that share the leaf name. The namespaced loadSpec must
+    // load the namespace's own doc, not the flat CLI doc.
+    final store = await registerJsonSpecs(
+      reader: (relativePath) =>
+          File('assets/specs/$relativePath').readAsString(),
+      handlers: JsonHandlerRegistry(
+        missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
+      ),
+    );
+    await store.ensureLoaded('aws/amplify');
+    final spec = getSpec('aws/amplify');
+    expect(spec, isNotNull);
+    expect(spec!.subcommands!.any((s) => s.nameList.first == 'create-app'),
+        isTrue,
+        reason: 'aws/amplify must load the AWS Amplify service spec');
+    expect(spec.subcommands!.any((s) => s.nameList.first == 'push'), isFalse,
+        reason: 'aws/amplify must not resolve to the Amplify CLI spec');
   });
 }
 

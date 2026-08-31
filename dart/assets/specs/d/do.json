@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "name": "do",
+  "description": "Do the command",
+  "args": {
+    "isCommand": true
+  }
+}

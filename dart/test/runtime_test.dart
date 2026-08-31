@@ -233,6 +233,29 @@ void main() {
   const requestStreamingCommand = 'ac_request_streaming_test';
   const requestCancellationCommand = 'ac_request_cancellation_test';
   const requestTimeoutCommand = 'ac_request_timeout_test';
+  const missingHandlerCommand = 'ac_missing_handler_test';
+
+  test('getSuggestions degrades to null instead of surfacing a parse error',
+      () async {
+    // A spec whose loader throws because a handler is unregistered under the
+    // strict policy must not throw to the caller: the engine logs and returns
+    // no suggestions.
+    registerSpec(missingHandlerCommand, () {
+      return figSpecFromJsonString(
+        '{"schemaVersion":1,"name":"$missingHandlerCommand",'
+        '"options":{"handler":"test.missing.options","version":1}}',
+        handlers: JsonHandlerRegistry(),
+      );
+    });
+
+    final result = await getSuggestions(
+      '$missingHandlerCommand ',
+      '/work',
+      Shell.bash,
+      FakeAdapter(),
+    );
+    expect(result, isNull);
+  });
 
   tearDownAll(() {
     unregisterSpec(commandForwarderCommand);
@@ -274,6 +297,7 @@ void main() {
     unregisterSpec(requestStreamingCommand);
     unregisterSpec(requestCancellationCommand);
     unregisterSpec(requestTimeoutCommand);
+    unregisterSpec(missingHandlerCommand);
   });
 
   group('runtime examples', () {

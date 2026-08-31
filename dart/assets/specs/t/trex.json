@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "name": "trex",
+  "description": "Advanced package management for deno, based on import_map.json",
+  "subcommands": [
+    {
+      "name": [
+        "i",
+        "install"
+      ],
+      "description": "Install a package",
+      "options": []
+    },
+    {
+      "name": "delete",
+      "description": "Delete a package",
+      "args": {
+        "name": "package name",
+        "generators": {
+          "script": [
+            "cat",
+            "import_map.json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_trex.definition.dependenciesgenerator.postprocess",
+            "version": 1
+          }
+        },
+        "filterStrategy": "fuzzy"
+      }
+    },
+    {
+      "name": "upgrade",
+      "description": "Upgrade trex",
+      "options": [
+        {
+          "name": "--canary",
+          "description": "Install from dev branch"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "description": "View dependency tree"
+    },
+    {
+      "name": "run",
+      "description": "Run a script alias in a file run.json",
+      "options": [
+        {
+          "name": [
+            "-w",
+            "--watch"
+          ],
+          "description": "Use reboot script alias protocol (rsap)"
+        },
+        {
+          "name": "-wv",
+          "description": "Verbose output in --watch mode (rsap)"
+        }
+      ],
+      "args": {
+        "name": "script alias",
+        "generators": {
+          "script": [
+            "cat",
+            "run.json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_trex.definition.scriptsgenerator.postprocess",
+            "version": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "purge",
+      "description": "Remove a package or url from cache",
+      "args": {
+        "name": "package | url",
+        "generators": {
+          "script": [
+            "cat",
+            "import_map.json"
+          ],
+          "postProcess": {
+            "handler": "manual.src_trex.definition.dependenciesgenerator.postprocess",
+            "version": 1
+          }
+        },
+        "filterStrategy": "fuzzy"
+      }
+    },
+    {
+      "name": "ls",
+      "description": "Shows the list of installed packages"
+    },
+    {
+      "name": "exec",
+      "description": "Execute a cli tool with out install then",
+      "options": [
+        {
+          "name": "--perms",
+          "description": "Specify cli permisions"
+        }
+      ],
+      "args": {
+        "name": "cli tool"
+      }
+    },
+    {
+      "name": "check",
+      "description": "Check deno.land [std/x] dependencies updates",
+      "options": [
+        {
+          "name": [
+            "-f",
+            "--fix"
+          ],
+          "description": "Update outdated dependencies"
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "name": [
+        "-h",
+        "--help"
+      ],
+      "description": "Print help info",
+      "isPersistent": true
+    }
+  ]
+}

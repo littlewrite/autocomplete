@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "name": "j",
+  "args": {
+    "name": "directory",
+    "description": "Directory to jump to",
+    "isVariadic": true,
+    "generators": {
+      "custom": {
+        "handler": "manual.src_j.spec.args.generators.custom",
+        "version": 1
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import 'dart:collection';
 
 import 'adapter.dart';
 import 'alias.dart';
+import 'json_spec.dart';
 import 'model.dart';
 import 'parser.dart';
 import 'registry.dart';
@@ -338,12 +339,15 @@ Future<ExecuteCommandInput?> _resolveGeneratorScript(
   if (rawScript is! Function) return null;
 
   final tokens = _tokenNames(allTokens);
-  final generatorContext = _createGeneratorContext(allTokens, cwd, adapter);
   dynamic result;
   try {
-    result = rawScript(tokens, generatorContext);
-  } catch (_) {
+    // JSON-deferred script handlers take only the token list and return a
+    // command representation (token list or ExecuteCommandInput-shaped map).
     result = rawScript(tokens);
+  } on NoSuchMethodError {
+    // Legacy hand-written generators accept (tokens, generatorContext).
+    final generatorContext = _createGeneratorContext(allTokens, cwd, adapter);
+    result = rawScript(tokens, generatorContext);
   }
   final resolved = result is Future ? await result : result;
   return _executeCommandInputFromDynamic(resolved);
@@ -1247,6 +1251,18 @@ Future<RuntimeCommandNode?> _resolveRuntimeNodeFromLoadSpec(
   if (loadSpec is FigSubcommand) {
     return runtimeNodeFromSubcommand(loadSpec);
   }
+  if (loadSpec is JsonLoadSpecHandler) {
+    final tokens =
+        context.allTokens.map((t) => t.token).toList(growable: false);
+    try {
+      final result = loadSpec(tokens, null, null);
+      final spec = result is Future ? await result : result;
+      return spec == null ? null : runtimeNodeFromSpec(spec);
+    } catch (e, st) {
+      logger?.call('[Fig loadSpec] function error', e, st);
+      return null;
+    }
+  }
   logger?.call(
       '[Fig loadSpec] unsupported loadSpec type: ${loadSpec.runtimeType}');
   return null;
@@ -1297,6 +1313,14 @@ Future<RuntimeCommandNode?> _resolveArgRuntimeNode(
   CompletionContext context,
   LogCallback? logger,
 ) async {
+  if (arg.loadSpec is JsonLoadSpecHandler) {
+    final node = await _resolveRuntimeNodeFromLoadSpec(arg.loadSpec, context,
+        logger: logger);
+    // Fall through to the isCommand/string paths when the handler is
+    // unregistered or produced nothing, so a partial migration never blanks
+    // the whole arg.
+    if (node != null) return node;
+  }
   if (arg.isCommand == true) {
     await context.ensureSpecLoaded?.call(activeToken.token);
     final cmdTokens = context.allTokens.sublist(context.currentIndex);
@@ -2424,12 +2448,12 @@ class AutocompleteEngine {
         fromCache: result.fromCache,
       );
     } catch (error, stackTrace) {
+      // Degrade to "no suggestions" instead of surfacing internal errors
+      // (missing handlers, malformed specs) to the shell user; the developer
+      // still sees them through the logger.
+      log?.call('[autocomplete] suggestion request error', error, stackTrace);
       if (handle.isSettled) return;
-      handle.completeError(
-        error,
-        stackTrace,
-        elapsed: stopwatch.elapsed,
-      );
+      handle.completeFinal(null, elapsed: stopwatch.elapsed);
     }
   }
 
@@ -2741,39 +2765,46 @@ class AutocompleteEngine {
   }) async {
     final log = logger ?? _logger ?? _defaultLogger;
     final materializedSubcommandCache = <String, Future<RuntimeCommandNode>>{};
-    final staticState = await _computeStaticSuggestionState(
-      cmd,
-      cwd,
-      shell,
-      myGen,
-      ensureSpecLoaded: ensureSpecLoaded,
-      filterStrategyOverride: filterStrategyOverride,
-      logger: logger,
-      materializedSubcommandCache: materializedSubcommandCache,
-    );
-    if (staticState == null) {
-      _activeDynamicSuggestionCache = null;
+    try {
+      final staticState = await _computeStaticSuggestionState(
+        cmd,
+        cwd,
+        shell,
+        myGen,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: logger,
+        materializedSubcommandCache: materializedSubcommandCache,
+      );
+      if (staticState == null) {
+        _activeDynamicSuggestionCache = null;
+        return null;
+      }
+
+      final result = await _computeFinalSuggestionBlob(
+        cmd,
+        cwd,
+        shell,
+        myGen,
+        staticState,
+        ensureSpecLoaded: ensureSpecLoaded,
+        filterStrategyOverride: filterStrategyOverride,
+        logger: logger,
+        materializedSubcommandCache: materializedSubcommandCache,
+      );
+      final resultBlob = result.blob;
+      if (resultBlob == null) return null;
+
+      log?.call('[autocomplete] result: '
+          '${resultBlob.suggestions.length} suggestions, '
+          'charactersToDrop=${resultBlob.charactersToDrop}');
+      return resultBlob;
+    } catch (e, st) {
+      // Never surface internal errors (missing handlers, malformed specs) to
+      // the shell user: log for the developer and degrade to no suggestions.
+      log?.call('[autocomplete] getSuggestions error', e, st);
       return null;
     }
-
-    final result = await _computeFinalSuggestionBlob(
-      cmd,
-      cwd,
-      shell,
-      myGen,
-      staticState,
-      ensureSpecLoaded: ensureSpecLoaded,
-      filterStrategyOverride: filterStrategyOverride,
-      logger: logger,
-      materializedSubcommandCache: materializedSubcommandCache,
-    );
-    final resultBlob = result.blob;
-    if (resultBlob == null) return null;
-
-    log?.call('[autocomplete] result: '
-        '${resultBlob.suggestions.length} suggestions, '
-        'charactersToDrop=${resultBlob.charactersToDrop}');
-    return resultBlob;
   }
 }
 

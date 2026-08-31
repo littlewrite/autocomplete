@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "name": "echo",
+  "description": "Write arguments to the standard output",
+  "args": {
+    "name": "string",
+    "isVariadic": true,
+    "optionsCanBreakVariadicArg": false,
+    "suggestCurrentToken": true,
+    "generators": {
+      "custom": {
+        "handler": "manual.src_echo.spec.args.generators.custom",
+        "version": 1
+      },
+      "trigger": "$"
+    }
+  },
+  "options": [
+    {
+      "name": "-n",
+      "description": "Do not print the trailing newline character"
+    },
+    {
+      "name": "-e",
+      "description": "Interpret escape sequences"
+    },
+    {
+      "name": "-E",
+      "description": "Disable escape sequences"
+    }
+  ]
+}

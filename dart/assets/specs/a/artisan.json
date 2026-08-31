@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "artisan",
+  "description": "Laravel Artisan Command",
+  "generateSpec": {
+    "handler": "manual.src_php_artisan.spec.generatespec",
+    "version": 1
+  }
+}

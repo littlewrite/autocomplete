@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "name": "unset",
+  "description": "Named variable shall be undefined",
+  "args": {
+    "name": "string",
+    "generators": {
+      "script": [
+        "env"
+      ],
+      "postProcess": {
+        "handler": "manual.src_unset.spec.args.generators.postprocess",
+        "version": 1
+      }
+    }
+  },
+  "options": [
+    {
+      "name": "-v",
+      "description": "Variable definition will be unset"
+    }
+  ]
+}

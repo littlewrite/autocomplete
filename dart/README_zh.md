@@ -1,22 +1,69 @@
 # autocomplete (Dart)
 
-**本项目是 [withfig/autocomplete](https://github.com/withfig/autocomplete) 的纯 Dart 翻译移植版。**
+**本项目是 JSON-first 的纯 Dart 命令补全运行时。**
 
 所有的补全规范（Specs）数据结构、核心逻辑以及运行时（Runtime）均直接移植自 `withfig/autocomplete` 和 `microsoft/inshellisense` 仓库，旨在为 Dart 生态提供完全一致的命令行自动补全能力。
 
 - **Dart SDK 要求**: `>=2.17.0 <4.0.0`
-- **补全规范 (Specs)**: 纯数据定义（例如 `cd`, `ls`, `git`, `tree`）。目前包含部分常用命令，更多规范将持续添加。
+- **补全规范 (Specs)**: 以 JSON 文件保存，按命令懒加载；动态逻辑通过显式 handler ID 绑定到宿主语言函数。
 - **运行时 (Runtime)**: 参考了 [microsoft/inshellisense](https://github.com/microsoft/inshellisense) 的实现（包括解析器、规范加载、子命令/参数/选项处理、模板等）。
+
+## JSON-first 使用方法
+
+核心库不依赖 Flutter，也不直接依赖 `dart:io`。宿主只需提供一个读取相对资源路径的函数：
+
+```dart
+import 'package:autocomplete/autocomplete.dart';
+
+final handlers = JsonHandlerRegistry(
+  missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
+);
+registerMigratedJsonHandlers(handlers);
+
+await registerJsonSpecs(
+  reader: (path) => loadTextFromYourApp(path),
+  handlers: handlers,
+);
+final engine = AutocompleteEngine(adapter: myAdapter);
+final result = await engine.getSuggestions('git st', cwd, Shell.bash);
+```
+
+`index.json` 只包含命令到文件的映射；第一次注册仅读取索引，真正请求 `git` 时才读取对应的命令 JSON。
+
+### Flutter 资源
+
+包已经声明 `assets/` 资源。Flutter 宿主通过 `rootBundle` 读取包资源（无需让库依赖 Flutter）：
+
+```dart
+import 'package:flutter/services.dart' show rootBundle;
+
+final reader = (String path) =>
+    rootBundle.loadString('packages/autocomplete/assets/specs/$path');
+```
+
+发布到 pub.dev 时，JSON 必须位于包目录内，并在 `pubspec.yaml` 的 `flutter.assets` 中声明。仓库当前的 `assets/specs/` 已包含完整 catalog，v3 入口可运行：
+
+```bash
+dart run example/example.dart --trace 'astro d'
+```
 
 ## 使用方法 (Usage)
 
 ```dart
-import 'package:autocomplete/autocomplete.dart';
 import 'dart:io';
 
+import 'package:autocomplete/autocomplete.dart';
+
 void main() async {
-  // 1. 注册内置的补全规范 (cd, ls, git, tree 等)
-  registerBuiltinSpecs();
+  // 1. 注册 JSON 规范；reader 由宿主实现。
+  final handlers = JsonHandlerRegistry(
+    missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
+  );
+  registerMigratedJsonHandlers(handlers);
+  await registerJsonSpecs(
+    reader: loadTextFromYourApp,
+    handlers: handlers,
+  );
 
   // 2. 提供你自己的 adapter 实现
   // 本地 dart:io 版本可参考 example/local_adapter.dart
@@ -52,7 +99,14 @@ import 'dart:io';
 import 'package:autocomplete/autocomplete.dart';
 
 void main() async {
-  registerBuiltinSpecs();
+  final handlers = JsonHandlerRegistry(
+    missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
+  );
+  registerMigratedJsonHandlers(handlers);
+  await registerJsonSpecs(
+    reader: loadTextFromYourApp,
+    handlers: handlers,
+  );
   final adapter = MyCompleteAdapter();
 
   final engine = AutocompleteEngine(
@@ -82,41 +136,34 @@ void main() async {
 }
 ```
 
-本地 `dart:io` adapter 可参考 [example/local_adapter.dart](example/local_adapter.dart)，更完整的事件输出和终端实时渲染示例可参考 [example/stream_suggest_v2.dart](example/stream_suggest_v2.dart)。
+本地 `dart:io` adapter 可参考 [example/local_adapter.dart](example/local_adapter.dart)。
+[example/example.dart](example/example.dart) 是 v3 的文件系统入口和推荐起点。
 
 ## 项目结构 (Layout)
 
 - `lib/src/`: 核心逻辑，包括规范模型、生成器、注册表、解析器、运行时、模板和建议对象。
-- `lib/specs/`: 补全规范文件，每个命令对应一个 Dart 文件（例如 `cd.dart`, `ls.dart`）。
-  - **`all_specs_v2.dart`**: `registerBuiltinSpecs()` 默认使用的 v2 延迟加载注册表。
-  - **`all_specs.dart`**: 一次性导入全部 spec，适合需要预先全量加载的场景。
+- `assets/specs/`: 可发布的 JSON 规范资源。`index.json` 把逻辑命令名映射到物理文件：扁平命令在 `<首字母>/<命令>.json`，命名空间命令镜像逻辑路径（`aws/amplify` → `a/aws/amplify.json`，`az/2.53.0/account` → `a/az/2.53.0/account.json`），按命令懒加载。
+- `lib/src/spec_handlers/`: 仅存放已经手写完成的动态函数；纯静态命令没有 Dart 文件。
 - `assets/icons/`: 规范引用的图标/Logo。
   - TypeScript 源通常使用 URL 或 Data URI，这里我们将它们存储为文件，以便 Flutter 应用可以打包使用。详见 `assets/icons/README.md`。
-- `example/run_suggest_v2.dart`: 1.0.0 推荐的一次性补全示例。
-- `example/stream_suggest_v2.dart`: 1.0.0 推荐的流式 / 增量补全示例。
-- `example/example.dart`: 保留的最小兼容示例。
+- `example/example.dart`: 完整 catalog 的 v3 JSON-first 命令行示例。
 
 ## 运行示例 (Run Example)
 
 在 `dart/` 目录下运行：
 
 ```bash
-dart run example/run_suggest_v2.dart "git sta"
+dart run example/example.dart 'cut -'
 ```
 
 或者指定 Shell：
 
 ```bash
-dart run example/run_suggest_v2.dart "cd " --shell zsh
+dart run example/example.dart --trace "cd "
 ```
 
-如果要体验 v2 的流式返回模式，可以运行：
-
-```bash
-dart run example/stream_suggest_v2.dart "git ch"
-dart run example/stream_suggest_v2.dart "cd " --shell zsh
-dart run example/stream_suggest_v2.dart "git co " --live
-```
+后续转换与审查规则见
+[docs/json-spec-generation-rules.md](../docs/json-spec-generation-rules.md)。
 
 ## 如何参与贡献 (Contributing)
 
@@ -124,26 +171,28 @@ dart run example/stream_suggest_v2.dart "git co " --live
 
 ### 1. 修正与改进 Spec (Fixing Specs)
 
-目前的 Dart Spec 文件（位于 `lib/specs/`）大多是通过脚本从 TypeScript **批量转换**而来的。
-
-- **存在的问题**: 由于自动化转换的局限性，某些复杂的 Spec 逻辑、类型或参数可能存在错误或遗漏。
-- **如何帮助**: 如果你在使用中发现某个命令的补全不准确，或者报错，欢迎直接修改对应的 `lib/specs/<command>.dart` 文件并提交 PR。我们非常欢迎人工校对和修复！
+Spec 从 `src/**/*.ts` 和 `src/**/*.js` 批量转换为 JSON。修正时应审查
+生成的资源，而不是生成 Dart 命令文件。动态逻辑必须记录为 handler 引用，
+仅在确有需要时再手写移植。
 
 ### 2. 辅助脚本 (Tools)
 
 如果你在仓库中看到 `tools/` 目录（或根目录下的相关脚本），它们通常用于：
 
-- **批量转换**: 将上游的 TS Spec 转换为 Dart 代码。
-- **列表生成**: 扫描并生成 `all_specs_v2.dart` 等索引文件。
+- **批量转换**: 将上游 TS/JS Spec 转换为 JSON。
+- **索引生成**: 扫描并生成 JSON 命令索引。
 - **校验**: 检查 Spec 文件的语法和结构正确性。
   详细的使用说明请参考各脚本文件头部的注释。
 
 ### 3. 添加新规范 (Adding a new spec)
 
-1. 在 `lib/specs/` 下添加 `<command>.dart` 文件，定义一个 `FigSpec` (例如 `const FigSpec myCommandSpec = ...`)。
-2. 在 **`lib/specs/all_specs_v2.dart`** 中：
-   - 添加 `import '<command>.dart';`
-   - 添加对应的注册项，让默认的 v2 延迟加载注册表可以按命令名加载它。
+1. 生成 `assets/specs/<首字母>/<命令>.json`（命名空间命令放入对应子目录，
+   如 `a/aws/amplify.json`），并更新
+   `assets/specs/index.json`。
+2. 动态值在 JSON 保留稳定 handler ID，并加入人工处理清单。
+3. 只有 handler 已真实实现时，才创建
+   `lib/src/spec_handlers/<命令>.dart`，并在 `lib/autocomplete.dart` 的
+   `registerMigratedJsonHandlers` 中注册。
 
 ## 致谢 (Acknowledgements)
 
@@ -159,11 +208,11 @@ dart run example/stream_suggest_v2.dart "git co " --live
 
 1. 为什么有些命令的补全不准确？
    - 这可能是由于自动化转换过程中出现的错误导致的。自动转换脚本不能覆盖所有复杂的 TypeScript 逻辑。
-   - 你可以直接修改对应的 Dart 文件来修正错误。
+   - 应检查对应 JSON、源文件转换记录和 handler 清单；不能恢复生成的 Dart 命令文件。
 
-2. 为什么部分补全建议的代码放在了 `dart_aws/`, `dart_az/`, `dart_gcloud/`, `dart_xxx/` 等目录下？
-   - 因为 pub.dev 的限制，这些命令的补全内容太多，导致整个项目的体积庞大，超过了100MB（未压缩）的限制。
-   - 所以这些代码确实没有引入项目，当前你无法访问他，后续会推出分包。
+2. 为什么某个动态补全可能没有结果？
+   - 该 JSON 可能引用了尚未移植的 handler。示例默认采用 `returnEmpty`，因此静态补全仍会工作。
+   - 使用 `--trace` 查看未实现的 handler ID；验证或生产环境可使用 `--strict`，让此类命令直接报错。
 
 3. 为什么要把 `local adapter` 的实现放到 `./example` 目录下？
   - 因为 local adapter 的代码用了 `dart:io` ，为了能让本项目跨 `web `平台，就没引入。但我定义好接口，你可以按照需求自己实现，或者直接 copy example 中的代码。
