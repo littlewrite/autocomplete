@@ -100,7 +100,8 @@ void main() {
     expect(empty.map((item) => item.nameSingle ?? ''), ['']);
   });
 
-  test('remote custom generator runs listremotes and maps the output', () async {
+  test('remote custom generator runs listremotes and maps the output',
+      () async {
     final registry = JsonHandlerRegistry();
     registerRcloneHandlers(registry);
 
@@ -121,8 +122,8 @@ void main() {
 
     final failed = await registry.custom(rcloneRemoteGeneratorHandler)!(
       const [],
-      (input) async => ExecuteCommandOutput(
-          stdout: 'gdrive', stderr: 'boom', status: 1),
+      (input) async =>
+          ExecuteCommandOutput(stdout: 'gdrive', stderr: 'boom', status: 1),
       null,
     );
     expect(failed, isEmpty);
@@ -151,18 +152,14 @@ void main() {
     final registry = JsonHandlerRegistry();
     registerRcloneHandlers(registry);
 
-    final result =
-        await registry.custom(rcloneGenautocompleteSubcommandsHandler)!(
-            const [], null, null);
-    expect(result.map((item) => item.nameSingle ?? ''),
-        ['bash', 'fish', 'zsh']);
+    final result = await registry.subcommands(
+        rcloneGenautocompleteSubcommandsHandler)!(const [], null, null);
+    expect(result.map((item) => item.nameList.first), ['bash', 'fish', 'zsh']);
     expect(result.map((item) => item.description), [
       'Output bash completion script for rclone.',
       'Output fish completion script for rclone.',
       'Output zsh completion script for rclone.',
     ]);
-    expect(
-        result.every((item) => item.type == SuggestionType.subcommand), isTrue);
   });
 
   test('lsf format suggestions map the format letter to its meaning', () async {
@@ -200,9 +197,9 @@ void main() {
         .expand((subcommand) => subcommand.args ?? const <FigArg>[])
         .expand((arg) => arg.generatorsList)
         .firstWhere((candidate) {
-          final script = candidate.script;
-          return script is List && script.join(' ') == 'rclone listremotes';
-        });
+      final script = candidate.script;
+      return script is List && script.join(' ') == 'rclone listremotes';
+    });
 
     final suggestions = await runGeneratorSuggestions(
       generator,
@@ -224,14 +221,14 @@ void main() {
         missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty);
     registerRcloneHandlers(handlers);
     final adapter = _FakeAdapter({
-      'rclone listremotes': const ProcessRunResult(
-          stdout: 'gdrive\ns3', stderr: '', exitCode: 0),
+      'rclone listremotes':
+          const ProcessRunResult(stdout: 'gdrive\ns3', stderr: '', exitCode: 0),
     });
 
     final source = await File('assets/specs/r/rclone.json').readAsString();
     final spec = figSpecFromJsonString(source, handlers: handlers);
-    final cat =
-        spec.subcommands!.firstWhere((subcommand) => subcommand.nameList.contains('cat'));
+    final cat = spec.subcommands!
+        .firstWhere((subcommand) => subcommand.nameList.contains('cat'));
     final generator = cat.args!.single.generatorsList.single;
     expect(generator.custom, isNotNull);
 

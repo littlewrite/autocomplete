@@ -6756,6 +6756,82 @@
       "file": "w/workloads.json",
       "aliasOf": "workloads"
     },
+    "dotnet/dotnet-add": {
+      "file": "d/dotnet/dotnet-add.json",
+      "aliasOf": "add"
+    },
+    "dotnet/dotnet-build": {
+      "file": "d/dotnet/dotnet-build.json",
+      "aliasOf": "build"
+    },
+    "dotnet/dotnet-build-server": {
+      "file": "d/dotnet/dotnet-build-server.json",
+      "aliasOf": "build-server"
+    },
+    "dotnet/dotnet-clean": {
+      "file": "d/dotnet/dotnet-clean.json",
+      "aliasOf": "clean"
+    },
+    "dotnet/dotnet-format": {
+      "file": "d/dotnet/dotnet-format.json",
+      "aliasOf": "format"
+    },
+    "dotnet/dotnet-list": {
+      "file": "d/dotnet/dotnet-list.json",
+      "aliasOf": "list"
+    },
+    "dotnet/dotnet-migrate": {
+      "file": "d/dotnet/dotnet-migrate.json",
+      "aliasOf": "migrate"
+    },
+    "dotnet/dotnet-msbuild": {
+      "file": "d/dotnet/dotnet-msbuild.json",
+      "aliasOf": "msbuild"
+    },
+    "dotnet/dotnet-new": {
+      "file": "d/dotnet/dotnet-new.json",
+      "aliasOf": "new"
+    },
+    "dotnet/dotnet-nuget": {
+      "file": "d/dotnet/dotnet-nuget.json",
+      "aliasOf": "nuget"
+    },
+    "dotnet/dotnet-pack": {
+      "file": "d/dotnet/dotnet-pack.json",
+      "aliasOf": "pack"
+    },
+    "dotnet/dotnet-publish": {
+      "file": "d/dotnet/dotnet-publish.json",
+      "aliasOf": "publish"
+    },
+    "dotnet/dotnet-remove": {
+      "file": "d/dotnet/dotnet-remove.json",
+      "aliasOf": "remove"
+    },
+    "dotnet/dotnet-restore": {
+      "file": "d/dotnet/dotnet-restore.json",
+      "aliasOf": "restore"
+    },
+    "dotnet/dotnet-run": {
+      "file": "d/dotnet/dotnet-run.json",
+      "aliasOf": "run"
+    },
+    "dotnet/dotnet-sln": {
+      "file": "d/dotnet/dotnet-sln.json",
+      "aliasOf": "sln"
+    },
+    "dotnet/dotnet-store": {
+      "file": "d/dotnet/dotnet-store.json",
+      "aliasOf": "store"
+    },
+    "dotnet/dotnet-test": {
+      "file": "d/dotnet/dotnet-test.json",
+      "aliasOf": "test"
+    },
+    "dotnet/dotnet-tool": {
+      "file": "d/dotnet/dotnet-tool.json",
+      "aliasOf": "tool"
+    },
     "gcloud/access-context-manager": {
       "file": "a/access-context-manager.json",
       "aliasOf": "access-context-manager"

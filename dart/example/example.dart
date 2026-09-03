@@ -93,6 +93,15 @@ Future<void> main(List<String> args) async {
   );
 
   final engine = AutocompleteEngine(adapter: LocalCompleteAdapter());
+  if (trace) {
+    engine.setLogger((message, [error, stackTrace]) {
+      stderr.writeln(message);
+      if (error != null) stderr.writeln('  error: $error');
+      if (stackTrace != null && stackTrace != StackTrace.empty) {
+        stderr.writeln('  stack: $stackTrace');
+      }
+    });
+  }
   try {
     final result = await engine.getSuggestions(
       commandLine,

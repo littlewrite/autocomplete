@@ -60,11 +60,9 @@ Set<String> _referencedHandlers(dynamic node) {
   return ids;
 }
 
-/// The three dotnet-tool trigger declaration IDs.
+/// The shared dotnet-tool trigger declaration ID.
 const _triggerIds = <String>{
-  dotnetToolRunTriggerHandler,
-  dotnetToolUninstallTriggerHandler,
-  dotnetToolUpdateTriggerHandler,
+  dotnetToolDefinitionTriggerHandler,
 };
 
 /// Finds the first generator on the `run`/`uninstall`/`update` subcommand arg.
@@ -87,7 +85,8 @@ void main() {
     expect(_referencedHandlers(document), _triggerIds);
   });
 
-  test('tool JSON parses in strict mode with the handlers registered', () async {
+  test('tool JSON parses in strict mode with the handlers registered',
+      () async {
     final handlers = JsonHandlerRegistry();
     registerDotnetToolHandlers(handlers);
     final source = await File('assets/specs/t/tool.json').readAsString();
@@ -98,15 +97,12 @@ void main() {
   test('each toolListGenerator trigger always returns true', () {
     final registry = JsonHandlerRegistry();
     registerDotnetToolHandlers(registry);
-    final trigger = registry.trigger(dotnetToolRunTriggerHandler)!;
+    final trigger = registry.trigger(dotnetToolDefinitionTriggerHandler)!;
     expect(trigger('new', 'old'), isTrue);
     expect(trigger('', ''), isTrue);
 
-    final uninstall = registry.trigger(dotnetToolUninstallTriggerHandler)!;
-    expect(uninstall('any', 'other'), isTrue);
-
-    final update = registry.trigger(dotnetToolUpdateTriggerHandler)!;
-    expect(update('anything', 'at all'), isTrue);
+    expect(trigger('any', 'other'), isTrue);
+    expect(trigger('anything', 'at all'), isTrue);
   });
 
   test('parsed run/uninstall/update args carry the always-true trigger',

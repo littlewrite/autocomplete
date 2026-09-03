@@ -27,8 +27,7 @@ const rcloneLsfFormatSuggestionsHandler =
 
 /// Splits `rclone listremotes` output on '\n', keeping empty entries exactly
 /// like the source `list.split("\n").map((remote) => ({ name: remote }))`.
-List<FigSuggestion> _remotePostProcess(String output,
-    [List<String>? tokens]) {
+List<FigSuggestion> _remotePostProcess(String output, [List<String>? tokens]) {
   return output
       .split('\n')
       .map((remote) => FigSuggestion(name: remote))
@@ -71,17 +70,16 @@ Future<List<FigSuggestion>> _dedupeModeSuggestions(
 /// `spec.subcommands[15].subcommands[0]`; the Dart JSON schema has no
 /// subcommand-list generator slot, so these are surfaced as subcommand-typed
 /// suggestions carrying the source's exact names and descriptions.
-Future<List<FigSuggestion>> _genautocompleteSubcommands(
+List<FigSubcommand> _genautocompleteSubcommands(
   List<String> tokens,
   ExecuteCommandFunction? executeCommand,
   FigGeneratorContext? context,
-) async {
+) {
   const shells = ['bash', 'fish', 'zsh'];
   return shells
-      .map((shell) => FigSuggestion(
+      .map((shell) => FigSubcommand(
             name: shell,
             description: 'Output $shell completion script for rclone.',
-            type: SuggestionType.subcommand,
           ))
       .toList();
 }
@@ -108,12 +106,12 @@ Future<List<FigSuggestion>> _lsfFormatSuggestions(
 
 /// Registers the rclone generators referenced by the shipped rclone JSON.
 void registerRcloneHandlers(JsonHandlerRegistry registry) {
-  registry.registerPostProcess(rcloneRemotePostProcessHandler,
-      _remotePostProcess);
+  registry.registerPostProcess(
+      rcloneRemotePostProcessHandler, _remotePostProcess);
   registry.registerCustom(rcloneRemoteGeneratorHandler, _remoteGenerator);
   registry.registerCustom(
       rcloneDedupeModeSuggestionsHandler, _dedupeModeSuggestions);
-  registry.registerCustom(
+  registry.registerSubcommands(
       rcloneGenautocompleteSubcommandsHandler, _genautocompleteSubcommands);
   registry.registerCustom(
       rcloneLsfFormatSuggestionsHandler, _lsfFormatSuggestions);

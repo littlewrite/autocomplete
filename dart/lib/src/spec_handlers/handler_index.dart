@@ -51,6 +51,8 @@ import 'django_admin.dart' deferred as django_admin;
 import 'docker.dart' deferred as docker;
 import 'docker_compose.dart' deferred as docker_compose;
 import 'doppler.dart' deferred as doppler;
+import 'dotnet_dynamic.dart' deferred as dotnet_dynamic;
+import 'dotnet_run.dart' deferred as dotnet_run;
 import 'dotnet_tool.dart' deferred as dotnet_tool;
 import 'drush.dart' deferred as drush;
 import 'eb.dart' deferred as eb;
@@ -437,6 +439,16 @@ Future<void> _regDoppler(
     JsonHandlerRegistry r) async {
   await doppler.loadLibrary();
   doppler.registerDopplerHandlers(r);
+}
+Future<void> _regDotnet_dynamic(
+    JsonHandlerRegistry r) async {
+  await dotnet_dynamic.loadLibrary();
+  dotnet_dynamic.registerDotnetDynamicHandlers(r);
+}
+Future<void> _regDotnet_run(
+    JsonHandlerRegistry r) async {
+  await dotnet_run.loadLibrary();
+  dotnet_run.registerDotnetRunHandlers(r);
 }
 Future<void> _regDotnet_tool(
     JsonHandlerRegistry r) async {
@@ -1341,6 +1353,8 @@ final List<Future<void> Function(JsonHandlerRegistry)>
   _regDocker,
   _regDocker_compose,
   _regDoppler,
+  _regDotnet_dynamic,
+  _regDotnet_run,
   _regDotnet_tool,
   _regDrush,
   _regEb,
@@ -1571,6 +1585,10 @@ final Map<String, List<Future<void> Function(JsonHandlerRegistry)>>
   'docker': [_regDocker],
   'docker-compose': [_regDocker_compose],
   'doppler': [_regDoppler],
+  'dotnet/dotnet-add': [_regDotnet_dynamic],
+  'dotnet/dotnet-new': [_regDotnet_dynamic],
+  'dotnet/dotnet-run': [_regDotnet_run],
+  'dotnet/dotnet-tool': [_regDotnet_dynamic, _regDotnet_tool],
   'drush': [_regDrush],
   'eb': [_regEb],
   'echo': [_regEcho],
@@ -1717,7 +1735,7 @@ final Map<String, List<Future<void> Function(JsonHandlerRegistry)>>
   'tfsec': [_regTfsec],
   'tldr': [_regTldr],
   'tmuxinator': [_regTmuxinator],
-  'tool': [_regDotnet_tool],
+  'tool': [_regDotnet_dynamic, _regDotnet_tool],
   'trex': [_regTrex],
   'trivy': [_regTrivy],
   'ts-node': [_regTs_node],

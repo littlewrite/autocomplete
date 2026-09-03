@@ -20,13 +20,18 @@ const dotnetToolUninstallTriggerHandler =
 const dotnetToolUpdateTriggerHandler =
     'manual.src_dotnet_dotnet-tool.spec.subcommands_6_.args.generators.trigger';
 
+/// Stable definition-level ID used by the namespaced dotnet-tool JSON export.
+const dotnetToolDefinitionTriggerHandler =
+    'manual.src_dotnet_dotnet-tool.definition.toollistgenerator.trigger';
+
 /// `trigger: () => true` from `toolListGenerator`.
 bool _toolListTrigger(String newToken, String oldToken) => true;
 
 /// Registers the dynamic trigger handlers referenced by the shipped tool JSON.
 void registerDotnetToolHandlers(JsonHandlerRegistry registry) {
   registry.registerTrigger(dotnetToolRunTriggerHandler, _toolListTrigger);
-  registry.registerTrigger(
-      dotnetToolUninstallTriggerHandler, _toolListTrigger);
+  registry.registerTrigger(dotnetToolUninstallTriggerHandler, _toolListTrigger);
   registry.registerTrigger(dotnetToolUpdateTriggerHandler, _toolListTrigger);
+  registry.registerTrigger(
+      dotnetToolDefinitionTriggerHandler, _toolListTrigger);
 }

@@ -73,14 +73,15 @@ void main() {
     });
   });
 
-  test('keypasswd options handler exposes -v and the repeated options minus '
+  test(
+      'keypasswd options handler exposes -v and the repeated options minus '
       '-protected', () async {
     final registry = JsonHandlerRegistry();
     registerKeytoolHandlers(registry);
-    final options = await registry.custom(keytoolKeypasswdOptionsHandler)!(
+    final options = await registry.options(keytoolKeypasswdOptionsHandler)!(
         const [], null, null);
     expect(options.length, 10);
-    expect(options.map((item) => item.nameSingle ?? '').toList(), [
+    expect(options.map((item) => item.nameList.first).toList(), [
       '-v',
       '-alias',
       '-keystore',
@@ -94,17 +95,20 @@ void main() {
     ]);
     expect(options.first.description, 'Verbose output');
     expect(
-        options.map((item) => item.nameSingle).toSet().contains('-protected'),
+        options
+            .map((item) => item.nameList.first)
+            .toSet()
+            .contains('-protected'),
         isFalse);
   });
 
   test('storepasswd options handler exposes the same flags', () async {
     final registry = JsonHandlerRegistry();
     registerKeytoolHandlers(registry);
-    final options = await registry.custom(keytoolStorepasswdOptionsHandler)!(
+    final options = await registry.options(keytoolStorepasswdOptionsHandler)!(
         const [], null, null);
     expect(options.length, 10);
-    expect(options.map((item) => item.nameSingle ?? '').toList(), [
+    expect(options.map((item) => item.nameList.first).toList(), [
       '-v',
       '-alias',
       '-keystore',
@@ -116,47 +120,38 @@ void main() {
       '-providerarg',
       '-providerpath',
     ]);
-    expect(options.last.nameSingle ?? '', '-providerpath');
+    expect(options.last.nameList.first, '-providerpath');
     expect(options.last.description, 'Provider classpath');
   });
 
-  test('keytool option handler runs through the generator machinery '
-      'end to end', () async {
+  test('keytool option handler is materialized into the parsed spec', () async {
     final registry = JsonHandlerRegistry(
         missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty);
     registerKeytoolHandlers(registry);
-    final adapter = _FakeAdapter(const {});
 
     final source = await File('assets/specs/k/keytool.json').readAsString();
     final spec = figSpecFromJsonString(source, handlers: registry);
     expect(spec.name, 'keytool');
 
-    final generator = FigGenerator(
-      custom: registry.custom(keytoolKeypasswdOptionsHandler),
-    );
-
-    final suggestions = await runGeneratorSuggestions(
-      generator,
-      const [
-        CommandToken(token: 'keytool', tokenLength: 7, complete: true),
-        CommandToken(token: '-keypasswd', tokenLength: 10, complete: true),
-        CommandToken(token: '', tokenLength: 0, complete: false),
-      ],
-      '/work',
-      adapter,
-    );
-
-    expect(suggestions.map((suggestion) => suggestion.name).toList(), [
-      '-v',
-      '-alias',
-      '-keystore',
-      '-storepass',
-      '-storetype',
-      '-providername',
-      '-addprovider',
-      '-providerclass',
-      '-providerarg',
-      '-providerpath',
-    ]);
+    final keypasswd = spec.subcommands!
+        .firstWhere((subcommand) => subcommand.nameList.contains('-keypasswd'));
+    expect(
+        keypasswd.options!
+            .skip(2)
+            .take(10)
+            .map((option) => option.name)
+            .toList(),
+        [
+          '-v',
+          '-alias',
+          '-keystore',
+          '-storepass',
+          '-storetype',
+          '-providername',
+          '-addprovider',
+          '-providerclass',
+          '-providerarg',
+          '-providerpath',
+        ]);
   });
 }

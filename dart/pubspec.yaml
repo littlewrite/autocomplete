@@ -21,7 +21,69 @@ dev_dependencies:
 # Assets for icons/logos referenced by specs (Flutter bundling; JS/TS may not use this).
 # The 'flutter' section here allows a consuming Flutter app to bundle these assets,
 # even though this package does not depend on the Flutter SDK for its code.
+#
+# NOTE: Flutter's directory assets do NOT recurse into subdirectories for git
+# dependencies (only the direct files, e.g. index.json, get bundled). So every
+# spec subdirectory must be listed explicitly, otherwise command JSONs such as
+# g/git.json are missing from the app bundle. Regenerate this list after adding
+# or renaming a namespace directory:
+#   find assets/specs -name '*.json' | sed 's#/[^/]*\.json$##' | sort -u \
+#     | sed 's#^#    - #; s#$#/#'
 flutter:
   assets:
     - assets/icons/
     - assets/specs/
+    - assets/specs/-/
+    - assets/specs/0/
+    - assets/specs/3/
+    - assets/specs/_/_capgo/
+    - assets/specs/_/_commercelayer/
+    - assets/specs/_/_fig/
+    - assets/specs/_/_forge/
+    - assets/specs/_/_withfig/
+    - assets/specs/_/_wordpress/
+    - assets/specs/a/
+    - assets/specs/a/aws/
+    - assets/specs/a/az/
+    - assets/specs/a/az/2.53.0/
+    - assets/specs/b/
+    - assets/specs/c/
+    - assets/specs/d/
+    - assets/specs/e/
+    - assets/specs/f/
+    - assets/specs/f/fig/
+    - assets/specs/f/find/
+    - assets/specs/f/fzf/
+    - assets/specs/g/
+    - assets/specs/g/gcloud/
+    - assets/specs/h/
+    - assets/specs/h/heroku/
+    - assets/specs/i/
+    - assets/specs/j/
+    - assets/specs/k/
+    - assets/specs/l/
+    - assets/specs/l/login/
+    - assets/specs/m/
+    - assets/specs/m/mysql/
+    - assets/specs/n/
+    - assets/specs/n/next/
+    - assets/specs/n/nginx/
+    - assets/specs/o/
+    - assets/specs/p/
+    - assets/specs/p/publish/
+    - assets/specs/q/
+    - assets/specs/r/
+    - assets/specs/s/
+    - assets/specs/s/scc/
+    - assets/specs/s/shopify/
+    - assets/specs/s/source/
+    - assets/specs/s/spring/
+    - assets/specs/s/ssh/
+    - assets/specs/s/stack/
+    - assets/specs/t/
+    - assets/specs/u/
+    - assets/specs/v/
+    - assets/specs/w/
+    - assets/specs/x/
+    - assets/specs/y/
+    - assets/specs/z/

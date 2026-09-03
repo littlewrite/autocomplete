@@ -75,15 +75,15 @@ List<FigSuggestion> _processes(String output, [List<String>? tokens]) {
 /// src/killall.ts. The runtime has no option-generating slot, so this surfaces
 /// the same names as suggestions; the shipped JSON keeps the original option
 /// handler reference intact.
-Future<List<FigSuggestion>> _signalOptions(
+List<FigOption> _signalOptions(
   List<String> tokens,
   ExecuteCommandFunction? executeCommand,
   FigGeneratorContext? context,
-) async {
+) {
   tokens;
   return _signals.map((signal) {
     final upper = signal.toUpperCase();
-    return FigSuggestion(
+    return FigOption(
       name: '-SIG$upper',
       description: 'Send $upper instead of TERM',
     );
@@ -103,6 +103,6 @@ List<FigSuggestion> _users(String output, [List<String>? tokens]) {
 /// Registers the killall generators referenced by the shipped killall JSON.
 void registerKillallHandlers(JsonHandlerRegistry registry) {
   registry.registerPostProcess(killallProcessesPostProcessHandler, _processes);
-  registry.registerCustom(killallSignalOptionsHandler, _signalOptions);
+  registry.registerOptions(killallSignalOptionsHandler, _signalOptions);
   registry.registerPostProcess(killallUsersPostProcessHandler, _users);
 }

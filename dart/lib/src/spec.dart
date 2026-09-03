@@ -307,6 +307,7 @@ class FigGenerator {
     this.splitOn,
     this.scriptTimeout,
     this.custom,
+    this.debugHandlers,
   });
 
   /// Script command (e.g. ['git', 'branch']). TS also allows Function or ExecuteCommandInput.
@@ -351,6 +352,12 @@ class FigGenerator {
   /// Runtime uses `is List` / `is Function` to distinguish; callbacks are invoked as `custom(tokens, executeCommand, generatorContext)` (pass nulls when not available).
   /// Only static list is serialized to JSON; callbacks are not.
   final Object? custom;
+
+  /// Runtime-only metadata for diagnostics of handlers loaded from JSON.
+  /// Keys are handler kinds (for example `script` or `postProcess`) and
+  /// values are `handlerId@json.path` labels. This is intentionally excluded
+  /// from [toJson].
+  final Map<String, String>? debugHandlers;
 
   Map<String, dynamic> toJson() => {
         if (script != null) 'script': script,

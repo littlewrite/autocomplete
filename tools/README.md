@@ -24,6 +24,17 @@ It is not the package asset layout. The materialization step writes only the
 addressable command documents and changes paths from
 `commands/c/cut.json` to `c/cut.json`.
 
+To audit the runtime binding chain without exporting anything, run:
+
+```bash
+node tools/audit-json-handlers.cjs
+node tools/audit-json-handlers.cjs --strict  # CI/release gate
+node tools/check-load-spec-links.cjs         # every static loadSpec resolves
+```
+
+The audit combines the long-lived handler manifest with the focused conversion
+manifest, and keeps missing evidence separate from unregistered Dart handlers.
+
 ## Required candidate workflow
 
 Never write a full export directly to `json/specs/`. First create and verify a
@@ -87,10 +98,12 @@ remain. Incremental migration may materialize a reviewed catalog with normal
 completeness validation only, provided the runtime uses the explicit
 `returnEmpty` missing-handler policy and records unresolved IDs.
 
-The exporter records every dynamic callback in `manual-handlers.json`. It
-must not create a Dart scaffold. A manual implementation is added only after
-review under `dart/lib/src/spec_handlers/`, then registered through the sole
-public entry point, `dart/lib/autocomplete.dart`.
+The exporter records every dynamic callback in `manual-handlers.json`. By
+default it does not touch Dart sources. For batch migration, pass
+`--handlers-out <dir>` to emit one reviewable scaffold per source file; each
+entry includes the stable handler ID, source expression, and its
+`lineStart`/`lineEnd` range. Existing hand-edited scaffolds are skipped unless
+`--overwrite-generated-handlers` is given.
 
 ## Focused conversion
 
@@ -124,11 +137,45 @@ Use this only for a reviewed one-source change whose command keeps the same
 primary index path. A full catalog replacement still requires
 `verify-json-candidate.cjs`.
 
+### Recovering static `loadSpec` children
+
+When a root JSON document already links to a namespaced TypeScript child that
+was not materialized, use the guarded batch recovery tool. It only accepts
+exports with no diagnostics and no dynamic handler references, so it cannot
+accidentally publish a JSON document whose handlers have not been registered:
+
+```bash
+node tools/recover-static-load-specs.cjs --dry-run \
+  --entry dotnet/dotnet-build=src/dotnet/dotnet-build.ts \
+  --entry dotnet/dotnet-clean=src/dotnet/dotnet-clean.ts
+node tools/recover-static-load-specs.cjs \
+  --entry dotnet/dotnet-build=src/dotnet/dotnet-build.ts \
+  --entry dotnet/dotnet-clean=src/dotnet/dotnet-clean.ts
+node tools/materialize-json-assets.cjs json/specs dart/assets/specs
+node tools/check-load-spec-links.cjs
+```
+
+Sources that produce a conversion diagnostic or handler reference must use the
+normal handler migration workflow first; do not bypass that check by copying a
+candidate document into `json/specs/`.
+
+For a reviewed namespaced child that intentionally contains migrated handlers,
+use the guarded namespaced accept step after its Dart implementation and test
+are present:
+
+```bash
+node tools/accept-json-loadspec-candidate.cjs \
+  --candidate /tmp/dotnet-run-specs \
+  --load-spec dotnet/dotnet-run
+node tools/materialize-json-assets.cjs json/specs dart/assets/specs
+```
+
 Run the exporter regression tests and asset-layout test:
 
 ```bash
 node tools/test-json-export.cjs
 node tools/test-materialize-json-assets.cjs
+node tools/test-check-load-spec-links.cjs
 node tools/check-conversion-completeness.cjs
 ```
 
@@ -165,5 +212,7 @@ dart pub publish --dry-run
 
 The default v3 example uses `MissingJsonHandlerPolicy.returnEmpty`: an
 unported dynamic handler is reported by `--trace` and returns no dynamic
-suggestions, while static completion still works. Add `--strict` to require
-every referenced handler to be implemented.
+suggestions, while static completion still works. Dynamic execution failures
+include the handler ID/path, typed command, cwd, script, exit code, and stderr
+when available. Add `--strict` to require every referenced handler to be
+implemented.

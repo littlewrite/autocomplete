@@ -4,8 +4,7 @@
 // and its argument `suggestions` as handler references. `exclusiveOn` is the
 // set of architecture options that cannot be combined with `-arch`; the arg
 // suggestions are the supported architecture names. Both sets are constant
-// for this command, so they are exposed as custom handlers (the generic
-// "dynamic list of suggestions" handler) with the callback arguments unused.
+// for this command.
 
 import 'package:autocomplete/src/json_spec.dart';
 import 'package:autocomplete/src/spec.dart';
@@ -54,16 +53,10 @@ Future<List<FigSuggestion>> _archSuggestions(
 
 /// The `-arch` exclusiveOn set: the sibling architecture options (`-i386`,
 /// `-x86_64`, ...) that cannot be combined with `-arch`.
-Future<List<FigSuggestion>> _archExclusiveOn(
-  List<String> tokens,
-  ExecuteCommandFunction? executeCommand,
-  FigGeneratorContext? context,
-) async {
-  return _archNames.map((name) => FigSuggestion(name: '-$name')).toList();
-}
+List<String> _archExclusiveOn() => _archNames.map((name) => '-$name').toList();
 
 /// Registers the arch handlers referenced by the shipped arch JSON.
 void registerArchHandlers(JsonHandlerRegistry registry) {
-  registry.registerCustom(archExclusiveOnHandler, _archExclusiveOn);
+  registry.registerExclusiveOn(archExclusiveOnHandler, _archExclusiveOn);
   registry.registerCustom(archSuggestionsHandler, _archSuggestions);
 }

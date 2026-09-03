@@ -14,25 +14,25 @@ const keytoolStorepasswdOptionsHandler =
 /// materialized JSON keeps a handler reference at `options[1]` that also
 /// absorbs the static `-v` flag from `...commonOptions`. This mirrors that
 /// spread exactly: every repeated option except `-protected`, preceded by `-v`.
-List<FigSuggestion> _verboseAndRepeatedOptions() {
-  return const [
-    FigSuggestion(name: '-v', description: 'Verbose output'),
-    FigSuggestion(
+List<FigOption> _verboseAndRepeatedOptions() {
+  return [
+    FigOption(name: '-v', description: 'Verbose output'),
+    FigOption(
         name: '-alias', description: 'Alias name of the entry to process'),
-    FigSuggestion(name: '-keystore', description: 'Keystore name'),
-    FigSuggestion(name: '-storepass', description: 'Keystore password'),
-    FigSuggestion(name: '-storetype', description: 'Keystore type'),
-    FigSuggestion(name: '-providername', description: 'Provider name'),
-    FigSuggestion(
+    FigOption(name: '-keystore', description: 'Keystore name'),
+    FigOption(name: '-storepass', description: 'Keystore password'),
+    FigOption(name: '-storetype', description: 'Keystore type'),
+    FigOption(name: '-providername', description: 'Provider name'),
+    FigOption(
         name: '-addprovider',
         description: 'Add security provider by name (e.g. SunPKCS11)'),
-    FigSuggestion(
+    FigOption(
         name: '-providerclass',
         description: 'Add security provider by fully-qualified class name'),
-    FigSuggestion(
+    FigOption(
         name: '-providerarg',
         description: 'Configure argument for -addprovider or -providerclass'),
-    FigSuggestion(name: '-providerpath', description: 'Provider classpath'),
+    FigOption(name: '-providerpath', description: 'Provider classpath'),
   ];
 }
 
@@ -40,21 +40,21 @@ List<FigSuggestion> _verboseAndRepeatedOptions() {
 /// The runtime has no option-generating slot, so this surfaces the same flags
 /// as suggestions; the shipped JSON keeps the original option handler
 /// reference intact.
-Future<List<FigSuggestion>> _keypasswdOptions(
+List<FigOption> _keypasswdOptions(
   List<String> tokens,
   ExecuteCommandFunction? executeCommand,
   FigGeneratorContext? context,
-) async {
+) {
   tokens;
   return _verboseAndRepeatedOptions();
 }
 
 /// The `-storepasswd` options slot; identical to the `-keypasswd` one.
-Future<List<FigSuggestion>> _storepasswdOptions(
+List<FigOption> _storepasswdOptions(
   List<String> tokens,
   ExecuteCommandFunction? executeCommand,
   FigGeneratorContext? context,
-) async {
+) {
   tokens;
   return _verboseAndRepeatedOptions();
 }
@@ -62,6 +62,7 @@ Future<List<FigSuggestion>> _storepasswdOptions(
 /// Registers the keytool option handlers referenced by the shipped keytool
 /// JSON.
 void registerKeytoolHandlers(JsonHandlerRegistry registry) {
-  registry.registerCustom(keytoolKeypasswdOptionsHandler, _keypasswdOptions);
-  registry.registerCustom(keytoolStorepasswdOptionsHandler, _storepasswdOptions);
+  registry.registerOptions(keytoolKeypasswdOptionsHandler, _keypasswdOptions);
+  registry.registerOptions(
+      keytoolStorepasswdOptionsHandler, _storepasswdOptions);
 }

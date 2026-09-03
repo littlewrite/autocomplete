@@ -67,8 +67,7 @@ void main() {
     expect(source, contains(archSuggestionsHandler));
   });
 
-  test('migration-mode parse keeps the static spec and records the refs',
-      () async {
+  test('migration-mode parse resolves the static exclusiveOn set', () async {
     final registry = JsonHandlerRegistry(
       missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty,
     );
@@ -79,21 +78,16 @@ void main() {
     expect(spec.name, 'arch');
     expect(spec.options, hasLength(7));
 
-    // The function-valued exclusiveOn is removed (no list form survives), so
-    // the -arch option has no exclusiveOn and its arg keeps the suggestions
-    // custom generator.
-    final archOption = spec.options!
-        .firstWhere((option) => option.nameList.contains('-arch'));
-    expect(archOption.exclusiveOn, isNull);
+    final archOption =
+        spec.options!.firstWhere((option) => option.nameList.contains('-arch'));
+    expect(archOption.exclusiveOn, _archNames.map((name) => '-$name').toList());
     expect(archOption.args!.first.generatorsList, hasLength(1));
 
-    // Only the unsupported exclusiveOn reference is recorded for migration.
-    final unresolvedIds =
-        registry.unresolvedHandlers.map((handler) => handler.id).toSet();
-    expect(unresolvedIds, {archExclusiveOnHandler});
+    expect(registry.unresolvedHandlers, isEmpty);
   });
 
-  test('suggestions handler returns the five architectures with metadata', () async {
+  test('suggestions handler returns the five architectures with metadata',
+      () async {
     final registry = JsonHandlerRegistry();
     registerArchHandlers(registry);
 
@@ -101,8 +95,8 @@ void main() {
         await registry.custom(archSuggestionsHandler)!([], null, null);
     expect(
         suggestions.map((item) => item.nameSingle ?? '').toList(), _archNames);
-    expect(
-        suggestions.map((item) => item.description).toList(), _archDescriptions);
+    expect(suggestions.map((item) => item.description).toList(),
+        _archDescriptions);
     expect(suggestions.map((item) => item.icon).toSet(), {_cpuIcon});
   });
 
@@ -111,14 +105,14 @@ void main() {
     final registry = JsonHandlerRegistry();
     registerArchHandlers(registry);
 
-    final suggestions =
-        await registry.custom(archExclusiveOnHandler)!([], null, null);
-    expect(suggestions.map((item) => item.nameSingle ?? '').toList(),
-        _archNames.map((name) => '-$name').toList());
-    expect(suggestions, hasLength(_archNames.length));
+    final options = registry.exclusiveOn(archExclusiveOnHandler)!();
+    expect(options, _archNames.map((name) => '-$name').toList());
+    expect(options, hasLength(_archNames.length));
   });
 
-  test('suggestions and exclusiveOn handlers run end to end', () async {
+  test(
+      'suggestions and exclusiveOn handlers are available from the parsed spec',
+      () async {
     final registry = JsonHandlerRegistry();
     registerArchHandlers(registry);
     final adapter = _FakeAdapter(const {});
@@ -136,19 +130,13 @@ void main() {
     );
     registerArchHandlers(registry2);
     final spec = figSpecFromJsonString(source, handlers: registry2);
-    final archOption = spec.options!
-        .firstWhere((option) => option.nameList.contains('-arch'));
+    final archOption =
+        spec.options!.firstWhere((option) => option.nameList.contains('-arch'));
     final generator = archOption.args!.first.generatorsList.first;
-    final suggestions = await runGeneratorSuggestions(
-        generator, tokens, '/work', adapter);
+    final suggestions =
+        await runGeneratorSuggestions(generator, tokens, '/work', adapter);
     expect(suggestions.map((item) => item.name).toList(), _archNames);
 
-    // exclusiveOn set through the generic custom-generator runtime path.
-    final exclusiveGenerator =
-        FigGenerator(custom: registry.custom(archExclusiveOnHandler));
-    final exclusive = await runGeneratorSuggestions(
-        exclusiveGenerator, tokens, '/work', adapter);
-    expect(exclusive.map((item) => item.name).toList(),
-        _archNames.map((name) => '-$name').toList());
+    expect(archOption.exclusiveOn, _archNames.map((name) => '-$name').toList());
   });
 }

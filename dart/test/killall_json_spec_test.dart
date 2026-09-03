@@ -79,7 +79,8 @@ void main() {
   test('process post-processor takes the basename with path description', () {
     final registry = JsonHandlerRegistry();
     registerKillallHandlers(registry);
-    final output = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n'
+    final output =
+        '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n'
         '/usr/bin/ssh-agent\n'
         '/System/Library/CoreServices/WindowServer.app/Contents/MacOS/WindowServer\n';
 
@@ -140,8 +141,7 @@ void main() {
     registerKillallHandlers(registry);
     final output = 'root\nadmin\npaul';
 
-    final users =
-        registry.postProcess(killallUsersPostProcessHandler)!(output);
+    final users = registry.postProcess(killallUsersPostProcessHandler)!(output);
     expect(users.map((item) => item.nameSingle ?? '').toList(),
         ['root', 'admin', 'paul']);
     expect(users.first.icon, 'fig://template?badge=👤');
@@ -151,8 +151,7 @@ void main() {
       () {
     final registry = JsonHandlerRegistry();
     registerKillallHandlers(registry);
-    final users =
-        registry.postProcess(killallUsersPostProcessHandler)!('');
+    final users = registry.postProcess(killallUsersPostProcessHandler)!('');
     expect(users.length, 1);
     expect(users.single.nameSingle ?? '', '');
   });
@@ -160,10 +159,10 @@ void main() {
   test('signal options handler exposes every -SIG flag except TERM', () async {
     final registry = JsonHandlerRegistry();
     registerKillallHandlers(registry);
-    final options = await registry.custom(killallSignalOptionsHandler)!(
+    final options = await registry.options(killallSignalOptionsHandler)!(
         const [], null, null);
     expect(options.length, 30);
-    expect(options.map((item) => item.nameSingle ?? '').toList(), [
+    expect(options.map((item) => item.nameList.first).toList(), [
       '-SIGHUP',
       '-SIGINT',
       '-SIGQUIT',
@@ -197,7 +196,7 @@ void main() {
     ]);
     expect(options.first.description, 'Send HUP instead of TERM');
     expect(
-        options.map((item) => item.nameSingle).toSet().contains('-SIGTERM'),
+        options.map((item) => item.nameList.first).toSet().contains('-SIGTERM'),
         isFalse);
   });
 
@@ -217,13 +216,12 @@ void main() {
 
     final source = await File('assets/specs/k/killall.json').readAsString();
     final spec = figSpecFromJsonString(source, handlers: registry);
-    final generator = spec.args!
-        .expand((arg) => arg.generatorsList)
-        .firstWhere((candidate) {
-          final script = candidate.script;
-          return script is List &&
-              script.join(' ') == 'bash -c ps -A -o comm | sort -u';
-        });
+    final generator =
+        spec.args!.expand((arg) => arg.generatorsList).firstWhere((candidate) {
+      final script = candidate.script;
+      return script is List &&
+          script.join(' ') == 'bash -c ps -A -o comm | sort -u';
+    });
 
     final suggestions = await runGeneratorSuggestions(
       generator,
@@ -261,10 +259,10 @@ void main() {
     final generator = userOption.args!
         .expand((arg) => arg.generatorsList)
         .firstWhere((candidate) {
-          final script = candidate.script;
-          return script is List &&
-              script.join(' ') == "bash -c dscl . -list /Users | grep -v '^_'";
-        });
+      final script = candidate.script;
+      return script is List &&
+          script.join(' ') == "bash -c dscl . -list /Users | grep -v '^_'";
+    });
 
     final suggestions = await runGeneratorSuggestions(
       generator,

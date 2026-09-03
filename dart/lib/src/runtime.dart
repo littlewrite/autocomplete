@@ -375,6 +375,74 @@ Future<ProcessRunResult> _runGeneratorScript(
   );
 }
 
+class _GeneratorScriptFailure implements Exception {
+  const _GeneratorScriptFailure(this.input, this.result);
+
+  final ExecuteCommandInput input;
+  final ProcessRunResult result;
+
+  @override
+  String toString() => 'generator script exited with status ${result.exitCode}'
+      '${result.stderr.isEmpty ? '' : ': ${result.stderr.trim()}'}';
+}
+
+String _diagnosticValue(String value) {
+  final compact = value.replaceAll(RegExp(r'\s+'), ' ').trim();
+  if (compact.length <= 500) return compact;
+  return '${compact.substring(0, 497)}...';
+}
+
+void _logGeneratorError(
+  LogCallback? logger, {
+  required String kind,
+  required FigGenerator generator,
+  required List<CommandToken> allTokens,
+  required String cwd,
+  required Object error,
+  StackTrace? stackTrace,
+  ExecuteCommandInput? scriptInput,
+}) {
+  if (logger == null) return;
+  final effectiveScriptInput =
+      scriptInput ?? (error is _GeneratorScriptFailure ? error.input : null);
+  final handler = generator.debugHandlers?[kind] ??
+      generator.debugHandlers?.values.join(',');
+  final command = _tokenNames(allTokens).join(' ');
+  final fields = <String, String>{
+    'kind': kind,
+    'command': command,
+    'cwd': cwd,
+    if (handler != null) 'handler': handler,
+    if (effectiveScriptInput != null)
+      'script': [effectiveScriptInput.command, ...effectiveScriptInput.args]
+          .join(' '),
+    if (error is _GeneratorScriptFailure)
+      'exitCode': '${error.result.exitCode}',
+    if (error is _GeneratorScriptFailure && error.result.stderr.isNotEmpty)
+      'stderr': _diagnosticValue(error.result.stderr),
+  };
+  logger(
+      '[autocomplete][dynamic] ${fields.entries.map((e) => '${e.key}=${_diagnosticValue(e.value)}').join(' ')}',
+      error,
+      stackTrace);
+}
+
+void _logContextError(
+  LogCallback? logger,
+  String label,
+  Object error,
+  StackTrace stackTrace,
+  List<CommandToken> tokens,
+  String cwd,
+) {
+  logger?.call(
+    '$label command=${_diagnosticValue(_tokenNames(tokens).join(' '))} '
+    'cwd=${_diagnosticValue(cwd)}',
+    error,
+    stackTrace,
+  );
+}
+
 Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
     List<CommandToken> allTokens, String cwd, CompleteAdapter adapter,
     {LogCallback? logger}) async {
@@ -400,7 +468,13 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
             .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
             .whereType<Suggestion>();
       } catch (e, st) {
-        logger?.call('[Fig generator] custom callback error', e, st);
+        _logGeneratorError(logger,
+            kind: 'custom',
+            generator: gen,
+            allTokens: allTokens,
+            cwd: cwd,
+            error: e,
+            stackTrace: st);
         return const [];
       }
     }
@@ -430,7 +504,13 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
             ? filteredResult.whereType<FigSuggestion>().toList()
             : figSuggestions;
       } catch (e, st) {
-        logger?.call('[Fig generator] filterTemplateSuggestions error', e, st);
+        _logGeneratorError(logger,
+            kind: 'filterTemplateSuggestions',
+            generator: gen,
+            allTokens: allTokens,
+            cwd: cwd,
+            error: e,
+            stackTrace: st);
         filtered = figSuggestions;
       }
     } else {
@@ -444,13 +524,15 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
   }
 
   if (gen.script != null && gen.postProcess != null) {
-    final scriptInput =
-        await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
-
-    if (scriptInput != null) {
-      try {
+    try {
+      final scriptInput =
+          await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
+      if (scriptInput != null) {
         final result =
             await _runGeneratorScript(scriptInput, gen, cwd, adapter);
+        if (result.exitCode != 0) {
+          throw _GeneratorScriptFailure(scriptInput, result);
+        }
         final stdout = result.stdout;
         final tokens = _tokenNames(allTokens);
         final figSuggestions = gen.postProcess!(stdout, tokens);
@@ -458,21 +540,31 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
         return figSuggestions
             .map((s) => toSuggestionDynamic(s, defaultPriority: 60))
             .whereType<Suggestion>();
-      } catch (e) {
-        logger?.call('[Fig generator] script error', e);
-        return const [];
+      } else {
+        throw const FormatException('script handler returned no command');
       }
+    } catch (e, st) {
+      _logGeneratorError(logger,
+          kind: 'script+postProcess',
+          generator: gen,
+          allTokens: allTokens,
+          cwd: cwd,
+          error: e,
+          stackTrace: st);
+      return const [];
     }
   }
 
   if (gen.script != null && gen.splitOn != null) {
-    final scriptInput =
-        await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
-
-    if (scriptInput != null) {
-      try {
+    try {
+      final scriptInput =
+          await _resolveGeneratorScript(gen.script, allTokens, cwd, adapter);
+      if (scriptInput != null) {
         final result =
             await _runGeneratorScript(scriptInput, gen, cwd, adapter);
+        if (result.exitCode != 0) {
+          throw _GeneratorScriptFailure(scriptInput, result);
+        }
         final stdout = result.stdout.trim();
         if (stdout.isEmpty) return const [];
         return stdout
@@ -482,10 +574,18 @@ Future<Iterable<Suggestion>> runGeneratorSuggestions(FigGenerator? gen,
                   defaultPriority: 60,
                 ))
             .whereType<Suggestion>();
-      } catch (e) {
-        logger?.call('[Fig generator] script error', e);
-        return const [];
+      } else {
+        throw const FormatException('script handler returned no command');
       }
+    } catch (e, st) {
+      _logGeneratorError(logger,
+          kind: 'script+splitOn',
+          generator: gen,
+          allTokens: allTokens,
+          cwd: cwd,
+          error: e,
+          stackTrace: st);
+      return const [];
     }
   }
 
@@ -1229,7 +1329,13 @@ Future<RuntimeCommandNode> _resolveSubcommandSpec(
     // Loaded spec wins; fall back to original fields where loaded has nothing.
     return mergeRuntimeCommandNode(sub, loaded);
   } catch (e, st) {
-    logger?.call('[Fig loadSpec] error resolving subcommand loadSpec', e, st);
+    _logContextError(
+        logger,
+        '[Fig loadSpec] error resolving subcommand loadSpec',
+        e,
+        st,
+        context.allTokens,
+        context.cwd);
     return sub;
   }
 }
@@ -1259,7 +1365,8 @@ Future<RuntimeCommandNode?> _resolveRuntimeNodeFromLoadSpec(
       final spec = result is Future ? await result : result;
       return spec == null ? null : runtimeNodeFromSpec(spec);
     } catch (e, st) {
-      logger?.call('[Fig loadSpec] function error', e, st);
+      _logContextError(logger, '[Fig loadSpec] function error', e, st,
+          context.allTokens, context.cwd);
       return null;
     }
   }
@@ -1298,7 +1405,8 @@ Future<RuntimeCommandNode> _materializeSubcommand(
         runtimeNodeFromSubcommand(generated),
       );
     } catch (e, st) {
-      logger?.call('[Fig subcommand.generateSpec] error', e, st);
+      _logContextError(logger, '[Fig subcommand.generateSpec] error', e, st,
+          context.allTokens, context.cwd);
     }
     return resolved;
   }();
@@ -2384,7 +2492,8 @@ class AutocompleteEngine {
             }
           }
         } catch (e, st) {
-          log?.call('[Fig generateSpec] deferred error', e, st);
+          _logContextError(log, '[Fig generateSpec] deferred error', e, st,
+              dg.activeCmd, dg.resolvedCwd);
         }
 
         if (handle.isSettled) return;
@@ -2556,7 +2665,8 @@ class AutocompleteEngine {
           spec = _mergeSpecs(spec, generated);
         }
       } catch (e, st) {
-        log?.call('[Fig generateSpec] error', e, st);
+        _logContextError(
+            log, '[Fig generateSpec] error', e, st, activeCmd, resolvedCwd);
       }
     }
 

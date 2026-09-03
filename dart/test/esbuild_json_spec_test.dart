@@ -82,8 +82,8 @@ void main() {
     final registry = JsonHandlerRegistry();
     registerEsbuildHandlers(registry);
     final options =
-        await registry.custom(esbuildOptionsHandler)!([], null, null);
-    final names = options.map((item) => item.nameSingle ?? '').toList();
+        await registry.options(esbuildOptionsHandler)!([], null, null);
+    final names = options.map((item) => item.nameList.first).toList();
     expect(names.length, 60);
     expect(names.first, '--bundle');
     expect(names.last, '--version');
@@ -97,9 +97,9 @@ void main() {
     final registry = JsonHandlerRegistry();
     registerEsbuildHandlers(registry);
     final options =
-        await registry.custom(esbuildOptionsHandler)!([], null, null);
+        await registry.options(esbuildOptionsHandler)!([], null, null);
     final byName = {
-      for (final option in options) (option.nameSingle ?? ''): option,
+      for (final option in options) option.nameList.first: option,
     };
     expect(byName['--bundle']!.priority, 51);
     expect(byName['--bundle']!.description,
@@ -116,34 +116,22 @@ void main() {
       () async {
     final registry = JsonHandlerRegistry();
     registerEsbuildHandlers(registry);
-    final withTokens = await registry.custom(esbuildOptionsHandler)!(
+    final withTokens = await registry.options(esbuildOptionsHandler)!(
         ['esbuild', '--bundle', '--'], null, null);
-    final without = await registry.custom(esbuildOptionsHandler)!([], null, null);
+    final without =
+        await registry.options(esbuildOptionsHandler)!([], null, null);
     expect(withTokens.length, without.length);
     expect(withTokens.length, 60);
-    expect(withTokens.map((item) => item.nameSingle ?? ''),
-        without.map((item) => item.nameSingle ?? ''));
+    expect(withTokens.map((item) => item.nameList.first),
+        without.map((item) => item.nameList.first));
   });
 
-  test('esbuild options generator runs through the runtime end to end',
-      () async {
+  test('esbuild options are materialized into the parsed spec', () async {
     final registry = JsonHandlerRegistry();
     registerEsbuildHandlers(registry);
-    final adapter = _FakeAdapter(const {});
-    final handler = registry.custom(esbuildOptionsHandler)!;
-    final generator = FigGenerator(custom: handler);
-
-    final suggestions = await runGeneratorSuggestions(
-      generator,
-      const [
-        CommandToken(token: 'esbuild', tokenLength: 7, complete: true),
-        CommandToken(token: '--', tokenLength: 2, complete: false),
-      ],
-      '/work',
-      adapter,
-    );
-
-    final names = suggestions.map((suggestion) => suggestion.name).toList();
+    final source = await File('assets/specs/e/esbuild.json').readAsString();
+    final spec = figSpecFromJsonString(source, handlers: registry);
+    final names = spec.options!.map((option) => option.name).toList();
     expect(names.length, 60);
     expect(names, contains('--bundle'));
     expect(names, contains('--tsconfig'));

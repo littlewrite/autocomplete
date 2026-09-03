@@ -80,6 +80,12 @@ typedef JsonSubcommandsHandler = FutureOr<List<FigSubcommand>> Function(
   FigGeneratorContext? context,
 );
 
+/// Produces the static option names used by an `exclusiveOn` handler.
+///
+/// `exclusiveOn` is consumed while parsing a spec, so these handlers must be
+/// synchronous.
+typedef JsonExclusiveOnHandler = List<String> Function();
+
 /// Produces the spec for a JSON `args.loadSpec` handler reference
 /// (`loadSpec: {handler}`). The one shipped example is token-dependent, so it
 /// is deferred and invoked by the runtime when the argument is completed.
@@ -120,6 +126,7 @@ class JsonHandlerRegistry {
   final Map<String, JsonVersionHandler> _versions = {};
   final Map<String, JsonOptionsHandler> _options = {};
   final Map<String, JsonSubcommandsHandler> _subcommands = {};
+  final Map<String, JsonExclusiveOnHandler> _exclusiveOn = {};
   final Map<String, JsonLoadSpecHandler> _loadSpecs = {};
   final List<UnresolvedJsonHandler> _unresolvedHandlers = [];
 
@@ -172,6 +179,10 @@ class JsonHandlerRegistry {
     _subcommands[id] = handler;
   }
 
+  void registerExclusiveOn(String id, JsonExclusiveOnHandler handler) {
+    _exclusiveOn[id] = handler;
+  }
+
   void registerLoadSpec(String id, JsonLoadSpecHandler handler) {
     _loadSpecs[id] = handler;
   }
@@ -189,6 +200,7 @@ class JsonHandlerRegistry {
   JsonVersionHandler? version(String id) => _versions[id];
   JsonOptionsHandler? options(String id) => _options[id];
   JsonSubcommandsHandler? subcommands(String id) => _subcommands[id];
+  JsonExclusiveOnHandler? exclusiveOn(String id) => _exclusiveOn[id];
   JsonLoadSpecHandler? loadSpec(String id) => _loadSpecs[id];
 
   /// Every handler ID registered across all categories (for tooling/tests).
@@ -204,6 +216,7 @@ class JsonHandlerRegistry {
         ..._versions.keys,
         ..._options.keys,
         ..._subcommands.keys,
+        ..._exclusiveOn.keys,
         ..._loadSpecs.keys,
       };
 
@@ -315,6 +328,15 @@ class JsonHandlerRegistry {
         : null;
   }
 
+  JsonExclusiveOnHandler? resolveExclusiveOn(String id, String path) {
+    final handler = exclusiveOn(id);
+    if (handler != null) return handler;
+    reportUnresolved(id, path);
+    return missingHandlerPolicy == MissingJsonHandlerPolicy.returnEmpty
+        ? _emptyExclusiveOn
+        : null;
+  }
+
   JsonLoadSpecHandler? resolveLoadSpec(String id, String path) {
     final handler = loadSpec(id);
     if (handler != null) return handler;
@@ -340,7 +362,8 @@ bool _emptyTrigger(String newToken, String oldToken) => true;
 Future<dynamic> _emptyScript(List<String> tokens) async => null;
 
 List<FigSuggestion> _emptyFilterTemplateSuggestions(
-        List<FigSuggestion> suggestions, [FigGeneratorContext? context]) =>
+        List<FigSuggestion> suggestions,
+        [FigGeneratorContext? context]) =>
     suggestions;
 
 Future<FigSpec?> _emptyGenerateSpec(
@@ -377,6 +400,8 @@ List<FigSubcommand> _emptySubcommands(
   FigGeneratorContext? context,
 ) =>
     const <FigSubcommand>[];
+
+List<String> _emptyExclusiveOn() => const <String>[];
 
 Future<FigSpec?> _emptyLoadSpec(
   List<String> tokens,
@@ -617,8 +642,7 @@ List<dynamic> _suggestionItems(
   return values
       .asMap()
       .entries
-      .map((entry) =>
-          _suggestionValue(entry.value, '$path[${entry.key}]'))
+      .map((entry) => _suggestionValue(entry.value, '$path[${entry.key}]'))
       .toList();
 }
 
@@ -748,6 +772,7 @@ dynamic _sanitizeUnsupportedHandlerReferences(
       'loadSpec',
       'options',
       'subcommands',
+      'exclusiveOn',
     };
     if (supportedFields.contains(field)) return value;
     final id = _handlerId(value, path)!;
@@ -755,12 +780,11 @@ dynamic _sanitizeUnsupportedHandlerReferences(
     return _OmittedJsonValue.instance;
   }
   if (value is List) {
-    // A whole-`options`/`subcommands` slot is a handler ref that directly
-    // replaces the field's value; per-item refs (`options[i]`/`subcommands[i]`)
-    // are single entries the parser does not wire, so they stay omitted under
-    // migration mode. Do not propagate those two fields into list items.
-    final childField =
-        (field == 'options' || field == 'subcommands') ? null : field;
+    // Whole-slot and per-item `options`/`subcommands` references both have
+    // dedicated parser support. Preserve their field context for list items
+    // so migration mode can resolve registered handlers (or use the typed
+    // empty fallback for an unported handler) instead of silently dropping it.
+    final childField = field;
     return value
         .asMap()
         .entries
@@ -856,7 +880,10 @@ FigGenerator _generator(
 ) {
   if (_isHandlerReference(map)) {
     final id = _handlerId(map, path)!;
-    return FigGenerator(custom: _deferredCustomHandler(id, path, handlers));
+    return FigGenerator(
+      custom: _deferredCustomHandler(id, path, handlers),
+      debugHandlers: {'custom': '$id@$path'},
+    );
   }
   final customId = _handlerId(map['custom'], '$path.custom');
   final postProcessId = _handlerId(map['postProcess'], '$path.postProcess');
@@ -878,8 +905,8 @@ FigGenerator _generator(
   // A filterTemplateSuggestions handler reference selects a host-language
   // callback that post-filters the template suggestion list.
   final filterId = _isHandlerReference(map['filterTemplateSuggestions'])
-      ? _handlerId(map['filterTemplateSuggestions'],
-          '$path.filterTemplateSuggestions')
+      ? _handlerId(
+          map['filterTemplateSuggestions'], '$path.filterTemplateSuggestions')
       : null;
   final filterTemplateSuggestions = filterId == null
       ? map['filterTemplateSuggestions']
@@ -909,6 +936,15 @@ FigGenerator _generator(
     throw JsonSpecFormatException(
         'Expected template string or array at $path.template');
   }
+  final debugHandlers = <String, String>{
+    if (customId != null) 'custom': '$customId@$path.custom',
+    if (postProcessId != null)
+      'postProcess': '$postProcessId@$path.postProcess',
+    if (triggerId != null) 'trigger': '$triggerId@$path.trigger',
+    if (filterId != null)
+      'filterTemplateSuggestions': '$filterId@$path.filterTemplateSuggestions',
+    if (scriptId != null) 'script': '$scriptId@$path.script',
+  };
   return FigGenerator(
     script: script is List
         ? _list(script, '$path.script')
@@ -940,16 +976,36 @@ FigGenerator _generator(
     scriptTimeout: map['scriptTimeout'] == null
         ? null
         : _int(map['scriptTimeout'], '$path.scriptTimeout'),
+    debugHandlers: debugHandlers.isEmpty ? null : debugHandlers,
   );
 }
 
 List<FigSuggestion> _suggestions(dynamic value, String path) {
   if (value == null) return const [];
+  if (value is String) return [FigSuggestion(name: value)];
   return _list(value, path)
       .asMap()
       .entries
       .map((entry) => _figSuggestionValue(entry.value, '$path[${entry.key}]'))
       .toList();
+}
+
+List<String>? _exclusiveOn(
+  dynamic value,
+  String path,
+  JsonHandlerRegistry? handlers,
+) {
+  if (value == null) return null;
+  if (_isHandlerReference(value)) {
+    final id = _handlerId(value, path)!;
+    final handler = handlers?.resolveExclusiveOn(id, path);
+    if (handler == null) {
+      throw JsonSpecFormatException(
+          'Unknown exclusiveOn handler at $path: $id');
+    }
+    return handler();
+  }
+  return _list(value, path).map((v) => _string(v, '$path[]')).toList();
 }
 
 dynamic _suggestionValue(dynamic value, String path) {
@@ -958,6 +1014,7 @@ dynamic _suggestionValue(dynamic value, String path) {
 }
 
 FigSuggestion _figSuggestionValue(dynamic value, String path) {
+  if (value is String) return FigSuggestion(name: value);
   if (value is List &&
       value.length == 2 &&
       value[0] is String &&
@@ -1029,17 +1086,20 @@ FigArg _arg(
           '$path.generators[${entry.key}]',
           handlers)),
       if (suggestionGenerator != null)
-        FigGenerator(custom: suggestionGenerator),
+        FigGenerator(
+          custom: suggestionGenerator,
+          debugHandlers: suggestionHandlerId == null
+              ? null
+              : {'custom': '$suggestionHandlerId@$path.suggestions'},
+        ),
     ],
     template: map['template'],
     suggestions: suggestions == null
         ? null
         : suggestionHandlerId != null
             ? null
-            : _suggestionItems(
-                _list(suggestions, '$path.suggestions'),
-                '$path.suggestions',
-                handlers),
+            : _suggestionItems(_list(suggestions, '$path.suggestions'),
+                '$path.suggestions', handlers),
     isOptional: map['isOptional'] == null
         ? false
         : _bool(map['isOptional'], '$path.isOptional'),
@@ -1103,11 +1163,8 @@ FigOption _option(
         : _list(map['dependsOn'], '$path.dependsOn')
             .map((v) => _string(v, '$path.dependsOn[]'))
             .toList(),
-    exclusiveOn: map['exclusiveOn'] == null
-        ? null
-        : _list(map['exclusiveOn'], '$path.exclusiveOn')
-            .map((v) => _string(v, '$path.exclusiveOn[]'))
-            .toList(),
+    exclusiveOn:
+        _exclusiveOn(map['exclusiveOn'], '$path.exclusiveOn', handlers),
     insertValue: map['insertValue'] == null
         ? null
         : _string(map['insertValue'], '$path.insertValue'),
@@ -1147,15 +1204,13 @@ FigSubcommand _subcommand(
     subcommands: subcommands == null
         ? null
         : _resolveSubcommandList(subcommands, '$path.subcommands', handlers) ??
-            _subcommandItems(
-                _list(subcommands, '$path.subcommands'),
-                '$path.subcommands',
-                handlers),
+            _subcommandItems(_list(subcommands, '$path.subcommands'),
+                '$path.subcommands', handlers),
     options: options == null
         ? null
         : _resolveOptionList(options, '$path.options', handlers) ??
-            _optionItems(_list(options, '$path.options'), '$path.options',
-                handlers),
+            _optionItems(
+                _list(options, '$path.options'), '$path.options', handlers),
     args: _args(map['args'], '$path.args', handlers),
     icon: map['icon'] == null ? null : _string(map['icon'], '$path.icon'),
     loadSpec: _resolveLoadSpecRef(map['loadSpec'], '$path.loadSpec', handlers),

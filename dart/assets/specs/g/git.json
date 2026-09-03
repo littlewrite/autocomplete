@@ -15,7 +15,23 @@
         "version": 1
       }
     },
-    "isOptional": true
+    "isOptional": true,
+    "generators": {
+      "script": [
+        "git",
+        "--no-optional-locks",
+        "config",
+        "--get-regexp",
+        "^alias."
+      ],
+      "cache": {
+        "strategy": "stale-while-revalidate"
+      },
+      "postProcess": {
+        "handler": "manual.src_git.definition.gitgenerators.aliases.postprocess",
+        "version": 1
+      }
+    }
   },
   "options": [
     {
@@ -116,7 +132,20 @@
       "description": "Create an archive of files from a named tree",
       "args": [
         {
-          "name": "tree-ish"
+          "name": "tree-ish",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "diff",
+              "--cached",
+              "--name-only"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.treeish.postprocess",
+              "version": 1
+            }
+          }
         },
         {
           "name": "path",
@@ -289,7 +318,19 @@
           "name": "--ignore-rev",
           "description": "Ignore <rev> when blaming",
           "args": {
-            "name": "rev"
+            "name": "rev",
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -416,7 +457,19 @@
           ],
           "description": "Take an existing commit object, and reuse the log message and the authorship",
           "args": {
-            "name": "commit"
+            "name": "commit",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -426,21 +479,57 @@
           ],
           "description": "Like -C, but with -c the editor is invoked, so that the user can further edit",
           "args": {
-            "name": "commit"
+            "name": "commit",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
           "name": "--fixup",
           "description": "Construct a commit message for use with rebase --autosquash. The commit messa",
           "args": {
-            "name": "commit"
+            "name": "commit",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
           "name": "--squash",
           "description": "Construct a commit message for use with rebase --autosquash. The commit messa",
           "args": {
-            "name": "commit"
+            "name": "commit",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -894,7 +983,19 @@
           "name": "--onto",
           "description": "Starting point at which to create the new commits. If the --onto option is not specified, the starting point is <upstream>. May be any valid commit, and not just an existing branch name. As a special case, you may use 'A...B' as a shortcut for the merge base of A and B if there is exactly one merge base. You can leave out at most one of A and B, in which case it defaults to HEAD",
           "args": {
-            "name": "newbase"
+            "name": "newbase",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -1186,6 +1287,19 @@
       "args": [
         {
           "name": "base",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "suggestions": [
             {
               "name": "-",
@@ -1197,6 +1311,19 @@
         },
         {
           "name": "new base",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy",
           "isOptional": true
         }
@@ -1205,11 +1332,144 @@
     {
       "name": "add",
       "description": "Add file contents to the index",
+      "options": [
+        {
+          "name": [
+            "-n",
+            "--dry-run"
+          ],
+          "description": "Don’t actually add the file(s), just show if they exist and/or will be ignored"
+        },
+        {
+          "name": [
+            "-v",
+            "--verbose"
+          ],
+          "description": "Be verbose"
+        },
+        {
+          "name": [
+            "-f",
+            "--force"
+          ],
+          "description": "Allow adding otherwise ignored files"
+        },
+        {
+          "name": [
+            "-i",
+            "--interactive"
+          ],
+          "description": "Add modified contents in the working tree interactively to the index. Optional path arguments may be supplied to limit operation to a subset of the working tree. See “Interactive mode” for details"
+        },
+        {
+          "name": [
+            "-p",
+            "--patch"
+          ],
+          "description": "Interactively choose hunks of patch between the index and the work tree and add them to the index. This gives the user a chance to review the difference before adding modified contents to the index"
+        },
+        {
+          "name": [
+            "-e",
+            "--edit"
+          ],
+          "description": "Open the diff vs. the index in an editor and let the user edit it. After the editor was closed, adjust the hunk headers and apply the patch to the index"
+        },
+        {
+          "name": [
+            "-u",
+            "--update"
+          ],
+          "description": "Update the index just where it already has an entry matching <pathspec>. This removes as well as modifies index entries to match the working tree, but adds no new files"
+        },
+        {
+          "name": [
+            "-A",
+            "--all",
+            "--no-ignore-removal"
+          ],
+          "description": "Update the index not only where the working tree has a file matching <pathspec> but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree"
+        },
+        {
+          "name": [
+            "--no-all",
+            "--ignore-removal"
+          ],
+          "description": "Update the index by adding new files that are unknown to the index and files modified in the working tree, but ignore files that have been removed from the working tree. This option is a no-op when no <pathspec> is used"
+        },
+        {
+          "name": [
+            "-N",
+            "--intent-to-add"
+          ],
+          "description": "Record only the fact that the path will be added later. An entry for the path is placed in the index with no content. This is useful for, among other things, showing the unstaged content of such files with git diff and committing them with git commit -a"
+        },
+        {
+          "name": "--refresh",
+          "description": "Don’t add the file(s), but only refresh their stat() information in the index"
+        },
+        {
+          "name": "--ignore-errors",
+          "description": "If some files could not be added because of errors indexing them, do not abort the operation, but continue adding the others. The command shall still exit with non-zero status. The configuration variable add.ignoreErrors can be set to true to make this the default behaviour"
+        },
+        {
+          "name": "--ignore-missing",
+          "description": "This option can only be used together with --dry-run. By using this option the user can check if any of the given files would be ignored, no matter if they are already present in the work tree or not"
+        },
+        {
+          "name": "--no-warn-embedded-repo",
+          "description": "By default, git add will warn when adding an embedded repository to the index without using git submodule add to create an entry in .gitmodules. This option will suppress the warning (e.g., if you are manually performing operations on submodules)"
+        },
+        {
+          "name": "--renormalize",
+          "description": "Apply the 'clean' process freshly to all tracked files to forcibly add them again to the index. This is useful after changing core.autocrlf configuration or the text attribute in order to correct files added with wrong CRLF/LF line endings. This option implies -u"
+        },
+        {
+          "name": "--chmod",
+          "description": "Override the executable bit of the added files. The executable bit is only changed in the index, the files on disk are left unchanged",
+          "requiresSeparator": true,
+          "args": {
+            "suggestions": [
+              "+x",
+              "-x"
+            ]
+          }
+        },
+        {
+          "name": "--pathspec-from-file",
+          "description": "Pathspec is passed in <file> instead of commandline args. If <file> is exactly - then standard input is used. Pathspec elements are separated by LF or CR/LF. Pathspec elements can be quoted as explained for the configuration variable core.quotePath (see git-config[1]). See also --pathspec-file-nul and global --literal-pathspecs",
+          "args": {
+            "name": "File",
+            "description": "File with pathspec",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--pathspec-file-nul",
+          "description": "Only meaningful with --pathspec-from-file. Pathspec elements are separated with NUL character and all other characters are taken literally (including newlines and quotes)"
+        },
+        {
+          "name": "--",
+          "description": "This option can be used to separate command-line options from the list of files"
+        }
+      ],
       "args": {
         "name": "pathspec",
         "isVariadic": true,
         "isOptional": true,
         "generators": [
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "status",
+              "--short"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.files_for_staging.postprocess",
+              "version": 1
+            }
+          },
           {
             "template": "folders"
           }
@@ -1219,10 +1479,143 @@
     {
       "name": "stage",
       "description": "Add file contents to the staging area",
+      "options": [
+        {
+          "name": [
+            "-n",
+            "--dry-run"
+          ],
+          "description": "Don’t actually add the file(s), just show if they exist and/or will be ignored"
+        },
+        {
+          "name": [
+            "-v",
+            "--verbose"
+          ],
+          "description": "Be verbose"
+        },
+        {
+          "name": [
+            "-f",
+            "--force"
+          ],
+          "description": "Allow adding otherwise ignored files"
+        },
+        {
+          "name": [
+            "-i",
+            "--interactive"
+          ],
+          "description": "Add modified contents in the working tree interactively to the index. Optional path arguments may be supplied to limit operation to a subset of the working tree. See “Interactive mode” for details"
+        },
+        {
+          "name": [
+            "-p",
+            "--patch"
+          ],
+          "description": "Interactively choose hunks of patch between the index and the work tree and add them to the index. This gives the user a chance to review the difference before adding modified contents to the index"
+        },
+        {
+          "name": [
+            "-e",
+            "--edit"
+          ],
+          "description": "Open the diff vs. the index in an editor and let the user edit it. After the editor was closed, adjust the hunk headers and apply the patch to the index"
+        },
+        {
+          "name": [
+            "-u",
+            "--update"
+          ],
+          "description": "Update the index just where it already has an entry matching <pathspec>. This removes as well as modifies index entries to match the working tree, but adds no new files"
+        },
+        {
+          "name": [
+            "-A",
+            "--all",
+            "--no-ignore-removal"
+          ],
+          "description": "Update the index not only where the working tree has a file matching <pathspec> but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree"
+        },
+        {
+          "name": [
+            "--no-all",
+            "--ignore-removal"
+          ],
+          "description": "Update the index by adding new files that are unknown to the index and files modified in the working tree, but ignore files that have been removed from the working tree. This option is a no-op when no <pathspec> is used"
+        },
+        {
+          "name": [
+            "-N",
+            "--intent-to-add"
+          ],
+          "description": "Record only the fact that the path will be added later. An entry for the path is placed in the index with no content. This is useful for, among other things, showing the unstaged content of such files with git diff and committing them with git commit -a"
+        },
+        {
+          "name": "--refresh",
+          "description": "Don’t add the file(s), but only refresh their stat() information in the index"
+        },
+        {
+          "name": "--ignore-errors",
+          "description": "If some files could not be added because of errors indexing them, do not abort the operation, but continue adding the others. The command shall still exit with non-zero status. The configuration variable add.ignoreErrors can be set to true to make this the default behaviour"
+        },
+        {
+          "name": "--ignore-missing",
+          "description": "This option can only be used together with --dry-run. By using this option the user can check if any of the given files would be ignored, no matter if they are already present in the work tree or not"
+        },
+        {
+          "name": "--no-warn-embedded-repo",
+          "description": "By default, git add will warn when adding an embedded repository to the index without using git submodule add to create an entry in .gitmodules. This option will suppress the warning (e.g., if you are manually performing operations on submodules)"
+        },
+        {
+          "name": "--renormalize",
+          "description": "Apply the 'clean' process freshly to all tracked files to forcibly add them again to the index. This is useful after changing core.autocrlf configuration or the text attribute in order to correct files added with wrong CRLF/LF line endings. This option implies -u"
+        },
+        {
+          "name": "--chmod",
+          "description": "Override the executable bit of the added files. The executable bit is only changed in the index, the files on disk are left unchanged",
+          "requiresSeparator": true,
+          "args": {
+            "suggestions": [
+              "+x",
+              "-x"
+            ]
+          }
+        },
+        {
+          "name": "--pathspec-from-file",
+          "description": "Pathspec is passed in <file> instead of commandline args. If <file> is exactly - then standard input is used. Pathspec elements are separated by LF or CR/LF. Pathspec elements can be quoted as explained for the configuration variable core.quotePath (see git-config[1]). See also --pathspec-file-nul and global --literal-pathspecs",
+          "args": {
+            "name": "File",
+            "description": "File with pathspec",
+            "template": "filepaths"
+          }
+        },
+        {
+          "name": "--pathspec-file-nul",
+          "description": "Only meaningful with --pathspec-from-file. Pathspec elements are separated with NUL character and all other characters are taken literally (including newlines and quotes)"
+        },
+        {
+          "name": "--",
+          "description": "This option can be used to separate command-line options from the list of files"
+        }
+      ],
       "args": {
         "name": "pathspec",
         "isVariadic": true,
-        "isOptional": true
+        "isOptional": true,
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "status",
+            "--short"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.files_for_staging.postprocess",
+            "version": 1
+          }
+        }
       }
     },
     {
@@ -1383,7 +1776,19 @@
       "args": {
         "name": "pathspec",
         "isVariadic": true,
-        "isOptional": true
+        "isOptional": true,
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "status",
+            "--short"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.files_for_staging.postprocess",
+            "version": 1
+          }
+        }
       }
     },
     {
@@ -1451,7 +1856,19 @@
       "description": "Create new commit that undoes all of the changes made in <commit>, then apply it to the current branch",
       "args": {
         "name": "commit",
-        "isOptional": true
+        "isOptional": true,
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "log",
+            "--oneline"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+            "version": 1
+          }
+        }
       }
     },
     {
@@ -1648,11 +2065,36 @@
         {
           "name": "remote",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "remote",
+              "-v"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         },
         {
           "name": "branch",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         }
       ]
@@ -1671,6 +2113,18 @@
           "args": {
             "isOptional": true,
             "name": "remote",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "remote",
+                "-v"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy",
             "suggestions": [
               "false",
@@ -1937,7 +2391,19 @@
           "name": "--negotiation-tip",
           "requiresSeparator": true,
           "args": {
-            "name": "commit|glob"
+            "name": "commit|glob",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           },
           "description": "By default, Git will report, to the server, commits reachable from all local refs to find common commits in an attempt to reduce the size of the to-be-received packfile"
         },
@@ -2072,11 +2538,36 @@
         {
           "name": "remote",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "remote",
+              "-v"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         },
         {
           "name": "branch",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         }
       ]
@@ -2133,7 +2624,56 @@
         "name": "commit or file",
         "isOptional": true,
         "isVariadic": true,
-        "generators": []
+        "suggestions": [
+          {
+            "name": "HEAD",
+            "icon": "🔻",
+            "description": "The most recent commit"
+          },
+          {
+            "name": "HEAD~<N>",
+            "description": "A specific number of commits",
+            "insertValue": "HEAD~"
+          }
+        ],
+        "generators": [
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "log",
+              "--oneline"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "-a",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.remotelocalbranches.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": {
+              "handler": "manual.src_git.definition.gitgenerators.getchangedtrackedfiles.script",
+              "version": 1
+            },
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.getchangedtrackedfiles.postprocess",
+              "version": 1
+            }
+          }
+        ]
       }
     },
     {
@@ -2217,7 +2757,59 @@
       "args": {
         "isOptional": true,
         "isVariadic": true,
-        "generators": []
+        "suggestions": [
+          {
+            "name": "HEAD",
+            "icon": "🔻",
+            "description": "The most recent commit"
+          },
+          {
+            "name": "HEAD~<N>",
+            "description": "A specific number of commits",
+            "insertValue": "HEAD~"
+          }
+        ],
+        "generators": [
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "diff",
+              "--cached",
+              "--name-only"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.treeish.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "log",
+              "--oneline"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+              "version": 1
+            }
+          },
+          {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "-a",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.remotelocalbranches.postprocess",
+              "version": 1
+            }
+          }
+        ]
       }
     },
     {
@@ -2284,12 +2876,60 @@
         {
           "name": "since",
           "isOptional": true,
-          "description": "Commit ID, branch name, HEAD, or revision reference"
+          "description": "Commit ID, branch name, HEAD, or revision reference",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "log",
+              "--oneline"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+              "version": 1
+            }
+          },
+          "suggestions": [
+            {
+              "name": "HEAD",
+              "icon": "🔻",
+              "description": "The most recent commit"
+            },
+            {
+              "name": "HEAD~<N>",
+              "description": "A specific number of commits",
+              "insertValue": "HEAD~"
+            }
+          ]
         },
         {
           "name": "until",
           "isOptional": true,
-          "description": "Commit ID, branch name, HEAD, or revision reference"
+          "description": "Commit ID, branch name, HEAD, or revision reference",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "log",
+              "--oneline"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+              "version": 1
+            }
+          },
+          "suggestions": [
+            {
+              "name": "HEAD",
+              "icon": "🔻",
+              "description": "The most recent commit"
+            },
+            {
+              "name": "HEAD~<N>",
+              "description": "A specific number of commits",
+              "insertValue": "HEAD~"
+            }
+          ]
         }
       ]
     },
@@ -2354,6 +2994,18 @@
           "args": [
             {
               "name": "name",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "remote",
+                  "-v"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
@@ -2390,6 +3042,18 @@
           "args": [
             {
               "name": "name",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "remote",
+                  "-v"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
@@ -2406,6 +3070,18 @@
           "description": "Removes given remote [name]",
           "args": {
             "name": "remote",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "remote",
+                "-v"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -2415,6 +3091,18 @@
           "args": [
             {
               "name": "old remote",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "remote",
+                  "-v"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
@@ -2437,6 +3125,18 @@
           ],
           "args": {
             "name": "name",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "remote",
+                "-v"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -2446,6 +3146,18 @@
           "args": [
             {
               "name": "name",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "remote",
+                  "-v"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
@@ -2477,6 +3189,18 @@
           "args": {
             "name": "name",
             "isVariadic": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "remote",
+                "-v"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           },
           "options": [
@@ -2492,6 +3216,18 @@
           "args": {
             "name": "name",
             "isVariadic": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "remote",
+                "-v"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           },
           "options": [
@@ -2547,11 +3283,36 @@
         {
           "name": "remote",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "remote",
+              "-v"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.remotes.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         },
         {
           "name": "branch",
           "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy"
         },
         {
@@ -2619,7 +3380,19 @@
           "name": "--negotiation-tip",
           "requiresSeparator": true,
           "args": {
-            "name": "commit|glob"
+            "name": "commit|glob",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           },
           "description": "By default, Git will report, to the server, commits reachable from all local refs to find common commits in an attempt to reduce the size of the to-be-received packfile"
         },
@@ -2905,6 +3678,18 @@
           "args": {
             "name": "stash",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "stash",
+                "list"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.stashes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -2972,6 +3757,18 @@
           "args": {
             "name": "stash",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "stash",
+                "list"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.stashes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -2994,6 +3791,18 @@
           "args": {
             "name": "stash",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "stash",
+                "list"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.stashes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -3020,6 +3829,18 @@
           "args": {
             "name": "stash",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "stash",
+                "list"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.stashes.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -3030,11 +3851,36 @@
           "args": [
             {
               "name": "branch",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
               "name": "stash",
               "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "stash",
+                  "list"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.stashes.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             }
           ]
@@ -3075,7 +3921,19 @@
               "name": "message"
             },
             {
-              "name": "commit"
+              "name": "commit",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "log",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                  "version": 1
+                }
+              }
             }
           ]
         }
@@ -3486,7 +4344,19 @@
             "description": "Current directory",
             "icon": "fig://icon?type=folder"
           }
-        ]
+        ],
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "status",
+            "--short"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.files_for_staging.postprocess",
+            "version": 1
+          }
+        }
       },
       "options": [
         {
@@ -3527,12 +4397,73 @@
           "args": [
             {
               "name": "bad",
-              "isOptional": true
+              "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "rev-list",
+                  "--all",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                  "version": 1
+                }
+              },
+              "suggestions": [
+                {
+                  "name": "HEAD",
+                  "icon": "🔻",
+                  "description": "The most recent commit"
+                },
+                {
+                  "name": "HEAD~<N>",
+                  "description": "A specific number of commits",
+                  "insertValue": "HEAD~"
+                }
+              ]
             },
             {
               "name": "good",
               "isOptional": true,
-              "generators": [],
+              "generators": [
+                {
+                  "script": [
+                    "git",
+                    "rev-list",
+                    "--all",
+                    "--oneline"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                    "version": 1
+                  }
+                },
+                {
+                  "script": [
+                    "git",
+                    "rev-list",
+                    "--all",
+                    "--oneline"
+                  ],
+                  "postProcess": {
+                    "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                    "version": 1
+                  }
+                }
+              ],
+              "suggestions": [
+                {
+                  "name": "HEAD",
+                  "icon": "🔻",
+                  "description": "The most recent commit"
+                },
+                {
+                  "name": "HEAD~<N>",
+                  "description": "A specific number of commits",
+                  "insertValue": "HEAD~"
+                }
+              ],
               "isVariadic": true
             }
           ],
@@ -3588,7 +4519,31 @@
           "description": "Mark commits as bad",
           "args": {
             "name": "rev",
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ]
           }
         },
         {
@@ -3596,7 +4551,31 @@
           "description": "Mark commits as new",
           "args": {
             "name": "rev",
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ]
           }
         },
         {
@@ -3605,6 +4584,30 @@
           "args": {
             "name": "rev",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ],
             "isVariadic": true
           }
         },
@@ -3614,6 +4617,30 @@
           "args": {
             "name": "rev",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ],
             "isVariadic": true
           }
         },
@@ -3641,7 +4668,31 @@
           "args": {
             "name": "rev | range",
             "isVariadic": true,
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "rev-list",
+                "--all",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.revs.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ]
           }
         },
         {
@@ -3649,7 +4700,31 @@
           "description": "Finish bisection search and go back to commit",
           "args": {
             "name": "commit",
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ]
           }
         },
         {
@@ -3725,6 +4800,12 @@
           ],
           "description": "Delete fully merged branch",
           "args": {
+            "generators": {
+              "custom": {
+                "handler": "manual.src_git.definition.gitgenerators.localorremotebranches.custom",
+                "version": 1
+              }
+            },
             "isVariadic": true,
             "suggestions": [
               {
@@ -3741,6 +4822,12 @@
           "name": "-D",
           "description": "Delete branch (even if not merged)",
           "args": {
+            "generators": {
+              "custom": {
+                "handler": "manual.src_git.definition.gitgenerators.localorremotebranches.custom",
+                "version": 1
+              }
+            },
             "isVariadic": true,
             "suggestions": [
               {
@@ -3761,9 +4848,35 @@
           "description": "Move/rename a branch and its reflog",
           "args": [
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             }
           ]
@@ -3773,9 +4886,35 @@
           "description": "Move/rename a branch, even if target exists",
           "args": [
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             }
           ]
@@ -3806,6 +4945,19 @@
           "name": "--edit-description",
           "description": "Edit the description for the branch",
           "args": {
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "branch",
+                "--no-color",
+                "--sort=-committerdate"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -3931,11 +5083,36 @@
           "args": [
             {
               "name": "branch",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
               "name": "start point",
-              "isOptional": true
+              "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "log",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                  "version": 1
+                }
+              }
             }
           ]
         },
@@ -3948,10 +5125,36 @@
           "description": "Do not set up 'upstream' configuration, even if the branch.autoSetupMerge configuration variable is true",
           "args": [
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
               "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             }
           ]
@@ -3965,6 +5168,19 @@
           "args": {
             "name": "upstream",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "branch",
+                "--no-color",
+                "--sort=-committerdate"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -3974,6 +5190,19 @@
           "args": {
             "name": "upstream",
             "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "branch",
+                "--no-color",
+                "--sort=-committerdate"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                "version": 1
+              }
+            },
             "filterStrategy": "fuzzy"
           }
         },
@@ -3982,7 +5211,19 @@
           "description": "Only lists branches which contain the specified commit",
           "args": {
             "name": "commit",
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -3990,7 +5231,19 @@
           "description": "Only lists branches which don't contain the specified commit",
           "args": {
             "name": "commit",
-            "isOptional": true
+            "isOptional": true,
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            }
           }
         },
         {
@@ -4188,6 +5441,33 @@
           "filterStrategy": "fuzzy",
           "generators": [
             {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "branch",
+                "-a",
+                "--no-color",
+                "--sort=-committerdate"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.remotelocalbranches.postprocess",
+                "version": 1
+              }
+            },
+            {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "tag",
+                "--list",
+                "--sort=-committerdate"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.tags.postprocess",
+                "version": 1
+              }
+            },
+            {
               "template": [
                 "filepaths",
                 "folders"
@@ -4222,7 +5502,19 @@
       "args": {
         "name": "commit",
         "description": "Commits to cherry-pick",
-        "isVariadic": true
+        "isVariadic": true,
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "log",
+            "--oneline"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+            "version": 1
+          }
+        }
       },
       "options": [
         {
@@ -4781,6 +6073,20 @@
       "args": {
         "name": "branch",
         "filterStrategy": "fuzzy",
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "branch",
+            "-a",
+            "--no-color",
+            "--sort=-committerdate"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.remotelocalbranches.postprocess",
+            "version": 1
+          }
+        },
         "isVariadic": true,
         "isOptional": true,
         "suggestions": [
@@ -5109,13 +6415,50 @@
           "name": "--points-at",
           "description": "List tags of the given object",
           "args": {
-            "name": "object"
+            "name": "object",
+            "generators": {
+              "script": [
+                "git",
+                "--no-optional-locks",
+                "log",
+                "--oneline"
+              ],
+              "postProcess": {
+                "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                "version": 1
+              }
+            },
+            "suggestions": [
+              {
+                "name": "HEAD",
+                "icon": "🔻",
+                "description": "The most recent commit"
+              },
+              {
+                "name": "HEAD~<N>",
+                "description": "A specific number of commits",
+                "insertValue": "HEAD~"
+              }
+            ]
           }
         }
       ],
       "args": {
         "name": "tagname",
         "description": "Select a tag",
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "tag",
+            "--list",
+            "--sort=-committerdate"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.tags.postprocess",
+            "version": 1
+          }
+        },
         "isOptional": true
       }
     },
@@ -5269,7 +6612,19 @@
       "args": {
         "name": "pathspec",
         "isOptional": true,
-        "isVariadic": true
+        "isVariadic": true,
+        "generators": {
+          "script": [
+            "git",
+            "--no-optional-locks",
+            "status",
+            "--short"
+          ],
+          "postProcess": {
+            "handler": "manual.src_git.definition.gitgenerators.files_for_staging.postprocess",
+            "version": 1
+          }
+        }
       }
     },
     {
@@ -5288,7 +6643,19 @@
             },
             {
               "name": "start point",
-              "isOptional": true
+              "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "log",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                  "version": 1
+                }
+              }
             }
           ]
         },
@@ -5304,7 +6671,19 @@
             },
             {
               "name": "start point",
-              "isOptional": true
+              "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "log",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                  "version": 1
+                }
+              }
             }
           ]
         },
@@ -5382,11 +6761,36 @@
           "args": [
             {
               "name": "branch",
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
               "name": "start point",
-              "isOptional": true
+              "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "log",
+                  "--oneline"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+                  "version": 1
+                }
+              }
             }
           ]
         },
@@ -5399,10 +6803,36 @@
           "description": "Do not set up 'upstream' configuration, even if the branch.autoSetupMerge configuration variable is true",
           "args": [
             {
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             },
             {
               "isOptional": true,
+              "generators": {
+                "script": [
+                  "git",
+                  "--no-optional-locks",
+                  "branch",
+                  "--no-color",
+                  "--sort=-committerdate"
+                ],
+                "postProcess": {
+                  "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+                  "version": 1
+                }
+              },
               "filterStrategy": "fuzzy"
             }
           ]
@@ -5437,6 +6867,19 @@
         {
           "name": "branch name",
           "description": "Branch or commit to switch to",
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "branch",
+              "--no-color",
+              "--sort=-committerdate"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.localbranches.postprocess",
+              "version": 1
+            }
+          },
           "filterStrategy": "fuzzy",
           "suggestions": [
             {
@@ -5448,7 +6891,19 @@
         },
         {
           "name": "start point",
-          "isOptional": true
+          "isOptional": true,
+          "generators": {
+            "script": [
+              "git",
+              "--no-optional-locks",
+              "log",
+              "--oneline"
+            ],
+            "postProcess": {
+              "handler": "manual.src_git.definition.gitgenerators.commits.postprocess",
+              "version": 1
+            }
+          }
         }
       ]
     },

@@ -77,9 +77,9 @@ void main() {
     final registry = JsonHandlerRegistry();
     registerAtuinHandlers(registry);
 
-    final result = await registry.custom(atuinImportSubcommandsHandler)!(
+    final result = await registry.subcommands(atuinImportSubcommandsHandler)!(
         const ['atuin', 'import', ''], null, null);
-    expect(result.map((item) => item.nameSingle ?? ''), [
+    expect(result.map((item) => item.nameList.first), [
       'zsh',
       'zsh-hist-db',
       'bash',
@@ -97,8 +97,6 @@ void main() {
       'Import history from the nu history file',
       'Import history from the nu history file',
     ]);
-    expect(
-        result.every((item) => item.type == SuggestionType.subcommand), isTrue);
   });
 
   test('import shells handler ignores invocation context', () async {
@@ -107,17 +105,16 @@ void main() {
 
     // The source produces a static list, so a missing adapter/context must not
     // change the outcome.
-    final result = await registry.custom(atuinImportSubcommandsHandler)!(
+    final result = await registry.subcommands(atuinImportSubcommandsHandler)!(
       const ['atuin', 'import', 'bash'],
       null,
       null,
     );
     expect(result, isNotEmpty);
-    expect(result.first.nameSingle ?? '', 'zsh');
+    expect(result.first.nameList.first, 'zsh');
   });
 
-  test('atuin spec parses; the import shells expansion is reported unresolved',
-      () async {
+  test('atuin spec parses and expands the import shell subcommands', () async {
     final handlers = JsonHandlerRegistry(
         missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty);
     registerAtuinHandlers(handlers);
@@ -125,38 +122,31 @@ void main() {
     final spec = figSpecFromJsonString(source, handlers: handlers);
 
     expect(spec.name, 'atuin');
-    // The bare handler subcommand is sanitized out of the import subcommands.
     final importCmd = spec.subcommands!
         .firstWhere((subcommand) => subcommand.nameList.contains('import'));
-    expect(importCmd.subcommands!.map((subcommand) => subcommand.nameList.first),
-        ['auto']);
-    expect(handlers.unresolvedHandlers.map((item) => item.id),
-        [atuinImportSubcommandsHandler]);
+    expect(
+        importCmd.subcommands!.map((subcommand) => subcommand.nameList.first), [
+      'auto',
+      'zsh',
+      'zsh-hist-db',
+      'bash',
+      'resh',
+      'fish',
+      'nu',
+      'nu-hist-db'
+    ]);
+    expect(handlers.unresolvedHandlers, isEmpty);
   });
 
-  test('import shells custom handler drives suggestions end to end', () async {
+  test('import shells are available from the parsed spec', () async {
     final handlers = JsonHandlerRegistry(
         missingHandlerPolicy: MissingJsonHandlerPolicy.returnEmpty);
     registerAtuinHandlers(handlers);
-    final adapter = _FakeAdapter(const {});
-
-    // The JSON exposes the shells as a bare subcommand handler reference, so
-    // drive the registered custom callback through the generator path.
-    final generator = FigGenerator(
-        custom: handlers.custom(atuinImportSubcommandsHandler));
-
-    final suggestions = await runGeneratorSuggestions(
-      generator,
-      const [
-        CommandToken(token: 'atuin', tokenLength: 5, complete: true),
-        CommandToken(token: 'import', tokenLength: 6, complete: true),
-        CommandToken(token: '', tokenLength: 0, complete: false),
-      ],
-      '/work',
-      adapter,
-    );
-
-    expect(suggestions.map((suggestion) => suggestion.name).toList(), [
+    final source = await File('assets/specs/a/atuin.json').readAsString();
+    final spec = figSpecFromJsonString(source, handlers: handlers);
+    final importCmd = spec.subcommands!
+        .firstWhere((subcommand) => subcommand.nameList.contains('import'));
+    expect(importCmd.subcommands!.skip(1).map((item) => item.nameList.first), [
       'zsh',
       'zsh-hist-db',
       'bash',
